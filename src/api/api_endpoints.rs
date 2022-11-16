@@ -4942,11 +4942,10 @@ pub async fn patch_telemetry_v3_slis_add_string_diagnostic(client: &RESTClient, 
     Ok(())
 }
 
-pub async fn post_cookie_jar_v1_cookies(client: &RESTClient, cookie: Vec<Cookie>) -> Result<Value, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/cookie-jar/v1/cookies?cookie={{cookie}}", &json!({"cookie": cookie}))?;
-    let url = format!("{}", template_url);
-    let value = client.post(url.to_owned(), None).await?;
+pub async fn post_cookie_jar_v1_cookies(client: &RESTClient, body: Vec<Cookie>) -> Result<Value, Box<dyn Error>> {
+    let body = serde_json::to_value(&body)?;
+    let url = "/cookie-jar/v1/cookies";
+    let value = client.post(url.to_owned(), Some(body)).await?;
     Ok(value)
 }
 
@@ -4992,11 +4991,10 @@ pub async fn post_lol_account_verification_v1_send_activation_pin(client: &RESTC
     Ok(())
 }
 
-pub async fn post_lol_account_verification_v1_send_deactivation_pin(client: &RESTClient, send_deactivation_pin_request: String) -> Result<(), Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-account-verification/v1/sendDeactivationPin?SendDeactivationPinRequest={{send_deactivation_pin_request}}", &json!({"send_deactivation_pin_request": send_deactivation_pin_request}))?;
-    let url = format!("{}", template_url);
-    client.post(url.to_owned(), None).await?;
+pub async fn post_lol_account_verification_v1_send_deactivation_pin(client: &RESTClient, body: String) -> Result<(), Box<dyn Error>> {
+    let body = serde_json::to_value(&body)?;
+    let url = "/lol-account-verification/v1/sendDeactivationPin";
+    client.post(url.to_owned(), Some(body)).await?;
     Ok(())
 }
 
@@ -5015,18 +5013,16 @@ pub async fn post_lol_account_verification_v1_verify(client: &RESTClient, body: 
 }
 
 pub async fn post_lol_career_stats_v1_champion_stats_percentiles(client: &RESTClient, body: Vec<LolCareerStatsStatsQueryRequest>) -> Result<Vec<LolCareerStatsStatisticsPercentilesResponse>, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-career-stats/v1/champion-stats-percentiles?body={{body}}", &json!({"body": body}))?;
-    let url = format!("{}", template_url);
-    let value = client.post(url.to_owned(), None).await?;
+    let body = serde_json::to_value(&body)?;
+    let url = "/lol-career-stats/v1/champion-stats-percentiles";
+    let value = client.post(url.to_owned(), Some(body)).await?;
     Ok(serde_json::from_value::<Vec<LolCareerStatsStatisticsPercentilesResponse>>(value)?)
 }
 
 pub async fn post_lol_career_stats_v1_position_stats_percentiles(client: &RESTClient, body: Vec<LolCareerStatsPositionStatsQueryRequest>) -> Result<Vec<LolCareerStatsStatisticsPercentilesResponse>, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-career-stats/v1/position-stats-percentiles?body={{body}}", &json!({"body": body}))?;
-    let url = format!("{}", template_url);
-    let value = client.post(url.to_owned(), None).await?;
+    let body = serde_json::to_value(&body)?;
+    let url = "/lol-career-stats/v1/position-stats-percentiles";
+    let value = client.post(url.to_owned(), Some(body)).await?;
     Ok(serde_json::from_value::<Vec<LolCareerStatsStatisticsPercentilesResponse>>(value)?)
 }
 
@@ -6208,11 +6204,10 @@ pub async fn post_lol_lobby_v2_eligibility_self(client: &RESTClient) -> Result<V
     Ok(serde_json::from_value::<Vec<LolLobbyEligibility>>(value)?)
 }
 
-pub async fn post_lol_lobby_v2_eog_invitations(client: &RESTClient, invitations: Vec<LolLobbyLobbyInvitationDto>) -> Result<Vec<LolLobbyLobbyInvitationDto>, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-lobby/v2/eog-invitations?invitations={{invitations}}", &json!({"invitations": invitations}))?;
-    let url = format!("{}", template_url);
-    let value = client.post(url.to_owned(), None).await?;
+pub async fn post_lol_lobby_v2_eog_invitations(client: &RESTClient, body: Vec<LolLobbyLobbyInvitationDto>) -> Result<Vec<LolLobbyLobbyInvitationDto>, Box<dyn Error>> {
+    let body = serde_json::to_value(&body)?;
+    let url = "/lol-lobby/v2/eog-invitations";
+    let value = client.post(url.to_owned(), Some(body)).await?;
     Ok(serde_json::from_value::<Vec<LolLobbyLobbyInvitationDto>>(value)?)
 }
 
@@ -6223,11 +6218,10 @@ pub async fn post_lol_lobby_v2_lobby(client: &RESTClient, body: LolLobbyLobbyCha
     Ok(serde_json::from_value::<LolLobbyLobbyDto>(value)?)
 }
 
-pub async fn post_lol_lobby_v2_lobby_invitations(client: &RESTClient, invitations: Vec<LolLobbyLobbyInvitationDto>) -> Result<Vec<LolLobbyLobbyInvitationDto>, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-lobby/v2/lobby/invitations?invitations={{invitations}}", &json!({"invitations": invitations}))?;
-    let url = format!("{}", template_url);
-    let value = client.post(url.to_owned(), None).await?;
+pub async fn post_lol_lobby_v2_lobby_invitations(client: &RESTClient, body: Vec<LolLobbyLobbyInvitationDto>) -> Result<Vec<LolLobbyLobbyInvitationDto>, Box<dyn Error>> {
+    let body = serde_json::to_value(&body)?;
+    let url = "/lol-lobby/v2/lobby/invitations";
+    let value = client.post(url.to_owned(), Some(body)).await?;
     Ok(serde_json::from_value::<Vec<LolLobbyLobbyInvitationDto>>(value)?)
 }
 
@@ -6825,11 +6819,10 @@ pub async fn post_lol_rewards_v1_grants_by_grant_id_select(client: &RESTClient, 
     Ok(serde_json::from_value::<LolRewardsRewardGrant>(value)?)
 }
 
-pub async fn post_lol_rewards_v1_select_bulk(client: &RESTClient, selection: Vec<LolRewardsSelectionRequestDTO>) -> Result<HashMap<String, LolRewardsSelectGrantStatusResponse>, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-rewards/v1/select-bulk?selection={{selection}}", &json!({"selection": selection}))?;
-    let url = format!("{}", template_url);
-    let value = client.post(url.to_owned(), None).await?;
+pub async fn post_lol_rewards_v1_select_bulk(client: &RESTClient, body: Vec<LolRewardsSelectionRequestDTO>) -> Result<HashMap<String, LolRewardsSelectGrantStatusResponse>, Box<dyn Error>> {
+    let body = serde_json::to_value(&body)?;
+    let url = "/lol-rewards/v1/select-bulk";
+    let value = client.post(url.to_owned(), Some(body)).await?;
     Ok(serde_json::from_value::<HashMap<String, LolRewardsSelectGrantStatusResponse>>(value)?)
 }
 
