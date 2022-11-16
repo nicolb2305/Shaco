@@ -7,3 +7,4 @@ pub mod model;
 pub mod rest;
 mod utils;
 pub mod ws;
+pub mod api;

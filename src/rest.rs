@@ -41,13 +41,18 @@ impl RESTClient {
     pub async fn post(
         &self,
         endpoint: String,
-        body: serde_json::Value,
+        body: Option<serde_json::Value>,
     ) -> Result<serde_json::Value, reqwest::Error> {
-        let req: serde_json::Value = self
+        let mut req_build = self
             .reqwest_client
-            .post(format!("https://127.0.0.1:{}{}", self.port, endpoint))
-            .json(&body)
-            .send()
+            .post(format!("https://127.0.0.1:{}{}", self.port, endpoint));
+
+        req_build = match body {
+            Some(b) => req_build.json(&b),
+            None => req_build
+        };
+
+        let req = req_build.send()
             .await?
             .json()
             .await?;
@@ -59,13 +64,41 @@ impl RESTClient {
     pub async fn put(
         &self,
         endpoint: String,
-        body: serde_json::Value,
+        body: Option<serde_json::Value>,
     ) -> Result<serde_json::Value, reqwest::Error> {
-        let req: serde_json::Value = self
+        let mut req_build = self
             .reqwest_client
-            .put(format!("https://127.0.0.1:{}{}", self.port, endpoint))
-            .json(&body)
-            .send()
+            .put(format!("https://127.0.0.1:{}{}", self.port, endpoint));
+
+        req_build = match body {
+            Some(b) => req_build.json(&b),
+            None => req_build
+        };
+
+        let req = req_build.send()
+            .await?
+            .json()
+            .await?;
+
+        Ok(req)
+    }
+
+    /// Make a patch request to the specified endpoint
+    pub async fn patch(
+        &self,
+        endpoint: String,
+        body: Option<serde_json::Value>,
+    ) -> Result<serde_json::Value, reqwest::Error> {
+        let mut req_build = self
+            .reqwest_client
+            .patch(format!("https://127.0.0.1:{}{}", self.port, endpoint));
+
+        req_build = match body {
+            Some(b) => req_build.json(&b),
+            None => req_build
+        };
+
+        let req = req_build.send()
             .await?
             .json()
             .await?;
@@ -81,6 +114,22 @@ impl RESTClient {
         let req: serde_json::Value = self
             .reqwest_client
             .delete(format!("https://127.0.0.1:{}{}", self.port, endpoint))
+            .send()
+            .await?
+            .json()
+            .await?;
+
+        Ok(req)
+    }
+
+    /// Make a head request to the specified endpoint
+    pub async fn head(
+        &self,
+        endpoint: String,
+    ) -> Result<serde_json::Value, reqwest::Error> {
+        let req: serde_json::Value = self
+            .reqwest_client
+            .head(format!("https://127.0.0.1:{}{}", self.port, endpoint))
             .send()
             .await?
             .json()
