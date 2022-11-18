@@ -20841,6 +20841,10 @@ pub enum AggregationType {
     average = 2
 }
 
+impl Default for AggregationType {
+    fn default() -> Self { AggregationType::none }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum BindingAsyncState {
     None = 0,
@@ -20851,10 +20855,18 @@ pub enum BindingAsyncState {
     Failed = 5
 }
 
+impl Default for BindingAsyncState {
+    fn default() -> Self { BindingAsyncState::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum BindingHelpFormat {
     Full = 1,
     Epytext = 2
+}
+
+impl Default for BindingHelpFormat {
+    fn default() -> Self { BindingHelpFormat::Full }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20863,6 +20875,10 @@ pub enum CapacityEnum {
     MEDIUM = 1,
     HIGH = 2,
     FULL = 3
+}
+
+impl Default for CapacityEnum {
+    fn default() -> Self { CapacityEnum::LOW }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20881,12 +20897,20 @@ pub enum ClashRewardKeyType {
     TOC_STATE = 11
 }
 
+impl Default for ClashRewardKeyType {
+    fn default() -> Self { ClashRewardKeyType::TIER }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ClashRewardTime {
     NONE = 0,
     EOG = 1,
     EOB = 2,
     EOT = 3
+}
+
+impl Default for ClashRewardTime {
+    fn default() -> Self { ClashRewardTime::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20900,11 +20924,19 @@ pub enum ClashRewardType {
     TOC = 6
 }
 
+impl Default for ClashRewardType {
+    fn default() -> Self { ClashRewardType::TROPHY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ClientBracketMatchStatus {
     UPCOMING = 0,
     STARTED = 1,
     COMPLETED = 2
+}
+
+impl Default for ClientBracketMatchStatus {
+    fn default() -> Self { ClientBracketMatchStatus::UPCOMING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20914,10 +20946,18 @@ pub enum ClientConfigConfigReadinessEnum {
     Disabled = 2
 }
 
+impl Default for ClientConfigConfigReadinessEnum {
+    fn default() -> Self { ClientConfigConfigReadinessEnum::NotReady }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ClientConfigConfigType {
     public = 0,
     player = 1
+}
+
+impl Default for ClientConfigConfigType {
+    fn default() -> Self { ClientConfigConfigType::public }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20927,11 +20967,19 @@ pub enum ClientConfigDepInjectorEntitlementsUpdateType {
     Delete = 2
 }
 
+impl Default for ClientConfigDepInjectorEntitlementsUpdateType {
+    fn default() -> Self { ClientConfigDepInjectorEntitlementsUpdateType::Create }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ClientConfigUpdateType {
     Create = 0,
     Update = 1,
     Delete = 2
+}
+
+impl Default for ClientConfigUpdateType {
+    fn default() -> Self { ClientConfigUpdateType::Create }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21013,9 +21061,17 @@ pub enum ClientRequestError {
     WITHDRAW_LOCKOUT = 74
 }
 
+impl Default for ClientRequestError {
+    fn default() -> Self { ClientRequestError::ALREADY_IN_GAME }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ElevationAction {
     FixBrokenPermissions = 1
+}
+
+impl Default for ElevationAction {
+    fn default() -> Self { ElevationAction::FixBrokenPermissions }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21027,12 +21083,20 @@ pub enum ExternalPluginsAvailability {
     Error = 4
 }
 
+impl Default for ExternalPluginsAvailability {
+    fn default() -> Self { ExternalPluginsAvailability::NotAvailable }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum GameQueuesLcdsAllowSpectators {
     NONE = 0,
     LOBBYONLY = 1,
     DROPINONLY = 2,
     ALL = 3
+}
+
+impl Default for GameQueuesLcdsAllowSpectators {
+    fn default() -> Self { GameQueuesLcdsAllowSpectators::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21042,6 +21106,10 @@ pub enum InviteType {
     SUGGEST = 2,
     SELFJOIN = 3,
     NONE = 4
+}
+
+impl Default for InviteType {
+    fn default() -> Self { InviteType::FREEAGENT }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21054,11 +21122,19 @@ pub enum LCDSLoyaltyStateChangeNotificationCategory {
     disabled = 5
 }
 
+impl Default for LCDSLoyaltyStateChangeNotificationCategory {
+    fn default() -> Self { LCDSLoyaltyStateChangeNotificationCategory::legacy }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LcdsInvitationState {
     ACTIVE = 0,
     ON_HOLD = 1,
     REVOKED = 2
+}
+
+impl Default for LcdsInvitationState {
+    fn default() -> Self { LcdsInvitationState::ACTIVE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21074,11 +21150,19 @@ pub enum LcdsInviteeState {
     BANNED = 8
 }
 
+impl Default for LcdsInviteeState {
+    fn default() -> Self { LcdsInviteeState::CREATOR }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LcdsRemovalReason {
     KICKED = 0,
     DESTROYED = 1,
     PROGRESSED = 2
+}
+
+impl Default for LcdsRemovalReason {
+    fn default() -> Self { LcdsRemovalReason::KICKED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21089,6 +21173,10 @@ pub enum LogSeverityLevels {
     Always = 3
 }
 
+impl Default for LogSeverityLevels {
+    fn default() -> Self { LogSeverityLevels::Okay }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolAccountVerificationLoginSessionState {
     IN_PROGRESS = 0,
@@ -21097,11 +21185,19 @@ pub enum LolAccountVerificationLoginSessionState {
     ERROR = 3
 }
 
+impl Default for LolAccountVerificationLoginSessionState {
+    fn default() -> Self { LolAccountVerificationLoginSessionState::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolAntiAddictionPolicyType {
     antiAddictionWarning = 0,
     antiAddictionShutdown = 1,
     antiAddictionHeartbeat = 2
+}
+
+impl Default for LolAntiAddictionPolicyType {
+    fn default() -> Self { LolAntiAddictionPolicyType::antiAddictionWarning }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21114,6 +21210,10 @@ pub enum LolCareerStatsCareerStatsQueueType {
     blind3 = 5,
     rank3flex = 6,
     other = 7
+}
+
+impl Default for LolCareerStatsCareerStatsQueueType {
+    fn default() -> Self { LolCareerStatsCareerStatsQueueType::draft5 }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21131,6 +21231,10 @@ pub enum LolCareerStatsRankedTier {
     CHALLENGER = 10
 }
 
+impl Default for LolCareerStatsRankedTier {
+    fn default() -> Self { LolCareerStatsRankedTier::ALL }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolCareerStatsSummonersRiftPosition {
     ALL = 0,
@@ -21142,12 +21246,20 @@ pub enum LolCareerStatsSummonersRiftPosition {
     SUPPORT = 6
 }
 
+impl Default for LolCareerStatsSummonersRiftPosition {
+    fn default() -> Self { LolCareerStatsSummonersRiftPosition::ALL }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolCatalogInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
     F2P = 3
+}
+
+impl Default for LolCatalogInventoryOwnership {
+    fn default() -> Self { LolCatalogInventoryOwnership::OWNED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21158,6 +21270,10 @@ pub enum LolChallengesChallengeRequirementMappingName {
     ITEM = 3
 }
 
+impl Default for LolChallengesChallengeRequirementMappingName {
+    fn default() -> Self { LolChallengesChallengeRequirementMappingName::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChallengesClientState {
     Hidden = 0,
@@ -21165,6 +21281,10 @@ pub enum LolChallengesClientState {
     DarkHidden = 2,
     DarkDisabled = 3,
     Enabled = 4
+}
+
+impl Default for LolChallengesClientState {
+    fn default() -> Self { LolChallengesClientState::Hidden }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21185,11 +21305,19 @@ pub enum LolChallengesGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolChallengesGameflowPhase {
+    fn default() -> Self { LolChallengesGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChallengesNotificationDisplayType {
     NONE = 0,
     TOAST = 1,
     VIGNETTE = 2
+}
+
+impl Default for LolChallengesNotificationDisplayType {
+    fn default() -> Self { LolChallengesNotificationDisplayType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21207,6 +21335,10 @@ pub enum LolChallengesSource {
     NONE = 10
 }
 
+impl Default for LolChallengesSource {
+    fn default() -> Self { LolChallengesSource::CHALLENGES }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChampSelectChampSelectSwapState {
     AVAILABLE = 1,
@@ -21217,6 +21349,10 @@ pub enum LolChampSelectChampSelectSwapState {
     DECLINED = 6,
     CANCELLED = 7,
     ACCEPTED = 8
+}
+
+impl Default for LolChampSelectChampSelectSwapState {
+    fn default() -> Self { LolChampSelectChampSelectSwapState::AVAILABLE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21231,6 +21367,10 @@ pub enum LolChampSelectChampSelectTradeState {
     ACCEPTED = 8
 }
 
+impl Default for LolChampSelectChampSelectTradeState {
+    fn default() -> Self { LolChampSelectChampSelectTradeState::AVAILABLE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChampSelectLegacyChampSelectTradeState {
     AVAILABLE = 1,
@@ -21240,12 +21380,20 @@ pub enum LolChampSelectLegacyChampSelectTradeState {
     SENT = 5
 }
 
+impl Default for LolChampSelectLegacyChampSelectTradeState {
+    fn default() -> Self { LolChampSelectLegacyChampSelectTradeState::AVAILABLE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChampSelectLegacyGameflowGameDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
     TournamentDodged = 51
+}
+
+impl Default for LolChampSelectLegacyGameflowGameDodgeState {
+    fn default() -> Self { LolChampSelectLegacyGameflowGameDodgeState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21266,6 +21414,10 @@ pub enum LolChampSelectLegacyGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolChampSelectLegacyGameflowPhase {
+    fn default() -> Self { LolChampSelectLegacyGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChampSelectLegacyLoginSessionStates {
     IN_PROGRESS = 0,
@@ -21274,12 +21426,20 @@ pub enum LolChampSelectLegacyLoginSessionStates {
     ERROR = 3
 }
 
+impl Default for LolChampSelectLegacyLoginSessionStates {
+    fn default() -> Self { LolChampSelectLegacyLoginSessionStates::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChampionsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolChampionsLoginSessionStates {
+    fn default() -> Self { LolChampionsLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21292,6 +21452,10 @@ pub enum LolChampionsLoyaltyStatus {
     DISABLED = 5
 }
 
+impl Default for LolChampionsLoyaltyStatus {
+    fn default() -> Self { LolChampionsLoyaltyStatus::LEGACY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatAccountState {
     offline = 1,
@@ -21301,10 +21465,18 @@ pub enum LolChatAccountState {
     dnd = 5
 }
 
+impl Default for LolChatAccountState {
+    fn default() -> Self { LolChatAccountState::offline }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatAuthType {
     rsoCreate = 0,
     rsoRefresh = 1
+}
+
+impl Default for LolChatAuthType {
+    fn default() -> Self { LolChatAuthType::rsoCreate }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21315,11 +21487,19 @@ pub enum LolChatChatPlatformLoginSessionState {
     ERROR = 3
 }
 
+impl Default for LolChatChatPlatformLoginSessionState {
+    fn default() -> Self { LolChatChatPlatformLoginSessionState::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatChatSessionState {
     disconnected = 0,
     connecting = 1,
     connected = 2
+}
+
+impl Default for LolChatChatSessionState {
+    fn default() -> Self { LolChatChatSessionState::disconnected }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21329,10 +21509,18 @@ pub enum LolChatConfigReadinessEnum {
     Disabled = 2
 }
 
+impl Default for LolChatConfigReadinessEnum {
+    fn default() -> Self { LolChatConfigReadinessEnum::NotReady }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatConfigType {
     public = 0,
     player = 1
+}
+
+impl Default for LolChatConfigType {
+    fn default() -> Self { LolChatConfigType::public }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21342,10 +21530,18 @@ pub enum LolChatFriendRequestDirection {
     both = 2
 }
 
+impl Default for LolChatFriendRequestDirection {
+    fn default() -> Self { LolChatFriendRequestDirection::in_ }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatFriendSubscriptionType {
     pending_out = 0,
     pending_in = 1
+}
+
+impl Default for LolChatFriendSubscriptionType {
+    fn default() -> Self { LolChatFriendSubscriptionType::pending_out }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21366,6 +21562,10 @@ pub enum LolChatGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolChatGameflowPhase {
+    fn default() -> Self { LolChatGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatLeagueDivision {
     I = 0,
@@ -21376,6 +21576,10 @@ pub enum LolChatLeagueDivision {
     NA = 5
 }
 
+impl Default for LolChatLeagueDivision {
+    fn default() -> Self { LolChatLeagueDivision::I }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatLeagueQueueType {
     NONE = 0,
@@ -21383,6 +21587,10 @@ pub enum LolChatLeagueQueueType {
     RANKED_FLEX_SR = 2,
     RANKED_FLEX_TT = 3,
     RANKED_TFT = 4
+}
+
+impl Default for LolChatLeagueQueueType {
+    fn default() -> Self { LolChatLeagueQueueType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21399,12 +21607,20 @@ pub enum LolChatLeagueTier {
     CHALLENGER = 9
 }
 
+impl Default for LolChatLeagueTier {
+    fn default() -> Self { LolChatLeagueTier::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatMessageType {
     chat = 0,
     groupchat = 1,
     dm = 2,
     system = 3
+}
+
+impl Default for LolChatMessageType {
+    fn default() -> Self { LolChatMessageType::chat }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21414,12 +21630,20 @@ pub enum LolChatMuteType {
     SYSTEM_MUTE = 2
 }
 
+impl Default for LolChatMuteType {
+    fn default() -> Self { LolChatMuteType::PLAYER_MUTE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
     AllAllowed = 3
+}
+
+impl Default for LolChatQueueCustomGameSpectatorPolicy {
+    fn default() -> Self { LolChatQueueCustomGameSpectatorPolicy::NotAllowed }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21431,16 +21655,28 @@ pub enum LolChatSessionState {
     shuttingdown = 4
 }
 
+impl Default for LolChatSessionState {
+    fn default() -> Self { LolChatSessionState::initializing }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashClashState {
     Disabled = 0,
     Enabled = 1
 }
 
+impl Default for LolClashClashState {
+    fn default() -> Self { LolClashClashState::Disabled }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashClashVisibility {
     Hidden = 0,
     Visible = 1
+}
+
+impl Default for LolClashClashVisibility {
+    fn default() -> Self { LolClashClashVisibility::Hidden }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21451,6 +21687,10 @@ pub enum LolClashFoundationError {
     GAMEFLOW_UNAVAILABLE = 3,
     LOL_INVENTORY_NOT_READY = 4,
     INVALID_SIMPLE_STATE_FLAG = 5
+}
+
+impl Default for LolClashFoundationError {
+    fn default() -> Self { LolClashFoundationError::CLASH_NOT_INITIALIZED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21471,11 +21711,19 @@ pub enum LolClashGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolClashGameflowPhase {
+    fn default() -> Self { LolClashGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashKdaClassification {
     LOW = 0,
     AVERAGE = 1,
     HIGH = 2
+}
+
+impl Default for LolClashKdaClassification {
+    fn default() -> Self { LolClashKdaClassification::LOW }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21486,12 +21734,20 @@ pub enum LolClashLoginSessionState {
     ERROR = 3
 }
 
+impl Default for LolClashLoginSessionState {
+    fn default() -> Self { LolClashLoginSessionState::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashMatchmakingDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
     TournamentDodged = 51
+}
+
+impl Default for LolClashMatchmakingDodgeState {
+    fn default() -> Self { LolClashMatchmakingDodgeState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21501,11 +21757,19 @@ pub enum LolClashMatchmakingDodgeWarning {
     Penalty = 2
 }
 
+impl Default for LolClashMatchmakingDodgeWarning {
+    fn default() -> Self { LolClashMatchmakingDodgeWarning::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashMatchmakingReadyCheckResponse {
     None = 48,
     Accepted = 49,
     Declined = 50
+}
+
+impl Default for LolClashMatchmakingReadyCheckResponse {
+    fn default() -> Self { LolClashMatchmakingReadyCheckResponse::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21516,6 +21780,10 @@ pub enum LolClashMatchmakingReadyCheckState {
     StrangerNotReady = 3,
     PartyNotReady = 4,
     Error = 5
+}
+
+impl Default for LolClashMatchmakingReadyCheckState {
+    fn default() -> Self { LolClashMatchmakingReadyCheckState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21563,6 +21831,10 @@ pub enum LolClashNotifyReason {
     TEAMMATE_UNBAN = 40
 }
 
+impl Default for LolClashNotifyReason {
+    fn default() -> Self { LolClashNotifyReason::SUGGESTION }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashPlayerState {
     NO_ROSTER = 0,
@@ -21572,6 +21844,10 @@ pub enum LolClashPlayerState {
     ELIMINATED = 4
 }
 
+impl Default for LolClashPlayerState {
+    fn default() -> Self { LolClashPlayerState::NO_ROSTER }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashPresenceState {
     NONE = 0,
@@ -21579,11 +21855,19 @@ pub enum LolClashPresenceState {
     SCOUTING = 2
 }
 
+impl Default for LolClashPresenceState {
+    fn default() -> Self { LolClashPresenceState::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
     DoesntMeetRequirements = 2
+}
+
+impl Default for LolClashQueueAvailability {
+    fn default() -> Self { LolClashQueueAvailability::Available }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21595,6 +21879,10 @@ pub enum LolClashQueueGameCategory {
     Alpha = 4
 }
 
+impl Default for LolClashQueueGameCategory {
+    fn default() -> Self { LolClashQueueGameCategory::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashRosterMemberState {
     DECLINED = 0,
@@ -21602,6 +21890,10 @@ pub enum LolClashRosterMemberState {
     NOT_READY = 2,
     FORCED_NOT_READY = 3,
     READY = 4
+}
+
+impl Default for LolClashRosterMemberState {
+    fn default() -> Self { LolClashRosterMemberState::DECLINED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21654,10 +21946,18 @@ pub enum LolClashRosterNotifyReason {
     GAME_RESCHEDULED = 45
 }
 
+impl Default for LolClashRosterNotifyReason {
+    fn default() -> Self { LolClashRosterNotifyReason::ROSTER_SET_TICKET }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashSimpleStateStatus {
     UNACKNOWLEDGED = 0,
     ACKNOWLEDGED = 1
+}
+
+impl Default for LolClashSimpleStateStatus {
+    fn default() -> Self { LolClashSimpleStateStatus::UNACKNOWLEDGED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21672,6 +21972,10 @@ pub enum LolClashTournamentNotifyReason {
     UPDATE_STATUS = 7
 }
 
+impl Default for LolClashTournamentNotifyReason {
+    fn default() -> Self { LolClashTournamentNotifyReason::NEW_TOURNAMENT }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashTournamentState {
     UPCOMING = 0,
@@ -21682,12 +21986,20 @@ pub enum LolClashTournamentState {
     RESULTS = 5
 }
 
+impl Default for LolClashTournamentState {
+    fn default() -> Self { LolClashTournamentState::UPCOMING }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolCollectionsCollectionsSummonerBackdropType {
     default = 0,
     summoner_icon = 1,
     highest_mastery = 2,
     specified_skin = 3
+}
+
+impl Default for LolCollectionsCollectionsSummonerBackdropType {
+    fn default() -> Self { LolCollectionsCollectionsSummonerBackdropType::default }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21698,12 +22010,20 @@ pub enum LolCollectionsItemOwnershipType {
     F2P = 3
 }
 
+impl Default for LolCollectionsItemOwnershipType {
+    fn default() -> Self { LolCollectionsItemOwnershipType::OWNED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolCollectionsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolCollectionsLoginSessionStates {
+    fn default() -> Self { LolCollectionsLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21724,12 +22044,20 @@ pub enum LolContentTargetingGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolContentTargetingGameflowPhase {
+    fn default() -> Self { LolContentTargetingGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolContentTargetingLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolContentTargetingLoginSessionState {
+    fn default() -> Self { LolContentTargetingLoginSessionState::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21739,6 +22067,10 @@ pub enum LolContentTargetingQueueGameCategory {
     PvP = 2,
     VersusAi = 3,
     Alpha = 4
+}
+
+impl Default for LolContentTargetingQueueGameCategory {
+    fn default() -> Self { LolContentTargetingQueueGameCategory::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21751,6 +22083,10 @@ pub enum LolContentTargetingRankedDivision {
     V = 5
 }
 
+impl Default for LolContentTargetingRankedDivision {
+    fn default() -> Self { LolContentTargetingRankedDivision::NA }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolContentTargetingRankedQueue {
     NONE = 0,
@@ -21758,6 +22094,10 @@ pub enum LolContentTargetingRankedQueue {
     RANKED_FLEX_SR = 2,
     RANKED_FLEX_TT = 3,
     RANKED_TFT = 4
+}
+
+impl Default for LolContentTargetingRankedQueue {
+    fn default() -> Self { LolContentTargetingRankedQueue::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21772,6 +22112,10 @@ pub enum LolContentTargetingRankedTier {
     MASTER = 7,
     GRANDMASTER = 8,
     CHALLENGER = 9
+}
+
+impl Default for LolContentTargetingRankedTier {
+    fn default() -> Self { LolContentTargetingRankedTier::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21792,6 +22136,10 @@ pub enum LolEndOfGameGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolEndOfGameGameflowPhase {
+    fn default() -> Self { LolEndOfGameGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEndOfGameLoginSessionStates {
     IN_PROGRESS = 0,
@@ -21800,11 +22148,19 @@ pub enum LolEndOfGameLoginSessionStates {
     ERROR = 3
 }
 
+impl Default for LolEndOfGameLoginSessionStates {
+    fn default() -> Self { LolEndOfGameLoginSessionStates::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEndOfGameReportRecipientMode {
     Legacy = 0,
     Game_Agnostic = 1,
     Combined = 2
+}
+
+impl Default for LolEndOfGameReportRecipientMode {
+    fn default() -> Self { LolEndOfGameReportRecipientMode::Legacy }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21825,10 +22181,18 @@ pub enum LolEsportStreamNotificationsGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolEsportStreamNotificationsGameflowPhase {
+    fn default() -> Self { LolEsportStreamNotificationsGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopCelebrationType {
     NONE = 0,
     TOAST = 1
+}
+
+impl Default for LolEventShopCelebrationType {
+    fn default() -> Self { LolEventShopCelebrationType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21839,12 +22203,20 @@ pub enum LolEventShopGrantStatus {
     FAILED = 3
 }
 
+impl Default for LolEventShopGrantStatus {
+    fn default() -> Self { LolEventShopGrantStatus::PENDING_FULFILLMENT }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
     F2P = 3
+}
+
+impl Default for LolEventShopInventoryOwnership {
+    fn default() -> Self { LolEventShopInventoryOwnership::OWNED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21855,12 +22227,20 @@ pub enum LolEventShopItemOwnershipType {
     F2P = 3
 }
 
+impl Default for LolEventShopItemOwnershipType {
+    fn default() -> Self { LolEventShopItemOwnershipType::OWNED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolEventShopLoginSessionStates {
+    fn default() -> Self { LolEventShopLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21871,6 +22251,10 @@ pub enum LolEventShopLoyaltyStatus {
     CHANGE = 3,
     REVOKE = 4,
     DISABLED = 5
+}
+
+impl Default for LolEventShopLoyaltyStatus {
+    fn default() -> Self { LolEventShopLoyaltyStatus::LEGACY }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21884,11 +22268,19 @@ pub enum LolEventShopOfferCategory {
     Currencies = 6
 }
 
+impl Default for LolEventShopOfferCategory {
+    fn default() -> Self { LolEventShopOfferCategory::Featured }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopOfferPromotionType {
     kNone = 0,
     kFeatured = 1,
     kFeaturedHighlighted = 2
+}
+
+impl Default for LolEventShopOfferPromotionType {
+    fn default() -> Self { LolEventShopOfferPromotionType::kNone }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21900,10 +22292,18 @@ pub enum LolEventShopOfferStates {
     kPurchasing = 4
 }
 
+impl Default for LolEventShopOfferStates {
+    fn default() -> Self { LolEventShopOfferStates::kOwned }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopPassOwnershipTypes {
     Unowned = 0,
     Purchased = 1
+}
+
+impl Default for LolEventShopPassOwnershipTypes {
+    fn default() -> Self { LolEventShopPassOwnershipTypes::Unowned }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21914,11 +22314,19 @@ pub enum LolEventShopPurchaseOfferOrderStates {
     SUCCESS = 3
 }
 
+impl Default for LolEventShopPurchaseOfferOrderStates {
+    fn default() -> Self { LolEventShopPurchaseOfferOrderStates::NOT_STARTED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopRewardStatus {
     PENDING = 0,
     FULFILLED = 1,
     FAILED = 2
+}
+
+impl Default for LolEventShopRewardStatus {
+    fn default() -> Self { LolEventShopRewardStatus::PENDING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21928,11 +22336,19 @@ pub enum LolEventShopRewardStrategy {
     SELECTION = 2
 }
 
+impl Default for LolEventShopRewardStrategy {
+    fn default() -> Self { LolEventShopRewardStrategy::ALL }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopRewardTrackItemHeaderType {
     PREMIUM = 0,
     FREE = 1,
     NONE = 2
+}
+
+impl Default for LolEventShopRewardTrackItemHeaderType {
+    fn default() -> Self { LolEventShopRewardTrackItemHeaderType::PREMIUM }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21941,6 +22357,10 @@ pub enum LolEventShopRewardTrackItemStates {
     Unlocked = 1,
     Unselected = 2,
     Selected = 3
+}
+
+impl Default for LolEventShopRewardTrackItemStates {
+    fn default() -> Self { LolEventShopRewardTrackItemStates::Locked }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21952,10 +22372,18 @@ pub enum LolEventShopRewardTrackItemTag {
     Multiple = 4
 }
 
+impl Default for LolEventShopRewardTrackItemTag {
+    fn default() -> Self { LolEventShopRewardTrackItemTag::Rare }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopSelectGrantStatusResponse {
     SELECTED = 0,
     FAILED = 1
+}
+
+impl Default for LolEventShopSelectGrantStatusResponse {
+    fn default() -> Self { LolEventShopSelectGrantStatusResponse::SELECTED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21963,6 +22391,10 @@ pub enum LolEventShopTokenUpsellLockedType {
     UNASSIGNED = 0,
     UNLOCKED = 1,
     LOCKED = 2
+}
+
+impl Default for LolEventShopTokenUpsellLockedType {
+    fn default() -> Self { LolEventShopTokenUpsellLockedType::UNASSIGNED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21997,6 +22429,10 @@ pub enum LolFeaturedModesEligibilityRestrictionCode {
     UnknownRestriction = 27
 }
 
+impl Default for LolFeaturedModesEligibilityRestrictionCode {
+    fn default() -> Self { LolFeaturedModesEligibilityRestrictionCode::QueueDisabled }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolFeaturedModesGameflowAvailabilityState {
     Available = 0,
@@ -22006,6 +22442,10 @@ pub enum LolFeaturedModesGameflowAvailabilityState {
     PlayerBanned = 4,
     InGameFlow = 5,
     Configuration = 6
+}
+
+impl Default for LolFeaturedModesGameflowAvailabilityState {
+    fn default() -> Self { LolFeaturedModesGameflowAvailabilityState::Available }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22026,6 +22466,10 @@ pub enum LolFeaturedModesGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolFeaturedModesGameflowPhase {
+    fn default() -> Self { LolFeaturedModesGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolFeaturedModesLoginSessionStates {
     IN_PROGRESS = 0,
@@ -22034,11 +22478,19 @@ pub enum LolFeaturedModesLoginSessionStates {
     ERROR = 3
 }
 
+impl Default for LolFeaturedModesLoginSessionStates {
+    fn default() -> Self { LolFeaturedModesLoginSessionStates::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolFeaturedModesQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
     DoesntMeetRequirements = 2
+}
+
+impl Default for LolFeaturedModesQueueAvailability {
+    fn default() -> Self { LolFeaturedModesQueueAvailability::Available }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22050,12 +22502,20 @@ pub enum LolFeaturedModesQueueGameCategory {
     Alpha = 4
 }
 
+impl Default for LolFeaturedModesQueueGameCategory {
+    fn default() -> Self { LolFeaturedModesQueueGameCategory::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameQueuesLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolGameQueuesLoginSessionStates {
+    fn default() -> Self { LolGameQueuesLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22065,12 +22525,20 @@ pub enum LolGameQueuesQueueAvailability {
     DoesntMeetRequirements = 2
 }
 
+impl Default for LolGameQueuesQueueAvailability {
+    fn default() -> Self { LolGameQueuesQueueAvailability::Available }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameQueuesQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
     AllAllowed = 3
+}
+
+impl Default for LolGameQueuesQueueCustomGameSpectatorPolicy {
+    fn default() -> Self { LolGameQueuesQueueCustomGameSpectatorPolicy::NotAllowed }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22082,12 +22550,20 @@ pub enum LolGameQueuesQueueGameCategory {
     Alpha = 4
 }
 
+impl Default for LolGameQueuesQueueGameCategory {
+    fn default() -> Self { LolGameQueuesQueueGameCategory::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameSettingsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolGameSettingsLoginSessionStates {
+    fn default() -> Self { LolGameSettingsLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22101,12 +22577,20 @@ pub enum LolGameflowGameflowAvailabilityState {
     EligibilityInfoMissing = 6
 }
 
+impl Default for LolGameflowGameflowAvailabilityState {
+    fn default() -> Self { LolGameflowGameflowAvailabilityState::Available }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameflowGameflowGameDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
     TournamentDodged = 51
+}
+
+impl Default for LolGameflowGameflowGameDodgeState {
+    fn default() -> Self { LolGameflowGameflowGameDodgeState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22127,6 +22611,10 @@ pub enum LolGameflowGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolGameflowGameflowPhase {
+    fn default() -> Self { LolGameflowGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameflowGameflowWatchPhase {
     None = 0,
@@ -22135,12 +22623,20 @@ pub enum LolGameflowGameflowWatchPhase {
     WatchFailedToLaunch = 3
 }
 
+impl Default for LolGameflowGameflowWatchPhase {
+    fn default() -> Self { LolGameflowGameflowWatchPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameflowLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolGameflowLoginSessionStates {
+    fn default() -> Self { LolGameflowLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22152,11 +22648,19 @@ pub enum LolGameflowPatcherProductStateAction {
     Migrating = 4
 }
 
+impl Default for LolGameflowPatcherProductStateAction {
+    fn default() -> Self { LolGameflowPatcherProductStateAction::Idle }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameflowQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
     DoesntMeetRequirements = 2
+}
+
+impl Default for LolGameflowQueueAvailability {
+    fn default() -> Self { LolGameflowQueueAvailability::Available }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22165,6 +22669,10 @@ pub enum LolGameflowQueueCustomGameSpectatorPolicy {
     LobbyAllowed = 1,
     FriendsAllowed = 2,
     AllAllowed = 3
+}
+
+impl Default for LolGameflowQueueCustomGameSpectatorPolicy {
+    fn default() -> Self { LolGameflowQueueCustomGameSpectatorPolicy::NotAllowed }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22176,6 +22684,10 @@ pub enum LolGameflowQueueGameCategory {
     Alpha = 4
 }
 
+impl Default for LolGameflowQueueGameCategory {
+    fn default() -> Self { LolGameflowQueueGameCategory::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGeoinfoLoginSessionState {
     IN_PROGRESS = 0,
@@ -22184,12 +22696,20 @@ pub enum LolGeoinfoLoginSessionState {
     ERROR = 3
 }
 
+impl Default for LolGeoinfoLoginSessionState {
+    fn default() -> Self { LolGeoinfoLoginSessionState::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolHeartbeatLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolHeartbeatLoginSessionStates {
+    fn default() -> Self { LolHeartbeatLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22210,12 +22730,20 @@ pub enum LolHoneyfruitGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolHoneyfruitGameflowPhase {
+    fn default() -> Self { LolHoneyfruitGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolHoneyfruitHoneyfruitActionType {
     dismiss = 0,
     dismiss_temporarily = 1,
     dismiss_permanently = 2,
     link = 3
+}
+
+impl Default for LolHoneyfruitHoneyfruitActionType {
+    fn default() -> Self { LolHoneyfruitHoneyfruitActionType::dismiss }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22230,6 +22758,10 @@ pub enum LolHoneyfruitHoneyfruitLinkingFailureReason {
     UNHANDLED_SERVER_SIDE_ERROR = 7
 }
 
+impl Default for LolHoneyfruitHoneyfruitLinkingFailureReason {
+    fn default() -> Self { LolHoneyfruitHoneyfruitLinkingFailureReason::ALREADY_LINKED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolHoneyfruitHoneyfruitLinkingState {
     hidden = 0,
@@ -22242,12 +22774,20 @@ pub enum LolHoneyfruitHoneyfruitLinkingState {
     linked = 7
 }
 
+impl Default for LolHoneyfruitHoneyfruitLinkingState {
+    fn default() -> Self { LolHoneyfruitHoneyfruitLinkingState::hidden }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolHoneyfruitHoneyfruitLinkingStatusError {
     no_error = 0,
     not_signed_in = 1,
     service_unavailable = 2,
     unknown_error = 3
+}
+
+impl Default for LolHoneyfruitHoneyfruitLinkingStatusError {
+    fn default() -> Self { LolHoneyfruitHoneyfruitLinkingStatusError::no_error }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22259,6 +22799,10 @@ pub enum LolHoneyfruitHoneyfruitPublisher {
     vng = 4
 }
 
+impl Default for LolHoneyfruitHoneyfruitPublisher {
+    fn default() -> Self { LolHoneyfruitHoneyfruitPublisher::garena }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolHoneyfruitV1ResponseType {
     auth = 0,
@@ -22267,6 +22811,10 @@ pub enum LolHoneyfruitV1ResponseType {
     multifactor = 3,
     success = 4,
     error = 5
+}
+
+impl Default for LolHoneyfruitV1ResponseType {
+    fn default() -> Self { LolHoneyfruitV1ResponseType::auth }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22287,12 +22835,20 @@ pub enum LolHonorV2GameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolHonorV2GameflowPhase {
+    fn default() -> Self { LolHonorV2GameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolHonorV2LoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolHonorV2LoginSessionStates {
+    fn default() -> Self { LolHonorV2LoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22303,12 +22859,20 @@ pub enum LolInventoryItemOwnershipType {
     F2P = 3
 }
 
+impl Default for LolInventoryItemOwnershipType {
+    fn default() -> Self { LolInventoryItemOwnershipType::OWNED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolInventoryLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolInventoryLoginSessionStates {
+    fn default() -> Self { LolInventoryLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22321,12 +22885,20 @@ pub enum LolInventoryLoyaltyStatus {
     DISABLED = 5
 }
 
+impl Default for LolInventoryLoyaltyStatus {
+    fn default() -> Self { LolInventoryLoyaltyStatus::LEGACY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolItemSetsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolItemSetsLoginSessionStates {
+    fn default() -> Self { LolItemSetsLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22337,11 +22909,19 @@ pub enum LolKrShutdownLawPolicyType {
     disableMatchMaking = 3
 }
 
+impl Default for LolKrShutdownLawPolicyType {
+    fn default() -> Self { LolKrShutdownLawPolicyType::shutdown }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolKrShutdownLawShutdownLawStatus {
     NONE = 0,
     WARNING = 1,
     CUT_OFF = 2
+}
+
+impl Default for LolKrShutdownLawShutdownLawStatus {
+    fn default() -> Self { LolKrShutdownLawShutdownLawStatus::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22351,6 +22931,10 @@ pub enum LolLeagueSessionLeagueSessionStatus {
     EXPIRED = 2,
     DUPLICATED = 3,
     ANTI_ADDICTION_EXPIRED = 4
+}
+
+impl Default for LolLeagueSessionLeagueSessionStatus {
+    fn default() -> Self { LolLeagueSessionLeagueSessionStatus::UNINITIALIZED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22364,10 +22948,18 @@ pub enum LolLeaverBusterLeaverBusterNotificationType {
     OnLockoutWarning = 6
 }
 
+impl Default for LolLeaverBusterLeaverBusterNotificationType {
+    fn default() -> Self { LolLeaverBusterLeaverBusterNotificationType::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLicenseAgreementLicenseAgreementType {
     PrivacyNotice = 0,
     TermsOfUse = 1
+}
+
+impl Default for LolLicenseAgreementLicenseAgreementType {
+    fn default() -> Self { LolLicenseAgreementLicenseAgreementType::PrivacyNotice }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22375,6 +22967,10 @@ pub enum LolLicenseAgreementLicenseServeLocation {
     Preparing = 0,
     Local = 1,
     External = 2
+}
+
+impl Default for LolLicenseAgreementLicenseServeLocation {
+    fn default() -> Self { LolLicenseAgreementLicenseServeLocation::Preparing }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22395,12 +22991,20 @@ pub enum LolLoadoutsGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolLoadoutsGameflowPhase {
+    fn default() -> Self { LolLoadoutsGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLoadoutsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolLoadoutsLoginSessionStates {
+    fn default() -> Self { LolLoadoutsLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22444,6 +23048,10 @@ pub enum LolLobbyEligibilityRestrictionCode {
     MmrStandardDeviationTooLarge = 36
 }
 
+impl Default for LolLobbyEligibilityRestrictionCode {
+    fn default() -> Self { LolLobbyEligibilityRestrictionCode::QueueDisabled }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyGameflowPhase {
     None = 0,
@@ -22462,6 +23070,10 @@ pub enum LolLobbyGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolLobbyGameflowPhase {
+    fn default() -> Self { LolLobbyGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyGameflowSampleTag {
     Unregistered = 0,
@@ -22472,11 +23084,19 @@ pub enum LolLobbyGameflowSampleTag {
     InventoryTokenMissing = 5
 }
 
+impl Default for LolLobbyGameflowSampleTag {
+    fn default() -> Self { LolLobbyGameflowSampleTag::Unregistered }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyInvitationType {
     invalid = 0,
     lobby = 1,
     party = 2
+}
+
+impl Default for LolLobbyInvitationType {
+    fn default() -> Self { LolLobbyInvitationType::invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22488,6 +23108,10 @@ pub enum LolLobbyLobbyBotDifficulty {
     UBER = 3,
     TUTORIAL = 4,
     INTRO = 5
+}
+
+impl Default for LolLobbyLobbyBotDifficulty {
+    fn default() -> Self { LolLobbyLobbyBotDifficulty::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22502,6 +23126,10 @@ pub enum LolLobbyLobbyInvitationState {
     Error = 7
 }
 
+impl Default for LolLobbyLobbyInvitationState {
+    fn default() -> Self { LolLobbyLobbyInvitationState::Requested }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyLobbyMatchmakingSearchState {
     Invalid = 0,
@@ -22514,11 +23142,19 @@ pub enum LolLobbyLobbyMatchmakingSearchState {
     ServiceShutdown = 7
 }
 
+impl Default for LolLobbyLobbyMatchmakingSearchState {
+    fn default() -> Self { LolLobbyLobbyMatchmakingSearchState::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyLobbyPartyRewardType {
     Ip = 1,
     Icon = 2,
     None = 9999
+}
+
+impl Default for LolLobbyLobbyPartyRewardType {
+    fn default() -> Self { LolLobbyLobbyPartyRewardType::Ip }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22534,12 +23170,20 @@ pub enum LolLobbyLobbyRemovedFromGameReason {
     ServiceShutdown = 8
 }
 
+impl Default for LolLobbyLobbyRemovedFromGameReason {
+    fn default() -> Self { LolLobbyLobbyRemovedFromGameReason::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolLobbyLoginSessionStates {
+    fn default() -> Self { LolLobbyLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22549,11 +23193,19 @@ pub enum LolLobbyMatchmakingDodgeState {
     StrangerDodged = 50
 }
 
+impl Default for LolLobbyMatchmakingDodgeState {
+    fn default() -> Self { LolLobbyMatchmakingDodgeState::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyPartyEogStatusCategory {
     kLeft = 0,
     kPlayAgain = 1,
     kOnEog = 2
+}
+
+impl Default for LolLobbyPartyEogStatusCategory {
+    fn default() -> Self { LolLobbyPartyEogStatusCategory::kLeft }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22567,12 +23219,20 @@ pub enum LolLobbyPartyMemberRoleEnum {
     NONE = 6
 }
 
+impl Default for LolLobbyPartyMemberRoleEnum {
+    fn default() -> Self { LolLobbyPartyMemberRoleEnum::LEADER }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyPlayerUpdateType {
     None = 0,
     Direct = 1,
     ServiceProxy = 2,
     RMS = 3
+}
+
+impl Default for LolLobbyPlayerUpdateType {
+    fn default() -> Self { LolLobbyPlayerUpdateType::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22582,12 +23242,20 @@ pub enum LolLobbyQueueAvailability {
     DoesntMeetRequirements = 2
 }
 
+impl Default for LolLobbyQueueAvailability {
+    fn default() -> Self { LolLobbyQueueAvailability::Available }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
     AllAllowed = 3
+}
+
+impl Default for LolLobbyQueueCustomGameSpectatorPolicy {
+    fn default() -> Self { LolLobbyQueueCustomGameSpectatorPolicy::NotAllowed }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22599,6 +23267,10 @@ pub enum LolLobbyQueueGameCategory {
     Alpha = 4
 }
 
+impl Default for LolLobbyQueueGameCategory {
+    fn default() -> Self { LolLobbyQueueGameCategory::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderChampSelectSwapState {
     AVAILABLE = 1,
@@ -22608,6 +23280,10 @@ pub enum LolLobbyTeamBuilderChampSelectSwapState {
     SENT = 5
 }
 
+impl Default for LolLobbyTeamBuilderChampSelectSwapState {
+    fn default() -> Self { LolLobbyTeamBuilderChampSelectSwapState::AVAILABLE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderChampSelectTradeState {
     AVAILABLE = 1,
@@ -22615,6 +23291,10 @@ pub enum LolLobbyTeamBuilderChampSelectTradeState {
     INVALID = 3,
     RECEIVED = 4,
     SENT = 5
+}
+
+impl Default for LolLobbyTeamBuilderChampSelectTradeState {
+    fn default() -> Self { LolLobbyTeamBuilderChampSelectTradeState::AVAILABLE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22630,12 +23310,20 @@ pub enum LolLobbyTeamBuilderLobbyRemovedFromGameReason {
     ServiceShutdown = 8
 }
 
+impl Default for LolLobbyTeamBuilderLobbyRemovedFromGameReason {
+    fn default() -> Self { LolLobbyTeamBuilderLobbyRemovedFromGameReason::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolLobbyTeamBuilderLoginSessionState {
+    fn default() -> Self { LolLobbyTeamBuilderLoginSessionState::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22646,6 +23334,10 @@ pub enum LolLobbyTeamBuilderMatchmakingDodgeState {
     TournamentDodged = 51
 }
 
+impl Default for LolLobbyTeamBuilderMatchmakingDodgeState {
+    fn default() -> Self { LolLobbyTeamBuilderMatchmakingDodgeState::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderMatchmakingDodgeWarning {
     None = 0,
@@ -22653,11 +23345,19 @@ pub enum LolLobbyTeamBuilderMatchmakingDodgeWarning {
     Penalty = 2
 }
 
+impl Default for LolLobbyTeamBuilderMatchmakingDodgeWarning {
+    fn default() -> Self { LolLobbyTeamBuilderMatchmakingDodgeWarning::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderMatchmakingReadyCheckResponse {
     None = 48,
     Accepted = 49,
     Declined = 50
+}
+
+impl Default for LolLobbyTeamBuilderMatchmakingReadyCheckResponse {
+    fn default() -> Self { LolLobbyTeamBuilderMatchmakingReadyCheckResponse::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22668,6 +23368,10 @@ pub enum LolLobbyTeamBuilderMatchmakingReadyCheckState {
     StrangerNotReady = 3,
     PartyNotReady = 4,
     Error = 5
+}
+
+impl Default for LolLobbyTeamBuilderMatchmakingReadyCheckState {
+    fn default() -> Self { LolLobbyTeamBuilderMatchmakingReadyCheckState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22682,11 +23386,19 @@ pub enum LolLobbyTeamBuilderMatchmakingSearchState {
     ServiceShutdown = 7
 }
 
+impl Default for LolLobbyTeamBuilderMatchmakingSearchState {
+    fn default() -> Self { LolLobbyTeamBuilderMatchmakingSearchState::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
     DoesntMeetRequirements = 2
+}
+
+impl Default for LolLobbyTeamBuilderQueueAvailability {
+    fn default() -> Self { LolLobbyTeamBuilderQueueAvailability::Available }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22696,6 +23408,10 @@ pub enum LolLobbyTeamBuilderQueueGameCategory {
     PvP = 2,
     VersusAi = 3,
     Alpha = 4
+}
+
+impl Default for LolLobbyTeamBuilderQueueGameCategory {
+    fn default() -> Self { LolLobbyTeamBuilderQueueGameCategory::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22708,6 +23424,10 @@ pub enum LolLoginAccountStateType {
     GENERATING = 6
 }
 
+impl Default for LolLoginAccountStateType {
+    fn default() -> Self { LolLoginAccountStateType::CREATING }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLoginConfigReadinessEnum {
     NotReady = 0,
@@ -22715,10 +23435,18 @@ pub enum LolLoginConfigReadinessEnum {
     Disabled = 2
 }
 
+impl Default for LolLoginConfigReadinessEnum {
+    fn default() -> Self { LolLoginConfigReadinessEnum::NotReady }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLoginConfigType {
     public = 0,
     player = 1
+}
+
+impl Default for LolLoginConfigType {
+    fn default() -> Self { LolLoginConfigType::public }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22730,12 +23458,20 @@ pub enum LolLoginLeagueSessionStatus {
     ANTI_ADDICTION_EXPIRED = 4
 }
 
+impl Default for LolLoginLeagueSessionStatus {
+    fn default() -> Self { LolLoginLeagueSessionStatus::UNINITIALIZED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLoginLoginConnectionMode {
     Preparing = 0,
     Legacy = 1,
     Partner = 2,
     RiotClient = 3
+}
+
+impl Default for LolLoginLoginConnectionMode {
+    fn default() -> Self { LolLoginLoginConnectionMode::Preparing }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22746,10 +23482,18 @@ pub enum LolLoginLoginSessionStates {
     ERROR = 3
 }
 
+impl Default for LolLoginLoginSessionStates {
+    fn default() -> Self { LolLoginLoginSessionStates::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootCelebrationType {
     NONE = 0,
     TOAST = 1
+}
+
+impl Default for LolLootCelebrationType {
+    fn default() -> Self { LolLootCelebrationType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22770,6 +23514,10 @@ pub enum LolLootGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolLootGameflowPhase {
+    fn default() -> Self { LolLootGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootGrantStatus {
     PENDING_FULFILLMENT = 0,
@@ -22778,11 +23526,19 @@ pub enum LolLootGrantStatus {
     FAILED = 3
 }
 
+impl Default for LolLootGrantStatus {
+    fn default() -> Self { LolLootGrantStatus::PENDING_FULFILLMENT }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
     F2P = 2
+}
+
+impl Default for LolLootInventoryOwnership {
+    fn default() -> Self { LolLootInventoryOwnership::OWNED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22793,12 +23549,20 @@ pub enum LolLootItemOwnershipStatus {
     OWNED = 3
 }
 
+impl Default for LolLootItemOwnershipStatus {
+    fn default() -> Self { LolLootItemOwnershipStatus::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolLootLoginSessionStates {
+    fn default() -> Self { LolLootLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22809,6 +23573,10 @@ pub enum LolLootLootMilestoneClaimStatus {
     FAILED = 3
 }
 
+impl Default for LolLootLootMilestoneClaimStatus {
+    fn default() -> Self { LolLootLootMilestoneClaimStatus::NOT_STARTED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootLootRarity {
     Default = 0,
@@ -22816,6 +23584,10 @@ pub enum LolLootLootRarity {
     Legendary = 2,
     Mythic = 3,
     Ultimate = 4
+}
+
+impl Default for LolLootLootRarity {
+    fn default() -> Self { LolLootLootRarity::Default }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22838,6 +23610,10 @@ pub enum LolLootLootType {
     TFT_Damage_Skin = 15
 }
 
+impl Default for LolLootLootType {
+    fn default() -> Self { LolLootLootType::Chest }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootRedeemableStatus {
     UNKNOWN = 0,
@@ -22851,11 +23627,19 @@ pub enum LolLootRedeemableStatus {
     SKIN_NOT_OWNED = 8
 }
 
+impl Default for LolLootRedeemableStatus {
+    fn default() -> Self { LolLootRedeemableStatus::UNKNOWN }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootRewardStatus {
     PENDING = 0,
     FULFILLED = 1,
     FAILED = 2
+}
+
+impl Default for LolLootRewardStatus {
+    fn default() -> Self { LolLootRewardStatus::PENDING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22865,10 +23649,18 @@ pub enum LolLootRewardStrategy {
     SELECTION = 2
 }
 
+impl Default for LolLootRewardStrategy {
+    fn default() -> Self { LolLootRewardStrategy::ALL }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootSelectGrantStatusResponse {
     SELECTED = 0,
     FAILED = 1
+}
+
+impl Default for LolLootSelectGrantStatusResponse {
+    fn default() -> Self { LolLootSelectGrantStatusResponse::SELECTED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22877,6 +23669,10 @@ pub enum LolLoyaltyLoginSessionStates {
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolLoyaltyLoginSessionStates {
+    fn default() -> Self { LolLoyaltyLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22889,12 +23685,20 @@ pub enum LolLoyaltyLoyaltyStatus {
     DISABLED = 5
 }
 
+impl Default for LolLoyaltyLoyaltyStatus {
+    fn default() -> Self { LolLoyaltyLoyaltyStatus::LEGACY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchHistoryLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolMatchHistoryLoginSessionStates {
+    fn default() -> Self { LolMatchHistoryLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22915,12 +23719,20 @@ pub enum LolMatchmakingGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolMatchmakingGameflowPhase {
+    fn default() -> Self { LolMatchmakingGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchmakingLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolMatchmakingLoginSessionState {
+    fn default() -> Self { LolMatchmakingLoginSessionState::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22931,6 +23743,10 @@ pub enum LolMatchmakingMatchmakingDodgeState {
     TournamentDodged = 51
 }
 
+impl Default for LolMatchmakingMatchmakingDodgeState {
+    fn default() -> Self { LolMatchmakingMatchmakingDodgeState::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchmakingMatchmakingDodgeWarning {
     None = 0,
@@ -22938,11 +23754,19 @@ pub enum LolMatchmakingMatchmakingDodgeWarning {
     Penalty = 2
 }
 
+impl Default for LolMatchmakingMatchmakingDodgeWarning {
+    fn default() -> Self { LolMatchmakingMatchmakingDodgeWarning::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchmakingMatchmakingReadyCheckResponse {
     None = 48,
     Accepted = 49,
     Declined = 50
+}
+
+impl Default for LolMatchmakingMatchmakingReadyCheckResponse {
+    fn default() -> Self { LolMatchmakingMatchmakingReadyCheckResponse::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22953,6 +23777,10 @@ pub enum LolMatchmakingMatchmakingReadyCheckState {
     StrangerNotReady = 3,
     PartyNotReady = 4,
     Error = 5
+}
+
+impl Default for LolMatchmakingMatchmakingReadyCheckState {
+    fn default() -> Self { LolMatchmakingMatchmakingReadyCheckState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22967,12 +23795,20 @@ pub enum LolMatchmakingMatchmakingSearchState {
     ServiceShutdown = 7
 }
 
+impl Default for LolMatchmakingMatchmakingSearchState {
+    fn default() -> Self { LolMatchmakingMatchmakingSearchState::Invalid }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchmakingQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
     AllAllowed = 3
+}
+
+impl Default for LolMatchmakingQueueCustomGameSpectatorPolicy {
+    fn default() -> Self { LolMatchmakingQueueCustomGameSpectatorPolicy::NotAllowed }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22993,11 +23829,19 @@ pub enum LolMissionsGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolMissionsGameflowPhase {
+    fn default() -> Self { LolMissionsGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMissionsGrantStatus {
     PENDING_FULFILLMENT = 0,
     PENDING_SELECTION = 1,
     FULFILLED = 2
+}
+
+impl Default for LolMissionsGrantStatus {
+    fn default() -> Self { LolMissionsGrantStatus::PENDING_FULFILLMENT }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23010,10 +23854,18 @@ pub enum LolMissionsLoyaltyStatus {
     DISABLED = 5
 }
 
+impl Default for LolMissionsLoyaltyStatus {
+    fn default() -> Self { LolMissionsLoyaltyStatus::LEGACY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMissionsRewardStatus {
     PENDING = 0,
     FULFILLED = 1
+}
+
+impl Default for LolMissionsRewardStatus {
+    fn default() -> Self { LolMissionsRewardStatus::PENDING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23021,6 +23873,10 @@ pub enum LolMissionsRewardStrategy {
     ALL = 0,
     RANDOM = 1,
     SELECTION = 2
+}
+
+impl Default for LolMissionsRewardStrategy {
+    fn default() -> Self { LolMissionsRewardStrategy::ALL }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23041,6 +23897,10 @@ pub enum LolNpeTutorialPathGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolNpeTutorialPathGameflowPhase {
+    fn default() -> Self { LolNpeTutorialPathGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolNpeTutorialPathTutorialStatus {
     LOCKED = 0,
@@ -23048,10 +23908,18 @@ pub enum LolNpeTutorialPathTutorialStatus {
     COMPLETED = 2
 }
 
+impl Default for LolNpeTutorialPathTutorialStatus {
+    fn default() -> Self { LolNpeTutorialPathTutorialStatus::LOCKED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolNpeTutorialPathTutorialType {
     CARD = 0,
     REWARD = 1
+}
+
+impl Default for LolNpeTutorialPathTutorialType {
+    fn default() -> Self { LolNpeTutorialPathTutorialType::CARD }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23063,11 +23931,19 @@ pub enum LolPatchComponentStateAction {
     Migrating = 4
 }
 
+impl Default for LolPatchComponentStateAction {
+    fn default() -> Self { LolPatchComponentStateAction::Idle }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPatchComponentStateWorkType {
     Scanning = 0,
     Network = 1,
     Disk = 2
+}
+
+impl Default for LolPatchComponentStateWorkType {
+    fn default() -> Self { LolPatchComponentStateWorkType::Scanning }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23081,10 +23957,18 @@ pub enum LolPatchNotificationId {
     BrokenPermissions = 6
 }
 
+impl Default for LolPatchNotificationId {
+    fn default() -> Self { LolPatchNotificationId::UnspecifiedError }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPatchScdEnabled {
     Off = 0,
     On = 1
+}
+
+impl Default for LolPatchScdEnabled {
+    fn default() -> Self { LolPatchScdEnabled::Off }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23094,6 +23978,10 @@ pub enum LolPerksChampSelectTradeState {
     INVALID = 3,
     RECEIVED = 4,
     SENT = 5
+}
+
+impl Default for LolPerksChampSelectTradeState {
+    fn default() -> Self { LolPerksChampSelectTradeState::AVAILABLE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23114,6 +24002,10 @@ pub enum LolPerksGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolPerksGameflowPhase {
+    fn default() -> Self { LolPerksGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPerksLoginSessionState {
     IN_PROGRESS = 0,
@@ -23122,12 +24014,20 @@ pub enum LolPerksLoginSessionState {
     ERROR = 3
 }
 
+impl Default for LolPerksLoginSessionState {
+    fn default() -> Self { LolPerksLoginSessionState::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPftGameflowGameDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
     TournamentDodged = 51
+}
+
+impl Default for LolPftGameflowGameDodgeState {
+    fn default() -> Self { LolPftGameflowGameDodgeState::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23148,12 +24048,20 @@ pub enum LolPftGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolPftGameflowPhase {
+    fn default() -> Self { LolPftGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPftLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolPftLoginSessionStates {
+    fn default() -> Self { LolPftLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23174,12 +24082,20 @@ pub enum LolPlayerBehaviorGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolPlayerBehaviorGameflowPhase {
+    fn default() -> Self { LolPlayerBehaviorGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPlayerBehaviorNotificationSource {
     Invalid = 0,
     Login = 1,
     ForcedShutdown = 2,
     Message = 3
+}
+
+impl Default for LolPlayerBehaviorNotificationSource {
+    fn default() -> Self { LolPlayerBehaviorNotificationSource::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23190,12 +24106,20 @@ pub enum LolPlayerLevelUpLoginSessionStates {
     ERROR = 3
 }
 
+impl Default for LolPlayerLevelUpLoginSessionStates {
+    fn default() -> Self { LolPlayerLevelUpLoginSessionStates::IN_PROGRESS }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPlayerPreferencesLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolPlayerPreferencesLoginSessionStates {
+    fn default() -> Self { LolPlayerPreferencesLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23216,6 +24140,10 @@ pub enum LolPreEndOfGameGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolPreEndOfGameGameflowPhase {
+    fn default() -> Self { LolPreEndOfGameGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceConfigReadinessEnum {
     NotReady = 0,
@@ -23223,10 +24151,18 @@ pub enum LolPremadeVoiceConfigReadinessEnum {
     Disabled = 2
 }
 
+impl Default for LolPremadeVoiceConfigReadinessEnum {
+    fn default() -> Self { LolPremadeVoiceConfigReadinessEnum::NotReady }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceConfigType {
     public = 0,
     player = 1
+}
+
+impl Default for LolPremadeVoiceConfigType {
+    fn default() -> Self { LolPremadeVoiceConfigType::public }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23247,10 +24183,18 @@ pub enum LolPremadeVoiceGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolPremadeVoiceGameflowPhase {
+    fn default() -> Self { LolPremadeVoiceGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceInputMode {
     voiceActivity = 0,
     pushToTalk = 1
+}
+
+impl Default for LolPremadeVoiceInputMode {
+    fn default() -> Self { LolPremadeVoiceInputMode::voiceActivity }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23263,10 +24207,18 @@ pub enum LolPremadeVoicePartyMemberRoleEnum {
     DECLINED = 5
 }
 
+impl Default for LolPremadeVoicePartyMemberRoleEnum {
+    fn default() -> Self { LolPremadeVoicePartyMemberRoleEnum::LEADER }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceSessionStatus {
     active = 0,
     onHold = 1
+}
+
+impl Default for LolPremadeVoiceSessionStatus {
+    fn default() -> Self { LolPremadeVoiceSessionStatus::active }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23277,12 +24229,20 @@ pub enum LolPurchaseWidgetInventoryOwnership {
     F2P = 3
 }
 
+impl Default for LolPurchaseWidgetInventoryOwnership {
+    fn default() -> Self { LolPurchaseWidgetInventoryOwnership::OWNED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPurchaseWidgetLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolPurchaseWidgetLoginSessionStates {
+    fn default() -> Self { LolPurchaseWidgetLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23293,11 +24253,19 @@ pub enum LolPurchaseWidgetPurchaseOfferOrderStates {
     SUCCESS = 3
 }
 
+impl Default for LolPurchaseWidgetPurchaseOfferOrderStates {
+    fn default() -> Self { LolPurchaseWidgetPurchaseOfferOrderStates::NOT_STARTED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedEosNotificationType {
     FIRST_WARNING = 0,
     SECOND_WARNING = 1,
     SEASON_ENDED = 2
+}
+
+impl Default for LolRankedEosNotificationType {
+    fn default() -> Self { LolRankedEosNotificationType::FIRST_WARNING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23318,6 +24286,10 @@ pub enum LolRankedGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolRankedGameflowPhase {
+    fn default() -> Self { LolRankedGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedLeagueDivision {
     I = 0,
@@ -23326,6 +24298,10 @@ pub enum LolRankedLeagueDivision {
     IV = 3,
     V = 4,
     NA = 5
+}
+
+impl Default for LolRankedLeagueDivision {
+    fn default() -> Self { LolRankedLeagueDivision::I }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23338,6 +24314,10 @@ pub enum LolRankedLeagueQueueType {
     RANKED_TFT_TURBO = 5,
     RANKED_TFT_PAIRS = 6,
     RANKED_TFT_DOUBLE_UP = 7
+}
+
+impl Default for LolRankedLeagueQueueType {
+    fn default() -> Self { LolRankedLeagueQueueType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23354,12 +24334,20 @@ pub enum LolRankedLeagueTier {
     CHALLENGER = 9
 }
 
+impl Default for LolRankedLeagueTier {
+    fn default() -> Self { LolRankedLeagueTier::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolRankedLoginSessionStates {
+    fn default() -> Self { LolRankedLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23369,12 +24357,20 @@ pub enum LolRankedMiniseries {
     N = 2
 }
 
+impl Default for LolRankedMiniseries {
+    fn default() -> Self { LolRankedMiniseries::W }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedNotificationDisplayType {
     NONE = 0,
     TOAST = 1,
     MODAL = 2,
     VIGNETTE = 3
+}
+
+impl Default for LolRankedNotificationDisplayType {
+    fn default() -> Self { LolRankedNotificationDisplayType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23387,10 +24383,18 @@ pub enum LolRankedRatedTier {
     ORANGE = 5
 }
 
+impl Default for LolRankedRatedTier {
+    fn default() -> Self { LolRankedRatedTier::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedSeverity {
     WARNING = 0,
     ALERT = 1
+}
+
+impl Default for LolRankedSeverity {
+    fn default() -> Self { LolRankedSeverity::WARNING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23403,6 +24407,10 @@ pub enum LolRegaliaLeagueDivision {
     NA = 5
 }
 
+impl Default for LolRegaliaLeagueDivision {
+    fn default() -> Self { LolRegaliaLeagueDivision::I }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRegaliaLeagueQueueType {
     NONE = 0,
@@ -23413,6 +24421,10 @@ pub enum LolRegaliaLeagueQueueType {
     RANKED_TFT_TURBO = 5,
     RANKED_TFT_PAIRS = 6,
     RANKED_TFT_DOUBLE_UP = 7
+}
+
+impl Default for LolRegaliaLeagueQueueType {
+    fn default() -> Self { LolRegaliaLeagueQueueType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23429,10 +24441,18 @@ pub enum LolRegaliaLeagueTier {
     CHALLENGER = 9
 }
 
+impl Default for LolRegaliaLeagueTier {
+    fn default() -> Self { LolRegaliaLeagueTier::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRegaliaRegaliaBannerType {
     blank = 1,
     lastSeasonHighestRank = 2
+}
+
+impl Default for LolRegaliaRegaliaBannerType {
+    fn default() -> Self { LolRegaliaRegaliaBannerType::blank }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23440,6 +24460,10 @@ pub enum LolRegaliaRegaliaCrestType {
     none = 0,
     prestige = 1,
     ranked = 2
+}
+
+impl Default for LolRegaliaRegaliaCrestType {
+    fn default() -> Self { LolRegaliaRegaliaCrestType::none }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23460,12 +24484,20 @@ pub enum LolReplaysGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolReplaysGameflowPhase {
+    fn default() -> Self { LolReplaysGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolReplaysGameflowWatchPhase {
     None = 0,
     WatchStarted = 1,
     WatchInProgress = 2,
     WatchFailedToLaunch = 3
+}
+
+impl Default for LolReplaysGameflowWatchPhase {
+    fn default() -> Self { LolReplaysGameflowWatchPhase::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23483,10 +24515,18 @@ pub enum LolReplaysMetadataState {
     error = 10
 }
 
+impl Default for LolReplaysMetadataState {
+    fn default() -> Self { LolReplaysMetadataState::checking }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsCelebrationType {
     NONE = 0,
     TOAST = 1
+}
+
+impl Default for LolRewardsCelebrationType {
+    fn default() -> Self { LolRewardsCelebrationType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23497,11 +24537,19 @@ pub enum LolRewardsGrantStatus {
     FAILED = 3
 }
 
+impl Default for LolRewardsGrantStatus {
+    fn default() -> Self { LolRewardsGrantStatus::PENDING_FULFILLMENT }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsRewardStatus {
     PENDING = 0,
     FULFILLED = 1,
     FAILED = 2
+}
+
+impl Default for LolRewardsRewardStatus {
+    fn default() -> Self { LolRewardsRewardStatus::PENDING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23511,10 +24559,18 @@ pub enum LolRewardsRewardStrategy {
     SELECTION = 2
 }
 
+impl Default for LolRewardsRewardStrategy {
+    fn default() -> Self { LolRewardsRewardStrategy::ALL }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsSelectGrantStatusResponse {
     SELECTED = 0,
     FAILED = 1
+}
+
+impl Default for LolRewardsSelectGrantStatusResponse {
+    fn default() -> Self { LolRewardsSelectGrantStatusResponse::SELECTED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23535,12 +24591,20 @@ pub enum LolRiotMessagingServiceGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolRiotMessagingServiceGameflowPhase {
+    fn default() -> Self { LolRiotMessagingServiceGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRsoAuthAuthHintType {
     email_verification = 0,
     password_reset = 1,
     parental_consent = 2,
     ambiguous_username = 3
+}
+
+impl Default for LolRsoAuthAuthHintType {
+    fn default() -> Self { LolRsoAuthAuthHintType::email_verification }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23550,10 +24614,18 @@ pub enum LolRsoAuthConfigReadinessEnum {
     Disabled = 2
 }
 
+impl Default for LolRsoAuthConfigReadinessEnum {
+    fn default() -> Self { LolRsoAuthConfigReadinessEnum::NotReady }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRsoAuthConfigType {
     public = 0,
     player = 1
+}
+
+impl Default for LolRsoAuthConfigType {
+    fn default() -> Self { LolRsoAuthConfigType::public }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23563,12 +24635,20 @@ pub enum LolRsoAuthRSOAuthorizationTrustLevel {
     always_verify = 2
 }
 
+impl Default for LolRsoAuthRSOAuthorizationTrustLevel {
+    fn default() -> Self { LolRsoAuthRSOAuthorizationTrustLevel::always_trusted }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSettingsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolSettingsLoginSessionStates {
+    fn default() -> Self { LolSettingsLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23580,12 +24660,20 @@ pub enum LolSettingsPublisher {
     vng = 4
 }
 
+impl Default for LolSettingsPublisher {
+    fn default() -> Self { LolSettingsPublisher::riot }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolShutdownShutdownReason {
     Invalid = 0,
     PlatformMaintenance = 1,
     LcuAlphaDisabled = 2,
     PlayerBanned = 3
+}
+
+impl Default for LolShutdownShutdownReason {
+    fn default() -> Self { LolShutdownShutdownReason::Invalid }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23606,6 +24694,10 @@ pub enum LolSimpleDialogMessagesGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolSimpleDialogMessagesGameflowPhase {
+    fn default() -> Self { LolSimpleDialogMessagesGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSocialLeaderboardLeagueDivision {
     I = 0,
@@ -23614,6 +24706,10 @@ pub enum LolSocialLeaderboardLeagueDivision {
     IV = 3,
     V = 4,
     NA = 5
+}
+
+impl Default for LolSocialLeaderboardLeagueDivision {
+    fn default() -> Self { LolSocialLeaderboardLeagueDivision::I }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23626,6 +24722,10 @@ pub enum LolSocialLeaderboardLeagueQueueType {
     RANKED_TFT_TURBO = 5,
     RANKED_TFT_PAIRS = 6,
     RANKED_TFT_DOUBLE_UP = 7
+}
+
+impl Default for LolSocialLeaderboardLeagueQueueType {
+    fn default() -> Self { LolSocialLeaderboardLeagueQueueType::NONE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23642,12 +24742,20 @@ pub enum LolSocialLeaderboardLeagueTier {
     CHALLENGER = 9
 }
 
+impl Default for LolSocialLeaderboardLeagueTier {
+    fn default() -> Self { LolSocialLeaderboardLeagueTier::NONE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolStoreLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolStoreLoginSessionStates {
+    fn default() -> Self { LolStoreLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23668,6 +24776,10 @@ pub enum LolSuggestedPlayersGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolSuggestedPlayersGameflowPhase {
+    fn default() -> Self { LolSuggestedPlayersGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSuggestedPlayersSuggestedPlayersReason {
     PreviousPremade = 1,
@@ -23678,12 +24790,20 @@ pub enum LolSuggestedPlayersSuggestedPlayersReason {
     LegacyPlayAgain = 9999
 }
 
+impl Default for LolSuggestedPlayersSuggestedPlayersReason {
+    fn default() -> Self { LolSuggestedPlayersSuggestedPlayersReason::PreviousPremade }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSummonerLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolSummonerLoginSessionStates {
+    fn default() -> Self { LolSummonerLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23693,10 +24813,18 @@ pub enum LolSummonerProfilePrivacyEnabledState {
     DISABLED = 2
 }
 
+impl Default for LolSummonerProfilePrivacyEnabledState {
+    fn default() -> Self { LolSummonerProfilePrivacyEnabledState::UNKNOWN }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSummonerProfilePrivacySetting {
     PRIVATE = 0,
     PUBLIC = 1
+}
+
+impl Default for LolSummonerProfilePrivacySetting {
+    fn default() -> Self { LolSummonerProfilePrivacySetting::PRIVATE }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23717,6 +24845,10 @@ pub enum LolTftGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolTftGameflowPhase {
+    fn default() -> Self { LolTftGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolTftQueueGameCategory {
     None = 0,
@@ -23724,6 +24856,10 @@ pub enum LolTftQueueGameCategory {
     PvP = 2,
     VersusAi = 3,
     Alpha = 4
+}
+
+impl Default for LolTftQueueGameCategory {
+    fn default() -> Self { LolTftQueueGameCategory::None }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23744,6 +24880,10 @@ pub enum LolUserExperienceGameflowPhase {
     TerminatedInError = 13
 }
 
+impl Default for LolUserExperienceGameflowPhase {
+    fn default() -> Self { LolUserExperienceGameflowPhase::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolWorldsTokenCardItemOwnershipType {
     OWNED = 0,
@@ -23752,11 +24892,19 @@ pub enum LolWorldsTokenCardItemOwnershipType {
     F2P = 3
 }
 
+impl Default for LolWorldsTokenCardItemOwnershipType {
+    fn default() -> Self { LolWorldsTokenCardItemOwnershipType::OWNED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolWorldsTokenCardTokenUpsellLockedType {
     UNASSIGNED = 0,
     LOCKED = 1,
     UNLOCKED = 2
+}
+
+impl Default for LolWorldsTokenCardTokenUpsellLockedType {
+    fn default() -> Self { LolWorldsTokenCardTokenUpsellLockedType::UNASSIGNED }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23767,12 +24915,20 @@ pub enum LolYourshopItemOwnershipType {
     F2P = 3
 }
 
+impl Default for LolYourshopItemOwnershipType {
+    fn default() -> Self { LolYourshopItemOwnershipType::OWNED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolYourshopLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
     ERROR = 3
+}
+
+impl Default for LolYourshopLoginSessionStates {
+    fn default() -> Self { LolYourshopLoginSessionStates::IN_PROGRESS }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23785,6 +24941,10 @@ pub enum LolYourshopLoyaltyStatus {
     DISABLED = 5
 }
 
+impl Default for LolYourshopLoyaltyStatus {
+    fn default() -> Self { LolYourshopLoyaltyStatus::LEGACY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum MetricDataType {
     unknown = 0,
@@ -23795,11 +24955,19 @@ pub enum MetricDataType {
     string = 5
 }
 
+impl Default for MetricDataType {
+    fn default() -> Self { MetricDataType::unknown }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum MetricPriority {
     low = 0,
     medium = 1,
     high = 2
+}
+
+impl Default for MetricPriority {
+    fn default() -> Self { MetricPriority::low }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23811,6 +24979,10 @@ pub enum MetricType {
     rate = 4
 }
 
+impl Default for MetricType {
+    fn default() -> Self { MetricType::unknown }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PatcherComponentStateAction {
     Idle = 0,
@@ -23820,11 +24992,19 @@ pub enum PatcherComponentStateAction {
     Migrating = 4
 }
 
+impl Default for PatcherComponentStateAction {
+    fn default() -> Self { PatcherComponentStateAction::Idle }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PatcherComponentStateWorkType {
     Scanning = 0,
     Network = 1,
     Disk = 2
+}
+
+impl Default for PatcherComponentStateWorkType {
+    fn default() -> Self { PatcherComponentStateWorkType::Scanning }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23836,6 +25016,10 @@ pub enum PatcherNotificationId {
     DidRestoreClientBackup = 4,
     NotEnoughDiskSpace = 5,
     BrokenPermissions = 6
+}
+
+impl Default for PatcherNotificationId {
+    fn default() -> Self { PatcherNotificationId::UnspecifiedError }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23852,6 +25036,10 @@ pub enum PendingRosterInviteeState {
     SELFJOIN_REVOKED = 9
 }
 
+impl Default for PendingRosterInviteeState {
+    fn default() -> Self { PendingRosterInviteeState::SUGGESTED }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PendingRosterMemberState {
     NOT_READY = 0,
@@ -23861,11 +25049,19 @@ pub enum PendingRosterMemberState {
     KICK = 4
 }
 
+impl Default for PendingRosterMemberState {
+    fn default() -> Self { PendingRosterMemberState::NOT_READY }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PickModes {
     NOT_PICKING = 0,
     IN_PROGRESS = 1,
     DONE = 2
+}
+
+impl Default for PickModes {
+    fn default() -> Self { PickModes::NOT_PICKING }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23874,10 +25070,18 @@ pub enum PlayerFinderEnum {
     FRIEND = 1
 }
 
+impl Default for PlayerFinderEnum {
+    fn default() -> Self { PlayerFinderEnum::FREEAGENT }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PluginManagerState {
     NotReady = 0,
     PluginsInitialized = 1
+}
+
+impl Default for PluginManagerState {
+    fn default() -> Self { PluginManagerState::NotReady }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23887,12 +25091,20 @@ pub enum PluginResourceEventType {
     Delete = 2
 }
 
+impl Default for PluginResourceEventType {
+    fn default() -> Self { PluginResourceEventType::Create }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PluginThreadingModel {
     dedicated = 1,
     sequential = 2,
     concurrent = 3,
     parallel = 4
+}
+
+impl Default for PluginThreadingModel {
+    fn default() -> Self { PluginThreadingModel::dedicated }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23906,12 +25118,20 @@ pub enum Position {
     UNSELECTED = 6
 }
 
+impl Default for Position {
+    fn default() -> Self { Position::TOP }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum RemotingHelpFormat {
     Full = 1,
     Epytext = 2,
     Brief = 4,
     Console = 5
+}
+
+impl Default for RemotingHelpFormat {
+    fn default() -> Self { RemotingHelpFormat::Full }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23922,11 +25142,19 @@ pub enum RemotingPrivilege {
     Local = 255
 }
 
+impl Default for RemotingPrivilege {
+    fn default() -> Self { RemotingPrivilege::None }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum RemotingSerializedFormat {
     JSON = 1,
     YAML = 2,
     MsgPack = 3
+}
+
+impl Default for RemotingSerializedFormat {
+    fn default() -> Self { RemotingSerializedFormat::JSON }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23938,12 +25166,20 @@ pub enum ReplayResponseStatus {
     INTERNAL_SERVER_ERROR = 4
 }
 
+impl Default for ReplayResponseStatus {
+    fn default() -> Self { ReplayResponseStatus::OK }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum RiotMessagingServiceState {
     Disconnecting = 0,
     Disconnected = 1,
     Connecting = 3,
     Connected = 5
+}
+
+impl Default for RiotMessagingServiceState {
+    fn default() -> Self { RiotMessagingServiceState::Disconnecting }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23953,11 +25189,19 @@ pub enum RiotMessagingServiceTokenType {
     Identity = 2
 }
 
+impl Default for RiotMessagingServiceTokenType {
+    fn default() -> Self { RiotMessagingServiceTokenType::Unavailable }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum Role {
     CAPTAIN = 0,
     MEMBER = 1,
     NONE = 2
+}
+
+impl Default for Role {
+    fn default() -> Self { Role::CAPTAIN }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23968,10 +25212,18 @@ pub enum TicketOfferState {
     REVOKED = 3
 }
 
+impl Default for TicketOfferState {
+    fn default() -> Self { TicketOfferState::ACTIVE }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum TicketType {
     BASIC = 0,
     PREMIUM = 1
+}
+
+impl Default for TicketType {
+    fn default() -> Self { TicketType::BASIC }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23980,6 +25232,10 @@ pub enum TournamentStatusEnum {
     CANCELLED = 1,
     PAUSED = 2,
     PRERESUME = 3
+}
+
+impl Default for TournamentStatusEnum {
+    fn default() -> Self { TournamentStatusEnum::DEFAULT }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23992,6 +25248,10 @@ pub enum TracingModuleThreadingModelV1 {
     kParallel = 5
 }
 
+impl Default for TracingModuleThreadingModelV1 {
+    fn default() -> Self { TracingModuleThreadingModelV1::kNone }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum TracingModuleTypeV1 {
     kUnknown = 0,
@@ -24002,10 +25262,18 @@ pub enum TracingModuleTypeV1 {
     kRemotingSource = 5
 }
 
+impl Default for TracingModuleTypeV1 {
+    fn default() -> Self { TracingModuleTypeV1::kUnknown }
+}
+
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum TracingPhaseImportanceV1 {
     trivial = 0,
     minor = 1,
     major = 2
+}
+
+impl Default for TracingPhaseImportanceV1 {
+    fn default() -> Self { TracingPhaseImportanceV1::trivial }
 }
 
