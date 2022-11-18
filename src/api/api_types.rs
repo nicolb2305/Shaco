@@ -3,14 +3,14 @@ use std::collections::HashMap;
 use serde_json::Value;
 use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ActiveBoostsLcdsStoreFulfillmentNotification {
     pub inventory_type: String,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ActiveBoostsLcdsSummonerActiveBoostsDTO {
     pub summoner_id: u64,
@@ -22,13 +22,13 @@ pub struct ActiveBoostsLcdsSummonerActiveBoostsDTO {
     pub xp_loyalty_boost: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct AlertDTO {
     pub alert_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BannedChampion {
     pub champion_id: i32,
@@ -36,7 +36,7 @@ pub struct BannedChampion {
     pub pick_turn: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BasePlayerDTO {
     pub code: i32,
@@ -44,27 +44,27 @@ pub struct BasePlayerDTO {
     pub data: MatchedPlayerDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingAsyncCancelEvent {
     pub async_token: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingAsyncFailureEvent {
     pub async_token: u32,
     pub error: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingCallbackEvent {
     pub id: u32,
     pub parameters: Vec<Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullApiHelp {
     pub functions: Vec<BindingFullFunctionHelp>,
@@ -72,7 +72,7 @@ pub struct BindingFullApiHelp {
     pub events: Vec<BindingFullEventHelp>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullArgumentHelp {
     pub name: String,
@@ -82,7 +82,7 @@ pub struct BindingFullArgumentHelp {
     pub optional: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullEnumValueHelp {
     pub name: String,
@@ -90,7 +90,7 @@ pub struct BindingFullEnumValueHelp {
     pub value: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullEventHelp {
     pub name: String,
@@ -101,7 +101,7 @@ pub struct BindingFullEventHelp {
     pub tags: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullFieldHelp {
     pub name: String,
@@ -112,7 +112,7 @@ pub struct BindingFullFieldHelp {
     pub optional: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullFunctionHelp {
     pub name: String,
@@ -127,7 +127,7 @@ pub struct BindingFullFunctionHelp {
     pub tags: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullTypeHelp {
     pub name: String,
@@ -139,7 +139,7 @@ pub struct BindingFullTypeHelp {
     pub values: Vec<BindingFullEnumValueHelp>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingFullTypeIdentifier {
     #[serde(rename = "type")]
@@ -147,20 +147,20 @@ pub struct BindingFullTypeIdentifier {
     pub element_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingGenericAsyncEvent {
     pub async_token: u32,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingGenericEvent {
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BoostTeamSkinRentalDTO {
     pub summoner_name: String,
@@ -172,7 +172,7 @@ pub struct BoostTeamSkinRentalDTO {
     pub unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Bracket {
     pub version: i32,
@@ -184,7 +184,7 @@ pub struct Bracket {
     pub rosters: Vec<BracketRoster>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BracketMatch {
     pub id: i64,
@@ -205,7 +205,7 @@ pub struct BracketMatch {
     pub fail_roster_status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BracketRoster {
     pub roster_id: i64,
@@ -215,7 +215,7 @@ pub struct BracketRoster {
     pub logo_color: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BuildInfo {
     pub branch: String,
@@ -224,7 +224,7 @@ pub struct BuildInfo {
     pub patchline_visible_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsGameDTO {
     pub id: u64,
@@ -245,20 +245,20 @@ pub struct ChampSelectLcdsGameDTO {
     pub game_mutators: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsGameTimerDTO {
     pub current_game_state: String,
     pub remaining_time_in_millis: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsObfuscatedParticipant {
     pub game_unique_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsPlayerChampionSelectionDTO {
     pub summoner_internal_name: String,
@@ -268,7 +268,7 @@ pub struct ChampSelectLcdsPlayerChampionSelectionDTO {
     pub spell2_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsPlayerParticipant {
     pub summoner_name: String,
@@ -278,7 +278,7 @@ pub struct ChampSelectLcdsPlayerParticipant {
     pub pick_turn: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsPointSummary {
     pub points_to_next_roll: i32,
@@ -288,20 +288,20 @@ pub struct ChampSelectLcdsPointSummary {
     pub points_cost_to_roll: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsPotentialTradersDTO {
     pub potential_traders: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsRollResult {
     pub champion_id: i32,
     pub point_summary: ChampSelectLcdsPointSummary
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsTradeContractDTO {
     pub requester_internal_summoner_name: String,
@@ -311,7 +311,7 @@ pub struct ChampSelectLcdsTradeContractDTO {
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampionMasteryPublicDTO {
     pub champion_id: i32,
@@ -319,7 +319,7 @@ pub struct ChampionMasteryPublicDTO {
     pub champion_points: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampionScoutingDTO {
     pub champion_id: i32,
@@ -328,7 +328,7 @@ pub struct ChampionScoutingDTO {
     pub kda: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashEventData {
     pub earned_date: String,
@@ -348,7 +348,7 @@ pub struct ClashEventData {
     pub reward_spec: ClashRewardSpec
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashOfflineNotification {
     pub tournament_id: i64,
@@ -356,7 +356,7 @@ pub struct ClashOfflineNotification {
     pub meta_data: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardConfigClient {
     pub name: String,
@@ -364,21 +364,21 @@ pub struct ClashRewardConfigClient {
     pub entries: Vec<ClashRewardConfigEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardConfigEntry {
     pub key: String,
     pub vals: Vec<ClashRewardOutput>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardDefinition {
     pub reward_type: ClashRewardType,
     pub reward_spec: ClashRewardSpec
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardOutput {
     pub primary: ClashRewardDefinition,
@@ -387,7 +387,7 @@ pub struct ClashRewardOutput {
     pub show: ClashRewardTime
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardSpec {
     pub pedestal: String,
@@ -402,7 +402,7 @@ pub struct ClashRewardSpec {
     pub quantity: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashSeasonRewardResult {
     pub player_id: u64,
@@ -414,7 +414,7 @@ pub struct ClashSeasonRewardResult {
     pub rewards: Vec<ClashRewardDefinition>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigAuthenticatedConnection {
     pub connection_id: u32,
@@ -422,7 +422,7 @@ pub struct ClientConfigAuthenticatedConnection {
     pub auth_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigBuildInfo {
     pub content_build_id: i32,
@@ -437,7 +437,7 @@ pub struct ClientConfigBuildInfo {
     pub patchline_visible_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigClientConfig {
     pub params: ClientConfigConfigParams,
@@ -445,14 +445,14 @@ pub struct ClientConfigClientConfig {
     pub update_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigConfigNamespaceUpdate {
     pub public: Vec<String>,
     pub player: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigConfigParams {
     #[serde(rename = "type")]
@@ -464,14 +464,14 @@ pub struct ClientConfigConfigParams {
     pub namespace: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigConfigStatus {
     pub readiness: ClientConfigConfigReadinessEnum,
     pub update_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigDataPaths {
     pub user_data_root: String,
@@ -481,7 +481,7 @@ pub struct ClientConfigDataPaths {
     pub private_settings_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigDepInjectorEntitlements {
     pub access_token: String,
@@ -491,14 +491,14 @@ pub struct ClientConfigDepInjectorEntitlements {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigDepInjectorEntitlementsUpdate {
     pub entitlements_update_type: ClientConfigDepInjectorEntitlementsUpdateType,
     pub entitlements_token_resource: ClientConfigDepInjectorEntitlements
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigEntitlements {
     pub access_token: String,
@@ -508,14 +508,14 @@ pub struct ClientConfigEntitlements {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigEntitlementsUpdate {
     pub update_type: ClientConfigUpdateType,
     pub entitlements_token_resource: ClientConfigEntitlements
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigSession {
     pub product_id: String,
@@ -525,7 +525,7 @@ pub struct ClientConfigSession {
     pub connections: Vec<ClientConfigAuthenticatedConnection>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientDynamicConfig {
     pub configs: String,
@@ -533,7 +533,7 @@ pub struct ClientDynamicConfig {
     pub compressed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsChampionDTO {
     pub end_date: u64,
@@ -552,7 +552,7 @@ pub struct CollectionsLcdsChampionDTO {
     pub ranked_play_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsChampionSkinDTO {
     pub end_date: u64,
@@ -568,35 +568,35 @@ pub struct CollectionsLcdsChampionSkinDTO {
     pub still_obtainable: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsClientDynamicConfigurationNotification {
     pub configs: String,
     pub delta: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsRentalUpdateNotification {
     pub inventory_type: String,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsStoreFulfillmentNotification {
     pub inventory_type: String,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ContentItemIdentifier {
     pub item_id: i32,
     pub inventory_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CraftLootRefTransactionDTO {
     pub client_id: String,
@@ -608,7 +608,7 @@ pub struct CraftLootRefTransactionDTO {
     pub repeat: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CrashReportingEnvironment {
     pub environment: String,
@@ -616,26 +616,26 @@ pub struct CrashReportingEnvironment {
     pub user_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DownloadUrlRequestV2 {
     pub platform_id: String,
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DownloadUrlResponseV2 {
     pub url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ElevationRequest {
     pub action: ElevationAction
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsClientReportV1 {
     pub offender_summoner_id: u64,
@@ -644,7 +644,7 @@ pub struct EndOfGameLcdsClientReportV1 {
     pub comments: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsEndOfGameStats {
     pub difficulty: String,
@@ -691,7 +691,7 @@ pub struct EndOfGameLcdsEndOfGameStats {
     pub game_ended_in_early_surrender: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsHarassmentReport {
     pub game_id: u64,
@@ -702,7 +702,7 @@ pub struct EndOfGameLcdsHarassmentReport {
     pub comment: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsPlayerParticipantStatsSummary {
     pub puuid: String,
@@ -727,7 +727,7 @@ pub struct EndOfGameLcdsPlayerParticipantStatsSummary {
     pub statistics: Vec<EndOfGameLcdsRawStatDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsPointsPenalty {
     #[serde(rename = "type")]
@@ -735,26 +735,26 @@ pub struct EndOfGameLcdsPointsPenalty {
     pub penalty: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsRawStatDTO {
     pub value: i64,
     pub stat_type_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsSpell {
     pub spell_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsTeamId {
     pub full_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsTeamInfo {
     pub team_id: EndOfGameLcdsTeamId,
@@ -764,7 +764,7 @@ pub struct EndOfGameLcdsTeamInfo {
     pub member_status_string: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EntitlementsToken {
     pub access_token: String,
@@ -774,7 +774,7 @@ pub struct EntitlementsToken {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EogLcdsGameDTO {
     pub id: u64,
@@ -784,21 +784,21 @@ pub struct EogLcdsGameDTO {
     pub banned_champions: Vec<BannedChampion>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ExternalPluginsResource {
     pub state: ExternalPluginsAvailability,
     pub error_string: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct FailedInvite {
     pub player_id: u64,
     pub exception: ClientRequestError
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct GameQueuesLcdsGameQueueConfig {
     pub disallow_free_champions: bool,
@@ -822,7 +822,7 @@ pub struct GameQueuesLcdsGameQueueConfig {
     pub removal_from_game_delay_minutes: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct GameflowLcdsGameDTO {
     pub id: u64,
@@ -840,7 +840,7 @@ pub struct GameflowLcdsGameDTO {
     pub player_champion_selections: Vec<Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct GameflowLcdsPlayerCredentialsDto {
     pub game_id: u64,
@@ -854,7 +854,7 @@ pub struct GameflowLcdsPlayerCredentialsDto {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct GameflowLcdsReconnectInfoDto {
     pub player_credentials: GameflowLcdsPlayerCredentialsDto,
@@ -862,33 +862,33 @@ pub struct GameflowLcdsReconnectInfoDto {
     pub reconnect_delay: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct IdsDTO {
     pub mission_ids: Vec<String>,
     pub series_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSBroadcastNotification {
     pub broadcast_messages: Vec<LolServiceStatusBroadcastMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSChampionReward {
     pub champion_id: i32,
     pub skins: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSGlobalRewards {
     pub all_champions: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSLoyaltyRewards {
     pub champions: Vec<LCDSChampionReward>,
@@ -897,7 +897,7 @@ pub struct LCDSLoyaltyRewards {
     pub xp_boost: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSLoyaltyStateChangeNotification {
     pub account_id: u64,
@@ -905,7 +905,7 @@ pub struct LCDSLoyaltyStateChangeNotification {
     pub rewards: LCDSLoyaltyRewards
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSPlayerMessagingSimpleMessage {
     pub account_id: u64,
@@ -917,7 +917,7 @@ pub struct LCDSPlayerMessagingSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSPlayerMessagingSimpleMessageResponse {
     pub account_id: u64,
@@ -925,7 +925,7 @@ pub struct LCDSPlayerMessagingSimpleMessageResponse {
     pub command: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsBotParticipant {
     pub summoner_id: u64,
@@ -935,14 +935,14 @@ pub struct LcdsBotParticipant {
     pub team_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsFailedJoinPlayer {
     pub summoner: LcdsSummoner,
     pub reason_failed: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsGameDTO {
     pub id: i64,
@@ -968,13 +968,13 @@ pub struct LcdsGameDTO {
     pub game_state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsGameInviteBaseRuntimeException {
     pub root_cause_classname: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsGameMap {
     pub map_id: i32,
@@ -985,7 +985,7 @@ pub struct LcdsGameMap {
     pub total_players: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsGameNotification {
     #[serde(rename = "type")]
@@ -994,7 +994,7 @@ pub struct LcdsGameNotification {
     pub message_argument: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsInvitationRequest {
     pub invitation_id: String,
@@ -1006,7 +1006,7 @@ pub struct LcdsInvitationRequest {
     pub invite_payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsInviteFailed {
     pub summoner_id: u64,
@@ -1014,13 +1014,13 @@ pub struct LcdsInviteFailed {
     pub exception: LcdsGameInviteBaseRuntimeException
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsInvitePrivileges {
     pub can_invite: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsInvitee {
     pub summoner_id: u64,
@@ -1028,7 +1028,7 @@ pub struct LcdsInvitee {
     pub invitee_state: LcdsInviteeState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsInviter {
     pub summoner_id: u64,
@@ -1036,7 +1036,7 @@ pub struct LcdsInviter {
     pub previous_season_highest_tier: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsLobbyStatus {
     pub invitation_id: String,
@@ -1047,7 +1047,7 @@ pub struct LcdsLobbyStatus {
     pub game_meta_data: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsMember {
     pub summoner_id: u64,
@@ -1055,7 +1055,7 @@ pub struct LcdsMember {
     pub has_delegated_invite_power: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsPayloadDto {
     pub method: String,
@@ -1064,14 +1064,14 @@ pub struct LcdsPayloadDto {
     pub body: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsPlayer {
     pub summoner_id: u64,
     pub summoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsPlayerParticipant {
     pub summoner_id: u64,
@@ -1080,7 +1080,7 @@ pub struct LcdsPlayerParticipant {
     pub bot_skill_level: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsPracticeGameConfig {
     pub game_name: String,
@@ -1097,7 +1097,7 @@ pub struct LcdsPracticeGameConfig {
     pub game_version: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsPracticeGameSearchResult {
     pub id: u64,
@@ -1115,13 +1115,13 @@ pub struct LcdsPracticeGameSearchResult {
     pub allow_spectators: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsRemovedFromLobbyNotification {
     pub removal_reason: LcdsRemovalReason
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsSimpleMessage {
     pub account_id: u64,
@@ -1131,7 +1131,7 @@ pub struct LcdsSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsSimpleMessageResponse {
     pub account_id: u64,
@@ -1139,34 +1139,34 @@ pub struct LcdsSimpleMessageResponse {
     pub command: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsStartChampSelectDto {
     pub invalid_players: Vec<LcdsFailedJoinPlayer>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsSummoner {
     pub sum_id: u64,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LobbyClientDynamicConfigurationNotification {
     pub configs: String,
     pub delta: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LogEvent {
     pub severity: LogSeverityLevels,
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationAVSConfig {
     pub enabled: bool,
@@ -1174,14 +1174,14 @@ pub struct LolAccountVerificationAVSConfig {
     pub should_use_new_avs: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationAuthenticateRequest {
     pub username: String,
     pub password: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationAuthenticateResponse {
     pub success: bool,
@@ -1189,33 +1189,33 @@ pub struct LolAccountVerificationAuthenticateResponse {
     pub status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmActivationPinRequest {
     pub one_time_pin: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmActivationPinResponse {
     pub data: LolAccountVerificationPinResponseData,
     pub client_message_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmDeactivationPinRequest {
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmDeactivationPinResponse {
     pub data: LolAccountVerificationPinResponseData,
     pub client_message_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationDeviceResponse {
     pub success: bool,
@@ -1223,7 +1223,7 @@ pub struct LolAccountVerificationDeviceResponse {
     pub status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationInvalidateResponse {
     pub success: bool,
@@ -1232,7 +1232,7 @@ pub struct LolAccountVerificationInvalidateResponse {
     pub sms_token_expire_duration_in_sec: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationIsVerifiedResponse {
     pub success: bool,
@@ -1240,7 +1240,7 @@ pub struct LolAccountVerificationIsVerifiedResponse {
     pub status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationLoginSession {
     pub state: LolAccountVerificationLoginSessionState,
@@ -1249,7 +1249,7 @@ pub struct LolAccountVerificationLoginSession {
     pub username: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationPhoneNumberObfuscated {
     pub country_code: String,
@@ -1257,7 +1257,7 @@ pub struct LolAccountVerificationPhoneNumberObfuscated {
     pub length: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationPhoneNumberResponse {
     pub data: LolAccountVerificationPhoneNumberResponseData,
@@ -1265,33 +1265,33 @@ pub struct LolAccountVerificationPhoneNumberResponse {
     pub client_message_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationPhoneNumberResponseData {
     pub phone_number_obfuscated: LolAccountVerificationPhoneNumberObfuscated
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationPinResponseData {
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationResponseError {
     pub error_code: String,
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendActivationPinRequest {
     pub phone_number: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendActivationPinResponse {
     pub data: LolAccountVerificationSendActivationPinResponseData,
@@ -1299,19 +1299,19 @@ pub struct LolAccountVerificationSendActivationPinResponse {
     pub client_message_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendActivationPinResponseData {
     pub pin_expires_at_epoch_millis: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendDeactivationPinRequest {
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendDeactivationPinResponse {
     pub data: LolAccountVerificationSendActivationPinResponseData,
@@ -1319,7 +1319,7 @@ pub struct LolAccountVerificationSendDeactivationPinResponse {
     pub client_message_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendTokenRequest {
     pub mediator: String,
@@ -1327,7 +1327,7 @@ pub struct LolAccountVerificationSendTokenRequest {
     pub device: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendTokenResponse {
     pub success: bool,
@@ -1336,14 +1336,14 @@ pub struct LolAccountVerificationSendTokenResponse {
     pub sms_token_expire_duration_in_sec: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationVerifyRequest {
     pub mediator: String,
     pub token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationVerifyResponse {
     pub success: bool,
@@ -1351,7 +1351,7 @@ pub struct LolAccountVerificationVerifyResponse {
     pub status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolActiveBoostsActiveBoosts {
     pub summoner_id: u64,
@@ -1364,19 +1364,19 @@ pub struct LolActiveBoostsActiveBoosts {
     pub first_win_of_the_day_start_time: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolActiveBoostsEndOfGameStats {
     pub time_until_next_first_win_bonus: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolActiveBoostsLoginDataPacket {
     pub time_until_first_win_of_day: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAntiAddictionAntiAddictionState {
     pub policy_type: LolAntiAddictionPolicyType,
@@ -1384,13 +1384,13 @@ pub struct LolAntiAddictionAntiAddictionState {
     pub anti_addiction_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAntiAddictionAntiAddictionToken {
     pub anti_addiction_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersBannerFlag {
     pub item_id: i32,
@@ -1400,27 +1400,27 @@ pub struct LolBannersBannerFlag {
     pub earned_date_iso8601: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersBannerFrame {
     pub level: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersCapClashFlagEntitlementPayload {
     pub reward_spec: LolBannersClashV2FlagRewardSpec,
     pub reward_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersCapClashFrameEntitlementPayload {
     pub reward_spec: LolBannersClashV2FrameRewardSpec,
     pub reward_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersClashV2FlagRewardSpec {
     pub theme: String,
@@ -1428,14 +1428,14 @@ pub struct LolBannersClashV2FlagRewardSpec {
     pub season_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersClashV2FrameRewardSpec {
     pub level: String,
     pub season_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersInventoryItemWithPayload {
     pub uuid: String,
@@ -1445,20 +1445,20 @@ pub struct LolBannersInventoryItemWithPayload {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersInventoryItemsByType {
     pub t_o_u_r_n_a_m_e_n_t__f_l_a_g: Vec<LolBannersTournamentFlagInventoryItem>,
     pub t_o_u_r_n_a_m_e_n_t__f_r_a_m_e: Vec<LolBannersTournamentFrameInventoryItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersInventoryResponse {
     pub items: LolBannersInventoryItemsByType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersLoadout {
     pub id: String,
@@ -1467,21 +1467,21 @@ pub struct LolBannersLoadout {
     pub loadout: HashMap<String, LolBannersLoadoutsSlot>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersLoadoutsSlot {
     pub item_id: i32,
     pub inventory_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersSummonerProfileUpdate {
     pub key: String,
     pub value: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersTournamentFlagInventoryItem {
     pub item_id: i32,
@@ -1489,14 +1489,14 @@ pub struct LolBannersTournamentFlagInventoryItem {
     pub purchase_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersTournamentFrameInventoryItem {
     pub payload: LolBannersCapClashFrameEntitlementPayload,
     pub purchase_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsChampionQueueStatsResponse {
     pub champion_id: i32,
@@ -1506,7 +1506,7 @@ pub struct LolCareerStatsChampionQueueStatsResponse {
     pub stats: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsChampionStatistics {
     pub champion_id: i32,
@@ -1514,13 +1514,13 @@ pub struct LolCareerStatsChampionStatistics {
     pub queue_stats: Vec<LolCareerStatsStatisticsByQueue>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsEntitlementsToken {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsExpertPlayer {
     pub champion_id: i32,
@@ -1532,7 +1532,7 @@ pub struct LolCareerStatsExpertPlayer {
     pub expert_rank: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsPositionStatistics {
     pub position: LolCareerStatsSummonersRiftPosition,
@@ -1540,7 +1540,7 @@ pub struct LolCareerStatsPositionStatistics {
     pub queue_stats: Vec<LolCareerStatsStatisticsByQueue>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsPositionStatsQueryRequest {
     pub queue_type: LolCareerStatsCareerStatsQueueType,
@@ -1549,14 +1549,14 @@ pub struct LolCareerStatsPositionStatsQueryRequest {
     pub season: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsStatisticsByQueue {
     pub queue_type: LolCareerStatsCareerStatsQueueType,
     pub stats: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsStatisticsPercentilesResponse {
     pub champion_id: i32,
@@ -1567,7 +1567,7 @@ pub struct LolCareerStatsStatisticsPercentilesResponse {
     pub stats: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsStatsQueryRequest {
     pub champion_id: i32,
@@ -1577,7 +1577,7 @@ pub struct LolCareerStatsStatsQueryRequest {
     pub season: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogBundled {
     pub flexible: bool,
@@ -1585,7 +1585,7 @@ pub struct LolCatalogBundled {
     pub minimum_prices: Vec<LolCatalogBundledItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogBundledItem {
     pub inventory_type: String,
@@ -1594,7 +1594,7 @@ pub struct LolCatalogBundledItem {
     pub discount_prices: Vec<LolCatalogBundledItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogBundledItemCost {
     pub currency: String,
@@ -1603,7 +1603,7 @@ pub struct LolCatalogBundledItemCost {
     pub cost_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogCatalogItem {
     pub item_id: i32,
@@ -1624,7 +1624,7 @@ pub struct LolCatalogCatalogItem {
     pub offer_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogCatalogPluginItem {
     pub item_id: i32,
@@ -1649,7 +1649,7 @@ pub struct LolCatalogCatalogPluginItem {
     pub offer_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogCatalogPluginItemAssets {
     pub splash_path: String,
@@ -1659,7 +1659,7 @@ pub struct LolCatalogCatalogPluginItemAssets {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogCatalogPluginItemWithDetails {
     pub item: LolCatalogCatalogPluginItem,
@@ -1671,7 +1671,7 @@ pub struct LolCatalogCatalogPluginItemWithDetails {
     pub assets: LolCatalogCatalogPluginItemAssets
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogCatalogPluginPrice {
     pub currency: String,
@@ -1680,7 +1680,7 @@ pub struct LolCatalogCatalogPluginPrice {
     pub sale: Option<LolCatalogCatalogPluginRetailDiscount>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogCatalogPluginRetailDiscount {
     pub start_date: String,
@@ -1689,7 +1689,7 @@ pub struct LolCatalogCatalogPluginRetailDiscount {
     pub cost: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogChampionSkinEmblem {
     pub name: String,
@@ -1697,27 +1697,27 @@ pub struct LolCatalogChampionSkinEmblem {
     pub emblem_position: LolCatalogChampionSkinEmblemPosition
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogChampionSkinEmblemPath {
     pub large: String,
     pub small: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogChampionSkinEmblemPosition {
     pub vertical: String,
     pub horizontal: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataChampion {
     pub skins: Vec<LolCatalogGameDataChampionSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataChampionChroma {
     pub id: i64,
@@ -1726,7 +1726,7 @@ pub struct LolCatalogGameDataChampionChroma {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataChampionSkin {
     pub id: i64,
@@ -1741,7 +1741,7 @@ pub struct LolCatalogGameDataChampionSkin {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataChampionSummary {
     pub id: i64,
@@ -1750,7 +1750,7 @@ pub struct LolCatalogGameDataChampionSummary {
     pub skins: Vec<LolCatalogGameDataChampionSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataItemReference {
     pub item_id: i32,
@@ -1758,7 +1758,7 @@ pub struct LolCatalogGameDataItemReference {
     pub content_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataStatstone {
     pub name: String,
@@ -1772,7 +1772,7 @@ pub struct LolCatalogGameDataStatstone {
     pub icon_full: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataStatstonePack {
     pub name: String,
@@ -1781,14 +1781,14 @@ pub struct LolCatalogGameDataStatstonePack {
     pub content_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataStatstoneSet {
     pub name: String,
     pub statstones: Vec<LolCatalogGameDataStatstone>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataStatstonesInfo {
     pub statstone_data: Vec<LolCatalogGameDataStatstoneSet>,
@@ -1801,7 +1801,7 @@ pub struct LolCatalogGameDataStatstonesInfo {
     pub champ_id_to_pack_ids: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataSummonerEmote {
     pub id: i64,
@@ -1810,7 +1810,7 @@ pub struct LolCatalogGameDataSummonerEmote {
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataSummonerIcon {
     pub id: i64,
@@ -1818,7 +1818,7 @@ pub struct LolCatalogGameDataSummonerIcon {
     pub image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataWardSkin {
     pub id: i64,
@@ -1827,7 +1827,7 @@ pub struct LolCatalogGameDataWardSkin {
     pub ward_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogInventoryContent {
     pub item_id: i64,
@@ -1835,7 +1835,7 @@ pub struct LolCatalogInventoryContent {
     pub purchase_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemChoiceDetails {
     pub item: LolCatalogCatalogPluginItem,
@@ -1847,7 +1847,7 @@ pub struct LolCatalogItemChoiceDetails {
     pub metadata: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemCost {
     pub currency: String,
@@ -1855,7 +1855,7 @@ pub struct LolCatalogItemCost {
     pub discount: Option<f32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemDetails {
     pub title: String,
@@ -1864,14 +1864,14 @@ pub struct LolCatalogItemDetails {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemLocalization {
     pub language: String,
@@ -1879,7 +1879,7 @@ pub struct LolCatalogItemLocalization {
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemMetadataEntry {
     #[serde(rename = "type")]
@@ -1887,7 +1887,7 @@ pub struct LolCatalogItemMetadataEntry {
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogSale {
     pub start_date: String,
@@ -1895,7 +1895,7 @@ pub struct LolCatalogSale {
     pub prices: Vec<LolCatalogItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogSkinLineDescriptionInfo {
     pub title: String,
@@ -1903,7 +1903,7 @@ pub struct LolCatalogSkinLineDescriptionInfo {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogSkinLineInfo {
     pub name: String,
@@ -1916,7 +1916,7 @@ pub struct LolCatalogSkinLineInfo {
     pub tiers: Vec<LolCatalogSkinLineTier>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogSkinLineTier {
     pub id: i64,
@@ -1932,7 +1932,7 @@ pub struct LolCatalogSkinLineTier {
     pub collection_splash_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeData {
     pub id: i64,
@@ -1958,13 +1958,13 @@ pub struct LolChallengesChallengeData {
     pub completed_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeLevelData {
     pub level: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengePlayerData {
     pub id: String,
@@ -1979,7 +1979,7 @@ pub struct LolChallengesChallengePlayerData {
     pub apex_lader_update_time: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengePoints {
     pub current: i32,
@@ -1989,7 +1989,7 @@ pub struct LolChallengesChallengePoints {
     pub position: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeSeason {
     pub season_id: i32,
@@ -1998,13 +1998,13 @@ pub struct LolChallengesChallengeSeason {
     pub is_active: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeSignedUpdatePayload {
     pub tokens_by_type: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeThreshold {
     pub value: f64,
@@ -2012,7 +2012,7 @@ pub struct LolChallengesChallengeThreshold {
     pub reward_group_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeThresholdReward {
     pub category: String,
@@ -2020,7 +2020,7 @@ pub struct LolChallengesChallengeThresholdReward {
     pub quantity: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengesPlayerPreferences {
     pub banner_accent: String,
@@ -2029,40 +2029,40 @@ pub struct LolChallengesChallengesPlayerPreferences {
     pub signed_j_w_t_payload: LolChallengesChallengeSignedUpdatePayload
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengesRMSNotification {
     pub ack_required: bool,
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengesRMSPayload {
     pub puuid: String,
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesEndOfGameStats {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesFriendLevelsData {
     pub level: String,
     pub friends: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesFriendResource {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameDataChallengeConfig {
     pub name: String,
@@ -2080,34 +2080,34 @@ pub struct LolChallengesGameDataChallengeConfig {
     pub seasons: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameDataChallengeTitle {
     pub name: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameDataChallengesData {
     pub challenges: HashMap<String, LolChallengesGameDataChallengeConfig>,
     pub titles: HashMap<String, LolChallengesGameDataChallengeTitle>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameflowGameData {
     pub queue: LolChallengesQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameflowSession {
     pub phase: LolChallengesGameflowPhase,
     pub game_data: LolChallengesGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesInventoryTypeAchievementTitle {
     pub item_id: i32,
@@ -2115,7 +2115,7 @@ pub struct LolChallengesInventoryTypeAchievementTitle {
     pub purchase_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesLcuChallengeNotification {
     pub id: u64,
@@ -2129,14 +2129,14 @@ pub struct LolChallengesLcuChallengeNotification {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesLoginPlayerData {
     pub client_player_data_list: Vec<LolChallengesChallengePlayerData>,
     pub seasons: Vec<LolChallengesChallengeSeason>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesPlayerClientPreferences {
     pub tabard: String,
@@ -2144,21 +2144,21 @@ pub struct LolChallengesPlayerClientPreferences {
     pub challenge_ids: Vec<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesQueue {
     pub id: i32,
     pub game_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesSequenceEvent {
     pub name: String,
     pub priority: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUICategoryProgress {
     pub level: String,
@@ -2168,7 +2168,7 @@ pub struct LolChallengesUICategoryProgress {
     pub max: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIChallenge {
     pub id: i64,
@@ -2211,13 +2211,13 @@ pub struct LolChallengesUIChallenge {
     pub retire_timestamp: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIChallengePenalty {
     pub reason: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIChallengeReward {
     pub category: String,
@@ -2226,14 +2226,14 @@ pub struct LolChallengesUIChallengeReward {
     pub asset: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIChallengeThreshold {
     pub value: f64,
     pub rewards: Vec<LolChallengesUIChallengeReward>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIPlayerSummary {
     pub total_challenge_score: i64,
@@ -2249,7 +2249,7 @@ pub struct LolChallengesUIPlayerSummary {
     pub selected_challenges_string: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUITitle {
     pub item_id: i32,
@@ -2263,20 +2263,20 @@ pub struct LolChallengesUITitle {
     pub purchase_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUserResource {
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectBenchChampion {
     pub champion_id: i32,
     pub is_priority: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampGridChampion {
     pub id: i32,
@@ -2297,7 +2297,7 @@ pub struct LolChampSelectChampGridChampion {
     pub positions_favorited: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectAction {
     pub id: i64,
@@ -2309,7 +2309,7 @@ pub struct LolChampSelectChampSelectAction {
     pub is_ally_action: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectBannedChampions {
     pub my_team_bans: Vec<i32>,
@@ -2317,7 +2317,7 @@ pub struct LolChampSelectChampSelectBannedChampions {
     pub num_bans: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectChatRoomDetails {
     pub chat_room_name: String,
@@ -2325,7 +2325,7 @@ pub struct LolChampSelectChampSelectChatRoomDetails {
     pub multi_user_chat_j_w_t: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
@@ -2334,14 +2334,14 @@ pub struct LolChampSelectChampSelectMySelection {
     pub ward_skin_id: Option<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectPinDropNotification {
     pub pin_drop_summoners: Vec<LolChampSelectChampSelectPinDropSummoner>,
     pub map_side: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectPinDropSummoner {
     pub slot_id: u32,
@@ -2352,7 +2352,7 @@ pub struct LolChampSelectChampSelectPinDropSummoner {
     pub is_placeholder: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectPlayerSelection {
     pub cell_id: i64,
@@ -2372,7 +2372,7 @@ pub struct LolChampSelectChampSelectPlayerSelection {
     pub obfuscated_puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectSession {
     pub game_id: u64,
@@ -2405,7 +2405,7 @@ pub struct LolChampSelectChampSelectSession {
     pub is_custom_game: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectSummoner {
     pub cell_id: i64,
@@ -2449,7 +2449,7 @@ pub struct LolChampSelectChampSelectSummoner {
     pub show_muted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectSwapContract {
     pub id: i64,
@@ -2457,7 +2457,7 @@ pub struct LolChampSelectChampSelectSwapContract {
     pub state: LolChampSelectChampSelectSwapState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectSwapNotification {
     pub id: i64,
@@ -2468,7 +2468,7 @@ pub struct LolChampSelectChampSelectSwapNotification {
     pub initiated_by_local_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectTimer {
     pub adjusted_time_left_in_phase: i64,
@@ -2478,7 +2478,7 @@ pub struct LolChampSelectChampSelectTimer {
     pub internal_now_in_epoch_ms: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectTradeContract {
     pub id: i64,
@@ -2486,7 +2486,7 @@ pub struct LolChampSelectChampSelectTradeContract {
     pub state: LolChampSelectChampSelectTradeState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectTradeNotification {
     pub id: i64,
@@ -2499,7 +2499,7 @@ pub struct LolChampSelectChampSelectTradeNotification {
     pub initiated_by_local_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampionQuestSkinInfo {
     pub splash_path: String,
@@ -2507,7 +2507,7 @@ pub struct LolChampSelectChampionQuestSkinInfo {
     pub tiers: Vec<LolChampSelectCollectionsChampionQuestSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampionSelection {
     pub selected_by_me: bool,
@@ -2520,7 +2520,7 @@ pub struct LolChampSelectChampionSelection {
     pub picked_by_other_or_banned: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionChroma {
     pub champion_id: i32,
@@ -2533,7 +2533,7 @@ pub struct LolChampSelectCollectionsChampionChroma {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionMastery {
     pub champion_id: i32,
@@ -2542,7 +2542,7 @@ pub struct LolChampSelectCollectionsChampionMastery {
     pub chest_granted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionMinimal {
     pub ban_vo_path: String,
@@ -2558,7 +2558,7 @@ pub struct LolChampSelectCollectionsChampionMinimal {
     pub free_to_play: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionQuestSkin {
     pub champion_id: i32,
@@ -2576,7 +2576,7 @@ pub struct LolChampSelectCollectionsChampionQuestSkin {
     pub splash_video_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkin {
     pub champion_id: i32,
@@ -2596,7 +2596,7 @@ pub struct LolChampSelectCollectionsChampionSkin {
     pub splash_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkinEmblem {
     pub name: String,
@@ -2604,21 +2604,21 @@ pub struct LolChampSelectCollectionsChampionSkinEmblem {
     pub positions: LolChampSelectCollectionsChampionSkinEmblemPosition
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkinEmblemPath {
     pub large: String,
     pub small: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkinEmblemPosition {
     pub vertical: String,
     pub horizontal: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkinMinimal {
     pub champion_id: i32,
@@ -2633,7 +2633,7 @@ pub struct LolChampSelectCollectionsChampionSkinMinimal {
     pub tile_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -2642,27 +2642,27 @@ pub struct LolChampSelectCollectionsOwnership {
     pub rental: LolChampSelectCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsRental {
     pub rented: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectEntitledFeatureState {
     pub additional_rerolls: u32,
     pub unlocked_skin_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectGameDataSummonerSpell {
     pub id: u64,
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectAction {
     pub id: i64,
@@ -2676,7 +2676,7 @@ pub struct LolChampSelectLegacyChampSelectAction {
     pub pick_turn: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectBannedChampions {
     pub my_team_bans: Vec<i32>,
@@ -2684,7 +2684,7 @@ pub struct LolChampSelectLegacyChampSelectBannedChampions {
     pub num_bans: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectChatRoomDetails {
     pub chat_room_name: String,
@@ -2692,7 +2692,7 @@ pub struct LolChampSelectLegacyChampSelectChatRoomDetails {
     pub multi_user_chat_j_w_t: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
@@ -2701,7 +2701,7 @@ pub struct LolChampSelectLegacyChampSelectMySelection {
     pub ward_skin_id: Option<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectPlayerSelection {
     pub cell_id: i64,
@@ -2717,7 +2717,7 @@ pub struct LolChampSelectLegacyChampSelectPlayerSelection {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectSession {
     pub timer: LolChampSelectLegacyChampSelectTimer,
@@ -2738,7 +2738,7 @@ pub struct LolChampSelectLegacyChampSelectSession {
     pub is_custom_game: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectTimer {
     pub adjusted_time_left_in_phase: i64,
@@ -2748,7 +2748,7 @@ pub struct LolChampSelectLegacyChampSelectTimer {
     pub internal_now_in_epoch_ms: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectTradeContract {
     pub id: i64,
@@ -2756,14 +2756,14 @@ pub struct LolChampSelectLegacyChampSelectTradeContract {
     pub state: LolChampSelectLegacyChampSelectTradeState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampionSelectPreferences {
     pub skins: HashMap<String, i32>,
     pub spells: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyCollectionsChampion {
     pub disabled_queues: Vec<String>,
@@ -2773,7 +2773,7 @@ pub struct LolChampSelectLegacyCollectionsChampion {
     pub active: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -2782,33 +2782,33 @@ pub struct LolChampSelectLegacyCollectionsOwnership {
     pub rental: LolChampSelectLegacyCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyCollectionsRental {
     pub rented: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowGameClient {
     pub running: bool,
     pub visible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowGameData {
     pub queue: LolChampSelectLegacyQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowGameDodge {
     pub state: LolChampSelectLegacyGameflowGameDodgeState,
     pub dodge_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowSession {
     pub phase: LolChampSelectLegacyGameflowPhase,
@@ -2816,14 +2816,14 @@ pub struct LolChampSelectLegacyGameflowSession {
     pub game_data: LolChampSelectLegacyGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyInventoryItemWithPayload {
     pub item_id: i64,
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyLobbyStatus {
     pub queue_id: i32,
@@ -2834,7 +2834,7 @@ pub struct LolChampSelectLegacyLobbyStatus {
     pub member_summoner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyLoginSession {
     pub state: LolChampSelectLegacyLoginSessionStates,
@@ -2842,21 +2842,21 @@ pub struct LolChampSelectLegacyLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyPlayerStatus {
     pub current_lobby_status: Option<LolChampSelectLegacyLobbyStatus>,
     pub last_queued_lobby_status: Option<LolChampSelectLegacyLobbyStatus>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyQueue {
     pub game_type_config: LolChampSelectLegacyQueueGameTypeConfig,
     pub are_free_champions_allowed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyQueueGameTypeConfig {
     pub max_allowable_bans: i32,
@@ -2865,21 +2865,21 @@ pub struct LolChampSelectLegacyQueueGameTypeConfig {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacySettingCategoryResource {
     pub schema_version: i32,
     pub data: LolChampSelectLegacyChampionSelectPreferences
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacySummoner {
     pub summoner_id: u64,
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyTeamBoost {
     pub summoner_name: String,
@@ -2891,13 +2891,13 @@ pub struct LolChampSelectLegacyTeamBoost {
     pub unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLoginSession {
     pub summoner_id: Option<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectMutedPlayerInfo {
     pub puuid: String,
@@ -2906,14 +2906,14 @@ pub struct LolChampSelectMutedPlayerInfo {
     pub obfuscated_summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectSettingsResource {
     pub data: Value,
     pub schema_version: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectSfxNotification {
     pub delay_millis: i64,
@@ -2921,7 +2921,7 @@ pub struct LolChampSelectSfxNotification {
     pub event_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectSkinSelectorChildSkin {
     pub champion_id: i32,
@@ -2944,7 +2944,7 @@ pub struct LolChampSelectSkinSelectorChildSkin {
     pub short_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectSkinSelectorInfo {
     pub selected_skin_id: i32,
@@ -2955,7 +2955,7 @@ pub struct LolChampSelectSkinSelectorInfo {
     pub show_skin_selector: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectSkinSelectorSkin {
     pub champion_id: i32,
@@ -2978,7 +2978,7 @@ pub struct LolChampSelectSkinSelectorSkin {
     pub group_splash: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectTeamBoost {
     pub summoner_id: i64,
@@ -2990,7 +2990,7 @@ pub struct LolChampSelectTeamBoost {
     pub unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsChampionQuestSkinInfo {
     pub name: String,
@@ -3003,7 +3003,7 @@ pub struct LolChampionsChampionQuestSkinInfo {
     pub tiers: Vec<LolChampionsCollectionsChampionQuestSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampion {
     pub alias: String,
@@ -3030,7 +3030,7 @@ pub struct LolChampionsCollectionsChampion {
     pub tactical_info: LolChampionsCollectionsChampionTacticalInfo
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionChroma {
     pub champion_id: i32,
@@ -3044,7 +3044,7 @@ pub struct LolChampionsCollectionsChampionChroma {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionMinimal {
     pub alias: String,
@@ -3067,7 +3067,7 @@ pub struct LolChampionsCollectionsChampionMinimal {
     pub ranked_play_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionPlayableCounts {
     pub champions_owned: u32,
@@ -3077,7 +3077,7 @@ pub struct LolChampionsCollectionsChampionPlayableCounts {
     pub champions_xbox_g_p_reward: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionQuestSkin {
     pub champion_id: i32,
@@ -3100,7 +3100,7 @@ pub struct LolChampionsCollectionsChampionQuestSkin {
     pub collection_splash_video_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkin {
     pub champion_id: i32,
@@ -3126,7 +3126,7 @@ pub struct LolChampionsCollectionsChampionSkin {
     pub features_text: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkinEmblem {
     pub name: String,
@@ -3134,21 +3134,21 @@ pub struct LolChampionsCollectionsChampionSkinEmblem {
     pub positions: LolChampionsCollectionsChampionSkinEmblemPosition
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkinEmblemPath {
     pub large: String,
     pub small: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkinEmblemPosition {
     pub vertical: String,
     pub horizontal: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkinMinimal {
     pub champion_id: i32,
@@ -3164,14 +3164,14 @@ pub struct LolChampionsCollectionsChampionSkinMinimal {
     pub tile_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSpell {
     pub name: String,
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionTacticalInfo {
     pub style: u32,
@@ -3179,7 +3179,7 @@ pub struct LolChampionsCollectionsChampionTacticalInfo {
     pub damage_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -3188,7 +3188,7 @@ pub struct LolChampionsCollectionsOwnership {
     pub rental: LolChampionsCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsRental {
     pub end_date: u64,
@@ -3197,7 +3197,7 @@ pub struct LolChampionsCollectionsRental {
     pub rented: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampion {
     pub id: i32,
@@ -3215,7 +3215,7 @@ pub struct LolChampionsGameDataChampion {
     pub tactical_info: LolChampionsGameDataChampionTacticalInfo
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionChroma {
     pub id: i32,
@@ -3223,7 +3223,7 @@ pub struct LolChampionsGameDataChampionChroma {
     pub chroma_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionQuestSkin {
     pub id: i32,
@@ -3239,7 +3239,7 @@ pub struct LolChampionsGameDataChampionQuestSkin {
     pub short_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionSkin {
     pub id: i32,
@@ -3259,20 +3259,20 @@ pub struct LolChampionsGameDataChampionSkin {
     pub features_text: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionSpell {
     pub name: String,
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionSummary {
     pub id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionTacticalInfo {
     pub style: u32,
@@ -3280,7 +3280,7 @@ pub struct LolChampionsGameDataChampionTacticalInfo {
     pub damage_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataQuestSkinDescriptionInfo {
     pub title: String,
@@ -3288,7 +3288,7 @@ pub struct LolChampionsGameDataQuestSkinDescriptionInfo {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataQuestSkinInfo {
     pub name: String,
@@ -3301,7 +3301,7 @@ pub struct LolChampionsGameDataQuestSkinInfo {
     pub tiers: Vec<LolChampionsGameDataChampionQuestSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsInventoryItemWithPayload {
     pub uuid: String,
@@ -3318,13 +3318,13 @@ pub struct LolChampionsInventoryItemWithPayload {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsLcdsDynamicClientConfig {
     pub disabled_champions: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsLoginSession {
     pub state: LolChampionsLoginSessionStates,
@@ -3332,14 +3332,14 @@ pub struct LolChampionsLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsLoyaltyStatusNotification {
     pub status: LolChampionsLoyaltyStatus,
     pub reload_inventory: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsPlayerNotification {
     pub background_url: String,
@@ -3355,7 +3355,7 @@ pub struct LolChampionsPlayerNotification {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsQuestSkinDescriptionInfo {
     pub title: String,
@@ -3363,20 +3363,20 @@ pub struct LolChampionsQuestSkinDescriptionInfo {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsSummoner {
     pub summoner_id: u64,
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatActiveConversationResource {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatAuthResourceRsoAccessToken {
     pub token: String,
@@ -3384,7 +3384,7 @@ pub struct LolChatAuthResourceRsoAccessToken {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatBlocked {
     pub pid: String,
@@ -3393,13 +3393,13 @@ pub struct LolChatBlocked {
     pub game_tag: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatBlockedList {
     pub blocked: Vec<LolChatBlocked>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatBlockedPlayerResource {
     pub summoner_id: u64,
@@ -3412,7 +3412,7 @@ pub struct LolChatBlockedPlayerResource {
     pub game_tag: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChampSelection {
     pub summoner_internal_name: String,
@@ -3420,7 +3420,7 @@ pub struct LolChatChampSelection {
     pub selected_skin_index: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatDomainConfig {
     pub p2_p_domain_name: Option<String>,
@@ -3430,7 +3430,7 @@ pub struct LolChatChatDomainConfig {
     pub club_domain_name: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatFriendUpdate {
     pub pid: String,
@@ -3438,7 +3438,7 @@ pub struct LolChatChatFriendUpdate {
     pub note: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatMessage {
     #[serde(rename = "type")]
@@ -3455,13 +3455,13 @@ pub struct LolChatChatMessage {
     pub read: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatMessageList {
     pub messages: Vec<LolChatChatMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatPlatformLoginSession {
     pub state: LolChatChatPlatformLoginSessionState,
@@ -3475,14 +3475,14 @@ pub struct LolChatChatPlatformLoginSession {
     pub is_new_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatServiceDynamicClientConfig {
     pub lcu_social: Option<LolChatLcuSocialConfig>,
     pub chat_domain: Option<LolChatChatDomainConfig>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatSettings {
     pub chat_group_mobile: bool,
@@ -3513,7 +3513,7 @@ pub struct LolChatChatSettings {
     pub chat_window: LolChatChatWindowSettings
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatSummoner {
     pub summoner_id: u64,
@@ -3524,7 +3524,7 @@ pub struct LolChatChatSummoner {
     pub unnamed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatWindowSettings {
     pub detached: bool,
@@ -3534,19 +3534,19 @@ pub struct LolChatChatWindowSettings {
     pub width: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatCidBody {
     pub cid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConfigStatus {
     pub readiness: LolChatConfigReadinessEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatContentCookies {
     pub content_id: String,
@@ -3554,7 +3554,7 @@ pub struct LolChatContentCookies {
     pub cookies: Vec<LolChatcookie>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversation {
     pub cid: String,
@@ -3565,7 +3565,7 @@ pub struct LolChatConversation {
     pub muted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversationJoinFederated {
     pub id: String,
@@ -3577,13 +3577,13 @@ pub struct LolChatConversationJoinFederated {
     pub hidden: Option<bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversationList {
     pub conversations: Vec<LolChatConversation>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversationMessageResource {
     pub id: String,
@@ -3598,7 +3598,7 @@ pub struct LolChatConversationMessageResource {
     pub is_historical: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversationResource {
     pub id: String,
@@ -3617,7 +3617,7 @@ pub struct LolChatConversationResource {
     pub last_message: Option<LolChatConversationMessageResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversationUpdate {
     pub cid: String,
@@ -3625,7 +3625,7 @@ pub struct LolChatConversationUpdate {
     pub hidden: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatDebugResource {
     pub is_x_m_p_p_logging_enabled: Option<bool>,
@@ -3642,28 +3642,28 @@ pub struct LolChatDebugResource {
     pub silence_chat_while_in_game: Option<bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatEndOfGamePlayer {
     pub puuid: String,
     pub is_local_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatEndOfGameStats {
     pub teams: Vec<LolChatEndOfGameTeam>,
     pub local_player: LolChatEndOfGamePlayer
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatEndOfGameTeam {
     pub players: Vec<LolChatEndOfGamePlayer>,
     pub is_player_team: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatError {
     pub cid: String,
@@ -3678,13 +3678,13 @@ pub struct LolChatError {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatErrorList {
     pub errors: Vec<LolChatError>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatErrorResource {
     pub id: u64,
@@ -3694,7 +3694,7 @@ pub struct LolChatErrorResource {
     pub text: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriend {
     pub pid: String,
@@ -3708,7 +3708,7 @@ pub struct LolChatFriend {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendCountsResource {
     pub num_friends: u32,
@@ -3721,7 +3721,7 @@ pub struct LolChatFriendCountsResource {
     pub num_friends_mobile: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroup {
     pub name: String,
@@ -3729,26 +3729,26 @@ pub struct LolChatFriendGroup {
     pub is_meta_group: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupCreate {
     pub name: String,
     pub collapsed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupList {
     pub groups: Vec<LolChatFriendGroup>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupOrder {
     pub groups: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupUpdate {
     pub name: String,
@@ -3756,13 +3756,13 @@ pub struct LolChatFriendGroupUpdate {
     pub collapsed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendList {
     pub friends: Vec<LolChatFriend>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendRequest {
     pub pid: String,
@@ -3775,7 +3775,7 @@ pub struct LolChatFriendRequest {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendRequestAdd {
     pub pid: String,
@@ -3787,13 +3787,13 @@ pub struct LolChatFriendRequestAdd {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendRequestList {
     pub requests: Vec<LolChatFriendRequest>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendRequestResource {
     pub summoner_id: u64,
@@ -3808,7 +3808,7 @@ pub struct LolChatFriendRequestResource {
     pub direction: LolChatFriendRequestDirection
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendResource {
     pub summoner_id: u64,
@@ -3837,14 +3837,14 @@ pub struct LolChatFriendResource {
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGameDataChampionSummary {
     pub id: i32,
     pub alias: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGameflowGameData {
     pub game_id: u64,
@@ -3854,13 +3854,13 @@ pub struct LolChatGameflowGameData {
     pub player_champion_selections: Vec<LolChatChampSelection>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGameflowGameMap {
     pub id: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGameflowSession {
     pub phase: LolChatGameflowPhase,
@@ -3868,7 +3868,7 @@ pub struct LolChatGameflowSession {
     pub map: LolChatGameflowGameMap
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGroupResource {
     pub id: u32,
@@ -3879,13 +3879,13 @@ pub struct LolChatGroupResource {
     pub collapsed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatIdBody {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatLcuSocialConfig {
     pub force_chat_filter: bool,
@@ -3898,21 +3898,21 @@ pub struct LolChatLcuSocialConfig {
     pub platform_to_region_map: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatLobbyMember {
     pub id: u64,
     pub is_owner: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatLobbyPlayerStatus {
     pub current_lobby_status: Option<LolChatLobbyStatus>,
     pub last_queued_lobby_status: Option<LolChatLobbyStatus>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatLobbyStatus {
     pub queue_id: i32,
@@ -3922,7 +3922,7 @@ pub struct LolChatLobbyStatus {
     pub custom_spectator_policy: LolChatQueueCustomGameSpectatorPolicy
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMessage {
     #[serde(rename = "type")]
@@ -3939,13 +3939,13 @@ pub struct LolChatMessage {
     pub read: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMessageList {
     pub messages: Vec<LolChatMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMessagePost {
     pub cid: String,
@@ -3954,7 +3954,7 @@ pub struct LolChatMessagePost {
     pub type_: LolChatMessageType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMessageSend {
     pub message: String,
@@ -3962,7 +3962,7 @@ pub struct LolChatMessageSend {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMultiGamePresence {
     pub state: LolChatAccountState,
@@ -3986,13 +3986,13 @@ pub struct LolChatMultiGamePresence {
     pub private: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMultiGamePresenceList {
     pub presences: Vec<LolChatMultiGamePresence>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMultiGamePresenceSharedPayload {
     pub product: Option<String>,
@@ -4004,7 +4004,7 @@ pub struct LolChatMultiGamePresenceSharedPayload {
     pub time: Option<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMultiGamePresenceUpdate {
     pub state: LolChatAccountState,
@@ -4015,7 +4015,7 @@ pub struct LolChatMultiGamePresenceUpdate {
     pub shared: Option<LolChatMultiGamePresenceSharedPayload>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMultiUserChatJWTPayload {
     pub typ: String,
@@ -4023,7 +4023,7 @@ pub struct LolChatMultiUserChatJWTPayload {
     pub chn: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMutedPlayerInfo {
     pub puuid: String,
@@ -4032,13 +4032,13 @@ pub struct LolChatMutedPlayerInfo {
     pub obfuscated_summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatNameBody {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatParticipant {
     pub cid: String,
@@ -4051,13 +4051,13 @@ pub struct LolChatParticipant {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatParticipantList {
     pub participants: Vec<LolChatParticipant>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPatchlineMetadata {
     pub product_id: String,
@@ -4066,13 +4066,13 @@ pub struct LolChatPatchlineMetadata {
     pub content_cookies: Vec<LolChatContentCookies>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPidBody {
     pub pid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPlayerMuteStatus {
     pub puuid: String,
@@ -4082,14 +4082,14 @@ pub struct LolChatPlayerMuteStatus {
     pub is_system_muted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPlayerMuteUpdate {
     pub puuids: Vec<String>,
     pub is_muted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPlayerPreferences {
     pub data: String,
@@ -4099,20 +4099,20 @@ pub struct LolChatPlayerPreferences {
     pub modified: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPluginRegionLocaleChangedEvent {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPresenceProduct {
     pub product: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatProductMetadata {
     pub id: String,
@@ -4120,13 +4120,13 @@ pub struct LolChatProductMetadata {
     pub patchlines: HashMap<String, LolChatPatchlineMetadata>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatProductMetadataMap {
     pub products: HashMap<String, LolChatProductMetadata>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatQueue {
     pub id: i32,
@@ -4136,14 +4136,14 @@ pub struct LolChatQueue {
     pub game_type_config: LolChatQueueGameTypeConfig
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatQueueGameTypeConfig {
     pub id: i64,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatRankedQueueStats {
     pub queue_type: LolChatLeagueQueueType,
@@ -4154,7 +4154,7 @@ pub struct LolChatRankedQueueStats {
     pub games: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatRankedStats {
     pub highest_ranked_entry: Option<LolChatRankedQueueStats>,
@@ -4163,7 +4163,7 @@ pub struct LolChatRankedStats {
     pub highest_previous_season_achieved_division: LolChatLeagueDivision
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatRsoAuthorization {
     pub current_platform_id: String,
@@ -4171,7 +4171,7 @@ pub struct LolChatRsoAuthorization {
     pub subject: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSanitizeRequest {
     pub texts: Vec<String>,
@@ -4179,14 +4179,14 @@ pub struct LolChatSanitizeRequest {
     pub aggressive_scan: Option<bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSanitizeResponse {
     pub texts: Option<Vec<String>>,
     pub modified: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSanitizerStatus {
     pub ready: bool,
@@ -4194,7 +4194,7 @@ pub struct LolChatSanitizerStatus {
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSession {
     pub state: LolChatChatSessionState,
@@ -4206,20 +4206,20 @@ pub struct LolChatSession {
     pub loaded: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSessionResource {
     pub session_state: LolChatSessionState,
     pub session_expire: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSettingsResource {
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSpectateGameInfoResource {
     pub drop_in_spectate_game_id: String,
@@ -4228,13 +4228,13 @@ pub struct LolChatSpectateGameInfoResource {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSummonerStatus {
     pub ready: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatTeamPlayerEntry {
     pub summoner_id: u64,
@@ -4242,7 +4242,7 @@ pub struct LolChatTeamPlayerEntry {
     pub summoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatTranslateRequest {
     pub keys: Vec<String>,
@@ -4252,13 +4252,13 @@ pub struct LolChatTranslateRequest {
     pub blocking: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatTranslateResponse {
     pub results: Vec<LolChatTranslateResult>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatTranslateResult {
     pub found: bool,
@@ -4267,7 +4267,7 @@ pub struct LolChatTranslateResult {
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatUserResource {
     pub summoner_id: u64,
@@ -4291,7 +4291,7 @@ pub struct LolChatUserResource {
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatcookie {
     pub url: String,
@@ -4304,14 +4304,14 @@ pub struct LolChatcookie {
     pub expires: Option<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashBlockedPlayerResource {
     pub summoner_id: u64,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashBracket {
     pub tournament_id: i64,
@@ -4324,14 +4324,14 @@ pub struct LolClashBracket {
     pub is_complete: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashBracketReadyNotification {
     pub tournament_id: i64,
     pub bracket_id: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashBracketUpdateNotification {
     pub tournament_id: i64,
@@ -4340,20 +4340,20 @@ pub struct LolClashBracketUpdateNotification {
     pub notify_reason: LolClashRosterNotifyReason
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashChangeIconRequest {
     pub icon_id: i32,
     pub icon_color_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashChangeNameRequest {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClashConfig {
     pub visibility: LolClashClashVisibility,
@@ -4379,27 +4379,27 @@ pub struct LolClashClashConfig {
     pub check_parties_registration: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClashDisabledConfig {
     pub disabled_reason: String,
     pub estimated_enable_time_millis: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClashSettingCategory {
     pub simple_state_flag_ids: Option<Vec<String>>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClientFailedInvite {
     pub player_id: u64,
     pub exception: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClubsSummoner {
     pub summoner_id: u64,
@@ -4408,7 +4408,7 @@ pub struct LolClashClubsSummoner {
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashEogPlayerUpdateDTO {
     pub tournament_id: i64,
@@ -4424,7 +4424,7 @@ pub struct LolClashEogPlayerUpdateDTO {
     pub reward_progress: Vec<ClashRewardDefinition>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashFindPlayers {
     pub invitation_id: String,
@@ -4433,7 +4433,7 @@ pub struct LolClashFindPlayers {
     pub count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashFindTeams {
     pub tournament_id: i64,
@@ -4441,39 +4441,39 @@ pub struct LolClashFindTeams {
     pub count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowAvailability {
     pub is_available: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowGameDodge {
     pub state: LolClashMatchmakingDodgeState,
     pub dodge_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowPartiesRegistrationStatus {
     pub complete: bool,
     pub error_codes: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowSession {
     pub phase: LolClashGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashKickRequest {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashLftState {
     pub lft: bool,
@@ -4481,21 +4481,21 @@ pub struct LolClashLftState {
     pub secondary_pos: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashLoginSession {
     pub state: LolClashLoginSessionState,
     pub summoner_id: Option<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashMatchmakingDodgeData {
     pub state: LolClashMatchmakingDodgeState,
     pub dodger_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashMatchmakingReadyCheckResource {
     pub state: LolClashMatchmakingReadyCheckState,
@@ -4505,7 +4505,7 @@ pub struct LolClashMatchmakingReadyCheckResource {
     pub decliner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashMatchmakingSearchResource {
     pub queue_id: i32,
@@ -4513,7 +4513,7 @@ pub struct LolClashMatchmakingSearchResource {
     pub dodge_data: LolClashMatchmakingDodgeData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashMemberBanUnbanNotification {
     pub player_id: i64,
@@ -4524,7 +4524,7 @@ pub struct LolClashMemberBanUnbanNotification {
     pub tournaments: Vec<MemberBanUnbanTournament>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashNoShowPingDTO {
     pub tournament_id: i64,
@@ -4532,7 +4532,7 @@ pub struct LolClashNoShowPingDTO {
     pub dodge_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashNoShowPingResponse {
     pub tournament_id: i64,
@@ -4541,7 +4541,7 @@ pub struct LolClashNoShowPingResponse {
     pub data: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashNoShowPingResponseData {
     pub login_time: i64,
@@ -4551,14 +4551,14 @@ pub struct LolClashNoShowPingResponseData {
     pub ready_check_info: LolClashReadyCheckInfo
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashOfferTicketRequest {
     pub ticket_amount: i32,
     pub ticket_type: TicketType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPendingRosterNotification {
     pub pending_roster: PendingRosterDTO,
@@ -4567,7 +4567,7 @@ pub struct LolClashPendingRosterNotification {
     pub target_player_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerChatRoster {
     pub tournament_id: i64,
@@ -4586,7 +4586,7 @@ pub struct LolClashPlayerChatRoster {
     pub key: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerData {
     pub tickets: HashMap<String, i32>,
@@ -4597,7 +4597,7 @@ pub struct LolClashPlayerData {
     pub secondary_pos: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerNotification {
     pub source: String,
@@ -4616,7 +4616,7 @@ pub struct LolClashPlayerNotification {
     pub dismissible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerNotificationData {
     pub notify_reason: LolClashNotifyReason,
@@ -4628,14 +4628,14 @@ pub struct LolClashPlayerNotificationData {
     pub key_suffix: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerRewards {
     pub season_vp: i32,
     pub theme_vp: Vec<LolClashThemeVp>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerTournamentData {
     pub state: LolClashPlayerState,
@@ -4643,14 +4643,14 @@ pub struct LolClashPlayerTournamentData {
     pub bracket_id: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerUpdateNotification {
     pub player: PlayerDTO,
     pub notify_reason: LolClashNotifyReason
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlaymodeRestrictedInfo {
     pub is_restricted: bool,
@@ -4661,13 +4661,13 @@ pub struct LolClashPlaymodeRestrictedInfo {
     pub ready_for_voice: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashProfileInfo {
     pub honor_level: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashQueue {
     pub id: i32,
@@ -4693,7 +4693,7 @@ pub struct LolClashQueue {
     pub spectator_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashQueueGameTypeConfig {
     pub id: i64,
@@ -4718,7 +4718,7 @@ pub struct LolClashQueueGameTypeConfig {
     pub ban_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashQueueReward {
     pub is_ip_enabled: bool,
@@ -4727,14 +4727,14 @@ pub struct LolClashQueueReward {
     pub party_size_ip_rewards: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRankedScoutingMember {
     pub player_id: u64,
     pub champion_scouting_data: Vec<LolClashRankedScoutingTopChampion>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRankedScoutingTopChampion {
     pub champion_id: i32,
@@ -4746,7 +4746,7 @@ pub struct LolClashRankedScoutingTopChampion {
     pub kda_classification: LolClashKdaClassification
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashReadyCheckInfo {
     pub timestamp_received: i64,
@@ -4758,14 +4758,14 @@ pub struct LolClashReadyCheckInfo {
     pub ready_check_resource: LolClashMatchmakingReadyCheckResource
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRegisteredRosterNotification {
     pub roster: RosterDTO,
     pub notify_reason: LolClashRosterNotifyReason
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRoster {
     pub tournament_id: i64,
@@ -4796,7 +4796,7 @@ pub struct LolClashRoster {
     pub lft: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterDetails {
     pub name: String,
@@ -4805,7 +4805,7 @@ pub struct LolClashRosterDetails {
     pub icon_color_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterDynamicStateNotification {
     pub roster_dynamic_state: RosterDynamicStateDTO,
@@ -4813,7 +4813,7 @@ pub struct LolClashRosterDynamicStateNotification {
     pub source_player_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterMatchAggregatedStats {
     pub round: i32,
@@ -4829,7 +4829,7 @@ pub struct LolClashRosterMatchAggregatedStats {
     pub player_champion_ids: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterMember {
     pub summoner_id: u64,
@@ -4845,7 +4845,7 @@ pub struct LolClashRosterMember {
     pub inviter_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterPeriodAggregatedStats {
     pub period: i32,
@@ -4855,7 +4855,7 @@ pub struct LolClashRosterPeriodAggregatedStats {
     pub player_bids: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterPhaseInfo {
     pub phase_id: i64,
@@ -4864,14 +4864,14 @@ pub struct LolClashRosterPhaseInfo {
     pub is_bracket_complete: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterPlayerAggregatedStats {
     pub raw_stats_sum: HashMap<String, i32>,
     pub raw_stats_max: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterPlayerNotification {
     pub roster: RosterDTO,
@@ -4880,7 +4880,7 @@ pub struct LolClashRosterPlayerNotification {
     pub source_player_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterStats {
     pub roster_id: i64,
@@ -4899,7 +4899,7 @@ pub struct LolClashRosterStats {
     pub player_stats: HashMap<String, LolClashRosterPlayerAggregatedStats>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterWithdrawNotification {
     pub version: i32,
@@ -4910,7 +4910,7 @@ pub struct LolClashRosterWithdrawNotification {
     pub source_player_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashScoutingChampionMastery {
     pub champion_id: i32,
@@ -4918,7 +4918,7 @@ pub struct LolClashScoutingChampionMastery {
     pub champion_points: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashScoutingChampions {
     pub player_id: u64,
@@ -4927,7 +4927,7 @@ pub struct LolClashScoutingChampions {
     pub top_season_champions: Vec<LolClashScoutingSeasonChampion>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashScoutingSeasonChampion {
     pub champion_id: i32,
@@ -4938,55 +4938,55 @@ pub struct LolClashScoutingSeasonChampion {
     pub kda_classification: LolClashKdaClassification
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSetPositionRequest {
     pub position: Position
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSetTicketRequest {
     pub ticket_amount: i32,
     pub ticket_type: TicketType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSettingCategory {
     pub schema_version: i32,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSimpleStateFlag {
     pub id: String,
     pub status: LolClashSimpleStateStatus
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSuggestedInvite {
     pub summoner_id: u64,
     pub suggester_summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSuggestionInvite {
     pub inviter_id: u64,
     pub invitee_players: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSuggestionInvitee {
     pub captain_id: u64,
     pub invitee_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTeamOpenState {
     pub invitation_id: String,
@@ -4994,28 +4994,28 @@ pub struct LolClashTeamOpenState {
     pub open_team: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashThemeVp {
     pub theme_id: i32,
     pub vp: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashThirdPartyApiPlayer {
     pub summoner_id: u64,
     pub role: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashThirdPartyApiRoster {
     pub captain: LolClashThirdPartyApiPlayer,
     pub members: Vec<LolClashThirdPartyApiPlayer>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTicketOffer {
     pub summoner_id: u64,
@@ -5024,7 +5024,7 @@ pub struct LolClashTicketOffer {
     pub is_accepted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournament {
     pub id: i64,
@@ -5058,7 +5058,7 @@ pub struct LolClashTournament {
     pub max_suggestions_per_player: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentGameEnd {
     pub tournament_id: i64,
@@ -5068,14 +5068,14 @@ pub struct LolClashTournamentGameEnd {
     pub old_bracket: Option<LolClashBracket>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentHistoryAndWinners {
     pub tournament_history: Vec<LolClashTournament>,
     pub tournament_winners: LolClashTournamentWinnerHistory
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentPhase {
     pub id: i64,
@@ -5088,7 +5088,7 @@ pub struct LolClashTournamentPhase {
     pub capacity_status: CapacityEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentPhaseProgressNotificationDTO {
     pub tournament_id: i64,
@@ -5096,7 +5096,7 @@ pub struct LolClashTournamentPhaseProgressNotificationDTO {
     pub capacity_status: CapacityEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentStateInfo {
     pub tournament_id: i64,
@@ -5107,7 +5107,7 @@ pub struct LolClashTournamentStateInfo {
     pub num_remaining_periods: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentSummary {
     pub state: LolClashTournamentState,
@@ -5116,7 +5116,7 @@ pub struct LolClashTournamentSummary {
     pub bracket_id: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentUpdatedNotification {
     pub missing_player_ids: Vec<i64>,
@@ -5126,7 +5126,7 @@ pub struct LolClashTournamentUpdatedNotification {
     pub notify_reason: LolClashRosterNotifyReason
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentUpdatedNotificationDTO {
     pub reason: LolClashTournamentNotifyReason,
@@ -5135,14 +5135,14 @@ pub struct LolClashTournamentUpdatedNotificationDTO {
     pub relevant_phase_id: Option<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentWinnerHistory {
     pub tournament_id: i64,
     pub winners: Vec<LolClashTournamentWinnerInfo>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentWinnerInfo {
     pub roster_id: i64,
@@ -5156,20 +5156,20 @@ pub struct LolClashTournamentWinnerInfo {
     pub player_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashUserResource {
     pub summoner_id: u64,
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsAccountIdAndSummonerId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsChampionMastery {
     pub player_id: u64,
@@ -5186,7 +5186,7 @@ pub struct LolCollectionsCollectionsChampionMastery {
     pub formatted_mastery_goal: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsChestEligibility {
     pub earnable_chests: u32,
@@ -5194,7 +5194,7 @@ pub struct LolCollectionsCollectionsChestEligibility {
     pub next_chest_recharge_time: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -5203,7 +5203,7 @@ pub struct LolCollectionsCollectionsOwnership {
     pub rental: LolCollectionsCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsRental {
     pub end_date: u64,
@@ -5212,7 +5212,7 @@ pub struct LolCollectionsCollectionsRental {
     pub rented: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsSummonerBackdrop {
     pub summoner_id: u64,
@@ -5226,14 +5226,14 @@ pub struct LolCollectionsCollectionsSummonerBackdrop {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsSummonerSpells {
     pub summoner_id: u64,
     pub spells: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsTopChampionMasteries {
     pub summoner_id: u64,
@@ -5241,7 +5241,7 @@ pub struct LolCollectionsCollectionsTopChampionMasteries {
     pub masteries: Vec<LolCollectionsCollectionsChampionMastery>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsWardSkin {
     pub id: i64,
@@ -5252,38 +5252,38 @@ pub struct LolCollectionsCollectionsWardSkin {
     pub ward_shadow_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsWardSkinList {
     pub ward_skin_list: Vec<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteries {
     pub tree: LolCollectionsGameDataChampionMasteryTree
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteryGroup {
     pub id: u32,
     pub rows: Vec<LolCollectionsGameDataChampionMasteryRow>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteryRow {
     pub masteries: Vec<u32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteryTree {
     pub groups: Vec<LolCollectionsGameDataChampionMasteryGroup>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionQuestSkin {
     pub id: i32,
@@ -5292,7 +5292,7 @@ pub struct LolCollectionsGameDataChampionQuestSkin {
     pub splash_video_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionSkin {
     pub id: i32,
@@ -5303,26 +5303,26 @@ pub struct LolCollectionsGameDataChampionSkin {
     pub splash_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionSummary {
     pub id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataQuestSkinInfo {
     pub tiers: Vec<LolCollectionsGameDataChampionQuestSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataSplashMetadata {
     pub calculated_color: String,
     pub override_color: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsInventoryItem {
     pub uuid: String,
@@ -5333,7 +5333,7 @@ pub struct LolCollectionsInventoryItem {
     pub ownership_type: LolCollectionsItemOwnershipType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsInventoryItemDTO {
     pub item_id: i32,
@@ -5355,7 +5355,7 @@ pub struct LolCollectionsInventoryItemDTO {
     pub wins: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsInventoryItemWithPayload {
     pub uuid: String,
@@ -5367,13 +5367,13 @@ pub struct LolCollectionsInventoryItemWithPayload {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsLcdsDynamicClientConfig {
     pub disabled_champions: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsLoginSession {
     pub state: LolCollectionsLoginSessionStates,
@@ -5381,7 +5381,7 @@ pub struct LolCollectionsLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsNumberFormattingBehavior {
     pub digits_for_thousands_seperator: u32,
@@ -5389,7 +5389,7 @@ pub struct LolCollectionsNumberFormattingBehavior {
     pub western_number_grouping: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsNumberFormattingData {
     pub decimal_seperator: String,
@@ -5409,7 +5409,7 @@ pub struct LolCollectionsNumberFormattingData {
     pub number_formatting_behavior: LolCollectionsNumberFormattingBehavior
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsPlayerNotification {
     pub background_url: String,
@@ -5425,7 +5425,7 @@ pub struct LolCollectionsPlayerNotification {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsSummoner {
     pub summoner_id: u64,
@@ -5435,26 +5435,26 @@ pub struct LolCollectionsSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsSummonerProfile {
     pub background_skin_id: Option<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsSummonerProfileUpdate {
     pub key: String,
     pub value: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingAccountIdAndSummonerId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingCollectionsChampionMastery {
     pub player_id: u64,
@@ -5464,40 +5464,40 @@ pub struct LolContentTargetingCollectionsChampionMastery {
     pub last_play_time: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingContentTargetingFilterResponse {
     pub filters: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingContentTargetingLocaleResponse {
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingDataModelResponse {
     pub response_code: i64,
     pub model_data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingGameflowGameData {
     pub game_id: u64,
     pub queue: LolContentTargetingQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingGameflowSession {
     pub phase: LolContentTargetingGameflowPhase,
     pub game_data: LolContentTargetingGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingGeoInfo {
     pub country: String,
@@ -5505,7 +5505,7 @@ pub struct LolContentTargetingGeoInfo {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingGeoInfoResponse {
     pub success: bool,
@@ -5515,7 +5515,7 @@ pub struct LolContentTargetingGeoInfoResponse {
     pub is_initialized: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingLoginSession {
     pub state: LolContentTargetingLoginSessionState,
@@ -5524,7 +5524,7 @@ pub struct LolContentTargetingLoginSession {
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingMission {
     pub id: String,
@@ -5533,7 +5533,7 @@ pub struct LolContentTargetingMission {
     pub internal_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingPlatformConfig {
     pub enabled: bool,
@@ -5560,7 +5560,7 @@ pub struct LolContentTargetingPlatformConfig {
     pub tas_ingestion_delay_in_seconds: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingQueue {
     pub id: i32,
@@ -5569,7 +5569,7 @@ pub struct LolContentTargetingQueue {
     pub category: LolContentTargetingQueueGameCategory
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingRankedQueueStats {
     pub queue_type: LolContentTargetingRankedQueue,
@@ -5578,51 +5578,51 @@ pub struct LolContentTargetingRankedQueueStats {
     pub is_provisional: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingRankedStats {
     pub queues: Vec<LolContentTargetingRankedQueueStats>,
     pub highest_ranked_entry: Option<LolContentTargetingRankedQueueStats>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingRegionLocale {
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingSettingsResource {
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingSummoner {
     pub summoner_level: u32,
     pub profile_icon_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingTargetingAttributes {
     pub result: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingToken {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsAccountSettingsCategoryDataResource {
     pub type_to_last_opened_date: HashMap<String, i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCapOffer {
     pub id: String,
@@ -5636,7 +5636,7 @@ pub struct LolCosmeticsCapOffer {
     pub created_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCompanionsGroupViewModel {
     pub group_name: String,
@@ -5646,7 +5646,7 @@ pub struct LolCosmeticsCompanionsGroupViewModel {
     pub items: Vec<LolCosmeticsCosmeticsCompanionViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCompanionsGroupedViewModel {
     pub selected_loadout_item: LolCosmeticsCosmeticsCompanionViewModel,
@@ -5654,14 +5654,14 @@ pub struct LolCosmeticsCompanionsGroupedViewModel {
     pub groups: Vec<LolCosmeticsCompanionsGroupViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticSettingsResource {
     pub data: Option<LolCosmeticsAccountSettingsCategoryDataResource>,
     pub schema_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsCompanion {
     pub content_id: String,
@@ -5682,7 +5682,7 @@ pub struct LolCosmeticsCosmeticsCompanion {
     pub upgrades: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsCompanionViewModel {
     pub content_id: String,
@@ -5706,14 +5706,14 @@ pub struct LolCosmeticsCosmeticsCompanionViewModel {
     pub star_shards_price: LolCosmeticsCosmeticsOfferPrice
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsOfferPrice {
     pub offer_id: String,
     pub price: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsTFTDamageSkin {
     pub content_id: String,
@@ -5733,7 +5733,7 @@ pub struct LolCosmeticsCosmeticsTFTDamageSkin {
     pub upgrades: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsTFTDamageSkinViewModel {
     pub content_id: String,
@@ -5754,7 +5754,7 @@ pub struct LolCosmeticsCosmeticsTFTDamageSkinViewModel {
     pub upgrades: Vec<LolCosmeticsCosmeticsTFTDamageSkinViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsTFTMapSkin {
     pub content_id: String,
@@ -5772,7 +5772,7 @@ pub struct LolCosmeticsCosmeticsTFTMapSkin {
     pub group_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsTFTMapSkinViewModel {
     pub content_id: String,
@@ -5791,7 +5791,7 @@ pub struct LolCosmeticsCosmeticsTFTMapSkinViewModel {
     pub group_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsGameDataCompanion {
     pub content_id: String,
@@ -5808,7 +5808,7 @@ pub struct LolCosmeticsGameDataCompanion {
     pub t_f_t_only: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsGameDataTFTDamageSkin {
     pub content_id: String,
@@ -5822,7 +5822,7 @@ pub struct LolCosmeticsGameDataTFTDamageSkin {
     pub level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsGameDataTFTMapSkin {
     pub content_id: String,
@@ -5835,7 +5835,7 @@ pub struct LolCosmeticsGameDataTFTMapSkin {
     pub rarity_value: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsLoadout {
     pub id: String,
@@ -5845,7 +5845,7 @@ pub struct LolCosmeticsLoadout {
     pub loadout: HashMap<String, LolCosmeticsLoadoutItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsLoadoutItem {
     pub inventory_type: String,
@@ -5853,13 +5853,13 @@ pub struct LolCosmeticsLoadoutItem {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsLoadoutUpdateDto {
     pub loadout: HashMap<String, LolCosmeticsLoadoutItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTDamageSkinGroupViewModel {
     pub group_name: String,
@@ -5869,7 +5869,7 @@ pub struct LolCosmeticsTFTDamageSkinGroupViewModel {
     pub items: Vec<LolCosmeticsCosmeticsTFTDamageSkinViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTDamageSkinGroupedViewModel {
     pub selected_loadout_item: LolCosmeticsCosmeticsTFTDamageSkinViewModel,
@@ -5877,7 +5877,7 @@ pub struct LolCosmeticsTFTDamageSkinGroupedViewModel {
     pub groups: Vec<LolCosmeticsTFTDamageSkinGroupViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTMapSkinGroupViewModel {
     pub group_name: String,
@@ -5887,7 +5887,7 @@ pub struct LolCosmeticsTFTMapSkinGroupViewModel {
     pub items: Vec<LolCosmeticsCosmeticsTFTMapSkinViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTMapSkinGroupedViewModel {
     pub selected_loadout_item: LolCosmeticsCosmeticsTFTMapSkinViewModel,
@@ -5895,27 +5895,27 @@ pub struct LolCosmeticsTFTMapSkinGroupedViewModel {
     pub groups: Vec<LolCosmeticsTFTMapSkinGroupViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTSettingsDataResource {
     pub icon_override: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTSettingsResource {
     pub data: Option<LolCosmeticsTFTSettingsDataResource>,
     pub schema_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsUserResource {
     pub summoner_id: u64,
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolDiscordRpGameDataChampionSummary {
     pub id: i32,
@@ -5923,7 +5923,7 @@ pub struct LolDiscordRpGameDataChampionSummary {
     pub alias: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolDiscordRpPartyPresenceData {
     pub party_id: String,
@@ -5932,21 +5932,21 @@ pub struct LolDiscordRpPartyPresenceData {
     pub max_players: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationAccessToken {
     pub token: String,
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationEmailUpdate {
     pub email: String,
     pub password: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationEmailVerificationSession {
     pub email: String,
@@ -5954,7 +5954,7 @@ pub struct LolEmailVerificationEmailVerificationSession {
     pub fatal_error: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationRegionLocale {
     pub region: String,
@@ -5963,20 +5963,20 @@ pub struct LolEmailVerificationRegionLocale {
     pub web_language: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationRemoteEmailVerificationSession {
     pub email: String,
     pub email_verified: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationValidationStatus {
     pub email_status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameChampionMasteryGrade {
     pub player_id: u64,
@@ -5984,7 +5984,7 @@ pub struct LolEndOfGameChampionMasteryGrade {
     pub grade: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameChampionMasteryMini {
     pub player_id: u64,
@@ -5992,7 +5992,7 @@ pub struct LolEndOfGameChampionMasteryMini {
     pub champion_level: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameChampionMasteryUpdate {
     pub id: String,
@@ -6016,7 +6016,7 @@ pub struct LolEndOfGameChampionMasteryUpdate {
     pub member_grades: Vec<LolEndOfGameChampionMasteryGrade>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGamePlayer {
     pub stats: Value,
@@ -6046,7 +6046,7 @@ pub struct LolEndOfGameEndOfGamePlayer {
     pub is_local_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGamePlayerComplaintV2 {
     pub game_id: u64,
@@ -6055,7 +6055,7 @@ pub struct LolEndOfGameEndOfGamePlayerComplaintV2 {
     pub comment: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGamePlayerReport {
     pub reported_puuid: String,
@@ -6064,7 +6064,7 @@ pub struct LolEndOfGameEndOfGamePlayerReport {
     pub comment: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGamePoints {
     pub point_change_from_champions_owned: i32,
@@ -6076,7 +6076,7 @@ pub struct LolEndOfGameEndOfGamePoints {
     pub total_points: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGameStats {
     pub difficulty: String,
@@ -6125,7 +6125,7 @@ pub struct LolEndOfGameEndOfGameStats {
     pub team_boost: Option<LolEndOfGameEndOfGameTeamBoost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGameTeam {
     pub stats: Value,
@@ -6140,7 +6140,7 @@ pub struct LolEndOfGameEndOfGameTeam {
     pub is_winning_team: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameEndOfGameTeamBoost {
     pub summoner_name: String,
@@ -6152,13 +6152,13 @@ pub struct LolEndOfGameEndOfGameTeamBoost {
     pub unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameClientEndOfGame {
     pub game_client_e_o_g: LolEndOfGameGameClientEndOfGameStats
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameClientEndOfGameStats {
     pub game_id: u64,
@@ -6169,14 +6169,14 @@ pub struct LolEndOfGameGameClientEndOfGameStats {
     pub is_ranked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataChampion {
     pub id: i32,
     pub skins: Vec<LolEndOfGameGameDataChampionSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataChampionQuestSkin {
     pub id: i32,
@@ -6184,7 +6184,7 @@ pub struct LolEndOfGameGameDataChampionQuestSkin {
     pub tile_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataChampionSkin {
     pub id: i32,
@@ -6194,7 +6194,7 @@ pub struct LolEndOfGameGameDataChampionSkin {
     pub quest_skin_info: LolEndOfGameGameDataQuestSkinInfo
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataChampionSummary {
     pub id: i32,
@@ -6203,7 +6203,7 @@ pub struct LolEndOfGameGameDataChampionSummary {
     pub square_portrait_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataCompanion {
     pub content_id: String,
@@ -6212,19 +6212,19 @@ pub struct LolEndOfGameGameDataCompanion {
     pub color_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataQuestSkinInfo {
     pub tiers: Vec<LolEndOfGameGameDataChampionQuestSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataSkinChroma {
     pub id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataTftChampion {
     pub path: String,
@@ -6235,7 +6235,7 @@ pub struct LolEndOfGameGameDataTftChampion {
     pub traits: Vec<LolEndOfGameGameDataTftTrait>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataTftItem {
     pub name: String,
@@ -6244,20 +6244,20 @@ pub struct LolEndOfGameGameDataTftItem {
     pub name_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataTftTrait {
     pub id: String,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameflowAvailability {
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameflowClient {
     pub observer_server_ip: String,
@@ -6265,14 +6265,14 @@ pub struct LolEndOfGameGameflowClient {
     pub running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameflowGameData {
     pub game_id: u64,
     pub queue: LolEndOfGameQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameflowSession {
     pub phase: LolEndOfGameGameflowPhase,
@@ -6280,20 +6280,20 @@ pub struct LolEndOfGameGameflowSession {
     pub game_data: LolEndOfGameGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameLobbyInvitation {
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameLoginDataPacket {
     pub platform_id: String,
     pub simple_messages: Vec<LolEndOfGameSimpleMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameLoginSession {
     pub state: LolEndOfGameLoginSessionStates,
@@ -6301,7 +6301,7 @@ pub struct LolEndOfGameLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameQueue {
     pub id: i32,
@@ -6310,7 +6310,7 @@ pub struct LolEndOfGameQueue {
     pub is_ranked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameRerollDataBagForClientV1 {
     pub points_gained_last_game: i32,
@@ -6321,7 +6321,7 @@ pub struct LolEndOfGameRerollDataBagForClientV1 {
     pub point_cost_of_reroll: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameSimpleMessage {
     pub account_id: u64,
@@ -6331,7 +6331,7 @@ pub struct LolEndOfGameSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameSummoner {
     pub summoner_id: u64,
@@ -6341,7 +6341,7 @@ pub struct LolEndOfGameSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGameCompanionViewModel {
     pub species_name: String,
@@ -6349,7 +6349,7 @@ pub struct LolEndOfGameTFTEndOfGameCompanionViewModel {
     pub icon: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGameItemViewModel {
     pub name: String,
@@ -6358,7 +6358,7 @@ pub struct LolEndOfGameTFTEndOfGameItemViewModel {
     pub name_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGamePieceViewModel {
     pub name: String,
@@ -6369,7 +6369,7 @@ pub struct LolEndOfGameTFTEndOfGamePieceViewModel {
     pub traits: Vec<LolEndOfGameTFTEndOfGameTraitViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGamePlayerViewModel {
     pub summoner_id: u64,
@@ -6386,14 +6386,14 @@ pub struct LolEndOfGameTFTEndOfGamePlayerViewModel {
     pub companion: LolEndOfGameTFTEndOfGameCompanionViewModel
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGameTraitViewModel {
     pub id: String,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGameViewModel {
     pub players: Vec<LolEndOfGameTFTEndOfGamePlayerViewModel>,
@@ -6405,7 +6405,7 @@ pub struct LolEndOfGameTFTEndOfGameViewModel {
     pub is_ranked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsESportStreamNotificationsConfig {
     pub notifications_enabled: bool,
@@ -6420,7 +6420,7 @@ pub struct LolEsportStreamNotificationsESportStreamNotificationsConfig {
     pub beapp_failure_long_poll_minutes: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsESportsAPIStreamgroups {
     pub id: i64,
@@ -6430,7 +6430,7 @@ pub struct LolEsportStreamNotificationsESportsAPIStreamgroups {
     pub content: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsESportsAPIStreamgroupsRoot {
     pub streamgroups: Vec<LolEsportStreamNotificationsESportsAPIStreamgroups>,
@@ -6438,13 +6438,13 @@ pub struct LolEsportStreamNotificationsESportsAPIStreamgroupsRoot {
     pub teams: Vec<LolEsportStreamNotificationsEsportsAPITeams>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsESportsLiveStreams {
     pub live_streams: Vec<LolEsportStreamNotificationsESportsStreams>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsESportsStreams {
     pub title: String,
@@ -6461,7 +6461,7 @@ pub struct LolEsportStreamNotificationsESportsStreams {
     pub team_b_logo_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournaments {
     pub id: String,
@@ -6471,27 +6471,27 @@ pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournaments {
     pub rosters: HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRosters>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsBrackets {
     pub id: String,
     pub matches: HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsMatches>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsMatches {
     pub id: String,
     pub input: Vec<LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRoster>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRoster {
     pub roster: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRosters {
     pub id: String,
@@ -6499,7 +6499,7 @@ pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRosters {
     pub team: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPITeams {
     pub id: i64,
@@ -6510,13 +6510,13 @@ pub struct LolEsportStreamNotificationsEsportsAPITeams {
     pub acronym: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsGameflowSession {
     pub phase: LolEsportStreamNotificationsGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsLiveMatch {
     pub id: String,
@@ -6526,7 +6526,7 @@ pub struct LolEsportStreamNotificationsLiveMatch {
     pub teams: Vec<LolEsportStreamNotificationsLiveMatchTeam>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsLiveMatchTeam {
     pub guid: String,
@@ -6535,7 +6535,7 @@ pub struct LolEsportStreamNotificationsLiveMatchTeam {
     pub logo_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsPlayerNotificationResource {
     pub background_url: String,
@@ -6552,7 +6552,7 @@ pub struct LolEsportStreamNotificationsPlayerNotificationResource {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopAccessTokenResource {
     pub token: String,
@@ -6560,20 +6560,20 @@ pub struct LolEventShopAccessTokenResource {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopAccountIdAndSummonerId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopBalance {
     pub currency_type: String,
     pub amount: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopBaseSkinLineDto {
     pub items: Vec<LolEventShopSkinLineItemDto>,
@@ -6587,7 +6587,7 @@ pub struct LolEventShopBaseSkinLineDto {
     pub tile_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopBundledItemPricingInfo {
     pub discount_prices: Vec<LolEventShopDiscountPricingInfo>,
@@ -6596,7 +6596,7 @@ pub struct LolEventShopBundledItemPricingInfo {
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOffer {
     pub id: String,
@@ -6610,7 +6610,7 @@ pub struct LolEventShopCapOffer {
     pub created_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOfferPayloadEntry {
     pub item_price_map: HashMap<String, i32>,
@@ -6619,7 +6619,7 @@ pub struct LolEventShopCapOfferPayloadEntry {
     pub inventory_type_u_u_i_d: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersDataDto {
     pub id: String,
@@ -6629,34 +6629,34 @@ pub struct LolEventShopCapOrdersDataDto {
     pub source: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersMetaDto {
     pub xid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersOfferContextDto {
     pub quantity: u32,
     pub payment_option: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersOfferDto {
     pub id: String,
     pub product_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersOrderDto {
     pub data: LolEventShopCapOrdersDataDto,
     pub meta: LolEventShopCapOrdersMetaDto
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersSubOrderDto {
     pub recipient_id: String,
@@ -6664,14 +6664,14 @@ pub struct LolEventShopCapOrdersSubOrderDto {
     pub offer: LolEventShopCapOrdersOfferDto
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersTypedIdentifierDto {
     pub id: String,
     pub type_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogEntry {
     pub content_id: String,
@@ -6680,7 +6680,7 @@ pub struct LolEventShopCatalogEntry {
     pub type_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogItem {
     pub item_id: i32,
@@ -6688,7 +6688,7 @@ pub struct LolEventShopCatalogItem {
     pub item_instance_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogPluginItem {
     pub item_id: i32,
@@ -6711,7 +6711,7 @@ pub struct LolEventShopCatalogPluginItem {
     pub ownership_type: Option<LolEventShopInventoryOwnership>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogPluginItemAssets {
     pub splash_path: String,
@@ -6721,7 +6721,7 @@ pub struct LolEventShopCatalogPluginItemAssets {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogPluginItemWithDetails {
     pub item: LolEventShopCatalogPluginItem,
@@ -6733,7 +6733,7 @@ pub struct LolEventShopCatalogPluginItemWithDetails {
     pub assets: LolEventShopCatalogPluginItemAssets
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogPluginPrice {
     pub currency: String,
@@ -6742,7 +6742,7 @@ pub struct LolEventShopCatalogPluginPrice {
     pub sale: Option<LolEventShopCatalogPluginSale>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCatalogPluginSale {
     pub start_date: String,
@@ -6751,7 +6751,7 @@ pub struct LolEventShopCatalogPluginSale {
     pub cost: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCategoryOffersUIData {
     pub category: LolEventShopOfferCategory,
@@ -6759,13 +6759,13 @@ pub struct LolEventShopCategoryOffersUIData {
     pub offers: Vec<LolEventShopOfferUIData>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCelebrationUIData {
     pub reward_track_items: Vec<LolEventShopRewardTrackItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopChampionSkinEmblem {
     pub name: String,
@@ -6773,28 +6773,28 @@ pub struct LolEventShopChampionSkinEmblem {
     pub emblem_position: LolEventShopChampionSkinEmblemPosition
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopChampionSkinEmblemPath {
     pub large: String,
     pub small: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopChampionSkinEmblemPosition {
     pub vertical: String,
     pub horizontal: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopClaimSelectUIData {
     pub selected_reward_track_item: LolEventShopRewardTrackItem,
     pub unclaimed_reward_count: u16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopClientCacheClearMessageDTO {
     pub regions: Vec<String>,
@@ -6802,7 +6802,7 @@ pub struct LolEventShopClientCacheClearMessageDTO {
     pub inventory_types: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCounter {
     pub id: String,
@@ -6812,7 +6812,7 @@ pub struct LolEventShopCounter {
     pub start_value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCounterInstance {
     pub owner_id: String,
@@ -6822,14 +6822,14 @@ pub struct LolEventShopCounterInstance {
     pub counter_value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCurrencyDTO {
     pub amount: i32,
     pub sub_currencies: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopDiscountPricingInfo {
     pub cost: i32,
@@ -6838,7 +6838,7 @@ pub struct LolEventShopDiscountPricingInfo {
     pub discount: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEntityInstance {
     pub group_id: String,
@@ -6846,13 +6846,13 @@ pub struct LolEventShopEntityInstance {
     pub milestones: Vec<LolEventShopMilestoneInstance>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventBackgroundUIData {
     pub background_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventHeaderUIData {
     pub event_icon_path: String,
@@ -6862,7 +6862,7 @@ pub struct LolEventShopEventHeaderUIData {
     pub help_modal_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventShop {
     pub event_id: String,
@@ -6885,7 +6885,7 @@ pub struct LolEventShopEventShop {
     pub reward_track: LolEventShopRewardTrack
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventShopClientConfig {
     pub enabled: bool,
@@ -6896,14 +6896,14 @@ pub struct LolEventShopEventShopClientConfig {
     pub disabled_offer_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventShopError {
     pub error_message: String,
     pub error_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventShopInfoUIData {
     pub event_id: String,
@@ -6920,14 +6920,14 @@ pub struct LolEventShopEventShopInfoUIData {
     pub token_bundles: Vec<LolEventShopCatalogEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopGrantorDescription {
     pub app_name: String,
     pub entity_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopGroup {
     pub id: String,
@@ -6938,7 +6938,7 @@ pub struct LolEventShopGroup {
     pub milestones: Vec<LolEventShopMilestone>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryCacheEntry {
     pub signed_inventory_jwt: String,
@@ -6948,7 +6948,7 @@ pub struct LolEventShopInventoryCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryDTO {
     pub puuid: String,
@@ -6959,7 +6959,7 @@ pub struct LolEventShopInventoryDTO {
     pub items_jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryItem {
     pub uuid: String,
@@ -6971,7 +6971,7 @@ pub struct LolEventShopInventoryItem {
     pub expiration_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryItemDTO {
     pub item_id: i32,
@@ -6994,7 +6994,7 @@ pub struct LolEventShopInventoryItemDTO {
     pub wins: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryItemWithPayload {
     pub uuid: String,
@@ -7012,7 +7012,7 @@ pub struct LolEventShopInventoryItemWithPayload {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryNotification {
     pub id: i64,
@@ -7023,13 +7023,13 @@ pub struct LolEventShopInventoryNotification {
     pub acknowledged: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryResponseDTO {
     pub data: LolEventShopInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItem {
     pub item_id: String,
@@ -7037,7 +7037,7 @@ pub struct LolEventShopItem {
     pub price: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemChoiceDetails {
     pub item: LolEventShopCatalogPluginItem,
@@ -7049,14 +7049,14 @@ pub struct LolEventShopItemChoiceDetails {
     pub purchase_options: Vec<LolEventShopPurchaseOption>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemChoices {
     pub choices: Vec<LolEventShopItemChoiceDetails>,
     pub validation_errors: Vec<LolEventShopValidationErrorEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemCost {
     pub currency: String,
@@ -7064,7 +7064,7 @@ pub struct LolEventShopItemCost {
     pub discount: Option<f32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemDefinition {
     pub item_id: i32,
@@ -7081,7 +7081,7 @@ pub struct LolEventShopItemDefinition {
     pub loyalty_unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemDetails {
     pub title: String,
@@ -7090,14 +7090,14 @@ pub struct LolEventShopItemDetails {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemMetadataEntry {
     #[serde(rename = "type")]
@@ -7105,14 +7105,14 @@ pub struct LolEventShopItemMetadataEntry {
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemOwnership {
     pub item_key: LolEventShopItemKey,
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemPrice {
     pub currency_type: String,
@@ -7120,7 +7120,7 @@ pub struct LolEventShopItemPrice {
     pub purchasable: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemSale {
     pub start_date: String,
@@ -7128,7 +7128,7 @@ pub struct LolEventShopItemSale {
     pub discount: Option<f32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemUIData {
     pub item_id: String,
@@ -7136,20 +7136,20 @@ pub struct LolEventShopItemUIData {
     pub price: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLargeSelectionDisplayUIData {
     pub selected_reward_track_item: LolEventShopRewardTrackItem
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLevelBoostPurchaseUIData {
     pub offer_id: String,
     pub reward_track_items: Vec<LolEventShopRewardTrackItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLoginSession {
     pub puuid: Option<String>,
@@ -7159,13 +7159,13 @@ pub struct LolEventShopLoginSession {
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLootDataGdsResource {
     pub loot_token_bank_cards: Vec<LolEventShopLootTokenBankCardGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLootTokenBankCardGdsResource {
     pub loot_item_name: String,
@@ -7186,7 +7186,7 @@ pub struct LolEventShopLootTokenBankCardGdsResource {
     pub store_link_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLoyaltyRewards {
     pub free_rewarded_champions_count: i32,
@@ -7200,7 +7200,7 @@ pub struct LolEventShopLoyaltyRewards {
     pub loyalty_sources: HashMap<String, bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLoyaltyStatusNotification {
     pub status: LolEventShopLoyaltyStatus,
@@ -7208,7 +7208,7 @@ pub struct LolEventShopLoyaltyStatusNotification {
     pub reload_inventory: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopMilestone {
     pub id: String,
@@ -7219,7 +7219,7 @@ pub struct LolEventShopMilestone {
     pub properties: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopMilestoneInstance {
     pub milestone_id: String,
@@ -7232,7 +7232,7 @@ pub struct LolEventShopMilestoneInstance {
     pub triggered: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopNavigationButtonUIData {
     pub active_event_id: String,
@@ -7240,7 +7240,7 @@ pub struct LolEventShopNavigationButtonUIData {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopOffer {
     pub id: String,
@@ -7252,7 +7252,7 @@ pub struct LolEventShopOffer {
     pub items: Vec<LolEventShopItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopOfferUIData {
     pub id: String,
@@ -7265,7 +7265,7 @@ pub struct LolEventShopOfferUIData {
     pub items: Vec<LolEventShopItemUIData>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopOrderNotificationResource {
     pub event_type_id: String,
@@ -7273,7 +7273,7 @@ pub struct LolEventShopOrderNotificationResource {
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPlayerNotification {
     pub critical: bool,
@@ -7286,7 +7286,7 @@ pub struct LolEventShopPlayerNotification {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPlayerSettingsData {
     pub last_time_seen: String,
@@ -7294,14 +7294,14 @@ pub struct LolEventShopPlayerSettingsData {
     pub last_seen_token_shop_offers_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPriceDetail {
     pub item_key: LolEventShopItemKey,
     pub price: LolEventShopItemPrice
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPriceOptionDto {
     pub price: i64,
@@ -7311,7 +7311,7 @@ pub struct LolEventShopPriceOptionDto {
     pub currency_image_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopProgressInfoUIData {
     pub token_image: String,
@@ -7319,7 +7319,7 @@ pub struct LolEventShopProgressInfoUIData {
     pub event_pass_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchasableItem {
     pub item: LolEventShopItemDefinition,
@@ -7330,7 +7330,7 @@ pub struct LolEventShopPurchasableItem {
     pub validation_errors: Vec<LolEventShopValidationErrorEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseItem {
     pub item_key: LolEventShopItemKey,
@@ -7339,26 +7339,26 @@ pub struct LolEventShopPurchaseItem {
     pub purchase_currency_info: LolEventShopItemPrice
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferOrderStatus {
     pub order_state: LolEventShopPurchaseOfferOrderStates,
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferOrderStatuses {
     pub statuses: HashMap<String, LolEventShopPurchaseOfferOrderStatus>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferRequest {
     pub offer_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferRequestV3 {
     pub offer_id: String,
@@ -7367,26 +7367,26 @@ pub struct LolEventShopPurchaseOfferRequestV3 {
     pub price: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferResponseV3 {
     pub legacy: bool,
     pub order_dto: Option<LolEventShopCapOrdersOrderDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOption {
     pub price_details: Vec<LolEventShopPriceDetail>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseRequest {
     pub items: Vec<LolEventShopPurchaseItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseResponse {
     pub items: Vec<LolEventShopPurchaseItem>,
@@ -7394,7 +7394,7 @@ pub struct LolEventShopPurchaseResponse {
     pub use_r_m_s_confirmation: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseWidgetConfig {
     pub enabled: bool,
@@ -7402,21 +7402,21 @@ pub struct LolEventShopPurchaseWidgetConfig {
     pub always_show_purchase_disclaimer: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRMSPayload {
     pub product_id: String,
     pub affinities: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRepeat {
     pub count: i32,
@@ -7424,61 +7424,61 @@ pub struct LolEventShopRepeat {
     pub multiplier: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRequestDTOSelectionRequestDTO {
     pub data: LolEventShopSelectionRequestDTO,
     pub metadata: LolEventShopRequestMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRequestDTOVectorSelectionRequestDTO {
     pub data: Vec<LolEventShopSelectionRequestDTO>,
     pub metadata: LolEventShopRequestMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRequestMetadataDTO {
     pub transaction_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOSvcRewardGrant {
     pub data: LolEventShopSvcRewardGrant,
     pub metadata: LolEventShopResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOMapRewardGroupIdSelectGrantStatus {
     pub data: HashMap<String, LolEventShopSelectGrantStatusResponse>,
     pub metadata: LolEventShopResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOVectorSvcRewardGrant {
     pub data: Vec<LolEventShopSvcRewardGrant>,
     pub metadata: LolEventShopResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOVectorSvcRewardGroup {
     pub data: Vec<LolEventShopSvcRewardGroup>,
     pub metadata: LolEventShopResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseMetadataDTO {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopReward {
     pub id: String,
@@ -7490,33 +7490,33 @@ pub struct LolEventShopReward {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardChoiceUIData {
     pub reward_track_items: Vec<LolEventShopRewardTrackItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardGrant {
     pub info: LolEventShopSvcRewardGrant,
     pub reward_group: LolEventShopSvcRewardGroup
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrack {
     pub track_config: LolEventShopRewardTrackConfiguration
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrackConfiguration {
     pub id: String,
     pub premium_entitlement_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrackItem {
     pub state: LolEventShopRewardTrackItemStates,
@@ -7526,7 +7526,7 @@ pub struct LolEventShopRewardTrackItem {
     pub threshold: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrackItemOption {
     pub state: LolEventShopRewardTrackItemStates,
@@ -7539,7 +7539,7 @@ pub struct LolEventShopRewardTrackItemOption {
     pub reward_description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrackProgress {
     pub level: i16,
@@ -7551,7 +7551,7 @@ pub struct LolEventShopRewardTrackProgress {
     pub iteration: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrackXP {
     pub current_level: i64,
@@ -7561,7 +7561,7 @@ pub struct LolEventShopRewardTrackXP {
     pub iteration: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRiotMessagingServiceMessage {
     pub resource: String,
@@ -7571,7 +7571,7 @@ pub struct LolEventShopRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsEntitlementPayload {
     pub item_id: String,
@@ -7580,27 +7580,27 @@ pub struct LolEventShopRmsEntitlementPayload {
     pub resource_operation: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsStoreEntitlementItem {
     pub inventory_type: String,
     pub item_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsStoreEntitlementPayload {
     pub transaction_id: String,
     pub items: Vec<LolEventShopRmsStoreEntitlementItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsWalletPayload {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsXboxSubscriptionChange {
     pub puuid: String,
@@ -7609,7 +7609,7 @@ pub struct LolEventShopRmsXboxSubscriptionChange {
     pub identity_provider: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSale {
     pub start_date: String,
@@ -7617,7 +7617,7 @@ pub struct LolEventShopSale {
     pub prices: Vec<LolEventShopItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSelectionRequestDTO {
     pub grant_id: String,
@@ -7625,21 +7625,21 @@ pub struct LolEventShopSelectionRequestDTO {
     pub selections: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSelectionStrategyConfig {
     pub min_selections_allowed: u32,
     pub max_selections_allowed: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSettingsResource {
     pub data: LolEventShopPlayerSettingsData,
     pub schema_version: i16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSimpleInventoryDTO {
     pub items: HashMap<String, Value>,
@@ -7647,13 +7647,13 @@ pub struct LolEventShopSimpleInventoryDTO {
     pub expires: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSimpleInventoryResponseDTO {
     pub data: LolEventShopSimpleInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSkinLineDescriptionDto {
     pub title: String,
@@ -7661,7 +7661,7 @@ pub struct LolEventShopSkinLineDescriptionDto {
     pub icon_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSkinLineDescriptionInfo {
     pub title: String,
@@ -7669,7 +7669,7 @@ pub struct LolEventShopSkinLineDescriptionInfo {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSkinLineInfo {
     pub name: String,
@@ -7682,7 +7682,7 @@ pub struct LolEventShopSkinLineInfo {
     pub tiers: Vec<LolEventShopSkinLineTier>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSkinLineItemDto {
     pub thumbnail_image_path: String,
@@ -7692,7 +7692,7 @@ pub struct LolEventShopSkinLineItemDto {
     pub large_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSkinLineTier {
     pub id: i64,
@@ -7708,13 +7708,13 @@ pub struct LolEventShopSkinLineTier {
     pub collection_splash_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSummonerIcon {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSvcRewardGrant {
     pub id: String,
@@ -7728,7 +7728,7 @@ pub struct LolEventShopSvcRewardGrant {
     pub grantor_description: LolEventShopGrantorDescription
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSvcRewardGrantElement {
     pub element_id: String,
@@ -7741,7 +7741,7 @@ pub struct LolEventShopSvcRewardGrantElement {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSvcRewardGroup {
     pub id: String,
@@ -7758,7 +7758,7 @@ pub struct LolEventShopSvcRewardGroup {
     pub celebration_type: LolEventShopCelebrationType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopTokenShop {
     pub token_image: String,
@@ -7768,7 +7768,7 @@ pub struct LolEventShopTokenShop {
     pub token_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopTokenShopUIData {
     pub token_name: String,
@@ -7778,7 +7778,7 @@ pub struct LolEventShopTokenShopUIData {
     pub token_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopTokenUpsell {
     pub id: String,
@@ -7800,7 +7800,7 @@ pub struct LolEventShopTokenUpsell {
     pub end_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopTransaction {
     pub transaction_id: String,
@@ -7809,33 +7809,33 @@ pub struct LolEventShopTransaction {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopUnclaimedRewardsUIData {
     pub rewards_count: i32,
     pub locked_tokens_count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidateOfferError {
     pub error_key: String,
     pub meta: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidateOfferRequestV3 {
     pub offer_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidateOfferResponseV3 {
     pub validation_errors: Vec<LolEventShopValidateOfferError>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationError {
     pub error_code: String,
@@ -7844,34 +7844,34 @@ pub struct LolEventShopValidationError {
     pub response_items: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationErrorEntry {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationRequest {
     pub items: Vec<LolEventShopValidationRequestItem>,
     pub owned_items: Vec<LolEventShopItemOwnership>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationRequestItem {
     pub item_key: LolEventShopItemKey,
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationResponse {
     pub items: Vec<LolEventShopValidationResponseItem>,
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationResponseItem {
     pub item_key: LolEventShopItemKey,
@@ -7882,7 +7882,7 @@ pub struct LolEventShopValidationResponseItem {
     pub description: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopWallet {
     pub account_id: u64,
@@ -7890,7 +7890,7 @@ pub struct LolEventShopWallet {
     pub version: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopWalletCacheEntry {
     pub signed_balances_jwt: String,
@@ -7900,7 +7900,7 @@ pub struct LolEventShopWalletCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopWalletDTO {
     pub puuid: String,
@@ -7910,26 +7910,26 @@ pub struct LolEventShopWalletDTO {
     pub balances_jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopWalletResponseDTO {
     pub data: LolEventShopWalletDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopXboxSubscriptionStatus {
     pub active: bool,
     pub subscription_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesAccountIdAndSummonerId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -7937,14 +7937,14 @@ pub struct LolFeaturedModesCollectionsOwnership {
     pub owned: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesCollectionsSummonerIcon {
     pub icon_id: i32,
     pub ownership: LolFeaturedModesCollectionsOwnership
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesEligibility {
     pub queue_id: i32,
@@ -7952,7 +7952,7 @@ pub struct LolFeaturedModesEligibility {
     pub restrictions: Vec<LolFeaturedModesEligibilityRestriction>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesEligibilityRestriction {
     pub restriction_code: LolFeaturedModesEligibilityRestrictionCode,
@@ -7961,7 +7961,7 @@ pub struct LolFeaturedModesEligibilityRestriction {
     pub summoner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesFeaturedModesConfig {
     pub notifications_enabled: bool,
@@ -7969,27 +7969,27 @@ pub struct LolFeaturedModesFeaturedModesConfig {
     pub max_notification_save_delay_minutes: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesGameflowAvailability {
     pub is_available: bool,
     pub state: LolFeaturedModesGameflowAvailabilityState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesGameflowSession {
     pub phase: LolFeaturedModesGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesLoginSession {
     pub state: LolFeaturedModesLoginSessionStates,
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesMaps {
     pub game_mode_name: String,
@@ -7997,7 +7997,7 @@ pub struct LolFeaturedModesMaps {
     pub assets: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesPlayerNotificationResource {
     pub background_url: String,
@@ -8014,7 +8014,7 @@ pub struct LolFeaturedModesPlayerNotificationResource {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesQueue {
     pub id: i32,
@@ -8027,14 +8027,14 @@ pub struct LolFeaturedModesQueue {
     pub queue_availability: LolFeaturedModesQueueAvailability
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameClientChatGameClientChatMessageResource {
     pub from_summoner_name: String,
     pub body: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameClientChatMutedPlayerInfo {
     pub puuid: String,
@@ -8043,13 +8043,13 @@ pub struct LolGameClientChatMutedPlayerInfo {
     pub obfuscated_summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesLoginDataPacket {
     pub game_type_configs: Vec<LolGameQueuesQueueGameTypeConfig>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesLoginSession {
     pub state: LolGameQueuesLoginSessionStates,
@@ -8058,14 +8058,14 @@ pub struct LolGameQueuesLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesPlatformConfigEnabledMap {
     pub game_map_id: i32,
     pub min_players: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesQueue {
     pub id: i32,
@@ -8101,7 +8101,7 @@ pub struct LolGameQueuesQueue {
     pub removal_from_game_delay_minutes: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesQueueCustomGame {
     pub subcategories: Vec<LolGameQueuesQueueCustomGameSubcategory>,
@@ -8111,7 +8111,7 @@ pub struct LolGameQueuesQueueCustomGame {
     pub game_server_regions: Option<Vec<String>>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesQueueCustomGameSubcategory {
     pub map_id: i32,
@@ -8126,7 +8126,7 @@ pub struct LolGameQueuesQueueCustomGameSubcategory {
     pub custom_spectator_policies: Vec<LolGameQueuesQueueCustomGameSpectatorPolicy>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesQueueGameTypeConfig {
     pub id: i64,
@@ -8153,7 +8153,7 @@ pub struct LolGameQueuesQueueGameTypeConfig {
     pub num_players_per_team_override: Option<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesQueueReward {
     pub is_ip_enabled: bool,
@@ -8162,7 +8162,7 @@ pub struct LolGameQueuesQueueReward {
     pub party_size_ip_rewards: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesQueueTranslation {
     pub name: String,
@@ -8171,7 +8171,7 @@ pub struct LolGameQueuesQueueTranslation {
     pub detailed_description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameSettingsLoginSession {
     pub state: LolGameSettingsLoginSessionStates,
@@ -8179,19 +8179,19 @@ pub struct LolGameSettingsLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameSettingsgamesettingsgameclient {
     pub running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameSettingsgamesettingsgameflowsession {
     pub game_client: LolGameSettingsgamesettingsgameclient
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowCrashReportingSettings {
     #[serde(rename = "type")]
@@ -8199,20 +8199,20 @@ pub struct LolGameflowCrashReportingSettings {
     pub enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameModeSpellList {
     pub spells: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowAvailability {
     pub is_available: bool,
     pub state: LolGameflowGameflowAvailabilityState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowGameClient {
     pub server_ip: String,
@@ -8223,7 +8223,7 @@ pub struct LolGameflowGameflowGameClient {
     pub visible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowGameData {
     pub game_id: u64,
@@ -8237,7 +8237,7 @@ pub struct LolGameflowGameflowGameData {
     pub spectators_allowed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowGameDodge {
     pub state: LolGameflowGameflowGameDodgeState,
@@ -8245,7 +8245,7 @@ pub struct LolGameflowGameflowGameDodge {
     pub phase: LolGameflowGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowGameMap {
     pub id: i64,
@@ -8266,14 +8266,14 @@ pub struct LolGameflowGameflowGameMap {
     pub per_position_disallowed_summoner_spells: HashMap<String, LolGameflowGameModeSpellList>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowProcessInfo {
     pub pid: u32,
     pub raw_args: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowSession {
     pub phase: LolGameflowGameflowPhase,
@@ -8283,14 +8283,14 @@ pub struct LolGameflowGameflowSession {
     pub game_dodge: LolGameflowGameflowGameDodge
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowInstallPaths {
     pub game_install_root: String,
     pub game_executable_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowLobbyStatus {
     pub queue_id: i32,
@@ -8305,7 +8305,7 @@ pub struct LolGameflowLobbyStatus {
     pub custom_spectator_policy: LolGameflowQueueCustomGameSpectatorPolicy
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowLoginSession {
     pub state: LolGameflowLoginSessionStates,
@@ -8314,7 +8314,7 @@ pub struct LolGameflowLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowPatcherProductState {
     pub is_corrupted: bool,
@@ -8324,7 +8324,7 @@ pub struct LolGameflowPatcherProductState {
     pub action: LolGameflowPatcherProductStateAction
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowPlayerStatus {
     pub current_lobby_status: Option<LolGameflowLobbyStatus>,
@@ -8332,7 +8332,7 @@ pub struct LolGameflowPlayerStatus {
     pub can_invite_others_at_eog: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowQueue {
     pub id: i32,
@@ -8366,7 +8366,7 @@ pub struct LolGameflowQueue {
     pub removal_from_game_delay_minutes: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowQueueGameTypeConfig {
     pub id: i64,
@@ -8391,7 +8391,7 @@ pub struct LolGameflowQueueGameTypeConfig {
     pub ban_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowQueueReward {
     pub is_ip_enabled: bool,
@@ -8400,34 +8400,34 @@ pub struct LolGameflowQueueReward {
     pub party_size_ip_rewards: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowRegistrationStatus {
     pub complete: bool,
     pub error_codes: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowReplaysSettingsData {
     #[serde(rename = "highlights-folder-path")]
     pub highlights_folder_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowReplaysSettingsResource {
     pub data: LolGameflowReplaysSettingsData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowSpectateGameInfoResource {
     pub drop_in_spectate_game_id: String,
@@ -8436,7 +8436,7 @@ pub struct LolGameflowSpectateGameInfoResource {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoGeoInfo {
     pub country: String,
@@ -8444,13 +8444,13 @@ pub struct LolGeoinfoGeoInfo {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoGeoInfoConfig {
     pub enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoGeoInfoResponse {
     pub success: bool,
@@ -8460,7 +8460,7 @@ pub struct LolGeoinfoGeoInfoResponse {
     pub is_initialized: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoLoginSession {
     pub state: LolGeoinfoLoginSessionState,
@@ -8468,13 +8468,13 @@ pub struct LolGeoinfoLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoWhereAmIRequest {
     pub ip_address: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoWhereAmIResponse {
     pub country: String,
@@ -8482,7 +8482,7 @@ pub struct LolGeoinfoWhereAmIResponse {
     pub region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHeartbeatLoginSession {
     pub state: LolHeartbeatLoginSessionStates,
@@ -8490,7 +8490,7 @@ pub struct LolHeartbeatLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlight {
     pub id: u64,
@@ -8502,33 +8502,33 @@ pub struct LolHighlightsHighlight {
     pub file_size_bytes: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsConfig {
     pub is_highlights_enabled: bool,
     pub invalid_highlight_name_characters: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsDynamicConfig {
     pub enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsSettingsData {
     #[serde(rename = "highlights-folder-path")]
     pub highlights_folder_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsSettingsResource {
     pub data: LolHighlightsHighlightsSettingsData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitAuthRedirectMock {
     pub redirect_latency: u32,
@@ -8536,20 +8536,20 @@ pub struct LolHoneyfruitHoneyfruitAuthRedirectMock {
     pub redirect_u_r_l: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitLinkingAction {
     pub action: LolHoneyfruitHoneyfruitActionType,
     pub target: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitLinkingNotification {
     pub linked_account: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitLinkingStatus {
     pub state: LolHoneyfruitHoneyfruitLinkingState,
@@ -8557,41 +8557,41 @@ pub struct LolHoneyfruitHoneyfruitLinkingStatus {
     pub error: LolHoneyfruitHoneyfruitLinkingStatusError
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitSettingCategoryResource {
     pub schema_version: u32,
     pub data: LolHoneyfruitHoneyfruitSettings
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitSettings {
     pub snooze_until_m_s: u64,
     pub is_snoozed_permanently: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitVNGPublisherSettings {
     pub visible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitV1AuthenticationRedirectInput {
     pub redirect_uri: String,
     pub language: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitV1AuthenticationResponse {
     #[serde(rename = "type")]
@@ -8601,7 +8601,7 @@ pub struct LolHoneyfruitV1AuthenticationResponse {
     pub error: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitV1SuccessResponseDetails {
     pub login_token: String,
@@ -8609,7 +8609,7 @@ pub struct LolHoneyfruitV1SuccessResponseDetails {
     pub linked: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitVNGStatusResponse {
     pub action_required: bool,
@@ -8617,14 +8617,14 @@ pub struct LolHoneyfruitVNGStatusResponse {
     pub action_url_raw: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2AccountIdAndSummonerId {
     pub account_id: u64,
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2ApiHonorPlayerServerRequest {
     pub summoner_id: u64,
@@ -8632,21 +8632,21 @@ pub struct LolHonorV2ApiHonorPlayerServerRequest {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2Ballot {
     pub eligible_players: Vec<LolHonorV2EligiblePlayer>,
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2DynamicHonorMessage {
     pub message_id: String,
     pub value: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2EligiblePlayer {
     pub summoner_id: u64,
@@ -8655,7 +8655,7 @@ pub struct LolHonorV2EligiblePlayer {
     pub skin_splash_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2EndOfGamePlayer {
     pub bot_player: bool,
@@ -8667,7 +8667,7 @@ pub struct LolHonorV2EndOfGamePlayer {
     pub champion_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2EndOfGameStats {
     pub game_id: u64,
@@ -8681,28 +8681,28 @@ pub struct LolHonorV2EndOfGameStats {
     pub game_ended_in_early_surrender: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2EndOfGameTeam {
     pub players: Vec<LolHonorV2EndOfGamePlayer>,
     pub is_player_team: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2GameflowGameData {
     pub game_id: u64,
     pub queue: LolHonorV2Queue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2GameflowSession {
     pub phase: LolHonorV2GameflowPhase,
     pub game_data: LolHonorV2GameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2Honor {
     pub honor_category: String,
@@ -8710,7 +8710,7 @@ pub struct LolHonorV2Honor {
     pub sender_puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2HonorConfig {
     pub enabled: bool,
@@ -8720,7 +8720,7 @@ pub struct LolHonorV2HonorConfig {
     pub honor_suggestions_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2HonorInteraction {
     pub summoner_id: u64,
@@ -8728,7 +8728,7 @@ pub struct LolHonorV2HonorInteraction {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2HonorRecipient {
     pub summoner_id: u64,
@@ -8736,27 +8736,27 @@ pub struct LolHonorV2HonorRecipient {
     pub honors: Vec<LolHonorV2Honor>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2HonorSummoner {
     pub summoner_id: u64,
     pub display_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2LoginSession {
     pub state: LolHonorV2LoginSessionStates
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2MutualHonor {
     pub game_id: u64,
     pub summoners: Vec<LolHonorV2MutualHonorPlayer>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2MutualHonorPlayer {
     pub summoner_id: u64,
@@ -8764,7 +8764,7 @@ pub struct LolHonorV2MutualHonorPlayer {
     pub skin_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2ProfileInfo {
     pub honor_level: i32,
@@ -8772,7 +8772,7 @@ pub struct LolHonorV2ProfileInfo {
     pub rewards_locked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2Queue {
     pub id: i32,
@@ -8784,21 +8784,21 @@ pub struct LolHonorV2Queue {
     pub removal_from_game_delay_minutes: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2Reward {
     pub reward_type: String,
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2SequenceEvent {
     pub name: String,
     pub priority: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2ServiceProxyHonorPlayerServerRequest {
     pub summoner_id: u64,
@@ -8806,7 +8806,7 @@ pub struct LolHonorV2ServiceProxyHonorPlayerServerRequest {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2ServiceProxyRetrieveProfileResponse {
     pub honor_level: i32,
@@ -8814,7 +8814,7 @@ pub struct LolHonorV2ServiceProxyRetrieveProfileResponse {
     pub rewards_locked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2VendedHonorChange {
     pub action_type: String,
@@ -8824,7 +8824,7 @@ pub struct LolHonorV2VendedHonorChange {
     pub dynamic_honor_message: LolHonorV2DynamicHonorMessage
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2VendedHonorState {
     pub level: i32,
@@ -8832,7 +8832,7 @@ pub struct LolHonorV2VendedHonorState {
     pub rewards_locked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2VendedReward {
     pub reward_type: String,
@@ -8840,20 +8840,20 @@ pub struct LolHonorV2VendedReward {
     pub dynamic_honor_message: LolHonorV2DynamicHonorMessage
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2VoteCompletion {
     pub game_id: u64,
     pub full_team_vote: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardChatSession {
     pub session_state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardContentCookies {
     pub content_id: String,
@@ -8861,7 +8861,7 @@ pub struct LolHovercardContentCookies {
     pub cookies: Vec<LolHovercardcookie>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardFriendResult {
     pub id: String,
@@ -8883,7 +8883,7 @@ pub struct LolHovercardFriendResult {
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardHovercardUserInfo {
     pub id: String,
@@ -8912,13 +8912,13 @@ pub struct LolHovercardHovercardUserInfo {
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardPartyInfo {
     pub summoners: Option<Vec<u64>>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardPatchlineMetadata {
     pub product_id: String,
@@ -8927,7 +8927,7 @@ pub struct LolHovercardPatchlineMetadata {
     pub content_cookies: Vec<LolHovercardContentCookies>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardProductMetadata {
     pub id: String,
@@ -8935,13 +8935,13 @@ pub struct LolHovercardProductMetadata {
     pub patchlines: HashMap<String, LolHovercardPatchlineMetadata>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardProductMetadataMap {
     pub products: HashMap<String, LolHovercardProductMetadata>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardSummoner {
     pub summoner_id: u64,
@@ -8951,33 +8951,33 @@ pub struct LolHovercardSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardSummonerIdAndIcon {
     pub profile_icon_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardSummonerIdAndName {
     pub summoner_id: u64,
     pub display_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardTopChampionMastery {
     pub score: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardcookie {
     pub name: String,
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryAccessTokenResource {
     pub token: String,
@@ -8985,7 +8985,7 @@ pub struct LolInventoryAccessTokenResource {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryCatalogItem {
     pub item_id: i32,
@@ -8993,7 +8993,7 @@ pub struct LolInventoryCatalogItem {
     pub item_instance_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryClientCacheClearMessageDTO {
     pub regions: Vec<String>,
@@ -9001,14 +9001,14 @@ pub struct LolInventoryClientCacheClearMessageDTO {
     pub inventory_types: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryCurrencyDTO {
     pub amount: i32,
     pub sub_currencies: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryCacheEntry {
     pub signed_inventory_jwt: String,
@@ -9018,7 +9018,7 @@ pub struct LolInventoryInventoryCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryDTO {
     pub puuid: String,
@@ -9029,7 +9029,7 @@ pub struct LolInventoryInventoryDTO {
     pub items_jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryItem {
     pub uuid: String,
@@ -9041,7 +9041,7 @@ pub struct LolInventoryInventoryItem {
     pub expiration_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryItemDTO {
     pub item_id: i32,
@@ -9064,7 +9064,7 @@ pub struct LolInventoryInventoryItemDTO {
     pub wins: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryItemWithPayload {
     pub uuid: String,
@@ -9082,7 +9082,7 @@ pub struct LolInventoryInventoryItemWithPayload {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryNotification {
     pub id: i64,
@@ -9093,20 +9093,20 @@ pub struct LolInventoryInventoryNotification {
     pub acknowledged: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryResponseDTO {
     pub data: LolInventoryInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryLoginSession {
     pub state: LolInventoryLoginSessionStates,
@@ -9116,7 +9116,7 @@ pub struct LolInventoryLoginSession {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryLoyaltyRewards {
     pub free_rewarded_champions_count: i32,
@@ -9130,7 +9130,7 @@ pub struct LolInventoryLoyaltyRewards {
     pub loyalty_sources: HashMap<String, bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryLoyaltyStatusNotification {
     pub status: LolInventoryLoyaltyStatus,
@@ -9138,7 +9138,7 @@ pub struct LolInventoryLoyaltyStatusNotification {
     pub reload_inventory: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryPlayerNotification {
     pub critical: bool,
@@ -9151,7 +9151,7 @@ pub struct LolInventoryPlayerNotification {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRiotMessagingServiceMessage {
     pub resource: String,
@@ -9161,7 +9161,7 @@ pub struct LolInventoryRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsEntitlementPayload {
     pub item_id: String,
@@ -9170,27 +9170,27 @@ pub struct LolInventoryRmsEntitlementPayload {
     pub resource_operation: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsStoreEntitlementItem {
     pub inventory_type: String,
     pub item_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsStoreEntitlementPayload {
     pub transaction_id: String,
     pub items: Vec<LolInventoryRmsStoreEntitlementItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsWalletPayload {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsXboxSubscriptionChange {
     pub puuid: String,
@@ -9199,7 +9199,7 @@ pub struct LolInventoryRmsXboxSubscriptionChange {
     pub identity_provider: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventorySimpleInventoryDTO {
     pub items: HashMap<String, Value>,
@@ -9207,26 +9207,26 @@ pub struct LolInventorySimpleInventoryDTO {
     pub expires: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventorySimpleInventoryResponseDTO {
     pub data: LolInventorySimpleInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventorySummonerIcon {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryWallet {
     pub ip: i64,
     pub rp: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryWalletCacheEntry {
     pub signed_balances_jwt: String,
@@ -9236,7 +9236,7 @@ pub struct LolInventoryWalletCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryWalletDTO {
     pub puuid: String,
@@ -9246,26 +9246,26 @@ pub struct LolInventoryWalletDTO {
     pub balances_jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryWalletResponseDTO {
     pub data: LolInventoryWalletDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryXboxSubscriptionStatus {
     pub active: bool,
     pub subscription_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsGameDataChampion {
     pub alias: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsItemSet {
     pub uid: String,
@@ -9282,7 +9282,7 @@ pub struct LolItemSetsItemSet {
     pub preferred_item_slots: Vec<LolItemSetsPreferredItemSlot>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsItemSetBlock {
     #[serde(rename = "type")]
@@ -9292,14 +9292,14 @@ pub struct LolItemSetsItemSetBlock {
     pub items: Vec<LolItemSetsItemSetItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsItemSetItem {
     pub id: String,
     pub count: u16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsItemSets {
     pub timestamp: u64,
@@ -9307,7 +9307,7 @@ pub struct LolItemSetsItemSets {
     pub item_sets: Vec<LolItemSetsItemSet>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsLoginSession {
     pub state: LolItemSetsLoginSessionStates,
@@ -9315,19 +9315,19 @@ pub struct LolItemSetsLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckAuthorization {
     pub subject: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckLoginDataPacket {
     pub platform_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckPayload {
     pub name: String,
@@ -9336,82 +9336,82 @@ pub struct LolItemSetsNamecheckPayload {
     pub shard: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckResponse {
     pub errors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsPreferredItemSlot {
     pub id: String,
     pub preferred_item_slot: i16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsValidateItemSetNameInput {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsValidateItemSetNameResponse {
     pub success: bool,
     pub name_check_response: LolItemSetsNamecheckResponse
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKickoutKickoutMessage {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrPlaytimeReminderPlaytimeReminder {
     pub hours: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawAllQueueShutdownStatus {
     pub is_all_queues_disabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawAntiAddictionState {
     pub policy_type: LolKrShutdownLawPolicyType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawQueueShutdownStatus {
     pub is_disabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawRatingScreenInfo {
     pub shown: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawShutdownLawNotification {
     #[serde(rename = "type")]
     pub type_: LolKrShutdownLawShutdownLawStatus
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeagueSessionAntiAddictionTokenEnvelope {
     pub anti_addiction_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeagueSessionLeagueSessionRMSNotification {
     pub product: String,
@@ -9421,20 +9421,20 @@ pub struct LolLeagueSessionLeagueSessionRMSNotification {
     pub session_initiated_at: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeagueSessionLeagueSessionTokenEnvelope {
     pub token: Option<String>,
     pub logout_on_failure: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterAllSummonerData {
     pub summoner: LolLeaverBusterSummoner
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterLeaverBusterNotificationResource {
     pub id: u32,
@@ -9447,14 +9447,14 @@ pub struct LolLeaverBusterLeaverBusterNotificationResource {
     pub from_rms: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterLoginDataPacket {
     pub all_summoner_data: LolLeaverBusterAllSummonerData,
     pub simple_messages: Vec<LolLeaverBusterSimpleMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterMatchmakingSearchErrorResource {
     pub id: i32,
@@ -9464,14 +9464,14 @@ pub struct LolLeaverBusterMatchmakingSearchErrorResource {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterMatchmakingSearchResource {
     pub queue_id: i32,
     pub errors: Vec<LolLeaverBusterMatchmakingSearchErrorResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterPlayerNotificationResource {
     pub background_url: String,
@@ -9489,7 +9489,7 @@ pub struct LolLeaverBusterPlayerNotificationResource {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterSimpleMessage {
     pub account_id: u64,
@@ -9499,14 +9499,14 @@ pub struct LolLeaverBusterSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterSummoner {
     pub acct_id: u64,
     pub sum_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLicenseAgreementLicenseAgreement {
     pub id: String,
@@ -9514,14 +9514,14 @@ pub struct LolLicenseAgreementLicenseAgreement {
     pub text: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLicenseAgreementPluginRegionLocaleChangedEvent {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsAccessTokenResource {
     pub token: String,
@@ -9529,7 +9529,7 @@ pub struct LolLoadoutsAccessTokenResource {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsCreateLoadoutDTO {
     pub scope: String,
@@ -9539,14 +9539,14 @@ pub struct LolLoadoutsCreateLoadoutDTO {
     pub refresh_time: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsCreateLoadoutRequestDTO {
     pub service_to_jwts_map: HashMap<String, Value>,
     pub loadout: LolLoadoutsCreateLoadoutDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsCreateOrUpdateItemsRequest {
     pub id: u32,
@@ -9554,26 +9554,26 @@ pub struct LolLoadoutsCreateOrUpdateItemsRequest {
     pub inventory_j_w_ts: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsFrontendInventoryResponse {
     pub entitlements: Vec<LolLoadoutsItemKey>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsGameflowGameData {
     pub queue: LolLoadoutsQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsGameflowSession {
     pub phase: LolLoadoutsGameflowPhase,
     pub game_data: LolLoadoutsGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsGetItemsRequest {
     pub id: u32,
@@ -9581,7 +9581,7 @@ pub struct LolLoadoutsGetItemsRequest {
     pub inventory_j_w_ts: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsInventoryDTO {
     pub puuid: String,
@@ -9592,7 +9592,7 @@ pub struct LolLoadoutsInventoryDTO {
     pub items_jwt: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsInventoryItemDTO {
     pub item_id: i32,
@@ -9611,13 +9611,13 @@ pub struct LolLoadoutsInventoryItemDTO {
     pub wins: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsInventoryResponseDTO {
     pub data: LolLoadoutsInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsItemKey {
     pub inventory_type: String,
@@ -9625,7 +9625,7 @@ pub struct LolLoadoutsItemKey {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsLoadout {
     pub id: u32,
@@ -9633,13 +9633,13 @@ pub struct LolLoadoutsLoadout {
     pub items: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsLoadoutRequestDTOBase {
     pub service_to_jwts_map: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsLoginSession {
     pub state: LolLoadoutsLoginSessionStates,
@@ -9649,13 +9649,13 @@ pub struct LolLoadoutsLoginSession {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsQueue {
     pub is_team_builder_managed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsScopedLoadout {
     pub scope: String,
@@ -9666,14 +9666,14 @@ pub struct LolLoadoutsScopedLoadout {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsSignGCORequestDTO {
     pub service_to_jwts_map: HashMap<String, Value>,
     pub loadout: HashMap<String, LolLoadoutsItemKey>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsUpdateLoadoutDTO {
     pub id: String,
@@ -9681,21 +9681,21 @@ pub struct LolLoadoutsUpdateLoadoutDTO {
     pub loadout: HashMap<String, LolLoadoutsItemKey>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsUpdateLoadoutRequestDTO {
     pub service_to_jwts_map: HashMap<String, Value>,
     pub loadout: LolLoadoutsUpdateLoadoutDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyAccountIdAndSummonerId {
     pub account_id: u64,
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyAmbassadorMessage {
     pub http_status: i32,
@@ -9705,7 +9705,7 @@ pub struct LolLobbyAmbassadorMessage {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyAutoFillQueueDto {
     pub queue_id: i32,
@@ -9714,7 +9714,7 @@ pub struct LolLobbyAutoFillQueueDto {
     pub auto_fill_protected_for_promos: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyBotParticipantDto {
     pub champion_id: i32,
@@ -9722,28 +9722,28 @@ pub struct LolLobbyBotParticipantDto {
     pub team: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChampionSkinSelection {
     pub champion_id: i32,
     pub skin_id: Option<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChatBlockedPlayerResource {
     pub summoner_id: u64,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChatFriend {
     pub summoner_id: u64,
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChatFriendCounts {
     pub num_friends: u32,
@@ -9756,7 +9756,7 @@ pub struct LolLobbyChatFriendCounts {
     pub num_friends_mobile: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCollectionsChampion {
     pub active: bool,
@@ -9765,7 +9765,7 @@ pub struct LolLobbyCollectionsChampion {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCollectionsChampionMinimal {
     pub disabled_queues: Vec<String>,
@@ -9775,7 +9775,7 @@ pub struct LolLobbyCollectionsChampionMinimal {
     pub free_to_play: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -9784,20 +9784,20 @@ pub struct LolLobbyCollectionsOwnership {
     pub rental: LolLobbyCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCollectionsRental {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCustomEligibilityDto {
     pub eligible: bool,
     pub restrictions: Vec<LolLobbyGatekeeperRestrictionDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCustomGameDto {
     pub party_id: String,
@@ -9813,7 +9813,7 @@ pub struct LolLobbyCustomGameDto {
     pub private_game: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCustomGameSettingsDto {
     pub lobby_name: String,
@@ -9821,14 +9821,14 @@ pub struct LolLobbyCustomGameSettingsDto {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCustomJoinOptionsDto {
     pub lobby_password: String,
     pub team: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyEligibility {
     pub queue_id: i32,
@@ -9836,7 +9836,7 @@ pub struct LolLobbyEligibility {
     pub restrictions: Vec<LolLobbyEligibilityRestriction>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyEligibilityRestriction {
     pub restriction_code: LolLobbyEligibilityRestrictionCode,
@@ -9846,7 +9846,7 @@ pub struct LolLobbyEligibilityRestriction {
     pub summoner_ids_string: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyFriendAvailabilityAnalytics {
     pub puuid: String,
@@ -9866,14 +9866,14 @@ pub struct LolLobbyFriendAvailabilityAnalytics {
     pub party_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameDataChampionSummary {
     pub id: i32,
     pub alias: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameModeDto {
     pub game_type: String,
@@ -9888,19 +9888,19 @@ pub struct LolLobbyGameModeDto {
     pub allow_spectators: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowGameClient {
     pub running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowGameData {
     pub queue: LolLobbyQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowGameDodge {
     pub state: LolLobbyMatchmakingDodgeState,
@@ -9908,7 +9908,7 @@ pub struct LolLobbyGameflowGameDodge {
     pub phase: LolLobbyGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowSampleDto {
     pub state: String,
@@ -9917,7 +9917,7 @@ pub struct LolLobbyGameflowSampleDto {
     pub tags: Vec<LolLobbyGameflowSampleTag>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowSession {
     pub phase: LolLobbyGameflowPhase,
@@ -9926,7 +9926,7 @@ pub struct LolLobbyGameflowSession {
     pub game_dodge: LolLobbyGameflowGameDodge
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGatekeeperRestrictionDto {
     pub account_id: u64,
@@ -9938,7 +9938,7 @@ pub struct LolLobbyGatekeeperRestrictionDto {
     pub details: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyInventoryCacheEntry {
     pub signed_inventory_jwt: String,
@@ -9946,13 +9946,13 @@ pub struct LolLobbyInventoryCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyInventoryItem {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyJoinPartyAnalytics {
     pub party_id: String,
@@ -9970,26 +9970,26 @@ pub struct LolLobbyJoinPartyAnalytics {
     pub game_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLcdsDynamicClientConfig {
     pub party_rewards: LolLobbyLcdsPartyRewardsConfig
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLcdsGameMetaData {
     pub game_id: u64,
     pub map_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLcdsPartyRewardsConfig {
     pub enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobby {
     pub queue_id: i32,
@@ -10021,7 +10021,7 @@ pub struct LolLobbyLobby {
     pub queue_availability: LolLobbyQueueAvailability
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyBotChampion {
     pub active: bool,
@@ -10030,7 +10030,7 @@ pub struct LolLobbyLobbyBotChampion {
     pub bot_difficulties: Vec<LolLobbyLobbyBotDifficulty>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyBotParams {
     pub champion_id: i32,
@@ -10038,7 +10038,7 @@ pub struct LolLobbyLobbyBotParams {
     pub team_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyChangeGameDto {
     pub queue_id: i32,
@@ -10047,7 +10047,7 @@ pub struct LolLobbyLobbyChangeGameDto {
     pub game_customization: Option<HashMap<String, String>>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyChangeQueue {
     pub queue_id: i32,
@@ -10055,14 +10055,14 @@ pub struct LolLobbyLobbyChangeQueue {
     pub custom_game_lobby: Option<LolLobbyLobbyCustomGameLobby>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomChampSelectStartResponse {
     pub success: bool,
     pub failed_players: Vec<LolLobbyLobbyCustomFailedPlayer>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomFailedPlayer {
     pub summoner_id: u64,
@@ -10070,7 +10070,7 @@ pub struct LolLobbyLobbyCustomFailedPlayer {
     pub reason: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomGame {
     pub id: u64,
@@ -10088,7 +10088,7 @@ pub struct LolLobbyLobbyCustomGame {
     pub party_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomGameConfiguration {
     pub map_id: i32,
@@ -10104,7 +10104,7 @@ pub struct LolLobbyLobbyCustomGameConfiguration {
     pub game_server_region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomGameLobby {
     pub lobby_name: String,
@@ -10117,14 +10117,14 @@ pub struct LolLobbyLobbyCustomGameLobby {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomJoinParameters {
     pub password: Option<String>,
     pub as_spectator: Option<bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyDto {
     pub party_id: String,
@@ -10142,7 +10142,7 @@ pub struct LolLobbyLobbyDto {
     pub scarce_positions: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyGameConfigDto {
     pub game_mode: String,
@@ -10167,7 +10167,7 @@ pub struct LolLobbyLobbyGameConfigDto {
     pub custom_rewards_disabled_reasons: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyInvitation {
     pub id: String,
@@ -10182,7 +10182,7 @@ pub struct LolLobbyLobbyInvitation {
     pub to_summoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyInvitationDto {
     pub invitation_id: String,
@@ -10193,7 +10193,7 @@ pub struct LolLobbyLobbyInvitationDto {
     pub invitation_type: LolLobbyInvitationType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyLastQueuedLobby {
     pub queue_id: i32,
@@ -10202,13 +10202,13 @@ pub struct LolLobbyLobbyLastQueuedLobby {
     pub members: Vec<LolLobbyLobbyLastQueuedMember>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyLastQueuedMember {
     pub id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyMatchmakingLowPriorityDataResource {
     pub penalized_summoner_ids: Vec<u64>,
@@ -10218,7 +10218,7 @@ pub struct LolLobbyLobbyMatchmakingLowPriorityDataResource {
     pub reason: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyMatchmakingSearchErrorResource {
     pub id: i32,
@@ -10228,7 +10228,7 @@ pub struct LolLobbyLobbyMatchmakingSearchErrorResource {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyMatchmakingSearchResource {
     pub search_state: LolLobbyLobbyMatchmakingSearchState,
@@ -10236,7 +10236,7 @@ pub struct LolLobbyLobbyMatchmakingSearchResource {
     pub errors: Vec<LolLobbyLobbyMatchmakingSearchErrorResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyMember {
     pub id: u64,
@@ -10256,7 +10256,7 @@ pub struct LolLobbyLobbyMember {
     pub bot_champion_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyNotification {
     pub notification_id: String,
@@ -10265,7 +10265,7 @@ pub struct LolLobbyLobbyNotification {
     pub timestamp: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyParticipantDto {
     pub summoner_id: u64,
@@ -10296,7 +10296,7 @@ pub struct LolLobbyLobbyParticipantDto {
     pub bot_champion_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyPartyRewards {
     pub is_enabled: bool,
@@ -10305,14 +10305,14 @@ pub struct LolLobbyLobbyPartyRewards {
     pub party_rewards: Vec<LolLobbyPartyReward>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyPositionPreferences {
     pub first_preference: String,
     pub second_preference: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyStatus {
     pub queue_id: i32,
@@ -10327,14 +10327,14 @@ pub struct LolLobbyLobbyStatus {
     pub custom_spectator_policy: LolLobbyQueueCustomGameSpectatorPolicy
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyTimer {
     pub enabled: bool,
     pub countdown: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLoginSession {
     pub state: LolLobbyLoginSessionStates,
@@ -10347,7 +10347,7 @@ pub struct LolLobbyLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyOpenPartyToggleAnalytics {
     pub party_id: String,
@@ -10367,7 +10367,7 @@ pub struct LolLobbyOpenPartyToggleAnalytics {
     pub game_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartiesInvitationAnalytics {
     pub party_id: String,
@@ -10378,7 +10378,7 @@ pub struct LolLobbyPartiesInvitationAnalytics {
     pub players: Vec<LolLobbyPartiesInvitationPlayerAnalytics>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartiesInvitationPlayerAnalytics {
     pub puuid: String,
@@ -10386,14 +10386,14 @@ pub struct LolLobbyPartiesInvitationPlayerAnalytics {
     pub role: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyChatDto {
     pub jid: String,
     pub multi_user_chat_j_w_t: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyDto {
     pub party_id: String,
@@ -10414,7 +10414,7 @@ pub struct LolLobbyPartyDto {
     pub bot_participants: Option<Vec<LolLobbyBotParticipantDto>>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyInviteAnalytics {
     pub party_id: String,
@@ -10428,7 +10428,7 @@ pub struct LolLobbyPartyInviteAnalytics {
     pub game_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyMemberDto {
     pub platform_id: String,
@@ -10447,7 +10447,7 @@ pub struct LolLobbyPartyMemberDto {
     pub team: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyMemberMetadataDto {
     pub position_pref: Vec<String>,
@@ -10456,14 +10456,14 @@ pub struct LolLobbyPartyMemberMetadataDto {
     pub properties: Option<Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyNotificationEnvelopeDto {
     pub player: Option<LolLobbyPlayerDto>,
     pub queue_restriction: Option<LolLobbyQueueRestrictionDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyPresenceData {
     pub party_id: String,
@@ -10472,14 +10472,14 @@ pub struct LolLobbyPartyPresenceData {
     pub max_players: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyQueueEligibilityDto {
     pub party_restrictions: Vec<LolLobbyGatekeeperRestrictionDto>,
     pub available_queue_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyReward {
     pub premade_size: i32,
@@ -10488,7 +10488,7 @@ pub struct LolLobbyPartyReward {
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyStatusDto {
     pub ready_players: Vec<String>,
@@ -10497,13 +10497,13 @@ pub struct LolLobbyPartyStatusDto {
     pub party_size: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPlayerCollectionDto {
     pub players: Vec<LolLobbyPlayerDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPlayerDto {
     pub puuid: String,
@@ -10519,7 +10519,7 @@ pub struct LolLobbyPlayerDto {
     pub version: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPlayerStatus {
     pub current_lobby_status: Option<LolLobbyLobbyStatus>,
@@ -10527,7 +10527,7 @@ pub struct LolLobbyPlayerStatus {
     pub can_invite_others_at_eog: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPremadeMemberDto {
     pub display_name: String,
@@ -10537,7 +10537,7 @@ pub struct LolLobbyPremadeMemberDto {
     pub role: LolLobbyPartyMemberRoleEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPremadePartyDto {
     pub party_id: String,
@@ -10545,7 +10545,7 @@ pub struct LolLobbyPremadePartyDto {
     pub players: HashMap<String, LolLobbyPremadeMemberDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPremadeRelationshipAnalytics {
     pub puuid: String,
@@ -10558,7 +10558,7 @@ pub struct LolLobbyPremadeRelationshipAnalytics {
     pub friend_players: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueue {
     pub id: i32,
@@ -10594,13 +10594,13 @@ pub struct LolLobbyQueue {
     pub removal_from_game_delay_minutes: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueueCustomGame {
     pub queue_availability: LolLobbyQueueAvailability
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueueGameTypeConfig {
     pub id: i64,
@@ -10627,13 +10627,13 @@ pub struct LolLobbyQueueGameTypeConfig {
     pub num_players_per_team_override: Option<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueueRestrictionDto {
     pub gatekeeper_restrictions: Vec<LolLobbyGatekeeperRestrictionDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueueReward {
     pub is_ip_enabled: bool,
@@ -10642,7 +10642,7 @@ pub struct LolLobbyQueueReward {
     pub party_size_ip_rewards: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRankedPositionInfoDTO {
     pub queue: String,
@@ -10650,7 +10650,7 @@ pub struct LolLobbyRankedPositionInfoDTO {
     pub rank: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRankedStatsUnsignedDTO {
     pub queues: Vec<LolLobbyRankedPositionInfoDTO>,
@@ -10659,13 +10659,13 @@ pub struct LolLobbyRankedStatsUnsignedDTO {
     pub jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyReadyDto {
     pub ready: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyReceivedInvitationDto {
     pub invitation_id: String,
@@ -10679,7 +10679,7 @@ pub struct LolLobbyReceivedInvitationDto {
     pub invitation_type: LolLobbyInvitationType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyReceivedInvitationGameConfigDto {
     pub game_mode: String,
@@ -10688,7 +10688,7 @@ pub struct LolLobbyReceivedInvitationGameConfigDto {
     pub invite_game_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRegistrationCredentials {
     pub summoner_token: Option<String>,
@@ -10700,14 +10700,14 @@ pub struct LolLobbyRegistrationCredentials {
     pub game_client_version: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRegistrationStatus {
     pub complete: bool,
     pub error_codes: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRiotMessagingServiceMessage {
     pub resource: String,
@@ -10717,7 +10717,7 @@ pub struct LolLobbyRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyServiceProxyPayload {
     pub method: String,
@@ -10725,7 +10725,7 @@ pub struct LolLobbyServiceProxyPayload {
     pub body: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbySummoner {
     pub summoner_id: u64,
@@ -10737,7 +10737,7 @@ pub struct LolLobbySummoner {
     pub internal_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderActionV1 {
     pub action_id: i32,
@@ -10749,7 +10749,7 @@ pub struct LolLobbyTeamBuilderActionV1 {
     pub duration: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderAfkCheckStateV1 {
     pub max_afk_millis: u32,
@@ -10761,21 +10761,21 @@ pub struct LolLobbyTeamBuilderAfkCheckStateV1 {
     pub multi_user_chat_j_w_t: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderBackwardsTransitionInfoV1 {
     pub backwards_transition_reason: String,
     pub initiator_summoner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderBenchChampion {
     pub champion_id: i32,
     pub is_priority: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderCellV1 {
     pub team_id: i32,
@@ -10794,21 +10794,21 @@ pub struct LolLobbyTeamBuilderCellV1 {
     pub obfuscated_puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderCellsV1 {
     pub allied_team: Vec<LolLobbyTeamBuilderCellV1>,
     pub enemy_team: Vec<LolLobbyTeamBuilderCellV1>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderCeremonyV1 {
     pub name: String,
     pub duration: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectAction {
     pub id: i64,
@@ -10821,7 +10821,7 @@ pub struct LolLobbyTeamBuilderChampSelectAction {
     pub is_in_progress: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectChatRoomDetails {
     pub chat_room_name: String,
@@ -10829,7 +10829,7 @@ pub struct LolLobbyTeamBuilderChampSelectChatRoomDetails {
     pub multi_user_chat_j_w_t: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectDevPanelData {
     pub counter: i64,
@@ -10838,7 +10838,7 @@ pub struct LolLobbyTeamBuilderChampSelectDevPanelData {
     pub team_id_suffix: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
@@ -10847,7 +10847,7 @@ pub struct LolLobbyTeamBuilderChampSelectMySelection {
     pub ward_skin_id: Option<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectPlayerSelection {
     pub cell_id: i64,
@@ -10868,7 +10868,7 @@ pub struct LolLobbyTeamBuilderChampSelectPlayerSelection {
     pub obfuscated_puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectReport {
     pub offender_puuid: String,
@@ -10878,7 +10878,7 @@ pub struct LolLobbyTeamBuilderChampSelectReport {
     pub match_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectReportV2 {
     pub offender_id: String,
@@ -10889,7 +10889,7 @@ pub struct LolLobbyTeamBuilderChampSelectReportV2 {
     pub token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectSession {
     pub game_id: u64,
@@ -10920,7 +10920,7 @@ pub struct LolLobbyTeamBuilderChampSelectSession {
     pub has_simultaneous_picks: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectSwapContract {
     pub id: i64,
@@ -10928,7 +10928,7 @@ pub struct LolLobbyTeamBuilderChampSelectSwapContract {
     pub state: LolLobbyTeamBuilderChampSelectSwapState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectTimer {
     pub adjusted_time_left_in_phase: i64,
@@ -10938,7 +10938,7 @@ pub struct LolLobbyTeamBuilderChampSelectTimer {
     pub internal_now_in_epoch_ms: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectTradeContract {
     pub id: i64,
@@ -10946,14 +10946,14 @@ pub struct LolLobbyTeamBuilderChampSelectTradeContract {
     pub state: LolLobbyTeamBuilderChampSelectTradeState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampionBenchChampionV1 {
     pub champion_id: i32,
     pub is_priority: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampionBenchStateV1 {
     pub bench_enabled: bool,
@@ -10961,14 +10961,14 @@ pub struct LolLobbyTeamBuilderChampionBenchStateV1 {
     pub bench_champions: Vec<LolLobbyTeamBuilderChampionBenchChampionV1>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampionSelectPreferences {
     pub skins: HashMap<String, i32>,
     pub spells: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampionSelectStateV1 {
     pub team_id: String,
@@ -10998,7 +10998,7 @@ pub struct LolLobbyTeamBuilderChampionSelectStateV1 {
     pub is_spectating: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderCountdownTimer {
     pub phase_name: String,
@@ -11006,53 +11006,53 @@ pub struct LolLobbyTeamBuilderCountdownTimer {
     pub counter: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderEntitledFeatureState {
     pub additional_rerolls: u32,
     pub unlocked_skin_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderEntitledFeatureStateV1 {
     pub additional_rerolls: u32,
     pub unlocked_skins_state: LolLobbyTeamBuilderUnlockedSkinsStateV1
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameModeSpellList {
     pub spells: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameflowGameClient {
     pub running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameflowGameMap {
     pub per_position_required_summoner_spells: HashMap<String, LolLobbyTeamBuilderGameModeSpellList>,
     pub per_position_disallowed_summoner_spells: HashMap<String, LolLobbyTeamBuilderGameModeSpellList>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameflowSession {
     pub game_client: LolLobbyTeamBuilderGameflowGameClient,
     pub map: LolLobbyTeamBuilderGameflowGameMap
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGatekeeperRestricted {
     pub gatekeeper_restrictions: Vec<LolLobbyTeamBuilderGatekeeperRestriction>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGatekeeperRestriction {
     pub summoner_id: u64,
@@ -11062,13 +11062,13 @@ pub struct LolLobbyTeamBuilderGatekeeperRestriction {
     pub queue_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLeaverBusterAbandoned {
     pub abandoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobby {
     pub queue_id: i32,
@@ -11093,7 +11093,7 @@ pub struct LolLobbyTeamBuilderLobby {
     pub allowable_premade_sizes: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyCountdownTimer {
     pub phase_name: String,
@@ -11101,13 +11101,13 @@ pub struct LolLobbyTeamBuilderLobbyCountdownTimer {
     pub counter: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyInvitation {
     pub invitation_meta_data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyMember {
     pub id: u64,
@@ -11122,14 +11122,14 @@ pub struct LolLobbyTeamBuilderLobbyMember {
     pub auto_fill_protected_for_soloing: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyPositionPreferences {
     pub first_preference: String,
     pub second_preference: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyPositionPreferencesV2 {
     pub first_preference: String,
@@ -11137,14 +11137,14 @@ pub struct LolLobbyTeamBuilderLobbyPositionPreferencesV2 {
     pub excluded_preference: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLockedEventsStateV1 {
     pub allow_locked_events: bool,
     pub locked_event_index: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLoginSession {
     pub state: LolLobbyTeamBuilderLoginSessionState,
@@ -11153,14 +11153,14 @@ pub struct LolLobbyTeamBuilderLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingDodgeData {
     pub state: LolLobbyTeamBuilderMatchmakingDodgeState,
     pub dodger_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingLowPriorityData {
     pub penalized_summoner_ids: Vec<u64>,
@@ -11169,7 +11169,7 @@ pub struct LolLobbyTeamBuilderMatchmakingLowPriorityData {
     pub busted_leaver_access_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingReadyCheckResource {
     pub state: LolLobbyTeamBuilderMatchmakingReadyCheckState,
@@ -11179,13 +11179,13 @@ pub struct LolLobbyTeamBuilderMatchmakingReadyCheckResource {
     pub decliner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingSearch {
     pub search_state: LolLobbyTeamBuilderMatchmakingSearchState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingSearchErrorResource {
     pub id: i32,
@@ -11195,7 +11195,7 @@ pub struct LolLobbyTeamBuilderMatchmakingSearchErrorResource {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingSearchResource {
     pub queue_id: i32,
@@ -11210,7 +11210,7 @@ pub struct LolLobbyTeamBuilderMatchmakingSearchResource {
     pub errors: Vec<LolLobbyTeamBuilderMatchmakingSearchErrorResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderPickOrderSwapV1 {
     pub id: i32,
@@ -11218,7 +11218,7 @@ pub struct LolLobbyTeamBuilderPickOrderSwapV1 {
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderQueue {
     pub id: i32,
@@ -11252,7 +11252,7 @@ pub struct LolLobbyTeamBuilderQueue {
     pub removal_from_game_delay_minutes: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderQueueGameTypeConfig {
     pub id: i64,
@@ -11278,7 +11278,7 @@ pub struct LolLobbyTeamBuilderQueueGameTypeConfig {
     pub ban_mode: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderQueueReward {
     pub is_ip_enabled: bool,
@@ -11287,21 +11287,21 @@ pub struct LolLobbyTeamBuilderQueueReward {
     pub party_size_ip_rewards: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderRerollStateV1 {
     pub allow_rerolling: bool,
     pub rerolls_remaining: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderSettingCategoryResource {
     pub schema_version: i32,
     pub data: LolLobbyTeamBuilderChampionSelectPreferences
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTBDMatchmakingState {
     pub estimated_matchmaking_time_millis: i64,
@@ -11309,7 +11309,7 @@ pub struct LolLobbyTeamBuilderTBDMatchmakingState {
     pub backwards_transition_reason: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTbLobbyStateResource {
     pub counter: i32,
@@ -11322,14 +11322,14 @@ pub struct LolLobbyTeamBuilderTbLobbyStateResource {
     pub champion_select_state: Option<LolLobbyTeamBuilderChampionSelectStateV1>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTbRemovedFromServiceNotification {
     pub reason: String,
     pub backwards_transition_info: LolLobbyTeamBuilderBackwardsTransitionInfoV1
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTbdInventory {
     pub last_selected_skin_id_by_champion_id: HashMap<String, i32>,
@@ -11340,7 +11340,7 @@ pub struct LolLobbyTeamBuilderTbdInventory {
     pub disabled_champion_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTeamBoost {
     pub summoner_id: i64,
@@ -11352,7 +11352,7 @@ pub struct LolLobbyTeamBuilderTeamBoost {
     pub unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTeamBuilderBoostInfo {
     pub allow_battle_boost: bool,
@@ -11363,14 +11363,14 @@ pub struct LolLobbyTeamBuilderTeamBuilderBoostInfo {
     pub unlocked_skin_ids: Vec<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTeambuilderLeagueEdgeResponse {
     pub payload: LolLobbyTeamBuilderTbLobbyStateResource,
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTradeV1 {
     pub id: i32,
@@ -11378,26 +11378,26 @@ pub struct LolLobbyTeamBuilderTradeV1 {
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderUnlockedSkinsStateV1 {
     pub unlocked_skin_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyUserInfoToken {
     pub user_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyUserResource {
     pub summoner_id: u64,
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginAccessToken {
     pub token: String,
@@ -11405,13 +11405,13 @@ pub struct LolLoginAccessToken {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginAccountStateResource {
     pub state: LolLoginAccountStateType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginAuthorization {
     pub current_platform_id: String,
@@ -11419,13 +11419,13 @@ pub struct LolLoginAuthorization {
     pub subject: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginConfigStatus {
     pub readiness: LolLoginConfigReadinessEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginCrashReportingEnvironment {
     pub environment: String,
@@ -11433,21 +11433,21 @@ pub struct LolLoginCrashReportingEnvironment {
     pub user_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginIdToken {
     pub token: String,
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLcdsResponse {
     pub type_name: String,
     pub body: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLcdsServiceProxyResponse {
     pub service_name: String,
@@ -11458,14 +11458,14 @@ pub struct LolLoginLcdsServiceProxyResponse {
     pub compressed_payload: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLeagueSessionTokenEnvelope {
     pub token: Option<String>,
     pub logout_on_failure: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLoginConnectionState {
     pub mode: LolLoginLoginConnectionMode,
@@ -11473,7 +11473,7 @@ pub struct LolLoginLoginConnectionState {
     pub is_partner_riot_client: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLoginError {
     pub id: String,
@@ -11481,7 +11481,7 @@ pub struct LolLoginLoginError {
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLoginQueue {
     pub estimated_position_in_queue: u64,
@@ -11489,7 +11489,7 @@ pub struct LolLoginLoginQueue {
     pub approximate_wait_time_seconds: Option<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLoginSession {
     pub state: LolLoginLoginSessionStates,
@@ -11505,27 +11505,27 @@ pub struct LolLoginLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLoginSessionWallet {
     pub ip: i64,
     pub rp: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginPlatformGeneratedCredentials {
     pub username: String,
     pub password: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginRSOConfigReadyState {
     pub ready: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginRSOPlayerCredentials {
     pub username: String,
@@ -11533,13 +11533,13 @@ pub struct LolLoginRSOPlayerCredentials {
     pub platform_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginSummonerCreatedResource {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginSummonerSessionResource {
     pub summoner_id: u64,
@@ -11547,27 +11547,27 @@ pub struct LolLoginSummonerSessionResource {
     pub is_new_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginUsernameAndPassword {
     pub username: String,
     pub password: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootAccountIdAndSummonerId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsChampionMinimal {
     pub id: i32,
     pub ownership: LolLootCollectionsOwnership
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsChampionSkinMinimal {
     pub champion_id: i32,
@@ -11578,14 +11578,14 @@ pub struct LolLootCollectionsChampionSkinMinimal {
     pub tile_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsEmote {
     pub item_id: i64,
     pub ownership_type: LolLootInventoryOwnership
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -11594,26 +11594,26 @@ pub struct LolLootCollectionsOwnership {
     pub rental: LolLootCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsRental {
     pub rented: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsStatstone {
     pub item_id: i64,
     pub ownership_type: LolLootInventoryOwnership
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsSummonerIcon {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsWardSkin {
     pub id: i64,
@@ -11623,7 +11623,7 @@ pub struct LolLootCollectionsWardSkin {
     pub ward_shadow_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootContextMenu {
     pub name: String,
@@ -11639,7 +11639,7 @@ pub struct LolLootContextMenu {
     pub required_others_count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCosmeticsTFTDamageSkin {
     pub content_id: String,
@@ -11659,7 +11659,7 @@ pub struct LolLootCosmeticsTFTDamageSkin {
     pub upgrades: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCosmeticsTFTDamageSkinViewModel {
     pub content_id: String,
@@ -11680,7 +11680,7 @@ pub struct LolLootCosmeticsTFTDamageSkinViewModel {
     pub upgrades: Vec<LolLootCosmeticsTFTDamageSkinViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCosmeticsTFTMapSkinViewModel {
     pub item_id: i32,
@@ -11693,7 +11693,7 @@ pub struct LolLootCosmeticsTFTMapSkinViewModel {
     pub f2p: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCounter {
     pub id: String,
@@ -11703,7 +11703,7 @@ pub struct LolLootCounter {
     pub start_value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCounterInstance {
     pub owner_id: String,
@@ -11713,13 +11713,13 @@ pub struct LolLootCounterInstance {
     pub counter_value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCurrencyConfiguration {
     pub currencies_using_cap_wallets: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootEntityInstance {
     pub group_id: String,
@@ -11727,7 +11727,7 @@ pub struct LolLootEntityInstance {
     pub milestones: Vec<LolLootMilestoneInstance>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGameDataSummonerEmote {
     pub id: i64,
@@ -11736,7 +11736,7 @@ pub struct LolLootGameDataSummonerEmote {
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGameDataSummonerIcon {
     pub id: i32,
@@ -11744,20 +11744,20 @@ pub struct LolLootGameDataSummonerIcon {
     pub image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGameflowSession {
     pub phase: LolLootGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGrantorDescription {
     pub app_name: String,
     pub entity_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGroup {
     pub id: String,
@@ -11768,20 +11768,20 @@ pub struct LolLootGroup {
     pub milestones: Vec<LolLootMilestone>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLoginDataPacket {
     pub simple_messages: Vec<LolLootLoginSimpleMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLoginSession {
     pub state: LolLootLoginSessionStates,
@@ -11789,7 +11789,7 @@ pub struct LolLootLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLoginSimpleMessage {
     pub account_id: u64,
@@ -11799,13 +11799,13 @@ pub struct LolLootLoginSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootBundleContentGdsResource {
     pub localized_description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootBundleGdsResource {
     pub id: String,
@@ -11815,7 +11815,7 @@ pub struct LolLootLootBundleGdsResource {
     pub contents: Vec<LolLootLootBundleContentGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootDataGdsResource {
     pub loot_items: Vec<LolLootLootItemGdsResource>,
@@ -11824,7 +11824,7 @@ pub struct LolLootLootDataGdsResource {
     pub loot_bundles: Vec<LolLootLootBundleGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootDescription {
     pub loot_name: String,
@@ -11835,14 +11835,14 @@ pub struct LolLootLootDescription {
     pub children_descriptions: Vec<LolLootLootDescription>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootDropTableEntryGdsResource {
     pub loot_id: String,
     pub localized_description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootGrantNotification {
     pub id: i64,
@@ -11856,7 +11856,7 @@ pub struct LolLootLootGrantNotification {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootItem {
     pub loot_name: String,
@@ -11874,7 +11874,7 @@ pub struct LolLootLootItem {
     pub rental_games: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootItemGdsResource {
     pub id: String,
@@ -11894,7 +11894,7 @@ pub struct LolLootLootItemGdsResource {
     pub type_: LolLootLootType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestone {
     pub id: String,
@@ -11902,7 +11902,7 @@ pub struct LolLootLootMilestone {
     pub rewards: Vec<LolLootLootMilestoneReward>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestoneRepeat {
     pub repeat_count: i32,
@@ -11910,7 +11910,7 @@ pub struct LolLootLootMilestoneRepeat {
     pub multiplier: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestoneReward {
     pub reward_group_id: String,
@@ -11922,7 +11922,7 @@ pub struct LolLootLootMilestoneReward {
     pub loot_item: Option<LolLootPlayerLoot>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestones {
     pub id: String,
@@ -11938,7 +11938,7 @@ pub struct LolLootLootMilestones {
     pub error_caching_milestone_set: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestonesClaimResponse {
     pub loot_milestone_set_id: String,
@@ -11946,7 +11946,7 @@ pub struct LolLootLootMilestonesClaimResponse {
     pub status: LolLootLootMilestoneClaimStatus
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestonesCounter {
     pub loot_milestones_id: String,
@@ -11955,7 +11955,7 @@ pub struct LolLootLootMilestonesCounter {
     pub ready_to_claim_milestones: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootMilestonesDataGdsResource {
     pub id: String,
@@ -11966,7 +11966,7 @@ pub struct LolLootLootMilestonesDataGdsResource {
     pub ledger_config: LolLootProgressionConfigGdsResource
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootOddsResponse {
     pub loot_id: String,
@@ -11979,14 +11979,14 @@ pub struct LolLootLootOddsResponse {
     pub children: Vec<LolLootLootOddsResponse>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootOutputGdsResource {
     pub loot_id: String,
     pub localized_description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootRecipeGdsResource {
     pub id: String,
@@ -12001,7 +12001,7 @@ pub struct LolLootLootRecipeGdsResource {
     pub outputs: Vec<LolLootLootOutputGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootTableGdsResource {
     pub id: String,
@@ -12011,7 +12011,7 @@ pub struct LolLootLootTableGdsResource {
     pub drop_chance: Vec<LolLootLootDropTableEntryGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestone {
     pub id: String,
@@ -12022,7 +12022,7 @@ pub struct LolLootMilestone {
     pub properties: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestoneInstance {
     pub milestone_id: String,
@@ -12035,19 +12035,19 @@ pub struct LolLootMilestoneInstance {
     pub triggered: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestoneLootItemRewardGdsResource {
     pub internal_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestonesProgressionConfigRepeatGdsResource {
     pub name: LolLootMilestonesProgressionGroupRepeatGdsResource
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestonesProgressionCounterGdsResource {
     pub id: String,
@@ -12056,7 +12056,7 @@ pub struct LolLootMilestonesProgressionCounterGdsResource {
     pub start_value: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestonesProgressionGroupRepeatGdsResource {
     pub count: i32,
@@ -12064,13 +12064,13 @@ pub struct LolLootMilestonesProgressionGroupRepeatGdsResource {
     pub multiplier: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestonesRecipeGdsResource {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLoot {
     pub loot_name: String,
@@ -12109,21 +12109,21 @@ pub struct LolLootPlayerLoot {
     pub is_rental: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLootDelta {
     pub delta_count: i32,
     pub player_loot: LolLootPlayerLoot
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLootMap {
     pub version: i64,
     pub player_loot: HashMap<String, LolLootPlayerLoot>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLootNotification {
     pub id: String,
@@ -12131,7 +12131,7 @@ pub struct LolLootPlayerLootNotification {
     pub acknowledged: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLootUpdate {
     pub added: Vec<LolLootPlayerLootDelta>,
@@ -12139,7 +12139,7 @@ pub struct LolLootPlayerLootUpdate {
     pub redeemed: Vec<LolLootPlayerLootDelta>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootProgressionConfigGdsResource {
     pub id: String,
@@ -12149,7 +12149,7 @@ pub struct LolLootProgressionConfigGdsResource {
     pub milestones: Vec<LolLootProgressionConfigMilestoneGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootProgressionConfigMilestoneGdsResource {
     pub id: String,
@@ -12159,7 +12159,7 @@ pub struct LolLootProgressionConfigMilestoneGdsResource {
     pub counter: LolLootMilestonesProgressionCounterGdsResource
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootProgressionConfigMilestonePropertiesGdsResource {
     pub id: String,
@@ -12169,7 +12169,7 @@ pub struct LolLootProgressionConfigMilestonePropertiesGdsResource {
     pub rewards: Vec<LolLootProgressionConfigMilestoneRewardGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootProgressionConfigMilestoneRewardGdsResource {
     pub id: String,
@@ -12179,21 +12179,21 @@ pub struct LolLootProgressionConfigMilestoneRewardGdsResource {
     pub legacy_loot_item: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootQueryEvaluatedLootItem {
     pub loot_name: String,
     pub localized_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRMSPayload {
     pub product_id: String,
     pub affinities: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRecipeMenuConfig {
     pub enabled: bool,
@@ -12201,7 +12201,7 @@ pub struct LolLootRecipeMenuConfig {
     pub always_show_loot_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRecipeMetadata {
     pub guaranteed_descriptions: Vec<LolLootLootDescription>,
@@ -12209,14 +12209,14 @@ pub struct LolLootRecipeMetadata {
     pub tooltips_disabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRecipeOutput {
     pub loot_name: String,
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRecipeSlot {
     pub slot_number: i32,
@@ -12225,7 +12225,7 @@ pub struct LolLootRecipeSlot {
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRecipeWithMilestones {
     pub recipe_name: String,
@@ -12246,14 +12246,14 @@ pub struct LolLootRecipeWithMilestones {
     pub loot_milestone_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRepeat {
     pub count: i32,
@@ -12261,61 +12261,61 @@ pub struct LolLootRepeat {
     pub multiplier: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRequestDTOSelectionRequestDTO {
     pub data: LolLootSelectionRequestDTO,
     pub metadata: LolLootRequestMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRequestDTOVectorSelectionRequestDTO {
     pub data: Vec<LolLootSelectionRequestDTO>,
     pub metadata: LolLootRequestMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRequestMetadataDTO {
     pub transaction_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOSvcRewardGrant {
     pub data: LolLootSvcRewardGrant,
     pub metadata: LolLootResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOMapRewardGroupIdSelectGrantStatus {
     pub data: HashMap<String, LolLootSelectGrantStatusResponse>,
     pub metadata: LolLootResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOVectorSvcRewardGrant {
     pub data: Vec<LolLootSvcRewardGrant>,
     pub metadata: LolLootResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOVectorSvcRewardGroup {
     pub data: Vec<LolLootSvcRewardGroup>,
     pub metadata: LolLootResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseMetadataDTO {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootReward {
     pub id: String,
@@ -12327,14 +12327,14 @@ pub struct LolLootReward {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRewardGrant {
     pub info: LolLootSvcRewardGrant,
     pub reward_group: LolLootSvcRewardGroup
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSelectionRequestDTO {
     pub grant_id: String,
@@ -12342,20 +12342,20 @@ pub struct LolLootSelectionRequestDTO {
     pub selections: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSelectionStrategyConfig {
     pub min_selections_allowed: u32,
     pub max_selections_allowed: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSummoner {
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSvcRewardGrant {
     pub id: String,
@@ -12369,7 +12369,7 @@ pub struct LolLootSvcRewardGrant {
     pub grantor_description: LolLootGrantorDescription
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSvcRewardGrantElement {
     pub element_id: String,
@@ -12382,7 +12382,7 @@ pub struct LolLootSvcRewardGrantElement {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSvcRewardGroup {
     pub id: String,
@@ -12399,7 +12399,7 @@ pub struct LolLootSvcRewardGroup {
     pub celebration_type: LolLootCelebrationType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootTFTDamageSkinGroupViewModel {
     pub group_name: String,
@@ -12409,7 +12409,7 @@ pub struct LolLootTFTDamageSkinGroupViewModel {
     pub items: Vec<LolLootCosmeticsTFTDamageSkinViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootTFTDamageSkinGroupedViewModel {
     pub selected_loadout_item: LolLootCosmeticsTFTDamageSkinViewModel,
@@ -12417,13 +12417,13 @@ pub struct LolLootTFTDamageSkinGroupedViewModel {
     pub groups: Vec<LolLootTFTDamageSkinGroupViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootTFTMapSkinGroupViewModel {
     pub items: Vec<LolLootCosmeticsTFTMapSkinViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootTFTMapSkinGroupedViewModel {
     pub selected_loadout_item: LolLootCosmeticsTFTMapSkinViewModel,
@@ -12431,7 +12431,7 @@ pub struct LolLootTFTMapSkinGroupedViewModel {
     pub groups: Vec<LolLootTFTMapSkinGroupViewModel>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootVerboseLootOddsResponse {
     pub recipe_name: String,
@@ -12442,38 +12442,38 @@ pub struct LolLootVerboseLootOddsResponse {
     pub checks_ownership: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyAccessToken {
     pub token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyGlobalRewards {
     pub all_champions: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyInventoryDTO {
     pub items: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyInventoryItemDTO {
     pub inventory_type: String,
     pub loyalty: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyInventoryResponseDTO {
     pub data: LolLoyaltyInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyLoginSession {
     pub state: LolLoyaltyLoginSessionStates,
@@ -12482,7 +12482,7 @@ pub struct LolLoyaltyLoginSession {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyLoyaltyRewards {
     pub free_rewarded_champions_count: i32,
@@ -12497,7 +12497,7 @@ pub struct LolLoyaltyLoyaltyRewards {
     pub loyalty_sources: HashMap<String, bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyLoyaltyStatusNotification {
     pub status: LolLoyaltyLoyaltyStatus,
@@ -12505,7 +12505,7 @@ pub struct LolLoyaltyLoyaltyStatusNotification {
     pub reload_inventory: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyRiotMessagingServiceMessage {
     pub resource: String,
@@ -12515,7 +12515,7 @@ pub struct LolLoyaltyRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyRmsEntitlementPayload {
     pub item_id: String,
@@ -12524,13 +12524,13 @@ pub struct LolLoyaltyRmsEntitlementPayload {
     pub resource_operation: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMapsGameModeSpellList {
     pub spells: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMapsMaps {
     pub id: i64,
@@ -12555,7 +12555,7 @@ pub struct LolMapsMaps {
     pub per_position_disallowed_summoner_spells: HashMap<String, LolMapsGameModeSpellList>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMapsTutorialCard {
     pub header: Option<String>,
@@ -12564,34 +12564,34 @@ pub struct LolMapsTutorialCard {
     pub image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryAcsEndPoint {
     pub url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryAcsPlayer {
     pub platform_id: String,
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryGAMHSMatchHistoryData {
     pub metadata: LolMatchHistoryGAMHSMatchHistoryMetadata,
     pub json: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryGAMHSMatchHistoryList {
     pub games: Vec<LolMatchHistoryGAMHSMatchHistoryData>,
     pub active_puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryGAMHSMatchHistoryMetadata {
     pub product: String,
@@ -12604,7 +12604,7 @@ pub struct LolMatchHistoryGAMHSMatchHistoryMetadata {
     pub private: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryLoginSession {
     pub state: LolMatchHistoryLoginSessionStates,
@@ -12613,7 +12613,7 @@ pub struct LolMatchHistoryLoginSession {
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMHSummoner {
     pub summoner_id: u64,
@@ -12622,7 +12622,7 @@ pub struct LolMatchHistoryMHSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryEvent {
     #[serde(rename = "type")]
@@ -12643,7 +12643,7 @@ pub struct LolMatchHistoryMatchHistoryEvent {
     pub monster_sub_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryGame {
     pub game_id: u64,
@@ -12662,7 +12662,7 @@ pub struct LolMatchHistoryMatchHistoryGame {
     pub participant_identities: Vec<LolMatchHistoryMatchHistoryParticipantIdentities>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryGameList {
     pub game_index_begin: u64,
@@ -12673,7 +12673,7 @@ pub struct LolMatchHistoryMatchHistoryGameList {
     pub games: Vec<LolMatchHistoryMatchHistoryGame>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryList {
     pub platform_id: String,
@@ -12681,7 +12681,7 @@ pub struct LolMatchHistoryMatchHistoryList {
     pub games: LolMatchHistoryMatchHistoryGameList
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryParticipant {
     pub participant_id: u16,
@@ -12694,7 +12694,7 @@ pub struct LolMatchHistoryMatchHistoryParticipant {
     pub timeline: LolMatchHistoryMatchHistoryTimeline
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryParticipantFrame {
     pub participant_id: u16,
@@ -12709,14 +12709,14 @@ pub struct LolMatchHistoryMatchHistoryParticipantFrame {
     pub team_score: u16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryParticipantIdentities {
     pub participant_id: u16,
     pub player: LolMatchHistoryMatchHistoryParticipantIdentityPlayer
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryParticipantIdentityPlayer {
     pub platform_id: String,
@@ -12729,7 +12729,7 @@ pub struct LolMatchHistoryMatchHistoryParticipantIdentityPlayer {
     pub profile_icon: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryParticipantStatistics {
     pub participant_id: u16,
@@ -12840,13 +12840,13 @@ pub struct LolMatchHistoryMatchHistoryParticipantStatistics {
     pub perk5_var3: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPlayerChampMasteryDelta {
     pub grade: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPlayerDelta {
     pub original_account_id: u64,
@@ -12854,7 +12854,7 @@ pub struct LolMatchHistoryMatchHistoryPlayerDelta {
     pub deltas: Vec<LolMatchHistoryMatchHistoryPlayerGameDelta>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPlayerGameDelta {
     pub game_platform_id: String,
@@ -12864,7 +12864,7 @@ pub struct LolMatchHistoryMatchHistoryPlayerGameDelta {
     pub champ_mastery: LolMatchHistoryMatchHistoryPlayerChampMasteryDelta
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPlayerLeagueDelta {
     pub league_point_delta: u64,
@@ -12873,7 +12873,7 @@ pub struct LolMatchHistoryMatchHistoryPlayerLeagueDelta {
     pub timestamp: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPlayerPlatformDelta {
     pub xp_delta: u64,
@@ -12882,14 +12882,14 @@ pub struct LolMatchHistoryMatchHistoryPlayerPlatformDelta {
     pub timestamp: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPosition {
     pub x: i16,
     pub y: i16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTeam {
     pub team_id: u16,
@@ -12909,14 +12909,14 @@ pub struct LolMatchHistoryMatchHistoryTeam {
     pub bans: Vec<LolMatchHistoryMatchHistoryTeamBan>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTeamBan {
     pub champion_id: i32,
     pub pick_turn: u16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTimeline {
     pub participant_id: u16,
@@ -12931,7 +12931,7 @@ pub struct LolMatchHistoryMatchHistoryTimeline {
     pub damage_taken_diff_per_min_deltas: HashMap<String, f64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTimelineFrame {
     pub participant_frames: HashMap<String, LolMatchHistoryMatchHistoryParticipantFrame>,
@@ -12939,13 +12939,13 @@ pub struct LolMatchHistoryMatchHistoryTimelineFrame {
     pub timestamp: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTimelineFrames {
     pub frames: Vec<LolMatchHistoryMatchHistoryTimelineFrame>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryRecentlyPlayedSummoner {
     pub summoner_id: u64,
@@ -12957,39 +12957,39 @@ pub struct LolMatchHistoryRecentlyPlayedSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistorySummoner {
     pub display_name: String,
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowGameData {
     pub queue: LolMatchmakingGameflowQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowGameDodge {
     pub state: LolMatchmakingMatchmakingDodgeState,
     pub dodge_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowGameTypeConfig {
     pub reroll: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowQueue {
     pub game_type_config: LolMatchmakingGameflowGameTypeConfig
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowSession {
     pub phase: LolMatchmakingGameflowPhase,
@@ -12997,7 +12997,7 @@ pub struct LolMatchmakingGameflowSession {
     pub game_dodge: LolMatchmakingGameflowGameDodge
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingLobbyStatus {
     pub queue_id: i32,
@@ -13010,7 +13010,7 @@ pub struct LolMatchmakingLobbyStatus {
     pub custom_spectator_policy: LolMatchmakingQueueCustomGameSpectatorPolicy
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingLoginSession {
     pub state: LolMatchmakingLoginSessionState,
@@ -13019,14 +13019,14 @@ pub struct LolMatchmakingLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingMatchmakingDodgeData {
     pub state: LolMatchmakingMatchmakingDodgeState,
     pub dodger_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingMatchmakingLowPriorityData {
     pub penalized_summoner_ids: Vec<u64>,
@@ -13036,7 +13036,7 @@ pub struct LolMatchmakingMatchmakingLowPriorityData {
     pub reason: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingMatchmakingReadyCheckResource {
     pub state: LolMatchmakingMatchmakingReadyCheckState,
@@ -13047,7 +13047,7 @@ pub struct LolMatchmakingMatchmakingReadyCheckResource {
     pub suppress_ux: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingMatchmakingSearchErrorResource {
     pub id: i32,
@@ -13057,7 +13057,7 @@ pub struct LolMatchmakingMatchmakingSearchErrorResource {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingMatchmakingSearchResource {
     pub queue_id: i32,
@@ -13072,21 +13072,21 @@ pub struct LolMatchmakingMatchmakingSearchResource {
     pub errors: Vec<LolMatchmakingMatchmakingSearchErrorResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingPlayerStatus {
     pub current_lobby_status: Option<LolMatchmakingLobbyStatus>,
     pub last_queued_lobby_status: Option<LolMatchmakingLobbyStatus>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingQueue {
     pub id: i32,
     pub is_team_builder_managed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsChampion {
     pub id: i32,
@@ -13095,7 +13095,7 @@ pub struct LolMissionsCollectionsChampion {
     pub skins: Vec<LolMissionsCollectionsChampionSkin>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsChampionSkin {
     pub champion_id: i32,
@@ -13103,7 +13103,7 @@ pub struct LolMissionsCollectionsChampionSkin {
     pub ownership: LolMissionsCollectionsOwnership
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsOwnership {
     pub loyalty_reward: bool,
@@ -13112,44 +13112,44 @@ pub struct LolMissionsCollectionsOwnership {
     pub rental: LolMissionsCollectionsRental
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsRental {
     pub rented: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsSummoner {
     pub summoner_level: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsSummonerIcons {
     pub icons: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsWardSkin {
     pub id: i64,
     pub ownership: LolMissionsCollectionsOwnership
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsGameflowSession {
     pub phase: LolMissionsGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsInventoryItemWithPayload {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsLoginSession {
     pub account_id: u64,
@@ -13158,13 +13158,13 @@ pub struct LolMissionsLoginSession {
     pub platform_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsLoyaltyStatusNotification {
     pub status: LolMissionsLoyaltyStatus
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsMissionAsset {
     pub internal_name: String,
@@ -13172,7 +13172,7 @@ pub struct LolMissionsMissionAsset {
     pub icon_needs_frame: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsMissionsNotificationResource {
     pub background_url: String,
@@ -13190,33 +13190,33 @@ pub struct LolMissionsMissionsNotificationResource {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsMissionsSettingsDataResource {
     pub selected_series: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsPlayerUpdateResponse {
     pub player_missions: Vec<PlayerMissionDTO>,
     pub player_series: Vec<SeriesDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsPluginRegionLocaleChangedEvent {
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGrant {
     pub info: LolMissionsRewardGrantInfo,
     pub reward_group: LolMissionsRewardGroup
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGrantElement {
     pub id: String,
@@ -13229,7 +13229,7 @@ pub struct LolMissionsRewardGrantElement {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGrantInfo {
     pub id: String,
@@ -13241,7 +13241,7 @@ pub struct LolMissionsRewardGrantInfo {
     pub viewed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGroup {
     pub id: String,
@@ -13257,34 +13257,34 @@ pub struct LolMissionsRewardGroup {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGroupsSelection {
     pub reward_groups: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardsProductConfig {
     pub enabled: bool,
     pub service_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsSelectionStrategyConfig {
     pub min_selections_allowed: u32,
     pub max_selections_allowed: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsSeriesOpt {
     pub series_id: String,
     pub option: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsSvcReward {
     pub id: String,
@@ -13295,14 +13295,14 @@ pub struct LolMissionsSvcReward {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftBattlepass {
     pub total_points_earned: i32,
     pub milestones: Vec<LolMissionsTftBattlepassMilestone>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftBattlepassMilestone {
     pub mission_id: String,
@@ -13315,7 +13315,7 @@ pub struct LolMissionsTftBattlepassMilestone {
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftOrb {
     pub mission_id: String,
@@ -13325,7 +13325,7 @@ pub struct LolMissionsTftOrb {
     pub rewards: Vec<PlayerMissionRewardDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftPaidBattlepass {
     pub total_points_earned: i32,
@@ -13338,7 +13338,7 @@ pub struct LolMissionsTftPaidBattlepass {
     pub progress_mission_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftPaidBattlepassInfo {
     pub title: String,
@@ -13352,7 +13352,7 @@ pub struct LolMissionsTftPaidBattlepassInfo {
     pub media: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftPaidBattlepassMilestone {
     pub mission_id: String,
@@ -13374,26 +13374,26 @@ pub struct LolMissionsTftPaidBattlepassMilestone {
     pub is_bonus: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftWeeklyMissions {
     pub missions: Vec<PlayerMissionDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsUserInfo {
     pub user_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolModeProgressionInventoryRewardItem {
     pub item_id: i32,
     pub uuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolModeProgressionLoadout {
     pub id: String,
@@ -13402,7 +13402,7 @@ pub struct LolModeProgressionLoadout {
     pub loadout: HashMap<String, LolModeProgressionLoadoutsSlot>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolModeProgressionLoadoutsSlot {
     pub content_id: String,
@@ -13410,41 +13410,41 @@ pub struct LolModeProgressionLoadoutsSlot {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsAccountSettingsData {
     pub login: LolNpeRewardsLoginSeriesSettings,
     pub challenges: LolNpeRewardsChallengesSettings
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsAccountSettingsPayload {
     pub data: LolNpeRewardsAccountSettingsData,
     pub schema_version: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsAllRewards {
     pub level: LolNpeRewardsRewardSeries,
     pub login: LolNpeRewardsRewardSeries
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsChallengesProgress {
     pub progress: LolNpeRewardsProgress
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsChallengesSettings {
     pub all_missions_completed: bool,
     pub total_count: i8
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsLoginSeriesSettings {
     pub all_rewards_claimed: bool,
@@ -13452,7 +13452,7 @@ pub struct LolNpeRewardsLoginSeriesSettings {
     pub last_completed_mission_date: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMission {
     pub completed_date: i64,
@@ -13464,13 +13464,13 @@ pub struct LolNpeRewardsMission {
     pub objectives: Vec<LolNpeRewardsObjective>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionDisplay {
     pub locations: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionSeries {
     pub internal_name: String,
@@ -13478,26 +13478,26 @@ pub struct LolNpeRewardsMissionSeries {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionSeriesOptIn {
     pub series_id: String,
     pub option: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionsRewardPackMetaData {
     pub npe_reward_pack: LolNpeRewardsRewardPack
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsObjective {
     pub progress: LolNpeRewardsProgress
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsProgress {
     pub last_viewed_progress: i32,
@@ -13505,7 +13505,7 @@ pub struct LolNpeRewardsProgress {
     pub total_count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsRequirements {
     pub level: u32,
@@ -13513,14 +13513,14 @@ pub struct LolNpeRewardsRequirements {
     pub mission_internal_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsReward {
     pub renderer: String,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsRewardPack {
     pub index: i32,
@@ -13536,32 +13536,32 @@ pub struct LolNpeRewardsRewardPack {
     pub unlock_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsRewardSeries {
     pub reward_packs: Vec<LolNpeRewardsRewardPack>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsRewardSeriesState {
     pub all_rewards_claimed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsSummoner {
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathAccountSettingsCategoryResource {
     pub data: Option<LolNpeTutorialPathAccountSettingsTutorial>,
     pub schema_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathAccountSettingsTutorial {
     pub has_seen_tutorial_path: bool,
@@ -13569,7 +13569,7 @@ pub struct LolNpeTutorialPathAccountSettingsTutorial {
     pub should_see_new_player_experience: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathCollectionsChampion {
     pub alias: String,
@@ -13584,14 +13584,14 @@ pub struct LolNpeTutorialPathCollectionsChampion {
     pub spells: Vec<LolNpeTutorialPathCollectionsChampionSpell>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathCollectionsChampionSpell {
     pub name: String,
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathExpiringWarning {
     #[serde(rename = "type")]
@@ -13600,40 +13600,40 @@ pub struct LolNpeTutorialPathExpiringWarning {
     pub alert_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathGameflowSession {
     pub phase: LolNpeTutorialPathGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathIds {
     pub mission_ids: Vec<String>,
     pub series_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathLobbyChangeQueue {
     pub queue_id: i32,
     pub is_custom: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathLobbyDto {
     pub party_id: String,
     pub game_config: LolNpeTutorialPathLobbyGameConfigDto
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathLobbyGameConfigDto {
     pub queue_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathMission {
     pub id: String,
@@ -13667,19 +13667,19 @@ pub struct LolNpeTutorialPathMission {
     pub internal_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathMissionDisplay {
     pub attributes: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathMissionMetadata {
     pub tutorial: LolNpeTutorialPathTutorialMetadata
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathObjective {
     #[serde(rename = "type")]
@@ -13690,7 +13690,7 @@ pub struct LolNpeTutorialPathObjective {
     pub reward_groups: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathProgress {
     pub last_viewed_progress: i32,
@@ -13698,13 +13698,13 @@ pub struct LolNpeTutorialPathProgress {
     pub total_count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathRequirement {
     pub expression: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathReward {
     pub reward_type: String,
@@ -13719,7 +13719,7 @@ pub struct LolNpeTutorialPathReward {
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathRewardStrategy {
     pub group_strategy: String,
@@ -13727,7 +13727,7 @@ pub struct LolNpeTutorialPathRewardStrategy {
     pub select_min_group_count: i16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathSeries {
     pub id: String,
@@ -13735,14 +13735,14 @@ pub struct LolNpeTutorialPathSeries {
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathSeriesOpt {
     pub series_id: String,
     pub option: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathSummoner {
     pub summoner_id: u64,
@@ -13757,13 +13757,13 @@ pub struct LolNpeTutorialPathSummoner {
     pub unnamed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathSummonerIcon {
     pub profile_icon_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathTutorial {
     pub id: String,
@@ -13781,7 +13781,7 @@ pub struct LolNpeTutorialPathTutorial {
     pub rewards: Vec<LolNpeTutorialPathTutorialReward>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathTutorialMetadata {
     pub step_number: i32,
@@ -13791,7 +13791,7 @@ pub struct LolNpeTutorialPathTutorialMetadata {
     pub use_chosen_champion: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathTutorialReward {
     pub reward_type: String,
@@ -13803,14 +13803,14 @@ pub struct LolNpeTutorialPathTutorialReward {
     pub unique_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchChunkingPatcherEnvironment {
     pub game_patcher_available: bool,
     pub game_patcher_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchComponentActionProgress {
     pub current_item: String,
@@ -13819,7 +13819,7 @@ pub struct LolPatchComponentActionProgress {
     pub primary_work: LolPatchComponentStateWorkType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchComponentState {
     pub id: String,
@@ -13831,7 +13831,7 @@ pub struct LolPatchComponentState {
     pub progress: Option<LolPatchComponentActionProgress>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchComponentStateProgress {
     pub bytes_complete: u64,
@@ -13839,7 +13839,7 @@ pub struct LolPatchComponentStateProgress {
     pub bytes_per_second: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchEntitlementsTokenResource {
     pub access_token: String,
@@ -13847,14 +13847,14 @@ pub struct LolPatchEntitlementsTokenResource {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchInstallPaths {
     pub game_install_root: String,
     pub game_executable_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchNotification {
     pub id: String,
@@ -13862,32 +13862,32 @@ pub struct LolPatchNotification {
     pub data: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveCompatVersion {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveDownload {
     pub url: String,
     pub scd_required: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveLabelValue {
     pub values: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveQueryResponse {
     pub releases: Vec<LolPatchPatchSieveRelease>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveRelease {
     pub release: LolPatchPatchSieveReleaseInfo,
@@ -13895,7 +13895,7 @@ pub struct LolPatchPatchSieveRelease {
     pub download: LolPatchPatchSieveDownload
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveReleaseInfo {
     pub product: String,
@@ -13903,7 +13903,7 @@ pub struct LolPatchPatchSieveReleaseInfo {
     pub labels: HashMap<String, LolPatchPatchSieveLabelValue>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatcherInstallSettings {
     pub game_patcher: Option<String>,
@@ -13913,20 +13913,20 @@ pub struct LolPatchPatcherInstallSettings {
     pub locales: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatcherRegionSettings {
     pub patchline: String,
     pub game_patcher: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatcherSelfUpdateSettings {
     pub restart_delay: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatcherSettings {
     pub product_refresh_period: f64,
@@ -13936,7 +13936,7 @@ pub struct LolPatchPatcherSettings {
     pub patchsieve_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchProductState {
     pub id: String,
@@ -13949,14 +13949,14 @@ pub struct LolPatchProductState {
     pub components: Vec<LolPatchComponentState>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchScdCookie {
     pub domain: String,
@@ -13964,19 +13964,19 @@ pub struct LolPatchScdCookie {
     pub cookie: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchScdCookies {
     pub cookies: Vec<LolPatchScdCookie>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchStatus {
     pub connected_to_patch_server: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchSupportedGameRelease {
     pub artifact_id: String,
@@ -13984,19 +13984,19 @@ pub struct LolPatchSupportedGameRelease {
     pub selected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchSupportedGameReleases {
     pub supported_game_releases: Vec<LolPatchSupportedGameRelease>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchUxResource {
     pub visible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectAction {
     pub id: i64,
@@ -14007,7 +14007,7 @@ pub struct LolPerksChampSelectAction {
     pub completed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectBannedChampions {
     pub my_team_bans: Vec<i32>,
@@ -14015,7 +14015,7 @@ pub struct LolPerksChampSelectBannedChampions {
     pub num_bans: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectChatRoomDetails {
     pub chat_room_name: String,
@@ -14023,7 +14023,7 @@ pub struct LolPerksChampSelectChatRoomDetails {
     pub multi_user_chat_j_w_t: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
@@ -14032,7 +14032,7 @@ pub struct LolPerksChampSelectMySelection {
     pub ward_skin_id: Option<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectPlayerSelection {
     pub cell_id: i64,
@@ -14047,7 +14047,7 @@ pub struct LolPerksChampSelectPlayerSelection {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectSession {
     pub timer: LolPerksChampSelectTimer,
@@ -14061,7 +14061,7 @@ pub struct LolPerksChampSelectSession {
     pub is_spectating: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectTimer {
     pub adjusted_time_left_in_phase: i64,
@@ -14071,7 +14071,7 @@ pub struct LolPerksChampSelectTimer {
     pub internal_now_in_epoch_ms: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectTradeContract {
     pub id: i64,
@@ -14079,7 +14079,7 @@ pub struct LolPerksChampSelectTradeContract {
     pub state: LolPerksChampSelectTradeState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampionPreferredStyle {
     pub champion_name: String,
@@ -14087,7 +14087,7 @@ pub struct LolPerksChampionPreferredStyle {
     pub champion_id: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampionRuneRecommendationsGDSResource {
     pub champion_id: i32,
@@ -14095,14 +14095,14 @@ pub struct LolPerksChampionRuneRecommendationsGDSResource {
     pub rune_recommendations: Vec<LolPerksRuneRecommendationGDSResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksDefaultStatModsPerSubStyle {
     pub id: i32,
     pub perks: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGameCustomizationDTO {
     pub category: String,
@@ -14111,7 +14111,7 @@ pub struct LolPerksGameCustomizationDTO {
     pub is_teambuilder: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGameflowGameData {
     pub queue: LolPerksQueue,
@@ -14119,33 +14119,33 @@ pub struct LolPerksGameflowGameData {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGameflowSession {
     pub phase: LolPerksGameflowPhase,
     pub game_data: LolPerksGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGetGameCustomizationDTO {
     pub queue_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGetResultFromServiceDTO {
     pub error: String,
     pub result: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksInventoryRunePageCount {
     pub quantity: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksLoginSession {
     pub state: LolPerksLoginSessionState,
@@ -14153,19 +14153,19 @@ pub struct LolPerksLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckAuthorization {
     pub subject: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckLoginDataPacket {
     pub platform_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckPayload {
     pub name: String,
@@ -14174,20 +14174,20 @@ pub struct LolPerksNamecheckPayload {
     pub shard: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckResponse {
     pub errors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkBook {
     pub current_page_id: i32,
     pub pages: Vec<LolPerksPerkPageResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkGDSResource {
     pub icon_path: String,
@@ -14201,13 +14201,13 @@ pub struct LolPerksPerkGDSResource {
     pub recommendation_descriptor_attributes: HashMap<String, u32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkIdListResource {
     pub perk_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkPageResource {
     pub current: bool,
@@ -14226,7 +14226,7 @@ pub struct LolPerksPerkPageResource {
     pub last_modified: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkSettingResource {
     pub perk_ids: Vec<i32>,
@@ -14234,7 +14234,7 @@ pub struct LolPerksPerkSettingResource {
     pub perk_sub_style: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkSettings {
     pub pages: Vec<LolPerksPerkPageResource>,
@@ -14242,7 +14242,7 @@ pub struct LolPerksPerkSettings {
     pub settings: LolPerksUISettings
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkStyleResource {
     pub allowed_sub_styles: Vec<i32>,
@@ -14261,7 +14261,7 @@ pub struct LolPerksPerkStyleResource {
     pub default_stat_mods_per_sub_style: Vec<LolPerksDefaultStatModsPerSubStyle>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkStyleSlotResource {
     pub perks: Vec<i32>,
@@ -14270,14 +14270,14 @@ pub struct LolPerksPerkStyleSlotResource {
     pub slot_label: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkSubStyleBonusResource {
     pub perk_id: i32,
     pub style_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkUIPerk {
     pub icon_path: String,
@@ -14292,7 +14292,7 @@ pub struct LolPerksPerkUIPerk {
     pub slot_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkUIRecommendedPage {
     pub position: String,
@@ -14306,7 +14306,7 @@ pub struct LolPerksPerkUIRecommendedPage {
     pub summoner_spell_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkUISlot {
     pub perks: Vec<i32>,
@@ -14315,7 +14315,7 @@ pub struct LolPerksPerkUISlot {
     pub slot_label: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkUIStyle {
     pub allowed_sub_styles: Vec<i32>,
@@ -14332,20 +14332,20 @@ pub struct LolPerksPerkUIStyle {
     pub id_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerksConfigDTO {
     pub styles: Vec<LolPerksPerkStyleResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPlatformConfig {
     pub perks_enabled: bool,
     pub auto_repair_pages_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPlayerInventory {
     pub owned_page_count: u32,
@@ -14354,14 +14354,14 @@ pub struct LolPerksPlayerInventory {
     pub is_custom_page_creation_unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksQueue {
     pub id: i32,
     pub is_team_builder_managed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksRuneRecommendationGDSResource {
     pub position: String,
@@ -14374,14 +14374,14 @@ pub struct LolPerksRuneRecommendationGDSResource {
     pub summoner_spell_ids: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksSettingsStorageContainer {
     pub data: LolPerksPerkSettings,
     pub schema_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksSummoner {
     pub summoner_id: u64,
@@ -14397,7 +14397,7 @@ pub struct LolPerksSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksSummonerRerollPoints {
     pub points_to_reroll: u32,
@@ -14407,7 +14407,7 @@ pub struct LolPerksSummonerRerollPoints {
     pub points_cost_to_roll: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksUISettings {
     pub show_long_descriptions: bool,
@@ -14417,7 +14417,7 @@ pub struct LolPerksUISettings {
     pub gameplay_updated_perks_seen: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksUpdatePageOrderRequest {
     pub target_page_id: i32,
@@ -14425,21 +14425,21 @@ pub struct LolPerksUpdatePageOrderRequest {
     pub offset: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksValidateItemSetNameResponse {
     pub success: bool,
     pub name_check_response: LolPerksNamecheckResponse
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksValidatePageNameData {
     pub id: i32,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftGameClientEndOfGameStats {
     pub game_id: u64,
@@ -14449,28 +14449,28 @@ pub struct LolPftGameClientEndOfGameStats {
     pub is_ranked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftGameflowGameDodge {
     pub state: LolPftGameflowGameDodgeState,
     pub dodge_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftGameflowSession {
     pub phase: LolPftGameflowPhase,
     pub game_dodge: LolPftGameflowGameDodge
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftLoginSession {
     pub state: LolPftLoginSessionStates,
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTEndOfGamePlayer {
     pub stats: Value,
@@ -14491,7 +14491,7 @@ pub struct LolPftPFTEndOfGamePlayer {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTEndOfGamePoints {
     pub point_change_from_champions_owned: i32,
@@ -14503,7 +14503,7 @@ pub struct LolPftPFTEndOfGamePoints {
     pub total_points: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTEndOfGameStats {
     pub difficulty: String,
@@ -14546,7 +14546,7 @@ pub struct LolPftPFTEndOfGameStats {
     pub reroll_data: LolPftPFTEndOfGamePoints
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTEndOfGameTeam {
     pub stats: Value,
@@ -14561,7 +14561,7 @@ pub struct LolPftPFTEndOfGameTeam {
     pub is_winning_team: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTEvent {
     pub player_survey_id: u64,
@@ -14569,7 +14569,7 @@ pub struct LolPftPFTEvent {
     pub data: Vec<Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTMetadata {
     pub account_id: u64,
@@ -14583,14 +14583,14 @@ pub struct LolPftPFTMetadata {
     pub homepage_timer: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTQuestionResponse {
     pub question_id: u64,
     pub response_data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTSurvey {
     pub id: u64,
@@ -14602,14 +14602,14 @@ pub struct LolPftPFTSurvey {
     pub data: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTSurveyResults {
     pub question_responses: Vec<LolPftPFTQuestionResponse>,
     pub actions: Vec<LolPftPFTEvent>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTSurveyV1 {
     pub id: u64,
@@ -14620,7 +14620,7 @@ pub struct LolPftPFTSurveyV1 {
     pub url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftSummoner {
     pub puuid: String,
@@ -14630,7 +14630,7 @@ pub struct LolPftSummoner {
     pub unnamed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorBanNotification {
     pub id: u64,
@@ -14641,26 +14641,26 @@ pub struct LolPlayerBehaviorBanNotification {
     pub display_reform_card: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorCodeOfConductNotification {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorPlayerBehaviorConfig {
     pub is_loaded: bool,
     pub code_of_conduct_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorPlayerBehaviorGameflowSessionResource {
     pub phase: LolPlayerBehaviorGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorPlayerBehaviorSimpleMessage {
     pub account_id: u64,
@@ -14670,7 +14670,7 @@ pub struct LolPlayerBehaviorPlayerBehaviorSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorPlayerNotificationResource {
     pub background_url: String,
@@ -14688,7 +14688,7 @@ pub struct LolPlayerBehaviorPlayerNotificationResource {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorReformCard {
     pub id: u64,
@@ -14703,7 +14703,7 @@ pub struct LolPlayerBehaviorReformCard {
     pub player_facing_message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorReformCardChatLogs {
     pub pre_game_chat_logs: Vec<String>,
@@ -14711,7 +14711,7 @@ pub struct LolPlayerBehaviorReformCardChatLogs {
     pub post_game_chat_logs: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorReformCardV2 {
     pub id: u64,
@@ -14725,7 +14725,7 @@ pub struct LolPlayerBehaviorReformCardV2 {
     pub player_facing_message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorReporterFeedback {
     pub id: u64,
@@ -14735,7 +14735,7 @@ pub struct LolPlayerBehaviorReporterFeedback {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorReporterFeedbackMessage {
     pub title: String,
@@ -14745,7 +14745,7 @@ pub struct LolPlayerBehaviorReporterFeedbackMessage {
     pub key: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorRestrictionNotification {
     pub id: u64,
@@ -14755,26 +14755,26 @@ pub struct LolPlayerBehaviorRestrictionNotification {
     pub display_reform_card: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorSettingsResource {
     pub data: Value,
     pub schema_version: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfo {
     pub user_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoBanData {
     pub restrictions: Vec<LolPlayerBehaviorUserInfoRestriction>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoRestriction {
     #[serde(rename = "type")]
@@ -14784,7 +14784,7 @@ pub struct LolPlayerBehaviorUserInfoRestriction {
     pub dat: LolPlayerBehaviorUserInfoRestrictionData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoRestrictionData {
     pub expiration_millis: u64,
@@ -14792,7 +14792,7 @@ pub struct LolPlayerBehaviorUserInfoRestrictionData {
     pub game_location: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoRestrictionGameData {
     pub product_name: String,
@@ -14801,13 +14801,13 @@ pub struct LolPlayerBehaviorUserInfoRestrictionGameData {
     pub additional_game_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoToken {
     pub ban: LolPlayerBehaviorUserInfoBanData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpEndOfGameStats {
     pub game_mode: String,
@@ -14820,14 +14820,14 @@ pub struct LolPlayerLevelUpEndOfGameStats {
     pub rp_earned: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpGameDataSummonerSpell {
     pub id: u64,
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpLoginSession {
     pub state: LolPlayerLevelUpLoginSessionStates,
@@ -14835,7 +14835,7 @@ pub struct LolPlayerLevelUpLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpPlayerLevelUpEvent {
     pub switched_to_standard_free_to_play_champ_rotation: bool,
@@ -14849,21 +14849,21 @@ pub struct LolPlayerLevelUpPlayerLevelUpEvent {
     pub new_queues: Vec<i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpPlayerLevelUpEventAck {
     pub seen_this_event: bool,
     pub new_summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpQueue {
     pub id: i32,
     pub min_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerMessagingDynamicCelebrationMessagingNotificationResource {
     pub id: i32,
@@ -14879,13 +14879,13 @@ pub struct LolPlayerMessagingDynamicCelebrationMessagingNotificationResource {
     pub status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerMessagingLoginDataPacket {
     pub simple_messages: Vec<LolPlayerMessagingSimpleMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerMessagingPlayerMessagingNotificationResource {
     pub id: i32,
@@ -14896,7 +14896,7 @@ pub struct LolPlayerMessagingPlayerMessagingNotificationResource {
     pub status: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerMessagingSimpleMessage {
     pub account_id: u64,
@@ -14908,7 +14908,7 @@ pub struct LolPlayerMessagingSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerPreferencesLoginSession {
     pub state: LolPlayerPreferencesLoginSessionStates,
@@ -14917,7 +14917,7 @@ pub struct LolPlayerPreferencesLoginSession {
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerPreferencesPlayerPreferences {
     #[serde(rename = "type")]
@@ -14927,7 +14927,7 @@ pub struct LolPlayerPreferencesPlayerPreferences {
     pub hash: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerPreferencesPlayerPreferencesEndpoint {
     pub enabled: bool,
@@ -14937,7 +14937,7 @@ pub struct LolPlayerPreferencesPlayerPreferencesEndpoint {
     pub retries: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerReportSenderChampSelectReport {
     pub offender_puuid: String,
@@ -14947,14 +14947,14 @@ pub struct LolPlayerReportSenderChampSelectReport {
     pub match_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerReportSenderChampSelectSummonerInfo {
     pub puuid: String,
     pub obfuscated_puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerReportSenderEndOfGamePlayerReport {
     pub reported_puuid: String,
@@ -14963,7 +14963,7 @@ pub struct LolPlayerReportSenderEndOfGamePlayerReport {
     pub comment: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerReportSenderGameAgnosticReportPayload {
     pub offender_id: String,
@@ -14974,14 +14974,14 @@ pub struct LolPlayerReportSenderGameAgnosticReportPayload {
     pub token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPreEndOfGameSequenceEvent {
     pub name: String,
     pub priority: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceAccountSettingsCategoryDataResource {
     pub auto_join: bool,
@@ -14992,27 +14992,27 @@ pub struct LolPremadeVoiceAccountSettingsCategoryDataResource {
     pub show_first_experience_in_game: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceAccountSettingsCategoryResource {
     pub data: Option<LolPremadeVoiceAccountSettingsCategoryDataResource>,
     pub schema_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceAudioPropertiesResource {
     pub is_loopback_enabled: bool,
     pub mic_energy: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceConfigStatus {
     pub readiness: LolPremadeVoiceConfigReadinessEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceDeviceResource {
     pub handle: String,
@@ -15022,7 +15022,7 @@ pub struct LolPremadeVoiceDeviceResource {
     pub is_default: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceDeviceResourceRiotClient {
     pub handle: String,
@@ -15032,13 +15032,13 @@ pub struct LolPremadeVoiceDeviceResourceRiotClient {
     pub is_default: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceEntitlementsToken {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceExternalSession {
     pub patchline_full_name: String,
@@ -15046,52 +15046,52 @@ pub struct LolPremadeVoiceExternalSession {
     pub product_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceFirstExperience {
     pub show_first_experience_in_l_c_u: bool,
     pub show_first_experience_in_game: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameEventHotkeys {
     pub evt_push_to_talk: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameInputSettings {
     pub game_events: LolPremadeVoiceGameEventHotkeys
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameflowGameClient {
     pub running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameflowSession {
     pub phase: LolPremadeVoiceGameflowPhase,
     pub game_client: LolPremadeVoiceGameflowGameClient
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceKeyCombo {
     pub key_bindings: Vec<LolPremadeVoicePushToTalkKey>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceKeycodePushToTalkResource {
     pub enabled: bool,
     pub key_combos: Option<Vec<LolPremadeVoiceKeyCombo>>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceLocalSettingsCategoryDataResource {
     pub current_capture_device_handle: String,
@@ -15099,20 +15099,20 @@ pub struct LolPremadeVoiceLocalSettingsCategoryDataResource {
     pub vad_sensitivity: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceLocalSettingsCategoryResource {
     pub data: Option<LolPremadeVoiceLocalSettingsCategoryDataResource>,
     pub schema_version: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceParticipantResource {
     pub id: String,
@@ -15123,7 +15123,7 @@ pub struct LolPremadeVoiceParticipantResource {
     pub is_speaking: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePartyDto {
     pub party_id: String,
@@ -15131,7 +15131,7 @@ pub struct LolPremadeVoicePartyDto {
     pub players: HashMap<String, LolPremadeVoicePlayerDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePlayerDto {
     pub display_name: String,
@@ -15141,7 +15141,7 @@ pub struct LolPremadeVoicePlayerDto {
     pub role: LolPremadeVoicePartyMemberRoleEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePremadeVoiceParticipantDto {
     pub participant_id: String,
@@ -15154,20 +15154,20 @@ pub struct LolPremadeVoicePremadeVoiceParticipantDto {
     pub is_speaking: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePushToTalkKey {
     pub key: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePushToTalkResource {
     pub ptt_enabled: bool,
     pub ptt_key_binding: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceSessionResource {
     pub id: String,
@@ -15178,7 +15178,7 @@ pub struct LolPremadeVoiceSessionResource {
     pub is_transmit_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceSettingsResource {
     pub current_capture_device_handle: String,
@@ -15195,20 +15195,20 @@ pub struct LolPremadeVoiceSettingsResource {
     pub ptt_key: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceStateResource {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceSummoner {
     pub account_id: u64,
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceVoiceAvailability {
     pub enabled: bool,
@@ -15219,7 +15219,7 @@ pub struct LolPremadeVoiceVoiceAvailability {
     pub show_disconnected_state: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionCounter {
     pub id: String,
@@ -15229,7 +15229,7 @@ pub struct LolProgressionCounter {
     pub start_value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionCounterInstance {
     pub owner_id: String,
@@ -15239,7 +15239,7 @@ pub struct LolProgressionCounterInstance {
     pub counter_value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionEntityInstance {
     pub group_id: String,
@@ -15247,7 +15247,7 @@ pub struct LolProgressionEntityInstance {
     pub milestones: Vec<LolProgressionMilestoneInstance>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionGroup {
     pub id: String,
@@ -15258,7 +15258,7 @@ pub struct LolProgressionGroup {
     pub milestones: Vec<LolProgressionMilestone>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionMilestone {
     pub id: String,
@@ -15269,7 +15269,7 @@ pub struct LolProgressionMilestone {
     pub properties: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionMilestoneInstance {
     pub milestone_id: String,
@@ -15282,7 +15282,7 @@ pub struct LolProgressionMilestoneInstance {
     pub triggered: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolProgressionRepeat {
     pub count: i32,
@@ -15290,7 +15290,7 @@ pub struct LolProgressionRepeat {
     pub multiplier: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentAccountData {
     pub puuid: String,
@@ -15299,14 +15299,14 @@ pub struct LolPublishingContentAccountData {
     pub display_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentBuildInfo {
     pub version: String,
     pub patchline: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentClientData {
     pub puuid: String,
@@ -15324,14 +15324,14 @@ pub struct LolPublishingContentClientData {
     pub asset_urls: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPubHubConfig {
     pub edge: LolPublishingContentPubHubConfigEdge,
     pub app_context: LolPublishingContentPubHubConfigAppContext
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPubHubConfigAppContext {
     pub user_id: String,
@@ -15347,26 +15347,26 @@ pub struct LolPublishingContentPubHubConfigAppContext {
     pub app_session_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPubHubConfigEdge {
     pub client_id: String,
     pub client_region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPublishingLocaleSetting {
     pub data: LolPublishingContentPublishingLocaleSettingData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPublishingLocaleSettingData {
     pub publishing_locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPublishingSettings {
     pub region: String,
@@ -15377,7 +15377,7 @@ pub struct LolPublishingContentPublishingSettings {
     pub rso_platform_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentRegionLocale {
     pub region: String,
@@ -15385,34 +15385,34 @@ pub struct LolPublishingContentRegionLocale {
     pub web_region: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentSummonerInfo {
     pub display_name: String,
     pub summoner_level: u16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentSystemInfo {
     pub operating_system: LolPublishingContentSystemInfoOperatingSystem
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentSystemInfoOperatingSystem {
     pub platform: String,
     pub version_major: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetBalance {
     pub currency_type: String,
     pub amount: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetBaseSkinLineDto {
     pub items: Vec<LolPurchaseWidgetSkinLineItemDto>,
@@ -15426,7 +15426,7 @@ pub struct LolPurchaseWidgetBaseSkinLineDto {
     pub tile_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetBundledItemPricingInfo {
     pub discount_prices: Vec<LolPurchaseWidgetDiscountPricingInfo>,
@@ -15435,7 +15435,7 @@ pub struct LolPurchaseWidgetBundledItemPricingInfo {
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOffer {
     pub id: String,
@@ -15449,7 +15449,7 @@ pub struct LolPurchaseWidgetCapOffer {
     pub created_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOfferPayloadEntry {
     pub item_price_map: HashMap<String, i32>,
@@ -15458,7 +15458,7 @@ pub struct LolPurchaseWidgetCapOfferPayloadEntry {
     pub inventory_type_u_u_i_d: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersDataDto {
     pub id: String,
@@ -15468,34 +15468,34 @@ pub struct LolPurchaseWidgetCapOrdersDataDto {
     pub source: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersMetaDto {
     pub xid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersOfferContextDto {
     pub quantity: u32,
     pub payment_option: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersOfferDto {
     pub id: String,
     pub product_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersOrderDto {
     pub data: LolPurchaseWidgetCapOrdersDataDto,
     pub meta: LolPurchaseWidgetCapOrdersMetaDto
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersSubOrderDto {
     pub recipient_id: String,
@@ -15503,14 +15503,14 @@ pub struct LolPurchaseWidgetCapOrdersSubOrderDto {
     pub offer: LolPurchaseWidgetCapOrdersOfferDto
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersTypedIdentifierDto {
     pub id: String,
     pub type_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCatalogPluginItem {
     pub item_id: i32,
@@ -15533,7 +15533,7 @@ pub struct LolPurchaseWidgetCatalogPluginItem {
     pub ownership_type: Option<LolPurchaseWidgetInventoryOwnership>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCatalogPluginItemAssets {
     pub splash_path: String,
@@ -15543,7 +15543,7 @@ pub struct LolPurchaseWidgetCatalogPluginItemAssets {
     pub colors: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCatalogPluginItemWithDetails {
     pub item: LolPurchaseWidgetCatalogPluginItem,
@@ -15555,7 +15555,7 @@ pub struct LolPurchaseWidgetCatalogPluginItemWithDetails {
     pub assets: LolPurchaseWidgetCatalogPluginItemAssets
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCatalogPluginPrice {
     pub currency: String,
@@ -15564,7 +15564,7 @@ pub struct LolPurchaseWidgetCatalogPluginPrice {
     pub sale: Option<LolPurchaseWidgetCatalogPluginSale>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCatalogPluginSale {
     pub start_date: String,
@@ -15573,7 +15573,7 @@ pub struct LolPurchaseWidgetCatalogPluginSale {
     pub cost: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetChampionSkinEmblem {
     pub name: String,
@@ -15581,21 +15581,21 @@ pub struct LolPurchaseWidgetChampionSkinEmblem {
     pub emblem_position: LolPurchaseWidgetChampionSkinEmblemPosition
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetChampionSkinEmblemPath {
     pub large: String,
     pub small: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetChampionSkinEmblemPosition {
     pub vertical: String,
     pub horizontal: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetDiscountPricingInfo {
     pub cost: i32,
@@ -15604,7 +15604,7 @@ pub struct LolPurchaseWidgetDiscountPricingInfo {
     pub discount: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemChoiceDetails {
     pub item: LolPurchaseWidgetCatalogPluginItem,
@@ -15616,14 +15616,14 @@ pub struct LolPurchaseWidgetItemChoiceDetails {
     pub purchase_options: Vec<LolPurchaseWidgetPurchaseOption>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemChoices {
     pub choices: Vec<LolPurchaseWidgetItemChoiceDetails>,
     pub validation_errors: Vec<LolPurchaseWidgetValidationErrorEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemCost {
     pub currency: String,
@@ -15631,7 +15631,7 @@ pub struct LolPurchaseWidgetItemCost {
     pub discount: Option<f32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemDefinition {
     pub item_id: i32,
@@ -15648,7 +15648,7 @@ pub struct LolPurchaseWidgetItemDefinition {
     pub loyalty_unlocked: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemDetails {
     pub title: String,
@@ -15657,14 +15657,14 @@ pub struct LolPurchaseWidgetItemDetails {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemMetadataEntry {
     #[serde(rename = "type")]
@@ -15672,14 +15672,14 @@ pub struct LolPurchaseWidgetItemMetadataEntry {
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemOwnership {
     pub item_key: LolPurchaseWidgetItemKey,
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemPrice {
     pub currency_type: String,
@@ -15687,7 +15687,7 @@ pub struct LolPurchaseWidgetItemPrice {
     pub purchasable: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemSale {
     pub start_date: String,
@@ -15695,7 +15695,7 @@ pub struct LolPurchaseWidgetItemSale {
     pub discount: Option<f32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetLoginSession {
     pub puuid: Option<String>,
@@ -15705,7 +15705,7 @@ pub struct LolPurchaseWidgetLoginSession {
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetOrderNotificationResource {
     pub event_type_id: String,
@@ -15713,14 +15713,14 @@ pub struct LolPurchaseWidgetOrderNotificationResource {
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPriceDetail {
     pub item_key: LolPurchaseWidgetItemKey,
     pub price: LolPurchaseWidgetItemPrice
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPriceOptionDto {
     pub price: i64,
@@ -15730,7 +15730,7 @@ pub struct LolPurchaseWidgetPriceOptionDto {
     pub currency_image_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchasableItem {
     pub item: LolPurchaseWidgetItemDefinition,
@@ -15741,7 +15741,7 @@ pub struct LolPurchaseWidgetPurchasableItem {
     pub validation_errors: Vec<LolPurchaseWidgetValidationErrorEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseItem {
     pub item_key: LolPurchaseWidgetItemKey,
@@ -15750,20 +15750,20 @@ pub struct LolPurchaseWidgetPurchaseItem {
     pub purchase_currency_info: LolPurchaseWidgetItemPrice
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferOrderStatus {
     pub order_state: LolPurchaseWidgetPurchaseOfferOrderStates,
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferOrderStatuses {
     pub statuses: HashMap<String, LolPurchaseWidgetPurchaseOfferOrderStatus>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferRequestV3 {
     pub offer_id: String,
@@ -15772,26 +15772,26 @@ pub struct LolPurchaseWidgetPurchaseOfferRequestV3 {
     pub price: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferResponseV3 {
     pub legacy: bool,
     pub order_dto: Option<LolPurchaseWidgetCapOrdersOrderDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOption {
     pub price_details: Vec<LolPurchaseWidgetPriceDetail>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseRequest {
     pub items: Vec<LolPurchaseWidgetPurchaseItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseResponse {
     pub items: Vec<LolPurchaseWidgetPurchaseItem>,
@@ -15799,7 +15799,7 @@ pub struct LolPurchaseWidgetPurchaseResponse {
     pub use_r_m_s_confirmation: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseWidgetConfig {
     pub enabled: bool,
@@ -15807,7 +15807,7 @@ pub struct LolPurchaseWidgetPurchaseWidgetConfig {
     pub always_show_purchase_disclaimer: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetRiotMessagingServiceMessage {
     pub resource: String,
@@ -15817,7 +15817,7 @@ pub struct LolPurchaseWidgetRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetSale {
     pub start_date: String,
@@ -15825,7 +15825,7 @@ pub struct LolPurchaseWidgetSale {
     pub prices: Vec<LolPurchaseWidgetItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetSkinLineDescriptionDto {
     pub title: String,
@@ -15833,7 +15833,7 @@ pub struct LolPurchaseWidgetSkinLineDescriptionDto {
     pub icon_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetSkinLineDescriptionInfo {
     pub title: String,
@@ -15841,7 +15841,7 @@ pub struct LolPurchaseWidgetSkinLineDescriptionInfo {
     pub icon_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetSkinLineInfo {
     pub name: String,
@@ -15854,7 +15854,7 @@ pub struct LolPurchaseWidgetSkinLineInfo {
     pub tiers: Vec<LolPurchaseWidgetSkinLineTier>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetSkinLineItemDto {
     pub thumbnail_image_path: String,
@@ -15864,7 +15864,7 @@ pub struct LolPurchaseWidgetSkinLineItemDto {
     pub large_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetSkinLineTier {
     pub id: i64,
@@ -15880,7 +15880,7 @@ pub struct LolPurchaseWidgetSkinLineTier {
     pub collection_splash_video_path: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetTransaction {
     pub transaction_id: String,
@@ -15889,26 +15889,26 @@ pub struct LolPurchaseWidgetTransaction {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidateOfferError {
     pub error_key: String,
     pub meta: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidateOfferRequestV3 {
     pub offer_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidateOfferResponseV3 {
     pub validation_errors: Vec<LolPurchaseWidgetValidateOfferError>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationError {
     pub error_code: String,
@@ -15917,34 +15917,34 @@ pub struct LolPurchaseWidgetValidationError {
     pub response_items: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationErrorEntry {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationRequest {
     pub items: Vec<LolPurchaseWidgetValidationRequestItem>,
     pub owned_items: Vec<LolPurchaseWidgetItemOwnership>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationRequestItem {
     pub item_key: LolPurchaseWidgetItemKey,
     pub quantity: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationResponse {
     pub items: Vec<LolPurchaseWidgetValidationResponseItem>,
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationResponseItem {
     pub item_key: LolPurchaseWidgetItemKey,
@@ -15955,7 +15955,7 @@ pub struct LolPurchaseWidgetValidationResponseItem {
     pub description: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetWallet {
     pub account_id: u64,
@@ -15963,7 +15963,7 @@ pub struct LolPurchaseWidgetWallet {
     pub version: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedAchievedTier {
     pub queue_type: LolRankedLeagueQueueType,
@@ -15971,13 +15971,13 @@ pub struct LolRankedAchievedTier {
     pub division: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEndOfGameStatsBlock {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosNotificationResource {
     pub notification_name: String,
@@ -15988,13 +15988,13 @@ pub struct LolRankedEosNotificationResource {
     pub division: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosNotificationsConfig {
     pub config: Vec<LolRankedEosNotificationsConfigEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosNotificationsConfigEntry {
     pub name: String,
@@ -16003,7 +16003,7 @@ pub struct LolRankedEosNotificationsConfigEntry {
     pub offset_time3: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardData {
     pub id: String,
@@ -16012,57 +16012,57 @@ pub struct LolRankedEosRewardData {
     pub override_image_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardGroupsConfig {
     pub reward_groups: HashMap<String, LolRankedEosRewardGroupsRewardsList>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardGroupsRewardsList {
     pub rewards: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardsConfig {
     pub seasons: HashMap<String, LolRankedEosRewardsConfigEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardsConfigEntry {
     pub rewards: HashMap<String, LolRankedEosRewardData>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosSettingsData {
     pub notification_shown: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosSettingsResource {
     pub data: LolRankedEosSettingsData,
     pub schema_version: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedGameflowGameData {
     pub queue: LolRankedQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedGameflowSession {
     pub phase: LolRankedGameflowPhase,
     pub game_data: LolRankedGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedGlobalNotification {
     pub notify_reason: String,
@@ -16072,7 +16072,7 @@ pub struct LolRankedGlobalNotification {
     pub position: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLcuLeagueNotification {
     pub id: u64,
@@ -16108,7 +16108,7 @@ pub struct LolRankedLcuLeagueNotification {
     pub win_streak: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueDivisionInfo {
     pub tier: LolRankedLeagueTier,
@@ -16120,7 +16120,7 @@ pub struct LolRankedLeagueDivisionInfo {
     pub standings: Vec<LolRankedLeagueStanding>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueLadderDTO {
     pub queue_type: String,
@@ -16134,7 +16134,7 @@ pub struct LolRankedLeagueLadderDTO {
     pub top_number_of_players: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueLadderEntryDTO {
     pub summoner_id: u64,
@@ -16153,7 +16153,7 @@ pub struct LolRankedLeagueLadderEntryDTO {
     pub earned_regalia_reward_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueLadderInfo {
     pub queue_type: LolRankedLeagueQueueType,
@@ -16164,7 +16164,7 @@ pub struct LolRankedLeagueLadderInfo {
     pub requested_ranked_entry: Option<LolRankedLeagueStanding>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueNotification {
     pub notify_reason: String,
@@ -16192,7 +16192,7 @@ pub struct LolRankedLeagueNotification {
     pub win_streak: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueNotifications {
     pub league_notifications: Vec<LolRankedLeagueNotification>,
@@ -16200,7 +16200,7 @@ pub struct LolRankedLeagueNotifications {
     pub reward_notifications: Vec<LolRankedRewardNotification>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueStanding {
     pub summoner_id: u64,
@@ -16225,7 +16225,7 @@ pub struct LolRankedLeagueStanding {
     pub pending_demotion: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeagueTierAndRankDTO {
     pub player_or_team_id: String,
@@ -16235,13 +16235,13 @@ pub struct LolRankedLeagueTierAndRankDTO {
     pub rank: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeaguesSeasonRewardConfig {
     pub qualification_warning_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLoginSession {
     pub state: LolRankedLoginSessionStates,
@@ -16249,28 +16249,28 @@ pub struct LolRankedLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedParticipantTiers {
     pub summoner_id: u64,
     pub achieved_tiers: Vec<LolRankedAchievedTier>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedQueue {
     #[serde(rename = "type")]
     pub type_: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedQueuesAndPuuidsPayload {
     pub queue_types: Vec<LolRankedLeagueQueueType>,
     pub summoner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRankedQueueStats {
     pub queue_type: LolRankedLeagueQueueType,
@@ -16292,7 +16292,7 @@ pub struct LolRankedRankedQueueStats {
     pub warnings: Option<LolRankedRankedQueueWarnings>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRankedQueueStatsDTO {
     pub queue_type: String,
@@ -16313,7 +16313,7 @@ pub struct LolRankedRankedQueueStatsDTO {
     pub warnings: Option<LolRankedRankedQueueWarningsDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRankedQueueWarnings {
     pub display_decay_warning: bool,
@@ -16322,7 +16322,7 @@ pub struct LolRankedRankedQueueWarnings {
     pub days_until_decay: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRankedQueueWarningsDTO {
     pub display_decay_warning: bool,
@@ -16332,7 +16332,7 @@ pub struct LolRankedRankedQueueWarningsDTO {
     pub days_until_decay: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRankedStats {
     pub queues: Vec<LolRankedRankedQueueStats>,
@@ -16349,7 +16349,7 @@ pub struct LolRankedRankedStats {
     pub seasons: HashMap<String, LolRankedSeasonDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRankedStatsDTO {
     pub queues: Vec<LolRankedRankedQueueStatsDTO>,
@@ -16362,7 +16362,7 @@ pub struct LolRankedRankedStatsDTO {
     pub seasons: HashMap<String, LolRankedSeasonDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRatedLadderEntryDTO {
     pub summoner_id: u64,
@@ -16374,14 +16374,14 @@ pub struct LolRankedRatedLadderEntryDTO {
     pub previous_update_ladder_position: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRatedLadderInfo {
     pub queue_type: LolRankedLeagueQueueType,
     pub standings: Vec<LolRankedRatedLadderStanding>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRatedLadderStanding {
     pub summoner_id: u64,
@@ -16395,14 +16395,14 @@ pub struct LolRankedRatedLadderStanding {
     pub previous_position: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRewardNotification {
     pub reward_group_id: String,
     pub season_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRewardsInfo {
     pub splits: Vec<LolRankedSeasonSplit>,
@@ -16412,7 +16412,7 @@ pub struct LolRankedRewardsInfo {
     pub current_season_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSeasonDTO {
     pub current_season_id: i32,
@@ -16420,7 +16420,7 @@ pub struct LolRankedSeasonDTO {
     pub next_season_start: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSeasonSplit {
     pub split_id: i32,
@@ -16430,7 +16430,7 @@ pub struct LolRankedSeasonSplit {
     pub reward_track: Vec<LolRankedSplitRewardGroup>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSeasonSplitDTO {
     pub split_id: i32,
@@ -16440,14 +16440,14 @@ pub struct LolRankedSeasonSplitDTO {
     pub reward_track: Vec<LolRankedSplitRewardGroupDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSequenceEvent {
     pub name: String,
     pub priority: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSignedRankedStatsDTO {
     pub queues: Vec<LolRankedRankedQueueStatsDTO>,
@@ -16461,7 +16461,7 @@ pub struct LolRankedSignedRankedStatsDTO {
     pub jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSocialLeaderboardRankedQueueStats {
     pub queue_type: LolRankedLeagueQueueType,
@@ -16478,7 +16478,7 @@ pub struct LolRankedSocialLeaderboardRankedQueueStats {
     pub losses: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSocialLeaderboardRankedQueueStatsDTO {
     pub queue_type: String,
@@ -16494,7 +16494,7 @@ pub struct LolRankedSocialLeaderboardRankedQueueStatsDTO {
     pub losses: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitPointsNotification {
     pub split_points_delta: i32,
@@ -16507,7 +16507,7 @@ pub struct LolRankedSplitPointsNotification {
     pub split_points_breakdown: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitReward {
     pub reward_type: String,
@@ -16520,7 +16520,7 @@ pub struct LolRankedSplitReward {
     pub champion_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitRewardDTO {
     pub reward_type: String,
@@ -16529,21 +16529,21 @@ pub struct LolRankedSplitRewardDTO {
     pub tiered_reward_ids: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitRewardGroup {
     pub split_points: i32,
     pub rewards: Vec<LolRankedSplitReward>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitRewardGroupDTO {
     pub split_points: i32,
     pub rewards: Vec<LolRankedSplitRewardDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitRewardsMetaData {
     pub quantity: i32,
@@ -16551,20 +16551,20 @@ pub struct LolRankedSplitRewardsMetaData {
     pub champion_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSummoner {
     pub summoner_id: u64,
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaAccountIdAndSummonerId {
     pub summoner_id: Option<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaChatPresence {
     pub summoner_id: u64,
@@ -16572,7 +16572,7 @@ pub struct LolRegaliaChatPresence {
     pub lol: LolRegaliaChatPresenceLolData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaChatPresenceExternal {
     pub id: String,
@@ -16581,7 +16581,7 @@ pub struct LolRegaliaChatPresenceExternal {
     pub lol: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaChatPresenceLolData {
     pub level: u32,
@@ -16594,14 +16594,14 @@ pub struct LolRegaliaChatPresenceLolData {
     pub regalia: Option<LolRegaliaRegaliaSettings>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaLoadout {
     pub id: String,
@@ -16610,7 +16610,7 @@ pub struct LolRegaliaLoadout {
     pub loadout: LolRegaliaRegaliaLoadout
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRankedQueueStats {
     pub queue_type: LolRegaliaLeagueQueueType,
@@ -16619,7 +16619,7 @@ pub struct LolRegaliaRankedQueueStats {
     pub division: LolRegaliaLeagueDivision
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRankedStats {
     pub queues: Vec<LolRegaliaRankedQueueStats>,
@@ -16628,7 +16628,7 @@ pub struct LolRegaliaRankedStats {
     pub highest_previous_season_achieved_tier: LolRegaliaLeagueTier
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegalia {
     pub profile_icon_id: i32,
@@ -16640,34 +16640,34 @@ pub struct LolRegaliaRegalia {
     pub selected_prestige_crest: u8
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaAsync {
     pub md5: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaFrontendConfig {
     pub hovercard_enabled: bool,
     pub selections_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaLoadout {
     pub r_e_g_a_l_i_a__c_r_e_s_t__s_l_o_t: LolRegaliaItemKey,
     pub r_e_g_a_l_i_a__b_a_n_n_e_r__s_l_o_t: LolRegaliaItemKey
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaPlatformConfig {
     pub hovercard_enabled: bool,
     pub selections_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaPreferences {
     pub preferred_crest_type: String,
@@ -16675,7 +16675,7 @@ pub struct LolRegaliaRegaliaPreferences {
     pub selected_prestige_crest: u8
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaRankedEntry {
     pub queue_type: LolRegaliaLeagueQueueType,
@@ -16684,7 +16684,7 @@ pub struct LolRegaliaRegaliaRankedEntry {
     pub split_reward_level: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaSettings {
     pub crest_type: LolRegaliaRegaliaCrestType,
@@ -16692,7 +16692,7 @@ pub struct LolRegaliaRegaliaSettings {
     pub selected_prestige_crest: u8
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaSettingsExternal {
     pub crest_type: i32,
@@ -16700,7 +16700,7 @@ pub struct LolRegaliaRegaliaSettingsExternal {
     pub selected_prestige_crest: u8
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaWithPreferences {
     pub profile_icon_id: i32,
@@ -16714,7 +16714,7 @@ pub struct LolRegaliaRegaliaWithPreferences {
     pub highest_ranked_entry: Option<LolRegaliaRegaliaRankedEntry>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaSummoner {
     pub summoner_id: u64,
@@ -16723,58 +16723,58 @@ pub struct LolRegaliaSummoner {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaSummonerProfile {
     pub regalia: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaSummonerProfileUpdate {
     pub key: String,
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysClashPlaymodeRestrictedInfo {
     pub is_restricted: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysGameflowAvailability {
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysGameflowGameClient {
     pub running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysGameflowSession {
     pub phase: LolReplaysGameflowPhase,
     pub game_client: LolReplaysGameflowGameClient
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysInstallPaths {
     pub game_install_root: String,
     pub game_executable_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplayContextData {
     pub component_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplayCreateMetadata {
     pub game_version: String,
@@ -16783,7 +16783,7 @@ pub struct LolReplaysReplayCreateMetadata {
     pub game_end: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplayMetadata {
     pub state: LolReplaysMetadataState,
@@ -16791,7 +16791,7 @@ pub struct LolReplaysReplayMetadata {
     pub download_progress: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplaysConfiguration {
     pub is_replays_enabled: bool,
@@ -16807,14 +16807,14 @@ pub struct LolReplaysReplaysConfiguration {
     pub minutes_until_replay_considered_lost: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplaysDynamicConfig {
     pub min_supported_game_server_version: String,
     pub minutes_until_replay_considered_lost: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplaysSettingsData {
     #[serde(rename = "replays-folder-path")]
@@ -16823,13 +16823,13 @@ pub struct LolReplaysReplaysSettingsData {
     pub highlights_folder_path: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplaysSettingsResource {
     pub data: LolReplaysReplaysSettingsData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysRoflFileMetadata {
     pub game_length: u32,
@@ -16838,82 +16838,82 @@ pub struct LolReplaysRoflFileMetadata {
     pub last_key_frame_id: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsGrantorDescription {
     pub app_name: String,
     pub entity_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRMSPayload {
     pub product_id: String,
     pub affinities: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRequestDTOSelectionRequestDTO {
     pub data: LolRewardsSelectionRequestDTO,
     pub metadata: LolRewardsRequestMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRequestDTOVectorSelectionRequestDTO {
     pub data: Vec<LolRewardsSelectionRequestDTO>,
     pub metadata: LolRewardsRequestMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRequestMetadataDTO {
     pub transaction_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOSvcRewardGrant {
     pub data: LolRewardsSvcRewardGrant,
     pub metadata: LolRewardsResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOMapRewardGroupIdSelectGrantStatus {
     pub data: HashMap<String, LolRewardsSelectGrantStatusResponse>,
     pub metadata: LolRewardsResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOVectorSvcRewardGrant {
     pub data: Vec<LolRewardsSvcRewardGrant>,
     pub metadata: LolRewardsResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOVectorSvcRewardGroup {
     pub data: Vec<LolRewardsSvcRewardGroup>,
     pub metadata: LolRewardsResponseMetadataDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseMetadataDTO {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsReward {
     pub id: String,
@@ -16925,14 +16925,14 @@ pub struct LolRewardsReward {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRewardGrant {
     pub info: LolRewardsSvcRewardGrant,
     pub reward_group: LolRewardsSvcRewardGroup
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSelectionRequestDTO {
     pub grant_id: String,
@@ -16940,14 +16940,14 @@ pub struct LolRewardsSelectionRequestDTO {
     pub selections: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSelectionStrategyConfig {
     pub min_selections_allowed: u32,
     pub max_selections_allowed: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSvcRewardGrant {
     pub id: String,
@@ -16961,7 +16961,7 @@ pub struct LolRewardsSvcRewardGrant {
     pub grantor_description: LolRewardsGrantorDescription
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSvcRewardGrantElement {
     pub element_id: String,
@@ -16974,7 +16974,7 @@ pub struct LolRewardsSvcRewardGrantElement {
     pub localizations: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSvcRewardGroup {
     pub id: String,
@@ -16991,7 +16991,7 @@ pub struct LolRewardsSvcRewardGroup {
     pub celebration_type: LolRewardsCelebrationType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRiotMessagingServiceChampionMasteryLevelUp {
     pub id: u64,
@@ -17001,20 +17001,20 @@ pub struct LolRiotMessagingServiceChampionMasteryLevelUp {
     pub champion_level: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRiotMessagingServiceGameflowSession {
     pub phase: LolRiotMessagingServiceGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRiotclientUpgraderGameflowAvailability {
     pub is_available: bool,
     pub state: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAccessToken {
     pub token: String,
@@ -17022,14 +17022,14 @@ pub struct LolRsoAuthAccessToken {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAuthError {
     pub error: String,
     pub error_description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAuthHint {
     #[serde(rename = "type")]
@@ -17038,7 +17038,7 @@ pub struct LolRsoAuthAuthHint {
     pub context: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAuthorization {
     pub current_platform_id: String,
@@ -17046,7 +17046,7 @@ pub struct LolRsoAuthAuthorization {
     pub subject: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAuthorizationRequest {
     pub scope: Vec<String>,
@@ -17055,7 +17055,7 @@ pub struct LolRsoAuthAuthorizationRequest {
     pub claims: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAuthorizationResponse {
     #[serde(rename = "type")]
@@ -17063,13 +17063,13 @@ pub struct LolRsoAuthAuthorizationResponse {
     pub authorization: LolRsoAuthImplicitAuthorization
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthConfigStatus {
     pub readiness: LolRsoAuthConfigReadinessEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthDeviceId {
     pub collector_server_name: String,
@@ -17079,7 +17079,7 @@ pub struct LolRsoAuthDeviceId {
     pub frame_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthEntitlementsToken {
     pub token: String,
@@ -17087,40 +17087,40 @@ pub struct LolRsoAuthEntitlementsToken {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthIdToken {
     pub token: String,
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthImplicitAuthorization {
     pub access_token: LolRsoAuthAccessToken,
     pub id_token: LolRsoAuthIdToken
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthPublicClientConfig {
     pub url: String,
     pub client_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthRSOConfigReadyState {
     pub ready: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthRSOJWTConfig {
     pub token: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthRSOPlayerCredentials {
     pub username: String,
@@ -17128,7 +17128,7 @@ pub struct LolRsoAuthRSOPlayerCredentials {
     pub platform_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthRegionStatus {
     pub platform_id: String,
@@ -17137,7 +17137,7 @@ pub struct LolRsoAuthRegionStatus {
     pub is_user_info_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthSessionResponse {
     #[serde(rename = "type")]
@@ -17145,13 +17145,13 @@ pub struct LolRsoAuthSessionResponse {
     pub error: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthUserInfo {
     pub user_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusBroadcastMessage {
     pub content: String,
@@ -17159,13 +17159,13 @@ pub struct LolServiceStatusBroadcastMessage {
     pub severity: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusBroadcastNotification {
     pub broadcast_messages: Vec<LolServiceStatusBroadcastMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusLegacyServiceStatusMessage {
     pub created_at: String,
@@ -17176,14 +17176,14 @@ pub struct LolServiceStatusLegacyServiceStatusMessage {
     pub translations: Vec<LolServiceStatusLegacyServiceStatusTranslation>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusLegacyServiceStatusResponse {
     pub status: String,
     pub messages: Vec<LolServiceStatusLegacyServiceStatusMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusLegacyServiceStatusTranslation {
     pub locale: String,
@@ -17191,20 +17191,20 @@ pub struct LolServiceStatusLegacyServiceStatusTranslation {
     pub content: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusLoginDataPacket {
     pub broadcast_notification: LolServiceStatusBroadcastNotification
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRegionLocaleResource {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusIncident {
     pub id: i64,
@@ -17217,7 +17217,7 @@ pub struct LolServiceStatusRiotStatusIncident {
     pub updates: Vec<LolServiceStatusRiotStatusUpdate>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusMaintenance {
     pub id: i64,
@@ -17230,7 +17230,7 @@ pub struct LolServiceStatusRiotStatusMaintenance {
     pub titles: Vec<LolServiceStatusRiotStatusTitle>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusResource {
     pub id: String,
@@ -17240,21 +17240,21 @@ pub struct LolServiceStatusRiotStatusResource {
     pub incidents: Vec<LolServiceStatusRiotStatusIncident>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusTitle {
     pub locale: String,
     pub content: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusTranslation {
     pub locale: String,
     pub content: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusUpdate {
     pub id: i64,
@@ -17266,14 +17266,14 @@ pub struct LolServiceStatusRiotStatusUpdate {
     pub publish_locations: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusServiceStatusResource {
     pub status: String,
     pub human_readable_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusTickerMessage {
     pub severity: String,
@@ -17283,7 +17283,7 @@ pub struct LolServiceStatusTickerMessage {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsLCUGameSettingsConfig {
     pub hotkeys_enabled: bool,
@@ -17293,7 +17293,7 @@ pub struct LolSettingsLCUGameSettingsConfig {
     pub replays_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsLoginSession {
     pub state: LolSettingsLoginSessionStates,
@@ -17301,27 +17301,27 @@ pub struct LolSettingsLoginSession {
     pub account_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsRegionLocale {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsReplaysConfig {
     pub replay_service_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsSettingCategory {
     pub schema_version: i32,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsSettingsConfig {
     pub is_hotkeys_enabled: bool,
@@ -17335,7 +17335,7 @@ pub struct LolSettingsSettingsConfig {
     pub localized_licenses_u_r_l: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolShutdownShutdownNotification {
     pub reason: LolShutdownShutdownReason,
@@ -17343,26 +17343,26 @@ pub struct LolShutdownShutdownNotification {
     pub additional_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesGameflowSession {
     pub phase: LolSimpleDialogMessagesGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesLocalMessageRequest {
     pub msg_type: String,
     pub msg_body: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesLoginDataPacket {
     pub simple_messages: Vec<LolSimpleDialogMessagesSimpleMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesMessage {
     pub id: i64,
@@ -17371,7 +17371,7 @@ pub struct LolSimpleDialogMessagesMessage {
     pub body: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesSimpleMessage {
     pub account_id: u64,
@@ -17381,7 +17381,7 @@ pub struct LolSimpleDialogMessagesSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardFriendResource {
     pub summoner_id: u64,
@@ -17391,13 +17391,13 @@ pub struct LolSocialLeaderboardFriendResource {
     pub availability: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardGiftingFriend {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardRankedQueueStats {
     pub queue_type: LolSocialLeaderboardLeagueQueueType,
@@ -17409,20 +17409,20 @@ pub struct LolSocialLeaderboardRankedQueueStats {
     pub wins: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardRankedStats {
     pub queue_map: HashMap<String, LolSocialLeaderboardRankedQueueStats>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardSocialLeaderboardData {
     pub row_data: Vec<LolSocialLeaderboardSocialLeaderboardRowData>,
     pub next_update_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardSocialLeaderboardRowData {
     pub puuid: String,
@@ -17441,7 +17441,7 @@ pub struct LolSocialLeaderboardSocialLeaderboardRowData {
     pub is_giftable: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardSummoner {
     pub summoner_id: u64,
@@ -17453,7 +17453,7 @@ pub struct LolSocialLeaderboardSummoner {
     pub profile_icon_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSpectatorSpectateGameInfo {
     pub drop_in_spectate_game_id: String,
@@ -17462,26 +17462,26 @@ pub struct LolSpectatorSpectateGameInfo {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSpectatorSummonerOrTeamAvailabilty {
     pub available_for_watching: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesCatalogBundle {
     pub item: LolStatstonesCatalogItemDetails
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesCatalogBundlePrice {
     pub currency: String,
     pub cost: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesCatalogItemDetails {
     pub item_id: i32,
@@ -17492,7 +17492,7 @@ pub struct LolStatstonesCatalogItemDetails {
     pub item_instance_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesChampionStatstoneSetSummary {
     pub name: String,
@@ -17502,7 +17502,7 @@ pub struct LolStatstonesChampionStatstoneSetSummary {
     pub milestones_passed: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesChampionStatstoneSummary {
     pub champion_id: i32,
@@ -17513,7 +17513,7 @@ pub struct LolStatstonesChampionStatstoneSummary {
     pub sets: Vec<LolStatstonesChampionStatstoneSetSummary>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesCollectionsChampion {
     pub name: String,
@@ -17521,7 +17521,7 @@ pub struct LolStatstonesCollectionsChampion {
     pub id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesEogNotificationEnvelope {
     pub self_statstone_progress: Vec<LolStatstonesStatstoneProgress>,
@@ -17530,7 +17530,7 @@ pub struct LolStatstonesEogNotificationEnvelope {
     pub others_personal_bests: Vec<LolStatstonesPersonalBestNotification>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesGameDataItemReference {
     pub item_id: i32,
@@ -17538,7 +17538,7 @@ pub struct LolStatstonesGameDataItemReference {
     pub content_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesGameDataStatstone {
     pub name: String,
@@ -17557,7 +17557,7 @@ pub struct LolStatstonesGameDataStatstone {
     pub icon_full: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesGameDataStatstonePack {
     pub name: String,
@@ -17566,7 +17566,7 @@ pub struct LolStatstonesGameDataStatstonePack {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesGameDataStatstoneSet {
     pub name: String,
@@ -17577,7 +17577,7 @@ pub struct LolStatstonesGameDataStatstoneSet {
     pub price: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesGameDataStatstonesInfo {
     pub statstone_data: Vec<LolStatstonesGameDataStatstoneSet>,
@@ -17590,7 +17590,7 @@ pub struct LolStatstonesGameDataStatstonesInfo {
     pub champ_id_to_pack_ids: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesLoadout {
     pub id: String,
@@ -17600,7 +17600,7 @@ pub struct LolStatstonesLoadout {
     pub loadout: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesLoadoutItem {
     pub inventory_type: String,
@@ -17608,7 +17608,7 @@ pub struct LolStatstonesLoadoutItem {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesMilestoneNotificationDto {
     pub statstone_id: String,
@@ -17617,7 +17617,7 @@ pub struct LolStatstonesMilestoneNotificationDto {
     pub is_completed: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesMilestoneProgressNotification {
     pub statstone_id: String,
@@ -17627,7 +17627,7 @@ pub struct LolStatstonesMilestoneProgressNotification {
     pub level: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesNumberFormattingBehavior {
     pub digits_for_thousands_seperator: u32,
@@ -17635,7 +17635,7 @@ pub struct LolStatstonesNumberFormattingBehavior {
     pub western_number_grouping: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesNumberFormattingData {
     pub decimal_seperator: String,
@@ -17655,7 +17655,7 @@ pub struct LolStatstonesNumberFormattingData {
     pub number_formatting_behavior: LolStatstonesNumberFormattingBehavior
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesPersonalBestNotification {
     pub summoner: LolStatstonesSummoner,
@@ -17665,14 +17665,14 @@ pub struct LolStatstonesPersonalBestNotification {
     pub image_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesPriceInfo {
     pub currency: String,
     pub price: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesProfileStatstoneSummary {
     pub champion_id: i32,
@@ -17682,7 +17682,7 @@ pub struct LolStatstonesProfileStatstoneSummary {
     pub category: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstone {
     pub name: String,
@@ -17703,7 +17703,7 @@ pub struct LolStatstonesStatstone {
     pub player_record: Option<LolStatstonesStatstonePlayerRecord>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneCompletion {
     pub statstone_name: String,
@@ -17711,14 +17711,14 @@ pub struct LolStatstonesStatstoneCompletion {
     pub is_epic: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneFeaturedRequest {
     pub index: i32,
     pub existing_featured: Vec<LolStatstonesStatstone>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneMasteryVignette {
     pub num_sets_completed: u32,
@@ -17727,7 +17727,7 @@ pub struct LolStatstonesStatstoneMasteryVignette {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneNotificationDto {
     pub statstone_id: String,
@@ -17739,7 +17739,7 @@ pub struct LolStatstonesStatstoneNotificationDto {
     pub is_new_best: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneNotificationEnvelopeDto {
     pub game_id: u64,
@@ -17747,7 +17747,7 @@ pub struct LolStatstonesStatstoneNotificationEnvelopeDto {
     pub milestones: Vec<LolStatstonesMilestoneNotificationDto>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstonePlayerRecord {
     pub puuid: String,
@@ -17762,7 +17762,7 @@ pub struct LolStatstonesStatstonePlayerRecord {
     pub entitled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneProgress {
     pub statstone_id: String,
@@ -17781,14 +17781,14 @@ pub struct LolStatstonesStatstoneProgress {
     pub is_new_best: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneRekindledVignette {
     pub portrait_path: String,
     pub statstone: LolStatstonesStatstoneCompletion
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneSet {
     pub name: String,
@@ -17803,13 +17803,13 @@ pub struct LolStatstonesStatstoneSet {
     pub owned_from_packs: Vec<LolStatstonesGameDataStatstonePack>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneSetCompleteVignette {
     pub statstones: Vec<LolStatstonesStatstoneCompletion>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneVignetteNotificationEnvelopeDto {
     pub champ_name: String,
@@ -17819,7 +17819,7 @@ pub struct LolStatstonesStatstoneVignetteNotificationEnvelopeDto {
     pub set_complete_vignette_notifications: Vec<LolStatstonesStatstoneSetCompleteVignette>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesSummoner {
     pub summoner_id: u64,
@@ -17827,7 +17827,7 @@ pub struct LolStatstonesSummoner {
     pub display_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreAccessTokenResource {
     pub token: String,
@@ -17835,14 +17835,14 @@ pub struct LolStoreAccessTokenResource {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreAllSummonerData {
     pub summoner: LolStoreSummoner,
     pub summoner_level_and_points: LolStoreSummonerLevelAndPoints
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreBundleItemDTO {
     pub inventory_type: String,
@@ -17857,7 +17857,7 @@ pub struct LolStoreBundleItemDTO {
     pub ip: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreBundled {
     pub flexible: bool,
@@ -17865,7 +17865,7 @@ pub struct LolStoreBundled {
     pub minimum_prices: Vec<LolStoreBundledItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreBundledItem {
     pub inventory_type: String,
@@ -17874,7 +17874,7 @@ pub struct LolStoreBundledItem {
     pub discount_prices: Vec<LolStoreBundledItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreBundledItemCost {
     pub currency: String,
@@ -17883,7 +17883,7 @@ pub struct LolStoreBundledItemCost {
     pub cost_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreCapOffer {
     pub id: String,
@@ -17897,13 +17897,13 @@ pub struct LolStoreCapOffer {
     pub created_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreCatalogInstanceToItemKeyMap {
     pub platform_ids: HashMap<String, LolStoreItemKey>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreCatalogItem {
     pub item_id: i32,
@@ -17925,26 +17925,26 @@ pub struct LolStoreCatalogItem {
     pub offer_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreFeaturedPageDTO {
     pub player: LolStorePlayer
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreGetPlatformIdsFromInstanceIdsRequest {
     pub instance_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreGiftableResult {
     pub config: LolStoreGiftingConfig,
     pub friends: Vec<LolStoreGiftingFriend>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreGiftingConfig {
     pub recipient_level_limit_item: u32,
@@ -17961,7 +17961,7 @@ pub struct LolStoreGiftingConfig {
     pub requires_identity_verification: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreGiftingFriend {
     pub friends_since: String,
@@ -17970,7 +17970,7 @@ pub struct LolStoreGiftingFriend {
     pub nick: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreItemCost {
     pub currency: String,
@@ -17978,14 +17978,14 @@ pub struct LolStoreItemCost {
     pub discount: Option<f32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreItemLocalization {
     pub language: String,
@@ -17993,7 +17993,7 @@ pub struct LolStoreItemLocalization {
     pub description: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreItemMetadataEntry {
     #[serde(rename = "type")]
@@ -18001,7 +18001,7 @@ pub struct LolStoreItemMetadataEntry {
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreItemSale {
     pub id: u64,
@@ -18010,14 +18010,14 @@ pub struct LolStoreItemSale {
     pub sale: LolStoreSale
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreLoginDataPacket {
     pub all_summoner_data: LolStoreAllSummonerData,
     pub simple_messages: Vec<LolStoreSimpleDialogMessage>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreLoginSession {
     pub state: LolStoreLoginSessionStates,
@@ -18026,7 +18026,7 @@ pub struct LolStoreLoginSession {
     pub id_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreNotification {
     pub background_url: String,
@@ -18045,7 +18045,7 @@ pub struct LolStoreNotification {
     pub type_: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreOrderNotificationResource {
     pub id: u64,
@@ -18054,7 +18054,7 @@ pub struct LolStoreOrderNotificationResource {
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStorePageDTO {
     pub player: LolStorePlayer,
@@ -18063,7 +18063,7 @@ pub struct LolStorePageDTO {
     pub item_groups: HashMap<String, LolStorePageGroupingDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStorePageGroupingDTO {
     pub items: Vec<LolStoreItemKey>,
@@ -18071,7 +18071,7 @@ pub struct LolStorePageGroupingDTO {
     pub grouped: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStorePlayer {
     pub account_id: u64,
@@ -18080,7 +18080,7 @@ pub struct LolStorePlayer {
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreRiotMessagingServiceMessage {
     pub resource: String,
@@ -18090,7 +18090,7 @@ pub struct LolStoreRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreSale {
     pub start_date: String,
@@ -18098,21 +18098,21 @@ pub struct LolStoreSale {
     pub prices: Vec<LolStoreItemCost>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreServiceBalance {
     pub currency: String,
     pub amount: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreServiceWallet {
     pub account_id: u64,
     pub balances: Vec<LolStoreServiceBalance>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreSimpleDialogMessage {
     pub account_id: u64,
@@ -18122,53 +18122,53 @@ pub struct LolStoreSimpleDialogMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreStoreStatus {
     pub storefront_is_running: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreSummoner {
     pub acct_id: u64,
     pub sum_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreSummonerLevelAndPoints {
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreWallet {
     pub ip: i64,
     pub rp: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersEndOfGamePlayer {
     pub summoner_name: String,
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersEndOfGameStats {
     pub teams: Vec<LolSuggestedPlayersEndOfGameTeam>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersEndOfGameTeam {
     pub players: Vec<LolSuggestedPlayersEndOfGamePlayer>,
     pub is_winning_team: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersHonorInteraction {
     pub summoner_id: u64,
@@ -18176,7 +18176,7 @@ pub struct LolSuggestedPlayersHonorInteraction {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersConfig {
     pub enabled: bool,
@@ -18190,13 +18190,13 @@ pub struct LolSuggestedPlayersSuggestedPlayersConfig {
     pub max_honor_interaction_players: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersDynamicClientConfig {
     pub suggested_players: LolSuggestedPlayersSuggestedPlayersConfig
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersFriend {
     pub summoner_id: u64,
@@ -18204,14 +18204,14 @@ pub struct LolSuggestedPlayersSuggestedPlayersFriend {
     pub availability: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersKudoedPlayer {
     pub kudoed_summoner_id: u64,
     pub kudoed_summoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersLobbyStatus {
     pub queue_id: i32,
@@ -18219,27 +18219,27 @@ pub struct LolSuggestedPlayersSuggestedPlayersLobbyStatus {
     pub invited_summoner_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersPlayerStatus {
     pub current_lobby_status: Option<LolSuggestedPlayersSuggestedPlayersLobbyStatus>,
     pub last_queued_lobby_status: Option<LolSuggestedPlayersSuggestedPlayersLobbyStatus>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersQueue {
     pub id: i32,
     pub min_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersReportedPlayer {
     pub reported_summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersSuggestedPlayer {
     pub summoner_name: String,
@@ -18250,7 +18250,7 @@ pub struct LolSuggestedPlayersSuggestedPlayersSuggestedPlayer {
     pub game_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersSummoner {
     pub summoner_id: u64,
@@ -18258,21 +18258,21 @@ pub struct LolSuggestedPlayersSuggestedPlayersSummoner {
     pub summoner_level: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersVictoriousComrade {
     pub summoner_id: u64,
     pub summoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerAccountIdAndSummonerId {
     pub account_id: u64,
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerAutoFillQueueDto {
     pub queue_id: i32,
@@ -18281,14 +18281,14 @@ pub struct LolSummonerAutoFillQueueDto {
     pub auto_fill_protected_for_promos: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerGameloopPlayerInfoV2 {
     pub auto_fill_data_bags: Vec<LolSummonerAutoFillQueueDto>,
     pub reroll_data_bags: Vec<LolSummonerRerollDataBagForClientV1>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerLevelField {
     pub initial_level: u32,
@@ -18296,7 +18296,7 @@ pub struct LolSummonerLevelField {
     pub progress: LolSummonerLevelProgression
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerLevelProgression {
     pub initial_xp: u64,
@@ -18305,7 +18305,7 @@ pub struct LolSummonerLevelProgression {
     pub final_level_boundary: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerLoginSession {
     pub state: LolSummonerLoginSessionStates,
@@ -18315,14 +18315,14 @@ pub struct LolSummonerLoginSession {
     pub connected: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerProfilePrivacy {
     pub enabled_state: LolSummonerProfilePrivacyEnabledState,
     pub setting: LolSummonerProfilePrivacySetting
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerRerollDataBagForClientV1 {
     pub queue_id: i32,
@@ -18333,13 +18333,13 @@ pub struct LolSummonerRerollDataBagForClientV1 {
     pub point_cost_of_reroll: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerStatus {
     pub ready: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummoner {
     pub summoner_id: u64,
@@ -18358,7 +18358,7 @@ pub struct LolSummonerSummoner {
     pub privacy: LolSummonerProfilePrivacySetting
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerCacheData {
     pub summoner: Option<LolSummonerSummoner>,
@@ -18366,19 +18366,19 @@ pub struct LolSummonerSummonerCacheData {
     pub privacy: Option<LolSummonerProfilePrivacySetting>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerCreateRequest {
     pub summoner_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerCreatedId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerDTO {
     pub id: u64,
@@ -18395,21 +18395,21 @@ pub struct LolSummonerSummonerDTO {
     pub privacy: LolSummonerProfilePrivacySetting
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerIcon {
     pub profile_icon_id: i32,
     pub inventory_token: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerIdAndIcon {
     pub summoner_id: u64,
     pub profile_icon_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerIdAndName {
     pub summoner_id: u64,
@@ -18417,7 +18417,7 @@ pub struct LolSummonerSummonerIdAndName {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerProfileUpdate {
     pub key: String,
@@ -18425,13 +18425,13 @@ pub struct LolSummonerSummonerProfileUpdate {
     pub inventory: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerRequestedName {
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerRerollPoints {
     pub points_to_reroll: u32,
@@ -18441,7 +18441,7 @@ pub struct LolSummonerSummonerRerollPoints {
     pub points_cost_to_roll: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerSession {
     pub summoner_id: u64,
@@ -18449,42 +18449,42 @@ pub struct LolSummonerSummonerSession {
     pub is_new_player: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerXpAndLevelMessage {
     pub xp: Value,
     pub level: LolSummonerLevelField
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTastesDataModelResponse {
     pub response_code: i64,
     pub model_data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftDataModelResponse {
     pub response_code: i64,
     pub model_data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftGameflowGameData {
     pub game_id: u64,
     pub queue: LolTftQueue
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftGameflowSession {
     pub phase: LolTftGameflowPhase,
     pub game_data: LolTftGameflowGameData
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftLolTftHomeHub {
     pub enabled: bool,
@@ -18495,14 +18495,14 @@ pub struct LolTftLolTftHomeHub {
     pub fallback_store_promo_offer_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftLolTftNewsHub {
     pub enabled: bool,
     pub url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftQueue {
     pub id: i32,
@@ -18511,20 +18511,20 @@ pub struct LolTftQueue {
     pub category: LolTftQueueGameCategory
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftSettingsResource {
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesCapClashTrophyEntitlementPayload {
     pub reward_spec: LolTrophiesClashV2TrophyRewardSpec,
     pub reward_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesClashV2TrophyRewardSpec {
     pub pedestal: String,
@@ -18536,19 +18536,19 @@ pub struct LolTrophiesClashV2TrophyRewardSpec {
     pub season_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesInventoryItemsByType {
     pub t_o_u_r_n_a_m_e_n_t__t_r_o_p_h_y: Vec<LolTrophiesTournamentTrophyInventoryItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesInventoryResponse {
     pub items: LolTrophiesInventoryItemsByType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesLoadout {
     pub id: String,
@@ -18557,7 +18557,7 @@ pub struct LolTrophiesLoadout {
     pub loadout: HashMap<String, LolTrophiesLoadoutItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesLoadoutItem {
     pub item_id: i32,
@@ -18565,7 +18565,7 @@ pub struct LolTrophiesLoadoutItem {
     pub data: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesOtherPlayerTrophyInventoryItem {
     pub uuid: String,
@@ -18575,14 +18575,14 @@ pub struct LolTrophiesOtherPlayerTrophyInventoryItem {
     pub payload: LolTrophiesCapClashTrophyEntitlementPayload
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesTournamentTrophyInventoryItem {
     pub payload: LolTrophiesCapClashTrophyEntitlementPayload,
     pub purchase_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesTrophyProfileData {
     pub theme: String,
@@ -18594,19 +18594,19 @@ pub struct LolTrophiesTrophyProfileData {
     pub gem: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolUserExperienceGameflowSession {
     pub phase: LolUserExperienceGameflowPhase
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolWorldsTokenCardAccountIdAndSummonerId {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolWorldsTokenCardInventoryItem {
     pub uuid: String,
@@ -18617,13 +18617,13 @@ pub struct LolWorldsTokenCardInventoryItem {
     pub ownership_type: LolWorldsTokenCardItemOwnershipType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolWorldsTokenCardLootDataGdsResource {
     pub loot_token_bank_cards: Vec<LolWorldsTokenCardLootTokenBankCardGdsResource>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolWorldsTokenCardLootTokenBankCardGdsResource {
     pub loot_item_name: String,
@@ -18644,7 +18644,7 @@ pub struct LolWorldsTokenCardLootTokenBankCardGdsResource {
     pub store_link_type: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolWorldsTokenCardTokenUpsell {
     pub id: String,
@@ -18666,7 +18666,7 @@ pub struct LolWorldsTokenCardTokenUpsell {
     pub end_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopAccessTokenResource {
     pub token: String,
@@ -18674,7 +18674,7 @@ pub struct LolYourshopAccessTokenResource {
     pub expiry: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopCatalogItem {
     pub item_id: i32,
@@ -18682,7 +18682,7 @@ pub struct LolYourshopCatalogItem {
     pub item_instance_id: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopClientCacheClearMessageDTO {
     pub regions: Vec<String>,
@@ -18690,14 +18690,14 @@ pub struct LolYourshopClientCacheClearMessageDTO {
     pub inventory_types: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopCurrencyDTO {
     pub amount: i32,
     pub sub_currencies: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryCacheEntry {
     pub signed_inventory_jwt: String,
@@ -18707,7 +18707,7 @@ pub struct LolYourshopInventoryCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryDTO {
     pub puuid: String,
@@ -18718,7 +18718,7 @@ pub struct LolYourshopInventoryDTO {
     pub items_jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryItem {
     pub uuid: String,
@@ -18730,7 +18730,7 @@ pub struct LolYourshopInventoryItem {
     pub expiration_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryItemDTO {
     pub item_id: i32,
@@ -18753,7 +18753,7 @@ pub struct LolYourshopInventoryItemDTO {
     pub wins: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryItemWithPayload {
     pub uuid: String,
@@ -18771,7 +18771,7 @@ pub struct LolYourshopInventoryItemWithPayload {
     pub payload: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryNotification {
     pub id: i64,
@@ -18782,20 +18782,20 @@ pub struct LolYourshopInventoryNotification {
     pub acknowledged: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryResponseDTO {
     pub data: LolYourshopInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopItemKey {
     pub inventory_type: String,
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopLoginSession {
     pub state: LolYourshopLoginSessionStates,
@@ -18805,7 +18805,7 @@ pub struct LolYourshopLoginSession {
     pub puuid: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopLoyaltyRewards {
     pub free_rewarded_champions_count: i32,
@@ -18819,7 +18819,7 @@ pub struct LolYourshopLoyaltyRewards {
     pub loyalty_sources: HashMap<String, bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopLoyaltyStatusNotification {
     pub status: LolYourshopLoyaltyStatus,
@@ -18827,7 +18827,7 @@ pub struct LolYourshopLoyaltyStatusNotification {
     pub reload_inventory: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOffer {
     pub offer_id: String,
@@ -18842,26 +18842,26 @@ pub struct LolYourshopOffer {
     pub spot_index: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferData {
     pub offers: Vec<LolYourshopOffer>,
     pub promotion: LolYourshopPromotion
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferId {
     pub offer_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferIds {
     pub offers: Vec<LolYourshopOfferId>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferRequest {
     pub offer_id: String,
@@ -18870,13 +18870,13 @@ pub struct LolYourshopOfferRequest {
     pub price: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferRequests {
     pub offers: Vec<LolYourshopOfferRequest>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPlayerNotification {
     pub critical: bool,
@@ -18889,13 +18889,13 @@ pub struct LolYourshopPlayerNotification {
     pub icon_url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPlayerPermissions {
     pub use_data: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPromotion {
     pub name: String,
@@ -18903,7 +18903,7 @@ pub struct LolYourshopPromotion {
     pub end_time: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPurchaseItem {
     pub inventory_type: String,
@@ -18911,14 +18911,14 @@ pub struct LolYourshopPurchaseItem {
     pub price_paid: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPurchaseResponse {
     pub items: Vec<LolYourshopPurchaseItem>,
     pub wallet: LolYourshopWallet
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRiotMessagingServiceMessage {
     pub resource: String,
@@ -18928,7 +18928,7 @@ pub struct LolYourshopRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsEntitlementPayload {
     pub item_id: String,
@@ -18937,27 +18937,27 @@ pub struct LolYourshopRmsEntitlementPayload {
     pub resource_operation: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsStoreEntitlementItem {
     pub inventory_type: String,
     pub item_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsStoreEntitlementPayload {
     pub transaction_id: String,
     pub items: Vec<LolYourshopRmsStoreEntitlementItem>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsWalletPayload {
     
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsXboxSubscriptionChange {
     pub puuid: String,
@@ -18966,7 +18966,7 @@ pub struct LolYourshopRmsXboxSubscriptionChange {
     pub identity_provider: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopSimpleInventoryDTO {
     pub items: HashMap<String, Value>,
@@ -18974,19 +18974,19 @@ pub struct LolYourshopSimpleInventoryDTO {
     pub expires: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopSimpleInventoryResponseDTO {
     pub data: LolYourshopSimpleInventoryDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopSummonerIcon {
     pub item_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopUIOffer {
     pub id: String,
@@ -19002,7 +19002,7 @@ pub struct LolYourshopUIOffer {
     pub expiration_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopUIStatus {
     pub hub_enabled: bool,
@@ -19011,13 +19011,13 @@ pub struct LolYourshopUIStatus {
     pub end_time: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopWallet {
     pub rp: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopWalletCacheEntry {
     pub signed_balances_jwt: String,
@@ -19027,7 +19027,7 @@ pub struct LolYourshopWalletCacheEntry {
     pub valid: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopWalletDTO {
     pub puuid: String,
@@ -19037,20 +19037,20 @@ pub struct LolYourshopWalletDTO {
     pub balances_jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopWalletResponseDTO {
     pub data: LolYourshopWalletDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopXboxSubscriptionStatus {
     pub active: bool,
     pub subscription_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopYourshopConfig {
     pub active: bool,
@@ -19060,7 +19060,7 @@ pub struct LolYourshopYourshopConfig {
     pub promotion_end_date: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootItemClientDTO {
     pub loot_name: String,
@@ -19078,14 +19078,14 @@ pub struct LootItemClientDTO {
     pub rental_games: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootItemListClientDTO {
     pub loot_items: Vec<LootItemClientDTO>,
     pub last_update: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsClientConfigurationDTO {
     pub loot_items_using_breakout_recipe_menu: Vec<String>,
@@ -19094,7 +19094,7 @@ pub struct LootLcdsClientConfigurationDTO {
     pub disabled_redemptions: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsLootDescriptionDTO {
     pub loot_name: String,
@@ -19103,7 +19103,7 @@ pub struct LootLcdsLootDescriptionDTO {
     pub localization_long_description_map: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsRecipeClientDTO {
     pub recipe_name: String,
@@ -19116,14 +19116,14 @@ pub struct LootLcdsRecipeClientDTO {
     pub metadata: LootLcdsRecipeMetadata
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsRecipeListClientDTO {
     pub recipes: Vec<LootLcdsRecipeClientDTO>,
     pub last_update: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsRecipeMetadata {
     pub guaranteed_descriptions: Vec<LootLcdsLootDescriptionDTO>,
@@ -19131,7 +19131,7 @@ pub struct LootLcdsRecipeMetadata {
     pub tooltips_disabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsRecipeOutputDTO {
     pub loot_name: String,
@@ -19140,7 +19140,7 @@ pub struct LootLcdsRecipeOutputDTO {
     pub allow_duplicates: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsRecipeSlotClientDTO {
     pub slot_number: i32,
@@ -19148,14 +19148,14 @@ pub struct LootLcdsRecipeSlotClientDTO {
     pub quantity_expression: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootNameRefId {
     pub loot_name: String,
     pub ref_id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootOddsDTO {
     pub loot_id: String,
@@ -19167,14 +19167,14 @@ pub struct LootOddsDTO {
     pub children: Vec<LootOddsDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootProgressionRecipeConfigMap {
     pub last_update: i64,
     pub loot_progression_recipe_d_t_o_map: HashMap<String, LootProgressionRecipeConfiguration>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootProgressionRecipeConfiguration {
     pub active: bool,
@@ -19185,7 +19185,7 @@ pub struct LootProgressionRecipeConfiguration {
     pub counter_uuids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootSimpleDialogMessageResponse {
     pub account_id: u64,
@@ -19193,7 +19193,7 @@ pub struct LootSimpleDialogMessageResponse {
     pub command: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchedPlayerDTO {
     pub roster_id: String,
@@ -19201,7 +19201,7 @@ pub struct MatchedPlayerDTO {
     pub players: Vec<PlayerInfoDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsBustedLeaver {
     pub summoner: MatchmakingLcdsSummoner,
@@ -19210,14 +19210,14 @@ pub struct MatchmakingLcdsBustedLeaver {
     pub leaver_penalty_millis_remaining: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsFailedJoinPlayer {
     pub summoner: MatchmakingLcdsSummoner,
     pub reason_failed: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsGameDTO {
     pub game_state: String,
@@ -19227,7 +19227,7 @@ pub struct MatchmakingLcdsGameDTO {
     pub team_two: Vec<MatchmakingLcdsPlayerParticipant>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsGameNotification {
     #[serde(rename = "type")]
@@ -19236,7 +19236,7 @@ pub struct MatchmakingLcdsGameNotification {
     pub message_argument: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsMatchMakerParams {
     pub queue_ids: Vec<i32>,
@@ -19248,19 +19248,19 @@ pub struct MatchmakingLcdsMatchMakerParams {
     pub team_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsMatchMakerPayload {
     pub l_e_a_v_e_r__b_u_s_t_e_r__a_c_c_e_s_s__t_o_k_e_n: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsPlayerParticipant {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsQueueDisabled {
     pub summoner: MatchmakingLcdsSummoner,
@@ -19269,7 +19269,7 @@ pub struct MatchmakingLcdsQueueDisabled {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsQueueDodger {
     pub summoner: MatchmakingLcdsSummoner,
@@ -19277,14 +19277,14 @@ pub struct MatchmakingLcdsQueueDodger {
     pub dodge_penalty_remaining_time: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsQueueInfo {
     pub queue_id: i32,
     pub wait_time: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsQueueRestricted {
     pub summoner: MatchmakingLcdsSummoner,
@@ -19293,7 +19293,7 @@ pub struct MatchmakingLcdsQueueRestricted {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsQueueThrottled {
     pub summoner: MatchmakingLcdsSummoner,
@@ -19302,21 +19302,21 @@ pub struct MatchmakingLcdsQueueThrottled {
     pub message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsSearchingForMatchNotification {
     pub joined_queues: Vec<MatchmakingLcdsQueueInfo>,
     pub player_join_failures: Vec<Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsSummoner {
     pub sum_id: u64,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MemberBanUnbanTournament {
     pub tournament_id: i64,
@@ -19325,7 +19325,7 @@ pub struct MemberBanUnbanTournament {
     pub tournament_phase_lock_in_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadata {
     pub sample_window_ms: u32,
@@ -19345,7 +19345,7 @@ pub struct MetricMetadata {
     pub period: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadataAlert {
     pub level: String,
@@ -19357,14 +19357,14 @@ pub struct MetricMetadataAlert {
     pub info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadataHipchatNotification {
     pub roomid: String,
     pub tags: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadataNotify {
     pub email: Vec<String>,
@@ -19372,13 +19372,13 @@ pub struct MetricMetadataNotify {
     pub pagerduty: Vec<MetricMetadataPagerDutyNotification>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadataPagerDutyNotification {
     pub apikey: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionAlertDTO {
     #[serde(rename = "type")]
@@ -19387,14 +19387,14 @@ pub struct MissionAlertDTO {
     pub alert_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionDisplay {
     pub attributes: Vec<String>,
     pub locations: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionMetadata {
     pub tutorial: TutorialMetadata,
@@ -19402,7 +19402,7 @@ pub struct MissionMetadata {
     pub level: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionProgressDTO {
     pub last_viewed_progress: i32,
@@ -19410,26 +19410,26 @@ pub struct MissionProgressDTO {
     pub total_count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionRequirementDTO {
     pub expression: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionsCompressedPayloadDTO {
     pub missions_compressed: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MultipleReplayMetadataRequestV2 {
     pub platform_id: String,
     pub game_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MultipleReplayMetadataResponseItemV2 {
     pub game_id: u64,
@@ -19437,13 +19437,13 @@ pub struct MultipleReplayMetadataResponseItemV2 {
     pub metadata: ReplayMetadataV2
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MultipleReplayMetadataResponseV2 {
     pub metadata_responses: Vec<MultipleReplayMetadataResponseItemV2>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NonTimingEventV1 {
     pub when: u64,
@@ -19452,27 +19452,27 @@ pub struct NonTimingEventV1 {
     pub unit: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NotifyFailureRequest {
     pub availability_item_name: String,
     pub failure_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NotifySuccessRequest {
     pub availability_item_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NpeReward {
     pub renderer: String,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NpeRewardPackMetadata {
     pub index: i32,
@@ -19482,7 +19482,7 @@ pub struct NpeRewardPackMetadata {
     pub minor_rewards: Vec<NpeReward>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct OpenedTeamDTO {
     pub name: String,
@@ -19497,7 +19497,7 @@ pub struct OpenedTeamDTO {
     pub open_positions: Vec<Position>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct OpenedTeamMemberDTO {
     pub player_id: i64,
@@ -19506,20 +19506,20 @@ pub struct OpenedTeamMemberDTO {
     pub friendship: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PartiesVoiceDTO {
     pub jwt: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherChunkingPatcherEnvironment {
     pub game_patcher_available: bool,
     pub game_patcher_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherComponentActionProgress {
     pub current_item: String,
@@ -19528,7 +19528,7 @@ pub struct PatcherComponentActionProgress {
     pub primary_work: PatcherComponentStateWorkType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherComponentState {
     pub id: String,
@@ -19540,7 +19540,7 @@ pub struct PatcherComponentState {
     pub progress: Option<PatcherComponentActionProgress>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherComponentStateProgress {
     pub bytes_complete: u64,
@@ -19548,7 +19548,7 @@ pub struct PatcherComponentStateProgress {
     pub bytes_per_second: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherNotification {
     pub id: String,
@@ -19556,7 +19556,7 @@ pub struct PatcherNotification {
     pub data: HashMap<String, Value>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherP2PStatus {
     pub is_enabled_for_patchline: bool,
@@ -19564,19 +19564,19 @@ pub struct PatcherP2PStatus {
     pub requires_restart: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherP2PStatusUpdate {
     pub is_allowed_by_user: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherProductResource {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherProductState {
     pub id: String,
@@ -19589,20 +19589,20 @@ pub struct PatcherProductState {
     pub components: Vec<PatcherComponentState>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherStatus {
     pub connected_to_patch_server: bool,
     pub successfully_installed_version: Option<u32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherUxResource {
     pub visible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PaymentsFrontEndRequest {
     pub is_prepaid: bool,
@@ -19615,13 +19615,13 @@ pub struct PaymentsFrontEndRequest {
     pub game: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PaymentsFrontEndResult {
     pub url: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PaymentsPMCStartUrlRequest {
     pub is_prepaid: bool,
@@ -19632,7 +19632,7 @@ pub struct PaymentsPMCStartUrlRequest {
     pub game: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PaymentsPMCStartUrlResult {
     pub id: String,
@@ -19644,7 +19644,7 @@ pub struct PaymentsPMCStartUrlResult {
     pub created_at: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PendingOpenedTeamDTO {
     pub invitation_id: String,
@@ -19655,7 +19655,7 @@ pub struct PendingOpenedTeamDTO {
     pub tier: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PendingRosterDTO {
     pub version: i32,
@@ -19677,7 +19677,7 @@ pub struct PendingRosterDTO {
     pub multi_user_chat_j_w_t: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PendingRosterInviteeDTO {
     pub invitee_id: u64,
@@ -19687,7 +19687,7 @@ pub struct PendingRosterInviteeDTO {
     pub invite_type: InviteType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PendingRosterMemberDTO {
     pub player_id: u64,
@@ -19702,7 +19702,7 @@ pub struct PendingRosterMemberDTO {
     pub tier: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PhaseInMember {
     pub player_id: u64,
@@ -19711,7 +19711,7 @@ pub struct PhaseInMember {
     pub self_bet: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PhaseRosterDTO {
     pub phase_id: i64,
@@ -19721,14 +19721,14 @@ pub struct PhaseRosterDTO {
     pub bracket_d_t_o: Option<Bracket>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerBehaviorLcdsForcedClientShutdown {
     pub reason: String,
     pub additional_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerBehaviorLcdsSimpleMessage {
     pub account_id: u64,
@@ -19738,7 +19738,7 @@ pub struct PlayerBehaviorLcdsSimpleMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerBehaviorSimpleMessageResponse {
     pub account_id: u64,
@@ -19746,7 +19746,7 @@ pub struct PlayerBehaviorSimpleMessageResponse {
     pub command: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerDTO {
     pub banned: bool,
@@ -19758,7 +19758,7 @@ pub struct PlayerDTO {
     pub secondary_pos: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerFinderDTO {
     pub player_id: u64,
@@ -19770,7 +19770,7 @@ pub struct PlayerFinderDTO {
     pub friend_id: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerInfoDTO {
     pub player_id: u64,
@@ -19779,7 +19779,7 @@ pub struct PlayerInfoDTO {
     pub role: Role
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerInventory {
     pub ward_skins: Vec<i64>,
@@ -19789,7 +19789,7 @@ pub struct PlayerInventory {
     pub inventory_jwts: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerLootDTO {
     pub loot_name: String,
@@ -19798,7 +19798,7 @@ pub struct PlayerLootDTO {
     pub expiry_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerLootDefinitionsDTO {
     pub loot_item_list: LootItemListClientDTO,
@@ -19807,7 +19807,7 @@ pub struct PlayerLootDefinitionsDTO {
     pub player_loot: Vec<PlayerLootDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerLootResultDTO {
     pub status: String,
@@ -19817,7 +19817,7 @@ pub struct PlayerLootResultDTO {
     pub redeemed: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerMissionDTO {
     pub id: String,
@@ -19854,7 +19854,7 @@ pub struct PlayerMissionDTO {
     pub media: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerMissionEligibilityData {
     pub level: i32,
@@ -19863,7 +19863,7 @@ pub struct PlayerMissionEligibilityData {
     pub user_info_token: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerMissionObjectiveDTO {
     #[serde(rename = "type")]
@@ -19877,7 +19877,7 @@ pub struct PlayerMissionObjectiveDTO {
     pub requirements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerMissionRewardDTO {
     pub reward_type: String,
@@ -19896,13 +19896,13 @@ pub struct PlayerMissionRewardDTO {
     pub icon_needs_frame: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerNotificationsPlayerNotificationConfigResource {
     pub expiration_check_frequency: Option<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerNotificationsPlayerNotificationResource {
     pub background_url: String,
@@ -19921,7 +19921,7 @@ pub struct PlayerNotificationsPlayerNotificationResource {
     pub dismissible: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerNotificationsRiotMessagingServiceMessage {
     pub resource: String,
@@ -19931,19 +19931,19 @@ pub struct PlayerNotificationsRiotMessagingServiceMessage {
     pub payload: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerParticipant {
     pub summoner_id: u64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerRosterHistoryDTO {
     pub rosters: Vec<RosterMemberDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerTierDTO {
     pub player_id: u64,
@@ -19952,7 +19952,7 @@ pub struct PlayerTierDTO {
     pub second_pos: Position
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginDescriptionResource {
     pub name: String,
@@ -19961,7 +19961,7 @@ pub struct PluginDescriptionResource {
     pub plugin_dependencies: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginLcdsEvent {
     pub client_id: String,
@@ -19970,20 +19970,20 @@ pub struct PluginLcdsEvent {
     pub body: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginLcdsResponse {
     pub type_name: String,
     pub body: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginManagerResource {
     pub state: PluginManagerState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginMetadataResource {
     #[serde(rename = "type")]
@@ -19999,14 +19999,14 @@ pub struct PluginMetadataResource {
     pub threading: PluginThreadingModel
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginRegionLocaleChangedEvent {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginResource {
     pub full_name: String,
@@ -20024,14 +20024,14 @@ pub struct PluginResource {
     pub implemented_contracts: Vec<PluginResourceContract>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginResourceContract {
     pub full_name: String,
     pub version: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginResourceEvent {
     pub uri: String,
@@ -20039,7 +20039,7 @@ pub struct PluginResourceEvent {
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginServiceProxyResponse {
     pub uuid: String,
@@ -20050,13 +20050,13 @@ pub struct PluginServiceProxyResponse {
     pub error: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ProcessControlProcess {
     pub status: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PublicRosterDTO {
     pub id: i64,
@@ -20068,7 +20068,7 @@ pub struct PublicRosterDTO {
     pub member_ids: Vec<u64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Punishment {
     pub punished_for_chat_logs: Vec<String>,
@@ -20082,26 +20082,26 @@ pub struct Punishment {
     pub player_facing_message: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct QueryEvaluationRequestDTO {
     pub query: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct QueryEvaluationResultDTO {
     pub loot_item_names: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct QueryResultDTO {
     pub query_to_loot_names: Value,
     pub last_update: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RankedScoutingDTO {
     pub player_id: u64,
@@ -20110,14 +20110,14 @@ pub struct RankedScoutingDTO {
     pub top_season_champions: Vec<ChampionScoutingDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RankedScoutingMemberDTO {
     pub player_id: u64,
     pub champion_scouting_data: Vec<RankedScoutingTopChampionDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RankedScoutingTopChampionDTO {
     pub champion_id: i32,
@@ -20127,7 +20127,7 @@ pub struct RankedScoutingTopChampionDTO {
     pub kda: f32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RedeemLootTransactionDTO {
     pub client_id: String,
@@ -20137,7 +20137,7 @@ pub struct RedeemLootTransactionDTO {
     pub loot_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RegionLocale {
     pub region: String,
@@ -20146,14 +20146,14 @@ pub struct RegionLocale {
     pub web_language: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ReplayMetadataV2 {
     pub game_version: String,
     pub file_size: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RewardDetails {
     pub tournament_id: i64,
@@ -20161,14 +20161,14 @@ pub struct RewardDetails {
     pub team_member_ids: Vec<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RewardLogo {
     pub logo: i32,
     pub member_owned_count: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RewardStrategy {
     pub group_strategy: String,
@@ -20176,13 +20176,13 @@ pub struct RewardStrategy {
     pub select_min_group_count: u16
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RiotMessagingServiceAcknowledgeBody {
     pub id: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RiotMessagingServiceEntitlementsToken {
     pub access_token: String,
@@ -20192,14 +20192,14 @@ pub struct RiotMessagingServiceEntitlementsToken {
     pub entitlements: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RiotMessagingServicePluginRegionLocaleChangedEvent {
     pub region: String,
     pub locale: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RiotMessagingServiceSession {
     pub state: RiotMessagingServiceState,
@@ -20207,7 +20207,7 @@ pub struct RiotMessagingServiceSession {
     pub token_type: RiotMessagingServiceTokenType
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RmsMessage {
     pub id: String,
@@ -20219,14 +20219,14 @@ pub struct RmsMessage {
     pub ack_required: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterAggregatedStatsDTO {
     pub period_stats: Vec<RosterPeriodAggregatedStatsDTO>,
     pub player_stats: HashMap<String, RosterPlayerAggregatedStatsDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterDTO {
     pub version: i32,
@@ -20250,7 +20250,7 @@ pub struct RosterDTO {
     pub multi_user_chat_j_w_t: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterDynamicStateDTO {
     pub version: i32,
@@ -20262,7 +20262,7 @@ pub struct RosterDynamicStateDTO {
     pub withdraw: RosterWithdraw
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterMatchAggregatedStatsDTO {
     pub round: i32,
@@ -20278,7 +20278,7 @@ pub struct RosterMatchAggregatedStatsDTO {
     pub player_champion_ids: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterMemberDTO {
     pub roster_id: i64,
@@ -20293,7 +20293,7 @@ pub struct RosterMemberDTO {
     pub tier: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterPeriodAggregatedStatsDTO {
     pub period: i32,
@@ -20303,14 +20303,14 @@ pub struct RosterPeriodAggregatedStatsDTO {
     pub player_bids: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterPlayerAggregatedStatsDTO {
     pub raw_stats_sum: HashMap<String, i32>,
     pub raw_stats_max: HashMap<String, i32>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterStatsDTO {
     pub roster_id: i64,
@@ -20328,7 +20328,7 @@ pub struct RosterStatsDTO {
     pub stats: RosterAggregatedStatsDTO
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterWithdraw {
     pub init_vote_time: i64,
@@ -20340,14 +20340,14 @@ pub struct RosterWithdraw {
     pub decline_withdraw_members: Vec<i64>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIBoolDiagnostic {
     pub key: String,
     pub value: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLICount {
     pub sli_name: String,
@@ -20363,35 +20363,35 @@ pub struct SLICount {
     pub string_diagnostics: HashMap<String, String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIDoubleDiagnostic {
     pub key: String,
     pub value: f64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIIntDiagnostic {
     pub key: String,
     pub value: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLILabel {
     pub key: String,
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIStringDiagnostic {
     pub key: String,
     pub value: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SanitizerContainsSanitizedRequest {
     pub text: String,
@@ -20399,13 +20399,13 @@ pub struct SanitizerContainsSanitizedRequest {
     pub aggressive_scan: Option<bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SanitizerContainsSanitizedResponse {
     pub contains: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SanitizerSanitizeRequest {
     pub texts: Option<Vec<String>>,
@@ -20414,7 +20414,7 @@ pub struct SanitizerSanitizeRequest {
     pub aggressive_scan: Option<bool>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SanitizerSanitizeResponse {
     pub texts: Option<Vec<String>>,
@@ -20422,7 +20422,7 @@ pub struct SanitizerSanitizeResponse {
     pub modified: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SanitizerSanitizerStatus {
     pub ready: bool,
@@ -20434,7 +20434,7 @@ pub struct SanitizerSanitizerStatus {
     pub projected_chars_count: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SeriesDTO {
     pub id: String,
@@ -20459,7 +20459,7 @@ pub struct SeriesDTO {
     pub warnings: Vec<AlertDTO>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SeriesMediaDTO {
     pub background_url: String,
@@ -20470,14 +20470,14 @@ pub struct SeriesMediaDTO {
     pub accent_color: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ShutdownLcdsForcedClientShutdown {
     pub reason: String,
     pub additional_info: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SimpleDialogMessage {
     pub account_id: u64,
@@ -20487,7 +20487,7 @@ pub struct SimpleDialogMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SimpleDialogMessageResponse {
     pub account_id: u64,
@@ -20495,19 +20495,19 @@ pub struct SimpleDialogMessageResponse {
     pub command: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SpectatorLcdsSpectateAvailabilityDto {
     pub team_or_summoner_ids: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SpectatorLcdsSpectateAvailabilityResponseDto {
     pub available_for_watching: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsChampionDTO {
     pub end_date: u64,
@@ -20525,7 +20525,7 @@ pub struct StoreLcdsChampionDTO {
     pub ranked_play_enabled: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsChampionSkinDTO {
     pub end_date: u64,
@@ -20541,7 +20541,7 @@ pub struct StoreLcdsChampionSkinDTO {
     pub still_obtainable: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsSimpleDialogMessage {
     pub account_id: u64,
@@ -20551,7 +20551,7 @@ pub struct StoreLcdsSimpleDialogMessage {
     pub params: Vec<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsSimpleDialogMessageResponse {
     pub account_id: u64,
@@ -20559,14 +20559,14 @@ pub struct StoreLcdsSimpleDialogMessageResponse {
     pub command: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsStoreAccountBalanceNotification {
     pub ip: i64,
     pub rp: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsStoreFulfillmentNotification {
     pub inventory_type: String,
@@ -20575,14 +20575,14 @@ pub struct StoreLcdsStoreFulfillmentNotification {
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ThemeVp {
     pub theme_id: i32,
     pub theme_vp: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TicketOfferDTO {
     pub offer_player_id: u64,
@@ -20593,7 +20593,7 @@ pub struct TicketOfferDTO {
     pub ticket_offer_state: TicketOfferState
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TierConfig {
     pub tier: i32,
@@ -20601,14 +20601,14 @@ pub struct TierConfig {
     pub estimate_time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeSeriesEventBeginV1 {
     pub when: u64,
     pub event_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeSeriesEventEndV1 {
     pub when: u64,
@@ -20616,7 +20616,7 @@ pub struct TimeSeriesEventEndV1 {
     pub suffix: Option<String>
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeSeriesEventMarkerV1 {
     pub when: u64,
@@ -20624,7 +20624,7 @@ pub struct TimeSeriesEventMarkerV1 {
     pub marker_name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentDTO {
     pub id: i64,
@@ -20659,14 +20659,14 @@ pub struct TournamentDTO {
     pub max_suggestions_per_player: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentHistoryAndWinnersDTO {
     pub tournament_history: Vec<TournamentDTO>,
     pub tournament_winners_compressed: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentInfoDTO {
     pub tournament: TournamentDTO,
@@ -20676,14 +20676,14 @@ pub struct TournamentInfoDTO {
     pub theme_vp: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentInfoMinimalDTO {
     pub tournament_info: Vec<TournamentInfoDTO>,
     pub time: i64
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentPhaseDTO {
     pub id: i64,
@@ -20696,7 +20696,7 @@ pub struct TournamentPhaseDTO {
     pub capacity_status: CapacityEnum
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentPlayerInfoDTO {
     pub tournament_info: Vec<TournamentInfoDTO>,
@@ -20708,7 +20708,7 @@ pub struct TournamentPlayerInfoDTO {
     pub tier: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TracingCriticalFlowEventV1 {
     pub when: u64,
@@ -20717,7 +20717,7 @@ pub struct TracingCriticalFlowEventV1 {
     pub payload_string: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TracingEventV1 {
     pub when: u64,
@@ -20728,7 +20728,7 @@ pub struct TracingEventV1 {
     pub details: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TracingModuleV1 {
     pub module_id: u32,
@@ -20738,7 +20738,7 @@ pub struct TracingModuleV1 {
     pub threading_model: TracingModuleThreadingModelV1
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TracingPhaseBeginV1 {
     pub when: u64,
@@ -20746,14 +20746,14 @@ pub struct TracingPhaseBeginV1 {
     pub importance: TracingPhaseImportanceV1
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TracingPhaseEndV1 {
     pub when: u64,
     pub name: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TutorialMetadata {
     pub step_number: i32,
@@ -20763,7 +20763,7 @@ pub struct TutorialMetadata {
     pub use_chosen_champion: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct VerboseLootOddsDTO {
     pub recipe_name: String,
@@ -20774,14 +20774,14 @@ pub struct VerboseLootOddsDTO {
     pub checks_ownership: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopLcdsChampionDTO {
     pub champion_id: i32,
     pub owned: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopLcdsChampionSkinDTO {
     pub champion_id: i32,
@@ -20789,21 +20789,21 @@ pub struct YourshopLcdsChampionSkinDTO {
     pub skin_id: i32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopLcdsClientDynamicConfigurationNotification {
     pub configs: String,
     pub delta: bool
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopStoreFulfillmentNotification {
     pub inventory_type: String,
     pub data: Value
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BasicOperatingSystemInfo {
     pub edition: String,
@@ -20812,7 +20812,7 @@ pub struct BasicOperatingSystemInfo {
     pub version_minor: String
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BasicSystemInfo {
     pub operating_system: BasicOperatingSystemInfo,
@@ -20821,7 +20821,7 @@ pub struct BasicSystemInfo {
     pub processor_speed: u32
 }
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Cookie {
     pub url: String,
@@ -21961,8 +21961,8 @@ pub enum LolEventShopSelectGrantStatusResponse {
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopTokenUpsellLockedType {
     UNASSIGNED = 0,
-    LOCKED = 1,
-    UNLOCKED = 2
+    UNLOCKED = 1,
+    LOCKED = 2
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
