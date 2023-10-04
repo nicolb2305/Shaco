@@ -157,14 +157,8 @@ pub async fn delete_lol_highlights_v1_highlights_by_id(client: &RESTClient, id: 
     Ok(serde_json::from_value::<LolHighlightsHighlight>(value)?)
 }
 
-pub async fn delete_lol_honeyfruit_v1_debug_linking_status(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
-    let url = "/lol-honeyfruit/v1/debug-linking-status";
-    let value = client.delete(url.to_owned()).await?;
-    Ok(value)
-}
-
-pub async fn delete_lol_honeyfruit_v1_debug_vng_publisher_settings(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
-    let url = "/lol-honeyfruit/v1/debug-vng-publisher-settings";
+pub async fn delete_lol_honeyfruit_v1_account_claim_migration(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
+    let url = "/lol-honeyfruit/v1/account-claim/migration";
     let value = client.delete(url.to_owned()).await?;
     Ok(value)
 }
@@ -405,6 +399,34 @@ pub async fn delete_lol_suggested_players_v1_suggested_players_by_summoner_id(cl
     Ok(value)
 }
 
+pub async fn delete_lol_tft_team_planner_v1_team_champions(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
+    let url = "/lol-tft-team-planner/v1/team/champions";
+    let value = client.delete(url.to_owned()).await?;
+    Ok(value)
+}
+
+pub async fn delete_lol_tft_team_planner_v1_team_champions_by_id_by_champion_name(client: &RESTClient, champion_name: String) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-tft-team-planner/v1/team/championsById/{{champion_name}}", &json!({"champion_name": champion_name}))?;
+    let url = format!("{}", template_url);
+    let value = client.delete(url.to_owned()).await?;
+    Ok(value)
+}
+
+pub async fn delete_lol_tft_team_planner_v1_team_champions_by_index(client: &RESTClient, index: u32) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-tft-team-planner/v1/team/champions/{{index}}", &json!({"index": index}))?;
+    let url = format!("{}", template_url);
+    let value = client.delete(url.to_owned()).await?;
+    Ok(value)
+}
+
+pub async fn delete_lol_tft_team_planner_v1_team_dirty(client: &RESTClient) -> Result<(), Box<dyn Error>> {
+    let url = "/lol-tft-team-planner/v1/team/dirty";
+    client.delete(url.to_owned()).await?;
+    Ok(())
+}
+
 pub async fn delete_patcher_v1_notifications_by_id(client: &RESTClient, id: String) -> Result<Value, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/patcher/v1/notifications/{{id}}", &json!({"id": id}))?;
@@ -499,15 +521,15 @@ pub async fn get_by_plugin_assets_by_path(client: &RESTClient, plugin: String, p
     Ok(value)
 }
 
-pub async fn get_client_config_v1_config(client: &RESTClient, type_: ClientConfigConfigType, app: Option<String>, version: Option<String>, patchline: Option<String>, region: Option<String>, namespace: Option<String>) -> Result<HashMap<String, Value>, Box<dyn Error>> {
+pub async fn get_client_config_v1_config(client: &RESTClient, type_: String, app: Option<String>, version: Option<String>, patchline: Option<String>, region: Option<String>, namespace: Option<String>) -> Result<Value, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/client-config/v1/config?type={{type_}}&app={{app}}&version={{version}}&patchline={{patchline}}&region={{region}}&namespace={{namespace}}", &json!({"type_": type_, "app": app, "version": version, "patchline": patchline, "region": region, "namespace": namespace}))?;
     let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<HashMap<String, Value>>(value)?)
+    Ok(value)
 }
 
-pub async fn get_client_config_v1_config_by_name(client: &RESTClient, name: String, type_: ClientConfigConfigType, app: Option<String>, version: Option<String>, patchline: Option<String>, region: Option<String>) -> Result<Value, Box<dyn Error>> {
+pub async fn get_client_config_v1_config_by_name(client: &RESTClient, name: String, type_: String, app: Option<String>, version: Option<String>, patchline: Option<String>, region: Option<String>) -> Result<Value, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/client-config/v1/config/{{name}}?type={{type_}}&app={{app}}&version={{version}}&patchline={{patchline}}&region={{region}}", &json!({"name": name, "type_": type_, "app": app, "version": version, "patchline": patchline, "region": region}))?;
     let url = format!("{}", template_url);
@@ -515,12 +537,12 @@ pub async fn get_client_config_v1_config_by_name(client: &RESTClient, name: Stri
     Ok(value)
 }
 
-pub async fn get_client_config_v1_status_by_type(client: &RESTClient, type_: ClientConfigConfigType) -> Result<ClientConfigConfigStatus, Box<dyn Error>> {
+pub async fn get_client_config_v1_status_by_type(client: &RESTClient, type_: String) -> Result<RgaClientConfigConfigStatus, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/client-config/v1/status/{{type_}}", &json!({"type_": type_}))?;
     let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<ClientConfigConfigStatus>(value)?)
+    Ok(serde_json::from_value::<RgaClientConfigConfigStatus>(value)?)
 }
 
 pub async fn get_client_config_v2_config_by_name(client: &RESTClient, name: String) -> Result<Value, Box<dyn Error>> {
@@ -531,28 +553,28 @@ pub async fn get_client_config_v2_config_by_name(client: &RESTClient, name: Stri
     Ok(value)
 }
 
-pub async fn get_client_config_v2_namespace_by_namespace(client: &RESTClient, namespace: String) -> Result<HashMap<String, Value>, Box<dyn Error>> {
+pub async fn get_client_config_v2_namespace_by_namespace(client: &RESTClient, namespace: String) -> Result<Value, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/client-config/v2/namespace/{{namespace}}", &json!({"namespace": namespace}))?;
     let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<HashMap<String, Value>>(value)?)
+    Ok(value)
 }
 
-pub async fn get_client_config_v2_namespace_by_namespace_player(client: &RESTClient, namespace: String) -> Result<HashMap<String, Value>, Box<dyn Error>> {
+pub async fn get_client_config_v2_namespace_by_namespace_player(client: &RESTClient, namespace: String) -> Result<Value, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/client-config/v2/namespace/{{namespace}}/player", &json!({"namespace": namespace}))?;
     let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<HashMap<String, Value>>(value)?)
+    Ok(value)
 }
 
-pub async fn get_client_config_v2_namespace_by_namespace_public(client: &RESTClient, namespace: String) -> Result<HashMap<String, Value>, Box<dyn Error>> {
+pub async fn get_client_config_v2_namespace_by_namespace_public(client: &RESTClient, namespace: String) -> Result<Value, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/client-config/v2/namespace/{{namespace}}/public", &json!({"namespace": namespace}))?;
     let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<HashMap<String, Value>>(value)?)
+    Ok(value)
 }
 
 pub async fn get_config_v1_config(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
@@ -601,28 +623,16 @@ pub async fn get_entitlements_v1_token(client: &RESTClient) -> Result<Entitlemen
     Ok(serde_json::from_value::<EntitlementsToken>(value)?)
 }
 
-pub async fn get_lol_account_verification_v1_activation_pin(client: &RESTClient) -> Result<LolAccountVerificationSendActivationPinResponse, Box<dyn Error>> {
-    let url = "/lol-account-verification/v1/activationPin";
-    let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationSendActivationPinResponse>(value)?)
-}
-
-pub async fn get_lol_account_verification_v1_device(client: &RESTClient) -> Result<LolAccountVerificationDeviceResponse, Box<dyn Error>> {
-    let url = "/lol-account-verification/v1/device";
-    let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationDeviceResponse>(value)?)
-}
-
-pub async fn get_lol_account_verification_v1_get_phone_number(client: &RESTClient) -> Result<LolAccountVerificationPhoneNumberResponse, Box<dyn Error>> {
-    let url = "/lol-account-verification/v1/get-phone-number";
-    let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationPhoneNumberResponse>(value)?)
-}
-
 pub async fn get_lol_account_verification_v1_is_verified(client: &RESTClient) -> Result<LolAccountVerificationIsVerifiedResponse, Box<dyn Error>> {
     let url = "/lol-account-verification/v1/is-verified";
     let value = client.get(url.to_owned()).await?;
     Ok(serde_json::from_value::<LolAccountVerificationIsVerifiedResponse>(value)?)
+}
+
+pub async fn get_lol_account_verification_v1_phone_number(client: &RESTClient) -> Result<LolAccountVerificationPhoneNumberResponse, Box<dyn Error>> {
+    let url = "/lol-account-verification/v1/phone-number";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolAccountVerificationPhoneNumberResponse>(value)?)
 }
 
 pub async fn get_lol_active_boosts_v1_active_boosts(client: &RESTClient) -> Result<LolActiveBoostsActiveBoosts, Box<dyn Error>> {
@@ -853,8 +863,8 @@ pub async fn get_lol_challenges_v1_summary_players_data_players(client: &RESTCli
     Ok(serde_json::from_value::<HashMap<String, LolChallengesUIPlayerSummary>>(value)?)
 }
 
-pub async fn get_lol_challenges_v1_titles(client: &RESTClient) -> Result<HashMap<String, LolChallengesUITitle>, Box<dyn Error>> {
-    let url = "/lol-challenges/v1/titles";
+pub async fn get_lol_challenges_v1_titles_all(client: &RESTClient) -> Result<HashMap<String, LolChallengesUITitle>, Box<dyn Error>> {
+    let url = "/lol-challenges/v1/titles/all";
     let value = client.get(url.to_owned()).await?;
     Ok(serde_json::from_value::<HashMap<String, LolChallengesUITitle>>(value)?)
 }
@@ -2147,10 +2157,30 @@ pub async fn get_lol_highlights_v1_highlights_folder_path_default(client: &RESTC
     Ok(serde_json::from_value::<String>(value)?)
 }
 
-pub async fn get_lol_honeyfruit_v1_linking_status(client: &RESTClient) -> Result<LolHoneyfruitHoneyfruitLinkingStatus, Box<dyn Error>> {
-    let url = "/lol-honeyfruit/v1/linking-status";
+pub async fn get_lol_honeyfruit_v1_account_claim_account_status_by_puuid(client: &RESTClient, puuid: String) -> Result<LolHoneyfruitAccountClaimStatus, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-honeyfruit/v1/account-claim/account-status/{{puuid}}", &json!({"puuid": puuid}))?;
+    let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<LolHoneyfruitHoneyfruitLinkingStatus>(value)?)
+    Ok(serde_json::from_value::<LolHoneyfruitAccountClaimStatus>(value)?)
+}
+
+pub async fn get_lol_honeyfruit_v1_account_claim_auto_dismiss(client: &RESTClient) -> Result<bool, Box<dyn Error>> {
+    let url = "/lol-honeyfruit/v1/account-claim/auto-dismiss";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<bool>(value)?)
+}
+
+pub async fn get_lol_honeyfruit_v1_account_claim_migration(client: &RESTClient) -> Result<String, Box<dyn Error>> {
+    let url = "/lol-honeyfruit/v1/account-claim/migration";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<String>(value)?)
+}
+
+pub async fn get_lol_honeyfruit_v1_linking_settings_button_available(client: &RESTClient) -> Result<bool, Box<dyn Error>> {
+    let url = "/lol-honeyfruit/v1/linking-settings-button-available";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<bool>(value)?)
 }
 
 pub async fn get_lol_honeyfruit_v1_vng_publisher_settings(client: &RESTClient) -> Result<LolHoneyfruitHoneyfruitVNGPublisherSettings, Box<dyn Error>> {
@@ -2455,6 +2485,12 @@ pub async fn get_lol_leaver_buster_v1_notifications_by_id(client: &RESTClient, i
     Ok(serde_json::from_value::<LolLeaverBusterLeaverBusterNotificationResource>(value)?)
 }
 
+pub async fn get_lol_license_agreement_v1_agreement(client: &RESTClient) -> Result<String, Box<dyn Error>> {
+    let url = "/lol-license-agreement/v1/agreement";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<String>(value)?)
+}
+
 pub async fn get_lol_license_agreement_v1_agreements(client: &RESTClient) -> Result<Vec<LolLicenseAgreementLicenseAgreement>, Box<dyn Error>> {
     let url = "/lol-license-agreement/v1/agreements";
     let value = client.get(url.to_owned()).await?;
@@ -2465,6 +2501,12 @@ pub async fn get_lol_license_agreement_v1_all_agreements(client: &RESTClient) ->
     let url = "/lol-license-agreement/v1/all-agreements";
     let value = client.get(url.to_owned()).await?;
     Ok(serde_json::from_value::<Vec<LolLicenseAgreementLicenseAgreement>>(value)?)
+}
+
+pub async fn get_lol_license_agreement_v1_privacy_policy(client: &RESTClient) -> Result<String, Box<dyn Error>> {
+    let url = "/lol-license-agreement/v1/privacy-policy";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<String>(value)?)
 }
 
 pub async fn get_lol_license_agreement_v1_serve_location(client: &RESTClient) -> Result<LolLicenseAgreementLicenseServeLocation, Box<dyn Error>> {
@@ -3295,6 +3337,20 @@ pub async fn get_lol_perks_v1_recommended_pages_champion_by_champion_id_position
     Ok(serde_json::from_value::<Vec<LolPerksPerkUIRecommendedPage>>(value)?)
 }
 
+pub async fn get_lol_perks_v1_recommended_pages_position_champion_by_champion_id(client: &RESTClient, champion_id: i32) -> Result<String, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-perks/v1/recommended-pages-position/champion/{{champion_id}}", &json!({"champion_id": champion_id}))?;
+    let url = format!("{}", template_url);
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<String>(value)?)
+}
+
+pub async fn get_lol_perks_v1_rune_recommender_auto_select(client: &RESTClient) -> Result<bool, Box<dyn Error>> {
+    let url = "/lol-perks/v1/rune-recommender-auto-select";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<bool>(value)?)
+}
+
 pub async fn get_lol_perks_v1_settings(client: &RESTClient) -> Result<LolPerksUISettings, Box<dyn Error>> {
     let url = "/lol-perks/v1/settings";
     let value = client.get(url.to_owned()).await?;
@@ -3655,14 +3711,6 @@ pub async fn get_lol_ranked_v1_notifications(client: &RESTClient) -> Result<Vec<
     Ok(serde_json::from_value::<Vec<LolRankedLcuLeagueNotification>>(value)?)
 }
 
-pub async fn get_lol_ranked_v1_ranked_stats(client: &RESTClient, puuids: Vec<String>) -> Result<HashMap<String, LolRankedRankedStats>, Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/lol-ranked/v1/ranked-stats?puuids={{puuids}}", &json!({"puuids": puuids}))?;
-    let url = format!("{}", template_url);
-    let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<HashMap<String, LolRankedRankedStats>>(value)?)
-}
-
 pub async fn get_lol_ranked_v1_ranked_stats_by_puuid(client: &RESTClient, puuid: String) -> Result<LolRankedRankedStats, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/lol-ranked/v1/ranked-stats/{{puuid}}", &json!({"puuid": puuid}))?;
@@ -3755,6 +3803,22 @@ pub async fn get_lol_regalia_v2_summoners_by_summoner_id_regalia_async(client: &
     let url = format!("{}", template_url);
     let value = client.get(url.to_owned()).await?;
     Ok(serde_json::from_value::<LolRegaliaRegaliaAsync>(value)?)
+}
+
+pub async fn get_lol_regalia_v3_inventory_by_inventory_type(client: &RESTClient, inventory_type: String) -> Result<HashMap<String, LolRegaliaRegaliaInventoryItem>, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-regalia/v3/inventory/{{inventory_type}}", &json!({"inventory_type": inventory_type}))?;
+    let url = format!("{}", template_url);
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<HashMap<String, LolRegaliaRegaliaInventoryItem>>(value)?)
+}
+
+pub async fn get_lol_regalia_v3_summoners_by_summoner_id_regalia(client: &RESTClient, summoner_id: u64) -> Result<LolRegaliaRegalia, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-regalia/v3/summoners/{{summoner_id}}/regalia", &json!({"summoner_id": summoner_id}))?;
+    let url = format!("{}", template_url);
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolRegaliaRegalia>(value)?)
 }
 
 pub async fn get_lol_replays_v1_configuration(client: &RESTClient) -> Result<LolReplaysReplaysConfiguration, Box<dyn Error>> {
@@ -4325,10 +4389,40 @@ pub async fn get_lol_tastes_v1_tft_overview_model(client: &RESTClient) -> Result
     Ok(serde_json::from_value::<LolTastesDataModelResponse>(value)?)
 }
 
+pub async fn get_lol_tft_team_planner_v1_config(client: &RESTClient) -> Result<LolTftTeamPlannerTFTTeamPlannerConfig, Box<dyn Error>> {
+    let url = "/lol-tft-team-planner/v1/config";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolTftTeamPlannerTFTTeamPlannerConfig>(value)?)
+}
+
+pub async fn get_lol_tft_team_planner_v1_team_dirty(client: &RESTClient) -> Result<LolTftTeamPlannerTeamPlan, Box<dyn Error>> {
+    let url = "/lol-tft-team-planner/v1/team/dirty";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolTftTeamPlannerTeamPlan>(value)?)
+}
+
+pub async fn get_lol_tft_team_planner_v1_team_local(client: &RESTClient) -> Result<LolTftTeamPlannerTeamSettings, Box<dyn Error>> {
+    let url = "/lol-tft-team-planner/v1/team/local";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolTftTeamPlannerTeamSettings>(value)?)
+}
+
+pub async fn get_lol_tft_v1_tft_battle_pass_hub(client: &RESTClient) -> Result<LolTftLolTftBattlePassHub, Box<dyn Error>> {
+    let url = "/lol-tft/v1/tft/battlePassHub";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolTftLolTftBattlePassHub>(value)?)
+}
+
 pub async fn get_lol_tft_v1_tft_direct_to_hub(client: &RESTClient) -> Result<bool, Box<dyn Error>> {
     let url = "/lol-tft/v1/tft/directToHub";
     let value = client.get(url.to_owned()).await?;
     Ok(serde_json::from_value::<bool>(value)?)
+}
+
+pub async fn get_lol_tft_v1_tft_events(client: &RESTClient) -> Result<LolTftLolTftEvents, Box<dyn Error>> {
+    let url = "/lol-tft/v1/tft/events";
+    let value = client.get(url.to_owned()).await?;
+    Ok(serde_json::from_value::<LolTftLolTftEvents>(value)?)
 }
 
 pub async fn get_lol_tft_v1_tft_home_hub(client: &RESTClient) -> Result<LolTftLolTftHomeHub, Box<dyn Error>> {
@@ -4347,12 +4441,6 @@ pub async fn get_lol_tft_v2_tft_battlepass(client: &RESTClient) -> Result<LolMis
     let url = "/lol-tft/v2/tft/battlepass";
     let value = client.get(url.to_owned()).await?;
     Ok(serde_json::from_value::<LolMissionsTftPaidBattlepass>(value)?)
-}
-
-pub async fn get_lol_token_upsell_v1_all(client: &RESTClient) -> Result<Vec<LolWorldsTokenCardTokenUpsell>, Box<dyn Error>> {
-    let url = "/lol-token-upsell/v1/all";
-    let value = client.get(url.to_owned()).await?;
-    Ok(serde_json::from_value::<Vec<LolWorldsTokenCardTokenUpsell>>(value)?)
 }
 
 pub async fn get_lol_trophies_v1_current_summoner_trophies_profile(client: &RESTClient) -> Result<LolTrophiesTrophyProfileData, Box<dyn Error>> {
@@ -4900,6 +4988,14 @@ pub async fn patch_lol_settings_v2_local_by_category(client: &RESTClient, catego
     Ok(value)
 }
 
+pub async fn patch_lol_tft_team_planner_v1_team_champions(client: &RESTClient, indices: Vec<u32>) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-tft-team-planner/v1/team/champions?indices={{indices}}", &json!({"indices": indices}))?;
+    let url = format!("{}", template_url);
+    let value = client.patch(url.to_owned(), None).await?;
+    Ok(value)
+}
+
 pub async fn patch_patcher_v1_p2p_status(client: &RESTClient, body: PatcherP2PStatusUpdate) -> Result<Value, Box<dyn Error>> {
     let body = serde_json::to_value(&body)?;
     let url = "/patcher/v1/p2p/status";
@@ -4957,13 +5053,6 @@ pub async fn post_data_store_v1_install_settings_by_path(client: &RESTClient, pa
     Ok(())
 }
 
-pub async fn post_lol_account_verification_v1_authenticate(client: &RESTClient, body: LolAccountVerificationAuthenticateRequest) -> Result<LolAccountVerificationAuthenticateResponse, Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/lol-account-verification/v1/authenticate";
-    let value = client.post(url.to_owned(), Some(body)).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationAuthenticateResponse>(value)?)
-}
-
 pub async fn post_lol_account_verification_v1_confirm_activation_pin(client: &RESTClient, body: LolAccountVerificationConfirmActivationPinRequest) -> Result<(), Box<dyn Error>> {
     let body = serde_json::to_value(&body)?;
     let url = "/lol-account-verification/v1/confirmActivationPin";
@@ -4978,12 +5067,6 @@ pub async fn post_lol_account_verification_v1_confirm_deactivation_pin(client: &
     Ok(())
 }
 
-pub async fn post_lol_account_verification_v1_invalidate(client: &RESTClient) -> Result<LolAccountVerificationInvalidateResponse, Box<dyn Error>> {
-    let url = "/lol-account-verification/v1/invalidate";
-    let value = client.post(url.to_owned(), None).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationInvalidateResponse>(value)?)
-}
-
 pub async fn post_lol_account_verification_v1_send_activation_pin(client: &RESTClient, body: LolAccountVerificationSendActivationPinRequest) -> Result<(), Box<dyn Error>> {
     let body = serde_json::to_value(&body)?;
     let url = "/lol-account-verification/v1/sendActivationPin";
@@ -4996,20 +5079,6 @@ pub async fn post_lol_account_verification_v1_send_deactivation_pin(client: &RES
     let url = "/lol-account-verification/v1/sendDeactivationPin";
     client.post(url.to_owned(), Some(body)).await?;
     Ok(())
-}
-
-pub async fn post_lol_account_verification_v1_send_token(client: &RESTClient, body: LolAccountVerificationSendTokenRequest) -> Result<LolAccountVerificationSendTokenResponse, Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/lol-account-verification/v1/send-token";
-    let value = client.post(url.to_owned(), Some(body)).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationSendTokenResponse>(value)?)
-}
-
-pub async fn post_lol_account_verification_v1_verify(client: &RESTClient, body: LolAccountVerificationVerifyRequest) -> Result<LolAccountVerificationVerifyResponse, Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/lol-account-verification/v1/verify";
-    let value = client.post(url.to_owned(), Some(body)).await?;
-    Ok(serde_json::from_value::<LolAccountVerificationVerifyResponse>(value)?)
 }
 
 pub async fn post_lol_career_stats_v1_champion_stats_percentiles(client: &RESTClient, body: Vec<LolCareerStatsStatsQueryRequest>) -> Result<Vec<LolCareerStatsStatisticsPercentilesResponse>, Box<dyn Error>> {
@@ -5700,12 +5769,6 @@ pub async fn post_lol_event_shop_v1_claim_select_bonus_iteration(client: &RESTCl
     Ok(())
 }
 
-pub async fn post_lol_event_shop_v1_lazy_load_data(client: &RESTClient) -> Result<(), Box<dyn Error>> {
-    let url = "/lol-event-shop/v1/lazy-load-data";
-    client.post(url.to_owned(), None).await?;
-    Ok(())
-}
-
 pub async fn post_lol_event_shop_v1_purchase_offer(client: &RESTClient, body: LolEventShopPurchaseOfferRequest) -> Result<LolEventShopPurchaseOfferResponseV3, Box<dyn Error>> {
     let body = serde_json::to_value(&body)?;
     let url = "/lol-event-shop/v1/purchase-offer";
@@ -5910,6 +5973,18 @@ pub async fn post_lol_highlights_v1_highlights(client: &RESTClient) -> Result<Ve
     let url = "/lol-highlights/v1/highlights";
     let value = client.post(url.to_owned(), None).await?;
     Ok(serde_json::from_value::<Vec<LolHighlightsHighlight>>(value)?)
+}
+
+pub async fn post_lol_honeyfruit_v1_account_claim_linking_redirect(client: &RESTClient) -> Result<(), Box<dyn Error>> {
+    let url = "/lol-honeyfruit/v1/account-claim/linking-redirect";
+    client.post(url.to_owned(), None).await?;
+    Ok(())
+}
+
+pub async fn post_lol_honeyfruit_v1_account_claim_migration(client: &RESTClient) -> Result<String, Box<dyn Error>> {
+    let url = "/lol-honeyfruit/v1/account-claim/migration";
+    let value = client.post(url.to_owned(), None).await?;
+    Ok(serde_json::from_value::<String>(value)?)
 }
 
 pub async fn post_lol_honeyfruit_v1_vng_publisher_settings(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
@@ -6572,6 +6647,20 @@ pub async fn post_lol_perks_v1_pages(client: &RESTClient, body: LolPerksPerkPage
     Ok(serde_json::from_value::<LolPerksPerkPageResource>(value)?)
 }
 
+pub async fn post_lol_perks_v1_recommended_pages_position_champion_by_champion_id_position_by_position(client: &RESTClient, champion_id: i32, position: String) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-perks/v1/recommended-pages-position/champion/{championId}/position/{{position}}", &json!({"champion_id": champion_id, "position": position}))?;
+    let url = format!("{}", template_url);
+    let value = client.post(url.to_owned(), None).await?;
+    Ok(value)
+}
+
+pub async fn post_lol_perks_v1_rune_recommender_auto_select(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
+    let url = "/lol-perks/v1/rune-recommender-auto-select";
+    let value = client.post(url.to_owned(), None).await?;
+    Ok(value)
+}
+
 pub async fn post_lol_perks_v1_show_auto_modified_pages_notification(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
     let url = "/lol-perks/v1/show-auto-modified-pages-notification";
     let value = client.post(url.to_owned(), None).await?;
@@ -6963,6 +7052,28 @@ pub async fn post_lol_summoner_v2_summoners_puuid(client: &RESTClient, puuids: V
     Ok(serde_json::from_value::<Vec<LolSummonerSummoner>>(value)?)
 }
 
+pub async fn post_lol_tft_team_planner_v1_team_champions_by_id_by_champion_name(client: &RESTClient, champion_name: String) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-tft-team-planner/v1/team/championsById/{{champion_name}}", &json!({"champion_name": champion_name}))?;
+    let url = format!("{}", template_url);
+    let value = client.post(url.to_owned(), None).await?;
+    Ok(value)
+}
+
+pub async fn post_lol_tft_team_planner_v1_team_champions_by_index(client: &RESTClient, index: u32, champion_name: String) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-tft-team-planner/v1/team/champions/{{index}}?championName={{champion_name}}", &json!({"index": index, "champion_name": champion_name}))?;
+    let url = format!("{}", template_url);
+    let value = client.post(url.to_owned(), None).await?;
+    Ok(value)
+}
+
+pub async fn post_lol_tft_v1_tft_events_redirect(client: &RESTClient) -> Result<(), Box<dyn Error>> {
+    let url = "/lol-tft/v1/tft/events/redirect";
+    client.post(url.to_owned(), None).await?;
+    Ok(())
+}
+
 pub async fn post_lol_yourshop_v1_offers_by_id_purchase(client: &RESTClient, id: String) -> Result<LolYourshopPurchaseResponse, Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/lol-yourshop/v1/offers/{{id}}/purchase", &json!({"id": id}))?;
@@ -7254,14 +7365,6 @@ pub async fn post_telemetry_v1_events_by_event_type(client: &RESTClient, event_t
     Ok(())
 }
 
-pub async fn post_telemetry_v1_events_once_by_event_type(client: &RESTClient, event_type: String, once_tag: String, event_data: HashMap<String, Value>) -> Result<(), Box<dyn Error>> {
-    let reg = Handlebars::new();
-    let template_url = reg.render_template("/telemetry/v1/events-once/{{event_type}}?onceTag={{once_tag}}&eventData={{event_data}}", &json!({"event_type": event_type, "once_tag": once_tag, "event_data": event_data}))?;
-    let url = format!("{}", template_url);
-    client.post(url.to_owned(), None).await?;
-    Ok(())
-}
-
 pub async fn post_telemetry_v1_events_with_perf_info_by_event_type(client: &RESTClient, event_type: String, event_data: HashMap<String, Value>) -> Result<(), Box<dyn Error>> {
     let reg = Handlebars::new();
     let template_url = reg.render_template("/telemetry/v1/events-with-perf-info/{{event_type}}?eventData={{event_data}}", &json!({"event_type": event_type, "event_data": event_data}))?;
@@ -7278,9 +7381,9 @@ pub async fn post_telemetry_v3_events_by_event_type(client: &RESTClient, event_t
     Ok(())
 }
 
-pub async fn post_telemetry_v3_events_once_by_event_type(client: &RESTClient, event_type: String, once_tag: String, event_data: HashMap<String, Value>) -> Result<(), Box<dyn Error>> {
+pub async fn post_telemetry_v3_events_once_by_event_type_by_once_tag(client: &RESTClient, event_type: String, once_tag: String, event_data: HashMap<String, String>) -> Result<(), Box<dyn Error>> {
     let reg = Handlebars::new();
-    let template_url = reg.render_template("/telemetry/v3/events-once/{{event_type}}?onceTag={{once_tag}}&eventData={{event_data}}", &json!({"event_type": event_type, "once_tag": once_tag, "event_data": event_data}))?;
+    let template_url = reg.render_template("/telemetry/v3/events-once/{eventType}/{{once_tag}}?eventData={{event_data}}", &json!({"event_type": event_type, "once_tag": once_tag, "event_data": event_data}))?;
     let url = format!("{}", template_url);
     client.post(url.to_owned(), None).await?;
     Ok(())
@@ -7379,26 +7482,6 @@ pub async fn post_tracing_v1_trace_time_series_event_by_event_name_marker_by_mar
     let template_url = reg.render_template("/tracing/v1/trace/time-series-event/{eventName}/marker/{{marker_name}}?when={{when}}", &json!({"event_name": event_name, "marker_name": marker_name, "when": when}))?;
     let url = format!("{}", template_url);
     client.post(url.to_owned(), None).await?;
-    Ok(())
-}
-
-pub async fn put_client_config_v1_entitlements_token(client: &RESTClient, body: ClientConfigEntitlementsUpdate) -> Result<(), Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/client-config/v1/entitlements-token";
-    client.put(url.to_owned(), Some(body)).await?;
-    Ok(())
-}
-
-pub async fn put_client_config_v1_refresh_config_status(client: &RESTClient) -> Result<(), Box<dyn Error>> {
-    let url = "/client-config/v1/refresh-config-status";
-    client.put(url.to_owned(), None).await?;
-    Ok(())
-}
-
-pub async fn put_client_config_v2_namespace_changes(client: &RESTClient, body: ClientConfigConfigNamespaceUpdate) -> Result<(), Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/client-config/v2/namespace-changes";
-    client.put(url.to_owned(), Some(body)).await?;
     Ok(())
 }
 
@@ -7530,24 +7613,11 @@ pub async fn put_lol_highlights_v1_highlights_by_id(client: &RESTClient, id: u64
     Ok(serde_json::from_value::<LolHighlightsHighlight>(value)?)
 }
 
-pub async fn put_lol_honeyfruit_v1_debug_linking_status(client: &RESTClient, body: LolHoneyfruitHoneyfruitLinkingStatus) -> Result<Value, Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/lol-honeyfruit/v1/debug-linking-status";
-    let value = client.put(url.to_owned(), Some(body)).await?;
-    Ok(value)
-}
-
-pub async fn put_lol_honeyfruit_v1_debug_vng_publisher_settings(client: &RESTClient, body: LolHoneyfruitHoneyfruitVNGPublisherSettings) -> Result<Value, Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/lol-honeyfruit/v1/debug-vng-publisher-settings";
-    let value = client.put(url.to_owned(), Some(body)).await?;
-    Ok(value)
-}
-
-pub async fn put_lol_honeyfruit_v1_linking_status(client: &RESTClient, body: LolHoneyfruitHoneyfruitLinkingAction) -> Result<Value, Box<dyn Error>> {
-    let body = serde_json::to_value(&body)?;
-    let url = "/lol-honeyfruit/v1/linking-status";
-    let value = client.put(url.to_owned(), Some(body)).await?;
+pub async fn put_lol_honeyfruit_v1_account_claim_auto_dismiss(client: &RESTClient, should_dismiss: bool) -> Result<Value, Box<dyn Error>> {
+    let reg = Handlebars::new();
+    let template_url = reg.render_template("/lol-honeyfruit/v1/account-claim/auto-dismiss?shouldDismiss={{should_dismiss}}", &json!({"should_dismiss": should_dismiss}))?;
+    let url = format!("{}", template_url);
+    let value = client.put(url.to_owned(), None).await?;
     Ok(value)
 }
 
@@ -7857,6 +7927,12 @@ pub async fn put_lol_summoner_v1_current_summoner_profile_privacy(client: &RESTC
     let reg = Handlebars::new();
     let template_url = reg.render_template("/lol-summoner/v1/current-summoner/profile-privacy?body={{body}}", &json!({"body": body}))?;
     let url = format!("{}", template_url);
+    let value = client.put(url.to_owned(), None).await?;
+    Ok(value)
+}
+
+pub async fn put_lol_tft_team_planner_v1_team(client: &RESTClient) -> Result<Value, Box<dyn Error>> {
+    let url = "/lol-tft-team-planner/v1/team";
     let value = client.put(url.to_owned(), None).await?;
     Ok(value)
 }

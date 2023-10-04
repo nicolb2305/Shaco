@@ -1,13 +1,13 @@
 #![allow(dead_code, non_snake_case, non_camel_case_types)]
-use std::collections::HashMap;
-use serde_json::Value;
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
+use std::collections::HashMap;
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ActiveBoostsLcdsStoreFulfillmentNotification {
     pub inventory_type: String,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19,13 +19,13 @@ pub struct ActiveBoostsLcdsSummonerActiveBoostsDTO {
     pub ip_loyalty_boost: u32,
     pub xp_boost_end_date: i64,
     pub xp_boost_per_win_count: u32,
-    pub xp_loyalty_boost: u32
+    pub xp_loyalty_boost: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct AlertDTO {
-    pub alert_time: i64
+    pub alert_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -33,7 +33,7 @@ pub struct AlertDTO {
 pub struct BannedChampion {
     pub champion_id: i32,
     pub team_id: i32,
-    pub pick_turn: i32
+    pub pick_turn: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -41,27 +41,27 @@ pub struct BannedChampion {
 pub struct BasePlayerDTO {
     pub code: i32,
     pub message: String,
-    pub data: MatchedPlayerDTO
+    pub data: MatchedPlayerDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingAsyncCancelEvent {
-    pub async_token: u32
+    pub async_token: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingAsyncFailureEvent {
     pub async_token: u32,
-    pub error: String
+    pub error: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingCallbackEvent {
     pub id: u32,
-    pub parameters: Vec<Value>
+    pub parameters: Vec<Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -69,7 +69,7 @@ pub struct BindingCallbackEvent {
 pub struct BindingFullApiHelp {
     pub functions: Vec<BindingFullFunctionHelp>,
     pub types: Vec<BindingFullTypeHelp>,
-    pub events: Vec<BindingFullEventHelp>
+    pub events: Vec<BindingFullEventHelp>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -79,7 +79,7 @@ pub struct BindingFullArgumentHelp {
     pub description: String,
     #[serde(rename = "type")]
     pub type_: BindingFullTypeIdentifier,
-    pub optional: bool
+    pub optional: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -87,7 +87,7 @@ pub struct BindingFullArgumentHelp {
 pub struct BindingFullEnumValueHelp {
     pub name: String,
     pub description: String,
-    pub value: i32
+    pub value: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -98,7 +98,7 @@ pub struct BindingFullEventHelp {
     #[serde(rename = "type")]
     pub type_: BindingFullTypeIdentifier,
     pub description: String,
-    pub tags: Vec<String>
+    pub tags: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -109,7 +109,7 @@ pub struct BindingFullFieldHelp {
     pub offset: u32,
     #[serde(rename = "type")]
     pub type_: BindingFullTypeIdentifier,
-    pub optional: bool
+    pub optional: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -124,7 +124,7 @@ pub struct BindingFullFunctionHelp {
     pub thread_safe: bool,
     #[serde(rename = "async")]
     pub async_: String,
-    pub tags: Vec<String>
+    pub tags: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -136,7 +136,7 @@ pub struct BindingFullTypeHelp {
     pub description: String,
     pub tags: Vec<String>,
     pub fields: Vec<BindingFullFieldHelp>,
-    pub values: Vec<BindingFullEnumValueHelp>
+    pub values: Vec<BindingFullEnumValueHelp>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -144,20 +144,20 @@ pub struct BindingFullTypeHelp {
 pub struct BindingFullTypeIdentifier {
     #[serde(rename = "type")]
     pub type_: String,
-    pub element_type: String
+    pub element_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingGenericAsyncEvent {
     pub async_token: u32,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BindingGenericEvent {
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -169,7 +169,7 @@ pub struct BoostTeamSkinRentalDTO {
     pub ip_reward: i64,
     pub ip_reward_for_purchaser: i64,
     pub available_skins: Vec<i64>,
-    pub unlocked: bool
+    pub unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -181,7 +181,7 @@ pub struct Bracket {
     pub id: i64,
     pub size: i32,
     pub matches: Vec<BracketMatch>,
-    pub rosters: Vec<BracketRoster>
+    pub rosters: Vec<BracketRoster>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -202,7 +202,7 @@ pub struct BracketMatch {
     pub game_id: i64,
     pub loser_bracket: bool,
     pub forfeit_roster_id: i64,
-    pub fail_roster_status: i32
+    pub fail_roster_status: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -212,7 +212,7 @@ pub struct BracketRoster {
     pub name: String,
     pub short_name: String,
     pub logo: i32,
-    pub logo_color: i32
+    pub logo_color: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -221,7 +221,7 @@ pub struct BuildInfo {
     pub branch: String,
     pub patchline: String,
     pub version: String,
-    pub patchline_visible_name: String
+    pub patchline_visible_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -233,6 +233,7 @@ pub struct ChampSelectLcdsGameDTO {
     pub room_name: String,
     pub room_password: String,
     pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: MucJwtDto,
     pub name: String,
     pub player_champion_selections: Vec<ChampSelectLcdsPlayerChampionSelectionDTO>,
     pub banned_champions: Vec<BannedChampion>,
@@ -242,20 +243,20 @@ pub struct ChampSelectLcdsGameDTO {
     pub optimistic_lock: i64,
     pub pick_turn: i32,
     pub spectator_delay: i64,
-    pub game_mutators: Vec<String>
+    pub game_mutators: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsGameTimerDTO {
     pub current_game_state: String,
-    pub remaining_time_in_millis: f64
+    pub remaining_time_in_millis: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsObfuscatedParticipant {
-    pub game_unique_id: u64
+    pub game_unique_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -265,7 +266,7 @@ pub struct ChampSelectLcdsPlayerChampionSelectionDTO {
     pub champion_id: i32,
     pub selected_skin_index: i32,
     pub spell1_id: i32,
-    pub spell2_id: i32
+    pub spell2_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -275,7 +276,7 @@ pub struct ChampSelectLcdsPlayerParticipant {
     pub summoner_internal_name: String,
     pub summoner_id: u64,
     pub pick_mode: i32,
-    pub pick_turn: i32
+    pub pick_turn: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -285,20 +286,20 @@ pub struct ChampSelectLcdsPointSummary {
     pub current_points: i32,
     pub number_of_rolls: i32,
     pub max_rolls: i32,
-    pub points_cost_to_roll: i32
+    pub points_cost_to_roll: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsPotentialTradersDTO {
-    pub potential_traders: Vec<String>
+    pub potential_traders: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ChampSelectLcdsRollResult {
     pub champion_id: i32,
-    pub point_summary: ChampSelectLcdsPointSummary
+    pub point_summary: ChampSelectLcdsPointSummary,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -308,7 +309,7 @@ pub struct ChampSelectLcdsTradeContractDTO {
     pub responder_internal_summoner_name: String,
     pub requester_champion_id: i32,
     pub responder_champion_id: i32,
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -316,7 +317,7 @@ pub struct ChampSelectLcdsTradeContractDTO {
 pub struct ChampionMasteryPublicDTO {
     pub champion_id: i32,
     pub champion_level: i32,
-    pub champion_points: i32
+    pub champion_points: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -325,7 +326,7 @@ pub struct ChampionScoutingDTO {
     pub champion_id: i32,
     pub win_count: i32,
     pub game_count: i32,
-    pub kda: f32
+    pub kda: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -345,7 +346,7 @@ pub struct ClashEventData {
     pub team_logo_name: String,
     pub team_logo_chroma_id: String,
     pub player_u_u_i_ds: Vec<String>,
-    pub reward_spec: ClashRewardSpec
+    pub reward_spec: ClashRewardSpec,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -353,7 +354,7 @@ pub struct ClashEventData {
 pub struct ClashOfflineNotification {
     pub tournament_id: i64,
     pub reason: String,
-    pub meta_data: HashMap<String, String>
+    pub meta_data: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -361,21 +362,21 @@ pub struct ClashOfflineNotification {
 pub struct ClashRewardConfigClient {
     pub name: String,
     pub key_def: Vec<ClashRewardKeyType>,
-    pub entries: Vec<ClashRewardConfigEntry>
+    pub entries: Vec<ClashRewardConfigEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardConfigEntry {
     pub key: String,
-    pub vals: Vec<ClashRewardOutput>
+    pub vals: Vec<ClashRewardOutput>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClashRewardDefinition {
     pub reward_type: ClashRewardType,
-    pub reward_spec: ClashRewardSpec
+    pub reward_spec: ClashRewardSpec,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -384,7 +385,7 @@ pub struct ClashRewardOutput {
     pub primary: ClashRewardDefinition,
     pub alternative: ClashRewardDefinition,
     pub grant: ClashRewardTime,
-    pub show: ClashRewardTime
+    pub show: ClashRewardTime,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -399,7 +400,7 @@ pub struct ClashRewardSpec {
     pub level: String,
     pub season_id: String,
     pub name: String,
-    pub quantity: String
+    pub quantity: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -411,74 +412,7 @@ pub struct ClashSeasonRewardResult {
     pub banned: bool,
     pub honor_level: i32,
     pub eligible: bool,
-    pub rewards: Vec<ClashRewardDefinition>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigAuthenticatedConnection {
-    pub connection_id: u32,
-    pub subscribed: bool,
-    pub auth_token: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigBuildInfo {
-    pub content_build_id: i32,
-    pub code_build_id: i32,
-    pub game_data_build_id: i32,
-    pub branch: String,
-    pub branch_full: String,
-    pub game_branch: String,
-    pub game_branch_full: String,
-    pub patchline: String,
-    pub version: String,
-    pub patchline_visible_name: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigClientConfig {
-    pub params: ClientConfigConfigParams,
-    pub data: HashMap<String, Value>,
-    pub update_time: i64
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigConfigNamespaceUpdate {
-    pub public: Vec<String>,
-    pub player: Vec<String>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigConfigParams {
-    #[serde(rename = "type")]
-    pub type_: ClientConfigConfigType,
-    pub app_name: String,
-    pub version: String,
-    pub patchline: String,
-    pub region: String,
-    pub namespace: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigConfigStatus {
-    pub readiness: ClientConfigConfigReadinessEnum,
-    pub update_id: u64
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigDataPaths {
-    pub user_data_root: String,
-    pub config_root: String,
-    pub data_root: String,
-    pub local_settings_path: String,
-    pub private_settings_path: String
+    pub rewards: Vec<ClashRewardDefinition>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -488,41 +422,14 @@ pub struct ClientConfigDepInjectorEntitlements {
     pub token: String,
     pub subject: String,
     pub issuer: String,
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ClientConfigDepInjectorEntitlementsUpdate {
     pub entitlements_update_type: ClientConfigDepInjectorEntitlementsUpdateType,
-    pub entitlements_token_resource: ClientConfigDepInjectorEntitlements
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigEntitlements {
-    pub access_token: String,
-    pub token: String,
-    pub subject: String,
-    pub issuer: String,
-    pub entitlements: Vec<String>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigEntitlementsUpdate {
-    pub update_type: ClientConfigUpdateType,
-    pub entitlements_token_resource: ClientConfigEntitlements
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct ClientConfigSession {
-    pub product_id: String,
-    pub patchline_id: String,
-    pub version: String,
-    pub is_internal: bool,
-    pub connections: Vec<ClientConfigAuthenticatedConnection>
+    pub entitlements_token_resource: ClientConfigDepInjectorEntitlements,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -530,7 +437,7 @@ pub struct ClientConfigSession {
 pub struct ClientDynamicConfig {
     pub configs: String,
     pub delta: bool,
-    pub compressed: bool
+    pub compressed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -549,7 +456,7 @@ pub struct CollectionsLcdsChampionDTO {
     pub f2p_reward_sources: Vec<String>,
     pub owned: bool,
     pub purchased: u64,
-    pub ranked_play_enabled: bool
+    pub ranked_play_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -565,35 +472,35 @@ pub struct CollectionsLcdsChampionSkinDTO {
     pub last_selected: bool,
     pub owned: bool,
     pub skin_id: i32,
-    pub still_obtainable: bool
+    pub still_obtainable: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsClientDynamicConfigurationNotification {
     pub configs: String,
-    pub delta: bool
+    pub delta: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsRentalUpdateNotification {
     pub inventory_type: String,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionsLcdsStoreFulfillmentNotification {
     pub inventory_type: String,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ContentItemIdentifier {
     pub item_id: i32,
-    pub inventory_type: String
+    pub inventory_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -605,7 +512,7 @@ pub struct CraftLootRefTransactionDTO {
     pub account_id: i64,
     pub recipe_name: String,
     pub loot_name_ref_ids: Vec<LootNameRefId>,
-    pub repeat: i32
+    pub repeat: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -613,26 +520,26 @@ pub struct CraftLootRefTransactionDTO {
 pub struct CrashReportingEnvironment {
     pub environment: String,
     pub user_name: String,
-    pub user_id: String
+    pub user_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DownloadUrlRequestV2 {
     pub platform_id: String,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DownloadUrlResponseV2 {
-    pub url: String
+    pub url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ElevationRequest {
-    pub action: ElevationAction
+    pub action: ElevationAction,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -641,7 +548,7 @@ pub struct EndOfGameLcdsClientReportV1 {
     pub offender_summoner_id: u64,
     pub game_id: u64,
     pub offenses: String,
-    pub comments: String
+    pub comments: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -660,6 +567,7 @@ pub struct EndOfGameLcdsEndOfGameStats {
     pub room_name: String,
     pub room_password: String,
     pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: MucJwtDto,
     pub my_team_info: EndOfGameLcdsTeamInfo,
     pub other_team_info: EndOfGameLcdsTeamInfo,
     pub team_player_participant_stats: Vec<EndOfGameLcdsPlayerParticipantStatsSummary>,
@@ -688,7 +596,7 @@ pub struct EndOfGameLcdsEndOfGameStats {
     pub caused_early_surrender: bool,
     pub early_surrender_accomplice: bool,
     pub team_early_surrendered: bool,
-    pub game_ended_in_early_surrender: bool
+    pub game_ended_in_early_surrender: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -699,7 +607,7 @@ pub struct EndOfGameLcdsHarassmentReport {
     pub reporting_summoner_id: u64,
     pub reported_summoner_id: u64,
     pub offense: String,
-    pub comment: String
+    pub comment: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -724,7 +632,7 @@ pub struct EndOfGameLcdsPlayerParticipantStatsSummary {
     pub skin_index: i32,
     pub selected_position: String,
     pub detected_team_position: String,
-    pub statistics: Vec<EndOfGameLcdsRawStatDTO>
+    pub statistics: Vec<EndOfGameLcdsRawStatDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -732,26 +640,26 @@ pub struct EndOfGameLcdsPlayerParticipantStatsSummary {
 pub struct EndOfGameLcdsPointsPenalty {
     #[serde(rename = "type")]
     pub type_: String,
-    pub penalty: f64
+    pub penalty: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsRawStatDTO {
     pub value: i64,
-    pub stat_type_name: String
+    pub stat_type_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsSpell {
-    pub spell_id: i32
+    pub spell_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct EndOfGameLcdsTeamId {
-    pub full_id: String
+    pub full_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -761,7 +669,7 @@ pub struct EndOfGameLcdsTeamInfo {
     pub name: String,
     pub tag: String,
     pub seconds_until_eligible_for_deletion: i64,
-    pub member_status_string: String
+    pub member_status_string: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -771,7 +679,7 @@ pub struct EntitlementsToken {
     pub token: String,
     pub subject: String,
     pub issuer: String,
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -781,21 +689,21 @@ pub struct EogLcdsGameDTO {
     pub game_state: String,
     pub team_one: Vec<PlayerParticipant>,
     pub team_two: Vec<PlayerParticipant>,
-    pub banned_champions: Vec<BannedChampion>
+    pub banned_champions: Vec<BannedChampion>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ExternalPluginsResource {
     pub state: ExternalPluginsAvailability,
-    pub error_string: String
+    pub error_string: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct FailedInvite {
     pub player_id: u64,
-    pub exception: ClientRequestError
+    pub exception: ClientRequestError,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -819,7 +727,7 @@ pub struct GameQueuesLcdsGameQueueConfig {
     pub last_toggled_off_time: u64,
     pub last_toggled_on_time: u64,
     pub removal_from_game_allowed: bool,
-    pub removal_from_game_delay_minutes: i32
+    pub removal_from_game_delay_minutes: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -837,7 +745,7 @@ pub struct GameflowLcdsGameDTO {
     pub game_queue_config_id: i32,
     pub team_one: Vec<Value>,
     pub team_two: Vec<Value>,
-    pub player_champion_selections: Vec<Value>
+    pub player_champion_selections: Vec<Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -851,7 +759,7 @@ pub struct GameflowLcdsPlayerCredentialsDto {
     pub observer_server_ip: String,
     pub observer_server_port: u16,
     pub observer_encryption_key: String,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -859,33 +767,33 @@ pub struct GameflowLcdsPlayerCredentialsDto {
 pub struct GameflowLcdsReconnectInfoDto {
     pub player_credentials: GameflowLcdsPlayerCredentialsDto,
     pub game: GameflowLcdsGameDTO,
-    pub reconnect_delay: u32
+    pub reconnect_delay: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct IdsDTO {
     pub mission_ids: Vec<String>,
-    pub series_ids: Vec<String>
+    pub series_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSBroadcastNotification {
-    pub broadcast_messages: Vec<LolServiceStatusBroadcastMessage>
+    pub broadcast_messages: Vec<LolServiceStatusBroadcastMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSChampionReward {
     pub champion_id: i32,
-    pub skins: Vec<i32>
+    pub skins: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LCDSGlobalRewards {
-    pub all_champions: bool
+    pub all_champions: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -894,7 +802,7 @@ pub struct LCDSLoyaltyRewards {
     pub champions: Vec<LCDSChampionReward>,
     pub global: LCDSGlobalRewards,
     pub ip_boost: i32,
-    pub xp_boost: i32
+    pub xp_boost: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -902,7 +810,7 @@ pub struct LCDSLoyaltyRewards {
 pub struct LCDSLoyaltyStateChangeNotification {
     pub account_id: u64,
     pub notification_category: LCDSLoyaltyStateChangeNotificationCategory,
-    pub rewards: LCDSLoyaltyRewards
+    pub rewards: LCDSLoyaltyRewards,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -914,7 +822,7 @@ pub struct LCDSPlayerMessagingSimpleMessage {
     pub type_: String,
     pub title_code: String,
     pub body_code: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -922,7 +830,7 @@ pub struct LCDSPlayerMessagingSimpleMessage {
 pub struct LCDSPlayerMessagingSimpleMessageResponse {
     pub account_id: u64,
     pub msg_id: String,
-    pub command: String
+    pub command: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -932,14 +840,14 @@ pub struct LcdsBotParticipant {
     pub summoner_name: String,
     pub summoner_internal_name: String,
     pub bot_skill_level: i32,
-    pub team_id: String
+    pub team_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsFailedJoinPlayer {
     pub summoner: LcdsSummoner,
-    pub reason_failed: String
+    pub reason_failed: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -962,16 +870,17 @@ pub struct LcdsGameDTO {
     pub room_name: String,
     pub room_password: String,
     pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: MucJwtDto,
     pub passback_url: String,
     pub passback_data_packet: String,
     pub optimistic_lock: i64,
-    pub game_state: String
+    pub game_state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsGameInviteBaseRuntimeException {
-    pub root_cause_classname: String
+    pub root_cause_classname: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -982,7 +891,7 @@ pub struct LcdsGameMap {
     pub display_name: String,
     pub description: String,
     pub min_custom_players: i32,
-    pub total_players: i32
+    pub total_players: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -991,7 +900,7 @@ pub struct LcdsGameNotification {
     #[serde(rename = "type")]
     pub type_: String,
     pub message_code: String,
-    pub message_argument: String
+    pub message_argument: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1003,7 +912,7 @@ pub struct LcdsInvitationRequest {
     pub invitation_state: LcdsInvitationState,
     pub game_meta_data: String,
     pub invite_type: String,
-    pub invite_payload: String
+    pub invite_payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1011,13 +920,13 @@ pub struct LcdsInvitationRequest {
 pub struct LcdsInviteFailed {
     pub summoner_id: u64,
     pub summoner_name: String,
-    pub exception: LcdsGameInviteBaseRuntimeException
+    pub exception: LcdsGameInviteBaseRuntimeException,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsInvitePrivileges {
-    pub can_invite: bool
+    pub can_invite: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1025,7 +934,7 @@ pub struct LcdsInvitePrivileges {
 pub struct LcdsInvitee {
     pub summoner_id: u64,
     pub summoner_name: String,
-    pub invitee_state: LcdsInviteeState
+    pub invitee_state: LcdsInviteeState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1033,7 +942,7 @@ pub struct LcdsInvitee {
 pub struct LcdsInviter {
     pub summoner_id: u64,
     pub summoner_name: String,
-    pub previous_season_highest_tier: String
+    pub previous_season_highest_tier: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1044,7 +953,7 @@ pub struct LcdsLobbyStatus {
     pub chat_key: String,
     pub members: Vec<LcdsMember>,
     pub invitees: Vec<LcdsInvitee>,
-    pub game_meta_data: String
+    pub game_meta_data: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1052,7 +961,7 @@ pub struct LcdsLobbyStatus {
 pub struct LcdsMember {
     pub summoner_id: u64,
     pub summoner_name: String,
-    pub has_delegated_invite_power: bool
+    pub has_delegated_invite_power: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1061,14 +970,14 @@ pub struct LcdsPayloadDto {
     pub method: String,
     pub headers: HashMap<String, String>,
     pub path: String,
-    pub body: String
+    pub body: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsPlayer {
     pub summoner_id: u64,
-    pub summoner_name: String
+    pub summoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1077,7 +986,7 @@ pub struct LcdsPlayerParticipant {
     pub summoner_id: u64,
     pub summoner_name: String,
     pub summoner_internal_name: String,
-    pub bot_skill_level: i32
+    pub bot_skill_level: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1094,7 +1003,7 @@ pub struct LcdsPracticeGameConfig {
     pub passback_data_packet: Option<String>,
     pub game_mutators: Vec<String>,
     pub region: String,
-    pub game_version: String
+    pub game_version: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1112,13 +1021,13 @@ pub struct LcdsPracticeGameSearchResult {
     pub game_map_id: i32,
     pub game_mode: String,
     pub pick_type: String,
-    pub allow_spectators: String
+    pub allow_spectators: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsRemovedFromLobbyNotification {
-    pub removal_reason: LcdsRemovalReason
+    pub removal_reason: LcdsRemovalReason,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1128,7 +1037,7 @@ pub struct LcdsSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1136,100 +1045,67 @@ pub struct LcdsSimpleMessage {
 pub struct LcdsSimpleMessageResponse {
     pub account_id: u64,
     pub msg_id: String,
-    pub command: String
+    pub command: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsStartChampSelectDto {
-    pub invalid_players: Vec<LcdsFailedJoinPlayer>
+    pub invalid_players: Vec<LcdsFailedJoinPlayer>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LcdsSummoner {
     pub sum_id: u64,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LobbyClientDynamicConfigurationNotification {
     pub configs: String,
-    pub delta: bool
+    pub delta: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LogEvent {
     pub severity: LogSeverityLevels,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationAVSConfig {
     pub enabled: bool,
-    pub password_enabled: bool,
-    pub should_use_new_avs: bool
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationAuthenticateRequest {
-    pub username: String,
-    pub password: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationAuthenticateResponse {
-    pub success: bool,
-    pub message: String,
-    pub status: i32
+    pub disable_get_active_phone_number_call: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmActivationPinRequest {
-    pub one_time_pin: String
+    pub one_time_pin: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmActivationPinResponse {
     pub data: LolAccountVerificationPinResponseData,
-    pub client_message_id: String
+    pub client_message_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmDeactivationPinRequest {
-    pub locale: String
+    pub one_time_pin: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationConfirmDeactivationPinResponse {
     pub data: LolAccountVerificationPinResponseData,
-    pub client_message_id: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationDeviceResponse {
-    pub success: bool,
-    pub message: String,
-    pub status: i32
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationInvalidateResponse {
-    pub success: bool,
-    pub message: String,
-    pub status: i32,
-    pub sms_token_expire_duration_in_sec: i32
+    pub client_message_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1237,7 +1113,7 @@ pub struct LolAccountVerificationInvalidateResponse {
 pub struct LolAccountVerificationIsVerifiedResponse {
     pub success: bool,
     pub message: String,
-    pub status: i32
+    pub status: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1246,7 +1122,7 @@ pub struct LolAccountVerificationLoginSession {
     pub state: LolAccountVerificationLoginSessionState,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub username: String
+    pub username: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1254,7 +1130,7 @@ pub struct LolAccountVerificationLoginSession {
 pub struct LolAccountVerificationPhoneNumberObfuscated {
     pub country_code: String,
     pub ends_with: String,
-    pub length: i32
+    pub length: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1262,33 +1138,33 @@ pub struct LolAccountVerificationPhoneNumberObfuscated {
 pub struct LolAccountVerificationPhoneNumberResponse {
     pub data: LolAccountVerificationPhoneNumberResponseData,
     pub error: LolAccountVerificationResponseError,
-    pub client_message_id: String
+    pub client_message_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationPhoneNumberResponseData {
-    pub phone_number_obfuscated: LolAccountVerificationPhoneNumberObfuscated
+    pub phone_number_obfuscated: LolAccountVerificationPhoneNumberObfuscated,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationPinResponseData {
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationResponseError {
     pub error_code: String,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendActivationPinRequest {
     pub phone_number: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1296,19 +1172,19 @@ pub struct LolAccountVerificationSendActivationPinRequest {
 pub struct LolAccountVerificationSendActivationPinResponse {
     pub data: LolAccountVerificationSendActivationPinResponseData,
     pub error: LolAccountVerificationResponseError,
-    pub client_message_id: String
+    pub client_message_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendActivationPinResponseData {
-    pub pin_expires_at_epoch_millis: i64
+    pub pin_expires_at_epoch_millis: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAccountVerificationSendDeactivationPinRequest {
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1316,39 +1192,7 @@ pub struct LolAccountVerificationSendDeactivationPinRequest {
 pub struct LolAccountVerificationSendDeactivationPinResponse {
     pub data: LolAccountVerificationSendActivationPinResponseData,
     pub error: LolAccountVerificationResponseError,
-    pub client_message_id: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationSendTokenRequest {
-    pub mediator: String,
-    pub locale: String,
-    pub device: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationSendTokenResponse {
-    pub success: bool,
-    pub message: String,
-    pub status: i32,
-    pub sms_token_expire_duration_in_sec: i32
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationVerifyRequest {
-    pub mediator: String,
-    pub token: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolAccountVerificationVerifyResponse {
-    pub success: bool,
-    pub message: String,
-    pub status: i32
+    pub client_message_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1361,19 +1205,19 @@ pub struct LolActiveBoostsActiveBoosts {
     pub xp_boost_end_date: String,
     pub xp_boost_per_win_count: u32,
     pub xp_loyalty_boost: u32,
-    pub first_win_of_the_day_start_time: String
+    pub first_win_of_the_day_start_time: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolActiveBoostsEndOfGameStats {
-    pub time_until_next_first_win_bonus: u64
+    pub time_until_next_first_win_bonus: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolActiveBoostsLoginDataPacket {
-    pub time_until_first_win_of_day: u64
+    pub time_until_first_win_of_day: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1381,13 +1225,13 @@ pub struct LolActiveBoostsLoginDataPacket {
 pub struct LolAntiAddictionAntiAddictionState {
     pub policy_type: LolAntiAddictionPolicyType,
     pub localization_key: String,
-    pub anti_addiction_token: String
+    pub anti_addiction_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolAntiAddictionAntiAddictionToken {
-    pub anti_addiction_token: String
+    pub anti_addiction_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1397,27 +1241,27 @@ pub struct LolBannersBannerFlag {
     pub theme: String,
     pub level: i64,
     pub season_id: i64,
-    pub earned_date_iso8601: String
+    pub earned_date_iso8601: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersBannerFrame {
-    pub level: i64
+    pub level: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersCapClashFlagEntitlementPayload {
     pub reward_spec: LolBannersClashV2FlagRewardSpec,
-    pub reward_type: String
+    pub reward_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersCapClashFrameEntitlementPayload {
     pub reward_spec: LolBannersClashV2FrameRewardSpec,
-    pub reward_type: String
+    pub reward_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1425,14 +1269,14 @@ pub struct LolBannersCapClashFrameEntitlementPayload {
 pub struct LolBannersClashV2FlagRewardSpec {
     pub theme: String,
     pub level: String,
-    pub season_id: String
+    pub season_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersClashV2FrameRewardSpec {
     pub level: String,
-    pub season_id: String
+    pub season_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1442,20 +1286,20 @@ pub struct LolBannersInventoryItemWithPayload {
     pub item_id: i32,
     pub inventory_type: String,
     pub purchase_date: String,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersInventoryItemsByType {
     pub t_o_u_r_n_a_m_e_n_t__f_l_a_g: Vec<LolBannersTournamentFlagInventoryItem>,
-    pub t_o_u_r_n_a_m_e_n_t__f_r_a_m_e: Vec<LolBannersTournamentFrameInventoryItem>
+    pub t_o_u_r_n_a_m_e_n_t__f_r_a_m_e: Vec<LolBannersTournamentFrameInventoryItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersInventoryResponse {
-    pub items: LolBannersInventoryItemsByType
+    pub items: LolBannersInventoryItemsByType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1464,21 +1308,21 @@ pub struct LolBannersLoadout {
     pub id: String,
     pub name: String,
     pub scope: String,
-    pub loadout: HashMap<String, LolBannersLoadoutsSlot>
+    pub loadout: HashMap<String, LolBannersLoadoutsSlot>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersLoadoutsSlot {
     pub item_id: i32,
-    pub inventory_type: String
+    pub inventory_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersSummonerProfileUpdate {
     pub key: String,
-    pub value: Value
+    pub value: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1486,14 +1330,14 @@ pub struct LolBannersSummonerProfileUpdate {
 pub struct LolBannersTournamentFlagInventoryItem {
     pub item_id: i32,
     pub payload: LolBannersCapClashFlagEntitlementPayload,
-    pub purchase_date: String
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolBannersTournamentFrameInventoryItem {
     pub payload: LolBannersCapClashFrameEntitlementPayload,
-    pub purchase_date: String
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1503,7 +1347,7 @@ pub struct LolCareerStatsChampionQueueStatsResponse {
     pub queue_type: LolCareerStatsCareerStatsQueueType,
     pub position: LolCareerStatsSummonersRiftPosition,
     pub rank_tier: LolCareerStatsRankedTier,
-    pub stats: Value
+    pub stats: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1511,13 +1355,13 @@ pub struct LolCareerStatsChampionQueueStatsResponse {
 pub struct LolCareerStatsChampionStatistics {
     pub champion_id: i32,
     pub experts: Vec<LolCareerStatsExpertPlayer>,
-    pub queue_stats: Vec<LolCareerStatsStatisticsByQueue>
+    pub queue_stats: Vec<LolCareerStatsStatisticsByQueue>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsEntitlementsToken {
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1529,7 +1373,7 @@ pub struct LolCareerStatsExpertPlayer {
     pub summoner_name: String,
     pub num_of_games: i32,
     pub win_rate: f32,
-    pub expert_rank: i32
+    pub expert_rank: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1537,7 +1381,7 @@ pub struct LolCareerStatsExpertPlayer {
 pub struct LolCareerStatsPositionStatistics {
     pub position: LolCareerStatsSummonersRiftPosition,
     pub experts: Vec<LolCareerStatsExpertPlayer>,
-    pub queue_stats: Vec<LolCareerStatsStatisticsByQueue>
+    pub queue_stats: Vec<LolCareerStatsStatisticsByQueue>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1546,14 +1390,14 @@ pub struct LolCareerStatsPositionStatsQueryRequest {
     pub queue_type: LolCareerStatsCareerStatsQueueType,
     pub position: LolCareerStatsSummonersRiftPosition,
     pub rank_tier: LolCareerStatsRankedTier,
-    pub season: u32
+    pub season: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCareerStatsStatisticsByQueue {
     pub queue_type: LolCareerStatsCareerStatsQueueType,
-    pub stats: Value
+    pub stats: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1564,7 +1408,7 @@ pub struct LolCareerStatsStatisticsPercentilesResponse {
     pub position: LolCareerStatsSummonersRiftPosition,
     pub rank_tier: LolCareerStatsRankedTier,
     pub season: u32,
-    pub stats: Value
+    pub stats: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1574,7 +1418,7 @@ pub struct LolCareerStatsStatsQueryRequest {
     pub queue_type: LolCareerStatsCareerStatsQueueType,
     pub position: LolCareerStatsSummonersRiftPosition,
     pub rank_tier: LolCareerStatsRankedTier,
-    pub season: u32
+    pub season: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1582,7 +1426,7 @@ pub struct LolCareerStatsStatsQueryRequest {
 pub struct LolCatalogBundled {
     pub flexible: bool,
     pub items: Vec<LolCatalogBundledItem>,
-    pub minimum_prices: Vec<LolCatalogBundledItemCost>
+    pub minimum_prices: Vec<LolCatalogBundledItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1591,7 +1435,7 @@ pub struct LolCatalogBundledItem {
     pub inventory_type: String,
     pub item_id: i32,
     pub quantity: u32,
-    pub discount_prices: Vec<LolCatalogBundledItemCost>
+    pub discount_prices: Vec<LolCatalogBundledItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1600,7 +1444,7 @@ pub struct LolCatalogBundledItemCost {
     pub currency: String,
     pub cost: i64,
     pub discount: Option<f32>,
-    pub cost_type: String
+    pub cost_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1621,7 +1465,7 @@ pub struct LolCatalogCatalogItem {
     pub bundled: Option<LolCatalogBundled>,
     pub item_requirements: Option<Vec<LolCatalogItemKey>>,
     pub metadata: Option<Vec<LolCatalogItemMetadataEntry>>,
-    pub offer_id: Option<String>
+    pub offer_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1646,7 +1490,7 @@ pub struct LolCatalogCatalogPluginItem {
     pub active: bool,
     pub sale: Option<LolCatalogSale>,
     pub quest_skin_info: Option<LolCatalogSkinLineInfo>,
-    pub offer_id: Option<String>
+    pub offer_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1656,7 +1500,7 @@ pub struct LolCatalogCatalogPluginItemAssets {
     pub icon_path: String,
     pub tile_path: String,
     pub emblems: Vec<LolCatalogChampionSkinEmblem>,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1668,7 +1512,7 @@ pub struct LolCatalogCatalogPluginItemWithDetails {
     pub bundled_items: Option<Vec<LolCatalogCatalogPluginItemWithDetails>>,
     pub minimum_bundle_prices: Option<Vec<LolCatalogCatalogPluginPrice>>,
     pub bundled_discount_prices: Option<Vec<LolCatalogCatalogPluginPrice>>,
-    pub assets: LolCatalogCatalogPluginItemAssets
+    pub assets: LolCatalogCatalogPluginItemAssets,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1677,7 +1521,7 @@ pub struct LolCatalogCatalogPluginPrice {
     pub currency: String,
     pub cost: i64,
     pub cost_type: Option<String>,
-    pub sale: Option<LolCatalogCatalogPluginRetailDiscount>
+    pub sale: Option<LolCatalogCatalogPluginRetailDiscount>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1686,7 +1530,7 @@ pub struct LolCatalogCatalogPluginRetailDiscount {
     pub start_date: String,
     pub end_date: String,
     pub discount: Option<f32>,
-    pub cost: i64
+    pub cost: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1694,27 +1538,27 @@ pub struct LolCatalogCatalogPluginRetailDiscount {
 pub struct LolCatalogChampionSkinEmblem {
     pub name: String,
     pub emblem_path: LolCatalogChampionSkinEmblemPath,
-    pub emblem_position: LolCatalogChampionSkinEmblemPosition
+    pub emblem_position: LolCatalogChampionSkinEmblemPosition,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogChampionSkinEmblemPath {
     pub large: String,
-    pub small: String
+    pub small: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogChampionSkinEmblemPosition {
     pub vertical: String,
-    pub horizontal: String
+    pub horizontal: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataChampion {
-    pub skins: Vec<LolCatalogGameDataChampionSkin>
+    pub skins: Vec<LolCatalogGameDataChampionSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1723,7 +1567,7 @@ pub struct LolCatalogGameDataChampionChroma {
     pub id: i64,
     pub name: String,
     pub chroma_path: String,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1738,7 +1582,7 @@ pub struct LolCatalogGameDataChampionSkin {
     pub tile_path: String,
     pub chroma_path: String,
     pub quest_skin_info: Option<LolCatalogSkinLineInfo>,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1747,7 +1591,7 @@ pub struct LolCatalogGameDataChampionSummary {
     pub id: i64,
     pub name: String,
     pub square_portrait_path: String,
-    pub skins: Vec<LolCatalogGameDataChampionSkin>
+    pub skins: Vec<LolCatalogGameDataChampionSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1755,7 +1599,7 @@ pub struct LolCatalogGameDataChampionSummary {
 pub struct LolCatalogGameDataItemReference {
     pub item_id: i32,
     pub inventory_type: String,
-    pub content_id: String
+    pub content_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1769,7 +1613,7 @@ pub struct LolCatalogGameDataStatstone {
     pub is_epic: bool,
     pub category: String,
     pub description: String,
-    pub icon_full: String
+    pub icon_full: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1778,14 +1622,14 @@ pub struct LolCatalogGameDataStatstonePack {
     pub name: String,
     pub description: String,
     pub item_id: i32,
-    pub content_id: String
+    pub content_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogGameDataStatstoneSet {
     pub name: String,
-    pub statstones: Vec<LolCatalogGameDataStatstone>
+    pub statstones: Vec<LolCatalogGameDataStatstone>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1798,7 +1642,7 @@ pub struct LolCatalogGameDataStatstonesInfo {
     pub pack_id_to_sub_pack_ids: Value,
     pub collection_id_to_stat_stone_ids: Value,
     pub pack_id_to_champ_ids: Value,
-    pub champ_id_to_pack_ids: Value
+    pub champ_id_to_pack_ids: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1807,7 +1651,7 @@ pub struct LolCatalogGameDataSummonerEmote {
     pub id: i64,
     pub name: String,
     pub inventory_icon: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1815,7 +1659,7 @@ pub struct LolCatalogGameDataSummonerEmote {
 pub struct LolCatalogGameDataSummonerIcon {
     pub id: i64,
     pub title: String,
-    pub image_path: String
+    pub image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1824,7 +1668,7 @@ pub struct LolCatalogGameDataWardSkin {
     pub id: i64,
     pub name: String,
     pub description: String,
-    pub ward_image_path: String
+    pub ward_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1832,7 +1676,7 @@ pub struct LolCatalogGameDataWardSkin {
 pub struct LolCatalogInventoryContent {
     pub item_id: i64,
     pub ownership_type: LolCatalogInventoryOwnership,
-    pub purchase_date: String
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1844,7 +1688,7 @@ pub struct LolCatalogItemChoiceDetails {
     pub discount: String,
     pub full_price: i64,
     pub display_type: String,
-    pub metadata: Value
+    pub metadata: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1852,7 +1696,7 @@ pub struct LolCatalogItemChoiceDetails {
 pub struct LolCatalogItemCost {
     pub currency: String,
     pub cost: i64,
-    pub discount: Option<f32>
+    pub discount: Option<f32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1861,14 +1705,14 @@ pub struct LolCatalogItemDetails {
     pub title: String,
     pub sub_title: String,
     pub description: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCatalogItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1876,7 +1720,7 @@ pub struct LolCatalogItemKey {
 pub struct LolCatalogItemLocalization {
     pub language: String,
     pub name: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1884,7 +1728,7 @@ pub struct LolCatalogItemLocalization {
 pub struct LolCatalogItemMetadataEntry {
     #[serde(rename = "type")]
     pub type_: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1892,7 +1736,7 @@ pub struct LolCatalogItemMetadataEntry {
 pub struct LolCatalogSale {
     pub start_date: String,
     pub end_date: String,
-    pub prices: Vec<LolCatalogItemCost>
+    pub prices: Vec<LolCatalogItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1900,7 +1744,7 @@ pub struct LolCatalogSale {
 pub struct LolCatalogSkinLineDescriptionInfo {
     pub title: String,
     pub description: String,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1913,7 +1757,7 @@ pub struct LolCatalogSkinLineInfo {
     pub collection_card_path: String,
     pub uncentered_splash_path: String,
     pub collection_description: String,
-    pub tiers: Vec<LolCatalogSkinLineTier>
+    pub tiers: Vec<LolCatalogSkinLineTier>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1929,7 +1773,7 @@ pub struct LolCatalogSkinLineTier {
     pub load_screen_path: String,
     pub short_name: String,
     pub splash_video_path: Option<String>,
-    pub collection_splash_video_path: Option<String>
+    pub collection_splash_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1955,13 +1799,13 @@ pub struct LolChallengesChallengeData {
     pub friends_at_levels: Vec<LolChallengesFriendLevelsData>,
     pub id_list_type: LolChallengesChallengeRequirementMappingName,
     pub available_ids: Vec<i32>,
-    pub completed_ids: Vec<i32>
+    pub completed_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeLevelData {
-    pub level: String
+    pub level: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1975,8 +1819,8 @@ pub struct LolChallengesChallengePlayerData {
     pub category_points: HashMap<String, LolChallengesChallengePoints>,
     pub player_challenges: Vec<LolChallengesChallengeData>,
     pub level_points: HashMap<String, i64>,
-    pub preferences: LolChallengesPlayerClientPreferences,
-    pub apex_lader_update_time: u64
+    pub preferences: LolChallengesChallengesPlayerPreferences,
+    pub apex_lader_update_time: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1986,7 +1830,7 @@ pub struct LolChallengesChallengePoints {
     pub max: i32,
     pub level: String,
     pub percentile: f64,
-    pub position: i32
+    pub position: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -1995,13 +1839,13 @@ pub struct LolChallengesChallengeSeason {
     pub season_id: i32,
     pub season_start: i64,
     pub season_end: i64,
-    pub is_active: bool
+    pub is_active: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengeSignedUpdatePayload {
-    pub tokens_by_type: HashMap<String, Value>
+    pub tokens_by_type: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2009,7 +1853,7 @@ pub struct LolChallengesChallengeSignedUpdatePayload {
 pub struct LolChallengesChallengeThreshold {
     pub value: f64,
     pub rewards: Vec<LolChallengesChallengeThresholdReward>,
-    pub reward_group_id: String
+    pub reward_group_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2017,7 +1861,7 @@ pub struct LolChallengesChallengeThreshold {
 pub struct LolChallengesChallengeThresholdReward {
     pub category: String,
     pub id: String,
-    pub quantity: u32
+    pub quantity: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2026,40 +1870,42 @@ pub struct LolChallengesChallengesPlayerPreferences {
     pub banner_accent: String,
     pub title: String,
     pub challenge_ids: Vec<i64>,
-    pub signed_j_w_t_payload: LolChallengesChallengeSignedUpdatePayload
+    pub crest_border: String,
+    pub prestige_crest_border_level: i32,
+    pub signed_j_w_t_payload: LolChallengesChallengeSignedUpdatePayload,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengesRMSNotification {
     pub ack_required: bool,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesChallengesRMSPayload {
     pub puuid: String,
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesEndOfGameStats {
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesFriendLevelsData {
     pub level: String,
-    pub friends: Vec<String>
+    pub friends: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesFriendResource {
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2077,42 +1923,42 @@ pub struct LolChallengesGameDataChallengeConfig {
     pub leaderboard: bool,
     pub reverse_direction: bool,
     pub end_timestamp: i64,
-    pub seasons: Vec<i32>
+    pub seasons: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameDataChallengeTitle {
     pub name: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameDataChallengesData {
     pub challenges: HashMap<String, LolChallengesGameDataChallengeConfig>,
-    pub titles: HashMap<String, LolChallengesGameDataChallengeTitle>
+    pub titles: HashMap<String, LolChallengesGameDataChallengeTitle>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameflowGameData {
-    pub queue: LolChallengesQueue
+    pub queue: LolChallengesQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesGameflowSession {
     pub phase: LolChallengesGameflowPhase,
-    pub game_data: LolChallengesGameflowGameData
+    pub game_data: LolChallengesGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolChallengesInventoryTypeAchievementTitle {
+pub struct LolChallengesInventoryItem {
     pub item_id: i32,
     pub uuid: String,
-    pub purchase_date: String
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2126,36 +1972,28 @@ pub struct LolChallengesLcuChallengeNotification {
     pub category_challenges: Vec<LolChallengesUIChallenge>,
     pub display_type: LolChallengesNotificationDisplayType,
     pub challenge_name: String,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesLoginPlayerData {
     pub client_player_data_list: Vec<LolChallengesChallengePlayerData>,
-    pub seasons: Vec<LolChallengesChallengeSeason>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolChallengesPlayerClientPreferences {
-    pub tabard: String,
-    pub title: String,
-    pub challenge_ids: Vec<i64>
+    pub seasons: Vec<LolChallengesChallengeSeason>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesQueue {
     pub id: i32,
-    pub game_mode: String
+    pub game_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesSequenceEvent {
     pub name: String,
-    pub priority: i32
+    pub priority: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2165,7 +2003,7 @@ pub struct LolChallengesUICategoryProgress {
     pub category: String,
     pub position_percentile: f64,
     pub current: i32,
-    pub max: i32
+    pub max: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2208,13 +2046,13 @@ pub struct LolChallengesUIChallenge {
     pub id_list_type: LolChallengesChallengeRequirementMappingName,
     pub available_ids: Vec<i32>,
     pub completed_ids: Vec<i32>,
-    pub retire_timestamp: i64
+    pub retire_timestamp: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIChallengePenalty {
-    pub reason: String
+    pub reason: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2223,14 +2061,14 @@ pub struct LolChallengesUIChallengeReward {
     pub category: String,
     pub quantity: u64,
     pub name: String,
-    pub asset: String
+    pub asset: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUIChallengeThreshold {
     pub value: f64,
-    pub rewards: Vec<LolChallengesUIChallengeReward>
+    pub rewards: Vec<LolChallengesUIChallengeReward>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2243,10 +2081,13 @@ pub struct LolChallengesUIPlayerSummary {
     pub is_apex: bool,
     pub apex_leaderboard_position: i32,
     pub title: LolChallengesUITitle,
+    pub banner_id: String,
+    pub crest_id: String,
+    pub prestige_crest_border_level: i32,
     pub category_progress: Vec<LolChallengesUICategoryProgress>,
     pub top_challenges: Vec<LolChallengesUIChallenge>,
     pub apex_ladder_update_time: i64,
-    pub selected_challenges_string: String
+    pub selected_challenges_string: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2260,20 +2101,20 @@ pub struct LolChallengesUITitle {
     pub challenge_description: String,
     pub level: String,
     pub level_to_icon_path: HashMap<String, String>,
-    pub purchase_date: String
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChallengesUserResource {
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectBenchChampion {
     pub champion_id: i32,
-    pub is_priority: bool
+    pub is_priority: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2294,7 +2135,7 @@ pub struct LolChampSelectChampGridChampion {
     pub mastery_level: i32,
     pub mastery_chest_granted: bool,
     pub selection_status: LolChampSelectChampionSelection,
-    pub positions_favorited: Vec<String>
+    pub positions_favorited: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2306,7 +2147,7 @@ pub struct LolChampSelectChampSelectAction {
     #[serde(rename = "type")]
     pub type_: String,
     pub completed: bool,
-    pub is_ally_action: bool
+    pub is_ally_action: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2314,15 +2155,16 @@ pub struct LolChampSelectChampSelectAction {
 pub struct LolChampSelectChampSelectBannedChampions {
     pub my_team_bans: Vec<i32>,
     pub their_team_bans: Vec<i32>,
-    pub num_bans: i32
+    pub num_bans: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectChatRoomDetails {
-    pub chat_room_name: String,
-    pub chat_room_password: Option<String>,
-    pub multi_user_chat_j_w_t: Option<String>
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
+    pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: LolChampSelectMucJwtDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2331,14 +2173,14 @@ pub struct LolChampSelectChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
     pub spell1_id: Option<u64>,
     pub spell2_id: Option<u64>,
-    pub ward_skin_id: Option<i64>
+    pub ward_skin_id: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectChampSelectPinDropNotification {
     pub pin_drop_summoners: Vec<LolChampSelectChampSelectPinDropSummoner>,
-    pub map_side: String
+    pub map_side: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2349,7 +2191,7 @@ pub struct LolChampSelectChampSelectPinDropSummoner {
     pub lane: String,
     pub lane_position: u32,
     pub is_local_summoner: bool,
-    pub is_placeholder: bool
+    pub is_placeholder: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2369,7 +2211,7 @@ pub struct LolChampSelectChampSelectPlayerSelection {
     pub entitled_feature_type: String,
     pub name_visibility_type: String,
     pub obfuscated_summoner_id: u64,
-    pub obfuscated_puuid: String
+    pub obfuscated_puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2402,7 +2244,7 @@ pub struct LolChampSelectChampSelectSession {
     pub skip_champion_select: bool,
     pub has_simultaneous_bans: bool,
     pub has_simultaneous_picks: bool,
-    pub is_custom_game: bool
+    pub is_custom_game: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2424,6 +2266,7 @@ pub struct LolChampSelectChampSelectSummoner {
     pub skin_splash_path: String,
     pub acting_background_animation_state: String,
     pub status_message_key: String,
+    pub champion_id: i32,
     pub champion_name: String,
     pub pick_sniped_class: String,
     pub current_champion_vote_percent_integer: i32,
@@ -2446,7 +2289,7 @@ pub struct LolChampSelectChampSelectSummoner {
     pub swap_id: i64,
     pub show_trades: bool,
     pub show_swaps: bool,
-    pub show_muted: bool
+    pub show_muted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2454,7 +2297,7 @@ pub struct LolChampSelectChampSelectSummoner {
 pub struct LolChampSelectChampSelectSwapContract {
     pub id: i64,
     pub cell_id: i64,
-    pub state: LolChampSelectChampSelectSwapState
+    pub state: LolChampSelectChampSelectSwapState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2465,7 +2308,7 @@ pub struct LolChampSelectChampSelectSwapNotification {
     pub responder_index: i64,
     pub state: LolChampSelectChampSelectSwapState,
     pub other_summoner_index: i64,
-    pub initiated_by_local_player: bool
+    pub initiated_by_local_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2475,7 +2318,7 @@ pub struct LolChampSelectChampSelectTimer {
     pub total_time_in_phase: i64,
     pub phase: String,
     pub is_infinite: bool,
-    pub internal_now_in_epoch_ms: u64
+    pub internal_now_in_epoch_ms: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2483,7 +2326,7 @@ pub struct LolChampSelectChampSelectTimer {
 pub struct LolChampSelectChampSelectTradeContract {
     pub id: i64,
     pub cell_id: i64,
-    pub state: LolChampSelectChampSelectTradeState
+    pub state: LolChampSelectChampSelectTradeState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2496,7 +2339,7 @@ pub struct LolChampSelectChampSelectTradeNotification {
     pub responder_champion_name: String,
     pub requester_champion_name: String,
     pub requester_champion_splash_path: String,
-    pub initiated_by_local_player: bool
+    pub initiated_by_local_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2504,7 +2347,7 @@ pub struct LolChampSelectChampSelectTradeNotification {
 pub struct LolChampSelectChampionQuestSkinInfo {
     pub splash_path: String,
     pub tile_path: String,
-    pub tiers: Vec<LolChampSelectCollectionsChampionQuestSkin>
+    pub tiers: Vec<LolChampSelectCollectionsChampionQuestSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2517,7 +2360,7 @@ pub struct LolChampSelectChampionSelection {
     pub pick_intented: bool,
     pub pick_intented_by_me: bool,
     pub pick_intented_position: String,
-    pub picked_by_other_or_banned: bool
+    pub picked_by_other_or_banned: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2530,7 +2373,7 @@ pub struct LolChampSelectCollectionsChampionChroma {
     pub ownership: LolChampSelectCollectionsOwnership,
     pub disabled: bool,
     pub still_obtainable: bool,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2539,7 +2382,7 @@ pub struct LolChampSelectCollectionsChampionMastery {
     pub champion_id: i32,
     pub champion_level: i32,
     pub champion_points: i32,
-    pub chest_granted: bool
+    pub chest_granted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2555,7 +2398,7 @@ pub struct LolChampSelectCollectionsChampionMinimal {
     pub square_portrait_path: String,
     pub stinger_sfx_path: String,
     pub base_splash_path: String,
-    pub free_to_play: bool
+    pub free_to_play: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2573,7 +2416,7 @@ pub struct LolChampSelectCollectionsChampionQuestSkin {
     pub tile_path: String,
     pub stage: u32,
     pub short_name: String,
-    pub splash_video_path: String
+    pub splash_video_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2593,7 +2436,7 @@ pub struct LolChampSelectCollectionsChampionSkin {
     pub quest_skin_info: LolChampSelectChampionQuestSkinInfo,
     pub emblems: Vec<LolChampSelectCollectionsChampionSkinEmblem>,
     pub rarity_gem_path: String,
-    pub splash_video_path: Option<String>
+    pub splash_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2601,21 +2444,21 @@ pub struct LolChampSelectCollectionsChampionSkin {
 pub struct LolChampSelectCollectionsChampionSkinEmblem {
     pub name: String,
     pub emblem_path: LolChampSelectCollectionsChampionSkinEmblemPath,
-    pub positions: LolChampSelectCollectionsChampionSkinEmblemPosition
+    pub positions: LolChampSelectCollectionsChampionSkinEmblemPosition,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkinEmblemPath {
     pub large: String,
-    pub small: String
+    pub small: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsChampionSkinEmblemPosition {
     pub vertical: String,
-    pub horizontal: String
+    pub horizontal: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2630,7 +2473,7 @@ pub struct LolChampSelectCollectionsChampionSkinMinimal {
     pub disabled: bool,
     pub still_obtainable: bool,
     pub splash_path: String,
-    pub tile_path: String
+    pub tile_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2639,27 +2482,27 @@ pub struct LolChampSelectCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolChampSelectCollectionsRental
+    pub rental: LolChampSelectCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectCollectionsRental {
-    pub rented: bool
+    pub rented: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectEntitledFeatureState {
     pub additional_rerolls: u32,
-    pub unlocked_skin_ids: Vec<i32>
+    pub unlocked_skin_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectGameDataSummonerSpell {
     pub id: u64,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2673,7 +2516,7 @@ pub struct LolChampSelectLegacyChampSelectAction {
     pub completed: bool,
     pub is_ally_action: bool,
     pub is_in_progress: bool,
-    pub pick_turn: i32
+    pub pick_turn: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2681,15 +2524,16 @@ pub struct LolChampSelectLegacyChampSelectAction {
 pub struct LolChampSelectLegacyChampSelectBannedChampions {
     pub my_team_bans: Vec<i32>,
     pub their_team_bans: Vec<i32>,
-    pub num_bans: i32
+    pub num_bans: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampSelectChatRoomDetails {
-    pub chat_room_name: String,
-    pub chat_room_password: Option<String>,
-    pub multi_user_chat_j_w_t: Option<String>
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
+    pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: LolChampSelectLegacyMucJwtDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2698,7 +2542,7 @@ pub struct LolChampSelectLegacyChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
     pub spell1_id: Option<u64>,
     pub spell2_id: Option<u64>,
-    pub ward_skin_id: Option<i64>
+    pub ward_skin_id: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2714,7 +2558,7 @@ pub struct LolChampSelectLegacyChampSelectPlayerSelection {
     pub assigned_position: String,
     pub champion_pick_intent: i32,
     pub player_type: String,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2735,7 +2579,7 @@ pub struct LolChampSelectLegacyChampSelectSession {
     pub rerolls_remaining: u32,
     pub has_simultaneous_bans: bool,
     pub has_simultaneous_picks: bool,
-    pub is_custom_game: bool
+    pub is_custom_game: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2745,7 +2589,7 @@ pub struct LolChampSelectLegacyChampSelectTimer {
     pub total_time_in_phase: i64,
     pub phase: String,
     pub is_infinite: bool,
-    pub internal_now_in_epoch_ms: u64
+    pub internal_now_in_epoch_ms: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2753,14 +2597,14 @@ pub struct LolChampSelectLegacyChampSelectTimer {
 pub struct LolChampSelectLegacyChampSelectTradeContract {
     pub id: i64,
     pub cell_id: i64,
-    pub state: LolChampSelectLegacyChampSelectTradeState
+    pub state: LolChampSelectLegacyChampSelectTradeState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyChampionSelectPreferences {
     pub skins: HashMap<String, i32>,
-    pub spells: HashMap<String, Value>
+    pub spells: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2770,7 +2614,7 @@ pub struct LolChampSelectLegacyCollectionsChampion {
     pub free_to_play: bool,
     pub id: i32,
     pub ownership: LolChampSelectLegacyCollectionsOwnership,
-    pub active: bool
+    pub active: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2779,33 +2623,33 @@ pub struct LolChampSelectLegacyCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolChampSelectLegacyCollectionsRental
+    pub rental: LolChampSelectLegacyCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyCollectionsRental {
-    pub rented: bool
+    pub rented: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowGameClient {
     pub running: bool,
-    pub visible: bool
+    pub visible: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowGameData {
-    pub queue: LolChampSelectLegacyQueue
+    pub queue: LolChampSelectLegacyQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyGameflowGameDodge {
     pub state: LolChampSelectLegacyGameflowGameDodgeState,
-    pub dodge_ids: Vec<u64>
+    pub dodge_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2813,14 +2657,14 @@ pub struct LolChampSelectLegacyGameflowGameDodge {
 pub struct LolChampSelectLegacyGameflowSession {
     pub phase: LolChampSelectLegacyGameflowPhase,
     pub game_client: LolChampSelectLegacyGameflowGameClient,
-    pub game_data: LolChampSelectLegacyGameflowGameData
+    pub game_data: LolChampSelectLegacyGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyInventoryItemWithPayload {
     pub item_id: i64,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2831,7 +2675,7 @@ pub struct LolChampSelectLegacyLobbyStatus {
     pub is_leader: bool,
     pub is_spectator: bool,
     pub allowed_play_again: bool,
-    pub member_summoner_ids: Vec<u64>
+    pub member_summoner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2839,21 +2683,28 @@ pub struct LolChampSelectLegacyLobbyStatus {
 pub struct LolChampSelectLegacyLoginSession {
     pub state: LolChampSelectLegacyLoginSessionStates,
     pub summoner_id: u64,
-    pub connected: bool
+    pub connected: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolChampSelectLegacyMucJwtDto {
+    pub jwt: String,
+    pub channel_claim: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyPlayerStatus {
     pub current_lobby_status: Option<LolChampSelectLegacyLobbyStatus>,
-    pub last_queued_lobby_status: Option<LolChampSelectLegacyLobbyStatus>
+    pub last_queued_lobby_status: Option<LolChampSelectLegacyLobbyStatus>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacyQueue {
     pub game_type_config: LolChampSelectLegacyQueueGameTypeConfig,
-    pub are_free_champions_allowed: bool
+    pub are_free_champions_allowed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2862,21 +2713,21 @@ pub struct LolChampSelectLegacyQueueGameTypeConfig {
     pub max_allowable_bans: i32,
     pub allow_trades: bool,
     pub battle_boost: bool,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacySettingCategoryResource {
     pub schema_version: i32,
-    pub data: LolChampSelectLegacyChampionSelectPreferences
+    pub data: LolChampSelectLegacyChampionSelectPreferences,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLegacySummoner {
     pub summoner_id: u64,
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2888,13 +2739,20 @@ pub struct LolChampSelectLegacyTeamBoost {
     pub ip_reward: i64,
     pub ip_reward_for_purchaser: i64,
     pub available_skins: Vec<i64>,
-    pub unlocked: bool
+    pub unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectLoginSession {
-    pub summoner_id: Option<u64>
+    pub summoner_id: Option<u64>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolChampSelectMucJwtDto {
+    pub jwt: String,
+    pub channel_claim: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2903,14 +2761,14 @@ pub struct LolChampSelectMutedPlayerInfo {
     pub puuid: String,
     pub summoner_id: u64,
     pub obfuscated_puuid: String,
-    pub obfuscated_summoner_id: u64
+    pub obfuscated_summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampSelectSettingsResource {
     pub data: Value,
-    pub schema_version: i64
+    pub schema_version: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2918,7 +2776,7 @@ pub struct LolChampSelectSettingsResource {
 pub struct LolChampSelectSfxNotification {
     pub delay_millis: i64,
     pub path: String,
-    pub event_type: String
+    pub event_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2941,7 +2799,7 @@ pub struct LolChampSelectSkinSelectorChildSkin {
     pub parent_skin_id: i32,
     pub colors: Vec<String>,
     pub stage: u32,
-    pub short_name: String
+    pub short_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2952,7 +2810,7 @@ pub struct LolChampSelectSkinSelectorInfo {
     pub selected_champion_id: i32,
     pub champion_name: String,
     pub skin_selection_disabled: bool,
-    pub show_skin_selector: bool
+    pub show_skin_selector: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2975,7 +2833,7 @@ pub struct LolChampSelectSkinSelectorSkin {
     pub child_skins: Vec<LolChampSelectSkinSelectorChildSkin>,
     pub emblems: Vec<LolChampSelectCollectionsChampionSkinEmblem>,
     pub rarity_gem_path: String,
-    pub group_splash: String
+    pub group_splash: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -2987,7 +2845,7 @@ pub struct LolChampSelectTeamBoost {
     pub ip_reward: i64,
     pub ip_reward_for_purchaser: i64,
     pub available_skins: Vec<i64>,
-    pub unlocked: bool
+    pub unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3000,7 +2858,7 @@ pub struct LolChampionsChampionQuestSkinInfo {
     pub tile_path: String,
     pub collection_card_path: String,
     pub collection_description: String,
-    pub tiers: Vec<LolChampionsCollectionsChampionQuestSkin>
+    pub tiers: Vec<LolChampionsCollectionsChampionQuestSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3027,7 +2885,7 @@ pub struct LolChampionsCollectionsChampion {
     pub passive: LolChampionsCollectionsChampionSpell,
     pub skins: Vec<LolChampionsCollectionsChampionSkin>,
     pub spells: Vec<LolChampionsCollectionsChampionSpell>,
-    pub tactical_info: LolChampionsCollectionsChampionTacticalInfo
+    pub tactical_info: LolChampionsCollectionsChampionTacticalInfo,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3041,7 +2899,7 @@ pub struct LolChampionsCollectionsChampionChroma {
     pub disabled: bool,
     pub still_obtainable: bool,
     pub last_selected: bool,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3064,7 +2922,7 @@ pub struct LolChampionsCollectionsChampionMinimal {
     pub active: bool,
     pub bot_enabled: bool,
     pub free_to_play: bool,
-    pub ranked_play_enabled: bool
+    pub ranked_play_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3074,7 +2932,7 @@ pub struct LolChampionsCollectionsChampionPlayableCounts {
     pub champions_rented: u32,
     pub champions_free_to_play: u32,
     pub champions_loyalty_reward: u32,
-    pub champions_xbox_g_p_reward: u32
+    pub champions_xbox_g_p_reward: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3097,7 +2955,7 @@ pub struct LolChampionsCollectionsChampionQuestSkin {
     pub load_screen_path: String,
     pub short_name: String,
     pub splash_video_path: String,
-    pub collection_splash_video_path: String
+    pub collection_splash_video_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3123,7 +2981,7 @@ pub struct LolChampionsCollectionsChampionSkin {
     pub splash_video_path: Option<String>,
     pub collection_splash_video_path: Option<String>,
     pub skin_type: Option<String>,
-    pub features_text: Option<String>
+    pub features_text: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3131,21 +2989,21 @@ pub struct LolChampionsCollectionsChampionSkin {
 pub struct LolChampionsCollectionsChampionSkinEmblem {
     pub name: String,
     pub emblem_path: LolChampionsCollectionsChampionSkinEmblemPath,
-    pub positions: LolChampionsCollectionsChampionSkinEmblemPosition
+    pub positions: LolChampionsCollectionsChampionSkinEmblemPosition,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkinEmblemPath {
     pub large: String,
-    pub small: String
+    pub small: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSkinEmblemPosition {
     pub vertical: String,
-    pub horizontal: String
+    pub horizontal: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3161,14 +3019,14 @@ pub struct LolChampionsCollectionsChampionSkinMinimal {
     pub still_obtainable: bool,
     pub last_selected: bool,
     pub splash_path: String,
-    pub tile_path: String
+    pub tile_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsCollectionsChampionSpell {
     pub name: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3176,7 +3034,7 @@ pub struct LolChampionsCollectionsChampionSpell {
 pub struct LolChampionsCollectionsChampionTacticalInfo {
     pub style: u32,
     pub difficulty: u32,
-    pub damage_type: String
+    pub damage_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3185,7 +3043,7 @@ pub struct LolChampionsCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolChampionsCollectionsRental
+    pub rental: LolChampionsCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3194,7 +3052,7 @@ pub struct LolChampionsCollectionsRental {
     pub end_date: u64,
     pub purchase_date: u64,
     pub win_count_remaining: i32,
-    pub rented: bool
+    pub rented: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3212,7 +3070,7 @@ pub struct LolChampionsGameDataChampion {
     pub roles: Vec<String>,
     pub skins: Vec<LolChampionsGameDataChampionSkin>,
     pub spells: Vec<LolChampionsGameDataChampionSpell>,
-    pub tactical_info: LolChampionsGameDataChampionTacticalInfo
+    pub tactical_info: LolChampionsGameDataChampionTacticalInfo,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3220,7 +3078,7 @@ pub struct LolChampionsGameDataChampion {
 pub struct LolChampionsGameDataChampionChroma {
     pub id: i32,
     pub colors: Vec<String>,
-    pub chroma_path: String
+    pub chroma_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3236,7 +3094,7 @@ pub struct LolChampionsGameDataChampionQuestSkin {
     pub uncentered_splash_path: String,
     pub tile_path: String,
     pub load_screen_path: String,
-    pub short_name: String
+    pub short_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3256,20 +3114,20 @@ pub struct LolChampionsGameDataChampionSkin {
     pub collection_splash_video_path: Option<String>,
     pub chroma_path: Option<String>,
     pub skin_type: Option<String>,
-    pub features_text: Option<String>
+    pub features_text: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionSpell {
     pub name: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsGameDataChampionSummary {
-    pub id: i32
+    pub id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3277,7 +3135,7 @@ pub struct LolChampionsGameDataChampionSummary {
 pub struct LolChampionsGameDataChampionTacticalInfo {
     pub style: u32,
     pub difficulty: u32,
-    pub damage_type: String
+    pub damage_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3285,7 +3143,7 @@ pub struct LolChampionsGameDataChampionTacticalInfo {
 pub struct LolChampionsGameDataQuestSkinDescriptionInfo {
     pub title: String,
     pub description: String,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3298,7 +3156,7 @@ pub struct LolChampionsGameDataQuestSkinInfo {
     pub tile_path: String,
     pub collection_card_path: String,
     pub collection_description: String,
-    pub tiers: Vec<LolChampionsGameDataChampionQuestSkin>
+    pub tiers: Vec<LolChampionsGameDataChampionQuestSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3315,13 +3173,13 @@ pub struct LolChampionsInventoryItemWithPayload {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub owned: bool,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsLcdsDynamicClientConfig {
-    pub disabled_champions: Value
+    pub disabled_champions: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3329,14 +3187,14 @@ pub struct LolChampionsLcdsDynamicClientConfig {
 pub struct LolChampionsLoginSession {
     pub state: LolChampionsLoginSessionStates,
     pub summoner_id: u64,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsLoyaltyStatusNotification {
     pub status: LolChampionsLoyaltyStatus,
-    pub reload_inventory: bool
+    pub reload_inventory: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3352,7 +3210,7 @@ pub struct LolChampionsPlayerNotification {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3360,20 +3218,20 @@ pub struct LolChampionsPlayerNotification {
 pub struct LolChampionsQuestSkinDescriptionInfo {
     pub title: String,
     pub description: String,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChampionsSummoner {
     pub summoner_id: u64,
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatActiveConversationResource {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3381,7 +3239,7 @@ pub struct LolChatActiveConversationResource {
 pub struct LolChatAuthResourceRsoAccessToken {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3390,13 +3248,13 @@ pub struct LolChatBlocked {
     pub pid: String,
     pub name: String,
     pub game_name: String,
-    pub game_tag: String
+    pub game_tag: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatBlockedList {
-    pub blocked: Vec<LolChatBlocked>
+    pub blocked: Vec<LolChatBlocked>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3409,7 +3267,7 @@ pub struct LolChatBlockedPlayerResource {
     pub pid: String,
     pub puuid: String,
     pub game_name: String,
-    pub game_tag: String
+    pub game_tag: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3417,7 +3275,7 @@ pub struct LolChatBlockedPlayerResource {
 pub struct LolChatChampSelection {
     pub summoner_internal_name: String,
     pub champion_id: i32,
-    pub selected_skin_index: i32
+    pub selected_skin_index: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3427,7 +3285,7 @@ pub struct LolChatChatDomainConfig {
     pub custom_game_domain_name: Option<String>,
     pub champ_select_domain_name: Option<String>,
     pub post_game_domain_name: Option<String>,
-    pub club_domain_name: Option<String>
+    pub club_domain_name: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3435,7 +3293,7 @@ pub struct LolChatChatDomainConfig {
 pub struct LolChatChatFriendUpdate {
     pub pid: String,
     pub group: String,
-    pub note: String
+    pub note: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3452,13 +3310,13 @@ pub struct LolChatChatMessage {
     pub game_tag: String,
     pub time: String,
     pub body: String,
-    pub read: bool
+    pub read: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatMessageList {
-    pub messages: Vec<LolChatChatMessage>
+    pub messages: Vec<LolChatChatMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3472,14 +3330,14 @@ pub struct LolChatChatPlatformLoginSession {
     pub summoner_id: Option<u64>,
     pub id_token: String,
     pub puuid: String,
-    pub is_new_player: bool
+    pub is_new_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatChatServiceDynamicClientConfig {
     pub lcu_social: Option<LolChatLcuSocialConfig>,
-    pub chat_domain: Option<LolChatChatDomainConfig>
+    pub chat_domain: Option<LolChatChatDomainConfig>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3510,7 +3368,7 @@ pub struct LolChatChatSettings {
     pub muted_conversations: HashMap<String, i8>,
     #[serde(rename = "roster-group-collapsed")]
     pub roster_group_collapsed: HashMap<String, bool>,
-    pub chat_window: LolChatChatWindowSettings
+    pub chat_window: LolChatChatWindowSettings,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3521,7 +3379,7 @@ pub struct LolChatChatSummoner {
     pub display_name: String,
     pub summoner_level: u32,
     pub puuid: String,
-    pub unnamed: bool
+    pub unnamed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3531,19 +3389,19 @@ pub struct LolChatChatWindowSettings {
     pub height: u32,
     pub left: i32,
     pub top: i32,
-    pub width: u32
+    pub width: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatCidBody {
-    pub cid: String
+    pub cid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConfigStatus {
-    pub readiness: LolChatConfigReadinessEnum
+    pub readiness: LolChatConfigReadinessEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3551,7 +3409,7 @@ pub struct LolChatConfigStatus {
 pub struct LolChatContentCookies {
     pub content_id: String,
     pub content_path: String,
-    pub cookies: Vec<LolChatcookie>
+    pub cookies: Vec<LolChatcookie>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3562,7 +3420,7 @@ pub struct LolChatConversation {
     pub type_: String,
     pub mid: String,
     pub unread_count: u64,
-    pub muted: bool
+    pub muted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3574,13 +3432,13 @@ pub struct LolChatConversationJoinFederated {
     pub type_: String,
     pub domain: String,
     pub target_region: String,
-    pub hidden: Option<bool>
+    pub hidden: Option<bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatConversationList {
-    pub conversations: Vec<LolChatConversation>
+    pub conversations: Vec<LolChatConversation>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3595,7 +3453,7 @@ pub struct LolChatConversationMessageResource {
     pub from_obfuscated_summoner_id: u64,
     pub body: String,
     pub timestamp: String,
-    pub is_historical: bool
+    pub is_historical: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3610,11 +3468,10 @@ pub struct LolChatConversationResource {
     pub type_: String,
     pub inviter_id: String,
     pub password: String,
-    pub multi_user_chat_j_w_t: String,
     pub target_region: String,
     pub is_muted: bool,
     pub unread_message_count: u64,
-    pub last_message: Option<LolChatConversationMessageResource>
+    pub last_message: Option<LolChatConversationMessageResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3622,7 +3479,7 @@ pub struct LolChatConversationResource {
 pub struct LolChatConversationUpdate {
     pub cid: String,
     pub muted: bool,
-    pub hidden: bool
+    pub hidden: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3639,28 +3496,28 @@ pub struct LolChatDebugResource {
     pub fail_next_chat_logout: Option<bool>,
     pub fail_all_chat_login: Option<bool>,
     pub enable_chat_filtering: Option<bool>,
-    pub silence_chat_while_in_game: Option<bool>
+    pub silence_chat_while_in_game: Option<bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatEndOfGamePlayer {
     pub puuid: String,
-    pub is_local_player: bool
+    pub is_local_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatEndOfGameStats {
     pub teams: Vec<LolChatEndOfGameTeam>,
-    pub local_player: LolChatEndOfGamePlayer
+    pub local_player: LolChatEndOfGamePlayer,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatEndOfGameTeam {
     pub players: Vec<LolChatEndOfGamePlayer>,
-    pub is_player_team: bool
+    pub is_player_team: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3675,13 +3532,13 @@ pub struct LolChatError {
     pub text: String,
     pub ts: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatErrorList {
-    pub errors: Vec<LolChatError>
+    pub errors: Vec<LolChatError>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3691,7 +3548,7 @@ pub struct LolChatErrorResource {
     pub from: String,
     pub code: u64,
     pub message: String,
-    pub text: String
+    pub text: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3705,7 +3562,7 @@ pub struct LolChatFriend {
     pub game_tag: String,
     pub note: String,
     pub puuid: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3718,7 +3575,7 @@ pub struct LolChatFriendCountsResource {
     pub num_friends_in_queue: u32,
     pub num_friends_in_champ_select: u32,
     pub num_friends_in_game: u32,
-    pub num_friends_mobile: u32
+    pub num_friends_mobile: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3726,26 +3583,26 @@ pub struct LolChatFriendCountsResource {
 pub struct LolChatFriendGroup {
     pub name: String,
     pub collapsed: bool,
-    pub is_meta_group: bool
+    pub is_meta_group: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupCreate {
     pub name: String,
-    pub collapsed: bool
+    pub collapsed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupList {
-    pub groups: Vec<LolChatFriendGroup>
+    pub groups: Vec<LolChatFriendGroup>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendGroupOrder {
-    pub groups: Vec<String>
+    pub groups: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3753,13 +3610,13 @@ pub struct LolChatFriendGroupOrder {
 pub struct LolChatFriendGroupUpdate {
     pub name: String,
     pub new_name: String,
-    pub collapsed: bool
+    pub collapsed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendList {
-    pub friends: Vec<LolChatFriend>
+    pub friends: Vec<LolChatFriend>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3772,7 +3629,7 @@ pub struct LolChatFriendRequest {
     pub subscription: LolChatFriendSubscriptionType,
     pub note: String,
     pub puuid: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3784,13 +3641,13 @@ pub struct LolChatFriendRequestAdd {
     pub game_tag: String,
     pub note: String,
     pub puuid: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatFriendRequestList {
-    pub requests: Vec<LolChatFriendRequest>
+    pub requests: Vec<LolChatFriendRequest>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3805,7 +3662,7 @@ pub struct LolChatFriendRequestResource {
     pub game_name: String,
     pub game_tag: String,
     pub note: String,
-    pub direction: LolChatFriendRequestDirection
+    pub direction: LolChatFriendRequestDirection,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3834,14 +3691,14 @@ pub struct LolChatFriendResource {
     pub display_group_id: u32,
     pub group_name: String,
     pub display_group_name: String,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGameDataChampionSummary {
     pub id: i32,
-    pub alias: String
+    pub alias: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3851,13 +3708,13 @@ pub struct LolChatGameflowGameData {
     pub queue: LolChatQueue,
     pub team_one: Vec<LolChatTeamPlayerEntry>,
     pub team_two: Vec<LolChatTeamPlayerEntry>,
-    pub player_champion_selections: Vec<LolChatChampSelection>
+    pub player_champion_selections: Vec<LolChatChampSelection>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatGameflowGameMap {
-    pub id: i64
+    pub id: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3865,7 +3722,7 @@ pub struct LolChatGameflowGameMap {
 pub struct LolChatGameflowSession {
     pub phase: LolChatGameflowPhase,
     pub game_data: LolChatGameflowGameData,
-    pub map: LolChatGameflowGameMap
+    pub map: LolChatGameflowGameMap,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3876,13 +3733,13 @@ pub struct LolChatGroupResource {
     pub is_meta_group: bool,
     pub is_localized: bool,
     pub priority: i32,
-    pub collapsed: bool
+    pub collapsed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatIdBody {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3895,21 +3752,21 @@ pub struct LolChatLcuSocialConfig {
     pub replace_rich_messages: bool,
     pub game_name_tagline_enabled: bool,
     pub allow_group_by_game: bool,
-    pub platform_to_region_map: HashMap<String, String>
+    pub platform_to_region_map: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatLobbyMember {
     pub id: u64,
-    pub is_owner: bool
+    pub is_owner: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatLobbyPlayerStatus {
     pub current_lobby_status: Option<LolChatLobbyStatus>,
-    pub last_queued_lobby_status: Option<LolChatLobbyStatus>
+    pub last_queued_lobby_status: Option<LolChatLobbyStatus>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3919,7 +3776,7 @@ pub struct LolChatLobbyStatus {
     pub is_custom: bool,
     pub is_practice_tool: bool,
     pub is_leader: bool,
-    pub custom_spectator_policy: LolChatQueueCustomGameSpectatorPolicy
+    pub custom_spectator_policy: LolChatQueueCustomGameSpectatorPolicy,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3936,13 +3793,13 @@ pub struct LolChatMessage {
     pub game_tag: String,
     pub time: String,
     pub body: String,
-    pub read: bool
+    pub read: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMessageList {
-    pub messages: Vec<LolChatMessage>
+    pub messages: Vec<LolChatMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3951,7 +3808,7 @@ pub struct LolChatMessagePost {
     pub cid: String,
     pub message: String,
     #[serde(rename = "type")]
-    pub type_: LolChatMessageType
+    pub type_: LolChatMessageType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3959,7 +3816,7 @@ pub struct LolChatMessagePost {
 pub struct LolChatMessageSend {
     pub message: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -3983,13 +3840,13 @@ pub struct LolChatMultiGamePresence {
     pub actor: Option<String>,
     pub time: Option<u64>,
     pub private_jwt: Option<String>,
-    pub private: Option<String>
+    pub private: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatMultiGamePresenceList {
-    pub presences: Vec<LolChatMultiGamePresence>
+    pub presences: Vec<LolChatMultiGamePresence>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4001,7 +3858,7 @@ pub struct LolChatMultiGamePresenceSharedPayload {
     pub location: Option<String>,
     pub details: Option<String>,
     pub actor: Option<String>,
-    pub time: Option<u64>
+    pub time: Option<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4012,15 +3869,7 @@ pub struct LolChatMultiGamePresenceUpdate {
     pub private_jwt: Option<String>,
     pub private: Option<String>,
     pub shared_jwt: Option<String>,
-    pub shared: Option<LolChatMultiGamePresenceSharedPayload>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolChatMultiUserChatJWTPayload {
-    pub typ: String,
-    pub tgt: String,
-    pub chn: String
+    pub shared: Option<LolChatMultiGamePresenceSharedPayload>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4029,13 +3878,13 @@ pub struct LolChatMutedPlayerInfo {
     pub puuid: String,
     pub summoner_id: u64,
     pub obfuscated_puuid: String,
-    pub obfuscated_summoner_id: u64
+    pub obfuscated_summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatNameBody {
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4048,13 +3897,13 @@ pub struct LolChatParticipant {
     pub game_tag: String,
     pub muted: bool,
     pub puuid: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatParticipantList {
-    pub participants: Vec<LolChatParticipant>
+    pub participants: Vec<LolChatParticipant>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4063,13 +3912,13 @@ pub struct LolChatPatchlineMetadata {
     pub product_id: String,
     pub id: String,
     pub content_paths: HashMap<String, String>,
-    pub content_cookies: Vec<LolChatContentCookies>
+    pub content_cookies: Vec<LolChatContentCookies>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPidBody {
-    pub pid: String
+    pub pid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4079,14 +3928,14 @@ pub struct LolChatPlayerMuteStatus {
     pub obfuscated_puuid: String,
     pub is_player_muted: bool,
     pub is_settings_muted: bool,
-    pub is_system_muted: bool
+    pub is_system_muted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPlayerMuteUpdate {
     pub puuids: Vec<String>,
-    pub is_muted: bool
+    pub is_muted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4096,20 +3945,20 @@ pub struct LolChatPlayerPreferences {
     pub hash: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub modified: u64
+    pub modified: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPluginRegionLocaleChangedEvent {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatPresenceProduct {
-    pub product: String
+    pub product: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4117,13 +3966,13 @@ pub struct LolChatPresenceProduct {
 pub struct LolChatProductMetadata {
     pub id: String,
     pub name: String,
-    pub patchlines: HashMap<String, LolChatPatchlineMetadata>
+    pub patchlines: HashMap<String, LolChatPatchlineMetadata>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatProductMetadataMap {
-    pub products: HashMap<String, LolChatProductMetadata>
+    pub products: HashMap<String, LolChatProductMetadata>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4133,14 +3982,14 @@ pub struct LolChatQueue {
     #[serde(rename = "type")]
     pub type_: String,
     pub game_mode: String,
-    pub game_type_config: LolChatQueueGameTypeConfig
+    pub game_type_config: LolChatQueueGameTypeConfig,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatQueueGameTypeConfig {
     pub id: i64,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4151,7 +4000,7 @@ pub struct LolChatRankedQueueStats {
     pub tier: LolChatLeagueTier,
     pub division: LolChatLeagueDivision,
     pub wins: i32,
-    pub games: i32
+    pub games: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4160,7 +4009,7 @@ pub struct LolChatRankedStats {
     pub highest_ranked_entry: Option<LolChatRankedQueueStats>,
     pub ranked_regalia_level: i32,
     pub highest_previous_season_achieved_tier: LolChatLeagueTier,
-    pub highest_previous_season_achieved_division: LolChatLeagueDivision
+    pub highest_previous_season_achieved_division: LolChatLeagueDivision,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4168,7 +4017,7 @@ pub struct LolChatRankedStats {
 pub struct LolChatRsoAuthorization {
     pub current_platform_id: String,
     pub current_account_id: u64,
-    pub subject: String
+    pub subject: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4176,14 +4025,14 @@ pub struct LolChatRsoAuthorization {
 pub struct LolChatSanitizeRequest {
     pub texts: Vec<String>,
     pub level: Option<u32>,
-    pub aggressive_scan: Option<bool>
+    pub aggressive_scan: Option<bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSanitizeResponse {
     pub texts: Option<Vec<String>>,
-    pub modified: bool
+    pub modified: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4191,7 +4040,7 @@ pub struct LolChatSanitizeResponse {
 pub struct LolChatSanitizerStatus {
     pub ready: bool,
     pub platform_i_d: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4203,20 +4052,20 @@ pub struct LolChatSession {
     pub game_name: String,
     pub game_tag: String,
     pub resource: String,
-    pub loaded: bool
+    pub loaded: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSessionResource {
     pub session_state: LolChatSessionState,
-    pub session_expire: u32
+    pub session_expire: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSettingsResource {
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4225,13 +4074,13 @@ pub struct LolChatSpectateGameInfoResource {
     pub drop_in_spectate_game_id: String,
     pub game_queue_type: String,
     pub allow_observe_mode: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatSummonerStatus {
-    pub ready: bool
+    pub ready: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4239,7 +4088,7 @@ pub struct LolChatSummonerStatus {
 pub struct LolChatTeamPlayerEntry {
     pub summoner_id: u64,
     pub summoner_internal_name: String,
-    pub summoner_name: String
+    pub summoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4249,13 +4098,13 @@ pub struct LolChatTranslateRequest {
     pub product_id: String,
     pub locale: String,
     pub patchline: String,
-    pub blocking: bool
+    pub blocking: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolChatTranslateResponse {
-    pub results: Vec<LolChatTranslateResult>
+    pub results: Vec<LolChatTranslateResult>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4264,7 +4113,7 @@ pub struct LolChatTranslateResult {
     pub found: bool,
     pub key: String,
     pub product_id: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4288,7 +4137,7 @@ pub struct LolChatUserResource {
     pub time: u64,
     pub status_message: Option<String>,
     pub last_seen_online_timestamp: Option<String>,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4301,14 +4150,14 @@ pub struct LolChatcookie {
     pub path: String,
     pub secure: bool,
     pub httponly: bool,
-    pub expires: Option<i64>
+    pub expires: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashBlockedPlayerResource {
     pub summoner_id: u64,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4321,14 +4170,14 @@ pub struct LolClashBracket {
     pub rosters: Vec<BracketRoster>,
     pub version: i32,
     pub period: i32,
-    pub is_complete: bool
+    pub is_complete: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashBracketReadyNotification {
     pub tournament_id: i64,
-    pub bracket_id: i64
+    pub bracket_id: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4337,20 +4186,20 @@ pub struct LolClashBracketUpdateNotification {
     pub tournament_id: i64,
     pub bracket_id: i64,
     pub current_match_id: i64,
-    pub notify_reason: LolClashRosterNotifyReason
+    pub notify_reason: LolClashRosterNotifyReason,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashChangeIconRequest {
     pub icon_id: i32,
-    pub icon_color_id: i32
+    pub icon_color_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashChangeNameRequest {
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4376,27 +4225,27 @@ pub struct LolClashClashConfig {
     pub disabled_events: Vec<String>,
     pub min_clash_summoner_level: u32,
     pub min_clash_notifications_summoner_level: u32,
-    pub check_parties_registration: bool
+    pub check_parties_registration: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClashDisabledConfig {
     pub disabled_reason: String,
-    pub estimated_enable_time_millis: u64
+    pub estimated_enable_time_millis: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClashSettingCategory {
-    pub simple_state_flag_ids: Option<Vec<String>>
+    pub simple_state_flag_ids: Option<Vec<String>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashClientFailedInvite {
     pub player_id: u64,
-    pub exception: String
+    pub exception: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4405,7 +4254,7 @@ pub struct LolClashClubsSummoner {
     pub summoner_id: u64,
     pub display_name: String,
     pub profile_icon_id: i32,
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4421,7 +4270,7 @@ pub struct LolClashEogPlayerUpdateDTO {
     pub bid: i32,
     pub tier: i32,
     pub earned_rewards: Vec<ClashRewardDefinition>,
-    pub reward_progress: Vec<ClashRewardDefinition>
+    pub reward_progress: Vec<ClashRewardDefinition>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4430,7 +4279,7 @@ pub struct LolClashFindPlayers {
     pub invitation_id: String,
     pub member_id: i64,
     pub page: i32,
-    pub count: i32
+    pub count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4438,39 +4287,39 @@ pub struct LolClashFindPlayers {
 pub struct LolClashFindTeams {
     pub tournament_id: i64,
     pub page: i32,
-    pub count: i32
+    pub count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowAvailability {
-    pub is_available: bool
+    pub is_available: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowGameDodge {
     pub state: LolClashMatchmakingDodgeState,
-    pub dodge_ids: Vec<u64>
+    pub dodge_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowPartiesRegistrationStatus {
     pub complete: bool,
-    pub error_codes: Vec<String>
+    pub error_codes: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashGameflowSession {
-    pub phase: LolClashGameflowPhase
+    pub phase: LolClashGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashKickRequest {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4478,21 +4327,21 @@ pub struct LolClashKickRequest {
 pub struct LolClashLftState {
     pub lft: bool,
     pub primary_pos: String,
-    pub secondary_pos: String
+    pub secondary_pos: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashLoginSession {
     pub state: LolClashLoginSessionState,
-    pub summoner_id: Option<u64>
+    pub summoner_id: Option<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashMatchmakingDodgeData {
     pub state: LolClashMatchmakingDodgeState,
-    pub dodger_id: u64
+    pub dodger_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4502,7 +4351,7 @@ pub struct LolClashMatchmakingReadyCheckResource {
     pub player_response: LolClashMatchmakingReadyCheckResponse,
     pub dodge_warning: LolClashMatchmakingDodgeWarning,
     pub timer: f32,
-    pub decliner_ids: Vec<u64>
+    pub decliner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4510,7 +4359,7 @@ pub struct LolClashMatchmakingReadyCheckResource {
 pub struct LolClashMatchmakingSearchResource {
     pub queue_id: i32,
     pub ready_check: LolClashMatchmakingReadyCheckResource,
-    pub dodge_data: LolClashMatchmakingDodgeData
+    pub dodge_data: LolClashMatchmakingDodgeData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4521,7 +4370,7 @@ pub struct LolClashMemberBanUnbanNotification {
     pub notify_puuid: String,
     pub reason: String,
     pub notify_reason: LolClashNotifyReason,
-    pub tournaments: Vec<MemberBanUnbanTournament>
+    pub tournaments: Vec<MemberBanUnbanTournament>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4529,7 +4378,7 @@ pub struct LolClashMemberBanUnbanNotification {
 pub struct LolClashNoShowPingDTO {
     pub tournament_id: i64,
     pub match_id: i64,
-    pub dodge_time: i64
+    pub dodge_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4538,7 +4387,7 @@ pub struct LolClashNoShowPingResponse {
     pub tournament_id: i64,
     pub match_id: i64,
     pub dodge_time: i64,
-    pub data: String
+    pub data: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4548,14 +4397,14 @@ pub struct LolClashNoShowPingResponseData {
     pub dodge_time: i64,
     pub gameflow_state: LolClashGameflowPhase,
     pub is_playmode_restricted: bool,
-    pub ready_check_info: LolClashReadyCheckInfo
+    pub ready_check_info: LolClashReadyCheckInfo,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashOfferTicketRequest {
     pub ticket_amount: i32,
-    pub ticket_type: TicketType
+    pub ticket_type: TicketType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4564,7 +4413,7 @@ pub struct LolClashPendingRosterNotification {
     pub pending_roster: PendingRosterDTO,
     pub notify_reason: LolClashNotifyReason,
     pub source_player_id: u64,
-    pub target_player_id: u64
+    pub target_player_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4581,9 +4430,9 @@ pub struct LolClashPlayerChatRoster {
     pub icon_id: i32,
     pub icon_color_id: i32,
     pub logo_url: String,
-    pub multi_user_chat_j_w_t: String,
     pub invitation_id: String,
-    pub key: String
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4594,7 +4443,7 @@ pub struct LolClashPlayerData {
     pub tier: i32,
     pub lft: bool,
     pub primary_pos: String,
-    pub secondary_pos: String
+    pub secondary_pos: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4613,7 +4462,7 @@ pub struct LolClashPlayerNotification {
     pub created: String,
     pub expires: String,
     pub critical: bool,
-    pub dismissible: bool
+    pub dismissible: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4625,14 +4474,14 @@ pub struct LolClashPlayerNotificationData {
     pub source_summoner_id: u64,
     pub target_summoner_id: u64,
     pub notification: LolClashPlayerNotification,
-    pub key_suffix: String
+    pub key_suffix: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerRewards {
     pub season_vp: i32,
-    pub theme_vp: Vec<LolClashThemeVp>
+    pub theme_vp: Vec<LolClashThemeVp>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4640,14 +4489,14 @@ pub struct LolClashPlayerRewards {
 pub struct LolClashPlayerTournamentData {
     pub state: LolClashPlayerState,
     pub roster_id: String,
-    pub bracket_id: i64
+    pub bracket_id: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashPlayerUpdateNotification {
     pub player: PlayerDTO,
-    pub notify_reason: LolClashNotifyReason
+    pub notify_reason: LolClashNotifyReason,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4658,13 +4507,13 @@ pub struct LolClashPlaymodeRestrictedInfo {
     pub presence_state: LolClashPresenceState,
     pub roster_id: String,
     pub phase_id: i64,
-    pub ready_for_voice: bool
+    pub ready_for_voice: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashProfileInfo {
-    pub honor_level: i32
+    pub honor_level: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4690,7 +4539,7 @@ pub struct LolClashQueue {
     pub is_team_builder_managed: bool,
     pub queue_availability: LolClashQueueAvailability,
     pub queue_rewards: LolClashQueueReward,
-    pub spectator_enabled: bool
+    pub spectator_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4715,7 +4564,7 @@ pub struct LolClashQueueGameTypeConfig {
     pub post_pick_timer_duration: i32,
     pub ban_timer_duration: i32,
     pub pick_mode: String,
-    pub ban_mode: String
+    pub ban_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4724,14 +4573,14 @@ pub struct LolClashQueueReward {
     pub is_ip_enabled: bool,
     pub is_xp_enabled: bool,
     pub is_champion_points_enabled: bool,
-    pub party_size_ip_rewards: Vec<i32>
+    pub party_size_ip_rewards: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRankedScoutingMember {
     pub player_id: u64,
-    pub champion_scouting_data: Vec<LolClashRankedScoutingTopChampion>
+    pub champion_scouting_data: Vec<LolClashRankedScoutingTopChampion>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4743,7 +4592,7 @@ pub struct LolClashRankedScoutingTopChampion {
     pub game_count: i32,
     pub win_rate: i32,
     pub kda: String,
-    pub kda_classification: LolClashKdaClassification
+    pub kda_classification: LolClashKdaClassification,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4755,14 +4604,14 @@ pub struct LolClashReadyCheckInfo {
     pub queue_id: i32,
     pub is_accept_successful: bool,
     pub accept_error: String,
-    pub ready_check_resource: LolClashMatchmakingReadyCheckResource
+    pub ready_check_resource: LolClashMatchmakingReadyCheckResource,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRegisteredRosterNotification {
     pub roster: RosterDTO,
-    pub notify_reason: LolClashRosterNotifyReason
+    pub notify_reason: LolClashRosterNotifyReason,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4793,7 +4642,7 @@ pub struct LolClashRoster {
     pub phase_infos: Vec<LolClashRosterPhaseInfo>,
     pub withdraw: Option<RosterWithdraw>,
     pub is_clash_banned: bool,
-    pub lft: bool
+    pub lft: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4802,7 +4651,7 @@ pub struct LolClashRosterDetails {
     pub name: String,
     pub short_name: String,
     pub icon_id: i32,
-    pub icon_color_id: i32
+    pub icon_color_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4810,7 +4659,7 @@ pub struct LolClashRosterDetails {
 pub struct LolClashRosterDynamicStateNotification {
     pub roster_dynamic_state: RosterDynamicStateDTO,
     pub notify_reason: LolClashRosterNotifyReason,
-    pub source_player_id: u64
+    pub source_player_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4826,7 +4675,7 @@ pub struct LolClashRosterMatchAggregatedStats {
     pub game_id: i64,
     pub kills: i32,
     pub opponent_kills: i32,
-    pub player_champion_ids: HashMap<String, i32>
+    pub player_champion_ids: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4842,7 +4691,7 @@ pub struct LolClashRosterMember {
     pub replaced_summoner_id: u64,
     pub tier: i32,
     pub invite_type: InviteType,
-    pub inviter_id: u64
+    pub inviter_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4852,7 +4701,7 @@ pub struct LolClashRosterPeriodAggregatedStats {
     pub bracket_size: i32,
     pub time: i64,
     pub match_stats: Vec<LolClashRosterMatchAggregatedStats>,
-    pub player_bids: HashMap<String, i32>
+    pub player_bids: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4861,14 +4710,14 @@ pub struct LolClashRosterPhaseInfo {
     pub phase_id: i64,
     pub period: i32,
     pub checkin_time: i64,
-    pub is_bracket_complete: bool
+    pub is_bracket_complete: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashRosterPlayerAggregatedStats {
     pub raw_stats_sum: HashMap<String, i32>,
-    pub raw_stats_max: HashMap<String, i32>
+    pub raw_stats_max: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4877,7 +4726,7 @@ pub struct LolClashRosterPlayerNotification {
     pub roster: RosterDTO,
     pub notify_reason: LolClashRosterNotifyReason,
     pub player_notification_d_t_o: PlayerDTO,
-    pub source_player_id: u64
+    pub source_player_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4896,7 +4745,7 @@ pub struct LolClashRosterStats {
     pub roster_icon_id: i32,
     pub roster_icon_color_id: i32,
     pub period_stats: Vec<LolClashRosterPeriodAggregatedStats>,
-    pub player_stats: HashMap<String, LolClashRosterPlayerAggregatedStats>
+    pub player_stats: HashMap<String, LolClashRosterPlayerAggregatedStats>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4907,7 +4756,7 @@ pub struct LolClashRosterWithdrawNotification {
     pub roster_id: i64,
     pub withdraw: RosterWithdraw,
     pub notify_reason: LolClashRosterNotifyReason,
-    pub source_player_id: u64
+    pub source_player_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4915,7 +4764,7 @@ pub struct LolClashRosterWithdrawNotification {
 pub struct LolClashScoutingChampionMastery {
     pub champion_id: i32,
     pub champion_level: i32,
-    pub champion_points: i32
+    pub champion_points: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4924,7 +4773,7 @@ pub struct LolClashScoutingChampions {
     pub player_id: u64,
     pub total_mastery_score: u64,
     pub top_masteries: Vec<LolClashScoutingChampionMastery>,
-    pub top_season_champions: Vec<LolClashScoutingSeasonChampion>
+    pub top_season_champions: Vec<LolClashScoutingSeasonChampion>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4935,55 +4784,55 @@ pub struct LolClashScoutingSeasonChampion {
     pub game_count: i32,
     pub win_rate: i32,
     pub kda: String,
-    pub kda_classification: LolClashKdaClassification
+    pub kda_classification: LolClashKdaClassification,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSetPositionRequest {
-    pub position: Position
+    pub position: Position,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSetTicketRequest {
     pub ticket_amount: i32,
-    pub ticket_type: TicketType
+    pub ticket_type: TicketType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSettingCategory {
     pub schema_version: i32,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSimpleStateFlag {
     pub id: String,
-    pub status: LolClashSimpleStateStatus
+    pub status: LolClashSimpleStateStatus,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSuggestedInvite {
     pub summoner_id: u64,
-    pub suggester_summoner_id: u64
+    pub suggester_summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSuggestionInvite {
     pub inviter_id: u64,
-    pub invitee_players: Vec<u64>
+    pub invitee_players: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashSuggestionInvitee {
     pub captain_id: u64,
-    pub invitee_id: u64
+    pub invitee_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -4991,28 +4840,28 @@ pub struct LolClashSuggestionInvitee {
 pub struct LolClashTeamOpenState {
     pub invitation_id: String,
     pub captain_id: i64,
-    pub open_team: bool
+    pub open_team: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashThemeVp {
     pub theme_id: i32,
-    pub vp: i32
+    pub vp: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashThirdPartyApiPlayer {
     pub summoner_id: u64,
-    pub role: String
+    pub role: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashThirdPartyApiRoster {
     pub captain: LolClashThirdPartyApiPlayer,
-    pub members: Vec<LolClashThirdPartyApiPlayer>
+    pub members: Vec<LolClashThirdPartyApiPlayer>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5021,7 +4870,7 @@ pub struct LolClashTicketOffer {
     pub summoner_id: u64,
     pub amount: i32,
     pub ticket_type: TicketType,
-    pub is_accepted: bool
+    pub is_accepted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5055,7 +4904,7 @@ pub struct LolClashTournament {
     pub resume_time: i64,
     pub lft: bool,
     pub max_invites: i32,
-    pub max_suggestions_per_player: i32
+    pub max_suggestions_per_player: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5065,14 +4914,14 @@ pub struct LolClashTournamentGameEnd {
     pub tournament_name_loc_key: String,
     pub tournament_name_loc_key_secondary: String,
     pub bracket_id: i64,
-    pub old_bracket: Option<LolClashBracket>
+    pub old_bracket: Option<LolClashBracket>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentHistoryAndWinners {
     pub tournament_history: Vec<LolClashTournament>,
-    pub tournament_winners: LolClashTournamentWinnerHistory
+    pub tournament_winners: LolClashTournamentWinnerHistory,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5085,7 +4934,7 @@ pub struct LolClashTournamentPhase {
     pub scouting_start_time: i64,
     pub cancelled: bool,
     pub limit_tiers: Vec<i32>,
-    pub capacity_status: CapacityEnum
+    pub capacity_status: CapacityEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5093,7 +4942,7 @@ pub struct LolClashTournamentPhase {
 pub struct LolClashTournamentPhaseProgressNotificationDTO {
     pub tournament_id: i64,
     pub phase_id: i64,
-    pub capacity_status: CapacityEnum
+    pub capacity_status: CapacityEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5104,7 +4953,7 @@ pub struct LolClashTournamentStateInfo {
     pub current_phase_id: i64,
     pub next_phase_id: i64,
     pub next_state_change_time: i64,
-    pub num_remaining_periods: i32
+    pub num_remaining_periods: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5113,7 +4962,7 @@ pub struct LolClashTournamentSummary {
     pub state: LolClashTournamentState,
     pub tournament_id: i64,
     pub roster_id: String,
-    pub bracket_id: i64
+    pub bracket_id: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5123,7 +4972,7 @@ pub struct LolClashTournamentUpdatedNotification {
     pub current_retry: i32,
     pub max_retry: i32,
     pub retry_seconds: i64,
-    pub notify_reason: LolClashRosterNotifyReason
+    pub notify_reason: LolClashRosterNotifyReason,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5132,14 +4981,14 @@ pub struct LolClashTournamentUpdatedNotificationDTO {
     pub reason: LolClashTournamentNotifyReason,
     pub tournament_id: i64,
     pub tournament: Option<TournamentDTO>,
-    pub relevant_phase_id: Option<i64>
+    pub relevant_phase_id: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashTournamentWinnerHistory {
     pub tournament_id: i64,
-    pub winners: Vec<LolClashTournamentWinnerInfo>
+    pub winners: Vec<LolClashTournamentWinnerInfo>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5153,20 +5002,20 @@ pub struct LolClashTournamentWinnerInfo {
     pub logo_color: i32,
     pub create_time: i64,
     pub average_win_duration: i64,
-    pub player_ids: Vec<u64>
+    pub player_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolClashUserResource {
     pub summoner_id: u64,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsAccountIdAndSummonerId {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5183,7 +5032,7 @@ pub struct LolCollectionsCollectionsChampionMastery {
     pub tokens_earned: i32,
     pub chest_granted: bool,
     pub highest_grade: String,
-    pub formatted_mastery_goal: String
+    pub formatted_mastery_goal: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5191,7 +5040,7 @@ pub struct LolCollectionsCollectionsChampionMastery {
 pub struct LolCollectionsCollectionsChestEligibility {
     pub earnable_chests: u32,
     pub maximum_chests: u32,
-    pub next_chest_recharge_time: u64
+    pub next_chest_recharge_time: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5200,7 +5049,7 @@ pub struct LolCollectionsCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolCollectionsCollectionsRental
+    pub rental: LolCollectionsCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5209,7 +5058,7 @@ pub struct LolCollectionsCollectionsRental {
     pub end_date: u64,
     pub purchase_date: u64,
     pub win_count_remaining: i32,
-    pub rented: bool
+    pub rented: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5223,14 +5072,14 @@ pub struct LolCollectionsCollectionsSummonerBackdrop {
     pub backdrop_image: String,
     pub backdrop_video: String,
     pub backdrop_mask_color: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsSummonerSpells {
     pub summoner_id: u64,
-    pub spells: Vec<u64>
+    pub spells: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5238,7 +5087,7 @@ pub struct LolCollectionsCollectionsSummonerSpells {
 pub struct LolCollectionsCollectionsTopChampionMasteries {
     pub summoner_id: u64,
     pub score: u64,
-    pub masteries: Vec<LolCollectionsCollectionsChampionMastery>
+    pub masteries: Vec<LolCollectionsCollectionsChampionMastery>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5249,38 +5098,38 @@ pub struct LolCollectionsCollectionsWardSkin {
     pub description: String,
     pub ownership: LolCollectionsCollectionsOwnership,
     pub ward_image_path: String,
-    pub ward_shadow_image_path: String
+    pub ward_shadow_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsCollectionsWardSkinList {
-    pub ward_skin_list: Vec<i64>
+    pub ward_skin_list: Vec<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteries {
-    pub tree: LolCollectionsGameDataChampionMasteryTree
+    pub tree: LolCollectionsGameDataChampionMasteryTree,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteryGroup {
     pub id: u32,
-    pub rows: Vec<LolCollectionsGameDataChampionMasteryRow>
+    pub rows: Vec<LolCollectionsGameDataChampionMasteryRow>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteryRow {
-    pub masteries: Vec<u32>
+    pub masteries: Vec<u32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionMasteryTree {
-    pub groups: Vec<LolCollectionsGameDataChampionMasteryGroup>
+    pub groups: Vec<LolCollectionsGameDataChampionMasteryGroup>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5289,7 +5138,7 @@ pub struct LolCollectionsGameDataChampionQuestSkin {
     pub id: i32,
     pub name: String,
     pub splash_path: String,
-    pub splash_video_path: String
+    pub splash_video_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5300,26 +5149,26 @@ pub struct LolCollectionsGameDataChampionSkin {
     pub name: String,
     pub quest_skin_info: LolCollectionsGameDataQuestSkinInfo,
     pub splash_path: String,
-    pub splash_video_path: Option<String>
+    pub splash_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataChampionSummary {
-    pub id: i32
+    pub id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataQuestSkinInfo {
-    pub tiers: Vec<LolCollectionsGameDataChampionQuestSkin>
+    pub tiers: Vec<LolCollectionsGameDataChampionQuestSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsGameDataSplashMetadata {
     pub calculated_color: String,
-    pub override_color: String
+    pub override_color: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5330,7 +5179,7 @@ pub struct LolCollectionsInventoryItem {
     pub inventory_type: String,
     pub purchase_date: String,
     pub quantity: u64,
-    pub ownership_type: LolCollectionsItemOwnershipType
+    pub ownership_type: LolCollectionsItemOwnershipType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5352,7 +5201,7 @@ pub struct LolCollectionsInventoryItemDTO {
     pub rental: bool,
     pub loyalty: bool,
     pub lsb: bool,
-    pub wins: u64
+    pub wins: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5364,13 +5213,13 @@ pub struct LolCollectionsInventoryItemWithPayload {
     pub purchase_date: String,
     pub quantity: u64,
     pub ownership_type: LolCollectionsItemOwnershipType,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsLcdsDynamicClientConfig {
-    pub disabled_champions: Value
+    pub disabled_champions: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5378,7 +5227,7 @@ pub struct LolCollectionsLcdsDynamicClientConfig {
 pub struct LolCollectionsLoginSession {
     pub state: LolCollectionsLoginSessionStates,
     pub summoner_id: u64,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5386,7 +5235,7 @@ pub struct LolCollectionsLoginSession {
 pub struct LolCollectionsNumberFormattingBehavior {
     pub digits_for_thousands_seperator: u32,
     pub trim_trailing_zeros_after_decimal: bool,
-    pub western_number_grouping: bool
+    pub western_number_grouping: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5406,7 +5255,7 @@ pub struct LolCollectionsNumberFormattingData {
     pub meters_abbreviation: String,
     pub kilometers_abbreviation: String,
     pub percentage_format: String,
-    pub number_formatting_behavior: LolCollectionsNumberFormattingBehavior
+    pub number_formatting_behavior: LolCollectionsNumberFormattingBehavior,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5422,7 +5271,7 @@ pub struct LolCollectionsPlayerNotification {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5432,26 +5281,26 @@ pub struct LolCollectionsSummoner {
     pub account_id: u64,
     pub summoner_level: u32,
     pub profile_icon_id: i32,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsSummonerProfile {
-    pub background_skin_id: Option<i32>
+    pub background_skin_id: Option<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCollectionsSummonerProfileUpdate {
     pub key: String,
-    pub value: Value
+    pub value: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingAccountIdAndSummonerId {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5461,40 +5310,40 @@ pub struct LolContentTargetingCollectionsChampionMastery {
     pub champion_id: i32,
     pub champion_level: i32,
     pub champion_points: i32,
-    pub last_play_time: u64
+    pub last_play_time: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingContentTargetingFilterResponse {
-    pub filters: Vec<String>
+    pub filters: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingContentTargetingLocaleResponse {
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingDataModelResponse {
     pub response_code: i64,
-    pub model_data: Value
+    pub model_data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingGameflowGameData {
     pub game_id: u64,
-    pub queue: LolContentTargetingQueue
+    pub queue: LolContentTargetingQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingGameflowSession {
     pub phase: LolContentTargetingGameflowPhase,
-    pub game_data: LolContentTargetingGameflowGameData
+    pub game_data: LolContentTargetingGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5502,7 +5351,7 @@ pub struct LolContentTargetingGameflowSession {
 pub struct LolContentTargetingGeoInfo {
     pub country: String,
     pub city: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5512,7 +5361,7 @@ pub struct LolContentTargetingGeoInfoResponse {
     pub geo_info: LolContentTargetingGeoInfo,
     pub error_message: String,
     pub is_latest: bool,
-    pub is_initialized: bool
+    pub is_initialized: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5521,7 +5370,7 @@ pub struct LolContentTargetingLoginSession {
     pub state: LolContentTargetingLoginSessionState,
     pub summoner_id: u64,
     pub puuid: String,
-    pub id_token: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5530,7 +5379,7 @@ pub struct LolContentTargetingMission {
     pub id: String,
     pub status: String,
     pub completed_date: i64,
-    pub internal_name: String
+    pub internal_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5557,7 +5406,7 @@ pub struct LolContentTargetingPlatformConfig {
     pub missions_filter_enabled: bool,
     pub summoner_icon_filter_enabled: bool,
     pub asynchronous_event_handler_setup_delay_in_seconds: u32,
-    pub tas_ingestion_delay_in_seconds: u32
+    pub tas_ingestion_delay_in_seconds: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5566,7 +5415,7 @@ pub struct LolContentTargetingQueue {
     pub id: i32,
     pub map_id: i32,
     pub game_mode: String,
-    pub category: LolContentTargetingQueueGameCategory
+    pub category: LolContentTargetingQueueGameCategory,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5575,51 +5424,51 @@ pub struct LolContentTargetingRankedQueueStats {
     pub queue_type: LolContentTargetingRankedQueue,
     pub tier: LolContentTargetingRankedTier,
     pub division: LolContentTargetingRankedDivision,
-    pub is_provisional: bool
+    pub is_provisional: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingRankedStats {
     pub queues: Vec<LolContentTargetingRankedQueueStats>,
-    pub highest_ranked_entry: Option<LolContentTargetingRankedQueueStats>
+    pub highest_ranked_entry: Option<LolContentTargetingRankedQueueStats>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingRegionLocale {
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingSettingsResource {
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingSummoner {
     pub summoner_level: u32,
-    pub profile_icon_id: i32
+    pub profile_icon_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingTargetingAttributes {
-    pub result: HashMap<String, Value>
+    pub result: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolContentTargetingToken {
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsAccountSettingsCategoryDataResource {
-    pub type_to_last_opened_date: HashMap<String, i64>
+    pub type_to_last_opened_date: HashMap<String, i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5633,7 +5482,7 @@ pub struct LolCosmeticsCapOffer {
     pub payload: Vec<Value>,
     pub active: bool,
     pub start_date: String,
-    pub created_date: String
+    pub created_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5643,7 +5492,7 @@ pub struct LolCosmeticsCompanionsGroupViewModel {
     pub group_id: u32,
     pub num_owned: u32,
     pub num_available: u32,
-    pub items: Vec<LolCosmeticsCosmeticsCompanionViewModel>
+    pub items: Vec<LolCosmeticsCosmeticsCompanionViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5651,14 +5500,14 @@ pub struct LolCosmeticsCompanionsGroupViewModel {
 pub struct LolCosmeticsCompanionsGroupedViewModel {
     pub selected_loadout_item: LolCosmeticsCosmeticsCompanionViewModel,
     pub default_item_id: i32,
-    pub groups: Vec<LolCosmeticsCompanionsGroupViewModel>
+    pub groups: Vec<LolCosmeticsCompanionsGroupViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticSettingsResource {
     pub data: Option<LolCosmeticsAccountSettingsCategoryDataResource>,
-    pub schema_version: u32
+    pub schema_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5679,7 +5528,7 @@ pub struct LolCosmeticsCosmeticsCompanion {
     pub group_id: u32,
     pub color: String,
     pub level: u32,
-    pub upgrades: Vec<String>
+    pub upgrades: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5703,14 +5552,14 @@ pub struct LolCosmeticsCosmeticsCompanionViewModel {
     pub level: u32,
     pub upgrades: Vec<LolCosmeticsCosmeticsCompanionViewModel>,
     pub offer_data: Option<LolCosmeticsCapOffer>,
-    pub star_shards_price: LolCosmeticsCosmeticsOfferPrice
+    pub star_shards_price: LolCosmeticsCosmeticsOfferPrice,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsCosmeticsOfferPrice {
     pub offer_id: String,
-    pub price: u64
+    pub price: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5730,7 +5579,7 @@ pub struct LolCosmeticsCosmeticsTFTDamageSkin {
     pub level: u32,
     pub group_id: u32,
     pub group_name: String,
-    pub upgrades: Vec<String>
+    pub upgrades: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5751,7 +5600,7 @@ pub struct LolCosmeticsCosmeticsTFTDamageSkinViewModel {
     pub level: u32,
     pub group_id: u32,
     pub group_name: String,
-    pub upgrades: Vec<LolCosmeticsCosmeticsTFTDamageSkinViewModel>
+    pub upgrades: Vec<LolCosmeticsCosmeticsTFTDamageSkinViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5769,7 +5618,7 @@ pub struct LolCosmeticsCosmeticsTFTMapSkin {
     pub rarity_value: u32,
     pub purchase_date: String,
     pub group_id: u32,
-    pub group_name: String
+    pub group_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5788,7 +5637,47 @@ pub struct LolCosmeticsCosmeticsTFTMapSkinViewModel {
     pub purchase_date: String,
     pub is_recent_item: bool,
     pub group_id: u32,
-    pub group_name: String
+    pub group_name: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsCosmeticsTFTPlaybook {
+    pub content_id: String,
+    pub item_id: i32,
+    pub name: String,
+    pub description: String,
+    pub loadouts_icon: String,
+    pub owned: bool,
+    pub selected: bool,
+    pub loyalty: bool,
+    pub f2p: bool,
+    pub rarity_value: u32,
+    pub purchase_date: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsCosmeticsTFTPlaybookAugment {
+    pub name: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsCosmeticsTFTPlaybookViewModel {
+    pub content_id: String,
+    pub item_id: i32,
+    pub name: String,
+    pub description: String,
+    pub loadouts_icon: String,
+    pub owned: bool,
+    pub selected: bool,
+    pub loyalty: bool,
+    pub f2p: bool,
+    pub rarity_value: u32,
+    pub purchase_date: String,
+    pub is_recent_item: bool,
+    pub augments: Vec<LolCosmeticsCosmeticsTFTPlaybookAugment>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5805,7 +5694,13 @@ pub struct LolCosmeticsGameDataCompanion {
     pub level: u32,
     pub rarity_value: u32,
     pub upgrades: Vec<String>,
-    pub t_f_t_only: bool
+    pub t_f_t_only: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsGameDataTFTCosmeticsDefaults {
+    pub playbook: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5819,7 +5714,7 @@ pub struct LolCosmeticsGameDataTFTDamageSkin {
     pub group_id: u32,
     pub group_name: String,
     pub rarity_value: u32,
-    pub level: u32
+    pub level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5832,7 +5727,19 @@ pub struct LolCosmeticsGameDataTFTMapSkin {
     pub loadouts_icon: String,
     pub group_id: u32,
     pub group_name: String,
-    pub rarity_value: u32
+    pub rarity_value: u32,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsGameDataTFTPlaybook {
+    pub content_id: String,
+    pub item_id: i32,
+    pub name: String,
+    pub description: String,
+    pub translated_name: String,
+    pub loadouts_icon: String,
+    pub augments: Vec<LolCosmeticsCosmeticsTFTPlaybookAugment>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5842,7 +5749,7 @@ pub struct LolCosmeticsLoadout {
     pub name: String,
     pub scope: String,
     pub item_id: i32,
-    pub loadout: HashMap<String, LolCosmeticsLoadoutItem>
+    pub loadout: HashMap<String, LolCosmeticsLoadoutItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5850,13 +5757,13 @@ pub struct LolCosmeticsLoadout {
 pub struct LolCosmeticsLoadoutItem {
     pub inventory_type: String,
     pub content_id: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsLoadoutUpdateDto {
-    pub loadout: HashMap<String, LolCosmeticsLoadoutItem>
+    pub loadout: HashMap<String, LolCosmeticsLoadoutItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5866,7 +5773,7 @@ pub struct LolCosmeticsTFTDamageSkinGroupViewModel {
     pub group_id: u32,
     pub num_owned: u32,
     pub num_available: u32,
-    pub items: Vec<LolCosmeticsCosmeticsTFTDamageSkinViewModel>
+    pub items: Vec<LolCosmeticsCosmeticsTFTDamageSkinViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5874,7 +5781,7 @@ pub struct LolCosmeticsTFTDamageSkinGroupViewModel {
 pub struct LolCosmeticsTFTDamageSkinGroupedViewModel {
     pub selected_loadout_item: LolCosmeticsCosmeticsTFTDamageSkinViewModel,
     pub default_item_id: i32,
-    pub groups: Vec<LolCosmeticsTFTDamageSkinGroupViewModel>
+    pub groups: Vec<LolCosmeticsTFTDamageSkinGroupViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5884,7 +5791,7 @@ pub struct LolCosmeticsTFTMapSkinGroupViewModel {
     pub group_id: u32,
     pub num_owned: u32,
     pub num_available: u32,
-    pub items: Vec<LolCosmeticsCosmeticsTFTMapSkinViewModel>
+    pub items: Vec<LolCosmeticsCosmeticsTFTMapSkinViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5892,27 +5799,45 @@ pub struct LolCosmeticsTFTMapSkinGroupViewModel {
 pub struct LolCosmeticsTFTMapSkinGroupedViewModel {
     pub selected_loadout_item: LolCosmeticsCosmeticsTFTMapSkinViewModel,
     pub default_item_id: i32,
-    pub groups: Vec<LolCosmeticsTFTMapSkinGroupViewModel>
+    pub groups: Vec<LolCosmeticsTFTMapSkinGroupViewModel>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsTFTPlaybookGroupViewModel {
+    pub group_name: String,
+    pub group_id: u32,
+    pub num_owned: u32,
+    pub num_available: u32,
+    pub items: Vec<LolCosmeticsCosmeticsTFTPlaybookViewModel>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolCosmeticsTFTPlaybookGroupedViewModel {
+    pub selected_loadout_item: LolCosmeticsCosmeticsTFTPlaybookViewModel,
+    pub default_item_id: i32,
+    pub groups: Vec<LolCosmeticsTFTPlaybookGroupViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTSettingsDataResource {
-    pub icon_override: String
+    pub icon_override: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsTFTSettingsResource {
     pub data: Option<LolCosmeticsTFTSettingsDataResource>,
-    pub schema_version: u32
+    pub schema_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolCosmeticsUserResource {
     pub summoner_id: u64,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5920,7 +5845,7 @@ pub struct LolCosmeticsUserResource {
 pub struct LolDiscordRpGameDataChampionSummary {
     pub id: i32,
     pub name: String,
-    pub alias: String
+    pub alias: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5929,21 +5854,21 @@ pub struct LolDiscordRpPartyPresenceData {
     pub party_id: String,
     pub queue_id: i32,
     pub summoners: Vec<u64>,
-    pub max_players: u32
+    pub max_players: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationAccessToken {
     pub token: String,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationEmailUpdate {
     pub email: String,
-    pub password: String
+    pub password: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5951,7 +5876,7 @@ pub struct LolEmailVerificationEmailUpdate {
 pub struct LolEmailVerificationEmailVerificationSession {
     pub email: String,
     pub email_verified: bool,
-    pub fatal_error: bool
+    pub fatal_error: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5960,20 +5885,20 @@ pub struct LolEmailVerificationRegionLocale {
     pub region: String,
     pub locale: String,
     pub web_region: String,
-    pub web_language: String
+    pub web_language: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationRemoteEmailVerificationSession {
     pub email: String,
-    pub email_verified: bool
+    pub email_verified: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEmailVerificationValidationStatus {
-    pub email_status: String
+    pub email_status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5981,7 +5906,7 @@ pub struct LolEmailVerificationValidationStatus {
 pub struct LolEndOfGameChampionMasteryGrade {
     pub player_id: u64,
     pub champion_id: i32,
-    pub grade: String
+    pub grade: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -5989,7 +5914,7 @@ pub struct LolEndOfGameChampionMasteryGrade {
 pub struct LolEndOfGameChampionMasteryMini {
     pub player_id: u64,
     pub champion_id: i32,
-    pub champion_level: i64
+    pub champion_level: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6013,7 +5938,7 @@ pub struct LolEndOfGameChampionMasteryUpdate {
     pub grade: String,
     pub score: i64,
     pub level_up_list: Vec<LolEndOfGameChampionMasteryMini>,
-    pub member_grades: Vec<LolEndOfGameChampionMasteryGrade>
+    pub member_grades: Vec<LolEndOfGameChampionMasteryGrade>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6043,7 +5968,7 @@ pub struct LolEndOfGameEndOfGamePlayer {
     pub skin_emblem_paths: Vec<String>,
     pub champion_name: String,
     pub champion_square_portrait_path: String,
-    pub is_local_player: bool
+    pub is_local_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6052,7 +5977,7 @@ pub struct LolEndOfGameEndOfGamePlayerComplaintV2 {
     pub game_id: u64,
     pub reported_summoner_id: u64,
     pub offenses: String,
-    pub comment: String
+    pub comment: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6061,7 +5986,7 @@ pub struct LolEndOfGameEndOfGamePlayerReport {
     pub reported_puuid: String,
     pub game_id: u64,
     pub offense: String,
-    pub comment: String
+    pub comment: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6073,7 +5998,7 @@ pub struct LolEndOfGameEndOfGamePoints {
     pub previous_points: i32,
     pub points_until_next_reroll: i32,
     pub reroll_count: i32,
-    pub total_points: i32
+    pub total_points: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6089,8 +6014,8 @@ pub struct LolEndOfGameEndOfGameStats {
     pub queue_type: String,
     pub ranked: bool,
     pub report_game_id: u64,
-    pub room_name: String,
-    pub room_password: String,
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
     pub multi_user_chat_j_w_t: String,
     pub teams: Vec<LolEndOfGameEndOfGameTeam>,
     pub local_player: LolEndOfGameEndOfGamePlayer,
@@ -6110,6 +6035,7 @@ pub struct LolEndOfGameEndOfGameStats {
     pub experience_total: i32,
     pub global_boost_xp_earned: i32,
     pub loyalty_boost_xp_earned: i32,
+    pub xbgp_boost_xp_earned: i32,
     pub missions_xp_earned: i32,
     pub previous_xp_total: u64,
     pub next_level_xp: u64,
@@ -6122,7 +6048,7 @@ pub struct LolEndOfGameEndOfGameStats {
     pub team_early_surrendered: bool,
     pub game_ended_in_early_surrender: bool,
     pub reroll_data: LolEndOfGameEndOfGamePoints,
-    pub team_boost: Option<LolEndOfGameEndOfGameTeamBoost>
+    pub team_boost: Option<LolEndOfGameEndOfGameTeamBoost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6137,7 +6063,7 @@ pub struct LolEndOfGameEndOfGameTeam {
     pub team_id: i32,
     pub is_bottom_team: bool,
     pub is_player_team: bool,
-    pub is_winning_team: bool
+    pub is_winning_team: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6149,13 +6075,13 @@ pub struct LolEndOfGameEndOfGameTeamBoost {
     pub ip_reward: i64,
     pub ip_reward_for_purchaser: i64,
     pub available_skins: Vec<i64>,
-    pub unlocked: bool
+    pub unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameClientEndOfGame {
-    pub game_client_e_o_g: LolEndOfGameGameClientEndOfGameStats
+    pub game_client_e_o_g: LolEndOfGameGameClientEndOfGameStats,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6166,14 +6092,14 @@ pub struct LolEndOfGameGameClientEndOfGameStats {
     pub stats_block: Value,
     pub queue_id: i32,
     pub queue_type: String,
-    pub is_ranked: bool
+    pub is_ranked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataChampion {
     pub id: i32,
-    pub skins: Vec<LolEndOfGameGameDataChampionSkin>
+    pub skins: Vec<LolEndOfGameGameDataChampionSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6181,7 +6107,7 @@ pub struct LolEndOfGameGameDataChampion {
 pub struct LolEndOfGameGameDataChampionQuestSkin {
     pub id: i32,
     pub splash_path: String,
-    pub tile_path: String
+    pub tile_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6191,7 +6117,7 @@ pub struct LolEndOfGameGameDataChampionSkin {
     pub splash_path: String,
     pub tile_path: String,
     pub chromas: Vec<LolEndOfGameGameDataSkinChroma>,
-    pub quest_skin_info: LolEndOfGameGameDataQuestSkinInfo
+    pub quest_skin_info: LolEndOfGameGameDataQuestSkinInfo,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6200,7 +6126,7 @@ pub struct LolEndOfGameGameDataChampionSummary {
     pub id: i32,
     pub alias: String,
     pub name: String,
-    pub square_portrait_path: String
+    pub square_portrait_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6209,19 +6135,19 @@ pub struct LolEndOfGameGameDataCompanion {
     pub content_id: String,
     pub loadouts_icon: String,
     pub species_name: String,
-    pub color_name: String
+    pub color_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataQuestSkinInfo {
-    pub tiers: Vec<LolEndOfGameGameDataChampionQuestSkin>
+    pub tiers: Vec<LolEndOfGameGameDataChampionQuestSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataSkinChroma {
-    pub id: i32
+    pub id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6232,7 +6158,7 @@ pub struct LolEndOfGameGameDataTftChampion {
     pub rarity: i32,
     pub display_name: String,
     pub square_icon_path: String,
-    pub traits: Vec<LolEndOfGameGameDataTftTrait>
+    pub traits: Vec<LolEndOfGameGameDataTftTrait>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6241,20 +6167,20 @@ pub struct LolEndOfGameGameDataTftItem {
     pub name: String,
     pub id: i32,
     pub loadouts_icon: String,
-    pub name_id: String
+    pub name_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameDataTftTrait {
     pub id: String,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameflowAvailability {
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6262,14 +6188,14 @@ pub struct LolEndOfGameGameflowAvailability {
 pub struct LolEndOfGameGameflowClient {
     pub observer_server_ip: String,
     pub observer_server_port: u16,
-    pub running: bool
+    pub running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameGameflowGameData {
     pub game_id: u64,
-    pub queue: LolEndOfGameQueue
+    pub queue: LolEndOfGameQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6277,20 +6203,20 @@ pub struct LolEndOfGameGameflowGameData {
 pub struct LolEndOfGameGameflowSession {
     pub phase: LolEndOfGameGameflowPhase,
     pub game_client: LolEndOfGameGameflowClient,
-    pub game_data: LolEndOfGameGameflowGameData
+    pub game_data: LolEndOfGameGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameLobbyInvitation {
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameLoginDataPacket {
     pub platform_id: String,
-    pub simple_messages: Vec<LolEndOfGameSimpleMessage>
+    pub simple_messages: Vec<LolEndOfGameSimpleMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6298,7 +6224,7 @@ pub struct LolEndOfGameLoginDataPacket {
 pub struct LolEndOfGameLoginSession {
     pub state: LolEndOfGameLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6307,7 +6233,7 @@ pub struct LolEndOfGameQueue {
     pub id: i32,
     #[serde(rename = "type")]
     pub type_: String,
-    pub is_ranked: bool
+    pub is_ranked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6318,7 +6244,7 @@ pub struct LolEndOfGameRerollDataBagForClientV1 {
     pub reroll_count: i32,
     pub total_points: i32,
     pub maximum_rerolls: i32,
-    pub point_cost_of_reroll: i32
+    pub point_cost_of_reroll: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6328,7 +6254,7 @@ pub struct LolEndOfGameSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6338,7 +6264,7 @@ pub struct LolEndOfGameSummoner {
     pub summoner_level: u32,
     pub xp_since_last_level: u64,
     pub xp_until_next_level: u64,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6346,7 +6272,7 @@ pub struct LolEndOfGameSummoner {
 pub struct LolEndOfGameTFTEndOfGameCompanionViewModel {
     pub species_name: String,
     pub color_name: String,
-    pub icon: String
+    pub icon: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6355,7 +6281,7 @@ pub struct LolEndOfGameTFTEndOfGameItemViewModel {
     pub name: String,
     pub icon: String,
     pub id: i32,
-    pub name_id: String
+    pub name_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6366,7 +6292,7 @@ pub struct LolEndOfGameTFTEndOfGamePieceViewModel {
     pub level: u32,
     pub price: u32,
     pub items: Vec<LolEndOfGameTFTEndOfGameItemViewModel>,
-    pub traits: Vec<LolEndOfGameTFTEndOfGameTraitViewModel>
+    pub traits: Vec<LolEndOfGameTFTEndOfGameTraitViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6383,14 +6309,14 @@ pub struct LolEndOfGameTFTEndOfGamePlayerViewModel {
     pub partner_group_id: u8,
     pub board_pieces: Vec<LolEndOfGameTFTEndOfGamePieceViewModel>,
     pub augments: Vec<LolEndOfGameTFTEndOfGameItemViewModel>,
-    pub companion: LolEndOfGameTFTEndOfGameCompanionViewModel
+    pub companion: LolEndOfGameTFTEndOfGameCompanionViewModel,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEndOfGameTFTEndOfGameTraitViewModel {
     pub id: String,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6402,7 +6328,7 @@ pub struct LolEndOfGameTFTEndOfGameViewModel {
     pub game_id: u64,
     pub queue_id: i32,
     pub queue_type: String,
-    pub is_ranked: bool
+    pub is_ranked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6417,7 +6343,7 @@ pub struct LolEsportStreamNotificationsESportStreamNotificationsConfig {
     pub notifications_service_endpoint_v2: String,
     pub notifications_short_poll_minutes: i64,
     pub notifications_long_poll_minutes: i64,
-    pub beapp_failure_long_poll_minutes: i64
+    pub beapp_failure_long_poll_minutes: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6427,7 +6353,7 @@ pub struct LolEsportStreamNotificationsESportsAPIStreamgroups {
     pub slug: String,
     pub title: String,
     pub live: bool,
-    pub content: String
+    pub content: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6435,13 +6361,13 @@ pub struct LolEsportStreamNotificationsESportsAPIStreamgroups {
 pub struct LolEsportStreamNotificationsESportsAPIStreamgroupsRoot {
     pub streamgroups: Vec<LolEsportStreamNotificationsESportsAPIStreamgroups>,
     pub highlander_tournaments: Vec<LolEsportStreamNotificationsEsportsAPIHighlanderTournaments>,
-    pub teams: Vec<LolEsportStreamNotificationsEsportsAPITeams>
+    pub teams: Vec<LolEsportStreamNotificationsEsportsAPITeams>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsESportsLiveStreams {
-    pub live_streams: Vec<LolEsportStreamNotificationsESportsStreams>
+    pub live_streams: Vec<LolEsportStreamNotificationsESportsStreams>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6458,7 +6384,7 @@ pub struct LolEsportStreamNotificationsESportsStreams {
     pub team_a_acronym: String,
     pub team_b_acronym: String,
     pub team_a_logo_url: String,
-    pub team_b_logo_url: String
+    pub team_b_logo_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6467,28 +6393,31 @@ pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournaments {
     pub id: String,
     pub description: String,
     pub title: String,
-    pub brackets: HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsBrackets>,
-    pub rosters: HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRosters>
+    pub brackets:
+        HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsBrackets>,
+    pub rosters:
+        HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRosters>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsBrackets {
     pub id: String,
-    pub matches: HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsMatches>
+    pub matches:
+        HashMap<String, LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsMatches>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsMatches {
     pub id: String,
-    pub input: Vec<LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRoster>
+    pub input: Vec<LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRoster>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRoster {
-    pub roster: String
+    pub roster: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6496,7 +6425,7 @@ pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRoster {
 pub struct LolEsportStreamNotificationsEsportsAPIHighlanderTournamentsRosters {
     pub id: String,
     pub name: String,
-    pub team: i64
+    pub team: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6507,13 +6436,13 @@ pub struct LolEsportStreamNotificationsEsportsAPITeams {
     pub slug: String,
     pub name: String,
     pub logo_url: String,
-    pub acronym: String
+    pub acronym: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEsportStreamNotificationsGameflowSession {
-    pub phase: LolEsportStreamNotificationsGameflowPhase
+    pub phase: LolEsportStreamNotificationsGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6523,7 +6452,7 @@ pub struct LolEsportStreamNotificationsLiveMatch {
     pub stream_group: String,
     pub title: String,
     pub tournament_description: String,
-    pub teams: Vec<LolEsportStreamNotificationsLiveMatchTeam>
+    pub teams: Vec<LolEsportStreamNotificationsLiveMatchTeam>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6532,7 +6461,7 @@ pub struct LolEsportStreamNotificationsLiveMatchTeam {
     pub guid: String,
     pub name: String,
     pub acronym: String,
-    pub logo_url: String
+    pub logo_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6549,7 +6478,7 @@ pub struct LolEsportStreamNotificationsPlayerNotificationResource {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6557,20 +6486,14 @@ pub struct LolEsportStreamNotificationsPlayerNotificationResource {
 pub struct LolEventShopAccessTokenResource {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolEventShopAccountIdAndSummonerId {
-    pub summoner_id: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopBalance {
     pub currency_type: String,
-    pub amount: i32
+    pub amount: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6584,7 +6507,7 @@ pub struct LolEventShopBaseSkinLineDto {
     pub uncentered_splash_path: String,
     pub collection_card_path: String,
     pub collection_description: String,
-    pub tile_path: String
+    pub tile_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6593,7 +6516,7 @@ pub struct LolEventShopBundledItemPricingInfo {
     pub discount_prices: Vec<LolEventShopDiscountPricingInfo>,
     pub inventory_type: String,
     pub item_id: i32,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6607,7 +6530,7 @@ pub struct LolEventShopCapOffer {
     pub payload: Vec<LolEventShopCapOfferPayloadEntry>,
     pub active: bool,
     pub start_date: String,
-    pub created_date: String
+    pub created_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6616,7 +6539,7 @@ pub struct LolEventShopCapOfferPayloadEntry {
     pub item_price_map: HashMap<String, i32>,
     pub item_instance_id: String,
     pub fulfillment_type_id: String,
-    pub inventory_type_u_u_i_d: String
+    pub inventory_type_u_u_i_d: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6626,34 +6549,34 @@ pub struct LolEventShopCapOrdersDataDto {
     pub sub_orders: Vec<LolEventShopCapOrdersSubOrderDto>,
     pub purchaser: LolEventShopCapOrdersTypedIdentifierDto,
     pub location: String,
-    pub source: String
+    pub source: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersMetaDto {
-    pub xid: String
+    pub xid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersOfferContextDto {
     pub quantity: u32,
-    pub payment_option: String
+    pub payment_option: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersOfferDto {
     pub id: String,
-    pub product_id: String
+    pub product_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersOrderDto {
     pub data: LolEventShopCapOrdersDataDto,
-    pub meta: LolEventShopCapOrdersMetaDto
+    pub meta: LolEventShopCapOrdersMetaDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6661,14 +6584,14 @@ pub struct LolEventShopCapOrdersOrderDto {
 pub struct LolEventShopCapOrdersSubOrderDto {
     pub recipient_id: String,
     pub offer_context: LolEventShopCapOrdersOfferContextDto,
-    pub offer: LolEventShopCapOrdersOfferDto
+    pub offer: LolEventShopCapOrdersOfferDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCapOrdersTypedIdentifierDto {
     pub id: String,
-    pub type_id: String
+    pub type_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6677,7 +6600,7 @@ pub struct LolEventShopCatalogEntry {
     pub content_id: String,
     pub item_id: i32,
     pub offer_id: String,
-    pub type_id: String
+    pub type_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6685,7 +6608,7 @@ pub struct LolEventShopCatalogEntry {
 pub struct LolEventShopCatalogItem {
     pub item_id: i32,
     pub inventory_type: String,
-    pub item_instance_id: Option<String>
+    pub item_instance_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6708,7 +6631,7 @@ pub struct LolEventShopCatalogPluginItem {
     pub metadata: Option<Vec<LolEventShopItemMetadataEntry>>,
     pub quest_skin_info: Option<LolEventShopSkinLineInfo>,
     pub active: bool,
-    pub ownership_type: Option<LolEventShopInventoryOwnership>
+    pub ownership_type: Option<LolEventShopInventoryOwnership>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6718,7 +6641,7 @@ pub struct LolEventShopCatalogPluginItemAssets {
     pub icon_path: String,
     pub tile_path: String,
     pub emblems: Vec<LolEventShopChampionSkinEmblem>,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6730,7 +6653,7 @@ pub struct LolEventShopCatalogPluginItemWithDetails {
     pub bundled_items: Option<Vec<LolEventShopCatalogPluginItemWithDetails>>,
     pub minimum_bundle_prices: Option<Vec<LolEventShopCatalogPluginPrice>>,
     pub bundled_discount_prices: Option<Vec<LolEventShopCatalogPluginPrice>>,
-    pub assets: LolEventShopCatalogPluginItemAssets
+    pub assets: LolEventShopCatalogPluginItemAssets,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6739,7 +6662,7 @@ pub struct LolEventShopCatalogPluginPrice {
     pub currency: String,
     pub cost: i64,
     pub cost_type: Option<String>,
-    pub sale: Option<LolEventShopCatalogPluginSale>
+    pub sale: Option<LolEventShopCatalogPluginSale>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6748,7 +6671,7 @@ pub struct LolEventShopCatalogPluginSale {
     pub start_date: String,
     pub end_date: String,
     pub discount: Option<f32>,
-    pub cost: i64
+    pub cost: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6756,13 +6679,13 @@ pub struct LolEventShopCatalogPluginSale {
 pub struct LolEventShopCategoryOffersUIData {
     pub category: LolEventShopOfferCategory,
     pub category_icon_path: String,
-    pub offers: Vec<LolEventShopOfferUIData>
+    pub offers: Vec<LolEventShopOfferUIData>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCelebrationUIData {
-    pub reward_track_items: Vec<LolEventShopRewardTrackItem>
+    pub reward_track_items: Vec<LolEventShopRewardTrackItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6770,28 +6693,28 @@ pub struct LolEventShopCelebrationUIData {
 pub struct LolEventShopChampionSkinEmblem {
     pub name: String,
     pub emblem_path: LolEventShopChampionSkinEmblemPath,
-    pub emblem_position: LolEventShopChampionSkinEmblemPosition
+    pub emblem_position: LolEventShopChampionSkinEmblemPosition,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopChampionSkinEmblemPath {
     pub large: String,
-    pub small: String
+    pub small: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopChampionSkinEmblemPosition {
     pub vertical: String,
-    pub horizontal: String
+    pub horizontal: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopClaimSelectUIData {
     pub selected_reward_track_item: LolEventShopRewardTrackItem,
-    pub unclaimed_reward_count: u16
+    pub unclaimed_reward_count: u16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6799,7 +6722,15 @@ pub struct LolEventShopClaimSelectUIData {
 pub struct LolEventShopClientCacheClearMessageDTO {
     pub regions: Vec<String>,
     pub clear_all: bool,
-    pub inventory_types: Vec<String>
+    pub inventory_types: Vec<String>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolEventShopContentDrop {
+    pub patch: String,
+    pub activation_date: String,
+    pub offers: Vec<LolEventShopOffer>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6809,7 +6740,7 @@ pub struct LolEventShopCounter {
     pub name: String,
     pub group_id: String,
     pub direction: String,
-    pub start_value: i64
+    pub start_value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6819,14 +6750,14 @@ pub struct LolEventShopCounterInstance {
     pub product_id: String,
     pub group_id: String,
     pub counter_id: String,
-    pub counter_value: i64
+    pub counter_value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopCurrencyDTO {
     pub amount: i32,
-    pub sub_currencies: HashMap<String, i32>
+    pub sub_currencies: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6835,7 +6766,7 @@ pub struct LolEventShopDiscountPricingInfo {
     pub cost: i32,
     pub cost_type: String,
     pub currency: String,
-    pub discount: f32
+    pub discount: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6843,13 +6774,13 @@ pub struct LolEventShopDiscountPricingInfo {
 pub struct LolEventShopEntityInstance {
     pub group_id: String,
     pub counters: Vec<LolEventShopCounterInstance>,
-    pub milestones: Vec<LolEventShopMilestoneInstance>
+    pub milestones: Vec<LolEventShopMilestoneInstance>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventBackgroundUIData {
-    pub background_image_path: String
+    pub background_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6859,7 +6790,7 @@ pub struct LolEventShopEventHeaderUIData {
     pub event_name: String,
     pub progress_end_date: String,
     pub shop_end_date: String,
-    pub help_modal_image_path: String
+    pub help_modal_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6882,7 +6813,7 @@ pub struct LolEventShopEventShop {
     pub help_modal_image: String,
     pub event_pass_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>,
     pub token_shop: LolEventShopTokenShop,
-    pub reward_track: LolEventShopRewardTrack
+    pub reward_track: LolEventShopRewardTrack,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6893,14 +6824,17 @@ pub struct LolEventShopEventShopClientConfig {
     pub start_date: String,
     pub progress_end_date: String,
     pub shop_end_date: String,
-    pub disabled_offer_ids: Vec<String>
+    pub disabled_offer_ids: Vec<String>,
+    pub content_drops: Vec<LolEventShopContentDrop>,
+    pub activation_spread_seconds: f64,
+    pub first_activation_threshold_seconds: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopEventShopError {
     pub error_message: String,
-    pub error_id: String
+    pub error_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6917,14 +6851,14 @@ pub struct LolEventShopEventShopInfoUIData {
     pub is_event_active: bool,
     pub show_pip: bool,
     pub event_pass_bundles: Vec<LolEventShopCatalogEntry>,
-    pub token_bundles: Vec<LolEventShopCatalogEntry>
+    pub token_bundles: Vec<LolEventShopCatalogEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopGrantorDescription {
     pub app_name: String,
-    pub entity_id: String
+    pub entity_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6935,7 +6869,7 @@ pub struct LolEventShopGroup {
     pub name: String,
     pub repeat: LolEventShopRepeat,
     pub counters: Vec<LolEventShopCounter>,
-    pub milestones: Vec<LolEventShopMilestone>
+    pub milestones: Vec<LolEventShopMilestone>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6945,7 +6879,7 @@ pub struct LolEventShopInventoryCacheEntry {
     pub expiration_m_s: u64,
     pub issued_at_m_s: u64,
     pub received_at_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6956,7 +6890,7 @@ pub struct LolEventShopInventoryDTO {
     pub summoner_id: u64,
     pub items: HashMap<String, Value>,
     pub expires: String,
-    pub items_jwt: String
+    pub items_jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6968,7 +6902,7 @@ pub struct LolEventShopInventoryItem {
     pub purchase_date: String,
     pub quantity: u64,
     pub ownership_type: LolEventShopItemOwnershipType,
-    pub expiration_date: String
+    pub expiration_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -6991,7 +6925,7 @@ pub struct LolEventShopInventoryItemDTO {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub lsb: bool,
-    pub wins: u64
+    pub wins: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7009,7 +6943,7 @@ pub struct LolEventShopInventoryItemWithPayload {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub owned: bool,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7020,13 +6954,13 @@ pub struct LolEventShopInventoryNotification {
     pub inventory_type: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub acknowledged: bool
+    pub acknowledged: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopInventoryResponseDTO {
-    pub data: LolEventShopInventoryDTO
+    pub data: LolEventShopInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7034,7 +6968,7 @@ pub struct LolEventShopInventoryResponseDTO {
 pub struct LolEventShopItem {
     pub item_id: String,
     pub inventory_type: String,
-    pub price: u32
+    pub price: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7046,14 +6980,14 @@ pub struct LolEventShopItemChoiceDetails {
     pub discount: String,
     pub full_price: u32,
     pub display_type: String,
-    pub purchase_options: Vec<LolEventShopPurchaseOption>
+    pub purchase_options: Vec<LolEventShopPurchaseOption>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemChoices {
     pub choices: Vec<LolEventShopItemChoiceDetails>,
-    pub validation_errors: Vec<LolEventShopValidationErrorEntry>
+    pub validation_errors: Vec<LolEventShopValidationErrorEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7061,7 +6995,7 @@ pub struct LolEventShopItemChoices {
 pub struct LolEventShopItemCost {
     pub currency: String,
     pub cost: i64,
-    pub discount: Option<f32>
+    pub discount: Option<f32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7078,7 +7012,7 @@ pub struct LolEventShopItemDefinition {
     pub tags: Vec<String>,
     pub metadata: Vec<LolEventShopItemMetadataEntry>,
     pub bundled_item_price: Option<LolEventShopBundledItemPricingInfo>,
-    pub loyalty_unlocked: bool
+    pub loyalty_unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7087,14 +7021,14 @@ pub struct LolEventShopItemDetails {
     pub title: String,
     pub sub_title: String,
     pub description: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7102,14 +7036,14 @@ pub struct LolEventShopItemKey {
 pub struct LolEventShopItemMetadataEntry {
     #[serde(rename = "type")]
     pub type_: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopItemOwnership {
     pub item_key: LolEventShopItemKey,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7117,7 +7051,7 @@ pub struct LolEventShopItemOwnership {
 pub struct LolEventShopItemPrice {
     pub currency_type: String,
     pub price: i64,
-    pub purchasable: bool
+    pub purchasable: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7125,7 +7059,7 @@ pub struct LolEventShopItemPrice {
 pub struct LolEventShopItemSale {
     pub start_date: String,
     pub end_date: String,
-    pub discount: Option<f32>
+    pub discount: Option<f32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7133,20 +7067,20 @@ pub struct LolEventShopItemSale {
 pub struct LolEventShopItemUIData {
     pub item_id: String,
     pub inventory_type: String,
-    pub price: u32
+    pub price: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLargeSelectionDisplayUIData {
-    pub selected_reward_track_item: LolEventShopRewardTrackItem
+    pub selected_reward_track_item: LolEventShopRewardTrackItem,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLevelBoostPurchaseUIData {
     pub offer_id: String,
-    pub reward_track_items: Vec<LolEventShopRewardTrackItem>
+    pub reward_track_items: Vec<LolEventShopRewardTrackItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7156,34 +7090,7 @@ pub struct LolEventShopLoginSession {
     pub state: LolEventShopLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub id_token: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolEventShopLootDataGdsResource {
-    pub loot_token_bank_cards: Vec<LolEventShopLootTokenBankCardGdsResource>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolEventShopLootTokenBankCardGdsResource {
-    pub loot_item_name: String,
-    pub backsplash_image_path: String,
-    pub button_text: String,
-    pub non_premium_cap_currency_id: String,
-    pub premium_cap_currency_id: String,
-    pub title_text: String,
-    pub token_icon_path: String,
-    pub tooltip_description_text: String,
-    pub tooltip_splash_path: String,
-    pub tooltip_title_text: String,
-    pub unlock_item_id: String,
-    pub unlock_item_type: String,
-    pub activation_date: String,
-    pub deactivation_date: String,
-    pub store_link_item: String,
-    pub store_link_type: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7194,18 +7101,34 @@ pub struct LolEventShopLoyaltyRewards {
     pub free_rewarded_skins_count: i32,
     pub skin_ids: Vec<i32>,
     pub ip_boost: i32,
+    pub xp_boost: HashMap<String, i32>,
+    pub loyalty_t_f_t_map_skin_count: i32,
+    pub loyalty_t_f_t_companion_count: i32,
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolEventShopLoyaltyRewardsSimplified {
+    pub free_rewarded_champions_count: i32,
+    pub champion_ids: Vec<i32>,
+    pub free_rewarded_skins_count: i32,
+    pub skin_ids: Vec<i32>,
+    pub ip_boost: i32,
     pub xp_boost: i32,
     pub loyalty_t_f_t_map_skin_count: i32,
     pub loyalty_t_f_t_companion_count: i32,
-    pub loyalty_sources: HashMap<String, bool>
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopLoyaltyStatusNotification {
     pub status: LolEventShopLoyaltyStatus,
-    pub rewards: LolEventShopLoyaltyRewards,
-    pub reload_inventory: bool
+    pub rewards: LolEventShopLoyaltyRewardsSimplified,
+    pub reload_inventory: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7216,7 +7139,7 @@ pub struct LolEventShopMilestone {
     pub group_id: String,
     pub counter_id: String,
     pub trigger_value: i64,
-    pub properties: HashMap<String, String>
+    pub properties: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7229,7 +7152,7 @@ pub struct LolEventShopMilestoneInstance {
     pub counter_id: String,
     pub trigger_value: i64,
     pub repeat_sequence: u32,
-    pub triggered: bool
+    pub triggered: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7237,7 +7160,7 @@ pub struct LolEventShopMilestoneInstance {
 pub struct LolEventShopNavigationButtonUIData {
     pub active_event_id: String,
     pub show_pip: bool,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7249,7 +7172,7 @@ pub struct LolEventShopOffer {
     pub image: String,
     pub promotion_type: LolEventShopOfferPromotionType,
     pub offer_category: LolEventShopOfferCategory,
-    pub items: Vec<LolEventShopItem>
+    pub items: Vec<LolEventShopItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7262,7 +7185,7 @@ pub struct LolEventShopOfferUIData {
     pub highlighted: bool,
     pub offer_state: LolEventShopOfferStates,
     pub price: u32,
-    pub items: Vec<LolEventShopItemUIData>
+    pub items: Vec<LolEventShopItemUIData>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7270,7 +7193,7 @@ pub struct LolEventShopOfferUIData {
 pub struct LolEventShopOrderNotificationResource {
     pub event_type_id: String,
     pub event_type: String,
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7283,7 +7206,7 @@ pub struct LolEventShopPlayerNotification {
     pub title_key: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7291,14 +7214,14 @@ pub struct LolEventShopPlayerNotification {
 pub struct LolEventShopPlayerSettingsData {
     pub last_time_seen: String,
     pub last_seen_token_balance: i64,
-    pub last_seen_token_shop_offers_version: u32
+    pub last_seen_token_shop_offers_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPriceDetail {
     pub item_key: LolEventShopItemKey,
-    pub price: LolEventShopItemPrice
+    pub price: LolEventShopItemPrice,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7308,7 +7231,7 @@ pub struct LolEventShopPriceOptionDto {
     pub currency_type: String,
     pub currency_payment_option: Option<String>,
     pub currency_name: Option<String>,
-    pub currency_image_path: Option<String>
+    pub currency_image_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7316,7 +7239,7 @@ pub struct LolEventShopPriceOptionDto {
 pub struct LolEventShopProgressInfoUIData {
     pub token_image: String,
     pub pass_purchased: bool,
-    pub event_pass_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>
+    pub event_pass_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7327,7 +7250,7 @@ pub struct LolEventShopPurchasableItem {
     pub bundled_items: Vec<LolEventShopItemDefinition>,
     pub sale: Option<LolEventShopItemSale>,
     pub purchase_options: Vec<LolEventShopPurchaseOption>,
-    pub validation_errors: Vec<LolEventShopValidationErrorEntry>
+    pub validation_errors: Vec<LolEventShopValidationErrorEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7336,26 +7259,26 @@ pub struct LolEventShopPurchaseItem {
     pub item_key: LolEventShopItemKey,
     pub quantity: i32,
     pub source: String,
-    pub purchase_currency_info: LolEventShopItemPrice
+    pub purchase_currency_info: LolEventShopItemPrice,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferOrderStatus {
     pub order_state: LolEventShopPurchaseOfferOrderStates,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferOrderStatuses {
-    pub statuses: HashMap<String, LolEventShopPurchaseOfferOrderStatus>
+    pub statuses: HashMap<String, LolEventShopPurchaseOfferOrderStatus>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferRequest {
-    pub offer_id: String
+    pub offer_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7364,26 +7287,26 @@ pub struct LolEventShopPurchaseOfferRequestV3 {
     pub offer_id: String,
     pub currency_type: String,
     pub quantity: u32,
-    pub price: u32
+    pub price: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOfferResponseV3 {
     pub legacy: bool,
-    pub order_dto: Option<LolEventShopCapOrdersOrderDto>
+    pub order_dto: Option<LolEventShopCapOrdersOrderDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseOption {
-    pub price_details: Vec<LolEventShopPriceDetail>
+    pub price_details: Vec<LolEventShopPriceDetail>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopPurchaseRequest {
-    pub items: Vec<LolEventShopPurchaseItem>
+    pub items: Vec<LolEventShopPurchaseItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7391,7 +7314,7 @@ pub struct LolEventShopPurchaseRequest {
 pub struct LolEventShopPurchaseResponse {
     pub items: Vec<LolEventShopPurchaseItem>,
     pub transactions: Vec<LolEventShopTransaction>,
-    pub use_r_m_s_confirmation: bool
+    pub use_r_m_s_confirmation: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7399,21 +7322,21 @@ pub struct LolEventShopPurchaseResponse {
 pub struct LolEventShopPurchaseWidgetConfig {
     pub enabled: bool,
     pub non_refundable_disclaimer_enabled: bool,
-    pub always_show_purchase_disclaimer: bool
+    pub always_show_purchase_disclaimer: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRMSPayload {
     pub product_id: String,
-    pub affinities: Vec<String>
+    pub affinities: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7421,62 +7344,60 @@ pub struct LolEventShopRegionLocale {
 pub struct LolEventShopRepeat {
     pub count: i32,
     pub scope: u32,
-    pub multiplier: f32
+    pub multiplier: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRequestDTOSelectionRequestDTO {
     pub data: LolEventShopSelectionRequestDTO,
-    pub metadata: LolEventShopRequestMetadataDTO
+    pub metadata: LolEventShopRequestMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRequestDTOVectorSelectionRequestDTO {
     pub data: Vec<LolEventShopSelectionRequestDTO>,
-    pub metadata: LolEventShopRequestMetadataDTO
+    pub metadata: LolEventShopRequestMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRequestMetadataDTO {
-    pub transaction_id: Option<String>
+    pub transaction_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOSvcRewardGrant {
     pub data: LolEventShopSvcRewardGrant,
-    pub metadata: LolEventShopResponseMetadataDTO
+    pub metadata: LolEventShopResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOMapRewardGroupIdSelectGrantStatus {
     pub data: HashMap<String, LolEventShopSelectGrantStatusResponse>,
-    pub metadata: LolEventShopResponseMetadataDTO
+    pub metadata: LolEventShopResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOVectorSvcRewardGrant {
     pub data: Vec<LolEventShopSvcRewardGrant>,
-    pub metadata: LolEventShopResponseMetadataDTO
+    pub metadata: LolEventShopResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopResponseDTOVectorSvcRewardGroup {
     pub data: Vec<LolEventShopSvcRewardGroup>,
-    pub metadata: LolEventShopResponseMetadataDTO
+    pub metadata: LolEventShopResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolEventShopResponseMetadataDTO {
-    
-}
+pub struct LolEventShopResponseMetadataDTO {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
@@ -7487,33 +7408,33 @@ pub struct LolEventShopReward {
     pub quantity: i32,
     pub fulfillment_source: String,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardChoiceUIData {
-    pub reward_track_items: Vec<LolEventShopRewardTrackItem>
+    pub reward_track_items: Vec<LolEventShopRewardTrackItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardGrant {
     pub info: LolEventShopSvcRewardGrant,
-    pub reward_group: LolEventShopSvcRewardGroup
+    pub reward_group: LolEventShopSvcRewardGroup,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrack {
-    pub track_config: LolEventShopRewardTrackConfiguration
+    pub track_config: LolEventShopRewardTrackConfiguration,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRewardTrackConfiguration {
     pub id: String,
-    pub premium_entitlement_id: String
+    pub premium_entitlement_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7523,7 +7444,7 @@ pub struct LolEventShopRewardTrackItem {
     pub reward_options: Vec<LolEventShopRewardTrackItemOption>,
     pub reward_tags: Vec<LolEventShopRewardTrackItemTag>,
     pub progress_required: i64,
-    pub threshold: String
+    pub threshold: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7536,7 +7457,7 @@ pub struct LolEventShopRewardTrackItemOption {
     pub override_footer: String,
     pub header_type: LolEventShopRewardTrackItemHeaderType,
     pub reward_name: String,
-    pub reward_description: String
+    pub reward_description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7548,7 +7469,7 @@ pub struct LolEventShopRewardTrackProgress {
     pub pass_progress: i64,
     pub current_level_x_p: i64,
     pub total_level_x_p: i64,
-    pub iteration: u32
+    pub iteration: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7558,7 +7479,13 @@ pub struct LolEventShopRewardTrackXP {
     pub current_level_x_p: i64,
     pub total_level_x_p: i64,
     pub is_bonus_phase: bool,
-    pub iteration: u32
+    pub iteration: u32,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolEventShopRewardsConfig {
+    pub grant_filtering: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7568,7 +7495,7 @@ pub struct LolEventShopRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7577,36 +7504,34 @@ pub struct LolEventShopRmsEntitlementPayload {
     pub item_id: String,
     pub item_type_id: String,
     pub entitlement_type_id: String,
-    pub resource_operation: String
+    pub resource_operation: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsStoreEntitlementItem {
     pub inventory_type: String,
-    pub item_id: String
+    pub item_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsStoreEntitlementPayload {
     pub transaction_id: String,
-    pub items: Vec<LolEventShopRmsStoreEntitlementItem>
+    pub items: Vec<LolEventShopRmsStoreEntitlementItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolEventShopRmsWalletPayload {
-    
-}
+pub struct LolEventShopRmsWalletPayload {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopRmsXboxSubscriptionChange {
     pub puuid: String,
     pub subscription_id: String,
-    pub active: bool,
-    pub identity_provider: String
+    pub active: String,
+    pub identity_provider: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7614,7 +7539,7 @@ pub struct LolEventShopRmsXboxSubscriptionChange {
 pub struct LolEventShopSale {
     pub start_date: String,
     pub end_date: String,
-    pub prices: Vec<LolEventShopItemCost>
+    pub prices: Vec<LolEventShopItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7622,21 +7547,21 @@ pub struct LolEventShopSale {
 pub struct LolEventShopSelectionRequestDTO {
     pub grant_id: String,
     pub reward_group_id: String,
-    pub selections: Vec<String>
+    pub selections: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSelectionStrategyConfig {
     pub min_selections_allowed: u32,
-    pub max_selections_allowed: u32
+    pub max_selections_allowed: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSettingsResource {
     pub data: LolEventShopPlayerSettingsData,
-    pub schema_version: i16
+    pub schema_version: i16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7644,13 +7569,13 @@ pub struct LolEventShopSettingsResource {
 pub struct LolEventShopSimpleInventoryDTO {
     pub items: HashMap<String, Value>,
     pub items_jwt: String,
-    pub expires: String
+    pub expires: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSimpleInventoryResponseDTO {
-    pub data: LolEventShopSimpleInventoryDTO
+    pub data: LolEventShopSimpleInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7658,7 +7583,7 @@ pub struct LolEventShopSimpleInventoryResponseDTO {
 pub struct LolEventShopSkinLineDescriptionDto {
     pub title: String,
     pub description: String,
-    pub icon_image_path: String
+    pub icon_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7666,7 +7591,7 @@ pub struct LolEventShopSkinLineDescriptionDto {
 pub struct LolEventShopSkinLineDescriptionInfo {
     pub title: String,
     pub description: String,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7679,7 +7604,7 @@ pub struct LolEventShopSkinLineInfo {
     pub collection_card_path: String,
     pub uncentered_splash_path: String,
     pub collection_description: String,
-    pub tiers: Vec<LolEventShopSkinLineTier>
+    pub tiers: Vec<LolEventShopSkinLineTier>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7689,7 +7614,7 @@ pub struct LolEventShopSkinLineItemDto {
     pub large_image_path: Option<String>,
     pub localized_long_name: String,
     pub localized_short_name: String,
-    pub large_video_path: Option<String>
+    pub large_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7705,13 +7630,13 @@ pub struct LolEventShopSkinLineTier {
     pub load_screen_path: String,
     pub short_name: String,
     pub splash_video_path: Option<String>,
-    pub collection_splash_video_path: Option<String>
+    pub collection_splash_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSummonerIcon {
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7725,7 +7650,8 @@ pub struct LolEventShopSvcRewardGrant {
     pub grant_elements: Vec<LolEventShopSvcRewardGrantElement>,
     pub selected_ids: Vec<String>,
     pub viewed: bool,
-    pub grantor_description: LolEventShopGrantorDescription
+    pub grantor_description: LolEventShopGrantorDescription,
+    pub message_parameters: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7738,14 +7664,13 @@ pub struct LolEventShopSvcRewardGrantElement {
     pub status: LolEventShopRewardStatus,
     pub quantity: i32,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopSvcRewardGroup {
     pub id: String,
-    pub internal_name: String,
     pub product_id: String,
     pub types: Vec<String>,
     pub rewards: Vec<LolEventShopReward>,
@@ -7755,7 +7680,7 @@ pub struct LolEventShopSvcRewardGroup {
     pub active: bool,
     pub media: HashMap<String, String>,
     pub localizations: HashMap<String, String>,
-    pub celebration_type: LolEventShopCelebrationType
+    pub celebration_type: LolEventShopCelebrationType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7765,7 +7690,8 @@ pub struct LolEventShopTokenShop {
     pub token_name: String,
     pub token_uuid: String,
     pub offers: Vec<LolEventShopOffer>,
-    pub token_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>
+    pub content_drops: Vec<LolEventShopContentDrop>,
+    pub token_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7775,7 +7701,7 @@ pub struct LolEventShopTokenShopUIData {
     pub token_image: String,
     pub token_uuid: String,
     pub offers_version: u32,
-    pub token_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>
+    pub token_bundles_catalog_entry: Vec<LolEventShopCatalogEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7797,7 +7723,7 @@ pub struct LolEventShopTokenUpsell {
     pub currently_locked: LolEventShopTokenUpsellLockedType,
     pub locked_count: i32,
     pub start_date: String,
-    pub end_date: String
+    pub end_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7806,33 +7732,33 @@ pub struct LolEventShopTransaction {
     pub transaction_id: String,
     pub item_key: LolEventShopItemKey,
     pub item_name: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopUnclaimedRewardsUIData {
     pub rewards_count: i32,
-    pub locked_tokens_count: i32
+    pub locked_tokens_count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidateOfferError {
     pub error_key: String,
-    pub meta: String
+    pub meta: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidateOfferRequestV3 {
-    pub offer_id: String
+    pub offer_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidateOfferResponseV3 {
-    pub validation_errors: Vec<LolEventShopValidateOfferError>
+    pub validation_errors: Vec<LolEventShopValidateOfferError>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7841,34 +7767,34 @@ pub struct LolEventShopValidationError {
     pub error_code: String,
     pub message: String,
     pub error_details: HashMap<String, String>,
-    pub response_items: Vec<String>
+    pub response_items: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationErrorEntry {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationRequest {
     pub items: Vec<LolEventShopValidationRequestItem>,
-    pub owned_items: Vec<LolEventShopItemOwnership>
+    pub owned_items: Vec<LolEventShopItemOwnership>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationRequestItem {
     pub item_key: LolEventShopItemKey,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopValidationResponse {
     pub items: Vec<LolEventShopValidationResponseItem>,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7879,7 +7805,7 @@ pub struct LolEventShopValidationResponseItem {
     pub validation_currency_info: Vec<LolEventShopItemPrice>,
     pub sale: Option<LolEventShopSale>,
     pub name: Option<String>,
-    pub description: Option<String>
+    pub description: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7887,7 +7813,7 @@ pub struct LolEventShopValidationResponseItem {
 pub struct LolEventShopWallet {
     pub account_id: u64,
     pub balances: Vec<LolEventShopBalance>,
-    pub version: i32
+    pub version: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7897,7 +7823,7 @@ pub struct LolEventShopWalletCacheEntry {
     pub expiration_m_s: u64,
     pub issued_at_m_s: u64,
     pub received_at_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7907,26 +7833,26 @@ pub struct LolEventShopWalletDTO {
     pub account_id: i64,
     pub expires: String,
     pub balances: HashMap<String, i32>,
-    pub balances_jwt: String
+    pub balances_jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopWalletResponseDTO {
-    pub data: LolEventShopWalletDTO
+    pub data: LolEventShopWalletDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolEventShopXboxSubscriptionStatus {
-    pub active: bool,
-    pub subscription_id: String
+    pub active: String,
+    pub subscription_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesAccountIdAndSummonerId {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7934,14 +7860,14 @@ pub struct LolFeaturedModesAccountIdAndSummonerId {
 pub struct LolFeaturedModesCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
-    pub owned: bool
+    pub owned: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesCollectionsSummonerIcon {
     pub icon_id: i32,
-    pub ownership: LolFeaturedModesCollectionsOwnership
+    pub ownership: LolFeaturedModesCollectionsOwnership,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7949,7 +7875,7 @@ pub struct LolFeaturedModesCollectionsSummonerIcon {
 pub struct LolFeaturedModesEligibility {
     pub queue_id: i32,
     pub eligible: bool,
-    pub restrictions: Vec<LolFeaturedModesEligibilityRestriction>
+    pub restrictions: Vec<LolFeaturedModesEligibilityRestriction>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7958,7 +7884,7 @@ pub struct LolFeaturedModesEligibilityRestriction {
     pub restriction_code: LolFeaturedModesEligibilityRestrictionCode,
     pub restriction_args: HashMap<String, String>,
     pub expired_timestamp: u64,
-    pub summoner_ids: Vec<u64>
+    pub summoner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7966,27 +7892,27 @@ pub struct LolFeaturedModesEligibilityRestriction {
 pub struct LolFeaturedModesFeaturedModesConfig {
     pub notifications_enabled: bool,
     pub queue_toggle_notification_minutes_threshold: u32,
-    pub max_notification_save_delay_minutes: u32
+    pub max_notification_save_delay_minutes: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesGameflowAvailability {
     pub is_available: bool,
-    pub state: LolFeaturedModesGameflowAvailabilityState
+    pub state: LolFeaturedModesGameflowAvailabilityState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesGameflowSession {
-    pub phase: LolFeaturedModesGameflowPhase
+    pub phase: LolFeaturedModesGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolFeaturedModesLoginSession {
     pub state: LolFeaturedModesLoginSessionStates,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -7994,7 +7920,7 @@ pub struct LolFeaturedModesLoginSession {
 pub struct LolFeaturedModesMaps {
     pub game_mode_name: String,
     pub is_r_g_m: bool,
-    pub assets: HashMap<String, String>
+    pub assets: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8011,7 +7937,7 @@ pub struct LolFeaturedModesPlayerNotificationResource {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8024,14 +7950,14 @@ pub struct LolFeaturedModesQueue {
     pub category: LolFeaturedModesQueueGameCategory,
     pub last_toggled_off_time: u64,
     pub last_toggled_on_time: u64,
-    pub queue_availability: LolFeaturedModesQueueAvailability
+    pub queue_availability: LolFeaturedModesQueueAvailability,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameClientChatGameClientChatMessageResource {
     pub from_summoner_name: String,
-    pub body: String
+    pub body: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8040,13 +7966,13 @@ pub struct LolGameClientChatMutedPlayerInfo {
     pub puuid: String,
     pub summoner_id: u64,
     pub obfuscated_puuid: String,
-    pub obfuscated_summoner_id: u64
+    pub obfuscated_summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesLoginDataPacket {
-    pub game_type_configs: Vec<LolGameQueuesQueueGameTypeConfig>
+    pub game_type_configs: Vec<LolGameQueuesQueueGameTypeConfig>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8055,14 +7981,14 @@ pub struct LolGameQueuesLoginSession {
     pub state: LolGameQueuesLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameQueuesPlatformConfigEnabledMap {
     pub game_map_id: i32,
-    pub min_players: i32
+    pub min_players: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8098,7 +8024,7 @@ pub struct LolGameQueuesQueue {
     pub last_toggled_off_time: u64,
     pub last_toggled_on_time: u64,
     pub removal_from_game_allowed: bool,
-    pub removal_from_game_delay_minutes: i32
+    pub removal_from_game_delay_minutes: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8108,7 +8034,7 @@ pub struct LolGameQueuesQueueCustomGame {
     pub queue_availability: LolGameQueuesQueueAvailability,
     pub spectator_policies: Vec<LolGameQueuesQueueCustomGameSpectatorPolicy>,
     pub spectator_slot_limit: u32,
-    pub game_server_regions: Option<Vec<String>>
+    pub game_server_regions: Option<Vec<String>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8123,7 +8049,7 @@ pub struct LolGameQueuesQueueCustomGameSubcategory {
     pub max_player_count: i32,
     pub min_level: u32,
     pub queue_availability: LolGameQueuesQueueAvailability,
-    pub custom_spectator_policies: Vec<LolGameQueuesQueueCustomGameSpectatorPolicy>
+    pub custom_spectator_policies: Vec<LolGameQueuesQueueCustomGameSpectatorPolicy>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8150,7 +8076,7 @@ pub struct LolGameQueuesQueueGameTypeConfig {
     pub pick_mode: String,
     pub ban_mode: String,
     pub game_mode_override: Option<String>,
-    pub num_players_per_team_override: Option<i32>
+    pub num_players_per_team_override: Option<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8159,7 +8085,7 @@ pub struct LolGameQueuesQueueReward {
     pub is_ip_enabled: bool,
     pub is_xp_enabled: bool,
     pub is_champion_points_enabled: bool,
-    pub party_size_ip_rewards: Vec<i32>
+    pub party_size_ip_rewards: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8168,7 +8094,7 @@ pub struct LolGameQueuesQueueTranslation {
     pub name: String,
     pub short_name: String,
     pub description: String,
-    pub detailed_description: String
+    pub detailed_description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8176,19 +8102,19 @@ pub struct LolGameQueuesQueueTranslation {
 pub struct LolGameSettingsLoginSession {
     pub state: LolGameSettingsLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameSettingsgamesettingsgameclient {
-    pub running: bool
+    pub running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameSettingsgamesettingsgameflowsession {
-    pub game_client: LolGameSettingsgamesettingsgameclient
+    pub game_client: LolGameSettingsgamesettingsgameclient,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8196,20 +8122,29 @@ pub struct LolGameSettingsgamesettingsgameflowsession {
 pub struct LolGameflowCrashReportingSettings {
     #[serde(rename = "type")]
     pub type_: String,
-    pub enabled: bool
+    pub enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameModeSpellList {
-    pub spells: Vec<u64>
+    pub spells: Vec<u64>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolGameflowGameStateUpdate {
+    pub id: u64,
+    pub game_state: String,
+    pub game_type: String,
+    pub error_message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowAvailability {
     pub is_available: bool,
-    pub state: LolGameflowGameflowAvailabilityState
+    pub state: LolGameflowGameflowAvailabilityState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8220,7 +8155,7 @@ pub struct LolGameflowGameflowGameClient {
     pub observer_server_ip: String,
     pub observer_server_port: u16,
     pub running: bool,
-    pub visible: bool
+    pub visible: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8234,7 +8169,7 @@ pub struct LolGameflowGameflowGameData {
     pub team_one: Vec<Value>,
     pub team_two: Vec<Value>,
     pub player_champion_selections: Vec<Value>,
-    pub spectators_allowed: bool
+    pub spectators_allowed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8242,7 +8177,7 @@ pub struct LolGameflowGameflowGameData {
 pub struct LolGameflowGameflowGameDodge {
     pub state: LolGameflowGameflowGameDodgeState,
     pub dodge_ids: Vec<u64>,
-    pub phase: LolGameflowGameflowPhase
+    pub phase: LolGameflowGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8263,14 +8198,14 @@ pub struct LolGameflowGameflowGameMap {
     pub categorized_content_bundles: Value,
     pub properties: Value,
     pub per_position_required_summoner_spells: HashMap<String, LolGameflowGameModeSpellList>,
-    pub per_position_disallowed_summoner_spells: HashMap<String, LolGameflowGameModeSpellList>
+    pub per_position_disallowed_summoner_spells: HashMap<String, LolGameflowGameModeSpellList>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowGameflowProcessInfo {
     pub pid: u32,
-    pub raw_args: Vec<String>
+    pub raw_args: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8280,14 +8215,14 @@ pub struct LolGameflowGameflowSession {
     pub game_data: LolGameflowGameflowGameData,
     pub game_client: LolGameflowGameflowGameClient,
     pub map: LolGameflowGameflowGameMap,
-    pub game_dodge: LolGameflowGameflowGameDodge
+    pub game_dodge: LolGameflowGameflowGameDodge,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowInstallPaths {
     pub game_install_root: String,
-    pub game_executable_path: String
+    pub game_executable_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8302,7 +8237,7 @@ pub struct LolGameflowLobbyStatus {
     pub member_summoner_ids: Vec<u64>,
     pub invited_summoner_ids: Vec<u64>,
     pub lobby_id: Option<String>,
-    pub custom_spectator_policy: LolGameflowQueueCustomGameSpectatorPolicy
+    pub custom_spectator_policy: LolGameflowQueueCustomGameSpectatorPolicy,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8311,7 +8246,7 @@ pub struct LolGameflowLoginSession {
     pub state: LolGameflowLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8321,7 +8256,7 @@ pub struct LolGameflowPatcherProductState {
     pub is_stopped: bool,
     pub is_up_to_date: bool,
     pub is_update_available: bool,
-    pub action: LolGameflowPatcherProductStateAction
+    pub action: LolGameflowPatcherProductStateAction,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8329,7 +8264,7 @@ pub struct LolGameflowPatcherProductState {
 pub struct LolGameflowPlayerStatus {
     pub current_lobby_status: Option<LolGameflowLobbyStatus>,
     pub last_queued_lobby_status: Option<LolGameflowLobbyStatus>,
-    pub can_invite_others_at_eog: bool
+    pub can_invite_others_at_eog: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8363,7 +8298,7 @@ pub struct LolGameflowQueue {
     pub last_toggled_off_time: u64,
     pub last_toggled_on_time: u64,
     pub removal_from_game_allowed: bool,
-    pub removal_from_game_delay_minutes: i32
+    pub removal_from_game_delay_minutes: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8388,7 +8323,7 @@ pub struct LolGameflowQueueGameTypeConfig {
     pub post_pick_timer_duration: i32,
     pub ban_timer_duration: i32,
     pub pick_mode: String,
-    pub ban_mode: String
+    pub ban_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8397,34 +8332,34 @@ pub struct LolGameflowQueueReward {
     pub is_ip_enabled: bool,
     pub is_xp_enabled: bool,
     pub is_champion_points_enabled: bool,
-    pub party_size_ip_rewards: Vec<i32>
+    pub party_size_ip_rewards: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowRegistrationStatus {
     pub complete: bool,
-    pub error_codes: Vec<String>
+    pub error_codes: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowReplaysSettingsData {
     #[serde(rename = "highlights-folder-path")]
-    pub highlights_folder_path: String
+    pub highlights_folder_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGameflowReplaysSettingsResource {
-    pub data: LolGameflowReplaysSettingsData
+    pub data: LolGameflowReplaysSettingsData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8433,7 +8368,7 @@ pub struct LolGameflowSpectateGameInfoResource {
     pub drop_in_spectate_game_id: String,
     pub game_queue_type: String,
     pub allow_observe_mode: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8441,13 +8376,13 @@ pub struct LolGameflowSpectateGameInfoResource {
 pub struct LolGeoinfoGeoInfo {
     pub country: String,
     pub city: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoGeoInfoConfig {
-    pub enabled: bool
+    pub enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8457,7 +8392,7 @@ pub struct LolGeoinfoGeoInfoResponse {
     pub geo_info: LolGeoinfoGeoInfo,
     pub error_message: String,
     pub is_latest: bool,
-    pub is_initialized: bool
+    pub is_initialized: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8465,13 +8400,13 @@ pub struct LolGeoinfoGeoInfoResponse {
 pub struct LolGeoinfoLoginSession {
     pub state: LolGeoinfoLoginSessionState,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolGeoinfoWhereAmIRequest {
-    pub ip_address: String
+    pub ip_address: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8479,7 +8414,7 @@ pub struct LolGeoinfoWhereAmIRequest {
 pub struct LolGeoinfoWhereAmIResponse {
     pub country: String,
     pub city: String,
-    pub region: String
+    pub region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8487,7 +8422,7 @@ pub struct LolGeoinfoWhereAmIResponse {
 pub struct LolHeartbeatLoginSession {
     pub state: LolHeartbeatLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8499,33 +8434,74 @@ pub struct LolHighlightsHighlight {
     pub url: String,
     pub mtime_ms_utc: u64,
     pub mtime_iso8601: String,
-    pub file_size_bytes: u64
+    pub file_size_bytes: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsConfig {
     pub is_highlights_enabled: bool,
-    pub invalid_highlight_name_characters: String
+    pub invalid_highlight_name_characters: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsDynamicConfig {
-    pub enabled: bool
+    pub enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsSettingsData {
     #[serde(rename = "highlights-folder-path")]
-    pub highlights_folder_path: String
+    pub highlights_folder_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHighlightsHighlightsSettingsResource {
-    pub data: LolHighlightsHighlightsSettingsData
+    pub data: LolHighlightsHighlightsSettingsData,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitAccountClaimStatus {
+    pub linking_status: Option<LolHoneyfruitHoneyfruitLinkingServiceResponse>,
+    pub migration_status: Option<String>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitAccountDetails {
+    pub puuid: String,
+    pub platform_id: String,
+    pub summoner_name: String,
+    pub summoner_icon_id: i32,
+    pub summoner_level: u32,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitGAMHSMatchHistoryData {}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitGAMHSMatchHistoryList {
+    pub games: Vec<LolHoneyfruitGAMHSMatchHistoryData>,
+    pub active_puuid: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitGarenaRegionLeagueAccount {
+    pub garena_puuid: String,
+    pub platform_id: String,
+    pub summoner_name: String,
+    pub summoner_level: u32,
+    pub summoner_icon_id: i32,
+    pub garena_id: u64,
+    pub is_reserved_summoner_name: bool,
+    pub has_played_a_game: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8533,20 +8509,29 @@ pub struct LolHighlightsHighlightsSettingsResource {
 pub struct LolHoneyfruitHoneyfruitAuthRedirectMock {
     pub redirect_latency: u32,
     pub redirect_status_code: u32,
-    pub redirect_u_r_l: String
+    pub redirect_u_r_l: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitLinkingAction {
     pub action: LolHoneyfruitHoneyfruitActionType,
-    pub target: String
+    pub target: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitLinkingNotification {
-    pub linked_account: String
+    pub linked_account: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitHoneyfruitLinkingServiceResponse {
+    pub eligible: bool,
+    pub reason_code: LolHoneyfruitHoneyfruitLinkingFailureReason,
+    pub email: String,
+    pub account_details: Option<LolHoneyfruitGarenaRegionLeagueAccount>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8554,41 +8539,94 @@ pub struct LolHoneyfruitHoneyfruitLinkingNotification {
 pub struct LolHoneyfruitHoneyfruitLinkingStatus {
     pub state: LolHoneyfruitHoneyfruitLinkingState,
     pub linked_account: String,
-    pub error: LolHoneyfruitHoneyfruitLinkingStatusError
+    pub error: LolHoneyfruitHoneyfruitLinkingStatusError,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitSettingCategoryResource {
     pub schema_version: u32,
-    pub data: LolHoneyfruitHoneyfruitSettings
+    pub data: LolHoneyfruitHoneyfruitSettings,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitHoneyfruitSettingCategoryResourceAccountClaim {
+    pub schema_version: u32,
+    pub data: LolHoneyfruitHoneyfruitSettingsAccountClaim,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitSettings {
     pub snooze_until_m_s: u64,
-    pub is_snoozed_permanently: bool
+    pub is_snoozed_permanently: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitHoneyfruitSettingsAccountClaim {
+    pub is_account_claim_auto_dismiss: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitHoneyfruitVNGPublisherSettings {
-    pub visible: bool
+    pub visible: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitMatchHistoryGame {}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitMatchHistoryGameList {
+    pub game_index_begin: u64,
+    pub game_index_end: u64,
+    pub game_begin_date: String,
+    pub game_end_date: String,
+    pub game_count: u64,
+    pub games: Vec<LolHoneyfruitMatchHistoryGame>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitMatchHistoryList {
+    pub platform_id: String,
+    pub account_id: u64,
+    pub games: LolHoneyfruitMatchHistoryGameList,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolHoneyfruitSummoner {
+    pub summoner_id: u64,
+    pub account_id: u64,
+    pub display_name: String,
+    pub internal_name: String,
+    pub profile_icon_id: i32,
+    pub summoner_level: u32,
+    pub xp_since_last_level: u64,
+    pub xp_until_next_level: u64,
+    pub percent_complete_for_next_level: u32,
+    pub puuid: String,
+    pub name_change_flag: bool,
+    pub unnamed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHoneyfruitV1AuthenticationRedirectInput {
     pub redirect_uri: String,
-    pub language: String
+    pub language: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8598,7 +8636,7 @@ pub struct LolHoneyfruitV1AuthenticationResponse {
     pub type_: LolHoneyfruitV1ResponseType,
     pub success: LolHoneyfruitV1SuccessResponseDetails,
     pub country: String,
-    pub error: String
+    pub error: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8606,7 +8644,7 @@ pub struct LolHoneyfruitV1AuthenticationResponse {
 pub struct LolHoneyfruitV1SuccessResponseDetails {
     pub login_token: String,
     pub redirect_url: String,
-    pub linked: String
+    pub linked: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8614,14 +8652,14 @@ pub struct LolHoneyfruitV1SuccessResponseDetails {
 pub struct LolHoneyfruitVNGStatusResponse {
     pub action_required: bool,
     pub action_url: String,
-    pub action_url_raw: String
+    pub action_url_raw: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2AccountIdAndSummonerId {
     pub account_id: u64,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8629,21 +8667,21 @@ pub struct LolHonorV2AccountIdAndSummonerId {
 pub struct LolHonorV2ApiHonorPlayerServerRequest {
     pub summoner_id: u64,
     pub honor_category: String,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2Ballot {
     pub eligible_players: Vec<LolHonorV2EligiblePlayer>,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2DynamicHonorMessage {
     pub message_id: String,
-    pub value: i32
+    pub value: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8652,7 +8690,7 @@ pub struct LolHonorV2EligiblePlayer {
     pub summoner_id: u64,
     pub summoner_name: String,
     pub champion_name: String,
-    pub skin_splash_path: String
+    pub skin_splash_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8664,7 +8702,7 @@ pub struct LolHonorV2EndOfGamePlayer {
     pub summoner_name: String,
     pub summoner_id: u64,
     pub skin_splash_path: String,
-    pub champion_name: String
+    pub champion_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8678,28 +8716,28 @@ pub struct LolHonorV2EndOfGameStats {
     pub report_game_id: u64,
     pub teams: Vec<LolHonorV2EndOfGameTeam>,
     pub local_player: LolHonorV2EndOfGamePlayer,
-    pub game_ended_in_early_surrender: bool
+    pub game_ended_in_early_surrender: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2EndOfGameTeam {
     pub players: Vec<LolHonorV2EndOfGamePlayer>,
-    pub is_player_team: bool
+    pub is_player_team: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2GameflowGameData {
     pub game_id: u64,
-    pub queue: LolHonorV2Queue
+    pub queue: LolHonorV2Queue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2GameflowSession {
     pub phase: LolHonorV2GameflowPhase,
-    pub game_data: LolHonorV2GameflowGameData
+    pub game_data: LolHonorV2GameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8707,7 +8745,7 @@ pub struct LolHonorV2GameflowSession {
 pub struct LolHonorV2Honor {
     pub honor_category: String,
     pub voter_relationship: String,
-    pub sender_puuid: String
+    pub sender_puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8717,7 +8755,7 @@ pub struct LolHonorV2HonorConfig {
     pub seconds_to_vote: i32,
     pub recall_reward_enabled: bool,
     pub honor_visibility_enabled: bool,
-    pub honor_suggestions_enabled: bool
+    pub honor_suggestions_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8725,7 +8763,7 @@ pub struct LolHonorV2HonorConfig {
 pub struct LolHonorV2HonorInteraction {
     pub summoner_id: u64,
     pub display_name: String,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8733,27 +8771,27 @@ pub struct LolHonorV2HonorInteraction {
 pub struct LolHonorV2HonorRecipient {
     pub summoner_id: u64,
     pub game_id: u64,
-    pub honors: Vec<LolHonorV2Honor>
+    pub honors: Vec<LolHonorV2Honor>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2HonorSummoner {
     pub summoner_id: u64,
-    pub display_name: String
+    pub display_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2LoginSession {
-    pub state: LolHonorV2LoginSessionStates
+    pub state: LolHonorV2LoginSessionStates,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2MutualHonor {
     pub game_id: u64,
-    pub summoners: Vec<LolHonorV2MutualHonorPlayer>
+    pub summoners: Vec<LolHonorV2MutualHonorPlayer>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8761,7 +8799,7 @@ pub struct LolHonorV2MutualHonor {
 pub struct LolHonorV2MutualHonorPlayer {
     pub summoner_id: u64,
     pub champion_id: i32,
-    pub skin_id: i32
+    pub skin_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8769,7 +8807,7 @@ pub struct LolHonorV2MutualHonorPlayer {
 pub struct LolHonorV2ProfileInfo {
     pub honor_level: i32,
     pub checkpoint: i32,
-    pub rewards_locked: bool
+    pub rewards_locked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8781,21 +8819,21 @@ pub struct LolHonorV2Queue {
     pub type_: String,
     pub game_mode: String,
     pub removal_from_game_allowed: bool,
-    pub removal_from_game_delay_minutes: i32
+    pub removal_from_game_delay_minutes: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2Reward {
     pub reward_type: String,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2SequenceEvent {
     pub name: String,
-    pub priority: i32
+    pub priority: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8803,7 +8841,7 @@ pub struct LolHonorV2SequenceEvent {
 pub struct LolHonorV2ServiceProxyHonorPlayerServerRequest {
     pub summoner_id: u64,
     pub honor_type: String,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8811,7 +8849,7 @@ pub struct LolHonorV2ServiceProxyHonorPlayerServerRequest {
 pub struct LolHonorV2ServiceProxyRetrieveProfileResponse {
     pub honor_level: i32,
     pub checkpoint: i32,
-    pub rewards_locked: bool
+    pub rewards_locked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8821,7 +8859,7 @@ pub struct LolHonorV2VendedHonorChange {
     pub previous_state: LolHonorV2VendedHonorState,
     pub current_state: LolHonorV2VendedHonorState,
     pub reward: LolHonorV2Reward,
-    pub dynamic_honor_message: LolHonorV2DynamicHonorMessage
+    pub dynamic_honor_message: LolHonorV2DynamicHonorMessage,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8829,7 +8867,7 @@ pub struct LolHonorV2VendedHonorChange {
 pub struct LolHonorV2VendedHonorState {
     pub level: i32,
     pub checkpoint: i32,
-    pub rewards_locked: bool
+    pub rewards_locked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8837,20 +8875,20 @@ pub struct LolHonorV2VendedHonorState {
 pub struct LolHonorV2VendedReward {
     pub reward_type: String,
     pub quantity: i32,
-    pub dynamic_honor_message: LolHonorV2DynamicHonorMessage
+    pub dynamic_honor_message: LolHonorV2DynamicHonorMessage,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHonorV2VoteCompletion {
     pub game_id: u64,
-    pub full_team_vote: bool
+    pub full_team_vote: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardChatSession {
-    pub session_state: String
+    pub session_state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8858,7 +8896,7 @@ pub struct LolHovercardChatSession {
 pub struct LolHovercardContentCookies {
     pub content_id: String,
     pub content_path: String,
-    pub cookies: Vec<LolHovercardcookie>
+    pub cookies: Vec<LolHovercardcookie>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8880,7 +8918,7 @@ pub struct LolHovercardFriendResult {
     pub product: String,
     pub product_name: String,
     pub status_message: String,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8909,13 +8947,13 @@ pub struct LolHovercardHovercardUserInfo {
     pub remote_product_icon_url: String,
     pub remote_product_backdrop_url: String,
     pub party_summoners: Vec<String>,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardPartyInfo {
-    pub summoners: Option<Vec<u64>>
+    pub summoners: Option<Vec<u64>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8924,7 +8962,7 @@ pub struct LolHovercardPatchlineMetadata {
     pub product_id: String,
     pub id: String,
     pub content_paths: HashMap<String, String>,
-    pub content_cookies: Vec<LolHovercardContentCookies>
+    pub content_cookies: Vec<LolHovercardContentCookies>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8932,13 +8970,13 @@ pub struct LolHovercardPatchlineMetadata {
 pub struct LolHovercardProductMetadata {
     pub id: String,
     pub name: String,
-    pub patchlines: HashMap<String, LolHovercardPatchlineMetadata>
+    pub patchlines: HashMap<String, LolHovercardPatchlineMetadata>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardProductMetadataMap {
-    pub products: HashMap<String, LolHovercardProductMetadata>
+    pub products: HashMap<String, LolHovercardProductMetadata>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8948,33 +8986,33 @@ pub struct LolHovercardSummoner {
     pub display_name: String,
     pub account_id: u64,
     pub summoner_level: u32,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardSummonerIdAndIcon {
-    pub profile_icon_id: i32
+    pub profile_icon_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardSummonerIdAndName {
     pub summoner_id: u64,
-    pub display_name: String
+    pub display_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardTopChampionMastery {
-    pub score: u64
+    pub score: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolHovercardcookie {
     pub name: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8982,7 +9020,7 @@ pub struct LolHovercardcookie {
 pub struct LolInventoryAccessTokenResource {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8990,7 +9028,7 @@ pub struct LolInventoryAccessTokenResource {
 pub struct LolInventoryCatalogItem {
     pub item_id: i32,
     pub inventory_type: String,
-    pub item_instance_id: Option<String>
+    pub item_instance_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -8998,14 +9036,14 @@ pub struct LolInventoryCatalogItem {
 pub struct LolInventoryClientCacheClearMessageDTO {
     pub regions: Vec<String>,
     pub clear_all: bool,
-    pub inventory_types: Vec<String>
+    pub inventory_types: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryCurrencyDTO {
     pub amount: i32,
-    pub sub_currencies: HashMap<String, i32>
+    pub sub_currencies: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9015,7 +9053,7 @@ pub struct LolInventoryInventoryCacheEntry {
     pub expiration_m_s: u64,
     pub issued_at_m_s: u64,
     pub received_at_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9026,7 +9064,7 @@ pub struct LolInventoryInventoryDTO {
     pub summoner_id: u64,
     pub items: HashMap<String, Value>,
     pub expires: String,
-    pub items_jwt: String
+    pub items_jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9038,7 +9076,7 @@ pub struct LolInventoryInventoryItem {
     pub purchase_date: String,
     pub quantity: u64,
     pub ownership_type: LolInventoryItemOwnershipType,
-    pub expiration_date: String
+    pub expiration_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9061,7 +9099,7 @@ pub struct LolInventoryInventoryItemDTO {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub lsb: bool,
-    pub wins: u64
+    pub wins: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9079,7 +9117,7 @@ pub struct LolInventoryInventoryItemWithPayload {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub owned: bool,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9090,20 +9128,20 @@ pub struct LolInventoryInventoryNotification {
     pub inventory_type: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub acknowledged: bool
+    pub acknowledged: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryInventoryResponseDTO {
-    pub data: LolInventoryInventoryDTO
+    pub data: LolInventoryInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9113,7 +9151,7 @@ pub struct LolInventoryLoginSession {
     pub summoner_id: u64,
     pub account_id: u64,
     pub id_token: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9124,18 +9162,34 @@ pub struct LolInventoryLoyaltyRewards {
     pub free_rewarded_skins_count: i32,
     pub skin_ids: Vec<i32>,
     pub ip_boost: i32,
+    pub xp_boost: HashMap<String, i32>,
+    pub loyalty_t_f_t_map_skin_count: i32,
+    pub loyalty_t_f_t_companion_count: i32,
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolInventoryLoyaltyRewardsSimplified {
+    pub free_rewarded_champions_count: i32,
+    pub champion_ids: Vec<i32>,
+    pub free_rewarded_skins_count: i32,
+    pub skin_ids: Vec<i32>,
+    pub ip_boost: i32,
     pub xp_boost: i32,
     pub loyalty_t_f_t_map_skin_count: i32,
     pub loyalty_t_f_t_companion_count: i32,
-    pub loyalty_sources: HashMap<String, bool>
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryLoyaltyStatusNotification {
     pub status: LolInventoryLoyaltyStatus,
-    pub rewards: LolInventoryLoyaltyRewards,
-    pub reload_inventory: bool
+    pub rewards: LolInventoryLoyaltyRewardsSimplified,
+    pub reload_inventory: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9148,7 +9202,7 @@ pub struct LolInventoryPlayerNotification {
     pub title_key: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9158,7 +9212,7 @@ pub struct LolInventoryRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9167,36 +9221,34 @@ pub struct LolInventoryRmsEntitlementPayload {
     pub item_id: String,
     pub item_type_id: String,
     pub entitlement_type_id: String,
-    pub resource_operation: String
+    pub resource_operation: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsStoreEntitlementItem {
     pub inventory_type: String,
-    pub item_id: String
+    pub item_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsStoreEntitlementPayload {
     pub transaction_id: String,
-    pub items: Vec<LolInventoryRmsStoreEntitlementItem>
+    pub items: Vec<LolInventoryRmsStoreEntitlementItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolInventoryRmsWalletPayload {
-    
-}
+pub struct LolInventoryRmsWalletPayload {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryRmsXboxSubscriptionChange {
     pub puuid: String,
     pub subscription_id: String,
-    pub active: bool,
-    pub identity_provider: String
+    pub active: String,
+    pub identity_provider: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9204,26 +9256,26 @@ pub struct LolInventoryRmsXboxSubscriptionChange {
 pub struct LolInventorySimpleInventoryDTO {
     pub items: HashMap<String, Value>,
     pub items_jwt: String,
-    pub expires: String
+    pub expires: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventorySimpleInventoryResponseDTO {
-    pub data: LolInventorySimpleInventoryDTO
+    pub data: LolInventorySimpleInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventorySummonerIcon {
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryWallet {
     pub ip: i64,
-    pub rp: i64
+    pub rp: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9233,7 +9285,7 @@ pub struct LolInventoryWalletCacheEntry {
     pub expiration_m_s: u64,
     pub issued_at_m_s: u64,
     pub received_at_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9243,26 +9295,26 @@ pub struct LolInventoryWalletDTO {
     pub account_id: i64,
     pub expires: String,
     pub balances: HashMap<String, i32>,
-    pub balances_jwt: String
+    pub balances_jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryWalletResponseDTO {
-    pub data: LolInventoryWalletDTO
+    pub data: LolInventoryWalletDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolInventoryXboxSubscriptionStatus {
-    pub active: bool,
-    pub subscription_id: String
+    pub active: String,
+    pub subscription_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsGameDataChampion {
-    pub alias: String
+    pub alias: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9279,7 +9331,7 @@ pub struct LolItemSetsItemSet {
     pub associated_champions: Vec<i32>,
     pub associated_maps: Vec<i32>,
     pub blocks: Vec<LolItemSetsItemSetBlock>,
-    pub preferred_item_slots: Vec<LolItemSetsPreferredItemSlot>
+    pub preferred_item_slots: Vec<LolItemSetsPreferredItemSlot>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9289,14 +9341,14 @@ pub struct LolItemSetsItemSetBlock {
     pub type_: String,
     pub hide_if_summoner_spell: String,
     pub show_if_summoner_spell: String,
-    pub items: Vec<LolItemSetsItemSetItem>
+    pub items: Vec<LolItemSetsItemSetItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsItemSetItem {
     pub id: String,
-    pub count: u16
+    pub count: u16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9304,7 +9356,7 @@ pub struct LolItemSetsItemSetItem {
 pub struct LolItemSetsItemSets {
     pub timestamp: u64,
     pub account_id: u64,
-    pub item_sets: Vec<LolItemSetsItemSet>
+    pub item_sets: Vec<LolItemSetsItemSet>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9312,19 +9364,19 @@ pub struct LolItemSetsItemSets {
 pub struct LolItemSetsLoginSession {
     pub state: LolItemSetsLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckAuthorization {
-    pub subject: String
+    pub subject: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckLoginDataPacket {
-    pub platform_id: String
+    pub platform_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9333,82 +9385,82 @@ pub struct LolItemSetsNamecheckPayload {
     pub name: String,
     pub name_validation_context: String,
     pub puuid: String,
-    pub shard: String
+    pub shard: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsNamecheckResponse {
-    pub errors: Vec<String>
+    pub errors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsPreferredItemSlot {
     pub id: String,
-    pub preferred_item_slot: i16
+    pub preferred_item_slot: i16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsValidateItemSetNameInput {
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolItemSetsValidateItemSetNameResponse {
     pub success: bool,
-    pub name_check_response: LolItemSetsNamecheckResponse
+    pub name_check_response: LolItemSetsNamecheckResponse,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKickoutKickoutMessage {
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrPlaytimeReminderPlaytimeReminder {
-    pub hours: u32
+    pub hours: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawAllQueueShutdownStatus {
-    pub is_all_queues_disabled: bool
+    pub is_all_queues_disabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawAntiAddictionState {
-    pub policy_type: LolKrShutdownLawPolicyType
+    pub policy_type: LolKrShutdownLawPolicyType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawQueueShutdownStatus {
-    pub is_disabled: bool
+    pub is_disabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawRatingScreenInfo {
-    pub shown: bool
+    pub shown: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolKrShutdownLawShutdownLawNotification {
     #[serde(rename = "type")]
-    pub type_: LolKrShutdownLawShutdownLawStatus
+    pub type_: LolKrShutdownLawShutdownLawStatus,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeagueSessionAntiAddictionTokenEnvelope {
-    pub anti_addiction_token: String
+    pub anti_addiction_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9418,20 +9470,20 @@ pub struct LolLeagueSessionLeagueSessionRMSNotification {
     pub puuid: String,
     pub session_id: String,
     pub state: String,
-    pub session_initiated_at: u64
+    pub session_initiated_at: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeagueSessionLeagueSessionTokenEnvelope {
     pub token: Option<String>,
-    pub logout_on_failure: bool
+    pub logout_on_failure: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterAllSummonerData {
-    pub summoner: LolLeaverBusterSummoner
+    pub summoner: LolLeaverBusterSummoner,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9444,14 +9496,14 @@ pub struct LolLeaverBusterLeaverBusterNotificationResource {
     pub type_: LolLeaverBusterLeaverBusterNotificationType,
     pub punished_games_remaining: i32,
     pub queue_lockout_timer_expiry_utc_millis_diff: u64,
-    pub from_rms: bool
+    pub from_rms: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterLoginDataPacket {
     pub all_summoner_data: LolLeaverBusterAllSummonerData,
-    pub simple_messages: Vec<LolLeaverBusterSimpleMessage>
+    pub simple_messages: Vec<LolLeaverBusterSimpleMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9461,14 +9513,14 @@ pub struct LolLeaverBusterMatchmakingSearchErrorResource {
     pub error_type: String,
     pub penalized_summoner_id: u64,
     pub penalty_time_remaining: f64,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterMatchmakingSearchResource {
     pub queue_id: i32,
-    pub errors: Vec<LolLeaverBusterMatchmakingSearchErrorResource>
+    pub errors: Vec<LolLeaverBusterMatchmakingSearchErrorResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9486,7 +9538,7 @@ pub struct LolLeaverBusterPlayerNotificationResource {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9496,14 +9548,14 @@ pub struct LolLeaverBusterSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLeaverBusterSummoner {
     pub acct_id: u64,
-    pub sum_id: u64
+    pub sum_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9511,14 +9563,14 @@ pub struct LolLeaverBusterSummoner {
 pub struct LolLicenseAgreementLicenseAgreement {
     pub id: String,
     pub license_type: LolLicenseAgreementLicenseAgreementType,
-    pub text: String
+    pub text: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLicenseAgreementPluginRegionLocaleChangedEvent {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9526,7 +9578,7 @@ pub struct LolLicenseAgreementPluginRegionLocaleChangedEvent {
 pub struct LolLoadoutsAccessTokenResource {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9536,14 +9588,14 @@ pub struct LolLoadoutsCreateLoadoutDTO {
     pub item_id: Option<u32>,
     pub name: String,
     pub loadout: HashMap<String, LolLoadoutsItemKey>,
-    pub refresh_time: String
+    pub refresh_time: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsCreateLoadoutRequestDTO {
     pub service_to_jwts_map: HashMap<String, Value>,
-    pub loadout: LolLoadoutsCreateLoadoutDTO
+    pub loadout: LolLoadoutsCreateLoadoutDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9551,26 +9603,26 @@ pub struct LolLoadoutsCreateLoadoutRequestDTO {
 pub struct LolLoadoutsCreateOrUpdateItemsRequest {
     pub id: u32,
     pub items: HashMap<String, Value>,
-    pub inventory_j_w_ts: Vec<String>
+    pub inventory_j_w_ts: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsFrontendInventoryResponse {
-    pub entitlements: Vec<LolLoadoutsItemKey>
+    pub entitlements: Vec<LolLoadoutsItemKey>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsGameflowGameData {
-    pub queue: LolLoadoutsQueue
+    pub queue: LolLoadoutsQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsGameflowSession {
     pub phase: LolLoadoutsGameflowPhase,
-    pub game_data: LolLoadoutsGameflowGameData
+    pub game_data: LolLoadoutsGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9578,7 +9630,7 @@ pub struct LolLoadoutsGameflowSession {
 pub struct LolLoadoutsGetItemsRequest {
     pub id: u32,
     pub inventory_types: Vec<String>,
-    pub inventory_j_w_ts: Vec<String>
+    pub inventory_j_w_ts: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9589,7 +9641,7 @@ pub struct LolLoadoutsInventoryDTO {
     pub summoner_id: u64,
     pub items: HashMap<String, Value>,
     pub expires: String,
-    pub items_jwt: Option<String>
+    pub items_jwt: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9608,13 +9660,13 @@ pub struct LolLoadoutsInventoryItemDTO {
     pub f2p: bool,
     pub rental: bool,
     pub lsb: bool,
-    pub wins: u64
+    pub wins: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsInventoryResponseDTO {
-    pub data: LolLoadoutsInventoryDTO
+    pub data: LolLoadoutsInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9622,7 +9674,7 @@ pub struct LolLoadoutsInventoryResponseDTO {
 pub struct LolLoadoutsItemKey {
     pub inventory_type: String,
     pub content_id: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9630,13 +9682,13 @@ pub struct LolLoadoutsItemKey {
 pub struct LolLoadoutsLoadout {
     pub id: u32,
     pub name: String,
-    pub items: HashMap<String, Value>
+    pub items: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsLoadoutRequestDTOBase {
-    pub service_to_jwts_map: HashMap<String, Value>
+    pub service_to_jwts_map: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9646,13 +9698,13 @@ pub struct LolLoadoutsLoginSession {
     pub summoner_id: u64,
     pub account_id: u64,
     pub id_token: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsQueue {
-    pub is_team_builder_managed: bool
+    pub is_team_builder_managed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9663,14 +9715,14 @@ pub struct LolLoadoutsScopedLoadout {
     pub name: String,
     pub loadout: HashMap<String, LolLoadoutsItemKey>,
     pub refresh_time: String,
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsSignGCORequestDTO {
     pub service_to_jwts_map: HashMap<String, Value>,
-    pub loadout: HashMap<String, LolLoadoutsItemKey>
+    pub loadout: HashMap<String, LolLoadoutsItemKey>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9678,21 +9730,21 @@ pub struct LolLoadoutsSignGCORequestDTO {
 pub struct LolLoadoutsUpdateLoadoutDTO {
     pub id: String,
     pub name: String,
-    pub loadout: HashMap<String, LolLoadoutsItemKey>
+    pub loadout: HashMap<String, LolLoadoutsItemKey>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoadoutsUpdateLoadoutRequestDTO {
     pub service_to_jwts_map: HashMap<String, Value>,
-    pub loadout: LolLoadoutsUpdateLoadoutDTO
+    pub loadout: LolLoadoutsUpdateLoadoutDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyAccountIdAndSummonerId {
     pub account_id: u64,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9702,7 +9754,7 @@ pub struct LolLobbyAmbassadorMessage {
     pub error_code: String,
     pub message: String,
     pub implementation_details: String,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9711,7 +9763,7 @@ pub struct LolLobbyAutoFillQueueDto {
     pub queue_id: i32,
     pub auto_fill_eligible: bool,
     pub auto_fill_protected_for_streaking: bool,
-    pub auto_fill_protected_for_promos: bool
+    pub auto_fill_protected_for_promos: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9719,28 +9771,28 @@ pub struct LolLobbyAutoFillQueueDto {
 pub struct LolLobbyBotParticipantDto {
     pub champion_id: i32,
     pub bot_skill_level: i32,
-    pub team: String
+    pub team: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChampionSkinSelection {
     pub champion_id: i32,
-    pub skin_id: Option<i32>
+    pub skin_id: Option<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChatBlockedPlayerResource {
     pub summoner_id: u64,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyChatFriend {
     pub summoner_id: u64,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9753,7 +9805,7 @@ pub struct LolLobbyChatFriendCounts {
     pub num_friends_in_queue: u32,
     pub num_friends_in_champ_select: u32,
     pub num_friends_in_game: u32,
-    pub num_friends_mobile: u32
+    pub num_friends_mobile: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9762,7 +9814,7 @@ pub struct LolLobbyCollectionsChampion {
     pub active: bool,
     pub bot_enabled: bool,
     pub id: i32,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9772,7 +9824,7 @@ pub struct LolLobbyCollectionsChampionMinimal {
     pub id: i32,
     pub ownership: LolLobbyCollectionsOwnership,
     pub active: bool,
-    pub free_to_play: bool
+    pub free_to_play: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9781,20 +9833,18 @@ pub struct LolLobbyCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolLobbyCollectionsRental
+    pub rental: LolLobbyCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolLobbyCollectionsRental {
-    
-}
+pub struct LolLobbyCollectionsRental {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCustomEligibilityDto {
     pub eligible: bool,
-    pub restrictions: Vec<LolLobbyGatekeeperRestrictionDto>
+    pub restrictions: Vec<LolLobbyGatekeeperRestrictionDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9810,7 +9860,7 @@ pub struct LolLobbyCustomGameDto {
     pub team2_count: i32,
     pub max_num_players: i32,
     pub lobby_name: String,
-    pub private_game: bool
+    pub private_game: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9818,14 +9868,14 @@ pub struct LolLobbyCustomGameDto {
 pub struct LolLobbyCustomGameSettingsDto {
     pub lobby_name: String,
     pub lobby_password: String,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyCustomJoinOptionsDto {
     pub lobby_password: String,
-    pub team: Option<String>
+    pub team: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9833,7 +9883,7 @@ pub struct LolLobbyCustomJoinOptionsDto {
 pub struct LolLobbyEligibility {
     pub queue_id: i32,
     pub eligible: bool,
-    pub restrictions: Vec<LolLobbyEligibilityRestriction>
+    pub restrictions: Vec<LolLobbyEligibilityRestriction>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9843,7 +9893,7 @@ pub struct LolLobbyEligibilityRestriction {
     pub restriction_args: HashMap<String, String>,
     pub expired_timestamp: u64,
     pub summoner_ids: Vec<u64>,
-    pub summoner_ids_string: String
+    pub summoner_ids_string: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9863,14 +9913,14 @@ pub struct LolLobbyFriendAvailabilityAnalytics {
     pub num_friends_mobile: u32,
     pub num_friends_in_champ_select: u32,
     pub num_friends_in_queue: u32,
-    pub party_type: String
+    pub party_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameDataChampionSummary {
     pub id: i32,
-    pub alias: String
+    pub alias: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9885,19 +9935,19 @@ pub struct LolLobbyGameModeDto {
     pub customs_settings: Option<LolLobbyCustomGameSettingsDto>,
     pub game_type_config_id: Option<i64>,
     pub map_id: Option<i32>,
-    pub allow_spectators: Option<String>
+    pub allow_spectators: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowGameClient {
-    pub running: bool
+    pub running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyGameflowGameData {
-    pub queue: LolLobbyQueue
+    pub queue: LolLobbyQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9905,7 +9955,7 @@ pub struct LolLobbyGameflowGameData {
 pub struct LolLobbyGameflowGameDodge {
     pub state: LolLobbyMatchmakingDodgeState,
     pub dodge_ids: Vec<u64>,
-    pub phase: LolLobbyGameflowPhase
+    pub phase: LolLobbyGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9914,7 +9964,7 @@ pub struct LolLobbyGameflowSampleDto {
     pub state: String,
     pub probability: f64,
     pub interval_secs: f64,
-    pub tags: Vec<LolLobbyGameflowSampleTag>
+    pub tags: Vec<LolLobbyGameflowSampleTag>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9923,7 +9973,7 @@ pub struct LolLobbyGameflowSession {
     pub phase: LolLobbyGameflowPhase,
     pub game_data: LolLobbyGameflowGameData,
     pub game_client: LolLobbyGameflowGameClient,
-    pub game_dodge: LolLobbyGameflowGameDodge
+    pub game_dodge: LolLobbyGameflowGameDodge,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9935,7 +9985,7 @@ pub struct LolLobbyGatekeeperRestrictionDto {
     pub payload: String,
     pub queue_id: i32,
     pub puuid: String,
-    pub details: HashMap<String, String>
+    pub details: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9943,13 +9993,13 @@ pub struct LolLobbyGatekeeperRestrictionDto {
 pub struct LolLobbyInventoryCacheEntry {
     pub signed_inventory_jwt: String,
     pub expiration_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyInventoryItem {
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9967,26 +10017,26 @@ pub struct LolLobbyJoinPartyAnalytics {
     pub num_total_invites: i32,
     pub num_friends_online: i32,
     pub party_size: i32,
-    pub game_mode: String
+    pub game_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLcdsDynamicClientConfig {
-    pub party_rewards: LolLobbyLcdsPartyRewardsConfig
+    pub party_rewards: LolLobbyLcdsPartyRewardsConfig,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLcdsGameMetaData {
     pub game_id: u64,
-    pub map_id: i32
+    pub map_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLcdsPartyRewardsConfig {
-    pub enabled: bool
+    pub enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -9996,9 +10046,10 @@ pub struct LolLobbyLobby {
     pub map_id: i32,
     pub game_mode: String,
     pub invitation_id: String,
-    pub chat_room_id: String,
-    pub chat_room_key: String,
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
     pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: LolLobbyMucJwtDto,
     pub members: Vec<LolLobbyLobbyMember>,
     pub local_member: LolLobbyLobbyMember,
     pub invitations: Vec<LolLobbyLobbyInvitation>,
@@ -10018,7 +10069,7 @@ pub struct LolLobbyLobby {
     pub premade_size_allowed: bool,
     pub required_position_coverage_met: bool,
     pub allowable_premade_sizes: Vec<i32>,
-    pub queue_availability: LolLobbyQueueAvailability
+    pub queue_availability: LolLobbyQueueAvailability,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10027,7 +10078,7 @@ pub struct LolLobbyLobbyBotChampion {
     pub active: bool,
     pub id: i32,
     pub name: String,
-    pub bot_difficulties: Vec<LolLobbyLobbyBotDifficulty>
+    pub bot_difficulties: Vec<LolLobbyLobbyBotDifficulty>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10035,7 +10086,7 @@ pub struct LolLobbyLobbyBotChampion {
 pub struct LolLobbyLobbyBotParams {
     pub champion_id: i32,
     pub bot_difficulty: LolLobbyLobbyBotDifficulty,
-    pub team_id: String
+    pub team_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10044,7 +10095,7 @@ pub struct LolLobbyLobbyChangeGameDto {
     pub queue_id: i32,
     pub is_custom: bool,
     pub custom_game_lobby: Option<LolLobbyLobbyCustomGameLobby>,
-    pub game_customization: Option<HashMap<String, String>>
+    pub game_customization: Option<HashMap<String, String>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10052,14 +10103,14 @@ pub struct LolLobbyLobbyChangeGameDto {
 pub struct LolLobbyLobbyChangeQueue {
     pub queue_id: i32,
     pub is_custom: bool,
-    pub custom_game_lobby: Option<LolLobbyLobbyCustomGameLobby>
+    pub custom_game_lobby: Option<LolLobbyLobbyCustomGameLobby>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomChampSelectStartResponse {
     pub success: bool,
-    pub failed_players: Vec<LolLobbyLobbyCustomFailedPlayer>
+    pub failed_players: Vec<LolLobbyLobbyCustomFailedPlayer>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10067,7 +10118,7 @@ pub struct LolLobbyLobbyCustomChampSelectStartResponse {
 pub struct LolLobbyLobbyCustomFailedPlayer {
     pub summoner_id: u64,
     pub summoner_name: String,
-    pub reason: String
+    pub reason: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10085,7 +10136,7 @@ pub struct LolLobbyLobbyCustomGame {
     pub lobby_name: String,
     pub has_password: bool,
     pub passback_url: String,
-    pub party_id: String
+    pub party_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10101,7 +10152,7 @@ pub struct LolLobbyLobbyCustomGameConfiguration {
     pub tournament_game_mode: String,
     pub tournament_passback_url: String,
     pub tournament_passback_data_packet: String,
-    pub game_server_region: String
+    pub game_server_region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10114,14 +10165,14 @@ pub struct LolLobbyLobbyCustomGameLobby {
     pub team_two: Vec<LolLobbyLobbyMember>,
     pub spectators: Vec<LolLobbyLobbyMember>,
     pub practice_game_rewards_disabled_reasons: Vec<String>,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyCustomJoinParameters {
     pub password: Option<String>,
-    pub as_spectator: Option<bool>
+    pub as_spectator: Option<bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10136,10 +10187,11 @@ pub struct LolLobbyLobbyDto {
     pub restrictions: Option<Vec<LolLobbyEligibilityRestriction>>,
     pub warnings: Option<Vec<LolLobbyEligibilityRestriction>>,
     pub game_config: LolLobbyLobbyGameConfigDto,
-    pub chat_room_id: String,
-    pub chat_room_key: String,
-    pub multi_user_chat_j_w_t: String,
-    pub scarce_positions: Vec<String>
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
+    // pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: LolLobbyMucJwtDto,
+    pub scarce_positions: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10158,13 +10210,14 @@ pub struct LolLobbyLobbyGameConfigDto {
     pub is_custom: bool,
     pub show_position_selector: bool,
     pub is_lobby_full: bool,
+    pub should_force_scarce_position_selection: bool,
     pub custom_lobby_name: String,
     pub custom_mutator_name: String,
     pub custom_team100: Vec<LolLobbyLobbyParticipantDto>,
     pub custom_team200: Vec<LolLobbyLobbyParticipantDto>,
     pub custom_spectators: Vec<LolLobbyLobbyParticipantDto>,
     pub custom_spectator_policy: LolLobbyQueueCustomGameSpectatorPolicy,
-    pub custom_rewards_disabled_reasons: Vec<String>
+    pub custom_rewards_disabled_reasons: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10179,7 +10232,7 @@ pub struct LolLobbyLobbyInvitation {
     pub invitation_meta_data: Value,
     pub eligibility: LolLobbyEligibility,
     pub from_summoner_name: String,
-    pub to_summoner_name: String
+    pub to_summoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10190,7 +10243,7 @@ pub struct LolLobbyLobbyInvitationDto {
     pub state: LolLobbyLobbyInvitationState,
     pub timestamp: String,
     pub to_summoner_name: String,
-    pub invitation_type: LolLobbyInvitationType
+    pub invitation_type: LolLobbyInvitationType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10199,13 +10252,13 @@ pub struct LolLobbyLobbyLastQueuedLobby {
     pub queue_id: i32,
     pub was_owner: bool,
     pub can_play_again: bool,
-    pub members: Vec<LolLobbyLobbyLastQueuedMember>
+    pub members: Vec<LolLobbyLobbyLastQueuedMember>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyLastQueuedMember {
-    pub id: u64
+    pub id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10215,7 +10268,7 @@ pub struct LolLobbyLobbyMatchmakingLowPriorityDataResource {
     pub penalty_time: f64,
     pub penalty_time_remaining: f64,
     pub busted_leaver_access_token: String,
-    pub reason: String
+    pub reason: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10225,7 +10278,7 @@ pub struct LolLobbyLobbyMatchmakingSearchErrorResource {
     pub error_type: String,
     pub penalized_summoner_id: u64,
     pub penalty_time_remaining: f64,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10233,7 +10286,7 @@ pub struct LolLobbyLobbyMatchmakingSearchErrorResource {
 pub struct LolLobbyLobbyMatchmakingSearchResource {
     pub search_state: LolLobbyLobbyMatchmakingSearchState,
     pub low_priority_data: LolLobbyLobbyMatchmakingLowPriorityDataResource,
-    pub errors: Vec<LolLobbyLobbyMatchmakingSearchErrorResource>
+    pub errors: Vec<LolLobbyLobbyMatchmakingSearchErrorResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10253,7 +10306,7 @@ pub struct LolLobbyLobbyMember {
     pub auto_fill_protected_for_soloing: bool,
     pub is_bot: bool,
     pub bot_difficulty: LolLobbyLobbyBotDifficulty,
-    pub bot_champion_id: i32
+    pub bot_champion_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10262,7 +10315,7 @@ pub struct LolLobbyLobbyNotification {
     pub notification_id: String,
     pub notification_reason: String,
     pub summoner_ids: Vec<u64>,
-    pub timestamp: u64
+    pub timestamp: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10293,7 +10346,7 @@ pub struct LolLobbyLobbyParticipantDto {
     pub is_bot: bool,
     pub bot_id: String,
     pub bot_difficulty: LolLobbyLobbyBotDifficulty,
-    pub bot_champion_id: i32
+    pub bot_champion_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10302,14 +10355,14 @@ pub struct LolLobbyLobbyPartyRewards {
     pub is_enabled: bool,
     pub queue_id: i32,
     pub is_custom: bool,
-    pub party_rewards: Vec<LolLobbyPartyReward>
+    pub party_rewards: Vec<LolLobbyPartyReward>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyPositionPreferences {
     pub first_preference: String,
-    pub second_preference: String
+    pub second_preference: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10324,14 +10377,14 @@ pub struct LolLobbyLobbyStatus {
     pub member_summoner_ids: Vec<u64>,
     pub invited_summoner_ids: Vec<u64>,
     pub lobby_id: Option<String>,
-    pub custom_spectator_policy: LolLobbyQueueCustomGameSpectatorPolicy
+    pub custom_spectator_policy: LolLobbyQueueCustomGameSpectatorPolicy,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyLobbyTimer {
     pub enabled: bool,
-    pub countdown: i64
+    pub countdown: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10344,7 +10397,14 @@ pub struct LolLobbyLoginSession {
     pub summoner_id: u64,
     pub id_token: String,
     pub puuid: String,
-    pub connected: bool
+    pub connected: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolLobbyMucJwtDto {
+    pub jwt: String,
+    pub channel_claim: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10364,7 +10424,7 @@ pub struct LolLobbyOpenPartyToggleAnalytics {
     pub elapsed_time: u64,
     pub start_transition: String,
     pub end_transition: String,
-    pub game_mode: String
+    pub game_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10375,7 +10435,7 @@ pub struct LolLobbyPartiesInvitationAnalytics {
     pub event_type: String,
     pub event_data: Value,
     pub event_timestamp: u64,
-    pub players: Vec<LolLobbyPartiesInvitationPlayerAnalytics>
+    pub players: Vec<LolLobbyPartiesInvitationPlayerAnalytics>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10383,14 +10443,15 @@ pub struct LolLobbyPartiesInvitationAnalytics {
 pub struct LolLobbyPartiesInvitationPlayerAnalytics {
     pub puuid: String,
     pub summoner_id: u64,
-    pub role: String
+    pub role: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyChatDto {
     pub jid: String,
-    pub multi_user_chat_j_w_t: String
+    pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: LolLobbyMucJwtDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10411,7 +10472,7 @@ pub struct LolLobbyPartyDto {
     pub eligibility_hash: i64,
     pub eligibility_restrictions: Option<Vec<LolLobbyGatekeeperRestrictionDto>>,
     pub eligibility_warnings: Option<Vec<LolLobbyGatekeeperRestrictionDto>>,
-    pub bot_participants: Option<Vec<LolLobbyBotParticipantDto>>
+    pub bot_participants: Option<Vec<LolLobbyBotParticipantDto>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10425,7 +10486,7 @@ pub struct LolLobbyPartyInviteAnalytics {
     pub from_summoner_id: u64,
     pub to_summoner_id: u64,
     pub party_type: String,
-    pub game_mode: String
+    pub game_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10444,7 +10505,7 @@ pub struct LolLobbyPartyMemberDto {
     pub invited_by_summoner_id: Option<u64>,
     pub invite_timestamp: Option<u64>,
     pub can_invite: Option<bool>,
-    pub team: String
+    pub team: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10453,14 +10514,14 @@ pub struct LolLobbyPartyMemberMetadataDto {
     pub position_pref: Vec<String>,
     pub champion_selection: Option<i32>,
     pub skin_selection: Option<i32>,
-    pub properties: Option<Value>
+    pub properties: Option<Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyNotificationEnvelopeDto {
     pub player: Option<LolLobbyPlayerDto>,
-    pub queue_restriction: Option<LolLobbyQueueRestrictionDto>
+    pub queue_restriction: Option<LolLobbyQueueRestrictionDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10469,14 +10530,14 @@ pub struct LolLobbyPartyPresenceData {
     pub party_id: String,
     pub queue_id: i32,
     pub summoners: Vec<u64>,
-    pub max_players: u32
+    pub max_players: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPartyQueueEligibilityDto {
     pub party_restrictions: Vec<LolLobbyGatekeeperRestrictionDto>,
-    pub available_queue_ids: Vec<i32>
+    pub available_queue_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10485,7 +10546,7 @@ pub struct LolLobbyPartyReward {
     pub premade_size: i32,
     #[serde(rename = "type")]
     pub type_: LolLobbyLobbyPartyRewardType,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10494,13 +10555,13 @@ pub struct LolLobbyPartyStatusDto {
     pub ready_players: Vec<String>,
     pub left_players: Vec<String>,
     pub eog_players: Vec<String>,
-    pub party_size: i32
+    pub party_size: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyPlayerCollectionDto {
-    pub players: Vec<LolLobbyPlayerDto>
+    pub players: Vec<LolLobbyPlayerDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10516,7 +10577,7 @@ pub struct LolLobbyPlayerDto {
     pub current_party: Option<LolLobbyPartyDto>,
     pub registration: LolLobbyRegistrationCredentials,
     pub created_at: u64,
-    pub version: u64
+    pub version: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10524,7 +10585,7 @@ pub struct LolLobbyPlayerDto {
 pub struct LolLobbyPlayerStatus {
     pub current_lobby_status: Option<LolLobbyLobbyStatus>,
     pub last_queued_lobby_status: Option<LolLobbyLobbyStatus>,
-    pub can_invite_others_at_eog: bool
+    pub can_invite_others_at_eog: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10534,7 +10595,7 @@ pub struct LolLobbyPremadeMemberDto {
     pub puuid: String,
     pub party_id: String,
     pub summoner_id: u64,
-    pub role: LolLobbyPartyMemberRoleEnum
+    pub role: LolLobbyPartyMemberRoleEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10542,7 +10603,7 @@ pub struct LolLobbyPremadeMemberDto {
 pub struct LolLobbyPremadePartyDto {
     pub party_id: String,
     pub comms_enabled: bool,
-    pub players: HashMap<String, LolLobbyPremadeMemberDto>
+    pub players: HashMap<String, LolLobbyPremadeMemberDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10555,7 +10616,7 @@ pub struct LolLobbyPremadeRelationshipAnalytics {
     pub event_data: Value,
     pub event_timestamp: u64,
     pub premade_players: Vec<String>,
-    pub friend_players: Vec<String>
+    pub friend_players: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10591,13 +10652,13 @@ pub struct LolLobbyQueue {
     pub last_toggled_off_time: u64,
     pub last_toggled_on_time: u64,
     pub removal_from_game_allowed: bool,
-    pub removal_from_game_delay_minutes: i32
+    pub removal_from_game_delay_minutes: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueueCustomGame {
-    pub queue_availability: LolLobbyQueueAvailability
+    pub queue_availability: LolLobbyQueueAvailability,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10624,13 +10685,13 @@ pub struct LolLobbyQueueGameTypeConfig {
     pub pick_mode: String,
     pub ban_mode: String,
     pub game_mode_override: Option<String>,
-    pub num_players_per_team_override: Option<i32>
+    pub num_players_per_team_override: Option<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyQueueRestrictionDto {
-    pub gatekeeper_restrictions: Vec<LolLobbyGatekeeperRestrictionDto>
+    pub gatekeeper_restrictions: Vec<LolLobbyGatekeeperRestrictionDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10639,7 +10700,7 @@ pub struct LolLobbyQueueReward {
     pub is_ip_enabled: bool,
     pub is_xp_enabled: bool,
     pub is_champion_points_enabled: bool,
-    pub party_size_ip_rewards: Vec<i32>
+    pub party_size_ip_rewards: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10647,7 +10708,7 @@ pub struct LolLobbyQueueReward {
 pub struct LolLobbyRankedPositionInfoDTO {
     pub queue: String,
     pub tier: String,
-    pub rank: String
+    pub rank: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10656,13 +10717,13 @@ pub struct LolLobbyRankedStatsUnsignedDTO {
     pub queues: Vec<LolLobbyRankedPositionInfoDTO>,
     pub highest_previous_season_end_tier: String,
     pub highest_previous_season_end_rank: String,
-    pub jwt: String
+    pub jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyReadyDto {
-    pub ready: bool
+    pub ready: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10676,7 +10737,7 @@ pub struct LolLobbyReceivedInvitationDto {
     pub can_accept_invitation: bool,
     pub restrictions: Vec<LolLobbyEligibilityRestriction>,
     pub game_config: LolLobbyReceivedInvitationGameConfigDto,
-    pub invitation_type: LolLobbyInvitationType
+    pub invitation_type: LolLobbyInvitationType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10685,26 +10746,26 @@ pub struct LolLobbyReceivedInvitationGameConfigDto {
     pub game_mode: String,
     pub queue_id: i32,
     pub map_id: i32,
-    pub invite_game_type: String
+    pub invite_game_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRegistrationCredentials {
     pub summoner_token: Option<String>,
-    pub user_info_token: Option<String>,
     pub inventory_token: Option<String>,
     pub inventory_tokens: Option<Vec<String>>,
     pub simple_inventory_token: Option<String>,
     pub ranked_overview_token: Option<String>,
-    pub game_client_version: Option<String>
+    pub game_client_version: Option<String>,
+    pub player_tokens: Option<HashMap<String, String>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyRegistrationStatus {
     pub complete: bool,
-    pub error_codes: Vec<String>
+    pub error_codes: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10714,7 +10775,7 @@ pub struct LolLobbyRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10722,7 +10783,7 @@ pub struct LolLobbyRiotMessagingServiceMessage {
 pub struct LolLobbyServiceProxyPayload {
     pub method: String,
     pub url: String,
-    pub body: String
+    pub body: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10734,7 +10795,7 @@ pub struct LolLobbySummoner {
     pub puuid: String,
     pub profile_icon_id: i32,
     pub display_name: String,
-    pub internal_name: String
+    pub internal_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10746,7 +10807,7 @@ pub struct LolLobbyTeamBuilderActionV1 {
     pub type_: String,
     pub champion_id: i32,
     pub completed: bool,
-    pub duration: i64
+    pub duration: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10758,21 +10819,22 @@ pub struct LolLobbyTeamBuilderAfkCheckStateV1 {
     pub inventory_draft: LolLobbyTeamBuilderTbdInventory,
     pub additional_inventory_types: Vec<String>,
     pub compress_afk_check_payload: bool,
-    pub multi_user_chat_j_w_t: Option<String>
+    pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: LolLobbyTeamBuilderMucJwtDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderBackwardsTransitionInfoV1 {
     pub backwards_transition_reason: String,
-    pub initiator_summoner_ids: Vec<u64>
+    pub initiator_summoner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderBenchChampion {
     pub champion_id: i32,
-    pub is_priority: bool
+    pub is_priority: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10791,21 +10853,21 @@ pub struct LolLobbyTeamBuilderCellV1 {
     pub entitled_feature_type: String,
     pub name_visibility_type: String,
     pub obfuscated_summoner_id: u64,
-    pub obfuscated_puuid: String
+    pub obfuscated_puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderCellsV1 {
     pub allied_team: Vec<LolLobbyTeamBuilderCellV1>,
-    pub enemy_team: Vec<LolLobbyTeamBuilderCellV1>
+    pub enemy_team: Vec<LolLobbyTeamBuilderCellV1>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderCeremonyV1 {
     pub name: String,
-    pub duration: i64
+    pub duration: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10818,15 +10880,15 @@ pub struct LolLobbyTeamBuilderChampSelectAction {
     pub type_: String,
     pub completed: bool,
     pub is_ally_action: bool,
-    pub is_in_progress: bool
+    pub is_in_progress: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampSelectChatRoomDetails {
-    pub chat_room_name: String,
-    pub chat_room_password: Option<String>,
-    pub multi_user_chat_j_w_t: Option<String>
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
+    pub multi_user_chat_j_w_t: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10835,7 +10897,7 @@ pub struct LolLobbyTeamBuilderChampSelectDevPanelData {
     pub counter: i64,
     pub dto_index: i64,
     pub queue_id: i32,
-    pub team_id_suffix: i64
+    pub team_id_suffix: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10844,7 +10906,7 @@ pub struct LolLobbyTeamBuilderChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
     pub spell1_id: Option<u64>,
     pub spell2_id: Option<u64>,
-    pub ward_skin_id: Option<i64>
+    pub ward_skin_id: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10865,7 +10927,7 @@ pub struct LolLobbyTeamBuilderChampSelectPlayerSelection {
     pub entitled_feature_type: String,
     pub name_visibility_type: String,
     pub obfuscated_summoner_id: u64,
-    pub obfuscated_puuid: String
+    pub obfuscated_puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10875,7 +10937,7 @@ pub struct LolLobbyTeamBuilderChampSelectReport {
     pub categories: Vec<String>,
     pub location: String,
     pub comment: String,
-    pub match_token: String
+    pub match_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10886,7 +10948,7 @@ pub struct LolLobbyTeamBuilderChampSelectReportV2 {
     pub location: String,
     pub comment: String,
     pub token_type: String,
-    pub token: String
+    pub token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10917,7 +10979,7 @@ pub struct LolLobbyTeamBuilderChampSelectSession {
     pub skip_champion_select: bool,
     pub is_spectating: bool,
     pub has_simultaneous_bans: bool,
-    pub has_simultaneous_picks: bool
+    pub has_simultaneous_picks: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10925,7 +10987,7 @@ pub struct LolLobbyTeamBuilderChampSelectSession {
 pub struct LolLobbyTeamBuilderChampSelectSwapContract {
     pub id: i64,
     pub cell_id: i64,
-    pub state: LolLobbyTeamBuilderChampSelectSwapState
+    pub state: LolLobbyTeamBuilderChampSelectSwapState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10935,7 +10997,7 @@ pub struct LolLobbyTeamBuilderChampSelectTimer {
     pub total_time_in_phase: i64,
     pub phase: String,
     pub is_infinite: bool,
-    pub internal_now_in_epoch_ms: u64
+    pub internal_now_in_epoch_ms: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10943,14 +11005,14 @@ pub struct LolLobbyTeamBuilderChampSelectTimer {
 pub struct LolLobbyTeamBuilderChampSelectTradeContract {
     pub id: i64,
     pub cell_id: i64,
-    pub state: LolLobbyTeamBuilderChampSelectTradeState
+    pub state: LolLobbyTeamBuilderChampSelectTradeState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampionBenchChampionV1 {
     pub champion_id: i32,
-    pub is_priority: bool
+    pub is_priority: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10958,14 +11020,14 @@ pub struct LolLobbyTeamBuilderChampionBenchChampionV1 {
 pub struct LolLobbyTeamBuilderChampionBenchStateV1 {
     pub bench_enabled: bool,
     pub champion_ids: Vec<i32>,
-    pub bench_champions: Vec<LolLobbyTeamBuilderChampionBenchChampionV1>
+    pub bench_champions: Vec<LolLobbyTeamBuilderChampionBenchChampionV1>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderChampionSelectPreferences {
     pub skins: HashMap<String, i32>,
-    pub spells: HashMap<String, Value>
+    pub spells: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -10995,7 +11057,7 @@ pub struct LolLobbyTeamBuilderChampionSelectStateV1 {
     pub entitled_feature_state: LolLobbyTeamBuilderEntitledFeatureStateV1,
     pub inventory_draft: LolLobbyTeamBuilderTbdInventory,
     pub skip_champion_select: bool,
-    pub is_spectating: bool
+    pub is_spectating: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11003,53 +11065,55 @@ pub struct LolLobbyTeamBuilderChampionSelectStateV1 {
 pub struct LolLobbyTeamBuilderCountdownTimer {
     pub phase_name: String,
     pub timer: i64,
-    pub counter: i32
+    pub counter: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderEntitledFeatureState {
     pub additional_rerolls: u32,
-    pub unlocked_skin_ids: Vec<i32>
+    pub unlocked_skin_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderEntitledFeatureStateV1 {
     pub additional_rerolls: u32,
-    pub unlocked_skins_state: LolLobbyTeamBuilderUnlockedSkinsStateV1
+    pub unlocked_skins_state: LolLobbyTeamBuilderUnlockedSkinsStateV1,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameModeSpellList {
-    pub spells: Vec<u64>
+    pub spells: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameflowGameClient {
-    pub running: bool
+    pub running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameflowGameMap {
-    pub per_position_required_summoner_spells: HashMap<String, LolLobbyTeamBuilderGameModeSpellList>,
-    pub per_position_disallowed_summoner_spells: HashMap<String, LolLobbyTeamBuilderGameModeSpellList>
+    pub per_position_required_summoner_spells:
+        HashMap<String, LolLobbyTeamBuilderGameModeSpellList>,
+    pub per_position_disallowed_summoner_spells:
+        HashMap<String, LolLobbyTeamBuilderGameModeSpellList>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGameflowSession {
     pub game_client: LolLobbyTeamBuilderGameflowGameClient,
-    pub map: LolLobbyTeamBuilderGameflowGameMap
+    pub map: LolLobbyTeamBuilderGameflowGameMap,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderGatekeeperRestricted {
-    pub gatekeeper_restrictions: Vec<LolLobbyTeamBuilderGatekeeperRestriction>
+    pub gatekeeper_restrictions: Vec<LolLobbyTeamBuilderGatekeeperRestriction>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11059,13 +11123,13 @@ pub struct LolLobbyTeamBuilderGatekeeperRestriction {
     pub reason: String,
     pub remaining_millis: u32,
     pub payload: String,
-    pub queue_id: i32
+    pub queue_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLeaverBusterAbandoned {
-    pub abandoner_name: String
+    pub abandoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11073,8 +11137,9 @@ pub struct LolLobbyTeamBuilderLeaverBusterAbandoned {
 pub struct LolLobbyTeamBuilderLobby {
     pub queue_id: i32,
     pub invitation_id: String,
-    pub chat_room_id: String,
-    pub chat_room_key: String,
+    pub multi_user_chat_id: String,
+    pub multi_user_chat_password: String,
+    pub muc_jwt_dto: LolLobbyTeamBuilderMucJwtDto,
     pub members: Vec<LolLobbyTeamBuilderLobbyMember>,
     pub local_member: LolLobbyTeamBuilderLobbyMember,
     pub invitations: Vec<LolLobbyTeamBuilderLobbyInvitation>,
@@ -11090,7 +11155,7 @@ pub struct LolLobbyTeamBuilderLobby {
     pub is_team_builder_managed: bool,
     pub premade_size_allowed: bool,
     pub required_position_coverage_met: bool,
-    pub allowable_premade_sizes: Vec<i32>
+    pub allowable_premade_sizes: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11098,13 +11163,13 @@ pub struct LolLobbyTeamBuilderLobby {
 pub struct LolLobbyTeamBuilderLobbyCountdownTimer {
     pub phase_name: String,
     pub timer: i64,
-    pub counter: i32
+    pub counter: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyInvitation {
-    pub invitation_meta_data: Value
+    pub invitation_meta_data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11119,14 +11184,14 @@ pub struct LolLobbyTeamBuilderLobbyMember {
     pub auto_fill_eligible: bool,
     pub auto_fill_protected_for_streaking: bool,
     pub auto_fill_protected_for_promos: bool,
-    pub auto_fill_protected_for_soloing: bool
+    pub auto_fill_protected_for_soloing: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLobbyPositionPreferences {
     pub first_preference: String,
-    pub second_preference: String
+    pub second_preference: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11134,14 +11199,14 @@ pub struct LolLobbyTeamBuilderLobbyPositionPreferences {
 pub struct LolLobbyTeamBuilderLobbyPositionPreferencesV2 {
     pub first_preference: String,
     pub second_preference: String,
-    pub excluded_preference: String
+    pub excluded_preference: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderLockedEventsStateV1 {
     pub allow_locked_events: bool,
-    pub locked_event_index: i32
+    pub locked_event_index: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11150,14 +11215,14 @@ pub struct LolLobbyTeamBuilderLoginSession {
     pub state: LolLobbyTeamBuilderLoginSessionState,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingDodgeData {
     pub state: LolLobbyTeamBuilderMatchmakingDodgeState,
-    pub dodger_id: u64
+    pub dodger_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11166,7 +11231,7 @@ pub struct LolLobbyTeamBuilderMatchmakingLowPriorityData {
     pub penalized_summoner_ids: Vec<u64>,
     pub penalty_time: f64,
     pub penalty_time_remaining: f64,
-    pub busted_leaver_access_token: String
+    pub busted_leaver_access_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11176,13 +11241,13 @@ pub struct LolLobbyTeamBuilderMatchmakingReadyCheckResource {
     pub player_response: LolLobbyTeamBuilderMatchmakingReadyCheckResponse,
     pub dodge_warning: LolLobbyTeamBuilderMatchmakingDodgeWarning,
     pub timer: f32,
-    pub decliner_ids: Vec<u64>
+    pub decliner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderMatchmakingSearch {
-    pub search_state: LolLobbyTeamBuilderMatchmakingSearchState
+    pub search_state: LolLobbyTeamBuilderMatchmakingSearchState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11192,7 +11257,7 @@ pub struct LolLobbyTeamBuilderMatchmakingSearchErrorResource {
     pub error_type: String,
     pub penalized_summoner_id: u64,
     pub penalty_time_remaining: f64,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11207,7 +11272,14 @@ pub struct LolLobbyTeamBuilderMatchmakingSearchResource {
     pub ready_check: LolLobbyTeamBuilderMatchmakingReadyCheckResource,
     pub dodge_data: LolLobbyTeamBuilderMatchmakingDodgeData,
     pub low_priority_data: LolLobbyTeamBuilderMatchmakingLowPriorityData,
-    pub errors: Vec<LolLobbyTeamBuilderMatchmakingSearchErrorResource>
+    pub errors: Vec<LolLobbyTeamBuilderMatchmakingSearchErrorResource>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolLobbyTeamBuilderMucJwtDto {
+    pub jwt: String,
+    pub channel_claim: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11215,7 +11287,7 @@ pub struct LolLobbyTeamBuilderMatchmakingSearchResource {
 pub struct LolLobbyTeamBuilderPickOrderSwapV1 {
     pub id: i32,
     pub cell_id: i32,
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11249,7 +11321,7 @@ pub struct LolLobbyTeamBuilderQueue {
     pub last_toggled_off_time: u64,
     pub last_toggled_on_time: u64,
     pub removal_from_game_allowed: bool,
-    pub removal_from_game_delay_minutes: i32
+    pub removal_from_game_delay_minutes: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11275,7 +11347,7 @@ pub struct LolLobbyTeamBuilderQueueGameTypeConfig {
     pub post_pick_timer_duration: i32,
     pub ban_timer_duration: i32,
     pub pick_mode: String,
-    pub ban_mode: String
+    pub ban_mode: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11284,21 +11356,21 @@ pub struct LolLobbyTeamBuilderQueueReward {
     pub is_ip_enabled: bool,
     pub is_xp_enabled: bool,
     pub is_champion_points_enabled: bool,
-    pub party_size_ip_rewards: Vec<i32>
+    pub party_size_ip_rewards: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderRerollStateV1 {
     pub allow_rerolling: bool,
-    pub rerolls_remaining: u32
+    pub rerolls_remaining: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderSettingCategoryResource {
     pub schema_version: i32,
-    pub data: LolLobbyTeamBuilderChampionSelectPreferences
+    pub data: LolLobbyTeamBuilderChampionSelectPreferences,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11306,7 +11378,7 @@ pub struct LolLobbyTeamBuilderSettingCategoryResource {
 pub struct LolLobbyTeamBuilderTBDMatchmakingState {
     pub estimated_matchmaking_time_millis: i64,
     pub time_in_matchmaking_millis: i64,
-    pub backwards_transition_reason: String
+    pub backwards_transition_reason: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11319,14 +11391,14 @@ pub struct LolLobbyTeamBuilderTbLobbyStateResource {
     pub game_id: u64,
     pub matchmaking_state: Option<LolLobbyTeamBuilderTBDMatchmakingState>,
     pub afk_check_state: Option<LolLobbyTeamBuilderAfkCheckStateV1>,
-    pub champion_select_state: Option<LolLobbyTeamBuilderChampionSelectStateV1>
+    pub champion_select_state: Option<LolLobbyTeamBuilderChampionSelectStateV1>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTbRemovedFromServiceNotification {
     pub reason: String,
-    pub backwards_transition_info: LolLobbyTeamBuilderBackwardsTransitionInfoV1
+    pub backwards_transition_info: LolLobbyTeamBuilderBackwardsTransitionInfoV1,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11337,7 +11409,7 @@ pub struct LolLobbyTeamBuilderTbdInventory {
     pub spell_ids: Vec<i32>,
     pub initial_spell_ids: Vec<i32>,
     pub all_champion_ids: Vec<i32>,
-    pub disabled_champion_ids: Vec<i32>
+    pub disabled_champion_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11349,7 +11421,7 @@ pub struct LolLobbyTeamBuilderTeamBoost {
     pub ip_reward: i64,
     pub ip_reward_for_purchaser: i64,
     pub available_skins: Vec<i64>,
-    pub unlocked: bool
+    pub unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11360,14 +11432,14 @@ pub struct LolLobbyTeamBuilderTeamBuilderBoostInfo {
     pub activator_cell_id: i64,
     pub battle_boost_activated: bool,
     pub cost: i64,
-    pub unlocked_skin_ids: Vec<i64>
+    pub unlocked_skin_ids: Vec<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderTeambuilderLeagueEdgeResponse {
     pub payload: LolLobbyTeamBuilderTbLobbyStateResource,
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11375,26 +11447,26 @@ pub struct LolLobbyTeamBuilderTeambuilderLeagueEdgeResponse {
 pub struct LolLobbyTeamBuilderTradeV1 {
     pub id: i32,
     pub cell_id: i32,
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyTeamBuilderUnlockedSkinsStateV1 {
-    pub unlocked_skin_ids: Vec<i32>
+    pub unlocked_skin_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyUserInfoToken {
-    pub user_info: String
+    pub user_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLobbyUserResource {
     pub summoner_id: u64,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11402,13 +11474,13 @@ pub struct LolLobbyUserResource {
 pub struct LolLoginAccessToken {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginAccountStateResource {
-    pub state: LolLoginAccountStateType
+    pub state: LolLoginAccountStateType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11416,13 +11488,13 @@ pub struct LolLoginAccountStateResource {
 pub struct LolLoginAuthorization {
     pub current_platform_id: String,
     pub current_account_id: u64,
-    pub subject: String
+    pub subject: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginConfigStatus {
-    pub readiness: LolLoginConfigReadinessEnum
+    pub readiness: LolLoginConfigReadinessEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11430,21 +11502,21 @@ pub struct LolLoginConfigStatus {
 pub struct LolLoginCrashReportingEnvironment {
     pub environment: String,
     pub user_name: String,
-    pub user_id: String
+    pub user_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginIdToken {
     pub token: String,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLcdsResponse {
     pub type_name: String,
-    pub body: Value
+    pub body: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11455,14 +11527,14 @@ pub struct LolLoginLcdsServiceProxyResponse {
     pub message_id: String,
     pub status: String,
     pub payload: String,
-    pub compressed_payload: bool
+    pub compressed_payload: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLeagueSessionTokenEnvelope {
     pub token: Option<String>,
-    pub logout_on_failure: bool
+    pub logout_on_failure: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11470,7 +11542,7 @@ pub struct LolLoginLeagueSessionTokenEnvelope {
 pub struct LolLoginLoginConnectionState {
     pub mode: LolLoginLoginConnectionMode,
     pub is_using_developer_auth_token: bool,
-    pub is_partner_riot_client: bool
+    pub is_partner_riot_client: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11478,7 +11550,7 @@ pub struct LolLoginLoginConnectionState {
 pub struct LolLoginLoginError {
     pub id: String,
     pub message_id: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11486,7 +11558,7 @@ pub struct LolLoginLoginError {
 pub struct LolLoginLoginQueue {
     pub estimated_position_in_queue: u64,
     pub is_position_capped: bool,
-    pub approximate_wait_time_seconds: Option<u64>
+    pub approximate_wait_time_seconds: Option<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11502,27 +11574,27 @@ pub struct LolLoginLoginSession {
     pub id_token: String,
     pub puuid: String,
     pub is_new_player: bool,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginLoginSessionWallet {
     pub ip: i64,
-    pub rp: i64
+    pub rp: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginPlatformGeneratedCredentials {
     pub username: String,
-    pub password: String
+    pub password: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginRSOConfigReadyState {
-    pub ready: bool
+    pub ready: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11530,13 +11602,13 @@ pub struct LolLoginRSOConfigReadyState {
 pub struct LolLoginRSOPlayerCredentials {
     pub username: String,
     pub password: String,
-    pub platform_id: String
+    pub platform_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginSummonerCreatedResource {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11544,27 +11616,27 @@ pub struct LolLoginSummonerCreatedResource {
 pub struct LolLoginSummonerSessionResource {
     pub summoner_id: u64,
     pub display_name: String,
-    pub is_new_player: bool
+    pub is_new_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoginUsernameAndPassword {
     pub username: String,
-    pub password: String
+    pub password: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootAccountIdAndSummonerId {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsChampionMinimal {
     pub id: i32,
-    pub ownership: LolLootCollectionsOwnership
+    pub ownership: LolLootCollectionsOwnership,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11575,14 +11647,14 @@ pub struct LolLootCollectionsChampionSkinMinimal {
     pub name: String,
     pub ownership: LolLootCollectionsOwnership,
     pub splash_path: String,
-    pub tile_path: String
+    pub tile_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsEmote {
     pub item_id: i64,
-    pub ownership_type: LolLootInventoryOwnership
+    pub ownership_type: LolLootInventoryOwnership,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11591,26 +11663,26 @@ pub struct LolLootCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolLootCollectionsRental
+    pub rental: LolLootCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsRental {
-    pub rented: bool
+    pub rented: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsStatstone {
     pub item_id: i64,
-    pub ownership_type: LolLootInventoryOwnership
+    pub ownership_type: LolLootInventoryOwnership,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCollectionsSummonerIcon {
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11620,7 +11692,7 @@ pub struct LolLootCollectionsWardSkin {
     pub name: String,
     pub ownership: LolLootCollectionsOwnership,
     pub ward_image_path: String,
-    pub ward_shadow_image_path: String
+    pub ward_shadow_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11636,7 +11708,7 @@ pub struct LolLootContextMenu {
     pub required_tokens: String,
     pub required_others: String,
     pub required_others_name: String,
-    pub required_others_count: i32
+    pub required_others_count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11656,7 +11728,7 @@ pub struct LolLootCosmeticsTFTDamageSkin {
     pub level: u32,
     pub group_id: u32,
     pub group_name: String,
-    pub upgrades: Vec<String>
+    pub upgrades: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11677,7 +11749,7 @@ pub struct LolLootCosmeticsTFTDamageSkinViewModel {
     pub level: u32,
     pub group_id: u32,
     pub group_name: String,
-    pub upgrades: Vec<LolLootCosmeticsTFTDamageSkinViewModel>
+    pub upgrades: Vec<LolLootCosmeticsTFTDamageSkinViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11690,7 +11762,7 @@ pub struct LolLootCosmeticsTFTMapSkinViewModel {
     pub owned: bool,
     pub selected: bool,
     pub loyalty: bool,
-    pub f2p: bool
+    pub f2p: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11700,7 +11772,7 @@ pub struct LolLootCounter {
     pub name: String,
     pub group_id: String,
     pub direction: String,
-    pub start_value: i64
+    pub start_value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11710,13 +11782,13 @@ pub struct LolLootCounterInstance {
     pub product_id: String,
     pub group_id: String,
     pub counter_id: String,
-    pub counter_value: i64
+    pub counter_value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootCurrencyConfiguration {
-    pub currencies_using_cap_wallets: Vec<String>
+    pub currencies_using_cap_wallets: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11724,7 +11796,7 @@ pub struct LolLootCurrencyConfiguration {
 pub struct LolLootEntityInstance {
     pub group_id: String,
     pub counters: Vec<LolLootCounterInstance>,
-    pub milestones: Vec<LolLootMilestoneInstance>
+    pub milestones: Vec<LolLootMilestoneInstance>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11733,7 +11805,7 @@ pub struct LolLootGameDataSummonerEmote {
     pub id: i64,
     pub name: String,
     pub inventory_icon: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11741,20 +11813,20 @@ pub struct LolLootGameDataSummonerEmote {
 pub struct LolLootGameDataSummonerIcon {
     pub id: i32,
     pub title: String,
-    pub image_path: String
+    pub image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGameflowSession {
-    pub phase: LolLootGameflowPhase
+    pub phase: LolLootGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootGrantorDescription {
     pub app_name: String,
-    pub entity_id: String
+    pub entity_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11765,20 +11837,20 @@ pub struct LolLootGroup {
     pub name: String,
     pub repeat: LolLootRepeat,
     pub counters: Vec<LolLootCounter>,
-    pub milestones: Vec<LolLootMilestone>
+    pub milestones: Vec<LolLootMilestone>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLoginDataPacket {
-    pub simple_messages: Vec<LolLootLoginSimpleMessage>
+    pub simple_messages: Vec<LolLootLoginSimpleMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11786,7 +11858,7 @@ pub struct LolLootLoginDataPacket {
 pub struct LolLootLoginSession {
     pub state: LolLootLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11796,13 +11868,13 @@ pub struct LolLootLoginSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootBundleContentGdsResource {
-    pub localized_description: String
+    pub localized_description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11812,7 +11884,7 @@ pub struct LolLootLootBundleGdsResource {
     pub description: String,
     pub description_long: String,
     pub image: String,
-    pub contents: Vec<LolLootLootBundleContentGdsResource>
+    pub contents: Vec<LolLootLootBundleContentGdsResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11821,7 +11893,7 @@ pub struct LolLootLootDataGdsResource {
     pub loot_items: Vec<LolLootLootItemGdsResource>,
     pub loot_recipes: Vec<LolLootLootRecipeGdsResource>,
     pub loot_tables: Vec<LolLootLootTableGdsResource>,
-    pub loot_bundles: Vec<LolLootLootBundleGdsResource>
+    pub loot_bundles: Vec<LolLootLootBundleGdsResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11832,14 +11904,14 @@ pub struct LolLootLootDescription {
     pub localized_description_long: String,
     pub image_path: String,
     pub child_loot_table_names: Vec<String>,
-    pub children_descriptions: Vec<LolLootLootDescription>
+    pub children_descriptions: Vec<LolLootLootDescription>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootDropTableEntryGdsResource {
     pub loot_id: String,
-    pub localized_description: String
+    pub localized_description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11853,7 +11925,7 @@ pub struct LolLootLootGrantNotification {
     pub loot_name: String,
     pub message_key: String,
     pub msg_id: String,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11871,7 +11943,7 @@ pub struct LolLootLootItem {
     pub tags: String,
     pub display_categories: String,
     pub rental_seconds: i64,
-    pub rental_games: i32
+    pub rental_games: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11891,7 +11963,7 @@ pub struct LolLootLootItemGdsResource {
     pub recipe_menu_active: bool,
     pub rarity: LolLootLootRarity,
     #[serde(rename = "type")]
-    pub type_: LolLootLootType
+    pub type_: LolLootLootType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11899,7 +11971,7 @@ pub struct LolLootLootItemGdsResource {
 pub struct LolLootLootMilestone {
     pub id: String,
     pub threshold: u64,
-    pub rewards: Vec<LolLootLootMilestoneReward>
+    pub rewards: Vec<LolLootLootMilestoneReward>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11907,7 +11979,7 @@ pub struct LolLootLootMilestone {
 pub struct LolLootLootMilestoneRepeat {
     pub repeat_count: i32,
     pub repeat_scope: i32,
-    pub multiplier: f32
+    pub multiplier: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11919,7 +11991,7 @@ pub struct LolLootLootMilestoneReward {
     pub inventory_type: String,
     pub item_id: i32,
     pub quantity: i32,
-    pub loot_item: Option<LolLootPlayerLoot>
+    pub loot_item: Option<LolLootPlayerLoot>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11935,7 +12007,7 @@ pub struct LolLootLootMilestones {
     pub loot_items: Vec<String>,
     pub recipes: Vec<String>,
     pub milestones: Vec<LolLootLootMilestone>,
-    pub error_caching_milestone_set: bool
+    pub error_caching_milestone_set: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11943,7 +12015,7 @@ pub struct LolLootLootMilestones {
 pub struct LolLootLootMilestonesClaimResponse {
     pub loot_milestone_set_id: String,
     pub claimed_milestones: Vec<String>,
-    pub status: LolLootLootMilestoneClaimStatus
+    pub status: LolLootLootMilestoneClaimStatus,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11952,7 +12024,7 @@ pub struct LolLootLootMilestonesCounter {
     pub loot_milestones_id: String,
     pub counter_value: i64,
     pub completed_loops: i64,
-    pub ready_to_claim_milestones: Vec<String>
+    pub ready_to_claim_milestones: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11963,7 +12035,7 @@ pub struct LolLootLootMilestonesDataGdsResource {
     pub start_date: String,
     pub end_date: String,
     pub recipes: Vec<LolLootMilestonesRecipeGdsResource>,
-    pub ledger_config: LolLootProgressionConfigGdsResource
+    pub ledger_config: LolLootProgressionConfigGdsResource,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11976,14 +12048,14 @@ pub struct LolLootLootOddsResponse {
     pub label: String,
     pub query: String,
     pub loot_order: i32,
-    pub children: Vec<LolLootLootOddsResponse>
+    pub children: Vec<LolLootLootOddsResponse>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootLootOutputGdsResource {
     pub loot_id: String,
-    pub localized_description: String
+    pub localized_description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -11998,7 +12070,7 @@ pub struct LolLootLootRecipeGdsResource {
     pub loop_video_path: String,
     pub outro_video_path: String,
     pub has_visible_loot_odds: bool,
-    pub outputs: Vec<LolLootLootOutputGdsResource>
+    pub outputs: Vec<LolLootLootOutputGdsResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12008,7 +12080,7 @@ pub struct LolLootLootTableGdsResource {
     pub description: String,
     pub description_long: String,
     pub image: String,
-    pub drop_chance: Vec<LolLootLootDropTableEntryGdsResource>
+    pub drop_chance: Vec<LolLootLootDropTableEntryGdsResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12019,7 +12091,7 @@ pub struct LolLootMilestone {
     pub group_id: String,
     pub counter_id: String,
     pub trigger_value: i64,
-    pub properties: HashMap<String, String>
+    pub properties: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12032,19 +12104,19 @@ pub struct LolLootMilestoneInstance {
     pub counter_id: String,
     pub trigger_value: i64,
     pub repeat_sequence: u32,
-    pub triggered: bool
+    pub triggered: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestoneLootItemRewardGdsResource {
-    pub internal_name: String
+    pub internal_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestonesProgressionConfigRepeatGdsResource {
-    pub name: LolLootMilestonesProgressionGroupRepeatGdsResource
+    pub name: LolLootMilestonesProgressionGroupRepeatGdsResource,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12053,7 +12125,7 @@ pub struct LolLootMilestonesProgressionCounterGdsResource {
     pub id: String,
     pub name: String,
     pub direction: String,
-    pub start_value: i32
+    pub start_value: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12061,13 +12133,13 @@ pub struct LolLootMilestonesProgressionCounterGdsResource {
 pub struct LolLootMilestonesProgressionGroupRepeatGdsResource {
     pub count: i32,
     pub scope: i32,
-    pub multiplier: f32
+    pub multiplier: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootMilestonesRecipeGdsResource {
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12106,21 +12178,21 @@ pub struct LolLootPlayerLoot {
     pub expiry_time: i64,
     pub rental_seconds: i64,
     pub is_new: bool,
-    pub is_rental: bool
+    pub is_rental: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLootDelta {
     pub delta_count: i32,
-    pub player_loot: LolLootPlayerLoot
+    pub player_loot: LolLootPlayerLoot,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootPlayerLootMap {
     pub version: i64,
-    pub player_loot: HashMap<String, LolLootPlayerLoot>
+    pub player_loot: HashMap<String, LolLootPlayerLoot>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12128,7 +12200,7 @@ pub struct LolLootPlayerLootMap {
 pub struct LolLootPlayerLootNotification {
     pub id: String,
     pub count: i32,
-    pub acknowledged: bool
+    pub acknowledged: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12136,7 +12208,7 @@ pub struct LolLootPlayerLootNotification {
 pub struct LolLootPlayerLootUpdate {
     pub added: Vec<LolLootPlayerLootDelta>,
     pub removed: Vec<LolLootPlayerLootDelta>,
-    pub redeemed: Vec<LolLootPlayerLootDelta>
+    pub redeemed: Vec<LolLootPlayerLootDelta>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12146,7 +12218,7 @@ pub struct LolLootProgressionConfigGdsResource {
     pub name: String,
     pub repeat: LolLootMilestonesProgressionConfigRepeatGdsResource,
     pub counters: Vec<LolLootMilestonesProgressionCounterGdsResource>,
-    pub milestones: Vec<LolLootProgressionConfigMilestoneGdsResource>
+    pub milestones: Vec<LolLootProgressionConfigMilestoneGdsResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12156,7 +12228,7 @@ pub struct LolLootProgressionConfigMilestoneGdsResource {
     pub name: String,
     pub trigger_value: u64,
     pub properties: Vec<LolLootProgressionConfigMilestonePropertiesGdsResource>,
-    pub counter: LolLootMilestonesProgressionCounterGdsResource
+    pub counter: LolLootMilestonesProgressionCounterGdsResource,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12166,7 +12238,7 @@ pub struct LolLootProgressionConfigMilestonePropertiesGdsResource {
     pub name: String,
     pub description: String,
     pub reward_strategy: String,
-    pub rewards: Vec<LolLootProgressionConfigMilestoneRewardGdsResource>
+    pub rewards: Vec<LolLootProgressionConfigMilestoneRewardGdsResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12176,21 +12248,21 @@ pub struct LolLootProgressionConfigMilestoneRewardGdsResource {
     pub reward_type: String,
     pub quantity: i32,
     pub loot_item_to_grant: Option<LolLootMilestoneLootItemRewardGdsResource>,
-    pub legacy_loot_item: String
+    pub legacy_loot_item: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootQueryEvaluatedLootItem {
     pub loot_name: String,
-    pub localized_name: String
+    pub localized_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRMSPayload {
     pub product_id: String,
-    pub affinities: Vec<String>
+    pub affinities: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12198,7 +12270,7 @@ pub struct LolLootRMSPayload {
 pub struct LolLootRecipeMenuConfig {
     pub enabled: bool,
     pub loot_items_using_breakout_recipe_menu: Vec<String>,
-    pub always_show_loot_ids: Vec<String>
+    pub always_show_loot_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12206,14 +12278,14 @@ pub struct LolLootRecipeMenuConfig {
 pub struct LolLootRecipeMetadata {
     pub guaranteed_descriptions: Vec<LolLootLootDescription>,
     pub bonus_descriptions: Vec<LolLootLootDescription>,
-    pub tooltips_disabled: bool
+    pub tooltips_disabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRecipeOutput {
     pub loot_name: String,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12222,7 +12294,7 @@ pub struct LolLootRecipeSlot {
     pub slot_number: i32,
     pub loot_ids: Vec<String>,
     pub tags: String,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12243,14 +12315,14 @@ pub struct LolLootRecipeWithMilestones {
     pub slots: Vec<LolLootRecipeSlot>,
     pub outputs: Vec<LolLootRecipeOutput>,
     pub metadata: LolLootRecipeMetadata,
-    pub loot_milestone_ids: Vec<String>
+    pub loot_milestone_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12258,62 +12330,60 @@ pub struct LolLootRegionLocale {
 pub struct LolLootRepeat {
     pub count: i32,
     pub scope: u32,
-    pub multiplier: f32
+    pub multiplier: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRequestDTOSelectionRequestDTO {
     pub data: LolLootSelectionRequestDTO,
-    pub metadata: LolLootRequestMetadataDTO
+    pub metadata: LolLootRequestMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRequestDTOVectorSelectionRequestDTO {
     pub data: Vec<LolLootSelectionRequestDTO>,
-    pub metadata: LolLootRequestMetadataDTO
+    pub metadata: LolLootRequestMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRequestMetadataDTO {
-    pub transaction_id: Option<String>
+    pub transaction_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOSvcRewardGrant {
     pub data: LolLootSvcRewardGrant,
-    pub metadata: LolLootResponseMetadataDTO
+    pub metadata: LolLootResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOMapRewardGroupIdSelectGrantStatus {
     pub data: HashMap<String, LolLootSelectGrantStatusResponse>,
-    pub metadata: LolLootResponseMetadataDTO
+    pub metadata: LolLootResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOVectorSvcRewardGrant {
     pub data: Vec<LolLootSvcRewardGrant>,
-    pub metadata: LolLootResponseMetadataDTO
+    pub metadata: LolLootResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootResponseDTOVectorSvcRewardGroup {
     pub data: Vec<LolLootSvcRewardGroup>,
-    pub metadata: LolLootResponseMetadataDTO
+    pub metadata: LolLootResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolLootResponseMetadataDTO {
-    
-}
+pub struct LolLootResponseMetadataDTO {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
@@ -12324,14 +12394,20 @@ pub struct LolLootReward {
     pub quantity: i32,
     pub fulfillment_source: String,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootRewardGrant {
     pub info: LolLootSvcRewardGrant,
-    pub reward_group: LolLootSvcRewardGroup
+    pub reward_group: LolLootSvcRewardGroup,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolLootRewardsConfig {
+    pub grant_filtering: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12339,20 +12415,20 @@ pub struct LolLootRewardGrant {
 pub struct LolLootSelectionRequestDTO {
     pub grant_id: String,
     pub reward_group_id: String,
-    pub selections: Vec<String>
+    pub selections: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSelectionStrategyConfig {
     pub min_selections_allowed: u32,
-    pub max_selections_allowed: u32
+    pub max_selections_allowed: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSummoner {
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12366,7 +12442,8 @@ pub struct LolLootSvcRewardGrant {
     pub grant_elements: Vec<LolLootSvcRewardGrantElement>,
     pub selected_ids: Vec<String>,
     pub viewed: bool,
-    pub grantor_description: LolLootGrantorDescription
+    pub grantor_description: LolLootGrantorDescription,
+    pub message_parameters: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12379,14 +12456,13 @@ pub struct LolLootSvcRewardGrantElement {
     pub status: LolLootRewardStatus,
     pub quantity: i32,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootSvcRewardGroup {
     pub id: String,
-    pub internal_name: String,
     pub product_id: String,
     pub types: Vec<String>,
     pub rewards: Vec<LolLootReward>,
@@ -12396,7 +12472,7 @@ pub struct LolLootSvcRewardGroup {
     pub active: bool,
     pub media: HashMap<String, String>,
     pub localizations: HashMap<String, String>,
-    pub celebration_type: LolLootCelebrationType
+    pub celebration_type: LolLootCelebrationType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12406,7 +12482,7 @@ pub struct LolLootTFTDamageSkinGroupViewModel {
     pub group_id: u32,
     pub num_owned: u32,
     pub num_available: u32,
-    pub items: Vec<LolLootCosmeticsTFTDamageSkinViewModel>
+    pub items: Vec<LolLootCosmeticsTFTDamageSkinViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12414,13 +12490,13 @@ pub struct LolLootTFTDamageSkinGroupViewModel {
 pub struct LolLootTFTDamageSkinGroupedViewModel {
     pub selected_loadout_item: LolLootCosmeticsTFTDamageSkinViewModel,
     pub default_item_id: i32,
-    pub groups: Vec<LolLootTFTDamageSkinGroupViewModel>
+    pub groups: Vec<LolLootTFTDamageSkinGroupViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLootTFTMapSkinGroupViewModel {
-    pub items: Vec<LolLootCosmeticsTFTMapSkinViewModel>
+    pub items: Vec<LolLootCosmeticsTFTMapSkinViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12428,7 +12504,7 @@ pub struct LolLootTFTMapSkinGroupViewModel {
 pub struct LolLootTFTMapSkinGroupedViewModel {
     pub selected_loadout_item: LolLootCosmeticsTFTMapSkinViewModel,
     pub default_item_id: i32,
-    pub groups: Vec<LolLootTFTMapSkinGroupViewModel>
+    pub groups: Vec<LolLootTFTMapSkinGroupViewModel>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12439,38 +12515,38 @@ pub struct LolLootVerboseLootOddsResponse {
     pub guaranteed_to_contain: Vec<LolLootLootOddsResponse>,
     pub loot_item: LolLootPlayerLoot,
     pub has_pity_rules: bool,
-    pub checks_ownership: bool
+    pub checks_ownership: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyAccessToken {
-    pub token: String
+    pub token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyGlobalRewards {
-    pub all_champions: bool
+    pub all_champions: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyInventoryDTO {
-    pub items: HashMap<String, Value>
+    pub items: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyInventoryItemDTO {
     pub inventory_type: String,
-    pub loyalty: bool
+    pub loyalty: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyInventoryResponseDTO {
-    pub data: LolLoyaltyInventoryDTO
+    pub data: LolLoyaltyInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12479,7 +12555,7 @@ pub struct LolLoyaltyLoginSession {
     pub state: LolLoyaltyLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12491,18 +12567,48 @@ pub struct LolLoyaltyLoyaltyRewards {
     pub skin_ids: Vec<i32>,
     pub global: LolLoyaltyGlobalRewards,
     pub ip_boost: i32,
+    pub xp_boost: HashMap<String, i32>,
+    pub loyalty_t_f_t_map_skin_count: i32,
+    pub loyalty_t_f_t_companion_count: i32,
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolLoyaltyLoyaltyRewardsSimplified {
+    pub free_rewarded_champions_count: i32,
+    pub champion_ids: Vec<i32>,
+    pub free_rewarded_skins_count: i32,
+    pub skin_ids: Vec<i32>,
+    pub global: LolLoyaltyGlobalRewards,
+    pub ip_boost: i32,
     pub xp_boost: i32,
     pub loyalty_t_f_t_map_skin_count: i32,
     pub loyalty_t_f_t_companion_count: i32,
-    pub loyalty_sources: HashMap<String, bool>
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolLoyaltyLoyaltyStatusNotification {
     pub status: LolLoyaltyLoyaltyStatus,
-    pub rewards: LolLoyaltyLoyaltyRewards,
-    pub reload_inventory: bool
+    pub rewards: LolLoyaltyLoyaltyRewardsSimplified,
+    pub reload_inventory: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolLoyaltyPlayerNotification {
+    pub critical: bool,
+    pub detail_key: String,
+    pub source: String,
+    pub state: String,
+    pub title_key: String,
+    #[serde(rename = "type")]
+    pub type_: String,
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12512,7 +12618,7 @@ pub struct LolLoyaltyRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12521,13 +12627,13 @@ pub struct LolLoyaltyRmsEntitlementPayload {
     pub item_id: String,
     pub item_type_id: String,
     pub entitlement_type_id: String,
-    pub resource_operation: String
+    pub resource_operation: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMapsGameModeSpellList {
-    pub spells: Vec<u64>
+    pub spells: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12552,7 +12658,7 @@ pub struct LolMapsMaps {
     pub tutorial_cards: Vec<LolMapsTutorialCard>,
     pub properties: Value,
     pub per_position_required_summoner_spells: HashMap<String, LolMapsGameModeSpellList>,
-    pub per_position_disallowed_summoner_spells: HashMap<String, LolMapsGameModeSpellList>
+    pub per_position_disallowed_summoner_spells: HashMap<String, LolMapsGameModeSpellList>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12561,34 +12667,34 @@ pub struct LolMapsTutorialCard {
     pub header: Option<String>,
     pub footer: Option<String>,
     pub description: Option<String>,
-    pub image_path: String
+    pub image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryAcsEndPoint {
-    pub url: String
+    pub url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryAcsPlayer {
     pub platform_id: String,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryGAMHSMatchHistoryData {
     pub metadata: LolMatchHistoryGAMHSMatchHistoryMetadata,
-    pub json: Value
+    pub json: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryGAMHSMatchHistoryList {
     pub games: Vec<LolMatchHistoryGAMHSMatchHistoryData>,
-    pub active_puuid: String
+    pub active_puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12601,7 +12707,7 @@ pub struct LolMatchHistoryGAMHSMatchHistoryMetadata {
     pub tags: Vec<String>,
     pub participants: Vec<String>,
     pub timestamp: u64,
-    pub private: bool
+    pub private: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12610,7 +12716,7 @@ pub struct LolMatchHistoryLoginSession {
     pub state: LolMatchHistoryLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub id_token: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12619,7 +12725,7 @@ pub struct LolMatchHistoryMHSummoner {
     pub summoner_id: u64,
     pub account_id: u64,
     pub display_name: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12640,7 +12746,7 @@ pub struct LolMatchHistoryMatchHistoryEvent {
     pub lane_type: String,
     pub tower_type: String,
     pub monster_type: String,
-    pub monster_sub_type: String
+    pub monster_sub_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12659,7 +12765,7 @@ pub struct LolMatchHistoryMatchHistoryGame {
     pub game_type: String,
     pub teams: Vec<LolMatchHistoryMatchHistoryTeam>,
     pub participants: Vec<LolMatchHistoryMatchHistoryParticipant>,
-    pub participant_identities: Vec<LolMatchHistoryMatchHistoryParticipantIdentities>
+    pub participant_identities: Vec<LolMatchHistoryMatchHistoryParticipantIdentities>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12670,7 +12776,7 @@ pub struct LolMatchHistoryMatchHistoryGameList {
     pub game_begin_date: String,
     pub game_end_date: String,
     pub game_count: u64,
-    pub games: Vec<LolMatchHistoryMatchHistoryGame>
+    pub games: Vec<LolMatchHistoryMatchHistoryGame>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12678,7 +12784,7 @@ pub struct LolMatchHistoryMatchHistoryGameList {
 pub struct LolMatchHistoryMatchHistoryList {
     pub platform_id: String,
     pub account_id: u64,
-    pub games: LolMatchHistoryMatchHistoryGameList
+    pub games: LolMatchHistoryMatchHistoryGameList,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12691,7 +12797,7 @@ pub struct LolMatchHistoryMatchHistoryParticipant {
     pub spell2_id: u16,
     pub highest_achieved_season_tier: String,
     pub stats: LolMatchHistoryMatchHistoryParticipantStatistics,
-    pub timeline: LolMatchHistoryMatchHistoryTimeline
+    pub timeline: LolMatchHistoryMatchHistoryTimeline,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12706,14 +12812,14 @@ pub struct LolMatchHistoryMatchHistoryParticipantFrame {
     pub minions_killed: u16,
     pub jungle_minions_killed: u16,
     pub dominion_score: u16,
-    pub team_score: u16
+    pub team_score: u16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryParticipantIdentities {
     pub participant_id: u16,
-    pub player: LolMatchHistoryMatchHistoryParticipantIdentityPlayer
+    pub player: LolMatchHistoryMatchHistoryParticipantIdentityPlayer,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12726,7 +12832,7 @@ pub struct LolMatchHistoryMatchHistoryParticipantIdentityPlayer {
     pub current_platform_id: String,
     pub current_account_id: u64,
     pub match_history_uri: String,
-    pub profile_icon: i32
+    pub profile_icon: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12837,13 +12943,13 @@ pub struct LolMatchHistoryMatchHistoryParticipantStatistics {
     pub perk5: i64,
     pub perk5_var1: i64,
     pub perk5_var2: i64,
-    pub perk5_var3: i64
+    pub perk5_var3: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPlayerChampMasteryDelta {
-    pub grade: String
+    pub grade: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12851,7 +12957,7 @@ pub struct LolMatchHistoryMatchHistoryPlayerChampMasteryDelta {
 pub struct LolMatchHistoryMatchHistoryPlayerDelta {
     pub original_account_id: u64,
     pub original_platform_id: String,
-    pub deltas: Vec<LolMatchHistoryMatchHistoryPlayerGameDelta>
+    pub deltas: Vec<LolMatchHistoryMatchHistoryPlayerGameDelta>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12861,7 +12967,7 @@ pub struct LolMatchHistoryMatchHistoryPlayerGameDelta {
     pub game_id: u64,
     pub platform_delta: LolMatchHistoryMatchHistoryPlayerPlatformDelta,
     pub league_delta: LolMatchHistoryMatchHistoryPlayerLeagueDelta,
-    pub champ_mastery: LolMatchHistoryMatchHistoryPlayerChampMasteryDelta
+    pub champ_mastery: LolMatchHistoryMatchHistoryPlayerChampMasteryDelta,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12870,7 +12976,7 @@ pub struct LolMatchHistoryMatchHistoryPlayerLeagueDelta {
     pub league_point_delta: u64,
     pub reason: String,
     pub mini_series_progress: Vec<String>,
-    pub timestamp: u64
+    pub timestamp: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12879,14 +12985,14 @@ pub struct LolMatchHistoryMatchHistoryPlayerPlatformDelta {
     pub xp_delta: u64,
     pub ip_delta: u64,
     pub compensation_mode_enabled: bool,
-    pub timestamp: u64
+    pub timestamp: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryPosition {
     pub x: i16,
-    pub y: i16
+    pub y: i16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12906,14 +13012,14 @@ pub struct LolMatchHistoryMatchHistoryTeam {
     pub vilemaw_kills: u32,
     pub rift_herald_kills: u32,
     pub dominion_victory_score: u32,
-    pub bans: Vec<LolMatchHistoryMatchHistoryTeamBan>
+    pub bans: Vec<LolMatchHistoryMatchHistoryTeamBan>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTeamBan {
     pub champion_id: i32,
-    pub pick_turn: u16
+    pub pick_turn: u16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12928,7 +13034,7 @@ pub struct LolMatchHistoryMatchHistoryTimeline {
     pub cs_diff_per_min_deltas: HashMap<String, f64>,
     pub xp_diff_per_min_deltas: HashMap<String, f64>,
     pub damage_taken_per_min_deltas: HashMap<String, f64>,
-    pub damage_taken_diff_per_min_deltas: HashMap<String, f64>
+    pub damage_taken_diff_per_min_deltas: HashMap<String, f64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12936,13 +13042,13 @@ pub struct LolMatchHistoryMatchHistoryTimeline {
 pub struct LolMatchHistoryMatchHistoryTimelineFrame {
     pub participant_frames: HashMap<String, LolMatchHistoryMatchHistoryParticipantFrame>,
     pub events: Vec<LolMatchHistoryMatchHistoryEvent>,
-    pub timestamp: u64
+    pub timestamp: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistoryMatchHistoryTimelineFrames {
-    pub frames: Vec<LolMatchHistoryMatchHistoryTimelineFrame>
+    pub frames: Vec<LolMatchHistoryMatchHistoryTimelineFrame>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12954,39 +13060,39 @@ pub struct LolMatchHistoryRecentlyPlayedSummoner {
     pub game_creation_date: String,
     pub champion_id: u64,
     pub team_id: u64,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchHistorySummoner {
     pub display_name: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowGameData {
-    pub queue: LolMatchmakingGameflowQueue
+    pub queue: LolMatchmakingGameflowQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowGameDodge {
     pub state: LolMatchmakingMatchmakingDodgeState,
-    pub dodge_ids: Vec<u64>
+    pub dodge_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowGameTypeConfig {
-    pub reroll: bool
+    pub reroll: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingGameflowQueue {
-    pub game_type_config: LolMatchmakingGameflowGameTypeConfig
+    pub game_type_config: LolMatchmakingGameflowGameTypeConfig,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -12994,7 +13100,7 @@ pub struct LolMatchmakingGameflowQueue {
 pub struct LolMatchmakingGameflowSession {
     pub phase: LolMatchmakingGameflowPhase,
     pub game_data: LolMatchmakingGameflowGameData,
-    pub game_dodge: LolMatchmakingGameflowGameDodge
+    pub game_dodge: LolMatchmakingGameflowGameDodge,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13007,7 +13113,7 @@ pub struct LolMatchmakingLobbyStatus {
     pub allowed_play_again: bool,
     pub member_summoner_ids: Vec<u64>,
     pub lobby_id: Option<String>,
-    pub custom_spectator_policy: LolMatchmakingQueueCustomGameSpectatorPolicy
+    pub custom_spectator_policy: LolMatchmakingQueueCustomGameSpectatorPolicy,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13016,14 +13122,14 @@ pub struct LolMatchmakingLoginSession {
     pub state: LolMatchmakingLoginSessionState,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingMatchmakingDodgeData {
     pub state: LolMatchmakingMatchmakingDodgeState,
-    pub dodger_id: u64
+    pub dodger_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13033,7 +13139,7 @@ pub struct LolMatchmakingMatchmakingLowPriorityData {
     pub penalty_time: f64,
     pub penalty_time_remaining: f64,
     pub busted_leaver_access_token: String,
-    pub reason: String
+    pub reason: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13044,7 +13150,7 @@ pub struct LolMatchmakingMatchmakingReadyCheckResource {
     pub dodge_warning: LolMatchmakingMatchmakingDodgeWarning,
     pub timer: f32,
     pub decliner_ids: Vec<u64>,
-    pub suppress_ux: bool
+    pub suppress_ux: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13054,7 +13160,7 @@ pub struct LolMatchmakingMatchmakingSearchErrorResource {
     pub error_type: String,
     pub penalized_summoner_id: u64,
     pub penalty_time_remaining: f64,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13069,21 +13175,21 @@ pub struct LolMatchmakingMatchmakingSearchResource {
     pub ready_check: LolMatchmakingMatchmakingReadyCheckResource,
     pub dodge_data: LolMatchmakingMatchmakingDodgeData,
     pub low_priority_data: LolMatchmakingMatchmakingLowPriorityData,
-    pub errors: Vec<LolMatchmakingMatchmakingSearchErrorResource>
+    pub errors: Vec<LolMatchmakingMatchmakingSearchErrorResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingPlayerStatus {
     pub current_lobby_status: Option<LolMatchmakingLobbyStatus>,
-    pub last_queued_lobby_status: Option<LolMatchmakingLobbyStatus>
+    pub last_queued_lobby_status: Option<LolMatchmakingLobbyStatus>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMatchmakingQueue {
     pub id: i32,
-    pub is_team_builder_managed: bool
+    pub is_team_builder_managed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13092,7 +13198,7 @@ pub struct LolMissionsCollectionsChampion {
     pub id: i32,
     pub free_to_play: bool,
     pub ownership: LolMissionsCollectionsOwnership,
-    pub skins: Vec<LolMissionsCollectionsChampionSkin>
+    pub skins: Vec<LolMissionsCollectionsChampionSkin>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13100,7 +13206,7 @@ pub struct LolMissionsCollectionsChampion {
 pub struct LolMissionsCollectionsChampionSkin {
     pub champion_id: i32,
     pub id: i32,
-    pub ownership: LolMissionsCollectionsOwnership
+    pub ownership: LolMissionsCollectionsOwnership,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13109,44 +13215,44 @@ pub struct LolMissionsCollectionsOwnership {
     pub loyalty_reward: bool,
     pub xbox_g_p_reward: bool,
     pub owned: bool,
-    pub rental: LolMissionsCollectionsRental
+    pub rental: LolMissionsCollectionsRental,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsRental {
-    pub rented: bool
+    pub rented: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsSummoner {
-    pub summoner_level: i32
+    pub summoner_level: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsSummonerIcons {
-    pub icons: Vec<i32>
+    pub icons: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsCollectionsWardSkin {
     pub id: i64,
-    pub ownership: LolMissionsCollectionsOwnership
+    pub ownership: LolMissionsCollectionsOwnership,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsGameflowSession {
-    pub phase: LolMissionsGameflowPhase
+    pub phase: LolMissionsGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsInventoryItemWithPayload {
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13155,13 +13261,13 @@ pub struct LolMissionsLoginSession {
     pub account_id: u64,
     pub summoner_id: u64,
     pub puuid: String,
-    pub platform_id: String
+    pub platform_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsLoyaltyStatusNotification {
-    pub status: LolMissionsLoyaltyStatus
+    pub status: LolMissionsLoyaltyStatus,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13169,7 +13275,7 @@ pub struct LolMissionsLoyaltyStatusNotification {
 pub struct LolMissionsMissionAsset {
     pub internal_name: String,
     pub path: String,
-    pub icon_needs_frame: bool
+    pub icon_needs_frame: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13187,33 +13293,33 @@ pub struct LolMissionsMissionsNotificationResource {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsMissionsSettingsDataResource {
-    pub selected_series: String
+    pub selected_series: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsPlayerUpdateResponse {
     pub player_missions: Vec<PlayerMissionDTO>,
-    pub player_series: Vec<SeriesDTO>
+    pub player_series: Vec<SeriesDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsPluginRegionLocaleChangedEvent {
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGrant {
     pub info: LolMissionsRewardGrantInfo,
-    pub reward_group: LolMissionsRewardGroup
+    pub reward_group: LolMissionsRewardGroup,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13226,7 +13332,7 @@ pub struct LolMissionsRewardGrantElement {
     pub reward_status: LolMissionsRewardStatus,
     pub quantity: i32,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13238,7 +13344,7 @@ pub struct LolMissionsRewardGrantInfo {
     pub status: LolMissionsGrantStatus,
     pub grant_elements: Vec<LolMissionsRewardGrantElement>,
     pub selected_ids: Vec<String>,
-    pub viewed: bool
+    pub viewed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13254,34 +13360,34 @@ pub struct LolMissionsRewardGroup {
     pub selection_strategy_config: LolMissionsSelectionStrategyConfig,
     pub active: bool,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardGroupsSelection {
-    pub reward_groups: Vec<String>
+    pub reward_groups: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsRewardsProductConfig {
     pub enabled: bool,
-    pub service_url: String
+    pub service_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsSelectionStrategyConfig {
     pub min_selections_allowed: u32,
-    pub max_selections_allowed: u32
+    pub max_selections_allowed: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsSeriesOpt {
     pub series_id: String,
-    pub option: String
+    pub option: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13292,14 +13398,14 @@ pub struct LolMissionsSvcReward {
     pub quantity: i32,
     pub fulfillment_source: String,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftBattlepass {
     pub total_points_earned: i32,
-    pub milestones: Vec<LolMissionsTftBattlepassMilestone>
+    pub milestones: Vec<LolMissionsTftBattlepassMilestone>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13312,7 +13418,7 @@ pub struct LolMissionsTftBattlepassMilestone {
     pub percent_complete: i32,
     pub icon_image_url: String,
     pub rewards: Vec<PlayerMissionRewardDTO>,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13322,7 +13428,7 @@ pub struct LolMissionsTftOrb {
     pub status: String,
     pub unlock_time: i64,
     pub reward_level: u8,
-    pub rewards: Vec<PlayerMissionRewardDTO>
+    pub rewards: Vec<PlayerMissionRewardDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13335,7 +13441,7 @@ pub struct LolMissionsTftPaidBattlepass {
     pub info: LolMissionsTftPaidBattlepassInfo,
     pub last_viewed_progress: i32,
     pub last_viewed_milestone: LolMissionsTftPaidBattlepassMilestone,
-    pub progress_mission_id: String
+    pub progress_mission_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13349,7 +13455,7 @@ pub struct LolMissionsTftPaidBattlepassInfo {
     pub background_image_url: String,
     pub internal_name: String,
     pub pc_purchase_requirement: String,
-    pub media: HashMap<String, String>
+    pub media: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13371,26 +13477,26 @@ pub struct LolMissionsTftPaidBattlepassMilestone {
     pub is_paid: bool,
     pub is_locked: bool,
     pub is_keystone: bool,
-    pub is_bonus: bool
+    pub is_bonus: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsTftWeeklyMissions {
-    pub missions: Vec<PlayerMissionDTO>
+    pub missions: Vec<PlayerMissionDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolMissionsUserInfo {
-    pub user_info: String
+    pub user_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolModeProgressionInventoryRewardItem {
     pub item_id: i32,
-    pub uuid: String
+    pub uuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13399,7 +13505,7 @@ pub struct LolModeProgressionLoadout {
     pub id: String,
     pub name: String,
     pub scope: String,
-    pub loadout: HashMap<String, LolModeProgressionLoadoutsSlot>
+    pub loadout: HashMap<String, LolModeProgressionLoadoutsSlot>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13407,41 +13513,41 @@ pub struct LolModeProgressionLoadout {
 pub struct LolModeProgressionLoadoutsSlot {
     pub content_id: String,
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsAccountSettingsData {
     pub login: LolNpeRewardsLoginSeriesSettings,
-    pub challenges: LolNpeRewardsChallengesSettings
+    pub challenges: LolNpeRewardsChallengesSettings,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsAccountSettingsPayload {
     pub data: LolNpeRewardsAccountSettingsData,
-    pub schema_version: u64
+    pub schema_version: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsAllRewards {
     pub level: LolNpeRewardsRewardSeries,
-    pub login: LolNpeRewardsRewardSeries
+    pub login: LolNpeRewardsRewardSeries,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsChallengesProgress {
-    pub progress: LolNpeRewardsProgress
+    pub progress: LolNpeRewardsProgress,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsChallengesSettings {
     pub all_missions_completed: bool,
-    pub total_count: i8
+    pub total_count: i8,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13449,7 +13555,7 @@ pub struct LolNpeRewardsChallengesSettings {
 pub struct LolNpeRewardsLoginSeriesSettings {
     pub all_rewards_claimed: bool,
     pub last_completed_mission_internal_name: String,
-    pub last_completed_mission_date: i64
+    pub last_completed_mission_date: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13461,13 +13567,13 @@ pub struct LolNpeRewardsMission {
     pub internal_name: String,
     pub metadata: LolNpeRewardsMissionsRewardPackMetaData,
     pub display: LolNpeRewardsMissionDisplay,
-    pub objectives: Vec<LolNpeRewardsObjective>
+    pub objectives: Vec<LolNpeRewardsObjective>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionDisplay {
-    pub locations: Vec<String>
+    pub locations: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13475,26 +13581,26 @@ pub struct LolNpeRewardsMissionDisplay {
 pub struct LolNpeRewardsMissionSeries {
     pub internal_name: String,
     pub status: String,
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionSeriesOptIn {
     pub series_id: String,
-    pub option: String
+    pub option: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsMissionsRewardPackMetaData {
-    pub npe_reward_pack: LolNpeRewardsRewardPack
+    pub npe_reward_pack: LolNpeRewardsRewardPack,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsObjective {
-    pub progress: LolNpeRewardsProgress
+    pub progress: LolNpeRewardsProgress,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13502,7 +13608,7 @@ pub struct LolNpeRewardsObjective {
 pub struct LolNpeRewardsProgress {
     pub last_viewed_progress: i32,
     pub current_progress: i32,
-    pub total_count: i32
+    pub total_count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13510,14 +13616,14 @@ pub struct LolNpeRewardsProgress {
 pub struct LolNpeRewardsRequirements {
     pub level: u32,
     pub day: u32,
-    pub mission_internal_name: String
+    pub mission_internal_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsReward {
     pub renderer: String,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13533,32 +13639,32 @@ pub struct LolNpeRewardsRewardPack {
     pub major_reward: LolNpeRewardsReward,
     pub minor_rewards: Vec<LolNpeRewardsReward>,
     pub delay: i64,
-    pub unlock_time: i64
+    pub unlock_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsRewardSeries {
-    pub reward_packs: Vec<LolNpeRewardsRewardPack>
+    pub reward_packs: Vec<LolNpeRewardsRewardPack>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsRewardSeriesState {
-    pub all_rewards_claimed: bool
+    pub all_rewards_claimed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeRewardsSummoner {
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathAccountSettingsCategoryResource {
     pub data: Option<LolNpeTutorialPathAccountSettingsTutorial>,
-    pub schema_version: u32
+    pub schema_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13566,7 +13672,7 @@ pub struct LolNpeTutorialPathAccountSettingsCategoryResource {
 pub struct LolNpeTutorialPathAccountSettingsTutorial {
     pub has_seen_tutorial_path: bool,
     pub has_skipped_tutorial_path: bool,
-    pub should_see_new_player_experience: bool
+    pub should_see_new_player_experience: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13581,14 +13687,14 @@ pub struct LolNpeTutorialPathCollectionsChampion {
     pub square_portrait_path: String,
     pub stinger_sfx_path: String,
     pub passive: LolNpeTutorialPathCollectionsChampionSpell,
-    pub spells: Vec<LolNpeTutorialPathCollectionsChampionSpell>
+    pub spells: Vec<LolNpeTutorialPathCollectionsChampionSpell>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathCollectionsChampionSpell {
     pub name: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13597,40 +13703,40 @@ pub struct LolNpeTutorialPathExpiringWarning {
     #[serde(rename = "type")]
     pub type_: String,
     pub message: String,
-    pub alert_time: i64
+    pub alert_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathGameflowSession {
-    pub phase: LolNpeTutorialPathGameflowPhase
+    pub phase: LolNpeTutorialPathGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathIds {
     pub mission_ids: Vec<String>,
-    pub series_ids: Vec<String>
+    pub series_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathLobbyChangeQueue {
     pub queue_id: i32,
-    pub is_custom: bool
+    pub is_custom: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathLobbyDto {
     pub party_id: String,
-    pub game_config: LolNpeTutorialPathLobbyGameConfigDto
+    pub game_config: LolNpeTutorialPathLobbyGameConfigDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathLobbyGameConfigDto {
-    pub queue_id: i32
+    pub queue_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13664,19 +13770,19 @@ pub struct LolNpeTutorialPathMission {
     pub cooldown_time_millis: i64,
     pub celebration_type: String,
     pub client_notify_level: String,
-    pub internal_name: String
+    pub internal_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathMissionDisplay {
-    pub attributes: Vec<String>
+    pub attributes: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathMissionMetadata {
-    pub tutorial: LolNpeTutorialPathTutorialMetadata
+    pub tutorial: LolNpeTutorialPathTutorialMetadata,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13687,7 +13793,7 @@ pub struct LolNpeTutorialPathObjective {
     pub description: String,
     pub progress: LolNpeTutorialPathProgress,
     pub sequence: i32,
-    pub reward_groups: Vec<String>
+    pub reward_groups: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13695,13 +13801,13 @@ pub struct LolNpeTutorialPathObjective {
 pub struct LolNpeTutorialPathProgress {
     pub last_viewed_progress: i32,
     pub current_progress: i32,
-    pub total_count: i32
+    pub total_count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathRequirement {
-    pub expression: String
+    pub expression: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13716,7 +13822,7 @@ pub struct LolNpeTutorialPathReward {
     pub reward_fulfilled: bool,
     pub reward_group_selected: bool,
     pub sequence: i32,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13724,7 +13830,7 @@ pub struct LolNpeTutorialPathReward {
 pub struct LolNpeTutorialPathRewardStrategy {
     pub group_strategy: String,
     pub select_max_group_count: i16,
-    pub select_min_group_count: i16
+    pub select_min_group_count: i16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13732,14 +13838,14 @@ pub struct LolNpeTutorialPathRewardStrategy {
 pub struct LolNpeTutorialPathSeries {
     pub id: String,
     pub internal_name: String,
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathSeriesOpt {
     pub series_id: String,
-    pub option: String
+    pub option: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13754,13 +13860,13 @@ pub struct LolNpeTutorialPathSummoner {
     pub xp_until_next_level: u64,
     pub percent_complete_for_next_level: u32,
     pub name_change_flag: bool,
-    pub unnamed: bool
+    pub unnamed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolNpeTutorialPathSummonerIcon {
-    pub profile_icon_id: i32
+    pub profile_icon_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13778,7 +13884,7 @@ pub struct LolNpeTutorialPathTutorial {
     pub is_viewed: bool,
     #[serde(rename = "type")]
     pub type_: LolNpeTutorialPathTutorialType,
-    pub rewards: Vec<LolNpeTutorialPathTutorialReward>
+    pub rewards: Vec<LolNpeTutorialPathTutorialReward>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13788,7 +13894,7 @@ pub struct LolNpeTutorialPathTutorialMetadata {
     pub queue_id: String,
     pub display_rewards: HashMap<String, String>,
     pub use_quick_search_matchmaking: bool,
-    pub use_chosen_champion: bool
+    pub use_chosen_champion: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13800,14 +13906,14 @@ pub struct LolNpeTutorialPathTutorialReward {
     pub icon_url: String,
     pub item_id: String,
     pub sequence: i32,
-    pub unique_name: String
+    pub unique_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchChunkingPatcherEnvironment {
     pub game_patcher_available: bool,
-    pub game_patcher_enabled: bool
+    pub game_patcher_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13816,7 +13922,7 @@ pub struct LolPatchComponentActionProgress {
     pub current_item: String,
     pub total: LolPatchComponentStateProgress,
     pub network: LolPatchComponentStateProgress,
-    pub primary_work: LolPatchComponentStateWorkType
+    pub primary_work: LolPatchComponentStateWorkType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13828,7 +13934,7 @@ pub struct LolPatchComponentState {
     pub is_update_available: bool,
     pub time_of_last_up_to_date_check_i_s_o8601: Option<String>,
     pub is_corrupted: bool,
-    pub progress: Option<LolPatchComponentActionProgress>
+    pub progress: Option<LolPatchComponentActionProgress>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13836,7 +13942,7 @@ pub struct LolPatchComponentState {
 pub struct LolPatchComponentStateProgress {
     pub bytes_complete: u64,
     pub bytes_required: u64,
-    pub bytes_per_second: f64
+    pub bytes_per_second: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13844,14 +13950,14 @@ pub struct LolPatchComponentStateProgress {
 pub struct LolPatchEntitlementsTokenResource {
     pub access_token: String,
     pub token: String,
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchInstallPaths {
     pub game_install_root: String,
-    pub game_executable_path: String
+    pub game_executable_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13859,32 +13965,32 @@ pub struct LolPatchInstallPaths {
 pub struct LolPatchNotification {
     pub id: String,
     pub notification_id: LolPatchNotificationId,
-    pub data: HashMap<String, Value>
+    pub data: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveCompatVersion {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveDownload {
     pub url: String,
-    pub scd_required: bool
+    pub scd_required: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveLabelValue {
-    pub values: Vec<String>
+    pub values: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatchSieveQueryResponse {
-    pub releases: Vec<LolPatchPatchSieveRelease>
+    pub releases: Vec<LolPatchPatchSieveRelease>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13892,7 +13998,7 @@ pub struct LolPatchPatchSieveQueryResponse {
 pub struct LolPatchPatchSieveRelease {
     pub release: LolPatchPatchSieveReleaseInfo,
     pub compat_version: LolPatchPatchSieveCompatVersion,
-    pub download: LolPatchPatchSieveDownload
+    pub download: LolPatchPatchSieveDownload,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13900,7 +14006,7 @@ pub struct LolPatchPatchSieveRelease {
 pub struct LolPatchPatchSieveReleaseInfo {
     pub product: String,
     pub id: String,
-    pub labels: HashMap<String, LolPatchPatchSieveLabelValue>
+    pub labels: HashMap<String, LolPatchPatchSieveLabelValue>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13910,20 +14016,20 @@ pub struct LolPatchPatcherInstallSettings {
     pub game_patch_url: String,
     pub game_patcher_available: bool,
     pub max_download_speed_mbps: u32,
-    pub locales: Vec<String>
+    pub locales: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatcherRegionSettings {
     pub patchline: String,
-    pub game_patcher: String
+    pub game_patcher: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchPatcherSelfUpdateSettings {
-    pub restart_delay: i32
+    pub restart_delay: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13933,7 +14039,7 @@ pub struct LolPatchPatcherSettings {
     pub channel: String,
     pub headers: HashMap<String, String>,
     pub self_update: LolPatchPatcherSelfUpdateSettings,
-    pub patchsieve_url: String
+    pub patchsieve_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13946,14 +14052,14 @@ pub struct LolPatchProductState {
     pub is_corrupted: bool,
     pub is_stopped: bool,
     pub percent_patched: f64,
-    pub components: Vec<LolPatchComponentState>
+    pub components: Vec<LolPatchComponentState>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13961,19 +14067,19 @@ pub struct LolPatchRegionLocale {
 pub struct LolPatchScdCookie {
     pub domain: String,
     pub path: String,
-    pub cookie: String
+    pub cookie: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchScdCookies {
-    pub cookies: Vec<LolPatchScdCookie>
+    pub cookies: Vec<LolPatchScdCookie>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchStatus {
-    pub connected_to_patch_server: bool
+    pub connected_to_patch_server: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -13981,19 +14087,19 @@ pub struct LolPatchStatus {
 pub struct LolPatchSupportedGameRelease {
     pub artifact_id: String,
     pub download: LolPatchPatchSieveDownload,
-    pub selected: bool
+    pub selected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchSupportedGameReleases {
-    pub supported_game_releases: Vec<LolPatchSupportedGameRelease>
+    pub supported_game_releases: Vec<LolPatchSupportedGameRelease>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPatchUxResource {
-    pub visible: bool
+    pub visible: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14004,7 +14110,7 @@ pub struct LolPerksChampSelectAction {
     pub champion_id: i32,
     #[serde(rename = "type")]
     pub type_: String,
-    pub completed: bool
+    pub completed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14012,15 +14118,13 @@ pub struct LolPerksChampSelectAction {
 pub struct LolPerksChampSelectBannedChampions {
     pub my_team_bans: Vec<i32>,
     pub their_team_bans: Vec<i32>,
-    pub num_bans: i32
+    pub num_bans: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksChampSelectChatRoomDetails {
-    pub chat_room_name: String,
-    pub chat_room_password: Option<String>,
-    pub multi_user_chat_j_w_t: Option<String>
+    pub multi_user_chat_j_w_t: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14029,7 +14133,7 @@ pub struct LolPerksChampSelectMySelection {
     pub selected_skin_id: Option<i32>,
     pub spell1_id: Option<u64>,
     pub spell2_id: Option<u64>,
-    pub ward_skin_id: Option<i64>
+    pub ward_skin_id: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14044,7 +14148,7 @@ pub struct LolPerksChampSelectPlayerSelection {
     pub team: i32,
     pub assigned_position: String,
     pub champion_pick_intent: i32,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14058,7 +14162,7 @@ pub struct LolPerksChampSelectSession {
     pub actions: Vec<Value>,
     pub bans: LolPerksChampSelectBannedChampions,
     pub local_player_cell_id: i64,
-    pub is_spectating: bool
+    pub is_spectating: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14068,7 +14172,7 @@ pub struct LolPerksChampSelectTimer {
     pub total_time_in_phase: i64,
     pub phase: String,
     pub is_infinite: bool,
-    pub internal_now_in_epoch_ms: u64
+    pub internal_now_in_epoch_ms: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14076,7 +14180,7 @@ pub struct LolPerksChampSelectTimer {
 pub struct LolPerksChampSelectTradeContract {
     pub id: i64,
     pub cell_id: i64,
-    pub state: LolPerksChampSelectTradeState
+    pub state: LolPerksChampSelectTradeState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14084,7 +14188,7 @@ pub struct LolPerksChampSelectTradeContract {
 pub struct LolPerksChampionPreferredStyle {
     pub champion_name: String,
     pub style: i32,
-    pub champion_id: u32
+    pub champion_id: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14092,14 +14196,14 @@ pub struct LolPerksChampionPreferredStyle {
 pub struct LolPerksChampionRuneRecommendationsGDSResource {
     pub champion_id: i32,
     pub is_override: bool,
-    pub rune_recommendations: Vec<LolPerksRuneRecommendationGDSResource>
+    pub rune_recommendations: Vec<LolPerksRuneRecommendationGDSResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksDefaultStatModsPerSubStyle {
     pub id: i32,
-    pub perks: Vec<i32>
+    pub perks: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14108,7 +14212,14 @@ pub struct LolPerksGameCustomizationDTO {
     pub category: String,
     pub content: String,
     pub queue_type: u64,
-    pub is_teambuilder: bool
+    pub is_teambuilder: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolPerksGameDataChampionSummary {
+    pub id: i32,
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14116,33 +14227,26 @@ pub struct LolPerksGameCustomizationDTO {
 pub struct LolPerksGameflowGameData {
     pub queue: LolPerksQueue,
     pub is_custom_game: bool,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGameflowSession {
     pub phase: LolPerksGameflowPhase,
-    pub game_data: LolPerksGameflowGameData
+    pub game_data: LolPerksGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksGetGameCustomizationDTO {
-    pub queue_type: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolPerksGetResultFromServiceDTO {
-    pub error: String,
-    pub result: String
+    pub queue_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksInventoryRunePageCount {
-    pub quantity: u32
+    pub quantity: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14150,19 +14254,19 @@ pub struct LolPerksInventoryRunePageCount {
 pub struct LolPerksLoginSession {
     pub state: LolPerksLoginSessionState,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckAuthorization {
-    pub subject: String
+    pub subject: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckLoginDataPacket {
-    pub platform_id: String
+    pub platform_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14171,20 +14275,20 @@ pub struct LolPerksNamecheckPayload {
     pub name: String,
     pub name_validation_context: String,
     pub puuid: String,
-    pub shard: String
+    pub shard: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksNamecheckResponse {
-    pub errors: Vec<String>
+    pub errors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkBook {
     pub current_page_id: i32,
-    pub pages: Vec<LolPerksPerkPageResource>
+    pub pages: Vec<LolPerksPerkPageResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14198,13 +14302,13 @@ pub struct LolPerksPerkGDSResource {
     pub tooltip: String,
     pub recommendation_descriptor: String,
     pub major_change_patch_version: String,
-    pub recommendation_descriptor_attributes: HashMap<String, u32>
+    pub recommendation_descriptor_attributes: HashMap<String, u32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkIdListResource {
-    pub perk_ids: Vec<i32>
+    pub perk_ids: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14223,7 +14327,11 @@ pub struct LolPerksPerkPageResource {
     pub selected_perk_ids: Vec<i32>,
     pub sub_style_id: i32,
     pub auto_modified_selections: Vec<u32>,
-    pub last_modified: u64
+    pub last_modified: u64,
+    pub rune_recommendation_id: String,
+    pub recommendation_index: i32,
+    pub is_recommendation_override: bool,
+    pub recommendation_champion_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14231,7 +14339,7 @@ pub struct LolPerksPerkPageResource {
 pub struct LolPerksPerkSettingResource {
     pub perk_ids: Vec<i32>,
     pub perk_style: i32,
-    pub perk_sub_style: i32
+    pub perk_sub_style: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14239,7 +14347,7 @@ pub struct LolPerksPerkSettingResource {
 pub struct LolPerksPerkSettings {
     pub pages: Vec<LolPerksPerkPageResource>,
     pub per_shard_perk_books: HashMap<String, LolPerksPerkBook>,
-    pub settings: LolPerksUISettings
+    pub settings: LolPerksUISettings,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14258,7 +14366,7 @@ pub struct LolPerksPerkStyleResource {
     pub default_perks: Vec<i32>,
     pub default_page_name: String,
     pub default_perks_when_splashed: Vec<i32>,
-    pub default_stat_mods_per_sub_style: Vec<LolPerksDefaultStatModsPerSubStyle>
+    pub default_stat_mods_per_sub_style: Vec<LolPerksDefaultStatModsPerSubStyle>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14267,14 +14375,14 @@ pub struct LolPerksPerkStyleSlotResource {
     pub perks: Vec<i32>,
     #[serde(rename = "type")]
     pub type_: String,
-    pub slot_label: String
+    pub slot_label: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerkSubStyleBonusResource {
     pub perk_id: i32,
-    pub style_id: i32
+    pub style_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14289,7 +14397,7 @@ pub struct LolPerksPerkUIPerk {
     pub short_desc: String,
     pub tooltip: String,
     pub recommendation_descriptor: String,
-    pub slot_type: String
+    pub slot_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14303,7 +14411,10 @@ pub struct LolPerksPerkUIRecommendedPage {
     pub secondary_perk_style_id: i32,
     pub primary_recommendation_attribute: String,
     pub secondary_recommendation_attribute: String,
-    pub summoner_spell_ids: Vec<i32>
+    pub summoner_spell_ids: Vec<i32>,
+    pub recommendation_id: String,
+    pub is_recommendation_override: bool,
+    pub recommendation_champion_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14312,7 +14423,7 @@ pub struct LolPerksPerkUISlot {
     pub perks: Vec<i32>,
     #[serde(rename = "type")]
     pub type_: String,
-    pub slot_label: String
+    pub slot_label: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14329,20 +14440,20 @@ pub struct LolPerksPerkUIStyle {
     pub default_sub_style: i32,
     pub default_perks: Vec<i32>,
     pub default_page_name: String,
-    pub id_name: String
+    pub id_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPerksConfigDTO {
-    pub styles: Vec<LolPerksPerkStyleResource>
+    pub styles: Vec<LolPerksPerkStyleResource>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksPlatformConfig {
     pub perks_enabled: bool,
-    pub auto_repair_pages_enabled: bool
+    pub auto_repair_pages_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14351,14 +14462,15 @@ pub struct LolPerksPlayerInventory {
     pub owned_page_count: u32,
     pub custom_page_count: u32,
     pub can_add_custom_page: bool,
-    pub is_custom_page_creation_unlocked: bool
+    pub is_custom_page_creation_unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksQueue {
     pub id: i32,
-    pub is_team_builder_managed: bool
+    pub map_id: i32,
+    pub is_team_builder_managed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14371,14 +14483,15 @@ pub struct LolPerksRuneRecommendationGDSResource {
     pub perk_ids: Vec<i32>,
     pub primary_perk_style_id: i32,
     pub secondary_perk_style_id: i32,
-    pub summoner_spell_ids: Vec<i32>
+    pub summoner_spell_ids: Vec<i32>,
+    pub recommendation_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksSettingsStorageContainer {
     pub data: LolPerksPerkSettings,
-    pub schema_version: u32
+    pub schema_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14394,7 +14507,7 @@ pub struct LolPerksSummoner {
     pub xp_until_next_level: u64,
     pub percent_complete_for_next_level: u32,
     pub reroll_points: LolPerksSummonerRerollPoints,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14404,7 +14517,7 @@ pub struct LolPerksSummonerRerollPoints {
     pub current_points: u32,
     pub number_of_rolls: u32,
     pub max_rolls: u32,
-    pub points_cost_to_roll: u32
+    pub points_cost_to_roll: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14414,7 +14527,7 @@ pub struct LolPerksUISettings {
     pub grid_mode_enabled: bool,
     pub show_preset_pages: bool,
     pub gameplay_patch_version_seen: String,
-    pub gameplay_updated_perks_seen: Vec<i32>
+    pub gameplay_updated_perks_seen: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14422,21 +14535,21 @@ pub struct LolPerksUISettings {
 pub struct LolPerksUpdatePageOrderRequest {
     pub target_page_id: i32,
     pub destination_page_id: i32,
-    pub offset: i32
+    pub offset: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksValidateItemSetNameResponse {
     pub success: bool,
-    pub name_check_response: LolPerksNamecheckResponse
+    pub name_check_response: LolPerksNamecheckResponse,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPerksValidatePageNameData {
     pub id: i32,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14446,28 +14559,28 @@ pub struct LolPftGameClientEndOfGameStats {
     pub game_mode: String,
     pub stats_block: Value,
     pub queue_id: i32,
-    pub is_ranked: bool
+    pub is_ranked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftGameflowGameDodge {
     pub state: LolPftGameflowGameDodgeState,
-    pub dodge_ids: Vec<u64>
+    pub dodge_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftGameflowSession {
     pub phase: LolPftGameflowPhase,
-    pub game_dodge: LolPftGameflowGameDodge
+    pub game_dodge: LolPftGameflowGameDodge,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftLoginSession {
     pub state: LolPftLoginSessionStates,
-    pub id_token: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14488,7 +14601,7 @@ pub struct LolPftPFTEndOfGamePlayer {
     pub summoner_name: String,
     pub team_id: i32,
     pub wins: i32,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14500,7 +14613,7 @@ pub struct LolPftPFTEndOfGamePoints {
     pub previous_points: i32,
     pub points_until_next_reroll: i32,
     pub reroll_count: i32,
-    pub total_points: i32
+    pub total_points: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14516,8 +14629,6 @@ pub struct LolPftPFTEndOfGameStats {
     pub queue_type: String,
     pub ranked: bool,
     pub report_game_id: u64,
-    pub room_name: String,
-    pub room_password: String,
     pub teams: Vec<LolPftPFTEndOfGameTeam>,
     pub local_player: LolPftPFTEndOfGamePlayer,
     pub my_team_status: String,
@@ -14543,7 +14654,7 @@ pub struct LolPftPFTEndOfGameStats {
     pub team_early_surrendered: bool,
     pub game_ended_in_early_surrender: bool,
     pub is_aram_game: bool,
-    pub reroll_data: LolPftPFTEndOfGamePoints
+    pub reroll_data: LolPftPFTEndOfGamePoints,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14558,7 +14669,7 @@ pub struct LolPftPFTEndOfGameTeam {
     pub team_id: i32,
     pub is_bottom_team: bool,
     pub is_player_team: bool,
-    pub is_winning_team: bool
+    pub is_winning_team: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14566,7 +14677,7 @@ pub struct LolPftPFTEndOfGameTeam {
 pub struct LolPftPFTEvent {
     pub player_survey_id: u64,
     pub action: String,
-    pub data: Vec<Value>
+    pub data: Vec<Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14580,14 +14691,14 @@ pub struct LolPftPFTMetadata {
     pub app_version: String,
     pub system_os: String,
     pub stats: LolPftPFTEndOfGameStats,
-    pub homepage_timer: f64
+    pub homepage_timer: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTQuestionResponse {
     pub question_id: u64,
-    pub response_data: Value
+    pub response_data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14599,14 +14710,14 @@ pub struct LolPftPFTSurvey {
     #[serde(rename = "type")]
     pub type_: String,
     pub display: String,
-    pub data: HashMap<String, Value>
+    pub data: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPftPFTSurveyResults {
     pub question_responses: Vec<LolPftPFTQuestionResponse>,
-    pub actions: Vec<LolPftPFTEvent>
+    pub actions: Vec<LolPftPFTEvent>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14617,7 +14728,7 @@ pub struct LolPftPFTSurveyV1 {
     pub caption: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub url: String
+    pub url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14627,7 +14738,7 @@ pub struct LolPftSummoner {
     pub summoner_id: u64,
     pub account_id: u64,
     pub summoner_level: u32,
-    pub unnamed: bool
+    pub unnamed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14638,26 +14749,26 @@ pub struct LolPlayerBehaviorBanNotification {
     pub reason: String,
     pub time_until_ban_expires: u64,
     pub is_perma_ban: bool,
-    pub display_reform_card: bool
+    pub display_reform_card: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorCodeOfConductNotification {
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorPlayerBehaviorConfig {
     pub is_loaded: bool,
-    pub code_of_conduct_enabled: bool
+    pub code_of_conduct_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorPlayerBehaviorGameflowSessionResource {
-    pub phase: LolPlayerBehaviorGameflowPhase
+    pub phase: LolPlayerBehaviorGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14667,7 +14778,7 @@ pub struct LolPlayerBehaviorPlayerBehaviorSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14685,7 +14796,7 @@ pub struct LolPlayerBehaviorPlayerNotificationResource {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14700,7 +14811,7 @@ pub struct LolPlayerBehaviorReformCard {
     pub restricted_chat_games_remaining: i64,
     pub chat_logs: Vec<String>,
     pub game_ids: Vec<u64>,
-    pub player_facing_message: String
+    pub player_facing_message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14708,7 +14819,7 @@ pub struct LolPlayerBehaviorReformCard {
 pub struct LolPlayerBehaviorReformCardChatLogs {
     pub pre_game_chat_logs: Vec<String>,
     pub in_game_chat_logs: Vec<String>,
-    pub post_game_chat_logs: Vec<String>
+    pub post_game_chat_logs: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14722,7 +14833,7 @@ pub struct LolPlayerBehaviorReformCardV2 {
     pub punishment_length_games: i64,
     pub punished_for_reform_card_chat_logs: Vec<LolPlayerBehaviorReformCardChatLogs>,
     pub punished_for_game_ids: Vec<u64>,
-    pub player_facing_message: String
+    pub player_facing_message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14732,7 +14843,7 @@ pub struct LolPlayerBehaviorReporterFeedback {
     pub account_id: u64,
     pub message_id: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14742,7 +14853,7 @@ pub struct LolPlayerBehaviorReporterFeedbackMessage {
     pub message: String,
     pub category: String,
     pub locale: String,
-    pub key: String
+    pub key: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14752,26 +14863,26 @@ pub struct LolPlayerBehaviorRestrictionNotification {
     pub source: LolPlayerBehaviorNotificationSource,
     pub games_remaining: i64,
     pub expiration_millis: u64,
-    pub display_reform_card: bool
+    pub display_reform_card: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorSettingsResource {
     pub data: Value,
-    pub schema_version: i64
+    pub schema_version: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfo {
-    pub user_info: String
+    pub user_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoBanData {
-    pub restrictions: Vec<LolPlayerBehaviorUserInfoRestriction>
+    pub restrictions: Vec<LolPlayerBehaviorUserInfoRestriction>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14781,7 +14892,7 @@ pub struct LolPlayerBehaviorUserInfoRestriction {
     pub type_: String,
     pub reason: String,
     pub scope: String,
-    pub dat: LolPlayerBehaviorUserInfoRestrictionData
+    pub dat: LolPlayerBehaviorUserInfoRestrictionData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14789,7 +14900,7 @@ pub struct LolPlayerBehaviorUserInfoRestriction {
 pub struct LolPlayerBehaviorUserInfoRestrictionData {
     pub expiration_millis: u64,
     pub game_data: LolPlayerBehaviorUserInfoRestrictionGameData,
-    pub game_location: String
+    pub game_location: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14798,13 +14909,13 @@ pub struct LolPlayerBehaviorUserInfoRestrictionGameData {
     pub product_name: String,
     pub game_location: String,
     pub trigger_game_id: String,
-    pub additional_game_ids: Vec<String>
+    pub additional_game_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerBehaviorUserInfoToken {
-    pub ban: LolPlayerBehaviorUserInfoBanData
+    pub ban: LolPlayerBehaviorUserInfoBanData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14817,14 +14928,14 @@ pub struct LolPlayerLevelUpEndOfGameStats {
     pub leveled_up: bool,
     pub new_spells: Vec<i32>,
     pub previous_level: u32,
-    pub rp_earned: i32
+    pub rp_earned: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpGameDataSummonerSpell {
     pub id: u64,
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14832,7 +14943,7 @@ pub struct LolPlayerLevelUpGameDataSummonerSpell {
 pub struct LolPlayerLevelUpLoginSession {
     pub state: LolPlayerLevelUpLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14846,21 +14957,21 @@ pub struct LolPlayerLevelUpPlayerLevelUpEvent {
     pub new_rune_slot_unlocked: bool,
     pub rp_earned: i32,
     pub new_spells: Vec<u64>,
-    pub new_queues: Vec<i32>
+    pub new_queues: Vec<i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpPlayerLevelUpEventAck {
     pub seen_this_event: bool,
-    pub new_summoner_level: u32
+    pub new_summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerLevelUpQueue {
     pub id: i32,
-    pub min_level: u32
+    pub min_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14876,13 +14987,13 @@ pub struct LolPlayerMessagingDynamicCelebrationMessagingNotificationResource {
     pub item_id: String,
     pub item_quantity: String,
     pub celebration_type: String,
-    pub status: i32
+    pub status: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerMessagingLoginDataPacket {
-    pub simple_messages: Vec<LolPlayerMessagingSimpleMessage>
+    pub simple_messages: Vec<LolPlayerMessagingSimpleMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14893,7 +15004,7 @@ pub struct LolPlayerMessagingPlayerMessagingNotificationResource {
     pub msg_id: String,
     pub title: String,
     pub body: String,
-    pub status: i32
+    pub status: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14905,7 +15016,7 @@ pub struct LolPlayerMessagingSimpleMessage {
     pub type_: String,
     pub title_code: String,
     pub body_code: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14914,7 +15025,7 @@ pub struct LolPlayerPreferencesLoginSession {
     pub state: LolPlayerPreferencesLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub id_token: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14924,7 +15035,7 @@ pub struct LolPlayerPreferencesPlayerPreferences {
     pub type_: String,
     pub version: String,
     pub data: String,
-    pub hash: String
+    pub hash: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14934,7 +15045,7 @@ pub struct LolPlayerPreferencesPlayerPreferencesEndpoint {
     pub enforce_https: bool,
     pub service_endpoint: String,
     pub version: String,
-    pub retries: i64
+    pub retries: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14944,14 +15055,14 @@ pub struct LolPlayerReportSenderChampSelectReport {
     pub categories: Vec<String>,
     pub location: String,
     pub comment: String,
-    pub match_token: String
+    pub match_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPlayerReportSenderChampSelectSummonerInfo {
     pub puuid: String,
-    pub obfuscated_puuid: String
+    pub obfuscated_puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14960,7 +15071,7 @@ pub struct LolPlayerReportSenderEndOfGamePlayerReport {
     pub reported_puuid: String,
     pub game_id: u64,
     pub offense: String,
-    pub comment: String
+    pub comment: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14971,14 +15082,14 @@ pub struct LolPlayerReportSenderGameAgnosticReportPayload {
     pub location: String,
     pub comment: String,
     pub token_type: String,
-    pub token: String
+    pub token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPreEndOfGameSequenceEvent {
     pub name: String,
-    pub priority: i32
+    pub priority: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -14989,27 +15100,27 @@ pub struct LolPremadeVoiceAccountSettingsCategoryDataResource {
     pub input_mode: LolPremadeVoiceInputMode,
     pub push_to_talk_key: String,
     pub show_first_experience_in_l_c_u: bool,
-    pub show_first_experience_in_game: bool
+    pub show_first_experience_in_game: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceAccountSettingsCategoryResource {
     pub data: Option<LolPremadeVoiceAccountSettingsCategoryDataResource>,
-    pub schema_version: u32
+    pub schema_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceAudioPropertiesResource {
     pub is_loopback_enabled: bool,
-    pub mic_energy: u32
+    pub mic_energy: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceConfigStatus {
-    pub readiness: LolPremadeVoiceConfigReadinessEnum
+    pub readiness: LolPremadeVoiceConfigReadinessEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15019,7 +15130,7 @@ pub struct LolPremadeVoiceDeviceResource {
     pub name: String,
     pub usable: bool,
     pub is_current_device: bool,
-    pub is_default: bool
+    pub is_default: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15029,13 +15140,13 @@ pub struct LolPremadeVoiceDeviceResourceRiotClient {
     pub name: String,
     pub is_effective_device: bool,
     pub is_current_device: bool,
-    pub is_default: bool
+    pub is_default: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceEntitlementsToken {
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15043,52 +15154,52 @@ pub struct LolPremadeVoiceEntitlementsToken {
 pub struct LolPremadeVoiceExternalSession {
     pub patchline_full_name: String,
     pub patchline_id: String,
-    pub product_id: String
+    pub product_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceFirstExperience {
     pub show_first_experience_in_l_c_u: bool,
-    pub show_first_experience_in_game: bool
+    pub show_first_experience_in_game: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameEventHotkeys {
-    pub evt_push_to_talk: Option<String>
+    pub evt_push_to_talk: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameInputSettings {
-    pub game_events: LolPremadeVoiceGameEventHotkeys
+    pub game_events: LolPremadeVoiceGameEventHotkeys,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameflowGameClient {
-    pub running: bool
+    pub running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceGameflowSession {
     pub phase: LolPremadeVoiceGameflowPhase,
-    pub game_client: LolPremadeVoiceGameflowGameClient
+    pub game_client: LolPremadeVoiceGameflowGameClient,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceKeyCombo {
-    pub key_bindings: Vec<LolPremadeVoicePushToTalkKey>
+    pub key_bindings: Vec<LolPremadeVoicePushToTalkKey>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceKeycodePushToTalkResource {
     pub enabled: bool,
-    pub key_combos: Option<Vec<LolPremadeVoiceKeyCombo>>
+    pub key_combos: Option<Vec<LolPremadeVoiceKeyCombo>>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15096,20 +15207,20 @@ pub struct LolPremadeVoiceKeycodePushToTalkResource {
 pub struct LolPremadeVoiceLocalSettingsCategoryDataResource {
     pub current_capture_device_handle: String,
     pub input_volume: u32,
-    pub vad_sensitivity: u32
+    pub vad_sensitivity: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceLocalSettingsCategoryResource {
     pub data: Option<LolPremadeVoiceLocalSettingsCategoryDataResource>,
-    pub schema_version: u32
+    pub schema_version: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceLoginSession {
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15120,7 +15231,7 @@ pub struct LolPremadeVoiceParticipantResource {
     pub volume: u32,
     pub energy: u32,
     pub is_muted: bool,
-    pub is_speaking: bool
+    pub is_speaking: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15128,7 +15239,7 @@ pub struct LolPremadeVoiceParticipantResource {
 pub struct LolPremadeVoicePartyDto {
     pub party_id: String,
     pub comms_enabled: bool,
-    pub players: HashMap<String, LolPremadeVoicePlayerDto>
+    pub players: HashMap<String, LolPremadeVoicePlayerDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15138,7 +15249,7 @@ pub struct LolPremadeVoicePlayerDto {
     pub puuid: String,
     pub party_id: String,
     pub summoner_id: u64,
-    pub role: LolPremadeVoicePartyMemberRoleEnum
+    pub role: LolPremadeVoicePartyMemberRoleEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15151,20 +15262,20 @@ pub struct LolPremadeVoicePremadeVoiceParticipantDto {
     pub volume: u32,
     pub energy: u32,
     pub is_muted: bool,
-    pub is_speaking: bool
+    pub is_speaking: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePushToTalkKey {
-    pub key: u32
+    pub key: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoicePushToTalkResource {
     pub ptt_enabled: bool,
-    pub ptt_key_binding: Option<String>
+    pub ptt_key_binding: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15175,7 +15286,7 @@ pub struct LolPremadeVoiceSessionResource {
     pub participants: Vec<LolPremadeVoiceParticipantResource>,
     pub volume: u32,
     pub is_muted: bool,
-    pub is_transmit_enabled: bool
+    pub is_transmit_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15192,20 +15303,20 @@ pub struct LolPremadeVoiceSettingsResource {
     pub vad_active: bool,
     pub ptt_active: bool,
     pub input_mode: LolPremadeVoiceInputMode,
-    pub ptt_key: Option<String>
+    pub ptt_key: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceStateResource {
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPremadeVoiceSummoner {
     pub account_id: u64,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15216,7 +15327,7 @@ pub struct LolPremadeVoiceVoiceAvailability {
     pub voice_channel_available: bool,
     pub disabled_after_login: bool,
     pub show_u_i: bool,
-    pub show_disconnected_state: bool
+    pub show_disconnected_state: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15226,7 +15337,7 @@ pub struct LolProgressionCounter {
     pub name: String,
     pub group_id: String,
     pub direction: String,
-    pub start_value: i64
+    pub start_value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15236,7 +15347,7 @@ pub struct LolProgressionCounterInstance {
     pub product_id: String,
     pub group_id: String,
     pub counter_id: String,
-    pub counter_value: i64
+    pub counter_value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15244,7 +15355,7 @@ pub struct LolProgressionCounterInstance {
 pub struct LolProgressionEntityInstance {
     pub group_id: String,
     pub counters: Vec<LolProgressionCounterInstance>,
-    pub milestones: Vec<LolProgressionMilestoneInstance>
+    pub milestones: Vec<LolProgressionMilestoneInstance>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15255,7 +15366,7 @@ pub struct LolProgressionGroup {
     pub name: String,
     pub repeat: LolProgressionRepeat,
     pub counters: Vec<LolProgressionCounter>,
-    pub milestones: Vec<LolProgressionMilestone>
+    pub milestones: Vec<LolProgressionMilestone>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15266,7 +15377,7 @@ pub struct LolProgressionMilestone {
     pub group_id: String,
     pub counter_id: String,
     pub trigger_value: i64,
-    pub properties: HashMap<String, String>
+    pub properties: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15279,7 +15390,7 @@ pub struct LolProgressionMilestoneInstance {
     pub counter_id: String,
     pub trigger_value: i64,
     pub repeat_sequence: u32,
-    pub triggered: bool
+    pub triggered: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15287,7 +15398,7 @@ pub struct LolProgressionMilestoneInstance {
 pub struct LolProgressionRepeat {
     pub count: i32,
     pub scope: u32,
-    pub multiplier: f32
+    pub multiplier: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15296,14 +15407,14 @@ pub struct LolPublishingContentAccountData {
     pub puuid: String,
     pub account_id: String,
     pub summoner_level: String,
-    pub display_name: String
+    pub display_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentBuildInfo {
     pub version: String,
-    pub patchline: String
+    pub patchline: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15321,14 +15432,14 @@ pub struct LolPublishingContentClientData {
     pub system_os: String,
     pub protocol: String,
     pub port: u16,
-    pub asset_urls: HashMap<String, String>
+    pub asset_urls: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPubHubConfig {
     pub edge: LolPublishingContentPubHubConfigEdge,
-    pub app_context: LolPublishingContentPubHubConfigAppContext
+    pub app_context: LolPublishingContentPubHubConfigAppContext,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15344,26 +15455,26 @@ pub struct LolPublishingContentPubHubConfigAppContext {
     pub app_locale: String,
     pub app_language: String,
     pub publishing_locale: String,
-    pub app_session_id: String
+    pub app_session_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPubHubConfigEdge {
     pub client_id: String,
-    pub client_region: String
+    pub client_region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPublishingLocaleSetting {
-    pub data: LolPublishingContentPublishingLocaleSettingData
+    pub data: LolPublishingContentPublishingLocaleSettingData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentPublishingLocaleSettingData {
-    pub publishing_locale: String
+    pub publishing_locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15374,7 +15485,7 @@ pub struct LolPublishingContentPublishingSettings {
     pub web_region: String,
     pub web_locale: String,
     pub publishing_locale: String,
-    pub rso_platform_id: String
+    pub rso_platform_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15382,34 +15493,34 @@ pub struct LolPublishingContentPublishingSettings {
 pub struct LolPublishingContentRegionLocale {
     pub region: String,
     pub locale: String,
-    pub web_region: String
+    pub web_region: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentSummonerInfo {
     pub display_name: String,
-    pub summoner_level: u16
+    pub summoner_level: u16,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentSystemInfo {
-    pub operating_system: LolPublishingContentSystemInfoOperatingSystem
+    pub operating_system: LolPublishingContentSystemInfoOperatingSystem,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPublishingContentSystemInfoOperatingSystem {
     pub platform: String,
-    pub version_major: String
+    pub version_major: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetBalance {
     pub currency_type: String,
-    pub amount: i32
+    pub amount: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15423,7 +15534,7 @@ pub struct LolPurchaseWidgetBaseSkinLineDto {
     pub uncentered_splash_path: String,
     pub collection_card_path: String,
     pub collection_description: String,
-    pub tile_path: String
+    pub tile_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15432,7 +15543,7 @@ pub struct LolPurchaseWidgetBundledItemPricingInfo {
     pub discount_prices: Vec<LolPurchaseWidgetDiscountPricingInfo>,
     pub inventory_type: String,
     pub item_id: i32,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15446,7 +15557,7 @@ pub struct LolPurchaseWidgetCapOffer {
     pub payload: Vec<LolPurchaseWidgetCapOfferPayloadEntry>,
     pub active: bool,
     pub start_date: String,
-    pub created_date: String
+    pub created_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15455,7 +15566,7 @@ pub struct LolPurchaseWidgetCapOfferPayloadEntry {
     pub item_price_map: HashMap<String, i32>,
     pub item_instance_id: String,
     pub fulfillment_type_id: String,
-    pub inventory_type_u_u_i_d: String
+    pub inventory_type_u_u_i_d: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15465,34 +15576,34 @@ pub struct LolPurchaseWidgetCapOrdersDataDto {
     pub sub_orders: Vec<LolPurchaseWidgetCapOrdersSubOrderDto>,
     pub purchaser: LolPurchaseWidgetCapOrdersTypedIdentifierDto,
     pub location: String,
-    pub source: String
+    pub source: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersMetaDto {
-    pub xid: String
+    pub xid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersOfferContextDto {
     pub quantity: u32,
-    pub payment_option: String
+    pub payment_option: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersOfferDto {
     pub id: String,
-    pub product_id: String
+    pub product_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersOrderDto {
     pub data: LolPurchaseWidgetCapOrdersDataDto,
-    pub meta: LolPurchaseWidgetCapOrdersMetaDto
+    pub meta: LolPurchaseWidgetCapOrdersMetaDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15500,14 +15611,14 @@ pub struct LolPurchaseWidgetCapOrdersOrderDto {
 pub struct LolPurchaseWidgetCapOrdersSubOrderDto {
     pub recipient_id: String,
     pub offer_context: LolPurchaseWidgetCapOrdersOfferContextDto,
-    pub offer: LolPurchaseWidgetCapOrdersOfferDto
+    pub offer: LolPurchaseWidgetCapOrdersOfferDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetCapOrdersTypedIdentifierDto {
     pub id: String,
-    pub type_id: String
+    pub type_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15530,7 +15641,7 @@ pub struct LolPurchaseWidgetCatalogPluginItem {
     pub metadata: Option<Vec<LolPurchaseWidgetItemMetadataEntry>>,
     pub quest_skin_info: Option<LolPurchaseWidgetSkinLineInfo>,
     pub active: bool,
-    pub ownership_type: Option<LolPurchaseWidgetInventoryOwnership>
+    pub ownership_type: Option<LolPurchaseWidgetInventoryOwnership>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15540,7 +15651,7 @@ pub struct LolPurchaseWidgetCatalogPluginItemAssets {
     pub icon_path: String,
     pub tile_path: String,
     pub emblems: Vec<LolPurchaseWidgetChampionSkinEmblem>,
-    pub colors: Vec<String>
+    pub colors: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15552,7 +15663,7 @@ pub struct LolPurchaseWidgetCatalogPluginItemWithDetails {
     pub bundled_items: Option<Vec<LolPurchaseWidgetCatalogPluginItemWithDetails>>,
     pub minimum_bundle_prices: Option<Vec<LolPurchaseWidgetCatalogPluginPrice>>,
     pub bundled_discount_prices: Option<Vec<LolPurchaseWidgetCatalogPluginPrice>>,
-    pub assets: LolPurchaseWidgetCatalogPluginItemAssets
+    pub assets: LolPurchaseWidgetCatalogPluginItemAssets,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15561,7 +15672,7 @@ pub struct LolPurchaseWidgetCatalogPluginPrice {
     pub currency: String,
     pub cost: i64,
     pub cost_type: Option<String>,
-    pub sale: Option<LolPurchaseWidgetCatalogPluginSale>
+    pub sale: Option<LolPurchaseWidgetCatalogPluginSale>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15570,7 +15681,7 @@ pub struct LolPurchaseWidgetCatalogPluginSale {
     pub start_date: String,
     pub end_date: String,
     pub discount: Option<f32>,
-    pub cost: i64
+    pub cost: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15578,21 +15689,21 @@ pub struct LolPurchaseWidgetCatalogPluginSale {
 pub struct LolPurchaseWidgetChampionSkinEmblem {
     pub name: String,
     pub emblem_path: LolPurchaseWidgetChampionSkinEmblemPath,
-    pub emblem_position: LolPurchaseWidgetChampionSkinEmblemPosition
+    pub emblem_position: LolPurchaseWidgetChampionSkinEmblemPosition,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetChampionSkinEmblemPath {
     pub large: String,
-    pub small: String
+    pub small: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetChampionSkinEmblemPosition {
     pub vertical: String,
-    pub horizontal: String
+    pub horizontal: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15601,7 +15712,7 @@ pub struct LolPurchaseWidgetDiscountPricingInfo {
     pub cost: i32,
     pub cost_type: String,
     pub currency: String,
-    pub discount: f32
+    pub discount: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15613,14 +15724,14 @@ pub struct LolPurchaseWidgetItemChoiceDetails {
     pub discount: String,
     pub full_price: u32,
     pub display_type: String,
-    pub purchase_options: Vec<LolPurchaseWidgetPurchaseOption>
+    pub purchase_options: Vec<LolPurchaseWidgetPurchaseOption>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemChoices {
     pub choices: Vec<LolPurchaseWidgetItemChoiceDetails>,
-    pub validation_errors: Vec<LolPurchaseWidgetValidationErrorEntry>
+    pub validation_errors: Vec<LolPurchaseWidgetValidationErrorEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15628,7 +15739,7 @@ pub struct LolPurchaseWidgetItemChoices {
 pub struct LolPurchaseWidgetItemCost {
     pub currency: String,
     pub cost: i64,
-    pub discount: Option<f32>
+    pub discount: Option<f32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15645,7 +15756,7 @@ pub struct LolPurchaseWidgetItemDefinition {
     pub tags: Vec<String>,
     pub metadata: Vec<LolPurchaseWidgetItemMetadataEntry>,
     pub bundled_item_price: Option<LolPurchaseWidgetBundledItemPricingInfo>,
-    pub loyalty_unlocked: bool
+    pub loyalty_unlocked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15654,14 +15765,14 @@ pub struct LolPurchaseWidgetItemDetails {
     pub title: String,
     pub sub_title: String,
     pub description: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15669,14 +15780,14 @@ pub struct LolPurchaseWidgetItemKey {
 pub struct LolPurchaseWidgetItemMetadataEntry {
     #[serde(rename = "type")]
     pub type_: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetItemOwnership {
     pub item_key: LolPurchaseWidgetItemKey,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15684,7 +15795,7 @@ pub struct LolPurchaseWidgetItemOwnership {
 pub struct LolPurchaseWidgetItemPrice {
     pub currency_type: String,
     pub price: i64,
-    pub purchasable: bool
+    pub purchasable: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15692,7 +15803,7 @@ pub struct LolPurchaseWidgetItemPrice {
 pub struct LolPurchaseWidgetItemSale {
     pub start_date: String,
     pub end_date: String,
-    pub discount: Option<f32>
+    pub discount: Option<f32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15702,7 +15813,7 @@ pub struct LolPurchaseWidgetLoginSession {
     pub state: LolPurchaseWidgetLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub id_token: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15710,14 +15821,14 @@ pub struct LolPurchaseWidgetLoginSession {
 pub struct LolPurchaseWidgetOrderNotificationResource {
     pub event_type_id: String,
     pub event_type: String,
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPriceDetail {
     pub item_key: LolPurchaseWidgetItemKey,
-    pub price: LolPurchaseWidgetItemPrice
+    pub price: LolPurchaseWidgetItemPrice,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15727,7 +15838,7 @@ pub struct LolPurchaseWidgetPriceOptionDto {
     pub currency_type: String,
     pub currency_payment_option: Option<String>,
     pub currency_name: Option<String>,
-    pub currency_image_path: Option<String>
+    pub currency_image_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15738,7 +15849,7 @@ pub struct LolPurchaseWidgetPurchasableItem {
     pub bundled_items: Vec<LolPurchaseWidgetItemDefinition>,
     pub sale: Option<LolPurchaseWidgetItemSale>,
     pub purchase_options: Vec<LolPurchaseWidgetPurchaseOption>,
-    pub validation_errors: Vec<LolPurchaseWidgetValidationErrorEntry>
+    pub validation_errors: Vec<LolPurchaseWidgetValidationErrorEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15747,20 +15858,20 @@ pub struct LolPurchaseWidgetPurchaseItem {
     pub item_key: LolPurchaseWidgetItemKey,
     pub quantity: i32,
     pub source: String,
-    pub purchase_currency_info: LolPurchaseWidgetItemPrice
+    pub purchase_currency_info: LolPurchaseWidgetItemPrice,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferOrderStatus {
     pub order_state: LolPurchaseWidgetPurchaseOfferOrderStates,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferOrderStatuses {
-    pub statuses: HashMap<String, LolPurchaseWidgetPurchaseOfferOrderStatus>
+    pub statuses: HashMap<String, LolPurchaseWidgetPurchaseOfferOrderStatus>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15769,26 +15880,26 @@ pub struct LolPurchaseWidgetPurchaseOfferRequestV3 {
     pub offer_id: String,
     pub currency_type: String,
     pub quantity: u32,
-    pub price: u32
+    pub price: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOfferResponseV3 {
     pub legacy: bool,
-    pub order_dto: Option<LolPurchaseWidgetCapOrdersOrderDto>
+    pub order_dto: Option<LolPurchaseWidgetCapOrdersOrderDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseOption {
-    pub price_details: Vec<LolPurchaseWidgetPriceDetail>
+    pub price_details: Vec<LolPurchaseWidgetPriceDetail>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetPurchaseRequest {
-    pub items: Vec<LolPurchaseWidgetPurchaseItem>
+    pub items: Vec<LolPurchaseWidgetPurchaseItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15796,7 +15907,7 @@ pub struct LolPurchaseWidgetPurchaseRequest {
 pub struct LolPurchaseWidgetPurchaseResponse {
     pub items: Vec<LolPurchaseWidgetPurchaseItem>,
     pub transactions: Vec<LolPurchaseWidgetTransaction>,
-    pub use_r_m_s_confirmation: bool
+    pub use_r_m_s_confirmation: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15804,7 +15915,7 @@ pub struct LolPurchaseWidgetPurchaseResponse {
 pub struct LolPurchaseWidgetPurchaseWidgetConfig {
     pub enabled: bool,
     pub non_refundable_disclaimer_enabled: bool,
-    pub always_show_purchase_disclaimer: bool
+    pub always_show_purchase_disclaimer: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15814,7 +15925,7 @@ pub struct LolPurchaseWidgetRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15822,7 +15933,7 @@ pub struct LolPurchaseWidgetRiotMessagingServiceMessage {
 pub struct LolPurchaseWidgetSale {
     pub start_date: String,
     pub end_date: String,
-    pub prices: Vec<LolPurchaseWidgetItemCost>
+    pub prices: Vec<LolPurchaseWidgetItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15830,7 +15941,7 @@ pub struct LolPurchaseWidgetSale {
 pub struct LolPurchaseWidgetSkinLineDescriptionDto {
     pub title: String,
     pub description: String,
-    pub icon_image_path: String
+    pub icon_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15838,7 +15949,7 @@ pub struct LolPurchaseWidgetSkinLineDescriptionDto {
 pub struct LolPurchaseWidgetSkinLineDescriptionInfo {
     pub title: String,
     pub description: String,
-    pub icon_path: String
+    pub icon_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15851,7 +15962,7 @@ pub struct LolPurchaseWidgetSkinLineInfo {
     pub collection_card_path: String,
     pub uncentered_splash_path: String,
     pub collection_description: String,
-    pub tiers: Vec<LolPurchaseWidgetSkinLineTier>
+    pub tiers: Vec<LolPurchaseWidgetSkinLineTier>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15861,7 +15972,7 @@ pub struct LolPurchaseWidgetSkinLineItemDto {
     pub large_image_path: Option<String>,
     pub localized_long_name: String,
     pub localized_short_name: String,
-    pub large_video_path: Option<String>
+    pub large_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15877,7 +15988,7 @@ pub struct LolPurchaseWidgetSkinLineTier {
     pub load_screen_path: String,
     pub short_name: String,
     pub splash_video_path: Option<String>,
-    pub collection_splash_video_path: Option<String>
+    pub collection_splash_video_path: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15886,26 +15997,26 @@ pub struct LolPurchaseWidgetTransaction {
     pub transaction_id: String,
     pub item_key: LolPurchaseWidgetItemKey,
     pub item_name: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidateOfferError {
     pub error_key: String,
-    pub meta: String
+    pub meta: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidateOfferRequestV3 {
-    pub offer_id: String
+    pub offer_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidateOfferResponseV3 {
-    pub validation_errors: Vec<LolPurchaseWidgetValidateOfferError>
+    pub validation_errors: Vec<LolPurchaseWidgetValidateOfferError>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15914,34 +16025,34 @@ pub struct LolPurchaseWidgetValidationError {
     pub error_code: String,
     pub message: String,
     pub error_details: HashMap<String, String>,
-    pub response_items: Vec<String>
+    pub response_items: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationErrorEntry {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationRequest {
     pub items: Vec<LolPurchaseWidgetValidationRequestItem>,
-    pub owned_items: Vec<LolPurchaseWidgetItemOwnership>
+    pub owned_items: Vec<LolPurchaseWidgetItemOwnership>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationRequestItem {
     pub item_key: LolPurchaseWidgetItemKey,
-    pub quantity: i32
+    pub quantity: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolPurchaseWidgetValidationResponse {
     pub items: Vec<LolPurchaseWidgetValidationResponseItem>,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15952,7 +16063,7 @@ pub struct LolPurchaseWidgetValidationResponseItem {
     pub validation_currency_info: Vec<LolPurchaseWidgetItemPrice>,
     pub sale: Option<LolPurchaseWidgetSale>,
     pub name: Option<String>,
-    pub description: Option<String>
+    pub description: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15960,7 +16071,7 @@ pub struct LolPurchaseWidgetValidationResponseItem {
 pub struct LolPurchaseWidgetWallet {
     pub account_id: u64,
     pub balances: Vec<LolPurchaseWidgetBalance>,
-    pub version: i32
+    pub version: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15968,13 +16079,13 @@ pub struct LolPurchaseWidgetWallet {
 pub struct LolRankedAchievedTier {
     pub queue_type: LolRankedLeagueQueueType,
     pub tier: LolRankedLeagueTier,
-    pub division: u64
+    pub division: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEndOfGameStatsBlock {
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -15985,13 +16096,13 @@ pub struct LolRankedEosNotificationResource {
     pub season_end_time: i64,
     pub queue: String,
     pub tier: String,
-    pub division: String
+    pub division: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosNotificationsConfig {
-    pub config: Vec<LolRankedEosNotificationsConfigEntry>
+    pub config: Vec<LolRankedEosNotificationsConfigEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16000,7 +16111,7 @@ pub struct LolRankedEosNotificationsConfigEntry {
     pub name: String,
     pub offset_time1: i64,
     pub offset_time2: i64,
-    pub offset_time3: i64
+    pub offset_time3: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16009,57 +16120,57 @@ pub struct LolRankedEosRewardData {
     pub id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub override_image_path: String
+    pub override_image_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardGroupsConfig {
-    pub reward_groups: HashMap<String, LolRankedEosRewardGroupsRewardsList>
+    pub reward_groups: HashMap<String, LolRankedEosRewardGroupsRewardsList>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardGroupsRewardsList {
-    pub rewards: Vec<String>
+    pub rewards: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardsConfig {
-    pub seasons: HashMap<String, LolRankedEosRewardsConfigEntry>
+    pub seasons: HashMap<String, LolRankedEosRewardsConfigEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosRewardsConfigEntry {
-    pub rewards: HashMap<String, LolRankedEosRewardData>
+    pub rewards: HashMap<String, LolRankedEosRewardData>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosSettingsData {
-    pub notification_shown: bool
+    pub notification_shown: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedEosSettingsResource {
     pub data: LolRankedEosSettingsData,
-    pub schema_version: i32
+    pub schema_version: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedGameflowGameData {
-    pub queue: LolRankedQueue
+    pub queue: LolRankedQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedGameflowSession {
     pub phase: LolRankedGameflowPhase,
-    pub game_data: LolRankedGameflowGameData
+    pub game_data: LolRankedGameflowGameData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16069,7 +16180,7 @@ pub struct LolRankedGlobalNotification {
     pub participant_id: String,
     pub queue_type: String,
     pub tier: String,
-    pub position: i32
+    pub position: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16105,7 +16216,7 @@ pub struct LolRankedLcuLeagueNotification {
     pub afk_lp_penalty_level: i32,
     pub was_afk_or_leaver: bool,
     pub can_demote_from_tier: bool,
-    pub win_streak: i32
+    pub win_streak: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16117,7 +16228,7 @@ pub struct LolRankedLeagueDivisionInfo {
     pub apex_unlock_time_millis: i64,
     pub min_lp_for_apex_tier: i32,
     pub top_number_of_players: i64,
-    pub standings: Vec<LolRankedLeagueStanding>
+    pub standings: Vec<LolRankedLeagueStanding>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16131,7 +16242,7 @@ pub struct LolRankedLeagueLadderDTO {
     pub next_apex_update: i64,
     pub apex_unlock_time_millis: i64,
     pub min_lp_for_tier: i32,
-    pub top_number_of_players: i32
+    pub top_number_of_players: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16150,7 +16261,7 @@ pub struct LolRankedLeagueLadderEntryDTO {
     pub previous_day_league_position: i32,
     pub previous_season_achieved_tier: String,
     pub previous_season_achieved_rank: String,
-    pub earned_regalia_reward_ids: Vec<String>
+    pub earned_regalia_reward_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16161,7 +16272,7 @@ pub struct LolRankedLeagueLadderInfo {
     pub provisional_game_threshold: i32,
     pub divisions: Vec<LolRankedLeagueDivisionInfo>,
     pub next_apex_update_millis: i64,
-    pub requested_ranked_entry: Option<LolRankedLeagueStanding>
+    pub requested_ranked_entry: Option<LolRankedLeagueStanding>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16189,7 +16300,7 @@ pub struct LolRankedLeagueNotification {
     pub afk_lp_penalty_level: i32,
     pub was_afk_or_leaver: bool,
     pub can_demote_from_tier: bool,
-    pub win_streak: i32
+    pub win_streak: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16197,7 +16308,7 @@ pub struct LolRankedLeagueNotification {
 pub struct LolRankedLeagueNotifications {
     pub league_notifications: Vec<LolRankedLeagueNotification>,
     pub global_notifications: Vec<LolRankedGlobalNotification>,
-    pub reward_notifications: Vec<LolRankedRewardNotification>
+    pub reward_notifications: Vec<LolRankedRewardNotification>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16222,7 +16333,7 @@ pub struct LolRankedLeagueStanding {
     pub earned_regalia_reward_ids: Vec<String>,
     pub ranked_regalia_level: i32,
     pub pending_promotion: bool,
-    pub pending_demotion: bool
+    pub pending_demotion: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16232,13 +16343,13 @@ pub struct LolRankedLeagueTierAndRankDTO {
     pub player_or_team_name: String,
     pub queue_type: String,
     pub tier: String,
-    pub rank: String
+    pub rank: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedLeaguesSeasonRewardConfig {
-    pub qualification_warning_enabled: bool
+    pub qualification_warning_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16246,28 +16357,28 @@ pub struct LolRankedLeaguesSeasonRewardConfig {
 pub struct LolRankedLoginSession {
     pub state: LolRankedLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedParticipantTiers {
     pub summoner_id: u64,
-    pub achieved_tiers: Vec<LolRankedAchievedTier>
+    pub achieved_tiers: Vec<LolRankedAchievedTier>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedQueue {
     #[serde(rename = "type")]
-    pub type_: Value
+    pub type_: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedQueuesAndPuuidsPayload {
     pub queue_types: Vec<LolRankedLeagueQueueType>,
-    pub summoner_ids: Vec<u64>
+    pub summoner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16285,11 +16396,13 @@ pub struct LolRankedRankedQueueStats {
     pub rated_rating: i32,
     pub wins: i32,
     pub losses: i32,
+    pub highest_tier: LolRankedLeagueTier,
+    pub highest_division: LolRankedLeagueDivision,
     pub previous_season_end_tier: LolRankedLeagueTier,
     pub previous_season_end_division: LolRankedLeagueDivision,
     pub previous_season_achieved_tier: LolRankedLeagueTier,
     pub previous_season_achieved_division: LolRankedLeagueDivision,
-    pub warnings: Option<LolRankedRankedQueueWarnings>
+    pub warnings: Option<LolRankedRankedQueueWarnings>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16306,11 +16419,13 @@ pub struct LolRankedRankedQueueStatsDTO {
     pub rated_rating: i32,
     pub wins: i32,
     pub losses: i32,
+    pub highest_tier: String,
+    pub highest_rank: String,
     pub previous_season_end_tier: String,
     pub previous_season_end_rank: String,
     pub previous_season_achieved_tier: String,
     pub previous_season_achieved_rank: String,
-    pub warnings: Option<LolRankedRankedQueueWarningsDTO>
+    pub warnings: Option<LolRankedRankedQueueWarningsDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16319,7 +16434,7 @@ pub struct LolRankedRankedQueueWarnings {
     pub display_decay_warning: bool,
     pub time_until_inactivity_status_changes: i64,
     pub demotion_warning: i32,
-    pub days_until_decay: i32
+    pub days_until_decay: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16329,7 +16444,7 @@ pub struct LolRankedRankedQueueWarningsDTO {
     pub time_until_inactivity_status_changes: i64,
     pub demotion_warning: i32,
     pub apex_days_until_decay: i32,
-    pub days_until_decay: i32
+    pub days_until_decay: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16341,12 +16456,13 @@ pub struct LolRankedRankedStats {
     pub highest_ranked_entry_s_r: Option<LolRankedRankedQueueStats>,
     pub earned_regalia_reward_ids: Vec<String>,
     pub ranked_regalia_level: i32,
+    pub highest_current_season_reached_tier_s_r: LolRankedLeagueTier,
     pub highest_previous_season_end_tier: LolRankedLeagueTier,
     pub highest_previous_season_end_division: LolRankedLeagueDivision,
     pub highest_previous_season_achieved_tier: LolRankedLeagueTier,
     pub highest_previous_season_achieved_division: LolRankedLeagueDivision,
     pub splits_progress: HashMap<String, i32>,
-    pub seasons: HashMap<String, LolRankedSeasonDTO>
+    pub seasons: HashMap<String, LolRankedSeasonDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16359,7 +16475,7 @@ pub struct LolRankedRankedStatsDTO {
     pub highest_previous_season_achieved_tier: String,
     pub highest_previous_season_achieved_rank: String,
     pub splits_progress: HashMap<String, i32>,
-    pub seasons: HashMap<String, LolRankedSeasonDTO>
+    pub seasons: HashMap<String, LolRankedSeasonDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16371,14 +16487,14 @@ pub struct LolRankedRatedLadderEntryDTO {
     pub rated_tier: String,
     pub rated_rating: i32,
     pub wins: i32,
-    pub previous_update_ladder_position: i32
+    pub previous_update_ladder_position: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRatedLadderInfo {
     pub queue_type: LolRankedLeagueQueueType,
-    pub standings: Vec<LolRankedRatedLadderStanding>
+    pub standings: Vec<LolRankedRatedLadderStanding>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16392,14 +16508,14 @@ pub struct LolRankedRatedLadderStanding {
     pub wins: i32,
     pub position: i32,
     pub position_delta: i32,
-    pub previous_position: i32
+    pub previous_position: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedRewardNotification {
     pub reward_group_id: String,
-    pub season_id: i32
+    pub season_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16409,7 +16525,7 @@ pub struct LolRankedRewardsInfo {
     pub current_split: Option<LolRankedSeasonSplit>,
     pub reward_info_by_reward_id: HashMap<String, LolRankedSplitReward>,
     pub current_split_id: i32,
-    pub current_season_id: i32
+    pub current_season_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16417,7 +16533,7 @@ pub struct LolRankedRewardsInfo {
 pub struct LolRankedSeasonDTO {
     pub current_season_id: i32,
     pub current_season_end: i64,
-    pub next_season_start: i64
+    pub next_season_start: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16427,7 +16543,8 @@ pub struct LolRankedSeasonSplit {
     pub season_id: i32,
     pub start_time_millis: u64,
     pub end_time_millis: u64,
-    pub reward_track: Vec<LolRankedSplitRewardGroup>
+    pub reward_track: Vec<LolRankedSplitRewardGroup>,
+    pub victorious_skin_reward_group: LolRankedVictoriousSkin,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16437,14 +16554,15 @@ pub struct LolRankedSeasonSplitDTO {
     pub season_id: i32,
     pub start_time: u64,
     pub end_time: u64,
-    pub reward_track: Vec<LolRankedSplitRewardGroupDTO>
+    pub reward_track: Vec<LolRankedSplitRewardGroupDTO>,
+    pub victorious_skin_reward_group: LolRankedVictoriousSkinDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSequenceEvent {
     pub name: String,
-    pub priority: i32
+    pub priority: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16458,7 +16576,7 @@ pub struct LolRankedSignedRankedStatsDTO {
     pub highest_previous_season_achieved_rank: String,
     pub splits_progress: HashMap<String, i32>,
     pub seasons: HashMap<String, LolRankedSeasonDTO>,
-    pub jwt: String
+    pub jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16475,7 +16593,7 @@ pub struct LolRankedSocialLeaderboardRankedQueueStats {
     pub rated_tier: LolRankedRatedTier,
     pub rated_rating: i32,
     pub wins: i32,
-    pub losses: i32
+    pub losses: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16491,7 +16609,7 @@ pub struct LolRankedSocialLeaderboardRankedQueueStatsDTO {
     pub rated_tier: String,
     pub rated_rating: i32,
     pub wins: i32,
-    pub losses: i32
+    pub losses: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16504,7 +16622,7 @@ pub struct LolRankedSplitPointsNotification {
     pub split_points_required: i32,
     pub next_reward_id: String,
     pub next_reward_type: String,
-    pub split_points_breakdown: HashMap<String, i32>
+    pub split_points_breakdown: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16517,7 +16635,7 @@ pub struct LolRankedSplitReward {
     pub regalia_level: Option<i32>,
     pub points_required: i32,
     pub split_id: i32,
-    pub champion_id: i32
+    pub champion_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16526,21 +16644,21 @@ pub struct LolRankedSplitRewardDTO {
     pub reward_type: String,
     pub metadata: LolRankedSplitRewardsMetaData,
     pub default_reward_id: String,
-    pub tiered_reward_ids: HashMap<String, String>
+    pub tiered_reward_ids: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitRewardGroup {
     pub split_points: i32,
-    pub rewards: Vec<LolRankedSplitReward>
+    pub rewards: Vec<LolRankedSplitReward>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSplitRewardGroupDTO {
     pub split_points: i32,
-    pub rewards: Vec<LolRankedSplitRewardDTO>
+    pub rewards: Vec<LolRankedSplitRewardDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16548,20 +16666,34 @@ pub struct LolRankedSplitRewardGroupDTO {
 pub struct LolRankedSplitRewardsMetaData {
     pub quantity: i32,
     pub description: String,
-    pub champion_id: i32
+    pub champion_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRankedSummoner {
     pub summoner_id: u64,
-    pub puuid: String
+    pub puuid: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolRankedVictoriousSkin {
+    pub split_points_by_highest_achieved_tier: HashMap<String, i32>,
+    pub item_instance_id: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolRankedVictoriousSkinDTO {
+    pub split_points_by_highest_achieved_tier: HashMap<String, i32>,
+    pub item_instance_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaAccountIdAndSummonerId {
-    pub summoner_id: Option<u64>
+    pub summoner_id: Option<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16569,7 +16701,7 @@ pub struct LolRegaliaAccountIdAndSummonerId {
 pub struct LolRegaliaChatPresence {
     pub summoner_id: u64,
     pub icon: i32,
-    pub lol: LolRegaliaChatPresenceLolData
+    pub lol: LolRegaliaChatPresenceLolData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16578,7 +16710,7 @@ pub struct LolRegaliaChatPresenceExternal {
     pub id: String,
     pub summoner_id: u64,
     pub icon: i32,
-    pub lol: HashMap<String, String>
+    pub lol: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16591,14 +16723,34 @@ pub struct LolRegaliaChatPresenceLolData {
     pub ranked_split_reward_level: i32,
     pub ranked_prev_season_tier: Option<LolRegaliaLeagueTier>,
     pub ranked_prev_season_division: LolRegaliaLeagueDivision,
-    pub regalia: Option<LolRegaliaRegaliaSettings>
+    pub regalia: Option<LolRegaliaRegaliaSettings>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolRegaliaGameDataRegalia {
+    pub id: String,
+    pub id_secondary: String,
+    pub asset_path: String,
+    pub is_selectable: bool,
+    pub regalia_type: String,
+    pub localized_name: String,
+    pub localized_description: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolRegaliaInventoryItem {
+    pub item_id: i32,
+    pub uuid: String,
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16607,7 +16759,7 @@ pub struct LolRegaliaLoadout {
     pub id: String,
     pub name: String,
     pub scope: String,
-    pub loadout: LolRegaliaRegaliaLoadout
+    pub loadout: LolRegaliaRegaliaLoadout,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16616,7 +16768,7 @@ pub struct LolRegaliaRankedQueueStats {
     pub queue_type: LolRegaliaLeagueQueueType,
     pub is_provisional: bool,
     pub tier: LolRegaliaLeagueTier,
-    pub division: LolRegaliaLeagueDivision
+    pub division: LolRegaliaLeagueDivision,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16625,7 +16777,7 @@ pub struct LolRegaliaRankedStats {
     pub queues: Vec<LolRegaliaRankedQueueStats>,
     pub highest_ranked_entry: Option<LolRegaliaRankedQueueStats>,
     pub ranked_regalia_level: i32,
-    pub highest_previous_season_achieved_tier: LolRegaliaLeagueTier
+    pub highest_previous_season_achieved_tier: LolRegaliaLeagueTier,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16637,34 +16789,41 @@ pub struct LolRegaliaRegalia {
     pub summoner_level: u32,
     pub last_season_highest_rank: Option<LolRegaliaLeagueTier>,
     pub highest_ranked_entry: Option<LolRegaliaRegaliaRankedEntry>,
-    pub selected_prestige_crest: u8
+    pub selected_prestige_crest: u8,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaAsync {
-    pub md5: String
+    pub md5: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaFrontendConfig {
     pub hovercard_enabled: bool,
-    pub selections_enabled: bool
+    pub selections_enabled: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolRegaliaRegaliaInventoryItem {
+    pub items: Vec<LolRegaliaGameDataRegalia>,
+    pub is_owned: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaLoadout {
     pub r_e_g_a_l_i_a__c_r_e_s_t__s_l_o_t: LolRegaliaItemKey,
-    pub r_e_g_a_l_i_a__b_a_n_n_e_r__s_l_o_t: LolRegaliaItemKey
+    pub r_e_g_a_l_i_a__b_a_n_n_e_r__s_l_o_t: LolRegaliaItemKey,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaRegaliaPlatformConfig {
     pub hovercard_enabled: bool,
-    pub selections_enabled: bool
+    pub selections_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16672,7 +16831,7 @@ pub struct LolRegaliaRegaliaPlatformConfig {
 pub struct LolRegaliaRegaliaPreferences {
     pub preferred_crest_type: String,
     pub preferred_banner_type: String,
-    pub selected_prestige_crest: u8
+    pub selected_prestige_crest: u8,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16681,7 +16840,7 @@ pub struct LolRegaliaRegaliaRankedEntry {
     pub queue_type: LolRegaliaLeagueQueueType,
     pub tier: LolRegaliaLeagueTier,
     pub division: LolRegaliaLeagueDivision,
-    pub split_reward_level: i32
+    pub split_reward_level: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16689,7 +16848,7 @@ pub struct LolRegaliaRegaliaRankedEntry {
 pub struct LolRegaliaRegaliaSettings {
     pub crest_type: LolRegaliaRegaliaCrestType,
     pub banner_type: LolRegaliaRegaliaBannerType,
-    pub selected_prestige_crest: u8
+    pub selected_prestige_crest: u8,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16697,7 +16856,7 @@ pub struct LolRegaliaRegaliaSettings {
 pub struct LolRegaliaRegaliaSettingsExternal {
     pub crest_type: i32,
     pub banner_type: i32,
-    pub selected_prestige_crest: u8
+    pub selected_prestige_crest: u8,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16711,7 +16870,7 @@ pub struct LolRegaliaRegaliaWithPreferences {
     pub selected_prestige_crest: u8,
     pub summoner_level: u32,
     pub last_season_highest_rank: Option<LolRegaliaLeagueTier>,
-    pub highest_ranked_entry: Option<LolRegaliaRegaliaRankedEntry>
+    pub highest_ranked_entry: Option<LolRegaliaRegaliaRankedEntry>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16720,58 +16879,58 @@ pub struct LolRegaliaSummoner {
     pub summoner_id: u64,
     pub profile_icon_id: i32,
     pub summoner_level: u32,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaSummonerProfile {
-    pub regalia: String
+    pub regalia: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRegaliaSummonerProfileUpdate {
     pub key: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysClashPlaymodeRestrictedInfo {
-    pub is_restricted: bool
+    pub is_restricted: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysGameflowAvailability {
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysGameflowGameClient {
-    pub running: bool
+    pub running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysGameflowSession {
     pub phase: LolReplaysGameflowPhase,
-    pub game_client: LolReplaysGameflowGameClient
+    pub game_client: LolReplaysGameflowGameClient,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysInstallPaths {
     pub game_install_root: String,
-    pub game_executable_path: String
+    pub game_executable_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplayContextData {
-    pub component_type: String
+    pub component_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16780,7 +16939,7 @@ pub struct LolReplaysReplayCreateMetadata {
     pub game_version: String,
     pub game_type: String,
     pub queue_id: i32,
-    pub game_end: u64
+    pub game_end: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16788,7 +16947,7 @@ pub struct LolReplaysReplayCreateMetadata {
 pub struct LolReplaysReplayMetadata {
     pub state: LolReplaysMetadataState,
     pub game_id: u64,
-    pub download_progress: u32
+    pub download_progress: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16804,14 +16963,14 @@ pub struct LolReplaysReplaysConfiguration {
     pub is_logged_in: bool,
     pub game_version: String,
     pub min_server_version: String,
-    pub minutes_until_replay_considered_lost: f64
+    pub minutes_until_replay_considered_lost: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplaysDynamicConfig {
     pub min_supported_game_server_version: String,
-    pub minutes_until_replay_considered_lost: f64
+    pub minutes_until_replay_considered_lost: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16820,13 +16979,13 @@ pub struct LolReplaysReplaysSettingsData {
     #[serde(rename = "replays-folder-path")]
     pub replays_folder_path: String,
     #[serde(rename = "highlights-folder-path")]
-    pub highlights_folder_path: String
+    pub highlights_folder_path: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolReplaysReplaysSettingsResource {
-    pub data: LolReplaysReplaysSettingsData
+    pub data: LolReplaysReplaysSettingsData,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16835,83 +16994,81 @@ pub struct LolReplaysRoflFileMetadata {
     pub game_length: u32,
     pub game_version: String,
     pub last_game_chunk_id: u32,
-    pub last_key_frame_id: u32
+    pub last_key_frame_id: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsGrantorDescription {
     pub app_name: String,
-    pub entity_id: String
+    pub entity_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRMSPayload {
     pub product_id: String,
-    pub affinities: Vec<String>
+    pub affinities: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRequestDTOSelectionRequestDTO {
     pub data: LolRewardsSelectionRequestDTO,
-    pub metadata: LolRewardsRequestMetadataDTO
+    pub metadata: LolRewardsRequestMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRequestDTOVectorSelectionRequestDTO {
     pub data: Vec<LolRewardsSelectionRequestDTO>,
-    pub metadata: LolRewardsRequestMetadataDTO
+    pub metadata: LolRewardsRequestMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRequestMetadataDTO {
-    pub transaction_id: Option<String>
+    pub transaction_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOSvcRewardGrant {
     pub data: LolRewardsSvcRewardGrant,
-    pub metadata: LolRewardsResponseMetadataDTO
+    pub metadata: LolRewardsResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOMapRewardGroupIdSelectGrantStatus {
     pub data: HashMap<String, LolRewardsSelectGrantStatusResponse>,
-    pub metadata: LolRewardsResponseMetadataDTO
+    pub metadata: LolRewardsResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOVectorSvcRewardGrant {
     pub data: Vec<LolRewardsSvcRewardGrant>,
-    pub metadata: LolRewardsResponseMetadataDTO
+    pub metadata: LolRewardsResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsResponseDTOVectorSvcRewardGroup {
     pub data: Vec<LolRewardsSvcRewardGroup>,
-    pub metadata: LolRewardsResponseMetadataDTO
+    pub metadata: LolRewardsResponseMetadataDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolRewardsResponseMetadataDTO {
-    
-}
+pub struct LolRewardsResponseMetadataDTO {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
@@ -16922,14 +17079,20 @@ pub struct LolRewardsReward {
     pub quantity: i32,
     pub fulfillment_source: String,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsRewardGrant {
     pub info: LolRewardsSvcRewardGrant,
-    pub reward_group: LolRewardsSvcRewardGroup
+    pub reward_group: LolRewardsSvcRewardGroup,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolRewardsRewardsConfig {
+    pub grant_filtering: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16937,14 +17100,14 @@ pub struct LolRewardsRewardGrant {
 pub struct LolRewardsSelectionRequestDTO {
     pub grant_id: String,
     pub reward_group_id: String,
-    pub selections: Vec<String>
+    pub selections: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSelectionStrategyConfig {
     pub min_selections_allowed: u32,
-    pub max_selections_allowed: u32
+    pub max_selections_allowed: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16958,7 +17121,8 @@ pub struct LolRewardsSvcRewardGrant {
     pub grant_elements: Vec<LolRewardsSvcRewardGrantElement>,
     pub selected_ids: Vec<String>,
     pub viewed: bool,
-    pub grantor_description: LolRewardsGrantorDescription
+    pub grantor_description: LolRewardsGrantorDescription,
+    pub message_parameters: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16971,14 +17135,13 @@ pub struct LolRewardsSvcRewardGrantElement {
     pub status: LolRewardsRewardStatus,
     pub quantity: i32,
     pub media: HashMap<String, String>,
-    pub localizations: HashMap<String, String>
+    pub localizations: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRewardsSvcRewardGroup {
     pub id: String,
-    pub internal_name: String,
     pub product_id: String,
     pub types: Vec<String>,
     pub rewards: Vec<LolRewardsReward>,
@@ -16988,7 +17151,7 @@ pub struct LolRewardsSvcRewardGroup {
     pub active: bool,
     pub media: HashMap<String, String>,
     pub localizations: HashMap<String, String>,
-    pub celebration_type: LolRewardsCelebrationType
+    pub celebration_type: LolRewardsCelebrationType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -16998,20 +17161,20 @@ pub struct LolRiotMessagingServiceChampionMasteryLevelUp {
     pub player_id: u64,
     pub champion_id: i32,
     pub has_leveled_up: bool,
-    pub champion_level: i64
+    pub champion_level: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRiotMessagingServiceGameflowSession {
-    pub phase: LolRiotMessagingServiceGameflowPhase
+    pub phase: LolRiotMessagingServiceGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRiotclientUpgraderGameflowAvailability {
     pub is_available: bool,
-    pub state: String
+    pub state: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17019,14 +17182,14 @@ pub struct LolRiotclientUpgraderGameflowAvailability {
 pub struct LolRsoAuthAccessToken {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthAuthError {
     pub error: String,
-    pub error_description: String
+    pub error_description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17035,7 +17198,7 @@ pub struct LolRsoAuthAuthHint {
     #[serde(rename = "type")]
     pub type_: LolRsoAuthAuthHintType,
     pub required: bool,
-    pub context: Value
+    pub context: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17043,7 +17206,7 @@ pub struct LolRsoAuthAuthHint {
 pub struct LolRsoAuthAuthorization {
     pub current_platform_id: String,
     pub current_account_id: u64,
-    pub subject: String
+    pub subject: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17052,7 +17215,7 @@ pub struct LolRsoAuthAuthorizationRequest {
     pub scope: Vec<String>,
     pub trust_levels: Vec<LolRsoAuthRSOAuthorizationTrustLevel>,
     pub client_id: String,
-    pub claims: Vec<String>
+    pub claims: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17060,13 +17223,13 @@ pub struct LolRsoAuthAuthorizationRequest {
 pub struct LolRsoAuthAuthorizationResponse {
     #[serde(rename = "type")]
     pub type_: String,
-    pub authorization: LolRsoAuthImplicitAuthorization
+    pub authorization: LolRsoAuthImplicitAuthorization,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthConfigStatus {
-    pub readiness: LolRsoAuthConfigReadinessEnum
+    pub readiness: LolRsoAuthConfigReadinessEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17076,7 +17239,7 @@ pub struct LolRsoAuthDeviceId {
     pub merchant_id: String,
     pub session_id: String,
     pub install_id: String,
-    pub frame_url: String
+    pub frame_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17084,40 +17247,40 @@ pub struct LolRsoAuthDeviceId {
 pub struct LolRsoAuthEntitlementsToken {
     pub token: String,
     pub entitlements: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthIdToken {
     pub token: String,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthImplicitAuthorization {
     pub access_token: LolRsoAuthAccessToken,
-    pub id_token: LolRsoAuthIdToken
+    pub id_token: LolRsoAuthIdToken,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthPublicClientConfig {
     pub url: String,
-    pub client_id: String
+    pub client_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthRSOConfigReadyState {
-    pub ready: bool
+    pub ready: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthRSOJWTConfig {
-    pub token: Option<String>
+    pub token: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17125,7 +17288,7 @@ pub struct LolRsoAuthRSOJWTConfig {
 pub struct LolRsoAuthRSOPlayerCredentials {
     pub username: String,
     pub password: String,
-    pub platform_id: String
+    pub platform_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17134,7 +17297,7 @@ pub struct LolRsoAuthRegionStatus {
     pub platform_id: String,
     pub enabled: bool,
     pub is_l_q_fallback_allowed: bool,
-    pub is_user_info_enabled: bool
+    pub is_user_info_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17142,13 +17305,13 @@ pub struct LolRsoAuthRegionStatus {
 pub struct LolRsoAuthSessionResponse {
     #[serde(rename = "type")]
     pub type_: String,
-    pub error: String
+    pub error: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolRsoAuthUserInfo {
-    pub user_info: String
+    pub user_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17156,13 +17319,13 @@ pub struct LolRsoAuthUserInfo {
 pub struct LolServiceStatusBroadcastMessage {
     pub content: String,
     pub message_key: String,
-    pub severity: String
+    pub severity: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusBroadcastNotification {
-    pub broadcast_messages: Vec<LolServiceStatusBroadcastMessage>
+    pub broadcast_messages: Vec<LolServiceStatusBroadcastMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17173,14 +17336,14 @@ pub struct LolServiceStatusLegacyServiceStatusMessage {
     pub severity: String,
     pub heading: String,
     pub content: String,
-    pub translations: Vec<LolServiceStatusLegacyServiceStatusTranslation>
+    pub translations: Vec<LolServiceStatusLegacyServiceStatusTranslation>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusLegacyServiceStatusResponse {
     pub status: String,
-    pub messages: Vec<LolServiceStatusLegacyServiceStatusMessage>
+    pub messages: Vec<LolServiceStatusLegacyServiceStatusMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17188,20 +17351,20 @@ pub struct LolServiceStatusLegacyServiceStatusResponse {
 pub struct LolServiceStatusLegacyServiceStatusTranslation {
     pub locale: String,
     pub heading: Option<String>,
-    pub content: Option<String>
+    pub content: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusLoginDataPacket {
-    pub broadcast_notification: LolServiceStatusBroadcastNotification
+    pub broadcast_notification: LolServiceStatusBroadcastNotification,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRegionLocaleResource {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17214,7 +17377,7 @@ pub struct LolServiceStatusRiotStatusIncident {
     pub platforms: Vec<String>,
     pub updated_at: Option<String>,
     pub created_at: String,
-    pub updates: Vec<LolServiceStatusRiotStatusUpdate>
+    pub updates: Vec<LolServiceStatusRiotStatusUpdate>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17227,7 +17390,7 @@ pub struct LolServiceStatusRiotStatusMaintenance {
     pub platforms: Vec<String>,
     pub updated_at: Option<String>,
     pub maintenance_status: String,
-    pub titles: Vec<LolServiceStatusRiotStatusTitle>
+    pub titles: Vec<LolServiceStatusRiotStatusTitle>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17237,21 +17400,21 @@ pub struct LolServiceStatusRiotStatusResource {
     pub name: String,
     pub locales: Vec<String>,
     pub maintenances: Vec<LolServiceStatusRiotStatusMaintenance>,
-    pub incidents: Vec<LolServiceStatusRiotStatusIncident>
+    pub incidents: Vec<LolServiceStatusRiotStatusIncident>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusTitle {
     pub locale: String,
-    pub content: String
+    pub content: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusRiotStatusTranslation {
     pub locale: String,
-    pub content: String
+    pub content: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17263,14 +17426,14 @@ pub struct LolServiceStatusRiotStatusUpdate {
     pub author: String,
     pub created_at: String,
     pub translations: Vec<LolServiceStatusRiotStatusTranslation>,
-    pub publish_locations: Vec<String>
+    pub publish_locations: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolServiceStatusServiceStatusResource {
     pub status: String,
-    pub human_readable_url: String
+    pub human_readable_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17280,7 +17443,7 @@ pub struct LolServiceStatusTickerMessage {
     pub created_at: String,
     pub updated_at: String,
     pub heading: String,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17290,7 +17453,7 @@ pub struct LolSettingsLCUGameSettingsConfig {
     pub sound_enabled: bool,
     pub interface_enabled: bool,
     pub gameplay_enabled: bool,
-    pub replays_enabled: bool
+    pub replays_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17298,27 +17461,27 @@ pub struct LolSettingsLCUGameSettingsConfig {
 pub struct LolSettingsLoginSession {
     pub state: LolSettingsLoginSessionStates,
     pub summoner_id: u64,
-    pub account_id: u64
+    pub account_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsRegionLocale {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsReplaysConfig {
-    pub replay_service_enabled: bool
+    pub replay_service_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSettingsSettingCategory {
     pub schema_version: i32,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17332,7 +17495,7 @@ pub struct LolSettingsSettingsConfig {
     pub is_privacy_notice_enabled: bool,
     pub is_terms_enabled: bool,
     pub is_legal_statements_enabled: bool,
-    pub localized_licenses_u_r_l: String
+    pub localized_licenses_u_r_l: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17340,26 +17503,26 @@ pub struct LolSettingsSettingsConfig {
 pub struct LolShutdownShutdownNotification {
     pub reason: LolShutdownShutdownReason,
     pub countdown: f32,
-    pub additional_info: String
+    pub additional_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesGameflowSession {
-    pub phase: LolSimpleDialogMessagesGameflowPhase
+    pub phase: LolSimpleDialogMessagesGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesLocalMessageRequest {
     pub msg_type: String,
-    pub msg_body: Vec<String>
+    pub msg_body: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSimpleDialogMessagesLoginDataPacket {
-    pub simple_messages: Vec<LolSimpleDialogMessagesSimpleMessage>
+    pub simple_messages: Vec<LolSimpleDialogMessagesSimpleMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17368,7 +17531,7 @@ pub struct LolSimpleDialogMessagesMessage {
     pub id: i64,
     #[serde(rename = "type")]
     pub type_: String,
-    pub body: Value
+    pub body: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17378,7 +17541,7 @@ pub struct LolSimpleDialogMessagesSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17388,13 +17551,13 @@ pub struct LolSocialLeaderboardFriendResource {
     pub name: String,
     pub puuid: String,
     pub icon: i32,
-    pub availability: String
+    pub availability: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardGiftingFriend {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17406,20 +17569,20 @@ pub struct LolSocialLeaderboardRankedQueueStats {
     pub tier: LolSocialLeaderboardLeagueTier,
     pub division: LolSocialLeaderboardLeagueDivision,
     pub league_points: i32,
-    pub wins: i32
+    pub wins: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardRankedStats {
-    pub queue_map: HashMap<String, LolSocialLeaderboardRankedQueueStats>
+    pub queue_map: HashMap<String, LolSocialLeaderboardRankedQueueStats>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSocialLeaderboardSocialLeaderboardData {
     pub row_data: Vec<LolSocialLeaderboardSocialLeaderboardRowData>,
-    pub next_update_time: i64
+    pub next_update_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17438,7 +17601,7 @@ pub struct LolSocialLeaderboardSocialLeaderboardRowData {
     pub profile_icon_id: i32,
     pub availability: String,
     pub leaderboard_position: i32,
-    pub is_giftable: bool
+    pub is_giftable: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17450,7 +17613,7 @@ pub struct LolSocialLeaderboardSummoner {
     pub internal_name: String,
     pub summoner_level: u32,
     pub puuid: String,
-    pub profile_icon_id: i32
+    pub profile_icon_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17459,26 +17622,26 @@ pub struct LolSpectatorSpectateGameInfo {
     pub drop_in_spectate_game_id: String,
     pub game_queue_type: String,
     pub allow_observe_mode: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSpectatorSummonerOrTeamAvailabilty {
-    pub available_for_watching: Vec<String>
+    pub available_for_watching: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesCatalogBundle {
-    pub item: LolStatstonesCatalogItemDetails
+    pub item: LolStatstonesCatalogItemDetails,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesCatalogBundlePrice {
     pub currency: String,
-    pub cost: i32
+    pub cost: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17489,7 +17652,7 @@ pub struct LolStatstonesCatalogItemDetails {
     pub sub_inventory_type: String,
     pub prices: Vec<LolStatstonesCatalogBundlePrice>,
     pub release_date: String,
-    pub item_instance_id: String
+    pub item_instance_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17499,7 +17662,7 @@ pub struct LolStatstonesChampionStatstoneSetSummary {
     pub stones_available: u32,
     pub stones_owned: u32,
     pub stones_illuminated: u32,
-    pub milestones_passed: u32
+    pub milestones_passed: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17510,7 +17673,7 @@ pub struct LolStatstonesChampionStatstoneSummary {
     pub stones_owned: u32,
     pub stones_illuminated: u32,
     pub milestones_passed: u32,
-    pub sets: Vec<LolStatstonesChampionStatstoneSetSummary>
+    pub sets: Vec<LolStatstonesChampionStatstoneSetSummary>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17518,7 +17681,7 @@ pub struct LolStatstonesChampionStatstoneSummary {
 pub struct LolStatstonesCollectionsChampion {
     pub name: String,
     pub square_portrait_path: String,
-    pub id: i32
+    pub id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17527,7 +17690,7 @@ pub struct LolStatstonesEogNotificationEnvelope {
     pub self_statstone_progress: Vec<LolStatstonesStatstoneProgress>,
     pub self_personal_bests: Vec<LolStatstonesPersonalBestNotification>,
     pub self_milestone_progress: Vec<LolStatstonesMilestoneProgressNotification>,
-    pub others_personal_bests: Vec<LolStatstonesPersonalBestNotification>
+    pub others_personal_bests: Vec<LolStatstonesPersonalBestNotification>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17535,7 +17698,7 @@ pub struct LolStatstonesEogNotificationEnvelope {
 pub struct LolStatstonesGameDataItemReference {
     pub item_id: i32,
     pub inventory_type: String,
-    pub content_id: String
+    pub content_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17554,7 +17717,7 @@ pub struct LolStatstonesGameDataStatstone {
     pub icon_unowned: String,
     pub icon_unlit: String,
     pub icon_lit: String,
-    pub icon_full: String
+    pub icon_full: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17563,7 +17726,7 @@ pub struct LolStatstonesGameDataStatstonePack {
     pub name: String,
     pub description: String,
     pub content_id: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17574,7 +17737,7 @@ pub struct LolStatstonesGameDataStatstoneSet {
     pub inventory_type: String,
     pub content_id: String,
     pub statstones: Vec<LolStatstonesGameDataStatstone>,
-    pub price: i32
+    pub price: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17587,7 +17750,7 @@ pub struct LolStatstonesGameDataStatstonesInfo {
     pub pack_id_to_sub_pack_ids: Value,
     pub collection_id_to_stat_stone_ids: Value,
     pub pack_id_to_champ_ids: Value,
-    pub champ_id_to_pack_ids: Value
+    pub champ_id_to_pack_ids: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17597,7 +17760,7 @@ pub struct LolStatstonesLoadout {
     pub name: String,
     pub scope: String,
     pub item_id: i32,
-    pub loadout: HashMap<String, Value>
+    pub loadout: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17605,7 +17768,7 @@ pub struct LolStatstonesLoadout {
 pub struct LolStatstonesLoadoutItem {
     pub inventory_type: String,
     pub content_id: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17614,7 +17777,7 @@ pub struct LolStatstonesMilestoneNotificationDto {
     pub statstone_id: String,
     pub level: i32,
     pub threshold: i32,
-    pub is_completed: bool
+    pub is_completed: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17624,7 +17787,7 @@ pub struct LolStatstonesMilestoneProgressNotification {
     pub statstone_name: String,
     pub threshold: i32,
     pub image_url: String,
-    pub level: String
+    pub level: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17632,7 +17795,7 @@ pub struct LolStatstonesMilestoneProgressNotification {
 pub struct LolStatstonesNumberFormattingBehavior {
     pub digits_for_thousands_seperator: u32,
     pub trim_trailing_zeros_after_decimal: bool,
-    pub western_number_grouping: bool
+    pub western_number_grouping: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17652,7 +17815,7 @@ pub struct LolStatstonesNumberFormattingData {
     pub meters_abbreviation: String,
     pub kilometers_abbreviation: String,
     pub percentage_format: String,
-    pub number_formatting_behavior: LolStatstonesNumberFormattingBehavior
+    pub number_formatting_behavior: LolStatstonesNumberFormattingBehavior,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17662,14 +17825,14 @@ pub struct LolStatstonesPersonalBestNotification {
     pub statstone_id: String,
     pub statstone_name: String,
     pub personal_best: String,
-    pub image_url: String
+    pub image_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesPriceInfo {
     pub currency: String,
-    pub price: u32
+    pub price: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17679,7 +17842,7 @@ pub struct LolStatstonesProfileStatstoneSummary {
     pub name: String,
     pub value: String,
     pub image_url: String,
-    pub category: String
+    pub category: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17700,7 +17863,7 @@ pub struct LolStatstonesStatstone {
     pub formatted_value: String,
     pub formatted_personal_best: String,
     pub formatted_milestone_level: String,
-    pub player_record: Option<LolStatstonesStatstonePlayerRecord>
+    pub player_record: Option<LolStatstonesStatstonePlayerRecord>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17708,14 +17871,14 @@ pub struct LolStatstonesStatstone {
 pub struct LolStatstonesStatstoneCompletion {
     pub statstone_name: String,
     pub category: String,
-    pub is_epic: bool
+    pub is_epic: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneFeaturedRequest {
     pub index: i32,
-    pub existing_featured: Vec<LolStatstonesStatstone>
+    pub existing_featured: Vec<LolStatstonesStatstone>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17724,7 +17887,7 @@ pub struct LolStatstonesStatstoneMasteryVignette {
     pub num_sets_completed: u32,
     pub mastery_level: u32,
     pub completed_set_uuids: Vec<String>,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17736,7 +17899,7 @@ pub struct LolStatstonesStatstoneNotificationDto {
     pub value: i32,
     pub level: i32,
     pub best: i32,
-    pub is_new_best: bool
+    pub is_new_best: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17744,7 +17907,7 @@ pub struct LolStatstonesStatstoneNotificationDto {
 pub struct LolStatstonesStatstoneNotificationEnvelopeDto {
     pub game_id: u64,
     pub updates: Vec<LolStatstonesStatstoneNotificationDto>,
-    pub milestones: Vec<LolStatstonesMilestoneNotificationDto>
+    pub milestones: Vec<LolStatstonesMilestoneNotificationDto>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17759,7 +17922,7 @@ pub struct LolStatstonesStatstonePlayerRecord {
     pub date_modified: String,
     pub date_completed: String,
     pub date_archived: String,
-    pub entitled: bool
+    pub entitled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17775,17 +17938,18 @@ pub struct LolStatstonesStatstoneProgress {
     pub existing_progress_percent: String,
     pub new_progress_percent: String,
     pub new_milestone_difference: String,
+    pub total_progress_percent: String,
     pub category: String,
     pub level: i32,
     pub best: i32,
-    pub is_new_best: bool
+    pub is_new_best: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneRekindledVignette {
     pub portrait_path: String,
-    pub statstone: LolStatstonesStatstoneCompletion
+    pub statstone: LolStatstonesStatstoneCompletion,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17800,13 +17964,13 @@ pub struct LolStatstonesStatstoneSet {
     pub sub_inventory_type: String,
     pub item_instance_i_d: String,
     pub prices: Vec<LolStatstonesPriceInfo>,
-    pub owned_from_packs: Vec<LolStatstonesGameDataStatstonePack>
+    pub owned_from_packs: Vec<LolStatstonesGameDataStatstonePack>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStatstonesStatstoneSetCompleteVignette {
-    pub statstones: Vec<LolStatstonesStatstoneCompletion>
+    pub statstones: Vec<LolStatstonesStatstoneCompletion>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17816,7 +17980,7 @@ pub struct LolStatstonesStatstoneVignetteNotificationEnvelopeDto {
     pub champ_id: i32,
     pub mastery_vignette_notifications: Vec<LolStatstonesStatstoneMasteryVignette>,
     pub rekindled_vignette_notifications: Vec<LolStatstonesStatstoneRekindledVignette>,
-    pub set_complete_vignette_notifications: Vec<LolStatstonesStatstoneSetCompleteVignette>
+    pub set_complete_vignette_notifications: Vec<LolStatstonesStatstoneSetCompleteVignette>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17824,7 +17988,7 @@ pub struct LolStatstonesStatstoneVignetteNotificationEnvelopeDto {
 pub struct LolStatstonesSummoner {
     pub summoner_id: u64,
     pub puuid: String,
-    pub display_name: String
+    pub display_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17832,14 +17996,14 @@ pub struct LolStatstonesSummoner {
 pub struct LolStoreAccessTokenResource {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreAllSummonerData {
     pub summoner: LolStoreSummoner,
-    pub summoner_level_and_points: LolStoreSummonerLevelAndPoints
+    pub summoner_level_and_points: LolStoreSummonerLevelAndPoints,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17854,7 +18018,7 @@ pub struct LolStoreBundleItemDTO {
     pub owned: bool,
     pub rp: i64,
     pub discounted_rp: i64,
-    pub ip: i64
+    pub ip: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17862,7 +18026,7 @@ pub struct LolStoreBundleItemDTO {
 pub struct LolStoreBundled {
     pub flexible: bool,
     pub items: Vec<LolStoreBundledItem>,
-    pub minimum_prices: Vec<LolStoreBundledItemCost>
+    pub minimum_prices: Vec<LolStoreBundledItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17871,7 +18035,7 @@ pub struct LolStoreBundledItem {
     pub inventory_type: String,
     pub item_id: i32,
     pub quantity: u32,
-    pub discount_prices: Vec<LolStoreBundledItemCost>
+    pub discount_prices: Vec<LolStoreBundledItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17880,7 +18044,7 @@ pub struct LolStoreBundledItemCost {
     pub currency: String,
     pub cost: i64,
     pub discount: Option<f32>,
-    pub cost_type: String
+    pub cost_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17894,13 +18058,13 @@ pub struct LolStoreCapOffer {
     pub payload: Value,
     pub active: bool,
     pub start_date: String,
-    pub created_date: String
+    pub created_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreCatalogInstanceToItemKeyMap {
-    pub platform_ids: HashMap<String, LolStoreItemKey>
+    pub platform_ids: HashMap<String, LolStoreItemKey>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17922,26 +18086,26 @@ pub struct LolStoreCatalogItem {
     pub item_requirements: Option<Vec<LolStoreItemKey>>,
     pub metadata: Option<Vec<LolStoreItemMetadataEntry>>,
     pub item_instance_id: Option<String>,
-    pub offer_id: Option<String>
+    pub offer_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreFeaturedPageDTO {
-    pub player: LolStorePlayer
+    pub player: LolStorePlayer,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreGetPlatformIdsFromInstanceIdsRequest {
-    pub instance_ids: Vec<String>
+    pub instance_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreGiftableResult {
     pub config: LolStoreGiftingConfig,
-    pub friends: Vec<LolStoreGiftingFriend>
+    pub friends: Vec<LolStoreGiftingFriend>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17958,7 +18122,7 @@ pub struct LolStoreGiftingConfig {
     pub gifting_item_max_daily_gifts_receive: u32,
     pub gifting_hextech_max_daily_gifts_send: u32,
     pub gifting_hextec_max_daily_gifts_receive: u32,
-    pub requires_identity_verification: bool
+    pub requires_identity_verification: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17967,7 +18131,7 @@ pub struct LolStoreGiftingFriend {
     pub friends_since: String,
     pub old_friends: bool,
     pub summoner_id: u64,
-    pub nick: String
+    pub nick: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17975,14 +18139,14 @@ pub struct LolStoreGiftingFriend {
 pub struct LolStoreItemCost {
     pub currency: String,
     pub cost: i64,
-    pub discount: Option<f32>
+    pub discount: Option<f32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17990,7 +18154,7 @@ pub struct LolStoreItemKey {
 pub struct LolStoreItemLocalization {
     pub language: String,
     pub name: String,
-    pub description: String
+    pub description: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -17998,7 +18162,7 @@ pub struct LolStoreItemLocalization {
 pub struct LolStoreItemMetadataEntry {
     #[serde(rename = "type")]
     pub type_: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18007,14 +18171,14 @@ pub struct LolStoreItemSale {
     pub id: u64,
     pub active: bool,
     pub item: LolStoreItemKey,
-    pub sale: LolStoreSale
+    pub sale: LolStoreSale,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreLoginDataPacket {
     pub all_summoner_data: LolStoreAllSummonerData,
-    pub simple_messages: Vec<LolStoreSimpleDialogMessage>
+    pub simple_messages: Vec<LolStoreSimpleDialogMessage>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18023,7 +18187,7 @@ pub struct LolStoreLoginSession {
     pub state: LolStoreLoginSessionStates,
     pub summoner_id: u64,
     pub account_id: u64,
-    pub id_token: String
+    pub id_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18042,7 +18206,7 @@ pub struct LolStoreNotification {
     pub state: String,
     pub title_key: String,
     #[serde(rename = "type")]
-    pub type_: String
+    pub type_: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18051,7 +18215,7 @@ pub struct LolStoreOrderNotificationResource {
     pub id: u64,
     pub event_type_id: String,
     pub event_type: String,
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18060,7 +18224,7 @@ pub struct LolStorePageDTO {
     pub player: LolStorePlayer,
     pub catalog: Vec<LolStoreCatalogItem>,
     pub group_order: Vec<String>,
-    pub item_groups: HashMap<String, LolStorePageGroupingDTO>
+    pub item_groups: HashMap<String, LolStorePageGroupingDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18068,7 +18232,7 @@ pub struct LolStorePageDTO {
 pub struct LolStorePageGroupingDTO {
     pub items: Vec<LolStoreItemKey>,
     pub hidden: bool,
-    pub grouped: bool
+    pub grouped: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18077,7 +18241,7 @@ pub struct LolStorePlayer {
     pub account_id: u64,
     pub rp: i64,
     pub ip: i64,
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18087,7 +18251,7 @@ pub struct LolStoreRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18095,21 +18259,21 @@ pub struct LolStoreRiotMessagingServiceMessage {
 pub struct LolStoreSale {
     pub start_date: String,
     pub end_date: String,
-    pub prices: Vec<LolStoreItemCost>
+    pub prices: Vec<LolStoreItemCost>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreServiceBalance {
     pub currency: String,
-    pub amount: i64
+    pub amount: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreServiceWallet {
     pub account_id: u64,
-    pub balances: Vec<LolStoreServiceBalance>
+    pub balances: Vec<LolStoreServiceBalance>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18119,53 +18283,53 @@ pub struct LolStoreSimpleDialogMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreStoreStatus {
-    pub storefront_is_running: bool
+    pub storefront_is_running: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreSummoner {
     pub acct_id: u64,
-    pub sum_id: u64
+    pub sum_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreSummonerLevelAndPoints {
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolStoreWallet {
     pub ip: i64,
-    pub rp: i64
+    pub rp: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersEndOfGamePlayer {
     pub summoner_name: String,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersEndOfGameStats {
-    pub teams: Vec<LolSuggestedPlayersEndOfGameTeam>
+    pub teams: Vec<LolSuggestedPlayersEndOfGameTeam>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersEndOfGameTeam {
     pub players: Vec<LolSuggestedPlayersEndOfGamePlayer>,
-    pub is_winning_team: bool
+    pub is_winning_team: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18173,7 +18337,7 @@ pub struct LolSuggestedPlayersEndOfGameTeam {
 pub struct LolSuggestedPlayersHonorInteraction {
     pub summoner_id: u64,
     pub display_name: String,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18187,13 +18351,13 @@ pub struct LolSuggestedPlayersSuggestedPlayersConfig {
     pub online_friends_limit: u32,
     pub friends_of_friends_limit: u32,
     pub vicorious_comrades_limit: u32,
-    pub max_honor_interaction_players: u32
+    pub max_honor_interaction_players: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersDynamicClientConfig {
-    pub suggested_players: LolSuggestedPlayersSuggestedPlayersConfig
+    pub suggested_players: LolSuggestedPlayersSuggestedPlayersConfig,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18201,14 +18365,14 @@ pub struct LolSuggestedPlayersSuggestedPlayersDynamicClientConfig {
 pub struct LolSuggestedPlayersSuggestedPlayersFriend {
     pub summoner_id: u64,
     pub name: String,
-    pub availability: String
+    pub availability: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersKudoedPlayer {
     pub kudoed_summoner_id: u64,
-    pub kudoed_summoner_name: String
+    pub kudoed_summoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18216,27 +18380,27 @@ pub struct LolSuggestedPlayersSuggestedPlayersKudoedPlayer {
 pub struct LolSuggestedPlayersSuggestedPlayersLobbyStatus {
     pub queue_id: i32,
     pub member_summoner_ids: Vec<u64>,
-    pub invited_summoner_ids: Vec<u64>
+    pub invited_summoner_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersPlayerStatus {
     pub current_lobby_status: Option<LolSuggestedPlayersSuggestedPlayersLobbyStatus>,
-    pub last_queued_lobby_status: Option<LolSuggestedPlayersSuggestedPlayersLobbyStatus>
+    pub last_queued_lobby_status: Option<LolSuggestedPlayersSuggestedPlayersLobbyStatus>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersQueue {
     pub id: i32,
-    pub min_level: u32
+    pub min_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersReportedPlayer {
-    pub reported_summoner_id: u64
+    pub reported_summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18247,7 +18411,7 @@ pub struct LolSuggestedPlayersSuggestedPlayersSuggestedPlayer {
     pub common_friend_name: String,
     pub common_friend_id: u64,
     pub reason: LolSuggestedPlayersSuggestedPlayersReason,
-    pub game_id: u64
+    pub game_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18255,21 +18419,21 @@ pub struct LolSuggestedPlayersSuggestedPlayersSuggestedPlayer {
 pub struct LolSuggestedPlayersSuggestedPlayersSummoner {
     pub summoner_id: u64,
     pub display_name: String,
-    pub summoner_level: u32
+    pub summoner_level: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSuggestedPlayersSuggestedPlayersVictoriousComrade {
     pub summoner_id: u64,
-    pub summoner_name: String
+    pub summoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerAccountIdAndSummonerId {
     pub account_id: u64,
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18278,14 +18442,14 @@ pub struct LolSummonerAutoFillQueueDto {
     pub queue_id: i32,
     pub auto_fill_eligible: bool,
     pub auto_fill_protected_for_streaking: bool,
-    pub auto_fill_protected_for_promos: bool
+    pub auto_fill_protected_for_promos: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerGameloopPlayerInfoV2 {
     pub auto_fill_data_bags: Vec<LolSummonerAutoFillQueueDto>,
-    pub reroll_data_bags: Vec<LolSummonerRerollDataBagForClientV1>
+    pub reroll_data_bags: Vec<LolSummonerRerollDataBagForClientV1>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18293,7 +18457,7 @@ pub struct LolSummonerGameloopPlayerInfoV2 {
 pub struct LolSummonerLevelField {
     pub initial_level: u32,
     pub final_level: u32,
-    pub progress: LolSummonerLevelProgression
+    pub progress: LolSummonerLevelProgression,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18302,7 +18466,7 @@ pub struct LolSummonerLevelProgression {
     pub initial_xp: u64,
     pub final_xp: u64,
     pub initial_level_boundary: u64,
-    pub final_level_boundary: u64
+    pub final_level_boundary: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18312,14 +18476,14 @@ pub struct LolSummonerLoginSession {
     pub summoner_id: u64,
     pub account_id: u64,
     pub puuid: String,
-    pub connected: bool
+    pub connected: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerProfilePrivacy {
     pub enabled_state: LolSummonerProfilePrivacyEnabledState,
-    pub setting: LolSummonerProfilePrivacySetting
+    pub setting: LolSummonerProfilePrivacySetting,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18330,13 +18494,13 @@ pub struct LolSummonerRerollDataBagForClientV1 {
     pub reroll_count: i32,
     pub total_points: i32,
     pub maximum_rerolls: i32,
-    pub point_cost_of_reroll: i32
+    pub point_cost_of_reroll: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerStatus {
-    pub ready: bool
+    pub ready: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18355,7 +18519,7 @@ pub struct LolSummonerSummoner {
     pub puuid: String,
     pub name_change_flag: bool,
     pub unnamed: bool,
-    pub privacy: LolSummonerProfilePrivacySetting
+    pub privacy: LolSummonerProfilePrivacySetting,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18363,19 +18527,19 @@ pub struct LolSummonerSummoner {
 pub struct LolSummonerSummonerCacheData {
     pub summoner: Option<LolSummonerSummoner>,
     pub summoner_icon: Option<i32>,
-    pub privacy: Option<LolSummonerProfilePrivacySetting>
+    pub privacy: Option<LolSummonerProfilePrivacySetting>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerCreateRequest {
-    pub summoner_name: String
+    pub summoner_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerCreatedId {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18392,21 +18556,21 @@ pub struct LolSummonerSummonerDTO {
     pub exp_to_next_level: u32,
     pub name_change_flag: bool,
     pub unnamed: bool,
-    pub privacy: LolSummonerProfilePrivacySetting
+    pub privacy: LolSummonerProfilePrivacySetting,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerIcon {
     pub profile_icon_id: i32,
-    pub inventory_token: String
+    pub inventory_token: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerIdAndIcon {
     pub summoner_id: u64,
-    pub profile_icon_id: i32
+    pub profile_icon_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18414,7 +18578,7 @@ pub struct LolSummonerSummonerIdAndIcon {
 pub struct LolSummonerSummonerIdAndName {
     pub summoner_id: u64,
     pub display_name: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18422,13 +18586,13 @@ pub struct LolSummonerSummonerIdAndName {
 pub struct LolSummonerSummonerProfileUpdate {
     pub key: String,
     pub value: Value,
-    pub inventory: String
+    pub inventory: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerSummonerRequestedName {
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18438,7 +18602,7 @@ pub struct LolSummonerSummonerRerollPoints {
     pub current_points: u32,
     pub number_of_rolls: u32,
     pub max_rolls: u32,
-    pub points_cost_to_roll: u32
+    pub points_cost_to_roll: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18446,60 +18610,86 @@ pub struct LolSummonerSummonerRerollPoints {
 pub struct LolSummonerSummonerSession {
     pub summoner_id: u64,
     pub display_name: String,
-    pub is_new_player: bool
+    pub is_new_player: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolSummonerXpAndLevelMessage {
     pub xp: Value,
-    pub level: LolSummonerLevelField
+    pub level: LolSummonerLevelField,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTastesDataModelResponse {
     pub response_code: i64,
-    pub model_data: Value
+    pub model_data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftDataModelResponse {
     pub response_code: i64,
-    pub model_data: Value
+    pub model_data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftGameflowGameData {
     pub game_id: u64,
-    pub queue: LolTftQueue
+    pub queue: LolTftQueue,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftGameflowSession {
     pub phase: LolTftGameflowPhase,
-    pub game_data: LolTftGameflowGameData
+    pub game_data: LolTftGameflowGameData,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftLolTftBattlePassHub {
+    pub battle_pass_x_p_boosted: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftLolTftEvent {
+    pub title_translation_key: String,
+    pub enabled: bool,
+    pub redirect: bool,
+    pub url: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftLolTftEvents {
+    pub events: Vec<LolTftLolTftEvent>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftLolTftHomeHub {
     pub enabled: bool,
-    pub tft_event_promo_enabled: bool,
     pub store_promo_offer_ids: Vec<String>,
     pub tactician_promo_offer_ids: Vec<String>,
     pub battle_pass_offer_ids: Vec<String>,
-    pub fallback_store_promo_offer_ids: Vec<String>
+    pub fallback_store_promo_offer_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftLolTftNewsHub {
     pub enabled: bool,
-    pub url: String
+    pub url: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftPublishingSettings {
+    pub publishing_locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18508,20 +18698,70 @@ pub struct LolTftQueue {
     pub id: i32,
     pub map_id: i32,
     pub game_mode: String,
-    pub category: LolTftQueueGameCategory
+    pub category: LolTftQueueGameCategory,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTftSettingsResource {
-    pub data: Value
+    pub data: Value,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerChampion {
+    pub champion_id: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerGameDataTFTSets {
+    pub l_c_t_f_t_mode_data: LolTftTeamPlannerTFTModeData,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerSettingsStorageContainer {
+    pub data: LolTftTeamPlannerTeamSettings,
+    pub schema_version: u32,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerTFTMapSetData {
+    pub set_core_name: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerTFTModeData {
+    pub m_default_set: LolTftTeamPlannerTFTMapSetData,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerTFTTeamPlannerConfig {
+    pub enabled: bool,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerTeamPlan {
+    pub champions: Vec<LolTftTeamPlannerChampion>,
+    pub set_name: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolTftTeamPlannerTeamSettings {
+    pub teams: Vec<LolTftTeamPlannerTeamPlan>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesCapClashTrophyEntitlementPayload {
     pub reward_spec: LolTrophiesClashV2TrophyRewardSpec,
-    pub reward_type: String
+    pub reward_type: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18533,19 +18773,19 @@ pub struct LolTrophiesClashV2TrophyRewardSpec {
     pub theme: String,
     pub tier: String,
     pub bracket: String,
-    pub season_id: String
+    pub season_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesInventoryItemsByType {
-    pub t_o_u_r_n_a_m_e_n_t__t_r_o_p_h_y: Vec<LolTrophiesTournamentTrophyInventoryItem>
+    pub t_o_u_r_n_a_m_e_n_t__t_r_o_p_h_y: Vec<LolTrophiesTournamentTrophyInventoryItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesInventoryResponse {
-    pub items: LolTrophiesInventoryItemsByType
+    pub items: LolTrophiesInventoryItemsByType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18554,7 +18794,7 @@ pub struct LolTrophiesLoadout {
     pub id: String,
     pub name: String,
     pub scope: String,
-    pub loadout: HashMap<String, LolTrophiesLoadoutItem>
+    pub loadout: HashMap<String, LolTrophiesLoadoutItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18562,7 +18802,7 @@ pub struct LolTrophiesLoadout {
 pub struct LolTrophiesLoadoutItem {
     pub item_id: i32,
     pub inventory_type: String,
-    pub data: HashMap<String, String>
+    pub data: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18572,14 +18812,14 @@ pub struct LolTrophiesOtherPlayerTrophyInventoryItem {
     pub item_id: i32,
     pub inventory_type: String,
     pub purchase_date: String,
-    pub payload: LolTrophiesCapClashTrophyEntitlementPayload
+    pub payload: LolTrophiesCapClashTrophyEntitlementPayload,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolTrophiesTournamentTrophyInventoryItem {
     pub payload: LolTrophiesCapClashTrophyEntitlementPayload,
-    pub purchase_date: String
+    pub purchase_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18591,79 +18831,13 @@ pub struct LolTrophiesTrophyProfileData {
     pub season_id: i64,
     pub pedestal: String,
     pub cup: String,
-    pub gem: String
+    pub gem: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolUserExperienceGameflowSession {
-    pub phase: LolUserExperienceGameflowPhase
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolWorldsTokenCardAccountIdAndSummonerId {
-    pub summoner_id: u64
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolWorldsTokenCardInventoryItem {
-    pub uuid: String,
-    pub item_id: i32,
-    pub inventory_type: String,
-    pub purchase_date: String,
-    pub quantity: u64,
-    pub ownership_type: LolWorldsTokenCardItemOwnershipType
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolWorldsTokenCardLootDataGdsResource {
-    pub loot_token_bank_cards: Vec<LolWorldsTokenCardLootTokenBankCardGdsResource>
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolWorldsTokenCardLootTokenBankCardGdsResource {
-    pub loot_item_name: String,
-    pub backsplash_image_path: String,
-    pub button_text: String,
-    pub non_premium_cap_currency_id: String,
-    pub premium_cap_currency_id: String,
-    pub title_text: String,
-    pub token_icon_path: String,
-    pub tooltip_description_text: String,
-    pub tooltip_splash_path: String,
-    pub tooltip_title_text: String,
-    pub unlock_item_id: String,
-    pub unlock_item_type: String,
-    pub activation_date: String,
-    pub deactivation_date: String,
-    pub store_link_item: String,
-    pub store_link_type: String
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone, Default)]
-#[serde(rename_all = "camelCase")]
-pub struct LolWorldsTokenCardTokenUpsell {
-    pub id: String,
-    pub internal_name: String,
-    pub title: String,
-    pub button_text: String,
-    pub tooltip_title: String,
-    pub tooltip_description: String,
-    pub purchase_url: String,
-    pub tooltip_background_url: String,
-    pub background_url: String,
-    pub currency_url: String,
-    pub premium_currency_name: String,
-    pub dependent_inventory_type: String,
-    pub dependent_inventory_id: i32,
-    pub currently_locked: LolWorldsTokenCardTokenUpsellLockedType,
-    pub locked_count: i32,
-    pub start_date: String,
-    pub end_date: String
+    pub phase: LolUserExperienceGameflowPhase,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18671,7 +18845,7 @@ pub struct LolWorldsTokenCardTokenUpsell {
 pub struct LolYourshopAccessTokenResource {
     pub token: String,
     pub scopes: Vec<String>,
-    pub expiry: u64
+    pub expiry: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18679,7 +18853,7 @@ pub struct LolYourshopAccessTokenResource {
 pub struct LolYourshopCatalogItem {
     pub item_id: i32,
     pub inventory_type: String,
-    pub item_instance_id: Option<String>
+    pub item_instance_id: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18687,14 +18861,14 @@ pub struct LolYourshopCatalogItem {
 pub struct LolYourshopClientCacheClearMessageDTO {
     pub regions: Vec<String>,
     pub clear_all: bool,
-    pub inventory_types: Vec<String>
+    pub inventory_types: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopCurrencyDTO {
     pub amount: i32,
-    pub sub_currencies: HashMap<String, i32>
+    pub sub_currencies: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18704,7 +18878,7 @@ pub struct LolYourshopInventoryCacheEntry {
     pub expiration_m_s: u64,
     pub issued_at_m_s: u64,
     pub received_at_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18715,7 +18889,7 @@ pub struct LolYourshopInventoryDTO {
     pub summoner_id: u64,
     pub items: HashMap<String, Value>,
     pub expires: String,
-    pub items_jwt: String
+    pub items_jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18727,7 +18901,7 @@ pub struct LolYourshopInventoryItem {
     pub purchase_date: String,
     pub quantity: u64,
     pub ownership_type: LolYourshopItemOwnershipType,
-    pub expiration_date: String
+    pub expiration_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18750,7 +18924,7 @@ pub struct LolYourshopInventoryItemDTO {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub lsb: bool,
-    pub wins: u64
+    pub wins: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18768,7 +18942,7 @@ pub struct LolYourshopInventoryItemWithPayload {
     pub loyalty: bool,
     pub loyalty_sources: Vec<String>,
     pub owned: bool,
-    pub payload: Value
+    pub payload: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18779,20 +18953,20 @@ pub struct LolYourshopInventoryNotification {
     pub inventory_type: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub acknowledged: bool
+    pub acknowledged: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopInventoryResponseDTO {
-    pub data: LolYourshopInventoryDTO
+    pub data: LolYourshopInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopItemKey {
     pub inventory_type: String,
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18802,7 +18976,7 @@ pub struct LolYourshopLoginSession {
     pub summoner_id: u64,
     pub account_id: u64,
     pub id_token: String,
-    pub puuid: String
+    pub puuid: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18813,18 +18987,34 @@ pub struct LolYourshopLoyaltyRewards {
     pub free_rewarded_skins_count: i32,
     pub skin_ids: Vec<i32>,
     pub ip_boost: i32,
+    pub xp_boost: HashMap<String, i32>,
+    pub loyalty_t_f_t_map_skin_count: i32,
+    pub loyalty_t_f_t_companion_count: i32,
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LolYourshopLoyaltyRewardsSimplified {
+    pub free_rewarded_champions_count: i32,
+    pub champion_ids: Vec<i32>,
+    pub free_rewarded_skins_count: i32,
+    pub skin_ids: Vec<i32>,
+    pub ip_boost: i32,
     pub xp_boost: i32,
     pub loyalty_t_f_t_map_skin_count: i32,
     pub loyalty_t_f_t_companion_count: i32,
-    pub loyalty_sources: HashMap<String, bool>
+    pub loyalty_t_f_t_damage_skin_count: i32,
+    pub loyalty_sources: HashMap<String, bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopLoyaltyStatusNotification {
     pub status: LolYourshopLoyaltyStatus,
-    pub rewards: LolYourshopLoyaltyRewards,
-    pub reload_inventory: bool
+    pub rewards: LolYourshopLoyaltyRewardsSimplified,
+    pub reload_inventory: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18839,41 +19029,38 @@ pub struct LolYourshopOffer {
     pub owned: bool,
     pub revealed: bool,
     pub expiration_date: String,
-    pub spot_index: u32
+    pub spot_index: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferData {
     pub offers: Vec<LolYourshopOffer>,
-    pub promotion: LolYourshopPromotion
+    pub promotion: LolYourshopPromotion,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferId {
-    pub offer_id: String
+    pub offer_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferIds {
-    pub offers: Vec<LolYourshopOfferId>
+    pub offers: Vec<LolYourshopOfferId>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferRequest {
     pub offer_id: String,
-    pub inventory_type: String,
-    pub item_id: i32,
-    pub price: i64
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopOfferRequests {
-    pub offers: Vec<LolYourshopOfferRequest>
+    pub offers: Vec<LolYourshopOfferRequest>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18886,13 +19073,13 @@ pub struct LolYourshopPlayerNotification {
     pub title_key: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub icon_url: String
+    pub icon_url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPlayerPermissions {
-    pub use_data: String
+    pub use_data: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18900,7 +19087,7 @@ pub struct LolYourshopPlayerPermissions {
 pub struct LolYourshopPromotion {
     pub name: String,
     pub start_time: String,
-    pub end_time: String
+    pub end_time: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18908,14 +19095,14 @@ pub struct LolYourshopPromotion {
 pub struct LolYourshopPurchaseItem {
     pub inventory_type: String,
     pub item_id: i32,
-    pub price_paid: i64
+    pub price_paid: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopPurchaseResponse {
     pub items: Vec<LolYourshopPurchaseItem>,
-    pub wallet: LolYourshopWallet
+    pub wallet: LolYourshopWallet,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18925,7 +19112,7 @@ pub struct LolYourshopRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18934,36 +19121,34 @@ pub struct LolYourshopRmsEntitlementPayload {
     pub item_id: String,
     pub item_type_id: String,
     pub entitlement_type_id: String,
-    pub resource_operation: String
+    pub resource_operation: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsStoreEntitlementItem {
     pub inventory_type: String,
-    pub item_id: String
+    pub item_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsStoreEntitlementPayload {
     pub transaction_id: String,
-    pub items: Vec<LolYourshopRmsStoreEntitlementItem>
+    pub items: Vec<LolYourshopRmsStoreEntitlementItem>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct LolYourshopRmsWalletPayload {
-    
-}
+pub struct LolYourshopRmsWalletPayload {}
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopRmsXboxSubscriptionChange {
     pub puuid: String,
     pub subscription_id: String,
-    pub active: bool,
-    pub identity_provider: String
+    pub active: String,
+    pub identity_provider: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18971,19 +19156,19 @@ pub struct LolYourshopRmsXboxSubscriptionChange {
 pub struct LolYourshopSimpleInventoryDTO {
     pub items: HashMap<String, Value>,
     pub items_jwt: String,
-    pub expires: String
+    pub expires: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopSimpleInventoryResponseDTO {
-    pub data: LolYourshopSimpleInventoryDTO
+    pub data: LolYourshopSimpleInventoryDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopSummonerIcon {
-    pub item_id: i32
+    pub item_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -18999,7 +19184,8 @@ pub struct LolYourshopUIOffer {
     pub skin_id: i32,
     pub owned: bool,
     pub revealed: bool,
-    pub expiration_date: String
+    pub purchasing: bool,
+    pub expiration_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19008,13 +19194,13 @@ pub struct LolYourshopUIStatus {
     pub hub_enabled: bool,
     pub name: String,
     pub start_time: String,
-    pub end_time: String
+    pub end_time: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopWallet {
-    pub rp: i64
+    pub rp: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19024,7 +19210,7 @@ pub struct LolYourshopWalletCacheEntry {
     pub expiration_m_s: u64,
     pub issued_at_m_s: u64,
     pub received_at_m_s: u64,
-    pub valid: bool
+    pub valid: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19034,20 +19220,20 @@ pub struct LolYourshopWalletDTO {
     pub account_id: i64,
     pub expires: String,
     pub balances: HashMap<String, i32>,
-    pub balances_jwt: String
+    pub balances_jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopWalletResponseDTO {
-    pub data: LolYourshopWalletDTO
+    pub data: LolYourshopWalletDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LolYourshopXboxSubscriptionStatus {
-    pub active: bool,
-    pub subscription_id: String
+    pub active: String,
+    pub subscription_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19057,7 +19243,7 @@ pub struct LolYourshopYourshopConfig {
     pub themed_background: bool,
     pub promotion_name: String,
     pub promotion_start_date: String,
-    pub promotion_end_date: String
+    pub promotion_end_date: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19075,14 +19261,14 @@ pub struct LootItemClientDTO {
     pub tags: String,
     pub display_categories: String,
     pub rental_seconds: i64,
-    pub rental_games: i32
+    pub rental_games: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootItemListClientDTO {
     pub loot_items: Vec<LootItemClientDTO>,
-    pub last_update: i64
+    pub last_update: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19091,7 +19277,7 @@ pub struct LootLcdsClientConfigurationDTO {
     pub loot_items_using_breakout_recipe_menu: Vec<String>,
     pub loot_materials_to_always_render: Vec<String>,
     pub currencies_using_cap_wallets: Vec<String>,
-    pub disabled_redemptions: Vec<String>
+    pub disabled_redemptions: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19100,7 +19286,7 @@ pub struct LootLcdsLootDescriptionDTO {
     pub loot_name: String,
     pub child_loot_table_names: Vec<String>,
     pub localization_map: HashMap<String, String>,
-    pub localization_long_description_map: HashMap<String, String>
+    pub localization_long_description_map: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19113,14 +19299,14 @@ pub struct LootLcdsRecipeClientDTO {
     pub crafter_name: String,
     pub slots: Vec<LootLcdsRecipeSlotClientDTO>,
     pub outputs: Vec<LootLcdsRecipeOutputDTO>,
-    pub metadata: LootLcdsRecipeMetadata
+    pub metadata: LootLcdsRecipeMetadata,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootLcdsRecipeListClientDTO {
     pub recipes: Vec<LootLcdsRecipeClientDTO>,
-    pub last_update: i64
+    pub last_update: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19128,7 +19314,7 @@ pub struct LootLcdsRecipeListClientDTO {
 pub struct LootLcdsRecipeMetadata {
     pub guaranteed_descriptions: Vec<LootLcdsLootDescriptionDTO>,
     pub bonus_descriptions: Vec<LootLcdsLootDescriptionDTO>,
-    pub tooltips_disabled: bool
+    pub tooltips_disabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19137,7 +19323,7 @@ pub struct LootLcdsRecipeOutputDTO {
     pub loot_name: String,
     pub quantity_expression: String,
     pub probability: f64,
-    pub allow_duplicates: bool
+    pub allow_duplicates: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19145,14 +19331,14 @@ pub struct LootLcdsRecipeOutputDTO {
 pub struct LootLcdsRecipeSlotClientDTO {
     pub slot_number: i32,
     pub query: String,
-    pub quantity_expression: String
+    pub quantity_expression: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootNameRefId {
     pub loot_name: String,
-    pub ref_id: String
+    pub ref_id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19164,14 +19350,14 @@ pub struct LootOddsDTO {
     pub quantity: i32,
     pub label: String,
     pub loot_order: i32,
-    pub children: Vec<LootOddsDTO>
+    pub children: Vec<LootOddsDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LootProgressionRecipeConfigMap {
     pub last_update: i64,
-    pub loot_progression_recipe_d_t_o_map: HashMap<String, LootProgressionRecipeConfiguration>
+    pub loot_progression_recipe_d_t_o_map: HashMap<String, LootProgressionRecipeConfiguration>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19182,7 +19368,7 @@ pub struct LootProgressionRecipeConfiguration {
     pub recipe_name: String,
     pub activation_time: String,
     pub deactivation_time: String,
-    pub counter_uuids: Vec<String>
+    pub counter_uuids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19190,7 +19376,7 @@ pub struct LootProgressionRecipeConfiguration {
 pub struct LootSimpleDialogMessageResponse {
     pub account_id: u64,
     pub msg_id: String,
-    pub command: String
+    pub command: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19198,7 +19384,7 @@ pub struct LootSimpleDialogMessageResponse {
 pub struct MatchedPlayerDTO {
     pub roster_id: String,
     pub captain: PlayerInfoDTO,
-    pub players: Vec<PlayerInfoDTO>
+    pub players: Vec<PlayerInfoDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19207,14 +19393,14 @@ pub struct MatchmakingLcdsBustedLeaver {
     pub summoner: MatchmakingLcdsSummoner,
     pub reason_failed: String,
     pub access_token: String,
-    pub leaver_penalty_millis_remaining: u64
+    pub leaver_penalty_millis_remaining: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsFailedJoinPlayer {
     pub summoner: MatchmakingLcdsSummoner,
-    pub reason_failed: String
+    pub reason_failed: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19224,7 +19410,7 @@ pub struct MatchmakingLcdsGameDTO {
     pub status_of_participants: String,
     pub terminated_condition: String,
     pub team_one: Vec<MatchmakingLcdsPlayerParticipant>,
-    pub team_two: Vec<MatchmakingLcdsPlayerParticipant>
+    pub team_two: Vec<MatchmakingLcdsPlayerParticipant>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19233,7 +19419,7 @@ pub struct MatchmakingLcdsGameNotification {
     #[serde(rename = "type")]
     pub type_: String,
     pub message_code: String,
-    pub message_argument: String
+    pub message_argument: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19245,19 +19431,19 @@ pub struct MatchmakingLcdsMatchMakerParams {
     pub last_maestro_message: String,
     pub languages: Option<String>,
     pub bot_difficulty: String,
-    pub team_id: u64
+    pub team_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsMatchMakerPayload {
-    pub l_e_a_v_e_r__b_u_s_t_e_r__a_c_c_e_s_s__t_o_k_e_n: String
+    pub l_e_a_v_e_r__b_u_s_t_e_r__a_c_c_e_s_s__t_o_k_e_n: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsPlayerParticipant {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19266,7 +19452,7 @@ pub struct MatchmakingLcdsQueueDisabled {
     pub summoner: MatchmakingLcdsSummoner,
     pub reason_failed: String,
     pub queue_id: i32,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19274,14 +19460,14 @@ pub struct MatchmakingLcdsQueueDisabled {
 pub struct MatchmakingLcdsQueueDodger {
     pub summoner: MatchmakingLcdsSummoner,
     pub reason_failed: String,
-    pub dodge_penalty_remaining_time: u64
+    pub dodge_penalty_remaining_time: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsQueueInfo {
     pub queue_id: i32,
-    pub wait_time: u64
+    pub wait_time: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19290,7 +19476,7 @@ pub struct MatchmakingLcdsQueueRestricted {
     pub summoner: MatchmakingLcdsSummoner,
     pub reason_failed: String,
     pub queue_id: i32,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19299,21 +19485,21 @@ pub struct MatchmakingLcdsQueueThrottled {
     pub summoner: MatchmakingLcdsSummoner,
     pub reason_failed: String,
     pub queue_id: i32,
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsSearchingForMatchNotification {
     pub joined_queues: Vec<MatchmakingLcdsQueueInfo>,
-    pub player_join_failures: Vec<Value>
+    pub player_join_failures: Vec<Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MatchmakingLcdsSummoner {
     pub sum_id: u64,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19322,7 +19508,7 @@ pub struct MemberBanUnbanTournament {
     pub tournament_id: i64,
     pub tournamentname_loc_key: String,
     pub tournamentname_loc_key_secondary: String,
-    pub tournament_phase_lock_in_time: i64
+    pub tournament_phase_lock_in_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19342,7 +19528,7 @@ pub struct MetricMetadata {
     pub info: String,
     pub transient_aggregation: AggregationType,
     pub priority: MetricPriority,
-    pub period: u32
+    pub period: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19354,14 +19540,14 @@ pub struct MetricMetadataAlert {
     pub notify: MetricMetadataNotify,
     pub pretty_name: String,
     pub description: String,
-    pub info: String
+    pub info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadataHipchatNotification {
     pub roomid: String,
-    pub tags: String
+    pub tags: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19369,13 +19555,13 @@ pub struct MetricMetadataHipchatNotification {
 pub struct MetricMetadataNotify {
     pub email: Vec<String>,
     pub hipchat: Vec<MetricMetadataHipchatNotification>,
-    pub pagerduty: Vec<MetricMetadataPagerDutyNotification>
+    pub pagerduty: Vec<MetricMetadataPagerDutyNotification>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MetricMetadataPagerDutyNotification {
-    pub apikey: String
+    pub apikey: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19384,14 +19570,14 @@ pub struct MissionAlertDTO {
     #[serde(rename = "type")]
     pub type_: String,
     pub message: String,
-    pub alert_time: i64
+    pub alert_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionDisplay {
     pub attributes: Vec<String>,
-    pub locations: Vec<String>
+    pub locations: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19399,7 +19585,7 @@ pub struct MissionDisplay {
 pub struct MissionMetadata {
     pub tutorial: TutorialMetadata,
     pub npe_reward_pack: NpeRewardPackMetadata,
-    pub level: i32
+    pub level: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19407,26 +19593,33 @@ pub struct MissionMetadata {
 pub struct MissionProgressDTO {
     pub last_viewed_progress: i32,
     pub current_progress: i32,
-    pub total_count: i32
+    pub total_count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionRequirementDTO {
-    pub expression: String
+    pub expression: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionsCompressedPayloadDTO {
-    pub missions_compressed: String
+    pub missions_compressed: String,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct MucJwtDto {
+    pub jwt: String,
+    pub channel_claim: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MultipleReplayMetadataRequestV2 {
     pub platform_id: String,
-    pub game_ids: Vec<u64>
+    pub game_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19434,13 +19627,13 @@ pub struct MultipleReplayMetadataRequestV2 {
 pub struct MultipleReplayMetadataResponseItemV2 {
     pub game_id: u64,
     pub status: ReplayResponseStatus,
-    pub metadata: ReplayMetadataV2
+    pub metadata: ReplayMetadataV2,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MultipleReplayMetadataResponseV2 {
-    pub metadata_responses: Vec<MultipleReplayMetadataResponseItemV2>
+    pub metadata_responses: Vec<MultipleReplayMetadataResponseItemV2>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19449,27 +19642,27 @@ pub struct NonTimingEventV1 {
     pub when: u64,
     pub event_name: String,
     pub value: String,
-    pub unit: String
+    pub unit: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NotifyFailureRequest {
     pub availability_item_name: String,
-    pub failure_info: String
+    pub failure_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NotifySuccessRequest {
-    pub availability_item_name: String
+    pub availability_item_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct NpeReward {
     pub renderer: String,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19479,7 +19672,7 @@ pub struct NpeRewardPackMetadata {
     pub premium_reward: bool,
     pub reward_key: String,
     pub major_reward: NpeReward,
-    pub minor_rewards: Vec<NpeReward>
+    pub minor_rewards: Vec<NpeReward>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19494,7 +19687,7 @@ pub struct OpenedTeamDTO {
     pub tier: i32,
     pub members: Vec<OpenedTeamMemberDTO>,
     pub invitees: Vec<PendingRosterInviteeDTO>,
-    pub open_positions: Vec<Position>
+    pub open_positions: Vec<Position>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19503,20 +19696,20 @@ pub struct OpenedTeamMemberDTO {
     pub player_id: i64,
     pub position: Position,
     pub tier: i32,
-    pub friendship: i32
+    pub friendship: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PartiesVoiceDTO {
-    pub jwt: String
+    pub jwt: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherChunkingPatcherEnvironment {
     pub game_patcher_available: bool,
-    pub game_patcher_enabled: bool
+    pub game_patcher_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19525,7 +19718,7 @@ pub struct PatcherComponentActionProgress {
     pub current_item: String,
     pub total: PatcherComponentStateProgress,
     pub network: PatcherComponentStateProgress,
-    pub primary_work: PatcherComponentStateWorkType
+    pub primary_work: PatcherComponentStateWorkType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19537,7 +19730,7 @@ pub struct PatcherComponentState {
     pub is_update_available: bool,
     pub time_of_last_up_to_date_check_i_s_o8601: Option<String>,
     pub is_corrupted: bool,
-    pub progress: Option<PatcherComponentActionProgress>
+    pub progress: Option<PatcherComponentActionProgress>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19545,7 +19738,7 @@ pub struct PatcherComponentState {
 pub struct PatcherComponentStateProgress {
     pub bytes_complete: u64,
     pub bytes_required: u64,
-    pub bytes_per_second: f64
+    pub bytes_per_second: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19553,7 +19746,7 @@ pub struct PatcherComponentStateProgress {
 pub struct PatcherNotification {
     pub id: String,
     pub notification_id: PatcherNotificationId,
-    pub data: HashMap<String, Value>
+    pub data: HashMap<String, Value>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19561,19 +19754,19 @@ pub struct PatcherNotification {
 pub struct PatcherP2PStatus {
     pub is_enabled_for_patchline: bool,
     pub is_allowed_by_user: bool,
-    pub requires_restart: bool
+    pub requires_restart: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherP2PStatusUpdate {
-    pub is_allowed_by_user: bool
+    pub is_allowed_by_user: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherProductResource {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19586,20 +19779,20 @@ pub struct PatcherProductState {
     pub is_corrupted: bool,
     pub is_stopped: bool,
     pub percent_patched: f64,
-    pub components: Vec<PatcherComponentState>
+    pub components: Vec<PatcherComponentState>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherStatus {
     pub connected_to_patch_server: bool,
-    pub successfully_installed_version: Option<u32>
+    pub successfully_installed_version: Option<u32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PatcherUxResource {
-    pub visible: bool
+    pub visible: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19612,13 +19805,13 @@ pub struct PaymentsFrontEndRequest {
     pub giftee_message: String,
     pub rso_token: String,
     pub use_pmc_sessions: bool,
-    pub game: String
+    pub game: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PaymentsFrontEndResult {
-    pub url: String
+    pub url: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19629,7 +19822,7 @@ pub struct PaymentsPMCStartUrlRequest {
     pub summoner_level: i16,
     pub giftee_account_id: String,
     pub giftee_message: String,
-    pub game: String
+    pub game: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19641,7 +19834,7 @@ pub struct PaymentsPMCStartUrlResult {
     pub summoner_level: i16,
     pub player_facing_id: String,
     pub pmc_start_url: String,
-    pub created_at: String
+    pub created_at: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19652,7 +19845,7 @@ pub struct PendingOpenedTeamDTO {
     pub short_name: String,
     pub logo: i32,
     pub logo_color: i32,
-    pub tier: i32
+    pub tier: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19674,7 +19867,8 @@ pub struct PendingRosterDTO {
     pub ticket_offers: Vec<TicketOfferDTO>,
     pub invite_faileds: Vec<FailedInvite>,
     pub lft: bool,
-    pub multi_user_chat_j_w_t: String
+    pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: MucJwtDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19684,7 +19878,7 @@ pub struct PendingRosterInviteeDTO {
     pub invitee_state: PendingRosterInviteeState,
     pub inviter: u64,
     pub invite_time: i64,
-    pub invite_type: InviteType
+    pub invite_type: InviteType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19699,7 +19893,7 @@ pub struct PendingRosterMemberDTO {
     pub pending_pay: i32,
     pub pending_premium_pay: i32,
     pub self_bet: i32,
-    pub tier: i32
+    pub tier: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19708,7 +19902,7 @@ pub struct PhaseInMember {
     pub player_id: u64,
     pub bet: i32,
     pub pending_pay: i32,
-    pub self_bet: i32
+    pub self_bet: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19718,14 +19912,14 @@ pub struct PhaseRosterDTO {
     pub period: i32,
     pub bracket_id: i64,
     pub checkin_time: i64,
-    pub bracket_d_t_o: Option<Bracket>
+    pub bracket_d_t_o: Option<Bracket>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerBehaviorLcdsForcedClientShutdown {
     pub reason: String,
-    pub additional_info: String
+    pub additional_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19735,7 +19929,7 @@ pub struct PlayerBehaviorLcdsSimpleMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19743,7 +19937,7 @@ pub struct PlayerBehaviorLcdsSimpleMessage {
 pub struct PlayerBehaviorSimpleMessageResponse {
     pub account_id: u64,
     pub msg_id: String,
-    pub command: String
+    pub command: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19755,7 +19949,7 @@ pub struct PlayerDTO {
     pub notifications: Vec<ClashOfflineNotification>,
     pub lft: bool,
     pub primary_pos: String,
-    pub secondary_pos: String
+    pub secondary_pos: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19767,7 +19961,7 @@ pub struct PlayerFinderDTO {
     pub secondary_pos: Position,
     #[serde(rename = "type")]
     pub type_: PlayerFinderEnum,
-    pub friend_id: i64
+    pub friend_id: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19776,7 +19970,7 @@ pub struct PlayerInfoDTO {
     pub player_id: u64,
     pub team_id: String,
     pub position: String,
-    pub role: Role
+    pub role: Role,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19786,7 +19980,7 @@ pub struct PlayerInventory {
     pub champions: Vec<i32>,
     pub skins: Vec<i32>,
     pub icons: Vec<i32>,
-    pub inventory_jwts: Vec<String>
+    pub inventory_jwts: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19795,7 +19989,7 @@ pub struct PlayerLootDTO {
     pub loot_name: String,
     pub ref_id: String,
     pub count: i32,
-    pub expiry_time: i64
+    pub expiry_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19804,7 +19998,7 @@ pub struct PlayerLootDefinitionsDTO {
     pub loot_item_list: LootItemListClientDTO,
     pub recipe_list: LootLcdsRecipeListClientDTO,
     pub query_result: QueryResultDTO,
-    pub player_loot: Vec<PlayerLootDTO>
+    pub player_loot: Vec<PlayerLootDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19814,7 +20008,7 @@ pub struct PlayerLootResultDTO {
     pub details: String,
     pub added: Vec<PlayerLootDTO>,
     pub removed: Vec<PlayerLootDTO>,
-    pub redeemed: Vec<String>
+    pub redeemed: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19851,7 +20045,7 @@ pub struct PlayerMissionDTO {
     pub celebration_type: String,
     pub client_notify_level: String,
     pub internal_name: String,
-    pub media: HashMap<String, String>
+    pub media: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19860,7 +20054,7 @@ pub struct PlayerMissionEligibilityData {
     pub level: i32,
     pub loyalty_enabled: bool,
     pub player_inventory: PlayerInventory,
-    pub user_info_token: Option<String>
+    pub user_info_token: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19874,7 +20068,7 @@ pub struct PlayerMissionObjectiveDTO {
     pub reward_groups: Vec<String>,
     pub has_objective_based_reward: bool,
     pub status: String,
-    pub requirements: Vec<String>
+    pub requirements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19893,13 +20087,13 @@ pub struct PlayerMissionRewardDTO {
     pub quantity: i32,
     pub is_objective_based_reward: bool,
     pub media: HashMap<String, String>,
-    pub icon_needs_frame: bool
+    pub icon_needs_frame: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerNotificationsPlayerNotificationConfigResource {
-    pub expiration_check_frequency: Option<u64>
+    pub expiration_check_frequency: Option<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19918,7 +20112,7 @@ pub struct PlayerNotificationsPlayerNotificationResource {
     pub title_key: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub dismissible: bool
+    pub dismissible: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19928,19 +20122,19 @@ pub struct PlayerNotificationsRiotMessagingServiceMessage {
     pub service: String,
     pub version: String,
     pub timestamp: i64,
-    pub payload: String
+    pub payload: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerParticipant {
-    pub summoner_id: u64
+    pub summoner_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerRosterHistoryDTO {
-    pub rosters: Vec<RosterMemberDTO>
+    pub rosters: Vec<RosterMemberDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19949,7 +20143,7 @@ pub struct PlayerTierDTO {
     pub player_id: u64,
     pub tier: i32,
     pub primary_pos: Position,
-    pub second_pos: Position
+    pub second_pos: Position,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19958,7 +20152,7 @@ pub struct PluginDescriptionResource {
     pub name: String,
     pub version: String,
     pub riot_meta: PluginMetadataResource,
-    pub plugin_dependencies: HashMap<String, String>
+    pub plugin_dependencies: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19967,20 +20161,20 @@ pub struct PluginLcdsEvent {
     pub client_id: String,
     pub subtopic: String,
     pub type_name: String,
-    pub body: Value
+    pub body: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginLcdsResponse {
     pub type_name: String,
-    pub body: Value
+    pub body: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginManagerResource {
-    pub state: PluginManagerState
+    pub state: PluginManagerState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -19996,14 +20190,14 @@ pub struct PluginMetadataResource {
     pub global_asset_bundles: Vec<String>,
     pub per_locale_asset_bundles: HashMap<String, Value>,
     pub implements: HashMap<String, String>,
-    pub threading: PluginThreadingModel
+    pub threading: PluginThreadingModel,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginRegionLocaleChangedEvent {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20019,16 +20213,16 @@ pub struct PluginResource {
     pub threading_model: String,
     pub asset_bundle_names: Vec<String>,
     pub mounted_asset_bundles: HashMap<String, String>,
-    pub order_w_a_d_file_mounted: i32,
+    pub order_wad_file_mounted: i32,
     pub dependencies: Vec<PluginResourceContract>,
-    pub implemented_contracts: Vec<PluginResourceContract>
+    pub implemented_contracts: Vec<PluginResourceContract>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct PluginResourceContract {
     pub full_name: String,
-    pub version: String
+    pub version: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20036,7 +20230,7 @@ pub struct PluginResourceContract {
 pub struct PluginResourceEvent {
     pub uri: String,
     pub event_type: PluginResourceEventType,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20047,13 +20241,13 @@ pub struct PluginServiceProxyResponse {
     pub method_name: String,
     pub payload: String,
     pub status: String,
-    pub error: String
+    pub error: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ProcessControlProcess {
-    pub status: String
+    pub status: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20065,7 +20259,7 @@ pub struct PublicRosterDTO {
     pub short_name: String,
     pub logo: i32,
     pub logo_color: i32,
-    pub member_ids: Vec<u64>
+    pub member_ids: Vec<u64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20079,26 +20273,26 @@ pub struct Punishment {
     pub punishment_length_millis: u64,
     pub perma_ban: bool,
     pub punishment_length_games: i64,
-    pub player_facing_message: String
+    pub player_facing_message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct QueryEvaluationRequestDTO {
-    pub query: String
+    pub query: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct QueryEvaluationResultDTO {
-    pub loot_item_names: Vec<String>
+    pub loot_item_names: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct QueryResultDTO {
     pub query_to_loot_names: Value,
-    pub last_update: i64
+    pub last_update: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20107,14 +20301,14 @@ pub struct RankedScoutingDTO {
     pub player_id: u64,
     pub total_mastery_score: u64,
     pub top_masteries: Vec<ChampionMasteryPublicDTO>,
-    pub top_season_champions: Vec<ChampionScoutingDTO>
+    pub top_season_champions: Vec<ChampionScoutingDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RankedScoutingMemberDTO {
     pub player_id: u64,
-    pub champion_scouting_data: Vec<RankedScoutingTopChampionDTO>
+    pub champion_scouting_data: Vec<RankedScoutingTopChampionDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20124,7 +20318,7 @@ pub struct RankedScoutingTopChampionDTO {
     pub rank: i32,
     pub win_count: i32,
     pub game_count: i32,
-    pub kda: f32
+    pub kda: f32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20134,7 +20328,7 @@ pub struct RedeemLootTransactionDTO {
     pub puuid: String,
     pub player_id: u64,
     pub account_id: i64,
-    pub loot_name: String
+    pub loot_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20143,14 +20337,14 @@ pub struct RegionLocale {
     pub region: String,
     pub locale: String,
     pub web_region: String,
-    pub web_language: String
+    pub web_language: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ReplayMetadataV2 {
     pub game_version: String,
-    pub file_size: u32
+    pub file_size: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20158,14 +20352,14 @@ pub struct ReplayMetadataV2 {
 pub struct RewardDetails {
     pub tournament_id: i64,
     pub roster_id: i64,
-    pub team_member_ids: Vec<i64>
+    pub team_member_ids: Vec<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RewardLogo {
     pub logo: i32,
-    pub member_owned_count: i32
+    pub member_owned_count: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20173,13 +20367,20 @@ pub struct RewardLogo {
 pub struct RewardStrategy {
     pub group_strategy: String,
     pub select_max_group_count: u16,
-    pub select_min_group_count: u16
+    pub select_min_group_count: u16,
+}
+
+#[derive(Deserialize, Serialize, Debug, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct RgaClientConfigConfigStatus {
+    pub readiness: String,
+    pub update_id: u64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RiotMessagingServiceAcknowledgeBody {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20189,14 +20390,14 @@ pub struct RiotMessagingServiceEntitlementsToken {
     pub token: String,
     pub subject: String,
     pub issuer: String,
-    pub entitlements: Vec<String>
+    pub entitlements: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RiotMessagingServicePluginRegionLocaleChangedEvent {
     pub region: String,
-    pub locale: String
+    pub locale: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20204,7 +20405,7 @@ pub struct RiotMessagingServicePluginRegionLocaleChangedEvent {
 pub struct RiotMessagingServiceSession {
     pub state: RiotMessagingServiceState,
     pub token: String,
-    pub token_type: RiotMessagingServiceTokenType
+    pub token_type: RiotMessagingServiceTokenType,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20216,14 +20417,14 @@ pub struct RmsMessage {
     pub version: String,
     pub timestamp: i64,
     pub payload: String,
-    pub ack_required: bool
+    pub ack_required: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterAggregatedStatsDTO {
     pub period_stats: Vec<RosterPeriodAggregatedStatsDTO>,
-    pub player_stats: HashMap<String, RosterPlayerAggregatedStatsDTO>
+    pub player_stats: HashMap<String, RosterPlayerAggregatedStatsDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20247,7 +20448,8 @@ pub struct RosterDTO {
     pub phases: Vec<PhaseRosterDTO>,
     pub dynamic_state: RosterDynamicStateDTO,
     pub banned: bool,
-    pub multi_user_chat_j_w_t: String
+    pub multi_user_chat_j_w_t: String,
+    pub muc_jwt_dto: MucJwtDto,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20259,7 +20461,7 @@ pub struct RosterDynamicStateDTO {
     pub phase_checkin_states: Vec<u64>,
     pub members: Vec<PhaseInMember>,
     pub ticket_offers: Vec<TicketOfferDTO>,
-    pub withdraw: RosterWithdraw
+    pub withdraw: RosterWithdraw,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20275,7 +20477,7 @@ pub struct RosterMatchAggregatedStatsDTO {
     pub game_id: i64,
     pub kills: i32,
     pub opponent_kills: i32,
-    pub player_champion_ids: HashMap<String, i32>
+    pub player_champion_ids: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20290,7 +20492,7 @@ pub struct RosterMemberDTO {
     pub pending_premium_spend: i32,
     pub position: Position,
     pub join_time: i64,
-    pub tier: i32
+    pub tier: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20300,14 +20502,14 @@ pub struct RosterPeriodAggregatedStatsDTO {
     pub bracket_size: i32,
     pub time: i64,
     pub match_stats: Vec<RosterMatchAggregatedStatsDTO>,
-    pub player_bids: HashMap<String, i32>
+    pub player_bids: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RosterPlayerAggregatedStatsDTO {
     pub raw_stats_sum: HashMap<String, i32>,
-    pub raw_stats_max: HashMap<String, i32>
+    pub raw_stats_max: HashMap<String, i32>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20325,7 +20527,7 @@ pub struct RosterStatsDTO {
     pub roster_short_name: String,
     pub roster_logo: i32,
     pub roster_logo_color: i32,
-    pub stats: RosterAggregatedStatsDTO
+    pub stats: RosterAggregatedStatsDTO,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20337,14 +20539,14 @@ pub struct RosterWithdraw {
     pub lockout_time_ms: i64,
     pub game_start_buffer_ms: i64,
     pub vote_withdraw_members: Vec<i64>,
-    pub decline_withdraw_members: Vec<i64>
+    pub decline_withdraw_members: Vec<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIBoolDiagnostic {
     pub key: String,
-    pub value: bool
+    pub value: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20360,35 +20562,35 @@ pub struct SLICount {
     pub bool_diagnostics: HashMap<String, bool>,
     pub double_diagnostics: HashMap<String, f64>,
     pub int_diagnostics: HashMap<String, i64>,
-    pub string_diagnostics: HashMap<String, String>
+    pub string_diagnostics: HashMap<String, String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIDoubleDiagnostic {
     pub key: String,
-    pub value: f64
+    pub value: f64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIIntDiagnostic {
     pub key: String,
-    pub value: i64
+    pub value: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLILabel {
     pub key: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SLIStringDiagnostic {
     pub key: String,
-    pub value: String
+    pub value: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20396,13 +20598,13 @@ pub struct SLIStringDiagnostic {
 pub struct SanitizerContainsSanitizedRequest {
     pub text: String,
     pub level: Option<u32>,
-    pub aggressive_scan: Option<bool>
+    pub aggressive_scan: Option<bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SanitizerContainsSanitizedResponse {
-    pub contains: bool
+    pub contains: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20411,7 +20613,7 @@ pub struct SanitizerSanitizeRequest {
     pub texts: Option<Vec<String>>,
     pub text: Option<String>,
     pub level: Option<u32>,
-    pub aggressive_scan: Option<bool>
+    pub aggressive_scan: Option<bool>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20419,7 +20621,7 @@ pub struct SanitizerSanitizeRequest {
 pub struct SanitizerSanitizeResponse {
     pub texts: Option<Vec<String>>,
     pub text: Option<String>,
-    pub modified: bool
+    pub modified: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20431,7 +20633,7 @@ pub struct SanitizerSanitizerStatus {
     pub filtered_word_counts_by_level: HashMap<String, u32>,
     pub whitelisted_word_counts_by_level: HashMap<String, u32>,
     pub breaking_chars_count: u32,
-    pub projected_chars_count: u32
+    pub projected_chars_count: u32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20456,7 +20658,7 @@ pub struct SeriesDTO {
     pub viewed: bool,
     pub media: SeriesMediaDTO,
     pub tags: Vec<String>,
-    pub warnings: Vec<AlertDTO>
+    pub warnings: Vec<AlertDTO>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20467,14 +20669,14 @@ pub struct SeriesMediaDTO {
     pub background_image_small_url: String,
     pub tracker_icon_url: String,
     pub tracker_icon: String,
-    pub accent_color: String
+    pub accent_color: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ShutdownLcdsForcedClientShutdown {
     pub reason: String,
-    pub additional_info: String
+    pub additional_info: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20484,7 +20686,7 @@ pub struct SimpleDialogMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20492,19 +20694,19 @@ pub struct SimpleDialogMessage {
 pub struct SimpleDialogMessageResponse {
     pub account_id: u64,
     pub msg_id: String,
-    pub command: String
+    pub command: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SpectatorLcdsSpectateAvailabilityDto {
-    pub team_or_summoner_ids: Vec<String>
+    pub team_or_summoner_ids: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct SpectatorLcdsSpectateAvailabilityResponseDto {
-    pub available_for_watching: Vec<String>
+    pub available_for_watching: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20522,7 +20724,7 @@ pub struct StoreLcdsChampionDTO {
     pub free_to_play_reward: bool,
     pub f2p_reward_sources: Vec<String>,
     pub owned: bool,
-    pub ranked_play_enabled: bool
+    pub ranked_play_enabled: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20538,7 +20740,7 @@ pub struct StoreLcdsChampionSkinDTO {
     pub last_selected: bool,
     pub owned: bool,
     pub skin_id: i32,
-    pub still_obtainable: bool
+    pub still_obtainable: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20548,7 +20750,7 @@ pub struct StoreLcdsSimpleDialogMessage {
     pub msg_id: String,
     #[serde(rename = "type")]
     pub type_: String,
-    pub params: Vec<String>
+    pub params: Vec<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20556,14 +20758,14 @@ pub struct StoreLcdsSimpleDialogMessage {
 pub struct StoreLcdsSimpleDialogMessageResponse {
     pub account_id: u64,
     pub msg_id: String,
-    pub command: String
+    pub command: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreLcdsStoreAccountBalanceNotification {
     pub ip: i64,
-    pub rp: i64
+    pub rp: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20572,14 +20774,14 @@ pub struct StoreLcdsStoreFulfillmentNotification {
     pub inventory_type: String,
     pub rp: i64,
     pub ip: i64,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ThemeVp {
     pub theme_id: i32,
-    pub theme_vp: i32
+    pub theme_vp: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20590,7 +20792,7 @@ pub struct TicketOfferDTO {
     pub count: i32,
     #[serde(rename = "type")]
     pub type_: TicketType,
-    pub ticket_offer_state: TicketOfferState
+    pub ticket_offer_state: TicketOfferState,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20598,14 +20800,14 @@ pub struct TicketOfferDTO {
 pub struct TierConfig {
     pub tier: i32,
     pub delay_time: i64,
-    pub estimate_time: i64
+    pub estimate_time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeSeriesEventBeginV1 {
     pub when: u64,
-    pub event_name: String
+    pub event_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20613,7 +20815,7 @@ pub struct TimeSeriesEventBeginV1 {
 pub struct TimeSeriesEventEndV1 {
     pub when: u64,
     pub event_name: String,
-    pub suffix: Option<String>
+    pub suffix: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20621,7 +20823,7 @@ pub struct TimeSeriesEventEndV1 {
 pub struct TimeSeriesEventMarkerV1 {
     pub when: u64,
     pub event_name: String,
-    pub marker_name: String
+    pub marker_name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20656,14 +20858,14 @@ pub struct TournamentDTO {
     pub resume_time: i64,
     pub lft: bool,
     pub max_invites: i32,
-    pub max_suggestions_per_player: i32
+    pub max_suggestions_per_player: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentHistoryAndWinnersDTO {
     pub tournament_history: Vec<TournamentDTO>,
-    pub tournament_winners_compressed: String
+    pub tournament_winners_compressed: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20673,14 +20875,14 @@ pub struct TournamentInfoDTO {
     pub roster: Option<RosterDTO>,
     pub pending_roster: Option<PendingRosterDTO>,
     pub invitee_pending_rosters: Vec<PendingRosterDTO>,
-    pub theme_vp: i32
+    pub theme_vp: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TournamentInfoMinimalDTO {
     pub tournament_info: Vec<TournamentInfoDTO>,
-    pub time: i64
+    pub time: i64,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20693,7 +20895,7 @@ pub struct TournamentPhaseDTO {
     pub period: i32,
     pub cancelled: bool,
     pub limit_tiers: Vec<i32>,
-    pub capacity_status: CapacityEnum
+    pub capacity_status: CapacityEnum,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20705,7 +20907,7 @@ pub struct TournamentPlayerInfoDTO {
     pub season_vp: i32,
     pub theme_vps: Vec<ThemeVp>,
     pub time: i64,
-    pub tier: i32
+    pub tier: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20714,7 +20916,7 @@ pub struct TracingCriticalFlowEventV1 {
     pub when: u64,
     pub event_id: String,
     pub succeeded: bool,
-    pub payload_string: String
+    pub payload_string: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20725,7 +20927,7 @@ pub struct TracingEventV1 {
     pub src: String,
     pub dest: String,
     pub tags: String,
-    pub details: String
+    pub details: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20735,7 +20937,7 @@ pub struct TracingModuleV1 {
     pub name: String,
     #[serde(rename = "type")]
     pub type_: TracingModuleTypeV1,
-    pub threading_model: TracingModuleThreadingModelV1
+    pub threading_model: TracingModuleThreadingModelV1,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20743,14 +20945,14 @@ pub struct TracingModuleV1 {
 pub struct TracingPhaseBeginV1 {
     pub when: u64,
     pub name: String,
-    pub importance: TracingPhaseImportanceV1
+    pub importance: TracingPhaseImportanceV1,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TracingPhaseEndV1 {
     pub when: u64,
-    pub name: String
+    pub name: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20760,7 +20962,7 @@ pub struct TutorialMetadata {
     pub queue_id: String,
     pub display_rewards: HashMap<String, String>,
     pub use_quick_search_matchmaking: bool,
-    pub use_chosen_champion: bool
+    pub use_chosen_champion: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20771,14 +20973,14 @@ pub struct VerboseLootOddsDTO {
     pub chance_to_contain: Vec<LootOddsDTO>,
     pub guaranteed_to_contain: Vec<LootOddsDTO>,
     pub has_pity_rules: bool,
-    pub checks_ownership: bool
+    pub checks_ownership: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopLcdsChampionDTO {
     pub champion_id: i32,
-    pub owned: bool
+    pub owned: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20786,21 +20988,21 @@ pub struct YourshopLcdsChampionDTO {
 pub struct YourshopLcdsChampionSkinDTO {
     pub champion_id: i32,
     pub owned: bool,
-    pub skin_id: i32
+    pub skin_id: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopLcdsClientDynamicConfigurationNotification {
     pub configs: String,
-    pub delta: bool
+    pub delta: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct YourshopStoreFulfillmentNotification {
     pub inventory_type: String,
-    pub data: Value
+    pub data: Value,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20809,7 +21011,7 @@ pub struct BasicOperatingSystemInfo {
     pub edition: String,
     pub platform: String,
     pub version_major: String,
-    pub version_minor: String
+    pub version_minor: String,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20818,7 +21020,6 @@ pub struct BasicSystemInfo {
     pub operating_system: BasicOperatingSystemInfo,
     pub physical_memory: u64,
     pub physical_processor_cores: u32,
-    pub processor_speed: u32
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone, Default)]
@@ -20831,18 +21032,20 @@ pub struct Cookie {
     pub path: String,
     pub secure: bool,
     pub httponly: bool,
-    pub expires: Option<i64>
+    pub expires: Option<i64>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum AggregationType {
     none = 0,
     sum = 1,
-    average = 2
+    average = 2,
 }
 
 impl Default for AggregationType {
-    fn default() -> Self { AggregationType::none }
+    fn default() -> Self {
+        AggregationType::none
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20852,21 +21055,25 @@ pub enum BindingAsyncState {
     Cancelling = 2,
     Cancelled = 3,
     Succeeded = 4,
-    Failed = 5
+    Failed = 5,
 }
 
 impl Default for BindingAsyncState {
-    fn default() -> Self { BindingAsyncState::None }
+    fn default() -> Self {
+        BindingAsyncState::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum BindingHelpFormat {
     Full = 1,
-    Epytext = 2
+    Epytext = 2,
 }
 
 impl Default for BindingHelpFormat {
-    fn default() -> Self { BindingHelpFormat::Full }
+    fn default() -> Self {
+        BindingHelpFormat::Full
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20874,11 +21081,13 @@ pub enum CapacityEnum {
     LOW = 0,
     MEDIUM = 1,
     HIGH = 2,
-    FULL = 3
+    FULL = 3,
 }
 
 impl Default for CapacityEnum {
-    fn default() -> Self { CapacityEnum::LOW }
+    fn default() -> Self {
+        CapacityEnum::LOW
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20894,11 +21103,13 @@ pub enum ClashRewardKeyType {
     THEME_VP = 8,
     SEASON_VP = 9,
     SEASON_FLAG_COUNT = 10,
-    TOC_STATE = 11
+    TOC_STATE = 11,
 }
 
 impl Default for ClashRewardKeyType {
-    fn default() -> Self { ClashRewardKeyType::TIER }
+    fn default() -> Self {
+        ClashRewardKeyType::TIER
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20906,11 +21117,13 @@ pub enum ClashRewardTime {
     NONE = 0,
     EOG = 1,
     EOB = 2,
-    EOT = 3
+    EOT = 3,
 }
 
 impl Default for ClashRewardTime {
-    fn default() -> Self { ClashRewardTime::NONE }
+    fn default() -> Self {
+        ClashRewardTime::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -20921,65 +21134,39 @@ pub enum ClashRewardType {
     LOGO = 3,
     LOOT = 4,
     VP = 5,
-    TOC = 6
+    TOC = 6,
 }
 
 impl Default for ClashRewardType {
-    fn default() -> Self { ClashRewardType::TROPHY }
+    fn default() -> Self {
+        ClashRewardType::TROPHY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ClientBracketMatchStatus {
     UPCOMING = 0,
     STARTED = 1,
-    COMPLETED = 2
+    COMPLETED = 2,
 }
 
 impl Default for ClientBracketMatchStatus {
-    fn default() -> Self { ClientBracketMatchStatus::UPCOMING }
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone)]
-pub enum ClientConfigConfigReadinessEnum {
-    NotReady = 0,
-    Ready = 1,
-    Disabled = 2
-}
-
-impl Default for ClientConfigConfigReadinessEnum {
-    fn default() -> Self { ClientConfigConfigReadinessEnum::NotReady }
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone)]
-pub enum ClientConfigConfigType {
-    public = 0,
-    player = 1
-}
-
-impl Default for ClientConfigConfigType {
-    fn default() -> Self { ClientConfigConfigType::public }
+    fn default() -> Self {
+        ClientBracketMatchStatus::UPCOMING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ClientConfigDepInjectorEntitlementsUpdateType {
     Create = 0,
     Update = 1,
-    Delete = 2
+    Delete = 2,
 }
 
 impl Default for ClientConfigDepInjectorEntitlementsUpdateType {
-    fn default() -> Self { ClientConfigDepInjectorEntitlementsUpdateType::Create }
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone)]
-pub enum ClientConfigUpdateType {
-    Create = 0,
-    Update = 1,
-    Delete = 2
-}
-
-impl Default for ClientConfigUpdateType {
-    fn default() -> Self { ClientConfigUpdateType::Create }
+    fn default() -> Self {
+        ClientConfigDepInjectorEntitlementsUpdateType::Create
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21050,28 +21237,33 @@ pub enum ClientRequestError {
     ROSTER_ELIMINATED = 63,
     ROSTER_DISBAND_NOT_ALLOWED = 64,
     SUGGEST_INVITEE_NOT_EXIST = 65,
-    SMS_NOT_VERIFIED = 66,
-    TICKET_ALREADY_SET = 67,
-    TICKET_OFFER_NOT_EXIST = 68,
-    TICKET_OFFER_INVALID_COUNT = 69,
-    TICKET_NOT_SET = 70,
-    VOICE_NOT_AVAILABLE = 71,
-    WITHDRAW_NOT_ALLOWED = 72,
-    WITHDRAW_CANCEL_NOT_ALLOWED = 73,
-    WITHDRAW_LOCKOUT = 74
+    SUMMONER_LEVEL_REQUIREMENT_NOT_MET = 66,
+    SMS_NOT_VERIFIED = 67,
+    TICKET_ALREADY_SET = 68,
+    TICKET_OFFER_NOT_EXIST = 69,
+    TICKET_OFFER_INVALID_COUNT = 70,
+    TICKET_NOT_SET = 71,
+    VOICE_NOT_AVAILABLE = 72,
+    WITHDRAW_NOT_ALLOWED = 73,
+    WITHDRAW_CANCEL_NOT_ALLOWED = 74,
+    WITHDRAW_LOCKOUT = 75,
 }
 
 impl Default for ClientRequestError {
-    fn default() -> Self { ClientRequestError::ALREADY_IN_GAME }
+    fn default() -> Self {
+        ClientRequestError::ALREADY_IN_GAME
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum ElevationAction {
-    FixBrokenPermissions = 1
+    FixBrokenPermissions = 1,
 }
 
 impl Default for ElevationAction {
-    fn default() -> Self { ElevationAction::FixBrokenPermissions }
+    fn default() -> Self {
+        ElevationAction::FixBrokenPermissions
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21080,11 +21272,13 @@ pub enum ExternalPluginsAvailability {
     Preparing = 1,
     Connected = 2,
     Recovering = 3,
-    Error = 4
+    Error = 4,
 }
 
 impl Default for ExternalPluginsAvailability {
-    fn default() -> Self { ExternalPluginsAvailability::NotAvailable }
+    fn default() -> Self {
+        ExternalPluginsAvailability::NotAvailable
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21092,11 +21286,13 @@ pub enum GameQueuesLcdsAllowSpectators {
     NONE = 0,
     LOBBYONLY = 1,
     DROPINONLY = 2,
-    ALL = 3
+    ALL = 3,
 }
 
 impl Default for GameQueuesLcdsAllowSpectators {
-    fn default() -> Self { GameQueuesLcdsAllowSpectators::NONE }
+    fn default() -> Self {
+        GameQueuesLcdsAllowSpectators::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21105,11 +21301,13 @@ pub enum InviteType {
     FRIEND = 1,
     SUGGEST = 2,
     SELFJOIN = 3,
-    NONE = 4
+    NONE = 4,
 }
 
 impl Default for InviteType {
-    fn default() -> Self { InviteType::FREEAGENT }
+    fn default() -> Self {
+        InviteType::FREEAGENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21119,22 +21317,26 @@ pub enum LCDSLoyaltyStateChangeNotificationCategory {
     expiry = 2,
     change = 3,
     revoke = 4,
-    disabled = 5
+    disabled = 5,
 }
 
 impl Default for LCDSLoyaltyStateChangeNotificationCategory {
-    fn default() -> Self { LCDSLoyaltyStateChangeNotificationCategory::legacy }
+    fn default() -> Self {
+        LCDSLoyaltyStateChangeNotificationCategory::legacy
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LcdsInvitationState {
     ACTIVE = 0,
     ON_HOLD = 1,
-    REVOKED = 2
+    REVOKED = 2,
 }
 
 impl Default for LcdsInvitationState {
-    fn default() -> Self { LcdsInvitationState::ACTIVE }
+    fn default() -> Self {
+        LcdsInvitationState::ACTIVE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21147,22 +21349,26 @@ pub enum LcdsInviteeState {
     JOINED = 5,
     QUIT = 6,
     KICKED = 7,
-    BANNED = 8
+    BANNED = 8,
 }
 
 impl Default for LcdsInviteeState {
-    fn default() -> Self { LcdsInviteeState::CREATOR }
+    fn default() -> Self {
+        LcdsInviteeState::CREATOR
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LcdsRemovalReason {
     KICKED = 0,
     DESTROYED = 1,
-    PROGRESSED = 2
+    PROGRESSED = 2,
 }
 
 impl Default for LcdsRemovalReason {
-    fn default() -> Self { LcdsRemovalReason::KICKED }
+    fn default() -> Self {
+        LcdsRemovalReason::KICKED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21170,11 +21376,13 @@ pub enum LogSeverityLevels {
     Okay = 0,
     Warning = 1,
     Error = 2,
-    Always = 3
+    Always = 3,
 }
 
 impl Default for LogSeverityLevels {
-    fn default() -> Self { LogSeverityLevels::Okay }
+    fn default() -> Self {
+        LogSeverityLevels::Okay
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21182,22 +21390,26 @@ pub enum LolAccountVerificationLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolAccountVerificationLoginSessionState {
-    fn default() -> Self { LolAccountVerificationLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolAccountVerificationLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolAntiAddictionPolicyType {
     antiAddictionWarning = 0,
     antiAddictionShutdown = 1,
-    antiAddictionHeartbeat = 2
+    antiAddictionHeartbeat = 2,
 }
 
 impl Default for LolAntiAddictionPolicyType {
-    fn default() -> Self { LolAntiAddictionPolicyType::antiAddictionWarning }
+    fn default() -> Self {
+        LolAntiAddictionPolicyType::antiAddictionWarning
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21209,11 +21421,13 @@ pub enum LolCareerStatsCareerStatsQueueType {
     aram = 4,
     blind3 = 5,
     rank3flex = 6,
-    other = 7
+    other = 7,
 }
 
 impl Default for LolCareerStatsCareerStatsQueueType {
-    fn default() -> Self { LolCareerStatsCareerStatsQueueType::draft5 }
+    fn default() -> Self {
+        LolCareerStatsCareerStatsQueueType::draft5
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21228,11 +21442,13 @@ pub enum LolCareerStatsRankedTier {
     DIAMOND = 7,
     MASTER = 8,
     GRANDMASTER = 9,
-    CHALLENGER = 10
+    CHALLENGER = 10,
 }
 
 impl Default for LolCareerStatsRankedTier {
-    fn default() -> Self { LolCareerStatsRankedTier::ALL }
+    fn default() -> Self {
+        LolCareerStatsRankedTier::ALL
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21243,11 +21459,13 @@ pub enum LolCareerStatsSummonersRiftPosition {
     JUNGLE = 3,
     MID = 4,
     BOTTOM = 5,
-    SUPPORT = 6
+    SUPPORT = 6,
 }
 
 impl Default for LolCareerStatsSummonersRiftPosition {
-    fn default() -> Self { LolCareerStatsSummonersRiftPosition::ALL }
+    fn default() -> Self {
+        LolCareerStatsSummonersRiftPosition::ALL
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21255,11 +21473,13 @@ pub enum LolCatalogInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolCatalogInventoryOwnership {
-    fn default() -> Self { LolCatalogInventoryOwnership::OWNED }
+    fn default() -> Self {
+        LolCatalogInventoryOwnership::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21267,11 +21487,13 @@ pub enum LolChallengesChallengeRequirementMappingName {
     NONE = 0,
     CHAMPION = 1,
     CHAMPION_SKIN = 2,
-    ITEM = 3
+    ITEM = 3,
 }
 
 impl Default for LolChallengesChallengeRequirementMappingName {
-    fn default() -> Self { LolChallengesChallengeRequirementMappingName::NONE }
+    fn default() -> Self {
+        LolChallengesChallengeRequirementMappingName::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21280,11 +21502,13 @@ pub enum LolChallengesClientState {
     Disabled = 1,
     DarkHidden = 2,
     DarkDisabled = 3,
-    Enabled = 4
+    Enabled = 4,
 }
 
 impl Default for LolChallengesClientState {
-    fn default() -> Self { LolChallengesClientState::Hidden }
+    fn default() -> Self {
+        LolChallengesClientState::Hidden
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21302,22 +21526,26 @@ pub enum LolChallengesGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolChallengesGameflowPhase {
-    fn default() -> Self { LolChallengesGameflowPhase::None }
+    fn default() -> Self {
+        LolChallengesGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChallengesNotificationDisplayType {
     NONE = 0,
     TOAST = 1,
-    VIGNETTE = 2
+    VIGNETTE = 2,
 }
 
 impl Default for LolChallengesNotificationDisplayType {
-    fn default() -> Self { LolChallengesNotificationDisplayType::NONE }
+    fn default() -> Self {
+        LolChallengesNotificationDisplayType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21332,11 +21560,13 @@ pub enum LolChallengesSource {
     LOOT = 7,
     ETERNALS = 8,
     SUMMONER_SERVICE = 9,
-    NONE = 10
+    NONE = 10,
 }
 
 impl Default for LolChallengesSource {
-    fn default() -> Self { LolChallengesSource::CHALLENGES }
+    fn default() -> Self {
+        LolChallengesSource::CHALLENGES
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21348,11 +21578,13 @@ pub enum LolChampSelectChampSelectSwapState {
     SENT = 5,
     DECLINED = 6,
     CANCELLED = 7,
-    ACCEPTED = 8
+    ACCEPTED = 8,
 }
 
 impl Default for LolChampSelectChampSelectSwapState {
-    fn default() -> Self { LolChampSelectChampSelectSwapState::AVAILABLE }
+    fn default() -> Self {
+        LolChampSelectChampSelectSwapState::AVAILABLE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21364,11 +21596,13 @@ pub enum LolChampSelectChampSelectTradeState {
     SENT = 5,
     DECLINED = 6,
     CANCELLED = 7,
-    ACCEPTED = 8
+    ACCEPTED = 8,
 }
 
 impl Default for LolChampSelectChampSelectTradeState {
-    fn default() -> Self { LolChampSelectChampSelectTradeState::AVAILABLE }
+    fn default() -> Self {
+        LolChampSelectChampSelectTradeState::AVAILABLE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21377,11 +21611,13 @@ pub enum LolChampSelectLegacyChampSelectTradeState {
     BUSY = 2,
     INVALID = 3,
     RECEIVED = 4,
-    SENT = 5
+    SENT = 5,
 }
 
 impl Default for LolChampSelectLegacyChampSelectTradeState {
-    fn default() -> Self { LolChampSelectLegacyChampSelectTradeState::AVAILABLE }
+    fn default() -> Self {
+        LolChampSelectLegacyChampSelectTradeState::AVAILABLE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21389,11 +21625,13 @@ pub enum LolChampSelectLegacyGameflowGameDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
-    TournamentDodged = 51
+    TournamentDodged = 51,
 }
 
 impl Default for LolChampSelectLegacyGameflowGameDodgeState {
-    fn default() -> Self { LolChampSelectLegacyGameflowGameDodgeState::Invalid }
+    fn default() -> Self {
+        LolChampSelectLegacyGameflowGameDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21411,11 +21649,13 @@ pub enum LolChampSelectLegacyGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolChampSelectLegacyGameflowPhase {
-    fn default() -> Self { LolChampSelectLegacyGameflowPhase::None }
+    fn default() -> Self {
+        LolChampSelectLegacyGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21423,11 +21663,13 @@ pub enum LolChampSelectLegacyLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolChampSelectLegacyLoginSessionStates {
-    fn default() -> Self { LolChampSelectLegacyLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolChampSelectLegacyLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21435,11 +21677,13 @@ pub enum LolChampionsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolChampionsLoginSessionStates {
-    fn default() -> Self { LolChampionsLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolChampionsLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21449,11 +21693,13 @@ pub enum LolChampionsLoyaltyStatus {
     EXPIRY = 2,
     CHANGE = 3,
     REVOKE = 4,
-    DISABLED = 5
+    DISABLED = 5,
 }
 
 impl Default for LolChampionsLoyaltyStatus {
-    fn default() -> Self { LolChampionsLoyaltyStatus::LEGACY }
+    fn default() -> Self {
+        LolChampionsLoyaltyStatus::LEGACY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21462,21 +21708,25 @@ pub enum LolChatAccountState {
     mobile = 2,
     away = 3,
     chat = 4,
-    dnd = 5
+    dnd = 5,
 }
 
 impl Default for LolChatAccountState {
-    fn default() -> Self { LolChatAccountState::offline }
+    fn default() -> Self {
+        LolChatAccountState::offline
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatAuthType {
     rsoCreate = 0,
-    rsoRefresh = 1
+    rsoRefresh = 1,
 }
 
 impl Default for LolChatAuthType {
-    fn default() -> Self { LolChatAuthType::rsoCreate }
+    fn default() -> Self {
+        LolChatAuthType::rsoCreate
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21484,64 +21734,76 @@ pub enum LolChatChatPlatformLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolChatChatPlatformLoginSessionState {
-    fn default() -> Self { LolChatChatPlatformLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolChatChatPlatformLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatChatSessionState {
     disconnected = 0,
     connecting = 1,
-    connected = 2
+    connected = 2,
 }
 
 impl Default for LolChatChatSessionState {
-    fn default() -> Self { LolChatChatSessionState::disconnected }
+    fn default() -> Self {
+        LolChatChatSessionState::disconnected
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatConfigReadinessEnum {
     NotReady = 0,
     Ready = 1,
-    Disabled = 2
+    Disabled = 2,
 }
 
 impl Default for LolChatConfigReadinessEnum {
-    fn default() -> Self { LolChatConfigReadinessEnum::NotReady }
+    fn default() -> Self {
+        LolChatConfigReadinessEnum::NotReady
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatConfigType {
     public = 0,
-    player = 1
+    player = 1,
 }
 
 impl Default for LolChatConfigType {
-    fn default() -> Self { LolChatConfigType::public }
+    fn default() -> Self {
+        LolChatConfigType::public
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatFriendRequestDirection {
     in_ = 0,
     out = 1,
-    both = 2
+    both = 2,
 }
 
 impl Default for LolChatFriendRequestDirection {
-    fn default() -> Self { LolChatFriendRequestDirection::in_ }
+    fn default() -> Self {
+        LolChatFriendRequestDirection::in_
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatFriendSubscriptionType {
     pending_out = 0,
-    pending_in = 1
+    pending_in = 1,
 }
 
 impl Default for LolChatFriendSubscriptionType {
-    fn default() -> Self { LolChatFriendSubscriptionType::pending_out }
+    fn default() -> Self {
+        LolChatFriendSubscriptionType::pending_out
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21559,11 +21821,13 @@ pub enum LolChatGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolChatGameflowPhase {
-    fn default() -> Self { LolChatGameflowPhase::None }
+    fn default() -> Self {
+        LolChatGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21573,11 +21837,13 @@ pub enum LolChatLeagueDivision {
     III = 2,
     IV = 3,
     V = 4,
-    NA = 5
+    NA = 5,
 }
 
 impl Default for LolChatLeagueDivision {
-    fn default() -> Self { LolChatLeagueDivision::I }
+    fn default() -> Self {
+        LolChatLeagueDivision::I
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21586,11 +21852,13 @@ pub enum LolChatLeagueQueueType {
     RANKED_SOLO_5x5 = 1,
     RANKED_FLEX_SR = 2,
     RANKED_FLEX_TT = 3,
-    RANKED_TFT = 4
+    RANKED_TFT = 4,
 }
 
 impl Default for LolChatLeagueQueueType {
-    fn default() -> Self { LolChatLeagueQueueType::NONE }
+    fn default() -> Self {
+        LolChatLeagueQueueType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21604,11 +21872,13 @@ pub enum LolChatLeagueTier {
     DIAMOND = 6,
     MASTER = 7,
     GRANDMASTER = 8,
-    CHALLENGER = 9
+    CHALLENGER = 9,
 }
 
 impl Default for LolChatLeagueTier {
-    fn default() -> Self { LolChatLeagueTier::NONE }
+    fn default() -> Self {
+        LolChatLeagueTier::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21616,22 +21886,26 @@ pub enum LolChatMessageType {
     chat = 0,
     groupchat = 1,
     dm = 2,
-    system = 3
+    system = 3,
 }
 
 impl Default for LolChatMessageType {
-    fn default() -> Self { LolChatMessageType::chat }
+    fn default() -> Self {
+        LolChatMessageType::chat
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolChatMuteType {
     PLAYER_MUTE = 0,
     SETTINGS_MUTE = 1,
-    SYSTEM_MUTE = 2
+    SYSTEM_MUTE = 2,
 }
 
 impl Default for LolChatMuteType {
-    fn default() -> Self { LolChatMuteType::PLAYER_MUTE }
+    fn default() -> Self {
+        LolChatMuteType::PLAYER_MUTE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21639,11 +21913,13 @@ pub enum LolChatQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
-    AllAllowed = 3
+    AllAllowed = 3,
 }
 
 impl Default for LolChatQueueCustomGameSpectatorPolicy {
-    fn default() -> Self { LolChatQueueCustomGameSpectatorPolicy::NotAllowed }
+    fn default() -> Self {
+        LolChatQueueCustomGameSpectatorPolicy::NotAllowed
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21652,31 +21928,37 @@ pub enum LolChatSessionState {
     connected = 1,
     loaded = 2,
     disconnected = 3,
-    shuttingdown = 4
+    shuttingdown = 4,
 }
 
 impl Default for LolChatSessionState {
-    fn default() -> Self { LolChatSessionState::initializing }
+    fn default() -> Self {
+        LolChatSessionState::initializing
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashClashState {
     Disabled = 0,
-    Enabled = 1
+    Enabled = 1,
 }
 
 impl Default for LolClashClashState {
-    fn default() -> Self { LolClashClashState::Disabled }
+    fn default() -> Self {
+        LolClashClashState::Disabled
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashClashVisibility {
     Hidden = 0,
-    Visible = 1
+    Visible = 1,
 }
 
 impl Default for LolClashClashVisibility {
-    fn default() -> Self { LolClashClashVisibility::Hidden }
+    fn default() -> Self {
+        LolClashClashVisibility::Hidden
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21686,11 +21968,13 @@ pub enum LolClashFoundationError {
     DESERIALIZATION_FAILED = 2,
     GAMEFLOW_UNAVAILABLE = 3,
     LOL_INVENTORY_NOT_READY = 4,
-    INVALID_SIMPLE_STATE_FLAG = 5
+    INVALID_SIMPLE_STATE_FLAG = 5,
 }
 
 impl Default for LolClashFoundationError {
-    fn default() -> Self { LolClashFoundationError::CLASH_NOT_INITIALIZED }
+    fn default() -> Self {
+        LolClashFoundationError::CLASH_NOT_INITIALIZED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21708,22 +21992,26 @@ pub enum LolClashGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolClashGameflowPhase {
-    fn default() -> Self { LolClashGameflowPhase::None }
+    fn default() -> Self {
+        LolClashGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashKdaClassification {
     LOW = 0,
     AVERAGE = 1,
-    HIGH = 2
+    HIGH = 2,
 }
 
 impl Default for LolClashKdaClassification {
-    fn default() -> Self { LolClashKdaClassification::LOW }
+    fn default() -> Self {
+        LolClashKdaClassification::LOW
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21731,11 +22019,13 @@ pub enum LolClashLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolClashLoginSessionState {
-    fn default() -> Self { LolClashLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolClashLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21743,33 +22033,39 @@ pub enum LolClashMatchmakingDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
-    TournamentDodged = 51
+    TournamentDodged = 51,
 }
 
 impl Default for LolClashMatchmakingDodgeState {
-    fn default() -> Self { LolClashMatchmakingDodgeState::Invalid }
+    fn default() -> Self {
+        LolClashMatchmakingDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashMatchmakingDodgeWarning {
     None = 0,
     Warning = 1,
-    Penalty = 2
+    Penalty = 2,
 }
 
 impl Default for LolClashMatchmakingDodgeWarning {
-    fn default() -> Self { LolClashMatchmakingDodgeWarning::None }
+    fn default() -> Self {
+        LolClashMatchmakingDodgeWarning::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashMatchmakingReadyCheckResponse {
     None = 48,
     Accepted = 49,
-    Declined = 50
+    Declined = 50,
 }
 
 impl Default for LolClashMatchmakingReadyCheckResponse {
-    fn default() -> Self { LolClashMatchmakingReadyCheckResponse::None }
+    fn default() -> Self {
+        LolClashMatchmakingReadyCheckResponse::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21779,11 +22075,13 @@ pub enum LolClashMatchmakingReadyCheckState {
     EveryoneReady = 2,
     StrangerNotReady = 3,
     PartyNotReady = 4,
-    Error = 5
+    Error = 5,
 }
 
 impl Default for LolClashMatchmakingReadyCheckState {
-    fn default() -> Self { LolClashMatchmakingReadyCheckState::Invalid }
+    fn default() -> Self {
+        LolClashMatchmakingReadyCheckState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21828,11 +22126,13 @@ pub enum LolClashNotifyReason {
     UNBAN = 37,
     MEMBER_BAN = 38,
     TEAMMATE_BAN = 39,
-    TEAMMATE_UNBAN = 40
+    TEAMMATE_UNBAN = 40,
 }
 
 impl Default for LolClashNotifyReason {
-    fn default() -> Self { LolClashNotifyReason::SUGGESTION }
+    fn default() -> Self {
+        LolClashNotifyReason::SUGGESTION
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21841,33 +22141,39 @@ pub enum LolClashPlayerState {
     PENDING_ROSTER = 1,
     REGISTERED_ROSTER = 2,
     BRACKET_ROSTER = 3,
-    ELIMINATED = 4
+    ELIMINATED = 4,
 }
 
 impl Default for LolClashPlayerState {
-    fn default() -> Self { LolClashPlayerState::NO_ROSTER }
+    fn default() -> Self {
+        LolClashPlayerState::NO_ROSTER
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashPresenceState {
     NONE = 0,
     LOCKED_IN = 1,
-    SCOUTING = 2
+    SCOUTING = 2,
 }
 
 impl Default for LolClashPresenceState {
-    fn default() -> Self { LolClashPresenceState::NONE }
+    fn default() -> Self {
+        LolClashPresenceState::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
-    DoesntMeetRequirements = 2
+    DoesntMeetRequirements = 2,
 }
 
 impl Default for LolClashQueueAvailability {
-    fn default() -> Self { LolClashQueueAvailability::Available }
+    fn default() -> Self {
+        LolClashQueueAvailability::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21876,11 +22182,13 @@ pub enum LolClashQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolClashQueueGameCategory {
-    fn default() -> Self { LolClashQueueGameCategory::None }
+    fn default() -> Self {
+        LolClashQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21889,11 +22197,13 @@ pub enum LolClashRosterMemberState {
     PENDING = 1,
     NOT_READY = 2,
     FORCED_NOT_READY = 3,
-    READY = 4
+    READY = 4,
 }
 
 impl Default for LolClashRosterMemberState {
-    fn default() -> Self { LolClashRosterMemberState::DECLINED }
+    fn default() -> Self {
+        LolClashRosterMemberState::DECLINED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21943,21 +22253,25 @@ pub enum LolClashRosterNotifyReason {
     GAME_START_FAILED = 42,
     GAME_START_FAILED_SUMMONERS = 43,
     GAME_START_FAILED_OPPONENT = 44,
-    GAME_RESCHEDULED = 45
+    GAME_RESCHEDULED = 45,
 }
 
 impl Default for LolClashRosterNotifyReason {
-    fn default() -> Self { LolClashRosterNotifyReason::ROSTER_SET_TICKET }
+    fn default() -> Self {
+        LolClashRosterNotifyReason::ROSTER_SET_TICKET
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolClashSimpleStateStatus {
     UNACKNOWLEDGED = 0,
-    ACKNOWLEDGED = 1
+    ACKNOWLEDGED = 1,
 }
 
 impl Default for LolClashSimpleStateStatus {
-    fn default() -> Self { LolClashSimpleStateStatus::UNACKNOWLEDGED }
+    fn default() -> Self {
+        LolClashSimpleStateStatus::UNACKNOWLEDGED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21969,11 +22283,13 @@ pub enum LolClashTournamentNotifyReason {
     ADD_PHASE = 4,
     UPDATE_PHASE = 5,
     REVERT_PHASE = 6,
-    UPDATE_STATUS = 7
+    UPDATE_STATUS = 7,
 }
 
 impl Default for LolClashTournamentNotifyReason {
-    fn default() -> Self { LolClashTournamentNotifyReason::NEW_TOURNAMENT }
+    fn default() -> Self {
+        LolClashTournamentNotifyReason::NEW_TOURNAMENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21983,11 +22299,13 @@ pub enum LolClashTournamentState {
     LOCK_IN = 2,
     SCOUTING = 3,
     IN_GAME = 4,
-    RESULTS = 5
+    RESULTS = 5,
 }
 
 impl Default for LolClashTournamentState {
-    fn default() -> Self { LolClashTournamentState::UPCOMING }
+    fn default() -> Self {
+        LolClashTournamentState::UPCOMING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -21995,11 +22313,13 @@ pub enum LolCollectionsCollectionsSummonerBackdropType {
     default = 0,
     summoner_icon = 1,
     highest_mastery = 2,
-    specified_skin = 3
+    specified_skin = 3,
 }
 
 impl Default for LolCollectionsCollectionsSummonerBackdropType {
-    fn default() -> Self { LolCollectionsCollectionsSummonerBackdropType::default }
+    fn default() -> Self {
+        LolCollectionsCollectionsSummonerBackdropType::default
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22007,11 +22327,13 @@ pub enum LolCollectionsItemOwnershipType {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolCollectionsItemOwnershipType {
-    fn default() -> Self { LolCollectionsItemOwnershipType::OWNED }
+    fn default() -> Self {
+        LolCollectionsItemOwnershipType::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22019,11 +22341,13 @@ pub enum LolCollectionsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolCollectionsLoginSessionStates {
-    fn default() -> Self { LolCollectionsLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolCollectionsLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22041,11 +22365,13 @@ pub enum LolContentTargetingGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolContentTargetingGameflowPhase {
-    fn default() -> Self { LolContentTargetingGameflowPhase::None }
+    fn default() -> Self {
+        LolContentTargetingGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22053,11 +22379,13 @@ pub enum LolContentTargetingLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolContentTargetingLoginSessionState {
-    fn default() -> Self { LolContentTargetingLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolContentTargetingLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22066,11 +22394,13 @@ pub enum LolContentTargetingQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolContentTargetingQueueGameCategory {
-    fn default() -> Self { LolContentTargetingQueueGameCategory::None }
+    fn default() -> Self {
+        LolContentTargetingQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22080,11 +22410,13 @@ pub enum LolContentTargetingRankedDivision {
     II = 2,
     III = 3,
     IV = 4,
-    V = 5
+    V = 5,
 }
 
 impl Default for LolContentTargetingRankedDivision {
-    fn default() -> Self { LolContentTargetingRankedDivision::NA }
+    fn default() -> Self {
+        LolContentTargetingRankedDivision::NA
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22093,11 +22425,13 @@ pub enum LolContentTargetingRankedQueue {
     RANKED_SOLO_5x5 = 1,
     RANKED_FLEX_SR = 2,
     RANKED_FLEX_TT = 3,
-    RANKED_TFT = 4
+    RANKED_TFT = 4,
 }
 
 impl Default for LolContentTargetingRankedQueue {
-    fn default() -> Self { LolContentTargetingRankedQueue::NONE }
+    fn default() -> Self {
+        LolContentTargetingRankedQueue::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22111,11 +22445,13 @@ pub enum LolContentTargetingRankedTier {
     DIAMOND = 6,
     MASTER = 7,
     GRANDMASTER = 8,
-    CHALLENGER = 9
+    CHALLENGER = 9,
 }
 
 impl Default for LolContentTargetingRankedTier {
-    fn default() -> Self { LolContentTargetingRankedTier::NONE }
+    fn default() -> Self {
+        LolContentTargetingRankedTier::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22133,11 +22469,13 @@ pub enum LolEndOfGameGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolEndOfGameGameflowPhase {
-    fn default() -> Self { LolEndOfGameGameflowPhase::None }
+    fn default() -> Self {
+        LolEndOfGameGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22145,22 +22483,26 @@ pub enum LolEndOfGameLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolEndOfGameLoginSessionStates {
-    fn default() -> Self { LolEndOfGameLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolEndOfGameLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEndOfGameReportRecipientMode {
     Legacy = 0,
     Game_Agnostic = 1,
-    Combined = 2
+    Combined = 2,
 }
 
 impl Default for LolEndOfGameReportRecipientMode {
-    fn default() -> Self { LolEndOfGameReportRecipientMode::Legacy }
+    fn default() -> Self {
+        LolEndOfGameReportRecipientMode::Legacy
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22178,21 +22520,26 @@ pub enum LolEsportStreamNotificationsGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolEsportStreamNotificationsGameflowPhase {
-    fn default() -> Self { LolEsportStreamNotificationsGameflowPhase::None }
+    fn default() -> Self {
+        LolEsportStreamNotificationsGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopCelebrationType {
     NONE = 0,
-    TOAST = 1
+    TOAST = 1,
+    FULLSCREEN = 2,
 }
 
 impl Default for LolEventShopCelebrationType {
-    fn default() -> Self { LolEventShopCelebrationType::NONE }
+    fn default() -> Self {
+        LolEventShopCelebrationType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22200,11 +22547,13 @@ pub enum LolEventShopGrantStatus {
     PENDING_FULFILLMENT = 0,
     PENDING_SELECTION = 1,
     FULFILLED = 2,
-    FAILED = 3
+    FAILED = 3,
 }
 
 impl Default for LolEventShopGrantStatus {
-    fn default() -> Self { LolEventShopGrantStatus::PENDING_FULFILLMENT }
+    fn default() -> Self {
+        LolEventShopGrantStatus::PENDING_FULFILLMENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22212,11 +22561,13 @@ pub enum LolEventShopInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolEventShopInventoryOwnership {
-    fn default() -> Self { LolEventShopInventoryOwnership::OWNED }
+    fn default() -> Self {
+        LolEventShopInventoryOwnership::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22224,11 +22575,13 @@ pub enum LolEventShopItemOwnershipType {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolEventShopItemOwnershipType {
-    fn default() -> Self { LolEventShopItemOwnershipType::OWNED }
+    fn default() -> Self {
+        LolEventShopItemOwnershipType::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22236,11 +22589,13 @@ pub enum LolEventShopLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolEventShopLoginSessionStates {
-    fn default() -> Self { LolEventShopLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolEventShopLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22250,11 +22605,13 @@ pub enum LolEventShopLoyaltyStatus {
     EXPIRY = 2,
     CHANGE = 3,
     REVOKE = 4,
-    DISABLED = 5
+    DISABLED = 5,
 }
 
 impl Default for LolEventShopLoyaltyStatus {
-    fn default() -> Self { LolEventShopLoyaltyStatus::LEGACY }
+    fn default() -> Self {
+        LolEventShopLoyaltyStatus::LEGACY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22265,22 +22622,26 @@ pub enum LolEventShopOfferCategory {
     Borders = 3,
     Loot = 4,
     Tft = 5,
-    Currencies = 6
+    Currencies = 6,
 }
 
 impl Default for LolEventShopOfferCategory {
-    fn default() -> Self { LolEventShopOfferCategory::Featured }
+    fn default() -> Self {
+        LolEventShopOfferCategory::Featured
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopOfferPromotionType {
     kNone = 0,
     kFeatured = 1,
-    kFeaturedHighlighted = 2
+    kFeaturedHighlighted = 2,
 }
 
 impl Default for LolEventShopOfferPromotionType {
-    fn default() -> Self { LolEventShopOfferPromotionType::kNone }
+    fn default() -> Self {
+        LolEventShopOfferPromotionType::kNone
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22289,21 +22650,25 @@ pub enum LolEventShopOfferStates {
     kAvailable = 1,
     kUnavailable = 2,
     kUnrevealed = 3,
-    kPurchasing = 4
+    kPurchasing = 4,
 }
 
 impl Default for LolEventShopOfferStates {
-    fn default() -> Self { LolEventShopOfferStates::kOwned }
+    fn default() -> Self {
+        LolEventShopOfferStates::kOwned
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopPassOwnershipTypes {
     Unowned = 0,
-    Purchased = 1
+    Purchased = 1,
 }
 
 impl Default for LolEventShopPassOwnershipTypes {
-    fn default() -> Self { LolEventShopPassOwnershipTypes::Unowned }
+    fn default() -> Self {
+        LolEventShopPassOwnershipTypes::Unowned
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22311,44 +22676,52 @@ pub enum LolEventShopPurchaseOfferOrderStates {
     NOT_STARTED = 0,
     IN_PROGRESS = 1,
     FAIL = 2,
-    SUCCESS = 3
+    SUCCESS = 3,
 }
 
 impl Default for LolEventShopPurchaseOfferOrderStates {
-    fn default() -> Self { LolEventShopPurchaseOfferOrderStates::NOT_STARTED }
+    fn default() -> Self {
+        LolEventShopPurchaseOfferOrderStates::NOT_STARTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopRewardStatus {
     PENDING = 0,
     FULFILLED = 1,
-    FAILED = 2
+    FAILED = 2,
 }
 
 impl Default for LolEventShopRewardStatus {
-    fn default() -> Self { LolEventShopRewardStatus::PENDING }
+    fn default() -> Self {
+        LolEventShopRewardStatus::PENDING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopRewardStrategy {
     ALL = 0,
     RANDOM = 1,
-    SELECTION = 2
+    SELECTION = 2,
 }
 
 impl Default for LolEventShopRewardStrategy {
-    fn default() -> Self { LolEventShopRewardStrategy::ALL }
+    fn default() -> Self {
+        LolEventShopRewardStrategy::ALL
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopRewardTrackItemHeaderType {
     PREMIUM = 0,
     FREE = 1,
-    NONE = 2
+    NONE = 2,
 }
 
 impl Default for LolEventShopRewardTrackItemHeaderType {
-    fn default() -> Self { LolEventShopRewardTrackItemHeaderType::PREMIUM }
+    fn default() -> Self {
+        LolEventShopRewardTrackItemHeaderType::PREMIUM
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22356,11 +22729,13 @@ pub enum LolEventShopRewardTrackItemStates {
     Locked = 0,
     Unlocked = 1,
     Unselected = 2,
-    Selected = 3
+    Selected = 3,
 }
 
 impl Default for LolEventShopRewardTrackItemStates {
-    fn default() -> Self { LolEventShopRewardTrackItemStates::Locked }
+    fn default() -> Self {
+        LolEventShopRewardTrackItemStates::Locked
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22369,32 +22744,38 @@ pub enum LolEventShopRewardTrackItemTag {
     Free = 1,
     Instant = 2,
     Choice = 3,
-    Multiple = 4
+    Multiple = 4,
 }
 
 impl Default for LolEventShopRewardTrackItemTag {
-    fn default() -> Self { LolEventShopRewardTrackItemTag::Rare }
+    fn default() -> Self {
+        LolEventShopRewardTrackItemTag::Rare
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopSelectGrantStatusResponse {
     SELECTED = 0,
-    FAILED = 1
+    FAILED = 1,
 }
 
 impl Default for LolEventShopSelectGrantStatusResponse {
-    fn default() -> Self { LolEventShopSelectGrantStatusResponse::SELECTED }
+    fn default() -> Self {
+        LolEventShopSelectGrantStatusResponse::SELECTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolEventShopTokenUpsellLockedType {
     UNASSIGNED = 0,
-    UNLOCKED = 1,
-    LOCKED = 2
+    LOCKED = 1,
+    UNLOCKED = 2,
 }
 
 impl Default for LolEventShopTokenUpsellLockedType {
-    fn default() -> Self { LolEventShopTokenUpsellLockedType::UNASSIGNED }
+    fn default() -> Self {
+        LolEventShopTokenUpsellLockedType::UNASSIGNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22426,11 +22807,13 @@ pub enum LolFeaturedModesEligibilityRestrictionCode {
     GameVersionMissing = 24,
     GameVersionNotSupported = 25,
     QueueEntryNotEntitledRestriction = 26,
-    UnknownRestriction = 27
+    UnknownRestriction = 27,
 }
 
 impl Default for LolFeaturedModesEligibilityRestrictionCode {
-    fn default() -> Self { LolFeaturedModesEligibilityRestrictionCode::QueueDisabled }
+    fn default() -> Self {
+        LolFeaturedModesEligibilityRestrictionCode::QueueDisabled
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22441,11 +22824,13 @@ pub enum LolFeaturedModesGameflowAvailabilityState {
     EligibilityInfoMissing = 3,
     PlayerBanned = 4,
     InGameFlow = 5,
-    Configuration = 6
+    Configuration = 6,
 }
 
 impl Default for LolFeaturedModesGameflowAvailabilityState {
-    fn default() -> Self { LolFeaturedModesGameflowAvailabilityState::Available }
+    fn default() -> Self {
+        LolFeaturedModesGameflowAvailabilityState::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22463,11 +22848,13 @@ pub enum LolFeaturedModesGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolFeaturedModesGameflowPhase {
-    fn default() -> Self { LolFeaturedModesGameflowPhase::None }
+    fn default() -> Self {
+        LolFeaturedModesGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22475,22 +22862,26 @@ pub enum LolFeaturedModesLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolFeaturedModesLoginSessionStates {
-    fn default() -> Self { LolFeaturedModesLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolFeaturedModesLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolFeaturedModesQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
-    DoesntMeetRequirements = 2
+    DoesntMeetRequirements = 2,
 }
 
 impl Default for LolFeaturedModesQueueAvailability {
-    fn default() -> Self { LolFeaturedModesQueueAvailability::Available }
+    fn default() -> Self {
+        LolFeaturedModesQueueAvailability::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22499,11 +22890,13 @@ pub enum LolFeaturedModesQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolFeaturedModesQueueGameCategory {
-    fn default() -> Self { LolFeaturedModesQueueGameCategory::None }
+    fn default() -> Self {
+        LolFeaturedModesQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22511,22 +22904,26 @@ pub enum LolGameQueuesLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolGameQueuesLoginSessionStates {
-    fn default() -> Self { LolGameQueuesLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolGameQueuesLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameQueuesQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
-    DoesntMeetRequirements = 2
+    DoesntMeetRequirements = 2,
 }
 
 impl Default for LolGameQueuesQueueAvailability {
-    fn default() -> Self { LolGameQueuesQueueAvailability::Available }
+    fn default() -> Self {
+        LolGameQueuesQueueAvailability::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22534,11 +22931,13 @@ pub enum LolGameQueuesQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
-    AllAllowed = 3
+    AllAllowed = 3,
 }
 
 impl Default for LolGameQueuesQueueCustomGameSpectatorPolicy {
-    fn default() -> Self { LolGameQueuesQueueCustomGameSpectatorPolicy::NotAllowed }
+    fn default() -> Self {
+        LolGameQueuesQueueCustomGameSpectatorPolicy::NotAllowed
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22547,11 +22946,13 @@ pub enum LolGameQueuesQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolGameQueuesQueueGameCategory {
-    fn default() -> Self { LolGameQueuesQueueGameCategory::None }
+    fn default() -> Self {
+        LolGameQueuesQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22559,11 +22960,13 @@ pub enum LolGameSettingsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolGameSettingsLoginSessionStates {
-    fn default() -> Self { LolGameSettingsLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolGameSettingsLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22574,11 +22977,13 @@ pub enum LolGameflowGameflowAvailabilityState {
     PlayerBanned = 3,
     InGameFlow = 4,
     Configuration = 5,
-    EligibilityInfoMissing = 6
+    EligibilityInfoMissing = 6,
 }
 
 impl Default for LolGameflowGameflowAvailabilityState {
-    fn default() -> Self { LolGameflowGameflowAvailabilityState::Available }
+    fn default() -> Self {
+        LolGameflowGameflowAvailabilityState::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22586,11 +22991,13 @@ pub enum LolGameflowGameflowGameDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
-    TournamentDodged = 51
+    TournamentDodged = 51,
 }
 
 impl Default for LolGameflowGameflowGameDodgeState {
-    fn default() -> Self { LolGameflowGameflowGameDodgeState::Invalid }
+    fn default() -> Self {
+        LolGameflowGameflowGameDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22608,11 +23015,13 @@ pub enum LolGameflowGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolGameflowGameflowPhase {
-    fn default() -> Self { LolGameflowGameflowPhase::None }
+    fn default() -> Self {
+        LolGameflowGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22620,11 +23029,13 @@ pub enum LolGameflowGameflowWatchPhase {
     None = 0,
     WatchStarted = 1,
     WatchInProgress = 2,
-    WatchFailedToLaunch = 3
+    WatchFailedToLaunch = 3,
 }
 
 impl Default for LolGameflowGameflowWatchPhase {
-    fn default() -> Self { LolGameflowGameflowWatchPhase::None }
+    fn default() -> Self {
+        LolGameflowGameflowWatchPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22632,11 +23043,13 @@ pub enum LolGameflowLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolGameflowLoginSessionStates {
-    fn default() -> Self { LolGameflowLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolGameflowLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22645,22 +23058,26 @@ pub enum LolGameflowPatcherProductStateAction {
     CheckingForUpdates = 1,
     Patching = 2,
     Repairing = 3,
-    Migrating = 4
+    Migrating = 4,
 }
 
 impl Default for LolGameflowPatcherProductStateAction {
-    fn default() -> Self { LolGameflowPatcherProductStateAction::Idle }
+    fn default() -> Self {
+        LolGameflowPatcherProductStateAction::Idle
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolGameflowQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
-    DoesntMeetRequirements = 2
+    DoesntMeetRequirements = 2,
 }
 
 impl Default for LolGameflowQueueAvailability {
-    fn default() -> Self { LolGameflowQueueAvailability::Available }
+    fn default() -> Self {
+        LolGameflowQueueAvailability::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22668,11 +23085,13 @@ pub enum LolGameflowQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
-    AllAllowed = 3
+    AllAllowed = 3,
 }
 
 impl Default for LolGameflowQueueCustomGameSpectatorPolicy {
-    fn default() -> Self { LolGameflowQueueCustomGameSpectatorPolicy::NotAllowed }
+    fn default() -> Self {
+        LolGameflowQueueCustomGameSpectatorPolicy::NotAllowed
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22681,11 +23100,13 @@ pub enum LolGameflowQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolGameflowQueueGameCategory {
-    fn default() -> Self { LolGameflowQueueGameCategory::None }
+    fn default() -> Self {
+        LolGameflowQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22693,11 +23114,13 @@ pub enum LolGeoinfoLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolGeoinfoLoginSessionState {
-    fn default() -> Self { LolGeoinfoLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolGeoinfoLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22705,11 +23128,13 @@ pub enum LolHeartbeatLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolHeartbeatLoginSessionStates {
-    fn default() -> Self { LolHeartbeatLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolHeartbeatLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22727,11 +23152,13 @@ pub enum LolHoneyfruitGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolHoneyfruitGameflowPhase {
-    fn default() -> Self { LolHoneyfruitGameflowPhase::None }
+    fn default() -> Self {
+        LolHoneyfruitGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22739,11 +23166,13 @@ pub enum LolHoneyfruitHoneyfruitActionType {
     dismiss = 0,
     dismiss_temporarily = 1,
     dismiss_permanently = 2,
-    link = 3
+    link = 3,
 }
 
 impl Default for LolHoneyfruitHoneyfruitActionType {
-    fn default() -> Self { LolHoneyfruitHoneyfruitActionType::dismiss }
+    fn default() -> Self {
+        LolHoneyfruitHoneyfruitActionType::dismiss
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22755,11 +23184,13 @@ pub enum LolHoneyfruitHoneyfruitLinkingFailureReason {
     DISABLED = 4,
     NOT_LINKED = 5,
     REQUEST_FAILURE = 6,
-    UNHANDLED_SERVER_SIDE_ERROR = 7
+    UNHANDLED_SERVER_SIDE_ERROR = 7,
 }
 
 impl Default for LolHoneyfruitHoneyfruitLinkingFailureReason {
-    fn default() -> Self { LolHoneyfruitHoneyfruitLinkingFailureReason::ALREADY_LINKED }
+    fn default() -> Self {
+        LolHoneyfruitHoneyfruitLinkingFailureReason::ALREADY_LINKED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22771,11 +23202,13 @@ pub enum LolHoneyfruitHoneyfruitLinkingState {
     error = 4,
     in_progress = 5,
     linking_complete = 6,
-    linked = 7
+    linked = 7,
 }
 
 impl Default for LolHoneyfruitHoneyfruitLinkingState {
-    fn default() -> Self { LolHoneyfruitHoneyfruitLinkingState::hidden }
+    fn default() -> Self {
+        LolHoneyfruitHoneyfruitLinkingState::hidden
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22783,11 +23216,13 @@ pub enum LolHoneyfruitHoneyfruitLinkingStatusError {
     no_error = 0,
     not_signed_in = 1,
     service_unavailable = 2,
-    unknown_error = 3
+    unknown_error = 3,
 }
 
 impl Default for LolHoneyfruitHoneyfruitLinkingStatusError {
-    fn default() -> Self { LolHoneyfruitHoneyfruitLinkingStatusError::no_error }
+    fn default() -> Self {
+        LolHoneyfruitHoneyfruitLinkingStatusError::no_error
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22796,11 +23231,13 @@ pub enum LolHoneyfruitHoneyfruitPublisher {
     riot = 1,
     tencent = 2,
     twm = 3,
-    vng = 4
+    vng = 4,
 }
 
 impl Default for LolHoneyfruitHoneyfruitPublisher {
-    fn default() -> Self { LolHoneyfruitHoneyfruitPublisher::garena }
+    fn default() -> Self {
+        LolHoneyfruitHoneyfruitPublisher::garena
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22810,11 +23247,13 @@ pub enum LolHoneyfruitV1ResponseType {
     signup = 2,
     multifactor = 3,
     success = 4,
-    error = 5
+    error = 5,
 }
 
 impl Default for LolHoneyfruitV1ResponseType {
-    fn default() -> Self { LolHoneyfruitV1ResponseType::auth }
+    fn default() -> Self {
+        LolHoneyfruitV1ResponseType::auth
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22832,11 +23271,13 @@ pub enum LolHonorV2GameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolHonorV2GameflowPhase {
-    fn default() -> Self { LolHonorV2GameflowPhase::None }
+    fn default() -> Self {
+        LolHonorV2GameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22844,11 +23285,13 @@ pub enum LolHonorV2LoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolHonorV2LoginSessionStates {
-    fn default() -> Self { LolHonorV2LoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolHonorV2LoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22856,11 +23299,13 @@ pub enum LolInventoryItemOwnershipType {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolInventoryItemOwnershipType {
-    fn default() -> Self { LolInventoryItemOwnershipType::OWNED }
+    fn default() -> Self {
+        LolInventoryItemOwnershipType::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22868,11 +23313,13 @@ pub enum LolInventoryLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolInventoryLoginSessionStates {
-    fn default() -> Self { LolInventoryLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolInventoryLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22882,11 +23329,13 @@ pub enum LolInventoryLoyaltyStatus {
     EXPIRY = 2,
     CHANGE = 3,
     REVOKE = 4,
-    DISABLED = 5
+    DISABLED = 5,
 }
 
 impl Default for LolInventoryLoyaltyStatus {
-    fn default() -> Self { LolInventoryLoyaltyStatus::LEGACY }
+    fn default() -> Self {
+        LolInventoryLoyaltyStatus::LEGACY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22894,11 +23343,13 @@ pub enum LolItemSetsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolItemSetsLoginSessionStates {
-    fn default() -> Self { LolItemSetsLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolItemSetsLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22906,22 +23357,26 @@ pub enum LolKrShutdownLawPolicyType {
     shutdown = 0,
     playTime = 1,
     warningMessage = 2,
-    disableMatchMaking = 3
+    disableMatchMaking = 3,
 }
 
 impl Default for LolKrShutdownLawPolicyType {
-    fn default() -> Self { LolKrShutdownLawPolicyType::shutdown }
+    fn default() -> Self {
+        LolKrShutdownLawPolicyType::shutdown
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolKrShutdownLawShutdownLawStatus {
     NONE = 0,
     WARNING = 1,
-    CUT_OFF = 2
+    CUT_OFF = 2,
 }
 
 impl Default for LolKrShutdownLawShutdownLawStatus {
-    fn default() -> Self { LolKrShutdownLawShutdownLawStatus::NONE }
+    fn default() -> Self {
+        LolKrShutdownLawShutdownLawStatus::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22930,11 +23385,13 @@ pub enum LolLeagueSessionLeagueSessionStatus {
     INITIALIZED = 1,
     EXPIRED = 2,
     DUPLICATED = 3,
-    ANTI_ADDICTION_EXPIRED = 4
+    ANTI_ADDICTION_EXPIRED = 4,
 }
 
 impl Default for LolLeagueSessionLeagueSessionStatus {
-    fn default() -> Self { LolLeagueSessionLeagueSessionStatus::UNINITIALIZED }
+    fn default() -> Self {
+        LolLeagueSessionLeagueSessionStatus::UNINITIALIZED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22945,32 +23402,38 @@ pub enum LolLeaverBusterLeaverBusterNotificationType {
     PunishedGamesRemaining = 3,
     Reforming = 4,
     PreLockoutWarning = 5,
-    OnLockoutWarning = 6
+    OnLockoutWarning = 6,
 }
 
 impl Default for LolLeaverBusterLeaverBusterNotificationType {
-    fn default() -> Self { LolLeaverBusterLeaverBusterNotificationType::Invalid }
+    fn default() -> Self {
+        LolLeaverBusterLeaverBusterNotificationType::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLicenseAgreementLicenseAgreementType {
     PrivacyNotice = 0,
-    TermsOfUse = 1
+    TermsOfUse = 1,
 }
 
 impl Default for LolLicenseAgreementLicenseAgreementType {
-    fn default() -> Self { LolLicenseAgreementLicenseAgreementType::PrivacyNotice }
+    fn default() -> Self {
+        LolLicenseAgreementLicenseAgreementType::PrivacyNotice
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLicenseAgreementLicenseServeLocation {
     Preparing = 0,
     Local = 1,
-    External = 2
+    External = 2,
 }
 
 impl Default for LolLicenseAgreementLicenseServeLocation {
-    fn default() -> Self { LolLicenseAgreementLicenseServeLocation::Preparing }
+    fn default() -> Self {
+        LolLicenseAgreementLicenseServeLocation::Preparing
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -22988,11 +23451,13 @@ pub enum LolLoadoutsGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolLoadoutsGameflowPhase {
-    fn default() -> Self { LolLoadoutsGameflowPhase::None }
+    fn default() -> Self {
+        LolLoadoutsGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23000,11 +23465,13 @@ pub enum LolLoadoutsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolLoadoutsLoginSessionStates {
-    fn default() -> Self { LolLoadoutsLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolLoadoutsLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23045,11 +23512,13 @@ pub enum LolLobbyEligibilityRestrictionCode {
     LeaguesInfoNotAvailable = 33,
     InventoryChampsInfoNotAvailable = 34,
     InventoryQueuesInfoNotAvailable = 35,
-    MmrStandardDeviationTooLarge = 36
+    MmrStandardDeviationTooLarge = 36,
 }
 
 impl Default for LolLobbyEligibilityRestrictionCode {
-    fn default() -> Self { LolLobbyEligibilityRestrictionCode::QueueDisabled }
+    fn default() -> Self {
+        LolLobbyEligibilityRestrictionCode::QueueDisabled
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23067,11 +23536,13 @@ pub enum LolLobbyGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolLobbyGameflowPhase {
-    fn default() -> Self { LolLobbyGameflowPhase::None }
+    fn default() -> Self {
+        LolLobbyGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23081,22 +23552,26 @@ pub enum LolLobbyGameflowSampleTag {
     UserInfoTokenMissing = 2,
     SummonerTokenMissing = 3,
     RankedTokenMissing = 4,
-    InventoryTokenMissing = 5
+    InventoryTokenMissing = 5,
 }
 
 impl Default for LolLobbyGameflowSampleTag {
-    fn default() -> Self { LolLobbyGameflowSampleTag::Unregistered }
+    fn default() -> Self {
+        LolLobbyGameflowSampleTag::Unregistered
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyInvitationType {
     invalid = 0,
     lobby = 1,
-    party = 2
+    party = 2,
 }
 
 impl Default for LolLobbyInvitationType {
-    fn default() -> Self { LolLobbyInvitationType::invalid }
+    fn default() -> Self {
+        LolLobbyInvitationType::invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23107,11 +23582,13 @@ pub enum LolLobbyLobbyBotDifficulty {
     HARD = 2,
     UBER = 3,
     TUTORIAL = 4,
-    INTRO = 5
+    INTRO = 5,
 }
 
 impl Default for LolLobbyLobbyBotDifficulty {
-    fn default() -> Self { LolLobbyLobbyBotDifficulty::NONE }
+    fn default() -> Self {
+        LolLobbyLobbyBotDifficulty::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23123,11 +23600,13 @@ pub enum LolLobbyLobbyInvitationState {
     Declined = 4,
     Kicked = 5,
     OnHold = 6,
-    Error = 7
+    Error = 7,
 }
 
 impl Default for LolLobbyLobbyInvitationState {
-    fn default() -> Self { LolLobbyLobbyInvitationState::Requested }
+    fn default() -> Self {
+        LolLobbyLobbyInvitationState::Requested
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23139,22 +23618,26 @@ pub enum LolLobbyLobbyMatchmakingSearchState {
     Found = 4,
     Error = 5,
     ServiceError = 6,
-    ServiceShutdown = 7
+    ServiceShutdown = 7,
 }
 
 impl Default for LolLobbyLobbyMatchmakingSearchState {
-    fn default() -> Self { LolLobbyLobbyMatchmakingSearchState::Invalid }
+    fn default() -> Self {
+        LolLobbyLobbyMatchmakingSearchState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyLobbyPartyRewardType {
     Ip = 1,
     Icon = 2,
-    None = 9999
+    None = 9999,
 }
 
 impl Default for LolLobbyLobbyPartyRewardType {
-    fn default() -> Self { LolLobbyLobbyPartyRewardType::Ip }
+    fn default() -> Self {
+        LolLobbyLobbyPartyRewardType::Ip
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23167,11 +23650,13 @@ pub enum LolLobbyLobbyRemovedFromGameReason {
     Other = 5,
     Timeout = 6,
     GameStartError = 7,
-    ServiceShutdown = 8
+    ServiceShutdown = 8,
 }
 
 impl Default for LolLobbyLobbyRemovedFromGameReason {
-    fn default() -> Self { LolLobbyLobbyRemovedFromGameReason::None }
+    fn default() -> Self {
+        LolLobbyLobbyRemovedFromGameReason::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23179,33 +23664,39 @@ pub enum LolLobbyLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolLobbyLoginSessionStates {
-    fn default() -> Self { LolLobbyLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolLobbyLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyMatchmakingDodgeState {
     Invalid = 48,
     PartyDodged = 49,
-    StrangerDodged = 50
+    StrangerDodged = 50,
 }
 
 impl Default for LolLobbyMatchmakingDodgeState {
-    fn default() -> Self { LolLobbyMatchmakingDodgeState::Invalid }
+    fn default() -> Self {
+        LolLobbyMatchmakingDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyPartyEogStatusCategory {
     kLeft = 0,
     kPlayAgain = 1,
-    kOnEog = 2
+    kOnEog = 2,
 }
 
 impl Default for LolLobbyPartyEogStatusCategory {
-    fn default() -> Self { LolLobbyPartyEogStatusCategory::kLeft }
+    fn default() -> Self {
+        LolLobbyPartyEogStatusCategory::kLeft
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23216,11 +23707,13 @@ pub enum LolLobbyPartyMemberRoleEnum {
     HOLD = 3,
     KICKED = 4,
     DECLINED = 5,
-    NONE = 6
+    NONE = 6,
 }
 
 impl Default for LolLobbyPartyMemberRoleEnum {
-    fn default() -> Self { LolLobbyPartyMemberRoleEnum::LEADER }
+    fn default() -> Self {
+        LolLobbyPartyMemberRoleEnum::LEADER
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23228,22 +23721,26 @@ pub enum LolLobbyPlayerUpdateType {
     None = 0,
     Direct = 1,
     ServiceProxy = 2,
-    RMS = 3
+    RMS = 3,
 }
 
 impl Default for LolLobbyPlayerUpdateType {
-    fn default() -> Self { LolLobbyPlayerUpdateType::None }
+    fn default() -> Self {
+        LolLobbyPlayerUpdateType::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
-    DoesntMeetRequirements = 2
+    DoesntMeetRequirements = 2,
 }
 
 impl Default for LolLobbyQueueAvailability {
-    fn default() -> Self { LolLobbyQueueAvailability::Available }
+    fn default() -> Self {
+        LolLobbyQueueAvailability::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23251,11 +23748,13 @@ pub enum LolLobbyQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
-    AllAllowed = 3
+    AllAllowed = 3,
 }
 
 impl Default for LolLobbyQueueCustomGameSpectatorPolicy {
-    fn default() -> Self { LolLobbyQueueCustomGameSpectatorPolicy::NotAllowed }
+    fn default() -> Self {
+        LolLobbyQueueCustomGameSpectatorPolicy::NotAllowed
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23264,11 +23763,13 @@ pub enum LolLobbyQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolLobbyQueueGameCategory {
-    fn default() -> Self { LolLobbyQueueGameCategory::None }
+    fn default() -> Self {
+        LolLobbyQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23277,11 +23778,13 @@ pub enum LolLobbyTeamBuilderChampSelectSwapState {
     BUSY = 2,
     INVALID = 3,
     RECEIVED = 4,
-    SENT = 5
+    SENT = 5,
 }
 
 impl Default for LolLobbyTeamBuilderChampSelectSwapState {
-    fn default() -> Self { LolLobbyTeamBuilderChampSelectSwapState::AVAILABLE }
+    fn default() -> Self {
+        LolLobbyTeamBuilderChampSelectSwapState::AVAILABLE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23290,11 +23793,13 @@ pub enum LolLobbyTeamBuilderChampSelectTradeState {
     BUSY = 2,
     INVALID = 3,
     RECEIVED = 4,
-    SENT = 5
+    SENT = 5,
 }
 
 impl Default for LolLobbyTeamBuilderChampSelectTradeState {
-    fn default() -> Self { LolLobbyTeamBuilderChampSelectTradeState::AVAILABLE }
+    fn default() -> Self {
+        LolLobbyTeamBuilderChampSelectTradeState::AVAILABLE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23307,11 +23812,13 @@ pub enum LolLobbyTeamBuilderLobbyRemovedFromGameReason {
     Other = 5,
     Timeout = 6,
     GameStartError = 7,
-    ServiceShutdown = 8
+    ServiceShutdown = 8,
 }
 
 impl Default for LolLobbyTeamBuilderLobbyRemovedFromGameReason {
-    fn default() -> Self { LolLobbyTeamBuilderLobbyRemovedFromGameReason::None }
+    fn default() -> Self {
+        LolLobbyTeamBuilderLobbyRemovedFromGameReason::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23319,11 +23826,13 @@ pub enum LolLobbyTeamBuilderLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolLobbyTeamBuilderLoginSessionState {
-    fn default() -> Self { LolLobbyTeamBuilderLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolLobbyTeamBuilderLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23331,33 +23840,39 @@ pub enum LolLobbyTeamBuilderMatchmakingDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
-    TournamentDodged = 51
+    TournamentDodged = 51,
 }
 
 impl Default for LolLobbyTeamBuilderMatchmakingDodgeState {
-    fn default() -> Self { LolLobbyTeamBuilderMatchmakingDodgeState::Invalid }
+    fn default() -> Self {
+        LolLobbyTeamBuilderMatchmakingDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderMatchmakingDodgeWarning {
     None = 0,
     Warning = 1,
-    Penalty = 2
+    Penalty = 2,
 }
 
 impl Default for LolLobbyTeamBuilderMatchmakingDodgeWarning {
-    fn default() -> Self { LolLobbyTeamBuilderMatchmakingDodgeWarning::None }
+    fn default() -> Self {
+        LolLobbyTeamBuilderMatchmakingDodgeWarning::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderMatchmakingReadyCheckResponse {
     None = 48,
     Accepted = 49,
-    Declined = 50
+    Declined = 50,
 }
 
 impl Default for LolLobbyTeamBuilderMatchmakingReadyCheckResponse {
-    fn default() -> Self { LolLobbyTeamBuilderMatchmakingReadyCheckResponse::None }
+    fn default() -> Self {
+        LolLobbyTeamBuilderMatchmakingReadyCheckResponse::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23367,11 +23882,13 @@ pub enum LolLobbyTeamBuilderMatchmakingReadyCheckState {
     EveryoneReady = 2,
     StrangerNotReady = 3,
     PartyNotReady = 4,
-    Error = 5
+    Error = 5,
 }
 
 impl Default for LolLobbyTeamBuilderMatchmakingReadyCheckState {
-    fn default() -> Self { LolLobbyTeamBuilderMatchmakingReadyCheckState::Invalid }
+    fn default() -> Self {
+        LolLobbyTeamBuilderMatchmakingReadyCheckState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23383,22 +23900,26 @@ pub enum LolLobbyTeamBuilderMatchmakingSearchState {
     Found = 4,
     Error = 5,
     ServiceError = 6,
-    ServiceShutdown = 7
+    ServiceShutdown = 7,
 }
 
 impl Default for LolLobbyTeamBuilderMatchmakingSearchState {
-    fn default() -> Self { LolLobbyTeamBuilderMatchmakingSearchState::Invalid }
+    fn default() -> Self {
+        LolLobbyTeamBuilderMatchmakingSearchState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLobbyTeamBuilderQueueAvailability {
     Available = 0,
     PlatformDisabled = 1,
-    DoesntMeetRequirements = 2
+    DoesntMeetRequirements = 2,
 }
 
 impl Default for LolLobbyTeamBuilderQueueAvailability {
-    fn default() -> Self { LolLobbyTeamBuilderQueueAvailability::Available }
+    fn default() -> Self {
+        LolLobbyTeamBuilderQueueAvailability::Available
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23407,11 +23928,13 @@ pub enum LolLobbyTeamBuilderQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolLobbyTeamBuilderQueueGameCategory {
-    fn default() -> Self { LolLobbyTeamBuilderQueueGameCategory::None }
+    fn default() -> Self {
+        LolLobbyTeamBuilderQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23421,32 +23944,38 @@ pub enum LolLoginAccountStateType {
     TRANSFERRING_OUT = 3,
     TRANSFERRING_IN = 4,
     TRANSFERRED_OUT = 5,
-    GENERATING = 6
+    GENERATING = 6,
 }
 
 impl Default for LolLoginAccountStateType {
-    fn default() -> Self { LolLoginAccountStateType::CREATING }
+    fn default() -> Self {
+        LolLoginAccountStateType::CREATING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLoginConfigReadinessEnum {
     NotReady = 0,
     Ready = 1,
-    Disabled = 2
+    Disabled = 2,
 }
 
 impl Default for LolLoginConfigReadinessEnum {
-    fn default() -> Self { LolLoginConfigReadinessEnum::NotReady }
+    fn default() -> Self {
+        LolLoginConfigReadinessEnum::NotReady
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLoginConfigType {
     public = 0,
-    player = 1
+    player = 1,
 }
 
 impl Default for LolLoginConfigType {
-    fn default() -> Self { LolLoginConfigType::public }
+    fn default() -> Self {
+        LolLoginConfigType::public
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23455,11 +23984,13 @@ pub enum LolLoginLeagueSessionStatus {
     INITIALIZED = 1,
     EXPIRED = 2,
     DUPLICATED = 3,
-    ANTI_ADDICTION_EXPIRED = 4
+    ANTI_ADDICTION_EXPIRED = 4,
 }
 
 impl Default for LolLoginLeagueSessionStatus {
-    fn default() -> Self { LolLoginLeagueSessionStatus::UNINITIALIZED }
+    fn default() -> Self {
+        LolLoginLeagueSessionStatus::UNINITIALIZED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23467,11 +23998,13 @@ pub enum LolLoginLoginConnectionMode {
     Preparing = 0,
     Legacy = 1,
     Partner = 2,
-    RiotClient = 3
+    RiotClient = 3,
 }
 
 impl Default for LolLoginLoginConnectionMode {
-    fn default() -> Self { LolLoginLoginConnectionMode::Preparing }
+    fn default() -> Self {
+        LolLoginLoginConnectionMode::Preparing
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23479,21 +24012,26 @@ pub enum LolLoginLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolLoginLoginSessionStates {
-    fn default() -> Self { LolLoginLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolLoginLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootCelebrationType {
     NONE = 0,
-    TOAST = 1
+    TOAST = 1,
+    FULLSCREEN = 2,
 }
 
 impl Default for LolLootCelebrationType {
-    fn default() -> Self { LolLootCelebrationType::NONE }
+    fn default() -> Self {
+        LolLootCelebrationType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23511,11 +24049,13 @@ pub enum LolLootGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolLootGameflowPhase {
-    fn default() -> Self { LolLootGameflowPhase::None }
+    fn default() -> Self {
+        LolLootGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23523,22 +24063,26 @@ pub enum LolLootGrantStatus {
     PENDING_FULFILLMENT = 0,
     PENDING_SELECTION = 1,
     FULFILLED = 2,
-    FAILED = 3
+    FAILED = 3,
 }
 
 impl Default for LolLootGrantStatus {
-    fn default() -> Self { LolLootGrantStatus::PENDING_FULFILLMENT }
+    fn default() -> Self {
+        LolLootGrantStatus::PENDING_FULFILLMENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
-    F2P = 2
+    F2P = 2,
 }
 
 impl Default for LolLootInventoryOwnership {
-    fn default() -> Self { LolLootInventoryOwnership::OWNED }
+    fn default() -> Self {
+        LolLootInventoryOwnership::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23546,11 +24090,13 @@ pub enum LolLootItemOwnershipStatus {
     NONE = 0,
     FREE = 1,
     RENTAL = 2,
-    OWNED = 3
+    OWNED = 3,
 }
 
 impl Default for LolLootItemOwnershipStatus {
-    fn default() -> Self { LolLootItemOwnershipStatus::NONE }
+    fn default() -> Self {
+        LolLootItemOwnershipStatus::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23558,11 +24104,13 @@ pub enum LolLootLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolLootLoginSessionStates {
-    fn default() -> Self { LolLootLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolLootLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23570,11 +24118,13 @@ pub enum LolLootLootMilestoneClaimStatus {
     NOT_STARTED = 0,
     IN_PROGRESS = 1,
     COMPLETED = 2,
-    FAILED = 3
+    FAILED = 3,
 }
 
 impl Default for LolLootLootMilestoneClaimStatus {
-    fn default() -> Self { LolLootLootMilestoneClaimStatus::NOT_STARTED }
+    fn default() -> Self {
+        LolLootLootMilestoneClaimStatus::NOT_STARTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23583,11 +24133,13 @@ pub enum LolLootLootRarity {
     Epic = 1,
     Legendary = 2,
     Mythic = 3,
-    Ultimate = 4
+    Ultimate = 4,
 }
 
 impl Default for LolLootLootRarity {
-    fn default() -> Self { LolLootLootRarity::Default }
+    fn default() -> Self {
+        LolLootLootRarity::Default
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23607,11 +24159,13 @@ pub enum LolLootLootType {
     Boost = 12,
     SkinBorder = 13,
     TFT_Map_Skin = 14,
-    TFT_Damage_Skin = 15
+    TFT_Damage_Skin = 15,
 }
 
 impl Default for LolLootLootType {
-    fn default() -> Self { LolLootLootType::Chest }
+    fn default() -> Self {
+        LolLootLootType::Chest
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23624,43 +24178,51 @@ pub enum LolLootRedeemableStatus {
     ALREADY_OWNED = 5,
     ALREADY_RENTED = 6,
     CHAMPION_NOT_OWNED = 7,
-    SKIN_NOT_OWNED = 8
+    SKIN_NOT_OWNED = 8,
 }
 
 impl Default for LolLootRedeemableStatus {
-    fn default() -> Self { LolLootRedeemableStatus::UNKNOWN }
+    fn default() -> Self {
+        LolLootRedeemableStatus::UNKNOWN
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootRewardStatus {
     PENDING = 0,
     FULFILLED = 1,
-    FAILED = 2
+    FAILED = 2,
 }
 
 impl Default for LolLootRewardStatus {
-    fn default() -> Self { LolLootRewardStatus::PENDING }
+    fn default() -> Self {
+        LolLootRewardStatus::PENDING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootRewardStrategy {
     ALL = 0,
     RANDOM = 1,
-    SELECTION = 2
+    SELECTION = 2,
 }
 
 impl Default for LolLootRewardStrategy {
-    fn default() -> Self { LolLootRewardStrategy::ALL }
+    fn default() -> Self {
+        LolLootRewardStrategy::ALL
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolLootSelectGrantStatusResponse {
     SELECTED = 0,
-    FAILED = 1
+    FAILED = 1,
 }
 
 impl Default for LolLootSelectGrantStatusResponse {
-    fn default() -> Self { LolLootSelectGrantStatusResponse::SELECTED }
+    fn default() -> Self {
+        LolLootSelectGrantStatusResponse::SELECTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23668,11 +24230,13 @@ pub enum LolLoyaltyLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolLoyaltyLoginSessionStates {
-    fn default() -> Self { LolLoyaltyLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolLoyaltyLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23682,11 +24246,13 @@ pub enum LolLoyaltyLoyaltyStatus {
     EXPIRY = 2,
     CHANGE = 3,
     REVOKE = 4,
-    DISABLED = 5
+    DISABLED = 5,
 }
 
 impl Default for LolLoyaltyLoyaltyStatus {
-    fn default() -> Self { LolLoyaltyLoyaltyStatus::LEGACY }
+    fn default() -> Self {
+        LolLoyaltyLoyaltyStatus::LEGACY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23694,11 +24260,13 @@ pub enum LolMatchHistoryLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolMatchHistoryLoginSessionStates {
-    fn default() -> Self { LolMatchHistoryLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolMatchHistoryLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23716,11 +24284,13 @@ pub enum LolMatchmakingGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolMatchmakingGameflowPhase {
-    fn default() -> Self { LolMatchmakingGameflowPhase::None }
+    fn default() -> Self {
+        LolMatchmakingGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23728,11 +24298,13 @@ pub enum LolMatchmakingLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolMatchmakingLoginSessionState {
-    fn default() -> Self { LolMatchmakingLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolMatchmakingLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23740,33 +24312,39 @@ pub enum LolMatchmakingMatchmakingDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
-    TournamentDodged = 51
+    TournamentDodged = 51,
 }
 
 impl Default for LolMatchmakingMatchmakingDodgeState {
-    fn default() -> Self { LolMatchmakingMatchmakingDodgeState::Invalid }
+    fn default() -> Self {
+        LolMatchmakingMatchmakingDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchmakingMatchmakingDodgeWarning {
     None = 0,
     Warning = 1,
-    Penalty = 2
+    Penalty = 2,
 }
 
 impl Default for LolMatchmakingMatchmakingDodgeWarning {
-    fn default() -> Self { LolMatchmakingMatchmakingDodgeWarning::None }
+    fn default() -> Self {
+        LolMatchmakingMatchmakingDodgeWarning::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMatchmakingMatchmakingReadyCheckResponse {
     None = 48,
     Accepted = 49,
-    Declined = 50
+    Declined = 50,
 }
 
 impl Default for LolMatchmakingMatchmakingReadyCheckResponse {
-    fn default() -> Self { LolMatchmakingMatchmakingReadyCheckResponse::None }
+    fn default() -> Self {
+        LolMatchmakingMatchmakingReadyCheckResponse::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23776,11 +24354,13 @@ pub enum LolMatchmakingMatchmakingReadyCheckState {
     EveryoneReady = 2,
     StrangerNotReady = 3,
     PartyNotReady = 4,
-    Error = 5
+    Error = 5,
 }
 
 impl Default for LolMatchmakingMatchmakingReadyCheckState {
-    fn default() -> Self { LolMatchmakingMatchmakingReadyCheckState::Invalid }
+    fn default() -> Self {
+        LolMatchmakingMatchmakingReadyCheckState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23792,11 +24372,13 @@ pub enum LolMatchmakingMatchmakingSearchState {
     Found = 4,
     Error = 5,
     ServiceError = 6,
-    ServiceShutdown = 7
+    ServiceShutdown = 7,
 }
 
 impl Default for LolMatchmakingMatchmakingSearchState {
-    fn default() -> Self { LolMatchmakingMatchmakingSearchState::Invalid }
+    fn default() -> Self {
+        LolMatchmakingMatchmakingSearchState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23804,11 +24386,13 @@ pub enum LolMatchmakingQueueCustomGameSpectatorPolicy {
     NotAllowed = 0,
     LobbyAllowed = 1,
     FriendsAllowed = 2,
-    AllAllowed = 3
+    AllAllowed = 3,
 }
 
 impl Default for LolMatchmakingQueueCustomGameSpectatorPolicy {
-    fn default() -> Self { LolMatchmakingQueueCustomGameSpectatorPolicy::NotAllowed }
+    fn default() -> Self {
+        LolMatchmakingQueueCustomGameSpectatorPolicy::NotAllowed
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23826,22 +24410,26 @@ pub enum LolMissionsGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolMissionsGameflowPhase {
-    fn default() -> Self { LolMissionsGameflowPhase::None }
+    fn default() -> Self {
+        LolMissionsGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMissionsGrantStatus {
     PENDING_FULFILLMENT = 0,
     PENDING_SELECTION = 1,
-    FULFILLED = 2
+    FULFILLED = 2,
 }
 
 impl Default for LolMissionsGrantStatus {
-    fn default() -> Self { LolMissionsGrantStatus::PENDING_FULFILLMENT }
+    fn default() -> Self {
+        LolMissionsGrantStatus::PENDING_FULFILLMENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23851,32 +24439,38 @@ pub enum LolMissionsLoyaltyStatus {
     EXPIRY = 2,
     CHANGE = 3,
     REVOKE = 4,
-    DISABLED = 5
+    DISABLED = 5,
 }
 
 impl Default for LolMissionsLoyaltyStatus {
-    fn default() -> Self { LolMissionsLoyaltyStatus::LEGACY }
+    fn default() -> Self {
+        LolMissionsLoyaltyStatus::LEGACY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMissionsRewardStatus {
     PENDING = 0,
-    FULFILLED = 1
+    FULFILLED = 1,
 }
 
 impl Default for LolMissionsRewardStatus {
-    fn default() -> Self { LolMissionsRewardStatus::PENDING }
+    fn default() -> Self {
+        LolMissionsRewardStatus::PENDING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolMissionsRewardStrategy {
     ALL = 0,
     RANDOM = 1,
-    SELECTION = 2
+    SELECTION = 2,
 }
 
 impl Default for LolMissionsRewardStrategy {
-    fn default() -> Self { LolMissionsRewardStrategy::ALL }
+    fn default() -> Self {
+        LolMissionsRewardStrategy::ALL
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23894,32 +24488,38 @@ pub enum LolNpeTutorialPathGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolNpeTutorialPathGameflowPhase {
-    fn default() -> Self { LolNpeTutorialPathGameflowPhase::None }
+    fn default() -> Self {
+        LolNpeTutorialPathGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolNpeTutorialPathTutorialStatus {
     LOCKED = 0,
     UNLOCKED = 1,
-    COMPLETED = 2
+    COMPLETED = 2,
 }
 
 impl Default for LolNpeTutorialPathTutorialStatus {
-    fn default() -> Self { LolNpeTutorialPathTutorialStatus::LOCKED }
+    fn default() -> Self {
+        LolNpeTutorialPathTutorialStatus::LOCKED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolNpeTutorialPathTutorialType {
     CARD = 0,
-    REWARD = 1
+    REWARD = 1,
 }
 
 impl Default for LolNpeTutorialPathTutorialType {
-    fn default() -> Self { LolNpeTutorialPathTutorialType::CARD }
+    fn default() -> Self {
+        LolNpeTutorialPathTutorialType::CARD
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23928,22 +24528,26 @@ pub enum LolPatchComponentStateAction {
     CheckingForUpdates = 1,
     Patching = 2,
     Repairing = 3,
-    Migrating = 4
+    Migrating = 4,
 }
 
 impl Default for LolPatchComponentStateAction {
-    fn default() -> Self { LolPatchComponentStateAction::Idle }
+    fn default() -> Self {
+        LolPatchComponentStateAction::Idle
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPatchComponentStateWorkType {
     Scanning = 0,
     Network = 1,
-    Disk = 2
+    Disk = 2,
 }
 
 impl Default for LolPatchComponentStateWorkType {
-    fn default() -> Self { LolPatchComponentStateWorkType::Scanning }
+    fn default() -> Self {
+        LolPatchComponentStateWorkType::Scanning
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23954,21 +24558,25 @@ pub enum LolPatchNotificationId {
     FailedToWriteError = 3,
     DidRestoreClientBackup = 4,
     NotEnoughDiskSpace = 5,
-    BrokenPermissions = 6
+    BrokenPermissions = 6,
 }
 
 impl Default for LolPatchNotificationId {
-    fn default() -> Self { LolPatchNotificationId::UnspecifiedError }
+    fn default() -> Self {
+        LolPatchNotificationId::UnspecifiedError
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPatchScdEnabled {
     Off = 0,
-    On = 1
+    On = 1,
 }
 
 impl Default for LolPatchScdEnabled {
-    fn default() -> Self { LolPatchScdEnabled::Off }
+    fn default() -> Self {
+        LolPatchScdEnabled::Off
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23977,11 +24585,13 @@ pub enum LolPerksChampSelectTradeState {
     BUSY = 2,
     INVALID = 3,
     RECEIVED = 4,
-    SENT = 5
+    SENT = 5,
 }
 
 impl Default for LolPerksChampSelectTradeState {
-    fn default() -> Self { LolPerksChampSelectTradeState::AVAILABLE }
+    fn default() -> Self {
+        LolPerksChampSelectTradeState::AVAILABLE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -23999,11 +24609,13 @@ pub enum LolPerksGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolPerksGameflowPhase {
-    fn default() -> Self { LolPerksGameflowPhase::None }
+    fn default() -> Self {
+        LolPerksGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24011,11 +24623,13 @@ pub enum LolPerksLoginSessionState {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolPerksLoginSessionState {
-    fn default() -> Self { LolPerksLoginSessionState::IN_PROGRESS }
+    fn default() -> Self {
+        LolPerksLoginSessionState::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24023,11 +24637,13 @@ pub enum LolPftGameflowGameDodgeState {
     Invalid = 48,
     PartyDodged = 49,
     StrangerDodged = 50,
-    TournamentDodged = 51
+    TournamentDodged = 51,
 }
 
 impl Default for LolPftGameflowGameDodgeState {
-    fn default() -> Self { LolPftGameflowGameDodgeState::Invalid }
+    fn default() -> Self {
+        LolPftGameflowGameDodgeState::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24045,11 +24661,13 @@ pub enum LolPftGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolPftGameflowPhase {
-    fn default() -> Self { LolPftGameflowPhase::None }
+    fn default() -> Self {
+        LolPftGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24057,11 +24675,13 @@ pub enum LolPftLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolPftLoginSessionStates {
-    fn default() -> Self { LolPftLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolPftLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24079,11 +24699,13 @@ pub enum LolPlayerBehaviorGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolPlayerBehaviorGameflowPhase {
-    fn default() -> Self { LolPlayerBehaviorGameflowPhase::None }
+    fn default() -> Self {
+        LolPlayerBehaviorGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24091,11 +24713,13 @@ pub enum LolPlayerBehaviorNotificationSource {
     Invalid = 0,
     Login = 1,
     ForcedShutdown = 2,
-    Message = 3
+    Message = 3,
 }
 
 impl Default for LolPlayerBehaviorNotificationSource {
-    fn default() -> Self { LolPlayerBehaviorNotificationSource::Invalid }
+    fn default() -> Self {
+        LolPlayerBehaviorNotificationSource::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24103,11 +24727,13 @@ pub enum LolPlayerLevelUpLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolPlayerLevelUpLoginSessionStates {
-    fn default() -> Self { LolPlayerLevelUpLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolPlayerLevelUpLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24115,11 +24741,13 @@ pub enum LolPlayerPreferencesLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolPlayerPreferencesLoginSessionStates {
-    fn default() -> Self { LolPlayerPreferencesLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolPlayerPreferencesLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24137,32 +24765,38 @@ pub enum LolPreEndOfGameGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolPreEndOfGameGameflowPhase {
-    fn default() -> Self { LolPreEndOfGameGameflowPhase::None }
+    fn default() -> Self {
+        LolPreEndOfGameGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceConfigReadinessEnum {
     NotReady = 0,
     Ready = 1,
-    Disabled = 2
+    Disabled = 2,
 }
 
 impl Default for LolPremadeVoiceConfigReadinessEnum {
-    fn default() -> Self { LolPremadeVoiceConfigReadinessEnum::NotReady }
+    fn default() -> Self {
+        LolPremadeVoiceConfigReadinessEnum::NotReady
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceConfigType {
     public = 0,
-    player = 1
+    player = 1,
 }
 
 impl Default for LolPremadeVoiceConfigType {
-    fn default() -> Self { LolPremadeVoiceConfigType::public }
+    fn default() -> Self {
+        LolPremadeVoiceConfigType::public
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24180,21 +24814,25 @@ pub enum LolPremadeVoiceGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolPremadeVoiceGameflowPhase {
-    fn default() -> Self { LolPremadeVoiceGameflowPhase::None }
+    fn default() -> Self {
+        LolPremadeVoiceGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceInputMode {
     voiceActivity = 0,
-    pushToTalk = 1
+    pushToTalk = 1,
 }
 
 impl Default for LolPremadeVoiceInputMode {
-    fn default() -> Self { LolPremadeVoiceInputMode::voiceActivity }
+    fn default() -> Self {
+        LolPremadeVoiceInputMode::voiceActivity
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24204,21 +24842,25 @@ pub enum LolPremadeVoicePartyMemberRoleEnum {
     INVITED = 2,
     HOLD = 3,
     KICKED = 4,
-    DECLINED = 5
+    DECLINED = 5,
 }
 
 impl Default for LolPremadeVoicePartyMemberRoleEnum {
-    fn default() -> Self { LolPremadeVoicePartyMemberRoleEnum::LEADER }
+    fn default() -> Self {
+        LolPremadeVoicePartyMemberRoleEnum::LEADER
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolPremadeVoiceSessionStatus {
     active = 0,
-    onHold = 1
+    onHold = 1,
 }
 
 impl Default for LolPremadeVoiceSessionStatus {
-    fn default() -> Self { LolPremadeVoiceSessionStatus::active }
+    fn default() -> Self {
+        LolPremadeVoiceSessionStatus::active
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24226,11 +24868,13 @@ pub enum LolPurchaseWidgetInventoryOwnership {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolPurchaseWidgetInventoryOwnership {
-    fn default() -> Self { LolPurchaseWidgetInventoryOwnership::OWNED }
+    fn default() -> Self {
+        LolPurchaseWidgetInventoryOwnership::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24238,11 +24882,13 @@ pub enum LolPurchaseWidgetLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolPurchaseWidgetLoginSessionStates {
-    fn default() -> Self { LolPurchaseWidgetLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolPurchaseWidgetLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24250,22 +24896,26 @@ pub enum LolPurchaseWidgetPurchaseOfferOrderStates {
     NOT_STARTED = 0,
     IN_PROGRESS = 1,
     FAIL = 2,
-    SUCCESS = 3
+    SUCCESS = 3,
 }
 
 impl Default for LolPurchaseWidgetPurchaseOfferOrderStates {
-    fn default() -> Self { LolPurchaseWidgetPurchaseOfferOrderStates::NOT_STARTED }
+    fn default() -> Self {
+        LolPurchaseWidgetPurchaseOfferOrderStates::NOT_STARTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedEosNotificationType {
     FIRST_WARNING = 0,
     SECOND_WARNING = 1,
-    SEASON_ENDED = 2
+    SEASON_ENDED = 2,
 }
 
 impl Default for LolRankedEosNotificationType {
-    fn default() -> Self { LolRankedEosNotificationType::FIRST_WARNING }
+    fn default() -> Self {
+        LolRankedEosNotificationType::FIRST_WARNING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24283,11 +24933,13 @@ pub enum LolRankedGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolRankedGameflowPhase {
-    fn default() -> Self { LolRankedGameflowPhase::None }
+    fn default() -> Self {
+        LolRankedGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24297,11 +24949,13 @@ pub enum LolRankedLeagueDivision {
     III = 2,
     IV = 3,
     V = 4,
-    NA = 5
+    NA = 5,
 }
 
 impl Default for LolRankedLeagueDivision {
-    fn default() -> Self { LolRankedLeagueDivision::I }
+    fn default() -> Self {
+        LolRankedLeagueDivision::I
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24313,11 +24967,13 @@ pub enum LolRankedLeagueQueueType {
     RANKED_TFT = 4,
     RANKED_TFT_TURBO = 5,
     RANKED_TFT_PAIRS = 6,
-    RANKED_TFT_DOUBLE_UP = 7
+    RANKED_TFT_DOUBLE_UP = 7,
 }
 
 impl Default for LolRankedLeagueQueueType {
-    fn default() -> Self { LolRankedLeagueQueueType::NONE }
+    fn default() -> Self {
+        LolRankedLeagueQueueType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24331,11 +24987,13 @@ pub enum LolRankedLeagueTier {
     DIAMOND = 6,
     MASTER = 7,
     GRANDMASTER = 8,
-    CHALLENGER = 9
+    CHALLENGER = 9,
 }
 
 impl Default for LolRankedLeagueTier {
-    fn default() -> Self { LolRankedLeagueTier::NONE }
+    fn default() -> Self {
+        LolRankedLeagueTier::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24343,22 +25001,26 @@ pub enum LolRankedLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolRankedLoginSessionStates {
-    fn default() -> Self { LolRankedLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolRankedLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedMiniseries {
     W = 0,
     L = 1,
-    N = 2
+    N = 2,
 }
 
 impl Default for LolRankedMiniseries {
-    fn default() -> Self { LolRankedMiniseries::W }
+    fn default() -> Self {
+        LolRankedMiniseries::W
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24366,11 +25028,13 @@ pub enum LolRankedNotificationDisplayType {
     NONE = 0,
     TOAST = 1,
     MODAL = 2,
-    VIGNETTE = 3
+    VIGNETTE = 3,
 }
 
 impl Default for LolRankedNotificationDisplayType {
-    fn default() -> Self { LolRankedNotificationDisplayType::NONE }
+    fn default() -> Self {
+        LolRankedNotificationDisplayType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24380,21 +25044,25 @@ pub enum LolRankedRatedTier {
     GREEN = 2,
     BLUE = 3,
     PURPLE = 4,
-    ORANGE = 5
+    ORANGE = 5,
 }
 
 impl Default for LolRankedRatedTier {
-    fn default() -> Self { LolRankedRatedTier::NONE }
+    fn default() -> Self {
+        LolRankedRatedTier::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRankedSeverity {
     WARNING = 0,
-    ALERT = 1
+    ALERT = 1,
 }
 
 impl Default for LolRankedSeverity {
-    fn default() -> Self { LolRankedSeverity::WARNING }
+    fn default() -> Self {
+        LolRankedSeverity::WARNING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24404,11 +25072,13 @@ pub enum LolRegaliaLeagueDivision {
     III = 2,
     IV = 3,
     V = 4,
-    NA = 5
+    NA = 5,
 }
 
 impl Default for LolRegaliaLeagueDivision {
-    fn default() -> Self { LolRegaliaLeagueDivision::I }
+    fn default() -> Self {
+        LolRegaliaLeagueDivision::I
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24420,11 +25090,13 @@ pub enum LolRegaliaLeagueQueueType {
     RANKED_TFT = 4,
     RANKED_TFT_TURBO = 5,
     RANKED_TFT_PAIRS = 6,
-    RANKED_TFT_DOUBLE_UP = 7
+    RANKED_TFT_DOUBLE_UP = 7,
 }
 
 impl Default for LolRegaliaLeagueQueueType {
-    fn default() -> Self { LolRegaliaLeagueQueueType::NONE }
+    fn default() -> Self {
+        LolRegaliaLeagueQueueType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24438,32 +25110,38 @@ pub enum LolRegaliaLeagueTier {
     DIAMOND = 6,
     MASTER = 7,
     GRANDMASTER = 8,
-    CHALLENGER = 9
+    CHALLENGER = 9,
 }
 
 impl Default for LolRegaliaLeagueTier {
-    fn default() -> Self { LolRegaliaLeagueTier::NONE }
+    fn default() -> Self {
+        LolRegaliaLeagueTier::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRegaliaRegaliaBannerType {
     blank = 1,
-    lastSeasonHighestRank = 2
+    lastSeasonHighestRank = 2,
 }
 
 impl Default for LolRegaliaRegaliaBannerType {
-    fn default() -> Self { LolRegaliaRegaliaBannerType::blank }
+    fn default() -> Self {
+        LolRegaliaRegaliaBannerType::blank
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRegaliaRegaliaCrestType {
     none = 0,
     prestige = 1,
-    ranked = 2
+    ranked = 2,
 }
 
 impl Default for LolRegaliaRegaliaCrestType {
-    fn default() -> Self { LolRegaliaRegaliaCrestType::none }
+    fn default() -> Self {
+        LolRegaliaRegaliaCrestType::none
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24481,11 +25159,13 @@ pub enum LolReplaysGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolReplaysGameflowPhase {
-    fn default() -> Self { LolReplaysGameflowPhase::None }
+    fn default() -> Self {
+        LolReplaysGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24493,11 +25173,13 @@ pub enum LolReplaysGameflowWatchPhase {
     None = 0,
     WatchStarted = 1,
     WatchInProgress = 2,
-    WatchFailedToLaunch = 3
+    WatchFailedToLaunch = 3,
 }
 
 impl Default for LolReplaysGameflowWatchPhase {
-    fn default() -> Self { LolReplaysGameflowWatchPhase::None }
+    fn default() -> Self {
+        LolReplaysGameflowWatchPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24512,21 +25194,26 @@ pub enum LolReplaysMetadataState {
     retryDownload = 7,
     lost = 8,
     unsupported = 9,
-    error = 10
+    error = 10,
 }
 
 impl Default for LolReplaysMetadataState {
-    fn default() -> Self { LolReplaysMetadataState::checking }
+    fn default() -> Self {
+        LolReplaysMetadataState::checking
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsCelebrationType {
     NONE = 0,
-    TOAST = 1
+    TOAST = 1,
+    FULLSCREEN = 2,
 }
 
 impl Default for LolRewardsCelebrationType {
-    fn default() -> Self { LolRewardsCelebrationType::NONE }
+    fn default() -> Self {
+        LolRewardsCelebrationType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24534,43 +25221,51 @@ pub enum LolRewardsGrantStatus {
     PENDING_FULFILLMENT = 0,
     PENDING_SELECTION = 1,
     FULFILLED = 2,
-    FAILED = 3
+    FAILED = 3,
 }
 
 impl Default for LolRewardsGrantStatus {
-    fn default() -> Self { LolRewardsGrantStatus::PENDING_FULFILLMENT }
+    fn default() -> Self {
+        LolRewardsGrantStatus::PENDING_FULFILLMENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsRewardStatus {
     PENDING = 0,
     FULFILLED = 1,
-    FAILED = 2
+    FAILED = 2,
 }
 
 impl Default for LolRewardsRewardStatus {
-    fn default() -> Self { LolRewardsRewardStatus::PENDING }
+    fn default() -> Self {
+        LolRewardsRewardStatus::PENDING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsRewardStrategy {
     ALL = 0,
     RANDOM = 1,
-    SELECTION = 2
+    SELECTION = 2,
 }
 
 impl Default for LolRewardsRewardStrategy {
-    fn default() -> Self { LolRewardsRewardStrategy::ALL }
+    fn default() -> Self {
+        LolRewardsRewardStrategy::ALL
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRewardsSelectGrantStatusResponse {
     SELECTED = 0,
-    FAILED = 1
+    FAILED = 1,
 }
 
 impl Default for LolRewardsSelectGrantStatusResponse {
-    fn default() -> Self { LolRewardsSelectGrantStatusResponse::SELECTED }
+    fn default() -> Self {
+        LolRewardsSelectGrantStatusResponse::SELECTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24588,11 +25283,13 @@ pub enum LolRiotMessagingServiceGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolRiotMessagingServiceGameflowPhase {
-    fn default() -> Self { LolRiotMessagingServiceGameflowPhase::None }
+    fn default() -> Self {
+        LolRiotMessagingServiceGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24600,43 +25297,51 @@ pub enum LolRsoAuthAuthHintType {
     email_verification = 0,
     password_reset = 1,
     parental_consent = 2,
-    ambiguous_username = 3
+    ambiguous_username = 3,
 }
 
 impl Default for LolRsoAuthAuthHintType {
-    fn default() -> Self { LolRsoAuthAuthHintType::email_verification }
+    fn default() -> Self {
+        LolRsoAuthAuthHintType::email_verification
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRsoAuthConfigReadinessEnum {
     NotReady = 0,
     Ready = 1,
-    Disabled = 2
+    Disabled = 2,
 }
 
 impl Default for LolRsoAuthConfigReadinessEnum {
-    fn default() -> Self { LolRsoAuthConfigReadinessEnum::NotReady }
+    fn default() -> Self {
+        LolRsoAuthConfigReadinessEnum::NotReady
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRsoAuthConfigType {
     public = 0,
-    player = 1
+    player = 1,
 }
 
 impl Default for LolRsoAuthConfigType {
-    fn default() -> Self { LolRsoAuthConfigType::public }
+    fn default() -> Self {
+        LolRsoAuthConfigType::public
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolRsoAuthRSOAuthorizationTrustLevel {
     always_trusted = 0,
     trusted_device = 1,
-    always_verify = 2
+    always_verify = 2,
 }
 
 impl Default for LolRsoAuthRSOAuthorizationTrustLevel {
-    fn default() -> Self { LolRsoAuthRSOAuthorizationTrustLevel::always_trusted }
+    fn default() -> Self {
+        LolRsoAuthRSOAuthorizationTrustLevel::always_trusted
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24644,11 +25349,13 @@ pub enum LolSettingsLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolSettingsLoginSessionStates {
-    fn default() -> Self { LolSettingsLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolSettingsLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24657,11 +25364,13 @@ pub enum LolSettingsPublisher {
     garena = 1,
     tencent = 2,
     twm = 3,
-    vng = 4
+    vng = 4,
 }
 
 impl Default for LolSettingsPublisher {
-    fn default() -> Self { LolSettingsPublisher::riot }
+    fn default() -> Self {
+        LolSettingsPublisher::riot
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24669,11 +25378,13 @@ pub enum LolShutdownShutdownReason {
     Invalid = 0,
     PlatformMaintenance = 1,
     LcuAlphaDisabled = 2,
-    PlayerBanned = 3
+    PlayerBanned = 3,
 }
 
 impl Default for LolShutdownShutdownReason {
-    fn default() -> Self { LolShutdownShutdownReason::Invalid }
+    fn default() -> Self {
+        LolShutdownShutdownReason::Invalid
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24691,11 +25402,13 @@ pub enum LolSimpleDialogMessagesGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolSimpleDialogMessagesGameflowPhase {
-    fn default() -> Self { LolSimpleDialogMessagesGameflowPhase::None }
+    fn default() -> Self {
+        LolSimpleDialogMessagesGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24705,11 +25418,13 @@ pub enum LolSocialLeaderboardLeagueDivision {
     III = 2,
     IV = 3,
     V = 4,
-    NA = 5
+    NA = 5,
 }
 
 impl Default for LolSocialLeaderboardLeagueDivision {
-    fn default() -> Self { LolSocialLeaderboardLeagueDivision::I }
+    fn default() -> Self {
+        LolSocialLeaderboardLeagueDivision::I
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24721,11 +25436,13 @@ pub enum LolSocialLeaderboardLeagueQueueType {
     RANKED_TFT = 4,
     RANKED_TFT_TURBO = 5,
     RANKED_TFT_PAIRS = 6,
-    RANKED_TFT_DOUBLE_UP = 7
+    RANKED_TFT_DOUBLE_UP = 7,
 }
 
 impl Default for LolSocialLeaderboardLeagueQueueType {
-    fn default() -> Self { LolSocialLeaderboardLeagueQueueType::NONE }
+    fn default() -> Self {
+        LolSocialLeaderboardLeagueQueueType::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24739,11 +25456,13 @@ pub enum LolSocialLeaderboardLeagueTier {
     DIAMOND = 6,
     MASTER = 7,
     GRANDMASTER = 8,
-    CHALLENGER = 9
+    CHALLENGER = 9,
 }
 
 impl Default for LolSocialLeaderboardLeagueTier {
-    fn default() -> Self { LolSocialLeaderboardLeagueTier::NONE }
+    fn default() -> Self {
+        LolSocialLeaderboardLeagueTier::NONE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24751,11 +25470,13 @@ pub enum LolStoreLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolStoreLoginSessionStates {
-    fn default() -> Self { LolStoreLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolStoreLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24773,11 +25494,13 @@ pub enum LolSuggestedPlayersGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolSuggestedPlayersGameflowPhase {
-    fn default() -> Self { LolSuggestedPlayersGameflowPhase::None }
+    fn default() -> Self {
+        LolSuggestedPlayersGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24787,11 +25510,13 @@ pub enum LolSuggestedPlayersSuggestedPlayersReason {
     FriendOfFriend = 3,
     VictoriousComrade = 5,
     HonorInteractions = 6,
-    LegacyPlayAgain = 9999
+    LegacyPlayAgain = 9999,
 }
 
 impl Default for LolSuggestedPlayersSuggestedPlayersReason {
-    fn default() -> Self { LolSuggestedPlayersSuggestedPlayersReason::PreviousPremade }
+    fn default() -> Self {
+        LolSuggestedPlayersSuggestedPlayersReason::PreviousPremade
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24799,32 +25524,38 @@ pub enum LolSummonerLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolSummonerLoginSessionStates {
-    fn default() -> Self { LolSummonerLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolSummonerLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSummonerProfilePrivacyEnabledState {
     UNKNOWN = 0,
     ENABLED = 1,
-    DISABLED = 2
+    DISABLED = 2,
 }
 
 impl Default for LolSummonerProfilePrivacyEnabledState {
-    fn default() -> Self { LolSummonerProfilePrivacyEnabledState::UNKNOWN }
+    fn default() -> Self {
+        LolSummonerProfilePrivacyEnabledState::UNKNOWN
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum LolSummonerProfilePrivacySetting {
     PRIVATE = 0,
-    PUBLIC = 1
+    PUBLIC = 1,
 }
 
 impl Default for LolSummonerProfilePrivacySetting {
-    fn default() -> Self { LolSummonerProfilePrivacySetting::PRIVATE }
+    fn default() -> Self {
+        LolSummonerProfilePrivacySetting::PRIVATE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24842,11 +25573,13 @@ pub enum LolTftGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolTftGameflowPhase {
-    fn default() -> Self { LolTftGameflowPhase::None }
+    fn default() -> Self {
+        LolTftGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24855,11 +25588,13 @@ pub enum LolTftQueueGameCategory {
     Custom = 1,
     PvP = 2,
     VersusAi = 3,
-    Alpha = 4
+    Alpha = 4,
 }
 
 impl Default for LolTftQueueGameCategory {
-    fn default() -> Self { LolTftQueueGameCategory::None }
+    fn default() -> Self {
+        LolTftQueueGameCategory::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24877,34 +25612,13 @@ pub enum LolUserExperienceGameflowPhase {
     WaitingForStats = 10,
     PreEndOfGame = 11,
     EndOfGame = 12,
-    TerminatedInError = 13
+    TerminatedInError = 13,
 }
 
 impl Default for LolUserExperienceGameflowPhase {
-    fn default() -> Self { LolUserExperienceGameflowPhase::None }
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone)]
-pub enum LolWorldsTokenCardItemOwnershipType {
-    OWNED = 0,
-    RENTED = 1,
-    LOYALTY = 2,
-    F2P = 3
-}
-
-impl Default for LolWorldsTokenCardItemOwnershipType {
-    fn default() -> Self { LolWorldsTokenCardItemOwnershipType::OWNED }
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone)]
-pub enum LolWorldsTokenCardTokenUpsellLockedType {
-    UNASSIGNED = 0,
-    LOCKED = 1,
-    UNLOCKED = 2
-}
-
-impl Default for LolWorldsTokenCardTokenUpsellLockedType {
-    fn default() -> Self { LolWorldsTokenCardTokenUpsellLockedType::UNASSIGNED }
+    fn default() -> Self {
+        LolUserExperienceGameflowPhase::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24912,11 +25626,13 @@ pub enum LolYourshopItemOwnershipType {
     OWNED = 0,
     RENTED = 1,
     LOYALTY = 2,
-    F2P = 3
+    F2P = 3,
 }
 
 impl Default for LolYourshopItemOwnershipType {
-    fn default() -> Self { LolYourshopItemOwnershipType::OWNED }
+    fn default() -> Self {
+        LolYourshopItemOwnershipType::OWNED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24924,11 +25640,13 @@ pub enum LolYourshopLoginSessionStates {
     IN_PROGRESS = 0,
     SUCCEEDED = 1,
     LOGGING_OUT = 2,
-    ERROR = 3
+    ERROR = 3,
 }
 
 impl Default for LolYourshopLoginSessionStates {
-    fn default() -> Self { LolYourshopLoginSessionStates::IN_PROGRESS }
+    fn default() -> Self {
+        LolYourshopLoginSessionStates::IN_PROGRESS
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24938,11 +25656,13 @@ pub enum LolYourshopLoyaltyStatus {
     EXPIRY = 2,
     CHANGE = 3,
     REVOKE = 4,
-    DISABLED = 5
+    DISABLED = 5,
 }
 
 impl Default for LolYourshopLoyaltyStatus {
-    fn default() -> Self { LolYourshopLoyaltyStatus::LEGACY }
+    fn default() -> Self {
+        LolYourshopLoyaltyStatus::LEGACY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24952,22 +25672,26 @@ pub enum MetricDataType {
     uint = 2,
     float = 3,
     bool = 4,
-    string = 5
+    string = 5,
 }
 
 impl Default for MetricDataType {
-    fn default() -> Self { MetricDataType::unknown }
+    fn default() -> Self {
+        MetricDataType::unknown
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum MetricPriority {
     low = 0,
     medium = 1,
-    high = 2
+    high = 2,
 }
 
 impl Default for MetricPriority {
-    fn default() -> Self { MetricPriority::low }
+    fn default() -> Self {
+        MetricPriority::low
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24976,11 +25700,13 @@ pub enum MetricType {
     percentage = 1,
     count = 2,
     duration = 3,
-    rate = 4
+    rate = 4,
 }
 
 impl Default for MetricType {
-    fn default() -> Self { MetricType::unknown }
+    fn default() -> Self {
+        MetricType::unknown
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -24989,22 +25715,26 @@ pub enum PatcherComponentStateAction {
     CheckingForUpdates = 1,
     Patching = 2,
     Repairing = 3,
-    Migrating = 4
+    Migrating = 4,
 }
 
 impl Default for PatcherComponentStateAction {
-    fn default() -> Self { PatcherComponentStateAction::Idle }
+    fn default() -> Self {
+        PatcherComponentStateAction::Idle
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PatcherComponentStateWorkType {
     Scanning = 0,
     Network = 1,
-    Disk = 2
+    Disk = 2,
 }
 
 impl Default for PatcherComponentStateWorkType {
-    fn default() -> Self { PatcherComponentStateWorkType::Scanning }
+    fn default() -> Self {
+        PatcherComponentStateWorkType::Scanning
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25015,11 +25745,13 @@ pub enum PatcherNotificationId {
     FailedToWriteError = 3,
     DidRestoreClientBackup = 4,
     NotEnoughDiskSpace = 5,
-    BrokenPermissions = 6
+    BrokenPermissions = 6,
 }
 
 impl Default for PatcherNotificationId {
-    fn default() -> Self { PatcherNotificationId::UnspecifiedError }
+    fn default() -> Self {
+        PatcherNotificationId::UnspecifiedError
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25033,11 +25765,13 @@ pub enum PendingRosterInviteeState {
     ACCEPTED = 6,
     SELFJOIN = 7,
     SELFJOIN_DECLINED = 8,
-    SELFJOIN_REVOKED = 9
+    SELFJOIN_REVOKED = 9,
 }
 
 impl Default for PendingRosterInviteeState {
-    fn default() -> Self { PendingRosterInviteeState::SUGGESTED }
+    fn default() -> Self {
+        PendingRosterInviteeState::SUGGESTED
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25046,53 +25780,63 @@ pub enum PendingRosterMemberState {
     FORCED_NOT_READY = 1,
     READY = 2,
     LEFT = 3,
-    KICK = 4
+    KICK = 4,
 }
 
 impl Default for PendingRosterMemberState {
-    fn default() -> Self { PendingRosterMemberState::NOT_READY }
+    fn default() -> Self {
+        PendingRosterMemberState::NOT_READY
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PickModes {
     NOT_PICKING = 0,
     IN_PROGRESS = 1,
-    DONE = 2
+    DONE = 2,
 }
 
 impl Default for PickModes {
-    fn default() -> Self { PickModes::NOT_PICKING }
+    fn default() -> Self {
+        PickModes::NOT_PICKING
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PlayerFinderEnum {
     FREEAGENT = 0,
-    FRIEND = 1
+    FRIEND = 1,
 }
 
 impl Default for PlayerFinderEnum {
-    fn default() -> Self { PlayerFinderEnum::FREEAGENT }
+    fn default() -> Self {
+        PlayerFinderEnum::FREEAGENT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PluginManagerState {
     NotReady = 0,
-    PluginsInitialized = 1
+    PluginsInitialized = 1,
 }
 
 impl Default for PluginManagerState {
-    fn default() -> Self { PluginManagerState::NotReady }
+    fn default() -> Self {
+        PluginManagerState::NotReady
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum PluginResourceEventType {
     Create = 0,
     Update = 1,
-    Delete = 2
+    Delete = 2,
 }
 
 impl Default for PluginResourceEventType {
-    fn default() -> Self { PluginResourceEventType::Create }
+    fn default() -> Self {
+        PluginResourceEventType::Create
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25100,11 +25844,13 @@ pub enum PluginThreadingModel {
     dedicated = 1,
     sequential = 2,
     concurrent = 3,
-    parallel = 4
+    parallel = 4,
 }
 
 impl Default for PluginThreadingModel {
-    fn default() -> Self { PluginThreadingModel::dedicated }
+    fn default() -> Self {
+        PluginThreadingModel::dedicated
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25115,11 +25861,13 @@ pub enum Position {
     JUNGLE = 3,
     UTILITY = 4,
     FILL = 5,
-    UNSELECTED = 6
+    UNSELECTED = 6,
 }
 
 impl Default for Position {
-    fn default() -> Self { Position::TOP }
+    fn default() -> Self {
+        Position::TOP
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25127,11 +25875,13 @@ pub enum RemotingHelpFormat {
     Full = 1,
     Epytext = 2,
     Brief = 4,
-    Console = 5
+    Console = 5,
 }
 
 impl Default for RemotingHelpFormat {
-    fn default() -> Self { RemotingHelpFormat::Full }
+    fn default() -> Self {
+        RemotingHelpFormat::Full
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25139,22 +25889,26 @@ pub enum RemotingPrivilege {
     None = 0,
     User = 127,
     Admin = 254,
-    Local = 255
+    Local = 255,
 }
 
 impl Default for RemotingPrivilege {
-    fn default() -> Self { RemotingPrivilege::None }
+    fn default() -> Self {
+        RemotingPrivilege::None
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum RemotingSerializedFormat {
     JSON = 1,
     YAML = 2,
-    MsgPack = 3
+    MsgPack = 3,
 }
 
 impl Default for RemotingSerializedFormat {
-    fn default() -> Self { RemotingSerializedFormat::JSON }
+    fn default() -> Self {
+        RemotingSerializedFormat::JSON
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25163,11 +25917,13 @@ pub enum ReplayResponseStatus {
     NOT_FOUND = 1,
     EXPIRED = 2,
     BAD_REQUEST = 3,
-    INTERNAL_SERVER_ERROR = 4
+    INTERNAL_SERVER_ERROR = 4,
 }
 
 impl Default for ReplayResponseStatus {
-    fn default() -> Self { ReplayResponseStatus::OK }
+    fn default() -> Self {
+        ReplayResponseStatus::OK
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25175,33 +25931,39 @@ pub enum RiotMessagingServiceState {
     Disconnecting = 0,
     Disconnected = 1,
     Connecting = 3,
-    Connected = 5
+    Connected = 5,
 }
 
 impl Default for RiotMessagingServiceState {
-    fn default() -> Self { RiotMessagingServiceState::Disconnecting }
+    fn default() -> Self {
+        RiotMessagingServiceState::Disconnecting
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum RiotMessagingServiceTokenType {
     Unavailable = 0,
     Access = 1,
-    Identity = 2
+    Identity = 2,
 }
 
 impl Default for RiotMessagingServiceTokenType {
-    fn default() -> Self { RiotMessagingServiceTokenType::Unavailable }
+    fn default() -> Self {
+        RiotMessagingServiceTokenType::Unavailable
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum Role {
     CAPTAIN = 0,
     MEMBER = 1,
-    NONE = 2
+    NONE = 2,
 }
 
 impl Default for Role {
-    fn default() -> Self { Role::CAPTAIN }
+    fn default() -> Self {
+        Role::CAPTAIN
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25209,21 +25971,25 @@ pub enum TicketOfferState {
     ACTIVE = 0,
     ACCEPTED = 1,
     REJECTED = 2,
-    REVOKED = 3
+    REVOKED = 3,
 }
 
 impl Default for TicketOfferState {
-    fn default() -> Self { TicketOfferState::ACTIVE }
+    fn default() -> Self {
+        TicketOfferState::ACTIVE
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum TicketType {
     BASIC = 0,
-    PREMIUM = 1
+    PREMIUM = 1,
 }
 
 impl Default for TicketType {
-    fn default() -> Self { TicketType::BASIC }
+    fn default() -> Self {
+        TicketType::BASIC
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25231,11 +25997,13 @@ pub enum TournamentStatusEnum {
     DEFAULT = 0,
     CANCELLED = 1,
     PAUSED = 2,
-    PRERESUME = 3
+    PRERESUME = 3,
 }
 
 impl Default for TournamentStatusEnum {
-    fn default() -> Self { TournamentStatusEnum::DEFAULT }
+    fn default() -> Self {
+        TournamentStatusEnum::DEFAULT
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25245,11 +26013,13 @@ pub enum TracingModuleThreadingModelV1 {
     kDedicated = 2,
     kSequential = 3,
     kConcurrent = 4,
-    kParallel = 5
+    kParallel = 5,
 }
 
 impl Default for TracingModuleThreadingModelV1 {
-    fn default() -> Self { TracingModuleThreadingModelV1::kNone }
+    fn default() -> Self {
+        TracingModuleThreadingModelV1::kNone
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -25259,21 +26029,24 @@ pub enum TracingModuleTypeV1 {
     kBackEndPlugin = 2,
     kBackendOther = 3,
     kFrontEndPlugin = 4,
-    kRemotingSource = 5
+    kRemotingSource = 5,
 }
 
 impl Default for TracingModuleTypeV1 {
-    fn default() -> Self { TracingModuleTypeV1::kUnknown }
+    fn default() -> Self {
+        TracingModuleTypeV1::kUnknown
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum TracingPhaseImportanceV1 {
     trivial = 0,
     minor = 1,
-    major = 2
+    major = 2,
 }
 
 impl Default for TracingPhaseImportanceV1 {
-    fn default() -> Self { TracingPhaseImportanceV1::trivial }
+    fn default() -> Self {
+        TracingPhaseImportanceV1::trivial
+    }
 }
-
